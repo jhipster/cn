@@ -4,7 +4,7 @@ title: Creating a controller
 permalink: /creating-a-spring-controller/
 sitemap:
     priority: 0.7
-    lastmod: 2017-12-28T00:00:00-00:00
+    lastmod: 2019-02-01T00:00:00-00:00
 ---
 
 # <i class="fa fa-bolt"></i> Creating a Spring controller
@@ -29,14 +29,11 @@ Yes! In fact it's already done! In `dev` mode, just use the `Administration > AP
 
 Yes! Just add Spring Security's `@Secured` annotation on your class or on your methods, and use the provided `AuthoritiesConstants` class to restrict access to specific user authorities.
 
-## Can we monitor Spring MVC REST Controllers?
-
-Yes! Just add Metrics' `@Timed` annotations on the methods you want to monitor.
-
 ## Can we proxy it from our Microservice Gateway dev server?
 
 Yes! By adding the servicename to the context of the proxy in webpack/webpack.dev.js
-```module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
+```javascript
+module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './target/www',
@@ -44,4 +41,5 @@ Yes! By adding the servicename to the context of the proxy in webpack/webpack.de
             context: [
                 '/<servicename>',
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
-                ....```
+                ....
+```

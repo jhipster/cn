@@ -158,13 +158,15 @@ You can either use:
 *   Angular
 *   React
 
-### Would you like to use the LibSass stylesheet preprocessor for your CSS?
+### Would you like to use the Sass stylesheet preprocessor for your CSS?
 
-[Node-sass](https://www.npmjs.com/package/node-sass) a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Gulp](http://www.gulpjs.com) server, which will be configured automatically.
+[Sass](https://sass-lang.com/) a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Webpack](https://webpack.js.org) dev server, which will be configured automatically.
 
 ### Would you like to enable internationalization support?
 
 By default JHipster provides excellent internationalization support, both on the client side and on the server side. However, internationalization adds a little overhead, and is a little bit more complex to manage, so you can choose not to install this feature.
+
+Please note that JHipster covers only UI internationalization. For data internationalization, you will need to code it yourself in JPA/Hibernate layer.
 
 ### Which testing frameworks would you like to use?
 

@@ -88,6 +88,15 @@ If you want to join the team, or just see how we work, our community rules are a
     </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/9678039?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Hippolyte Durix</h3>
+                <p><a href="https://twitter.com/hdurix"><i>@hdurix</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/3706415?v=3" class="img-responsive">
             <div class="caption">
                 <h3>Daniel Franco</h3>
@@ -137,6 +146,15 @@ If you want to join the team, or just see how we work, our community rules are a
             <div class="caption">
                 <h3>Erik Kemperman</h3>
                 <p><a href="https://twitter.com/erikkemperman"><i>@erikkemperman</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/7074827?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Sahbi Ktifa</h3>
+                <p><a href="https://twitter.com/SahbiKtifa"><i>@SahbiKtifa</i></a></p>
             </div>
         </div>
     </div>
@@ -196,6 +214,15 @@ If you want to join the team, or just see how we work, our community rules are a
     </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/593564?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Daniel Petisme</h3>
+                <p><a href="https://twitter.com/danielpetisme"><i>@danielpetisme</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/17892?v=3" class="img-responsive">
             <div class="caption">
                 <h3>Matt Raible</h3>
@@ -239,7 +266,54 @@ If you want to join the team, or just see how we work, our community rules are a
             </div>
         </div>
     </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/2188969?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Panayiotis Vlissidis</h3>
+                <p><a href="https://twitter.com/panvliss"><i>@panvliss</i></a></p>
+            </div>
+        </div>
+    </div>
 </div>
+
+## JHipster streams
+
+JHipster supports a wide range of technology choices for your application and as it keeps growing we have come up with technology streams with specific leads to ensure smooth maintenance of the particular technology. Everything else will be lead by project leads.
+
+The updated spreadsheet can be found [here](https://docs.google.com/spreadsheets/d/1fac4Uxv3bKr0rNmgg1WXv67CE_6nfHEPIuCp-_iU-uA/edit?usp=sharing)
+
+| Stream                              | Leader             |
+|-------------------------------------|--------------------|
+| Angular                             | William Marques    |
+| React                               | Sendil Kumar N     |
+| VueJS                               | Sahbi KTIFA        |
+| JHipster Registry                   | Pierre Besson      |
+| JHipster Console                    | Pierre Besson      |
+| JHipster core/JDL                   | Mathieu Abou-Aichi |
+| JHipster Kotlin                     | Sendil Kumar N     |
+| JHipster IDE                        | Serano Colameo     |
+| UAA                                 | David Steiman      |
+| JDL studio                          | Deepu K Sasidharan |
+| JHipster online                     | Julien Dubois      |
+| Continuous Integration and Delivery | Pascal Grimaud     |
+| Gradle                              | Frederik Hahne     |
+| Maven                               | Daniel Franco      |
+| JHipster server-side libraries      | Julien Dubois      |
+| Spring Boot                         | Daniel Franco      |
+| OIDC/OAuth                          | Matt Raible        |
+| Blueprints & modules system         | Aurélien Mino      |
+| Heroku                              | Joe Kutner         |
+| GCP/GAE                             | Ray Tsang          |
+| Kubernetes                          | Pierre Besson      |
+| Istio                               | Ray Tsang          |
+| Infinispan                          | Srinivasa Vasu     |
+| Reactive                            | Christophe Bornet  |
+| Java                                | Julien Dubois      |
+| Docker                              | Pascal Grimaud     |
+| Cassandra                           | Cedrick Lunven     |
+
+
 
 ## Retired members of the board of developers
 

@@ -4,7 +4,7 @@ title: JHipster Domain Language
 permalink: /jdl/
 sitemap:
     priority: 0.5
-    lastmod: 2018-06-29T12:00:00-00:00
+    lastmod: 2019-02-02T12:00:00-00:00
 ---
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL)
@@ -32,6 +32,8 @@ Here is the JDL documentation:
 
 1. [JDL Sample](#sample)
 1. [How to use it](#howtojdl)
+   1. [Importing a JDL file](#importingjdl)
+   1. [Exporting to a JDL file](#exportingjdl)
 1. [The language](#jdllanguage)
    1. [Application Declaration](#applicationdeclaration)
    1. [Entity Declaration](#entitydeclaration)
@@ -64,9 +66,10 @@ If you're looking for more samples, there is a repository for that right [here](
 
 ## <a name="howtojdl"></a> How to use it
 
+###  <a name="importingjdl"></a> Importing a JDL file
 You can then use JDL files to generate entities:
-  - simply create a file with the extension '.jh' or '.jdl',
-  - declare your applications, deployments, entities and relationships or create and download the file with [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or [JHipster IDE](https://www.jhipster.tech/jhipster-ide/),
+  - Simply create a file with the extension '.jh' or '.jdl',
+  - Declare your applications, deployments, entities and relationships or create and download the file with [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or [JHipster IDE](https://www.jhipster.tech/jhipster-ide/),
   - If you are creating only entities in then run `jhipster import-jdl my_file.jdl` in your JHipster application's root folder.
   - If you are creating applications then just run `jhipster import-jdl my_file.jdl` in a folder.
 
@@ -94,6 +97,15 @@ If you want to use it in your project, you can add do so by doing:
   - Yarn: `yarn add jhipster-core`
 
 to install it locally, and save it in your `package.json` file.
+
+###  <a name="exportingjdl"></a> Exporting to a JDL file
+
+If you already have entities in your application and wish to have a JDL file, fear not! You don't have
+to write it from scratch as there's a sub-generator that does that for you.
+
+Simply do `jhipster export-jdl <FILE_NAME>` in your app's root folder and you'll have all your entities,
+relationships and options exporting in a single JDL file.
+Note: you can also not provide a file name to the sub-generation, a default one will be chosen.
 
 ---
 
@@ -296,6 +308,7 @@ The relationships declaration is done as follows:
   - `<relationship name>` is the name of the field having the other end as type,
   - `<display field>` is the name of the field that should show up in select boxes (default: `id`),
   - `required` whether the injected field is required.
+  - `with jpaDerivedIdentifier` whether `@MapsId` is used for the association (applicable only for one-to-one)
 
 Here's a simple example:
 
@@ -349,7 +362,7 @@ relationship ManyToMany {
 }
 ```
 
-The join is always done using the `id` field which is also the default field shown when editing arelation in the
+The join is always done using the `id` field which is also the default field shown when editing a relation in the
 front-end. If another field should be shown instead, you can specify it like this:
 
 ```
@@ -363,6 +376,21 @@ relationship OneToOne {
   A{b} to B{a(name)}
 }
 ```
+
+JPA Derived Identifier - @MapsId can be declared as following which is currently only supported for one-to-one:
+
+```
+entity A {
+  name String required
+}
+entity B
+
+
+relationship OneToOne {
+  A{b} to B{a(name)} with jpaDerivedIdentifier
+}
+```
+
 
 This makes JHipster generate a REST resource that returns both the `id` and `name` of the linked entity to the front-end,
 so the name can be shown to the user instead.
@@ -700,7 +728,11 @@ A Unidirectional example where a Citizen has a Passport, but the Passport has no
     relationship OneToOne {
       Citizen to Passport
     }
-
+    
+    // using @MapsId
+    relationship OneToOne {
+          Citizen to Passport with jpaDerivedIdentifier 
+    }
 
 ### One-to-Many
 
@@ -1029,7 +1061,7 @@ Here are the application options supported in the JDL:
   <tr>
     <td>deploymentType</td>
     <td>docker-compose</td>
-    <td>docker-compose, kubernetes, openshift, rancher-compose</td>
+    <td>docker-compose, kubernetes, openshift</td>
     <td></td>
   </tr>
   <tr>
@@ -1115,12 +1147,6 @@ Here are the application options supported in the JDL:
     <td>false</td>
     <td></td>
     <td>Applicable only when deploymentType is kubernetes</td>
-  </tr>
-  <tr>
-    <td>enableRancherLoadBalancing</td>
-    <td>false</td>
-    <td></td>
-    <td>Applicable only when deploymentType is rancher-compose</td>
   </tr>
   <tr>
     <td>openshiftNamespace</td>
