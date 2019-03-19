@@ -2,7 +2,7 @@ version: "2.1"
 services:
   site:
     container_name: jhipster.github.io
-    command: jekyll serve
+    command: jekyll serve --baseurl /
     image: jekyll/jekyll:latest
     volumes:
       - ./:/srv/jekyll
