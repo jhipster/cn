@@ -114,7 +114,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="side-menu-container">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="/">
+                            <a class="navbar-brand" href="{{ site.url }}">
                                 <div class="icon"><img src="{{ site.url }}/images/logo/logo-jhipster.svg" height="19px"></div>
                                 <div class="title brand">JHipster </div>
                             </a>
@@ -124,7 +124,7 @@
                         </div>
                         <ul class="nav navbar-nav">
                             <li {% if '/index.html' == page.url %}class="active" {% endif %}>
-                                <a href="/">
+                                <a href="{{ site.url }}">
                                     <span class="icon fa fa-home"></span><span class="title">Home</span>
                                 </a>
                             </li>
