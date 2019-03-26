@@ -121,108 +121,108 @@ Spring缓存（Spring cache abstraction）允许使用不同的缓存实现方�
 
 ### 您想要使用Maven还是Gradle？
 
-You can build your generated Java application either with [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/). Maven is more stable and more mature. Gradle is more flexible, easier to extend, and more hype.
+您可以使用[Maven](http://maven.apache.org/) 或 [Gradle](http://www.gradle.org/)来构建您所生成的Java应用程序。 Maven使用起来更加稳定和成熟，Gradle使用起来更加灵活, 更易于扩展以及更具有主流.
 
-### Which other technologies would you like to use?
+### 您想要使用哪些其它技术？
 
-This is a multi-select answer, to add one or several other technologies to the application. Available technologies are:
+此问题可以通过多选来添加一个或若干个其它技术到应用程序中。可选择的技术有：
 
-#### API first development using swagger-codegen
+#### 使用swagger-codegen进行API first开发
 
-This option lets you do [API-first development]({{ site.url }}/doing-api-first-development) for your application by integrating the [Swagger-Codegen](https://github.com/swagger-api/swagger-codegen) into the build.
+此选项通过集成构建[Swagger-Codegen](https://github.com/swagger-api/swagger-codegen)让您可以为您的应用程序进行[API-first开发]({{ site.url }}/doing-api-first-development)。
 
-#### Search engine using ElasticSearch
+#### 使用ElasticSearch搜索引擎
 
-[Elasticsearch](https://github.com/elastic/elasticsearch) will be configured using Spring Data Elasticsearch. You can find more information on our [Elasticsearch guide]({{ site.url }}/using-elasticsearch/).
+[Elasticsearch](https://github.com/elastic/elasticsearch) 将通过Spring Data Elasticsearch进行配置。 您可以从我们的[Elasticsearch guide]({{ site.url }}/using-elasticsearch/)页面获取更多信息。
 
-#### Clustered HTTP sessions using Hazelcast
+#### 使用Hazelcast的集群式HTTP sessions
 
-By default, JHipster uses a HTTP session only for storing [Spring Security](http://docs.spring.io/spring-security/site/index.html)'s authentication and authorisation information. Of course, you can choose to put more data in your HTTP sessions.
-Using HTTP sessions will cause issues if you are running in a cluster, especially if you don't use a load balancer with "sticky sessions".
-If you want to replicate your sessions inside your cluster, choose this option to have [Hazelcast](http://www.hazelcast.com/) configured.
+JHipster默认仅使用HTTP session来存储[Spring Security](http://docs.spring.io/spring-security/site/index.html)的认证和授权信息。当然，您可以选择将更多的数据存储到您的HTTP sessions中。
+如果运行在集群中，使用HTTP sessions将会导致问题出现，特别是在您没有使用带有“sticky sessions”的load balancer的情况下。
+如果您想要在您的集群内部复制您的sessions，选择此项[Hazelcast](http://www.hazelcast.com/)来进行配置。
 
-#### WebSockets using Spring Websocket
+#### 使用Spring Websocket的WebSockets
 
-Websockets can be enabled using Spring Websocket. We also provide a complete sample to show you how to use the framework efficiently.
+使用Spring Websocket来开启Websockets。 我们也提供了一个完整的样本来为您展示怎样更有效率地使用此框架。
 
-#### Asynchronous messages using Apache Kafka
+#### 使用Apache Kafka的异步信息
 
-Use [Apache Kafka]({{ site.url }}/using-kafka/) as a publish/subscribe message broker.
+使用[Apache Kafka]({{ site.url }}/using-kafka/)作为publish/subscribe信息的代理.
 
-### Which _Framework_ would you like to use for the client?
+### 您想要使用哪个client端框架？
 
-The client-side framework to use.
+使用client端框架。
 
-You can either use:
+您可以选择：
 
 *   Angular
 *   React
 
-### Would you like to use the Sass stylesheet preprocessor for your CSS?
+### 您想要为您的CSS使用Sass stylesheet preprocessor吗？
 
-[Sass](https://sass-lang.com/) a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Webpack](https://webpack.js.org) dev server, which will be configured automatically.
+[Sass](https://sass-lang.com/)是简化您CSS设计的一个非常好的解决方案。为了有效率地使用它，您需要运行[Webpack](https://webpack.js.org)开发服务器, 此服务器将会自动进行配置。
 
-### Would you like to enable internationalization support?
+### 您想要开启国际语言版本支持吗？
 
-By default JHipster provides excellent internationalization support, both on the client side and on the server side. However, internationalization adds a little overhead, and is a little bit more complex to manage, so you can choose not to install this feature.
+JHipster默认为client端和server端都提供了非常好的国际语言版本支持。然而，国际语言版本增加了一点开销，并在管理上会有一点复杂, 您可以不选择不安装此项。
 
-Please note that JHipster covers only UI internationalization. For data internationalization, you will need to code it yourself in JPA/Hibernate layer.
+请注意Jhipster仅覆盖了对用户界面的国际语言版本支持，对于数据中的国际语言, 您需要亲自在JPA/Hibernate层进行编码。
 
-### Which testing frameworks would you like to use?
+### 您要想使用哪种测试框架？
 
-By default JHipster provide Java unit/integration testing (using Spring's JUnit support) and JavaScript unit testing (using Jest). As an option, you can also add support for:
+JHipster默认提供了Java单元/集成测试（使用Spring's JUnit）以及JavaScript单元测试（使用Jest）。 作为选项，您也可以添加一下框架：
 
-*   Performance tests using Gatling
-*   Behaviour tests using Cucumber
-*   Angular integration tests with Protractor
+*   使用Gatling进行性能测试
+*   使用Cucumber进行行为测试
+*   使用Protractor进行Angular集成测试
 
-You can find more information on our ["Running tests" guide]({{ site.url }}/running-tests/).
+您可以在我们的 ["运行测试"指导]({{ site.url }}/running-tests/)页面获取更多信息。
 
-### Would you like to install other generators from the JHipster Marketplace?
+### 您想要从Jhipster市场中安装其他生成器吗？
 
-The [JHipster Marketplace]({{ site.url }}/modules/marketplace/) is where you can install additional modules, written by third-party developers, to add non-official features to your project.
+[JHipster市场]({{ site.url }}/modules/marketplace/)是您安装附加模块的地方, 它由第三方开发人员编写，用来添加非官方特性到您的应用中。
 
-## <a name="5"></a> Using a blueprint
+## <a name="5"></a> 使用蓝本
 
-JHipster 5 introduces the concept of a blueprint. Blueprints are JHipster modules that can provide custome client/server side templates that will override the ones from JHipster. For example, the [Kotlin blueprint](https://github.com/jhipster/jhipster-kotlin) replaces most of the Java server side code with Kotlin.
+JHipster 5引入了蓝本概念。 蓝本是指可以为client/server端提供模板定制功能来覆盖JHipster模板的一种JHipster模块。 比如，[Kotlin蓝本](https://github.com/jhipster/jhipster-kotlin)可以替换绝大多数使用了Kotlin的Java服务端代码。
 
-For example, to use the Kotlin blueprint pass the name of the blueprint like below while generating an app.
+比如，在生成一个应用程序时，可以像下面这样通过输入蓝本名称来调用Kotlin蓝本。
 
 ```bash
 jhipster --blueprint kotlin
 ```
 
-The name of the blueprint is saved in the `.yo-rc.json` and will be automatically used while executing sub-generators like `entity`, `spring-controller` and `spring-service`.
+蓝本名称存储在`.yo-rc.json`中，并在执行如`entity`，`spring-controller`和`spring-service`等子生成器时会被自动调用。
 
-If a blueprint doesn't implement a specific sub-generator, it will be skiped and the JHipster templates for the same sub-generator will be used.
+如果一个蓝本没有在一个子生成器中实现, 则它将会被跳过并且同一子生成器的JHipster模板会被调用。
 
-**Note:** An application can use only one blueprint, multiple blueprints are not supported yet.
+**注意:** 一个应用程序仅能使用一个蓝本，多蓝本目前还不被支持。
 
-## <a name="3"></a> Command-line options
+## <a name="3"></a> 命令行选项
 
-You can also run JHipster with some optional command-line options. Reference for those options can be found by typing `jhipster app --help`.
+您也可以运行JHipster一些可选命令行选项。通过输入`jhipster app --help`可以查阅这些选项参考。
 
-Here are the options you can pass:
+这里是您可以输入的选项：
 
-* `--help` - Print the generator's options and usage
-* `--blueprint` - Specify a blueprint to use. For example `jhipster --blueprint kotlin`
-* `--skip-cache` - Do not remember prompt answers (Default: false)
-* `--skip-git` - Do not add the generated project to Git automatically (Default: false)
-* `--skip-install` - Do not automatically install dependencies (Default: false)
-* `--skip-client` - Skip the client-side application generation, so you only have the Spring Boot back-end code generated (Default: false).
-* `--skip-server` - Skip the server-side application generation, so you only have the front-end code generated (Default: false).
-* `--skip-user-management` - Skip the user management generation, both on the back-end and on the front-end (Default: false)
-* `--i18n` - Disable or enable i18n when skipping client side generation, has no effect otherwise (Default: true)
-* `--auth` - Specify the authentication type when skipping server side generation, has no effect otherwise but mandatory when using `skip-server`
-* `--db` - Specify the database when skipping server side generation, has no effect otherwise but mandatory when using `skip-server`
-* `--with-entities` - Regenerate the existing entities if they were already generated (using their configuration in the `.jhipster` folder) (Default: false)
-* `--skip-checks` - Skip the check of the required tools (Default: false)
-* `--jhi-prefix` - Add prefix before services, components and state/route names (Default: jhi)
-* `--entity-suffix` - Add suffix after entities class names (Default: empty string)
-* `--dto-suffix` - Add suffix after DTOs class names (Default: DTO)
-* `--yarn` - Use Yarn instead of NPM (Default: false)
-* `--experimental` - Enable experimental features. Please note that these features may be unstable and may undergo breaking changes at any time
+* `--help` - 打印输出生成器的选项和使用方式。
+* `--blueprint` - 指明使用一个蓝本。比如`jhipster --blueprint kotlin`。
+* `--skip-cache` - 不要保留提示回答（默认为：false）。
+* `--skip-git` - 不要自动将生成的项目添加到Git中（默认为：false）。
+* `--skip-install` - 不要自动安装依赖（默认为：false）。
+* `--skip-client` - 跳过client端应用程序生成，因此您仅有Spring Boot后端代码生成（默认为：false）。
+* `--skip-server` - 跳过server端应用程序生成，因此您仅有前端代码生成（默认为：false）。
+* `--skip-user-management` - 跳过后端和前端的用户管理生成（默认为：false）
+* `--i18n` - 当跳过client端应用程序生成时，开启或关闭i18n，否则将没有影响（默认为：true）
+* `--auth` - 当跳过server端应用程序生成时，指明认证类型，否则将没有影响，但是当使用`skip-server`时必须指明
+* `--db` - 当跳过server端应用程序生成时，指明数据库, 否则将没有影响，但是当使用`skip-server`时必须指明
+* `--with-entities` - 如果有通过`.jhipster`文件夹中的entity配置文件生成的entity，则重新生成这些现有的entity（默认为：false）
+* `--skip-checks` - 跳过对必需工具的确认（默认为：false）
+* `--jhi-prefix` - 对service，component和state/route的名称前添加前缀（默认为：jhi）
+* `--entity-suffix` - 对entity类名添加后缀（默认为：空字符串）
+* `--dto-suffix` - 对DTO类名添加后缀（默认为：DTO）
+* `--yarn` - 使用Yarn取代NPM（默认为：false）
+* `--experimental` - 开启实验特性。请注意这些特性也许不稳定并且在任何时候都有可能会被中断。
 
-## <a name="4"></a> Tips
+## <a name="4"></a> 提示
 
-You can also use the Yeoman command-line options, like `--force` to automatically overwrite existing files. So if you want to regenerate your whole application, including its entities, you can run `jhipster --force --with-entities`.
+您也可以使用Yeoman命令行选项, 比如`--force`自动重写现有文件。因为您如果想要重新生成您的整个应用程序，包括其全部entity，您可以运行`jhipster --force --with-entities`。
