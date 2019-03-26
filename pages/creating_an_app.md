@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2018-03-18T18:20:00-00:00
 ---
 
-# <i class="fa fa-rocket"></i> Creating an application
+# <i class="fa fa-rocket"></i> 创建应用
 
 _**请查阅我们 [video tutorial]({{ site.url }}/video-tutorial/) 关于创建一个新的Jhipster应用程序的视频教程!**_
 
