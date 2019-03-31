@@ -1,6 +1,6 @@
 ---
-layout： default
-title： 版本 5.8.2
+layout: default
+title: 版本 5.8.2
 ---
 
 JHipster 发布版本 5.8.2
@@ -14,7 +14,7 @@ JHipster 发布版本 5.8.2
 
 已完成的工单 （closed tickets） 和 已合并的拉回请求 pull requests
 ------------
-像往常一样, __[您可以在这里查看所有已完成的工单和已合并的拉回请求](https：//github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed)__。
+像往常一样, __[您可以在这里查看所有已完成的工单和已合并的拉回请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed)__。
 
 如何升级
 ------------
