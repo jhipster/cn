@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Creating an entity
+title: 创建实体
 permalink: /creating-an-entity/
 redirect_from:
   - /creating_an_entity.html
@@ -11,236 +11,236 @@ sitemap:
 
 # <i class="fa fa-bolt"></i> Creating an entity
 
-_**Please check our [video tutorial]({{ site.url }}/video-tutorial/) on creating a new JHipster application!**_
+_**请查阅我们的 [video tutorial]({{ site.url }}/video-tutorial/) 关于创建一个新的 Jhipster 应用程序的视频教程!**_
 
-**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need to run `npm start` or `yarn start`. You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
+**要点** 如果您希望您的 JavaScript/TypeScript 代码被 “实时加载”（live reload），您需要运行 `npm start` 或者 `yarn start`. 您可以访问[开发环境的使用]({{ site.url }}/development/)页面获取更多信息.
 
-## Introduction
+## 介绍
 
-Once you have created your application, you will want to create _entities_. For example, you might want to create an _Author_ and a _Book_ entity. For each entity, you will need:
+创建应用程序后，您将需要创建 _entities_。例如，您可能想要创建 _Author_ 和 _Book_ 实体。对于每个实体，您将需要：
 
-*   A database table
-*   A Liquibase change set
-*   A JPA Entity
-*   A Spring Data JPA Repository
-*   A Spring MVC REST Controller, which has the basic CRUD operations
-*   An Angular router, a component and a service
-*   An HTML view
-*   Integration tests, to validate everything works as expected
-*   Performance tests, to see if everything works smoothly
+*   一个数据库表
+*   一个 Liquibase 更改集（change set）
+*   一个 JPA 实体（Entity）
+*   一个 Spring Data JPA 资源库（Repository）
+*   一个 Spring MVC REST 控制器（Controller）, 它具有基本的 CRUD 操作
+*   一个 Angular 路由器（router）, 一个组件（component）以及一个服务（service）
+*   一个 HTML 视图（view）
+*   集成测试, 确保一切按预期运行
+*   性能测试，看看一切是否流畅运行
 
-If you have several entities, you will likely want to have relationships between them. For this, you will need:
+如果您有多个实体，您可能希望在它们之间建立关系。为此，您需要：
 
-*   A database foreign key
-*   Specific JavaScript and HTML code for managing this relationship
+*   一个数据库外键（foreign key）
+*   用于管理此关系的特定 JavaScript 和 HTML 代码
 
-The "entity" sub-generator will create all the necessary files, and provide a CRUD front-end for each entity (see [Angular project structure]({{ site.url }}/using-angular/) and [React project structure]({{ site.url }}/using-react/)). The sub generator can be invoked by running `jhipster entity <entityName> --[options]`. Reference for those options can be found by typing `jhipster entity --help`
+“实体”子生成器将创建所有需要的文件，并为每个实体提供CRUD前端（参见 [Angular 项目结构]({{ site.url }}/using-angular/)和 [React 项目结构]({{ site.url }}/using-react/)）。可以通过运行 `jhipster entity <entityName> --[options]` 来调用子生成器。可以通过键入 `jhipster entity --help` 参考可使用的选项。
 
-Below are the supported options.
+以下是支持的选项.
 
-*   `--table-name <table_name>` - By default JHipster will generate a table name based on your entity name, if you would like to have a different table name you can do so by passing this option.
-*   `--angular-suffix <suffix>` - If you want all your Angular routes to have a custom suffix you can pass that using this option.
-*   `--client-root-folder <folder-name>` - Use a root folder name for entities on the client side. By default it's empty for monoliths and the name of the microservice for gateways.
-*   `--regenerate` - This will regenerate an existing entity without asking any questions.
-*   `--skip-server` - This will skip the server-side code and will generate only the client-side code.
-*   `--skip-client` - This will skip the client-side code and will generate only the server-side code.
-*   `--db` - Specify the database when skipping server side generation, has no effect otherwise.
+*   `--table-name <table_name>` - 默认情况下，JHipster 将根据您的实体名称生成一个数据库表名，您可以通过此选项传递不同的表名。
+*   `--angular-suffix <suffix>` - 如果您希望所有 Angular 路由都具有自定义的后缀，则可以使用此选项传递该路径。
+*   `--client-root-folder <folder-name>` - 在客户端上对实体指定根文件夹名。默认情况下，monolith 应用没有此文件夹，而在 gateway 应用中此文件夹由微服务名来命名。
+*   `--regenerate` - 这将重新生成已有实体，但却不会问任何问题。
+*   `--skip-server` - 这将跳过服务器端，仅生成客户端代码。
+*   `--skip-client` - 这将跳过客户端，仅生成服务器端代码。
+*   `--db` - 在选择跳过服务器端生成时用来指定数据库，除次以外没有任何效果。
 
-<div class="alert alert-warning"><i>Warning: </i>
+<div class="alert alert-warning"><i>警告: </i>
 
-Don't choose a short name for your entity (see <a href="https://github.com/jhipster/generator-jhipster/issues/8446" target="_blank">this ticket</a>).
+不要为您的实体选择过短的名称（请参阅此<a href="https://github.com/jhipster/generator-jhipster/issues/8446" target="_blank">问题</a>）。
 
 </div>
 
-## JHipster UML and JDL Studio
+## JHipster UML 和 JDL Studio
 
-This page describes how to create entities with JHipster using the standard command-line interface. If you want to create many entities, you might prefer to use a graphical tool.
+本页介绍如何通过 JHipster 使用命令行界面（command-line interface）来创建实体。您可能会更喜欢使用图形工具来创建多个实体。
 
-In that case, two options are available:
+在这种情况下，有两种选择：
 
-*   [JHipster UML]({{ site.url }}/jhipster-uml/), which allows you to use an UML editor.
-*   [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL]({{ site.url }}/jdl/).
+*   [JHipster UML]({{ site.url }}/jhipster-uml/), 它允许您使用UML编辑器.
+*   [JDL Studio](https://start.jhipster.tech/jdl-studio/), 我们的在线工具，使用我们的特定领域语言创建实体和关系 [JDL]({{ site.url }}/jdl/).
 
-If you used the JDL Studio:
+如果您使用的是 JDL Studio：
 
-*   You can generate entities from a JDL file using the `import-jdl` sub-generator, by running `jhipster import-jdl your-jdl-file.jh`.
+*   您可以使用 `import-jdl` 子生成器通过运行 `jhipster import-jdl your-jdl-file.jh` 从 JDL 文件生成实体。
 
-    * If you do not want to regenerate your entities, while importing a JDL, you can use the `--json-only` flag to skip entity creation part and create only the json files in `.jhipster` folder.
+    * 如果您不想重新生成实体，则在导入 JDL 时，可以使用 `--json-only` 标志跳过实体创建部分，并仅在 `.jhipster` 文件夹中生成 json 文件。
 
     ```
     jhipster import-jdl ./my-jdl-file.jdl --json-only
     ```
 
-    * By default `import-jdl` regenerates only entities which have changed, if you want all your entities to be regenerated then pass in the `--force`  flag. Please note that this will overwrite all your local changes to the entity files
+    * 默认情况下，`import-jdl` 仅重新生成已更改的实体，如果需要重新生成所有的实体，则传递 `--force` 标志。请注意，这将覆盖对实体文件的所有本地更改。
 
     ```
     jhipster import-jdl ./my-jdl-file.jdl --force
     ```
 
-*   If you want to use JHipster UML instead of the `import-jdl` sub-generator, you need to install it by running `npm install -g jhipster-uml`, and then run `jhipster-uml yourFileName.jh`.
+*   如果你想使用 JHipster UML 而不是 `import-jdl` 子生成器，你需要通过运行 `npm install -g jhipster-uml` 来安装它，然后运行 `jhipster-uml yourFileName.jh`。
 
-## Entity fields
+## 实体字段
 
-For each entity, you can add as many fields as you want. You will need to input the field names and their types, and JHipster will generate for you all the required code and configuration, from the Angular HTML view to the Liquibase changelog.
+对于每个实体，您可以根据需要添加任意数量的字段。您需要输入字段名称及其类型，JHipster 将为您生成所有必需的代码和配置，从 Angular HTML 的视图到 Liquibase 的更改日志。
 
-Those fields cannot contain reserved keywords in the technologies you are using. For example, if you use MySQL:
+这些字段不能包含您正在使用的技术中的保留关键字。例如，如果您使用 MySQL：
 
-*   You cannot use Java reserved keywords (as your code will not compile)
-*   You cannot use MySQL reserved keywords (as your database schema update will fail)
+*   您不能使用 Java 的保留关键字（因为您的代码将无法编译）
+*   您不能使用 MySQL 的保留关键字（因为您的数据库架构（database schema）更新将会失败）
 
-## Field types
+## 字段类型
 
-JHipster supports many field types. This support depends on your database backend, so we use Java types to describe them: a Java `String` will be stored differently in Oracle or Cassandra, and it is one of JHipster's strengths to generate the correct database access code for you.
+JHipster支持多种字段类型。由于这种支持取决于您的数据库后端，因此我们选择使用 Java 类型来描述它们：比如 Java 的`String` 将以不同的方式存储在 Oracle 或 Cassandra 中，而 JHipster 将为您生成正确的数据库访问代码，这正是 JHipster 的优势之一。
 
-*   `String`: A Java String. Its default size depends on the underlying backend (if you use JPA, it's 255 by default), but you can change it using the validation rules (putting a `max` size of 1024, for example).
-*   `Integer`: A Java Integer.
-*   `Long`: A Java Long.
-*   `Float`: A Java Float.
-*   `Double`: A Java Double.
-*   `BigDecimal`: A [java.math.BigDecimal](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html) object, used when you want exact mathematic calculations (often used for financial operations).
-*   `LocalDate`: A [java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) object, used to correctly manage dates in Java.
-*   `Instant`: A [java.time.Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html) object, used to represent a timestamp, an instantaneous point on the time-line.
-*   `ZonedDateTime`: A [java.time.ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html) object, used to represent a local date-time in a given timezone (typically a calendar appointment). Note that time zones are neither supported by the REST nor by the persistence layers so you should most probably use `Instant` instead.
-*   `Boolean`: A Java Boolean.
-*   `Enumeration`: A Java Enumeration object. When this type is selected, the sub-generator will ask you what values you want in your enumeration, and it will create a specific `enum` class to store them.
-*   `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic binary data, an image object, or a CLOB (long text). Images will be handled specifically on the Angular side, so they can be displayed to the end-user.
+*   `String`: 一个 Java String 对象。它的默认大小取决于底层后端（如果使用JPA，默认情况下为255），但您可以添加验证规则来更改它（例如，设置 `max` 值为1024）。
+*   `Integer`: 一个 Java Integer 对象。
+*   `Long`: 一个 Java Long 对象。
+*   `Float`: 一个 Java Float 对象。
+*   `Double`: 一个 Java Double 对象。
+*   `BigDecimal`: 一个 [java.math.BigDecimal](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html) 对象，使用在需要精确的数学计算时（通常用于金融业务）。
+*   `LocalDate`: 一个 [java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) 对象，用于在 Java 中正确管理日期。
+*   `Instant`: 一个 [java.time.Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html) 对象, 用于表示时间戳，即时间线上的一个瞬时点。
+*   `ZonedDateTime`: 一个 [java.time.ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html) 对象, 用于表示给定时区中的本地日期时间（典型的用途比如日历上的约会时间）。请注意，REST 和持久层都不支持时区，因此您最有可能使用 `Instant` 代替。
+*   `Boolean`: 一个 Java Boolean 对象。
+*   `Enumeration`: 一个 Java Enumeration 对象。选择此类型后，子生成器将询问您在枚举中想要的值，并创建一个特定的 `enum` 类来存储它们。
+*   `Blob`: 一个 Blob object 对象，用于存储一些二进制数据。选择此类型后，子生成器将询问您是想要存储通用二进制数据，图像对象或 CLOB（长文本）。图像将会在 Angular 端专门处理，这样就可以显示给最终用户。
 
-## Validation
+## 验证
 
-Validation can be set up for each field. Depending on the field type, different validation options will be available.
+可以为每个字段设置验证。字段类型不同，提供验证选项也会不同。
 
-Validation will be automatically generated on:
+验证将会自动生成在：
 
-*   the HTML views, using the Angular or React validation mechanism
-*   the Java domain objects, using [Bean Validation](http://beanvalidation.org/)
+*   HTML 视图，使用 Angular 或 React 验证机制
+*   Java 域对象（domain object），使用 [Bean Validation](http://beanvalidation.org/)
 
-Bean validation will then be used to automatically validate domain objects when they are used in:
+然后，Bean 验证将在以下情况下自动验证域对象：
 
-*   Spring MVC REST controllers (using the `@Valid` annotation)
-*   Hibernate/JPA (entities are automatically validated before being saved)
+*   Spring MVC REST 控制器（使用 `@Valid` 注释）
+*   Hibernate/JPA（实体在保存之前自动验证）
 
-Validation information will also be used to generate more precise database column metadata:
+验证信息还将用于生成更精确的数据库列的元数据（metadata）：
 
-*   Required fields will be marked non-nullable
-*   Unique fields will create a unique constraint
-*   Fields which have a maximum length will have the same column length
+*   必填字段将标记为不可为空（non-nullable）
+*   唯一字段将创建唯一约束（unique constraint）
+*   设有最大长度的字段将具有相同的列长度
 
-Validation has a few limitations:
+验证有一些限制：
 
-*   We don't support all validation options from Angular, React and Bean Validation, as we only support those which are common to both client and server APIs
-*   Regular Expression patterns don't work the same in JavaScript and in Java, so if you configure one, you might need to tweak one of the generated patterns
-*   JHipster generates unit tests that work for generic entities, without knowing your validation rules: it is possible that the generated tests do not pass the validation rules. In that case, you will need to update the sample values used in your unit tests, so that they pass the validation rules.
+*   我们不支持 Angular，React 和 Bean Validation 的所有验证选项，因为我们只支持客户端和服务器 API 共有的那些验证选项。
+*   正则表达式在 JavaScript 和 Java 中的工作方式不同，因此如果配置，则可能需要调整其中一个生成的模式。
+*   JHipster 在不知道验证规则的情况下生成实体的通用单元测试：生成的测试可能无法通过验证规则。在这种情况下，您需要更新单元测试中使用的样本值，以便它们通过验证规则。
 
-## Entity relationships
+## 实体关系
 
-Entity relationships are only available for SQL databases. It is a fairly complex subject, which has its own documentation page: [Managing relationships]({{ site.url }}/managing-relationships/).
+实体关系仅适用于 SQL 数据库。这是一个相当复杂的主题，它有自己的文档页面：[配置实体类关系]({{ site.url }}/managing-relationships/).
 
-## Generating a separate service class for your business logic
+## 为您的业务逻辑生成单独的服务类
 
-Having a separate service class allows to have more complex logic that just using a Spring REST Controller directly. Having a service layer (with or without an interface) will allow you to use DTOs (see next section).
+拥有一个单独的服务类允许拥有更复杂的逻辑，只需直接使用 Spring REST Controller。拥有服务层（有或没有接口）将允许您使用 DTO（请参阅下一节）。
 
-This is the same logic as using the [Spring service sub-generator]({{ site.url }}/creating-a-spring-service/), so we recommend to read its documentation to have more information.
+这与使用 [Spring service 子生成器]({{ site.url }}/creating-a-spring-service/)的逻辑相同，因此我们建议您阅读其文档以获取更多信息。
 
-## Data Transfer Objects (DTOs)
+## 数据传输对象（DTO）
 
-By default JHipster entities do not use DTOs, but they are available as an option, if you choose to have a service layer (see previous section). Here is the documentation: [Using DTOs]({{ site.url }}/using-dtos/).
+默认情况下，JHipster实体不使用DTO，但如果您选择拥有服务层，则它们可作为选项提供（请参阅上一节）。以下是文档：[创建 DTO]({{ site.url }}/using-dtos/)。
 
-## Filtering
+## 过滤
 
-Optionally, entities stored in SQL databases can be filtered using JPA. Here is the documentation: [Filtering your entities]({{ site.url }}/entities-filtering/).
+（可选）可以使用 JPA 过滤存储在 SQL 数据库中的实体。以下是文档：[过滤实体类]({{ site.url }}/entities-filtering/)。
 
-## Pagination
+## 分页
 
-Please note that pagination is not available if you created your application with [Cassandra]({{ site.url }}/using-cassandra/). Of course this will be added in a future release.
+请注意，如果您使用 [Cassandra]({{ site.url }}/using-cassandra/) 创建了应用程序，则无法进行分页。当然，这将在未来的版本中添加。
 
-Pagination uses [the Link header](http://tools.ietf.org/html/rfc5988), as in the [GitHub API](https://developer.github.com/v3/#pagination). JHipster provides a custom implementation of this specification on both the server (Spring MVC REST) and client (Angular/React) sides.
+分页使用 [the Link header](http://tools.ietf.org/html/rfc5988)，如 [GitHub API](https://developer.github.com/v3/#pagination)。JHipster 在服务器端（Spring MVC REST）和客户端（Angular / React）方面提供了该规范的自定义实现。
 
-When the entity is generated, JHipster provides 4 pagination options:
+生成实体时，JHipster 提供4个分页选项：
 
-*   No pagination (in that case, the back-end won't be paginated)
-*   A simple pager, based on [the Bootstrap pager](http://getbootstrap.com/components/#pagination-pager)
-*   A complete pagination system, based on [the Bootstrap pagination component](http://getbootstrap.com/components/#pagination)
-*   An infinite scroll system, based on [the infinite scroll directive](http://sroze.github.io/ngInfiniteScroll/)
+*   没有分页（在这种情况下，后端不会被分页）
+*   一个基于 [the Bootstrap pager](http://getbootstrap.com/components/#pagination-pager) 的简单的分页
+*   一个基于 [the Bootstrap pagination component](http://getbootstrap.com/components/#pagination) 的完整分页系统
+*   一个基于 [the infinite scroll directive](http://sroze.github.io/ngInfiniteScroll/) 的无限滚动系统
 
-## Updating an existing entity
+## 更新现有实体
 
-The entity configuration is saved in a specific `.json` file, in the `.jhipster` directory. So if you run the sub-generator again, using an existing entity name, you can update or regenerate the entity.
+实体配置保存在 `.jhipster` 目录中的特定 `.json` 文件中。因此，如果使用现有实体名称再次运行子生成器，则可以更新或重新生成现有实体。
 
-When you run the entity sub-generator for an existing entity, you will be asked a question 'Do you want to update the entity? This will replace the existing files for this entity, all your custom code will be overwritten' with following options:
+当您为现有实体运行实体子生成器时，系统会询问您“是否要更新实体？” 这将替换此实体的现有文件，将使用以下选项覆盖所有自定义代码：
 
-*   `Yes, re generate the entity` - This will just regenerate your entity. Tip: This can be forced by passing a `--regenerate` flag when running the sub-generator
-*   `Yes, add more fields and relationships` - This will give you questions to add more fields and relationships
-*   `Yes, remove fields and relationships` - This will give you questions to remove existing fields and relationships from the entity
-*   `No, exit` - This will exist the sub-generator without changing anything
+*   `Yes, re generate the entity` - 这将重新生成您的实体。提示：此选项可通过在运行子生成器时传递 `--reraterate` 标志来强制执行
+*   `Yes, add more fields and relationships` - 此选项将询问您希望添加的字段和关系
+*   `Yes, remove fields and relationships` - 此选项将询问您希望从实体中删除的现有字段和关系
+*   `No, exit` - 这将退出子生成器而不会改变任何东西
 
-You might want to update your entity for the following reasons:
+您可能会因为以下原因希望更新您的实体：
 
-*   You want to add/remove fields and relationships to an existing entity
-*   You want to reset your entity code to its original state
-*   You have updated JHipster, and would like to have your entity generated with the new templates
-*   You have modified the `.json` configuration file (the format is quite close to the questions asked by the generator, so it's not very complicated), so you can have a new version of your entity
-*   You have copy/pasted the `.json` file, and want a new entity that is very close to the copied entity
+*   您想要添加或者删除现有实体的字段和关系
+*   您想要将实体代码重置为其原始状态
+*   您已更新 JHipster，并希望使用新模板生成您的实体
+*   您已修改 `.json` 配置文件（它的格式非常接近实体生成器提出的问题，所以直接修改它不是很复杂），因此您希望应用实体的新版本
+*   您已复制或者粘贴 `.json` 文件，并希望生成一个与被复制的实体非常接近的新实体
 
-TIP: to regenerate all your entities at once, you can use the following commands (remove the `--force` to have questions asked when files have changed).
+提示：要一次性重新生成所有实体，可以使用以下命令（删除 `--force` 以在文件发生更改时显示询问问题）。
 
 *   Linux & Mac: ``for f in `ls .jhipster`; do jhipster entity ${f%.*} --force ; done``
 *   Windows: `for %f in (.jhipster/*) do jhipster entity %~nf --force`
 
-## Tutorial
+## 教程
 
-This is a short tutorial on creating two entities (a Author and a Book) which have a one-to-many relationship.
+这是小教程将创建两个具有一对多关系的实体（a Author and a Book）。
 
-**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need run `npm start` or `yarn start`. You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
+**要点** 如果您希望您的 JavaScript/TypeScript 代码被 “实时加载”（live reload），您需要运行 `npm start` 或者 `yarn start`. 您可以访问[开发环境的使用]({{ site.url }}/development/)页面获取更多信息.
 
-### Generate the "Author" entity
+### 创建 "Author" 实体
 
-As we want to have a one-to-many relationship between Authors and Books (one author can write many books), we need to create the Author first. At the database level, JHipster will then be able to add a foreign key on the Book table, linking to the Author table.
+由于我们希望在作者实体和书籍实体之间建立一对多的关系（一位作者可以写很多书），我们需要先创建作者实体。在数据库中，JHipster 将在 Book 表上添加外键，链接到 Author 表。
 
 `jhipster entity author`
 
-Answer the next questions concerning the fields of this entity, the author has:
+接着请回答有关该实体字段的问题，作者实体有：
 
-*   a "name" of type "String"
-*   a "birthDate" of type "LocalDate"
+*   一个 “String” 类型的 “name” 字段
+*   一个 “LocalDate” 类型的 “birthDate” 字段
 
-Then answer the questions concerning the relationships, the author has:
+然后回答有关实体关系的问题，作者实体有：
 
-*   A one-to-many relationship with the "book" entity (which doesn't exist yet)
+*   与 “book” 实体的一对多关系（书籍实体尚不存在）
 
-### Generate the "Book" entity
+### 创建 "Book" 实体
 
 `jhipster entity book`
 
-Answer the next questions concerning the fields of this entity, the book has:
+接着请回答有关该实体字段的问题，书籍实体有：
 
-*   a "title", of type "String"
-*   a "description", of type "String"
-*   a "publicationDate", of type "LocalDate"
-*   a "price", of type "BigDecimal"
+*   一个 “String” 类型的 “title” 字段
+*   一个 “String” 类型的 “description” 字段
+*   一个 “LocalDate” 类型的 “publicationDate” 字段
+*   一个 “BigDecimal” 类型的 “price” 字段
 
-Then answer the questions concerning the relationships, the book:
+然后回答有关实体关系的问题，书籍实体有：
 
-*   Has many-to-one relationship with the "author" entity
-*   And this relationship uses the "name" field (from the Author entity) to be displayed
+*   与 “author” 实体有多对一的关系
+*   此关系使用来自作者实体 “name” 字段进行显示
 
-### Check the generated code
+### 检查生成的代码
 
-Run the generated test suite, with `mvn test`, which will test the Author entity and the Book entity.
+使用 `mvn test` 运行生成的测试套件，它将测试作者实体和书籍实体。
 
-Launch the application (for example with `mvn`), log in and select the "Author" and "Book" entities in the "entities" menu.
+启动应用程序（例如使用 `mvn` 命令），登录并在 “实体” 菜单中选择 “Author” 和 “Book” 实体。
 
-Check the database tables, to see if your data is correctly inserted.
+检查数据库表，查看数据是否被正确插入。
 
-### Improve the generated code
+### 改进生成的代码
 
-The generated files contain all the basic CRUD operations, and don't need to be modified if your needs are simple.
+生成的文件包含所有基本的CRUD操作，如果您的需求很简单，则无需进行修改。
 
-If you want to modify the generated code or the database schema, you should follow our [development guide]({{ site.url }}/development/)
+如果要修改生成的代码或数据库模式，则应遵循我们的[开发指南]({{ site.url }}/development/)
 
-If you want some more complex business behaviors, you might need to add a Spring `@Service` class, using the [service sub-generator]({{ site.url }}/creating-a-service/).
+如果您想要一些更复杂的业务行为，您可能需要使用 [service 子生成器]({{ site.url }}/creating-a-service/) 来添加Spring `@Service` 类。
 
-### You're done!
+### 您完成教程了!
 
-Your generated CRUD page should look like this:
+您生成的 CRUD 页面应如下所示：
 
 ![]({{ site.url }}/images/screenshot_5.png)
