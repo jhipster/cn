@@ -23,8 +23,8 @@
 | contributing-companies.md             | | | |
 | contributing-individuals.md           | | | |
 | creating_a_service.md                 | | | |
-| creating_an_app.md                    | finished    | EricLiu8539 | jhipstercn  |
-| creating_an_entity.md                 | to check    | yu-geng     |             |
+| creating_an_app.md                    | finished    | @EricLiu8539 | jhipstercn  |
+| creating_an_entity.md                 | to check    | @yu-geng     |             |
 | creating-a-spring-controller.md       | | | |
 | creating-microservices.md             | | | |
 | customizing-bootstrap-3.md            | | | |
@@ -33,7 +33,7 @@
 | development.md                        | | | |
 | docker_compose.md                     | | | |
 | docker_hub.md                         | | | |
-| doing_api_first_development.md        | | | |
+| doing_api_first_development.md        | to check    | @yu-geng     |             |
 | entities-filtering.md                 | | | |
 | fisher.md                             | | | |
 | fisherman.md                          | | | |
@@ -79,7 +79,7 @@
 | tls.md                                | | | |
 | traefik.md                            | | | |
 | training.md                           | | | |
-| upgrading_an_app.md                   | | | |
+| upgrading_an_app.md                   | to do       | @yu-geng     |             |
 | using_angular.md                      | | | |
 | using_angularjs.md                    | | | |
 | using_cache.md                        | | | |
@@ -87,7 +87,7 @@
 | using_couchbase.md                    | | | |
 | using_dtos.md                         | | | |
 | using_elasticsearch.md                | | | |
-| using_kafka.md                        | | | |
+| using_kafka.md                        | to check    | @yu-geng     |             |
 | using_mongodb.md                      | | | |
 | using_oracle.md                       | | | |
 | using_websockets.md                   | | | |

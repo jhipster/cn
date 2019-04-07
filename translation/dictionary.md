@@ -4,6 +4,7 @@ Glossary for Chinese translators
 
 appliction		应用程序  
 bug tracker     错误跟踪器  
+build tool      构建工具   
 change set      更改集  
 closed ticket	完成的工单  
 command-line interface 命令行界面  
@@ -19,6 +20,7 @@ integration test 集成测试
 keyword         保留关键字  
 live reload     实时加载  
 merge			合并  
+messaging system 消息系统   
 metadata        元数据  
 performance test 性能测试  
 pull request 	拉回请求   
@@ -29,5 +31,6 @@ sub-generator   子生成器
 test suite      测试套件  
 time-line       时间线  
 timestamp       时间戳  
+topic           话题   
 validation rule 验证规则  
 view            视图  
