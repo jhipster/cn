@@ -138,7 +138,7 @@ JHipster 将使用[bucket4j]（https://github.com/vladimir-bukhtoyarov/bucket4j�
             authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
                 app1: /api,/v2/api-docs # recommended dev configuration
 
-For example, if you only want the `/api/foo` endpoint of microservice `bar` to be available:
+例如，如果只希望微服务`/api/foo` endpoint的微服务 `bar` 可用:
 
     jhipster:
         gateway:

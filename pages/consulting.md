@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Professional help
+title: 专业帮助
 permalink: /consulting/
 redirect_from:
   - /consulting.html
@@ -9,27 +9,20 @@ sitemap:
     lastmod: 2014-08-27T00:00:00-00:00
 ---
 
-# <i class="fa fa-user-md"></i> Professional help
+# <i class="fa fa-user-md"></i> 专业帮助
 
 _Professional help is provided by core committers of JHipster._
 
-Professional help ensures you that:
+专业帮助确保：
 
-*   Your questions will be answered correctly and on time
-*   Bugs will be fixed with high priority, by people having the commit rights to the project
+*   您的问题将得到正确及时的回答。
+*   具有项目提交权限的人员将以高优先级修复Bug。
 
-And of course, this will help the project to continue growing!
+当然，这将有助于项目继续发展！
 
 * * *
 
-## United States
+## China
 
 #### Ippon Technologies USA
-
-[http://www.ipponusa.com/](http://www.ipponusa.com/)
-
-## France
-
-#### Ippon Technologies
-
-[http://www.ippon.fr/](http://www.ippon.fr/)
+<img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">

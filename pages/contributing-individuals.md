@@ -1,28 +1,28 @@
 ---
 layout: default
-title: Contributing Individuals
+title: 贡献的个人
 permalink: /contributing-individuals/
 sitemap:
     priority: 0.1
     lastmod: 2017-11-29T00:00:00-00:00
 ---
-# <i class="fa fa-keyboard-o"></i> Individual contributions
+# <i class="fa fa-keyboard-o"></i> 贡献的个人
 
-JHipster has a lot of [contributors](https://github.com/jhipster/generator-jhipster/graphs/contributors), and we make our best to help people contribute! We'd love to have you on board!
+JHipster有很多[contributors](https://github.com/jhipster/generator-jhipster/graphs/contributors), 我们尽最大努力帮助人们投稿！
 
-## Code of conduct
+## 行为守则
 
-Before you contribute, please read our [Code of Conduct](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md).
+在您投稿之前，请阅读我们的 [Code of Conduct](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md).
 
-## Reaching for help
+## 寻求帮助
 
-As anybody on the project, you can reach for help using our usual support channels, as listed on our [Help page]({{ site.url }}/help/).
+作为项目中的任何人，您都可以使用我们通常的支持渠道寻求帮助，如[ [Help page]({{ site.url }}/help/).
 
-Whatever you do, the team will do its best to help you by:
+无论你做什么，团队都会尽力帮助你：
 
 - Commenting your tickets
 - Reviewing your Pull Requests
 
-## How to contribute
+## 如何贡献
 
-Our [Contributing guide](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md) should give you all the pointers to get started and do your first Pull Request.
+我们的 [Contributing guide](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md) 应该为您提供开始和执行第一个拉请求的所有指导。

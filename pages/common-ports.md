@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Common ports
+title: 公共端口
 permalink: /common-ports/
 sitemap:
     priority: 0.7
     lastmod: 2018-10-15T10:20:00-00:00
 ---
 
-# <i class="fa fa-plug"></i> Common ports
+# <i class="fa fa-plug"></i> 公共端口
 
-JHipster configures many tools and services, and each of them will likely use one or several ports. Here is a documentation to help understand what each port does, and help in case of a port conflict.
+JHipster配置了许多工具和服务，它们中的每一个都可能使用一个或多个端口。以下是帮助理解每个端口所做工作的文档，并在端口冲突时提供帮助。
 
-Please note that as per the JHipster [Policy 1]({{ site.url }}/policies/), the standard port for each technology is used, unless that causes a problem (that should be explained here).
+请注意，根据[Policy 1]({{ site.url }}/policies/), 的规定，使用每种技术的标准端口，除非这会导致问题（应在此处解释）。
 
-The ports here are listed in order, but the most common questions are for ports `8080`, `9000` and `9060`.
+这里的端口按顺序列出，但最常见的问题是端口 `8080`, `9000` and `9060`.
 
 <table class="table table-striped table-responsive">
   <tr>

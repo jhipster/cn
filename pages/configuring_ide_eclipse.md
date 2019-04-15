@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuring Eclipse with Maven
+title: 使用Maven进行Eclipse的配置
 permalink: /configuring-ide-eclipse/
 redirect_from:
   - /configuring_ide_eclipse.html
@@ -9,14 +9,14 @@ sitemap:
     lastmod: 2015-05-22T18:40:00-00:00
 ---
 
-# <i class="fa fa-keyboard-o"></i> Configuring Eclipse
+# <i class="fa fa-keyboard-o"></i> 使用Maven进行Eclipse的配置
 
-Importing your JHipster application in Eclipse will require a few manual steps. You will need to do some configuration:
+在Eclipse中导入JHipster应用程序需要几个手动步骤。您需要进行一些配置：
 
 - on the Maven side (for Maven users)
 - on the JavaScript side (so Eclipse can ignore a couple of folders for static files)
 
-## 1. Import your project as a Maven project
+## 1. 将项目导入为Maven项目
 
 - Select File -> Import
 - Choose "Existing Maven Projects"
@@ -28,23 +28,23 @@ Importing your JHipster application in Eclipse will require a few manual steps. 
 ![Select]({{ site.url }}/images/configuring_ide_eclipse_2.png)
 
 
-At the end of the import phase, you can expect to see the below dialog.  "Maven plugin connectors" are an extension for m2eclipse. That one should be installed and Eclipse will need to restart after completion.
+在导入阶段结束时，您可以看到下面的对话框。“Maven插件连接器”是M2Eclipse的扩展。应该安装一个，Eclipse需要在完成后重新启动。
 
-If you have installed it already, you will be good to go and do not need to do anything.
+如果您已经安装了它，您将很好地去，不需要做任何事情。
 
 ![Select]({{ site.url }}/images/configuring_ide_eclipse_maven_processor.png)
 
-__Note__: if you already have an existing JHipster project and have not installed the corresponding connector, you should see the below error:
+__Note__: 如果您已经有了一个现有的Jhipster项目，并且没有安装相应的连接器，那么应该会看到以下错误：
 
 `Plugin execution not covered by lifecycle configuration: org.bsc.maven:maven-processor-plugin:2.2.4:process (execution: process, phase: generate-sources)`
 
-Just select Quick Fix/Ctrl+1 (Cmd+1 on Mac) on the error marker and select "Discover new m2e connectors"
+只需在错误标记上选择快速修复/ctrl+1（在Mac上选择Cmd+1），然后选择“发现新的M2E连接器”。
 
-## 2. Excluding generated static folders
-At this stage you should not have any Java error but should still see some JavaScript errors. This is because you have some JavaScript files that Eclipse cannot parse properly. Those files are used at execution time only and do not need to be visible in your workspace. They should be excluded.
+## 2. 排除生成的静态文件夹
+在这个阶段，您不应该有任何Java错误，但仍然应该看到一些JavaScript错误。这是因为有些JavaScript文件Eclipse无法正确解析。这些文件仅在执行时使用，不需要在工作区中可见。他们应该被排除在外。
 
 
-### Exclude the ‘node_modules’ folder
+### 排除 ‘node_modules’ 文件夹
 
 - Right-click on Project -> Properties -> Resource -> Resource Filters
 - Select: Exclude all, Applies to folders, Name matches node_modules
@@ -55,7 +55,7 @@ At this stage you should not have any Java error but should still see some JavaS
 ![Exclude]({{ site.url }}/images/configuring_ide_eclipse_4.png)
 
 
-### Exclude 'app' from src/main/webapp
+### 排除 'app' from src/main/webapp
 
 - Right click on Project -> Properties -> Javascript -> Include path
 - Click on the “source” tab and select your_project/src/main/webapp
@@ -73,17 +73,17 @@ At this stage you should not have any Java error but should still see some JavaS
 
 ### Maven IDE profile
 
-If you are using Maven, you need to activate the `IDE` profile in Eclipse. This is used for applying IDE-specific tweaks, which currently only includes applying the MapStruct annotation processor.
+如果使用maven，则需要在eclipse中激活`IDE`配置文件。这用于应用特定于IDE的调整，目前只包括应用mapstruct注释处理器。
 
 - Right click on Project -> Properties -> Maven
 - In "Active Maven Profiles", type `dev,IDE`
 
 With this configuration, you will be using both the JHipster `dev` and `IDE` profiles.
 
-### Configuring MapStruct plugins
+### 配置 MapStruct 插件
 
-In case for the IDE correctly recognize the mapstruct code generator some more things needs to be done.
+为了让IDE正确识别mapstruct代码生成器，还需要做一些其他的事情。
 
-You should use the plugin m2e-apt (https://marketplace.eclipse.org/content/m2e-apt). Installing the m2e-apt plugin, enable Eclipse to work along with mapstruct.
+您应该使用插件m2e apt(https://marketplace.eclipse.org/content/m2e apt)。安装m2e apt插件，使Eclipse能够与mapstruct一起工作。
 
-Also you can install the plugin MapStruct Eclipse Plugin (https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin) for help and tips from the IDE. 
+此外，您还可以安装插件mapstruct eclipse插件(https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin)，以获取IDE的帮助和提示。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuring your IDE
+title: 配置IDE
 permalink: /configuring-ide/
 redirect_from:
   - /configuring_ide.html
@@ -9,9 +9,9 @@ sitemap:
     lastmod: 2015-05-22T18:40:00-00:00
 ---
 
-# <i class="fa fa-keyboard-o"></i> Configuring your IDE
+# <i class="fa fa-keyboard-o"></i> 配置IDE
 
-JHipster projects can be developed without any IDE, all you need are a text editor and the command line. Of course, in order to be productive, people either use full-fledged IDEs or advanced text editors. Here is how you can configure them:
+JHipster项目可以在没有任何IDE的情况下开发，您只需要一个文本编辑器和命令行。当然，为了提高效率，人们要么使用成熟的IDE，要么使用高级文本编辑器。以下是如何配置它们：
 
 - [Configuring Eclipse with Maven]({{ site.url }}/configuring-ide-eclipse/)
 - [Configuring Eclipse with Gradle]({{ site.url }}/configuring-ide-eclipse-gradle/)

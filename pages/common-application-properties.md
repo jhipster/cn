@@ -1,35 +1,35 @@
 ---
 layout: default
-title: Common application properties
+title: 常用应用程序属性
 permalink: /common-application-properties/
 sitemap:
     priority: 0.7
     lastmod: 2018-03-18T18:20:00-00:00
 ---
 
-# <i class="fa fa-flask"></i> Common application properties
+# <i class="fa fa-flask"></i> 常用应用程序属性
 
-JHipster generates a Spring Boot application, and can be configured using the standard Spring Boot properties mechanism.
+JHipster生成一个Spring引导应用程序，可以使用标准的Spring引导属性机制进行配置。
 
-Those properties are configured at generation-time by JHipster, and often have different values in development and production modes: learn more about this in our [Profiles documentation]({{ site.url }}/profiles/).
+这些属性是由jhipster在生成时配置的，并且在开发和生产模式中通常具有不同的值：在我们的[Profiles documentation]({{ site.url }}/profiles/)中了解更多信息。
 
-In a JHipster application, there are three kinds of properties:
+在JHipster应用程序中，有三种属性：
 
 1. [Spring Boot standard application properties](#1)
 2. [JHipster application properties](#2)
 3. [Application-specific properties](#3)
 
-## <a name="1"></a> Spring Boot standard application properties
+## <a name="1"></a> Spring Boot标准应用属性
 
-Like any Spring Boot application, JHipster allows you to configure any standard [Spring Boot application property](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).
+与任何Spring Boot应用程序一样，JHipster允许您配置任何标准 [Spring Boot application property](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).
 
-## <a name="2"></a> JHipster application properties
+## <a name="2"></a> JHipster应用属性
 
-JHipster provides specific application properties, which come from the [JHipster server-side library](https://github.com/jhipster/jhipster). Those properties are standard for all JHipster projects, but some of them only work depending on what you selected when you built your application: for example the `jhipster.cache.hazelcast` key only works if you selected Hazelcast as your 2nd-level Hibernate cache.
+JHipster提供特定的应用程序属性，这些属性来自[JHipster server-side library](https://github.com/jhipster/jhipster). 这些属性是所有JHipster项目的标准属性，但其中一些属性仅根据您在构建应用程序时选择的内容工作: 例如 `jhipster.cache.hazelcast` 键仅在您选择Hazelcast作为二级Hibernate缓存时工作。.
 
-Those properties are configured using the `io.github.jhipster.config.JHipsterProperties` class.
+这些属性是使用 `io.github.jhipster.config.JHipsterProperties`类配置的。
 
-Here is a documentation for those properties:
+以下是这些属性的文档：
 
     jhipster:
 
@@ -191,6 +191,6 @@ Here is a documentation for those properties:
 
 ## <a name="3"></a> Application-specific properties
 
-Your generated application can also have its own Spring Boot properties. This is highly recommended, as it allows type-safe configuration of the application, as well as auto-completion and documentation within an IDE.
+生成的应用程序也可以有自己的Spring引导属性。强烈建议这样做，因为它允许应用程序的类型安全配置，以及在一个IDE中自动完成和记录。
 
-JHipster has generated a `ApplicationProperties` class in the `config` package, which is already preconfigured, and it is already documented at the bottom the `application.yml`, `application-dev.yml` and `application-prod.yml` files. All you need to do is code your own specific properties.
+JHipster在“config”包中生成了一个“applicationproperties”类，该类已经预配置，并且已经在底部记录了“application.yml”、“application-dev.yml”和“application-prod.yml”文件。您需要做的只是编写您自己的特定属性代码。

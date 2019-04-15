@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuring a corporate proxy
+title: 配置公司代理
 permalink: /configuring-a-corporate-proxy/
 redirect_from:
   - /configuring_a_corporate_proxy.html
@@ -9,37 +9,37 @@ sitemap:
     lastmod: 2016-08-18T08:00:00-00:00
 ---
 
-# <i class="fa fa-exchange"></i> Configuring a corporate proxy
+# <i class="fa fa-exchange"></i> 配置公司代理
 
-When JHipster is used in a company, you probably will need to configure all tools to bypass the corporate proxy.
+当JHipster在公司中使用时，您可能需要配置所有工具来绕过公司代理。
 
-You can try to configure the `HTTP_PROXY` and `HTTPS_PROXY` environment variables or use a tool like [Cntlm](http://cntlm.sourceforge.net/).
+您可以尝试配置 `HTTP_PROXY` and `HTTPS_PROXY` 环境变量，或者使用类似 [Cntlm](http://cntlm.sourceforge.net/).
 
-But this probably won't be enough, so you will need to configure separately all the tools that are used with JHipster.
+但这可能还不够，因此您需要分别配置JHipster使用的所有工具。
 
-## Introduction
+## 介绍
 
-Supposing your proxy is defined with:
+假设你的代理是用:
 
 - username
 - password
 - host
 - port
 
-The resulting configuration is: `http://username:password@host:port`
+结果配置为: `http://username:password@host:port`
 
-If your use [Cntlm](http://cntlm.sourceforge.net/), then your configuration would be: `127.0.0.1:3128`. Otherwise, follow the next steps to configure each tool individually.
+如果你使用 [Cntlm](http://cntlm.sourceforge.net/), 那么你的配置是: `127.0.0.1:3128`. 否则, 按照以下步骤分别配置每个工具。
 
-## NPM configuration
+## NPM 配置
 
-Use these commands:
+使用这些命令:
 
 ```
 npm config set proxy http://username:password@host:port
 npm config set https-proxy http://username:password@host:port
 ```
 
-Or you can edit directly your `~/.npmrc` file:
+或者您可以直接编辑 `~/.npmrc`:
 
 ```
 proxy=http://username:password@host:port
@@ -47,7 +47,7 @@ https-proxy=http://username:password@host:port
 https_proxy=http://username:password@host:port
 ```
 
-## Yarn configuration
+## Yarn 配置
 
 Use these commands:
 
@@ -56,7 +56,7 @@ yarn config set proxy http://username:password@host:port
 yarn config set https-proxy http://username:password@host:port
 ```
 
-## Git configuration
+## Git 配置
 
 Use these commands:
 
@@ -65,7 +65,7 @@ git config --global http.proxy http://username:password@host:port
 git config --global https.proxy http://username:password@host:port
 ```
 
-Or you can edit directly your `~/.gitconfig` file:
+或者您可以直接编辑 `~/.gitconfig`:
 
 ```
 [http]
@@ -74,7 +74,7 @@ Or you can edit directly your `~/.gitconfig` file:
         proxy = http://username:password@host:port
 ```
 
-## Maven configuration
+## Maven 配置
 
 Edit the `proxies` session in your `~/.m2/settings.xml` file
 
@@ -98,19 +98,19 @@ Edit the `proxies` session in your `~/.m2/settings.xml` file
 Create a new file `.mvn/jvm.config` inside the project folder and set the properties accordingly:
 
 ```
--Dhttp.proxyHost=host 
--Dhttp.proxyPort=port 
--Dhttps.proxyHost=host 
--Dhttps.proxyPort=port 
--Dhttp.proxyUser=username 
+-Dhttp.proxyHost=host
+-Dhttp.proxyPort=port
+-Dhttps.proxyHost=host
+-Dhttps.proxyPort=port
+-Dhttp.proxyUser=username
 -Dhttp.proxyPassword=password
 ```
 
-## Gradle configuration
+## Gradle 配置
 
 Add the below in your `gradle.properties` file and in your `gradle/wrapper/gradle-wrapper.properties` file if you are downloading the wrapper over a proxy
 
-If you want to set these properties globally then add it in `USER_HOME/.gradle/gradle.properties` file
+如果要全局设置这些属性，请将其添加到 `USER_HOME/.gradle/gradle.properties`
 
 ```
 ## Proxy setup
@@ -135,16 +135,16 @@ systemProp.https.nonProxyHosts=local.net|some.host.com
 
 ### Native Docker
 
-Depending on your OS, you have to edit a specific file (`/etc/sysconfig/docker` or `/etc/default/docker`).
+根据操作系统的不同，您必须编辑特定的文件 (`/etc/sysconfig/docker` or `/etc/default/docker`).
 
-Then, you have to restart the docker service with: `sudo service docker restart`.
+然后，您必须使用以下命令重新启动Docker服务： `sudo service docker restart`.
 
-It will not apply to systemd. See this [page from docker](https://docs.docker.com/engine/admin/systemd/#http-proxy)
-to configure the proxy.
+它不适用于SystemD。参见 [page from docker](https://docs.docker.com/engine/admin/systemd/#http-proxy)
+配置代理。
 
 ### Docker with docker-machine
 
-You can create your docker-machine with:
+您可以使用以下命令创建Docker机器：
 
 ```
 docker-machine create -d virtualbox \
@@ -153,4 +153,4 @@ docker-machine create -d virtualbox \
     default
 ```
 
-Or you can edit the file `~/.docker/machine/machines/default/config.json`.
+或者您可以直接编辑 `~/.docker/machine/machines/default/config.json`.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contributing Companies
+title: 贡献的公司
 permalink: /contributing-companies/
 redirect_from:
   - /thanks/
@@ -9,9 +9,9 @@ sitemap:
     priority: 0.1
     lastmod: 2017-11-29T00:00:00-00:00
 ---
-# <i class="fa fa-building"></i> Companies contributing or helping the project
+# <i class="fa fa-building"></i> 贡献的公司
 
-## Companies contributing to JHipster
+## 给JHipster贡献的公司
 
 *   [Ippon Technologies](http://www.ippon.fr/), which provides time and hardware to [@juliendubois](https://twitter.com/juliendubois) so he can improve the project. Ippon Technologies also provides 1 day per month to contribute for everyone who is in Julien's team, as well as 2 paid internships every year on the project.
 *   [XebiaLabs](https://xebialabs.com/), which provides time and hardware to [@deepu105](https://twitter.com/deepu105) so he can improve the project.
@@ -25,7 +25,7 @@ sitemap:
 *   [Redhat](https://www.redhat.com/en) contributed the [Openshift sub-generator]({{ site.url }}/openshift/) and Infinispan support. It is maintained by [Srinivasa Vasu](https://twitter.com/srinivasavasu) who is also a core JHipster team member.
 *   [JFrog](https://jfrog.com/) which provides us with a free Artifactory instance, which is used for our builds and our releases.
 
-## Companies helping to develop JHipster
+## 帮助开发JHipster的公司
 
 These companies help us to develop JHipster
 
@@ -35,7 +35,7 @@ These companies help us to develop JHipster
 *   YourKit, LLC, which gives us free licenses for the [YourKit Java profiler](http://www.yourkit.com/java/profiler/index.jsp).
 *   EJ Technologies, which gives us free licenses for the [JProfiler Java profiler](http://www.ej-technologies.com/products/jprofiler/overview.html).
 
-## Projects and communities contributing to JHipster
+## 对JHipster有贡献的项目和社区
 
 JHipster works closely with other OSS communities, which often contributes code, advice and reviews to the project.  Important contributions have been made by:
 
@@ -44,6 +44,6 @@ JHipster works closely with other OSS communities, which often contributes code,
 *   [Angular](https://angular.io/).
 *   [UI Router](https://ui-router.github.io/), the Angular router used until JHipster 4.
 
-## Special thanks
+## 特别感谢
 
-And a very special thanks to the development team from [Galeries Lafayette](http://www.galerieslafayette.com/), which had the original idea of making Grunt work with Ant, and create a modern Web front-end on top of a more classical Spring MVC application.
+感谢[Galeries Lafayette](http://www.galerieslafayette.com/)的开发团队, 它最初的想法是让Grunt与Ant一起工作，并在更经典的SpringMVC应用程序之上创建一个现代的Web前端。

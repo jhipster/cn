@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Configuring Visual Studio Code
+title: 配置Visual Studio Code
 permalink: /configuring-ide-visual-studio-code/
 sitemap:
     priority: 0.7
     lastmod: 2016-09-15T17:13:00-00:00
 ---
 
-# <i class="fa fa-keyboard-o"></i> Configuring Visual Studio Code
+# <i class="fa fa-keyboard-o"></i> 配置Visual Studio Code
 
-Visual Studio Code is an Open Source text editor made by Microsoft. It has excellent support for TypeScript, so many people want to use it for developing Angular 2 applications.
+Visual Studio Code是一个由Microsoft开发的开源文本编辑器。它对字体脚本有很好的支持，所以很多人都想用它来开发Angular2应用程序。
 
 ![Screenshot]({{ site.url }}/images/configuring_ide_visual_studio_code_1.png)
 
@@ -17,45 +17,45 @@ Visual Studio Code is an Open Source text editor made by Microsoft. It has excel
 
 **Warning! At the time of this writing, this extension is broken**
 
-Visual Studio Code has a Yeoman extension, which should help you run JHipster commands.
+Visual Studio Code 有一个Yeoman扩展, 它可以帮助您运行JHipster命令。
 
-You can install it by using the Visual Studio Code marketplace:
+您可以使用Visual Studio代码市场进行安装：
 
 ![Screenshot]({{ site.url }}/images/configuring_ide_visual_studio_code_2.png)
 
-## Java Code Support
+## Java代码支持
 
-Visual Studio Code has a Java extension developped by Red Hat. It has a good Java support, using Maven or Gradle.
+VisualStudio代码有一个由Red Hat开发的Java扩展。它具有良好的Java支持，使用Maven或Gradle。
 
-You can install it by using the Visual Studio Code marketplace:
+您可以使用Visual Studio代码市场进行安装：
 
 ![Screenshot]({{ site.url }}/images/configuring_ide_visual_studio_code_3.png)
 
-## Common tasks: compiling, running and packaging the code
+## Common tasks: 编译、运行和打包代码
 
-The Visual Studio Code Java extension can't be used to run commands: it can't compile, run the code, or package the application.
+VisualStudio代码Java扩展不能用于运行命令：它不能编译、运行代码或打包应用程序。
 
-For all those tasks, there are 2 solutions:
+对于所有这些任务，有两种解决方案：
 
 - Use the [JHipster App]({{ site.url }}/jhipster-app), which offers a graphical interface for all those commands
 - Use the terminal, for instance the internal terminal provided by Visual Studio Code, to run those commands manually
 
-## Application "hot restart" with Spring Boot devtools
+## 使用Spring Boot Devtools的应用程序“热重启”
 
-[Spring Boot devtools](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html) is configured by JHipster, and will "hot restart" your application when classes from your project are compiled. This is a must-have feature, as it makes your application updated on the fly.
+[Spring Boot devtools](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html)由JHipster配置，并在编译项目中的类时“热重启”应用程序。这是一个必须具备的特性，因为它可以让您的应用程序即时更新。
 
-To use it within Visual Studio Code, you need to:
+要在Visual Studio Code中使用它，需要:
 
-- Run your application in a terminal, typically by typing `./mvnw`
-- In another terminal, compile your application: `./mvnw compile`
+- 在终端中运行应用程序，通常通过键入 `./mvnw`
+- 在另一个终端中，编译应用程序：`./mvnw compile`
 
-In the first terminal, your JHipster application should automatically redeploy, and use your new code.
+在第一个终端中，JHipster应用程序应该自动重新部署，并使用新代码。
 
-If you use the JHipster App, this is only a matter of clicking on 2 buttons (one for running the application, the other for compiling it), and your application will automatically redeploy in the same way.
+如果使用JHipster应用程序，只需点击两个按钮（一个用于运行应用程序，另一个用于编译应用程序），应用程序将以相同的方式自动重新部署。
 
-## Custom settings
+## 自定义设置
 
-For best performance, it's recommended to exclude some folders, in your project's `.vscode` folder create a `settings.json` file as below:
+为了获得最佳性能，建议在项目的`.vscode`文件夹中排除一些文件夹，创建一个` settings.json`文件，如下所示：
 
 ```
 {
