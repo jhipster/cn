@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Deploying to AWS with Boxfuse
+title: 使用Boxfuse部署到AWS
 permalink: /boxfuse/
 redirect_from:
   - /boxfuse.html
@@ -9,44 +9,45 @@ sitemap:
     lastmod: 2016-08-22T00:00:00-00:00
 ---
 
-# Deploying to AWS with Boxfuse
+# 使用Boxfuse部署到AWS
 
-This guide show how to deploy your JHipster application to AWS using [Boxfuse](https://boxfuse.com/).
+本指南介绍如何使用[boxfuse](https://boxfuse.com/)将Jhipster应用程序部署到AWS。
 
 [![]({{ site.url }}/images/logo/logo-boxfuse.png)](https://boxfuse.com/)
 
-Boxfuse comes with **first-class support for JHipster** and works by creating minimal immutable machine images for your application, which can then be deployed either on VirtualBox or on AWS.
+Boxfuse附带 **first-class support for JHipster**，它通过为您的应用程序创建最小的不可变机器映像来工作，然后可以在virtualbox或AWS上部署这些映像。
 
 <div class="alert alert-info"><i>Tip: </i>
 
-As an alternative to Boxfuse you can also deploy your JHipster application to AWS using <a href="{{ site.url }}/aws/">Elastic Beanstalk</a>.
+作为Boxfuse的替代方案，您也可以使用弹性Beanstalk将JHipster应用程序部署到AWS。
 
 </div>
 
-## Prerequisites
+## 前置条件
 
-To be able to deploy, you must first [create a Boxfuse account](https://console.boxfuse.com) and install the [Boxfuse Client](https://boxfuse.com/getstarted/download).
+要能够部署，必须首先[创建一个Boxfuse账号](https://console.boxfuse.com)并安装 [Boxfuse Client](https://boxfuse.com/getstarted/download).
 
-You will also need to connect your AWS account in the [Boxfuse Console](https://console.boxfuse.com).
+您还需要在[Boxfuse Console](https://console.boxfuse.com)中连接您的AWS帐户。
 
-## Preparing a deployment
+## 准备部署
 
-When your application is ready, you can prepare it for deployment by typing:
+当应用程序准备就绪时，您可以通过键入以下内容来准备部署：
 
 `./mvnw package -Pprod -DskipTests`
 
-Or when using gradle:
+或者使用gradle:
 
 `./gradlew -Pprod bootWar -x test`
 
-## Deploying to AWS
+## 部署到AWS
 
-To deploy your application to AWS type:
+要将应用程序部署到AWS类型，请执行以下操作：
 
 `boxfuse run -env=prod`
 
-Boxfuse will then analyse your application, fuse a minimal machine image for it and automatically provision, configure and secure all necessary
-AWS infrastructure (instances, security groups, Elastic IPs, ELBs, MySQL or PostgreSQL RDS databases, ...)
+然后BoxFuse将分析您的应用程序，为其融合最小的机器图像，并自动提供、配置和保护所有必要的
+
+AWS基础设施(instances, security groups, Elastic IPs, ELBs, MySQL or PostgreSQL RDS databases, ...)
 
 <pre>Creating jhipster ...
 Mapping jhipster-dev-myuser.boxfuse.io to 127.0.0.1 ...
@@ -80,12 +81,12 @@ Note that you didn't need to explicitly specify things like ports, healthcheck u
 from your JHipster war based on your `application-prod.yml` file and the included jars. You can of course
 override those auto-discovered settings if you want to, but in most cases you won't need to.
 
-## Deploying updates
+## 部署更新
 
-To deploy an update to an existing application simply follow the preparation and deploy steps outlined above. All updates
-are performed as zero downtime-blue deployments.
+要将更新部署到现有应用程序，只需遵循上面概述的准备和部署步骤。所有更新
+执行为零停机蓝色部署。
 
-## More information
+## 更多信息
 
 *   [Get Started with Boxfuse and JHipster](https://boxfuse.com/getstarted/jhipster)
 *   [JHipster Boxfuse documentation](https://boxfuse.com/docs/payloads/jhipster)

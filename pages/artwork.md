@@ -9,6 +9,6 @@ sitemap:
     lastmod: 2015-07-10T00:00:00-00:00
 ---
 
-# <i class="fa fa-pencil"></i> Artwork
+# <i class="fa fa-pencil"></i> 设计图
 
-All our artwork can be found in the our [artwork repository](https://github.com/jhipster/jhipster-artwork).
+我们所有的设计图都在 [artwork repository](https://github.com/jhipster/jhipster-artwork).

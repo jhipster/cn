@@ -1,38 +1,38 @@
 ---
 layout: default
-title: Code Quality
+title: 代码质量
 permalink: /code-quality/
 sitemap:
     priority: 0.7
     lastmod: 2018-08-18T12:40:00-00:00
 ---
 
-# <i class="fa fa-diamond"></i> Code quality
+# <i class="fa fa-diamond"></i> 代码质量
 
-Code quality can be easily analyzed using [SonarCloud](https://sonarcloud.io), which is automatically configured by JHipster.
+使用JHipster自动配置的[SonarCloud](https://sonarcloud.io)可以很容易地分析代码质量。
 
-## Using Sonar with JHipster
+## 在JHipster使用Sonar
 
-JHipster provides a specific Docker Compose configuration for Sonar ([here is the JHipster Docker Compose documentation]({{ site.url }}/docker-compose/)) that provides an out-of-the box Sonar instance. At the root of your project, please run:
+JHipster为Sonar提供了Docker Compose配置 ([here is the JHipster Docker Compose documentation]({{ site.url }}/docker-compose/)) that provides an out-of-the box Sonar instance. At the root of your project, please run:
 
     docker-compose -f src/main/docker/sonar.yml up -d
 
-If you use Maven, it has been automatically configured:
+如果使用maven，则会自动配置它：
 
     ./mvnw -Pprod clean test sonar:sonar
 
-If you use Gradle, it has also been automatically configured:
+如果使用Gradle，它也会自动配置：
 
     ./gradlew -Pprod clean test sonarqube
 
-Once the analysis completes, it will be available on the Sonar dashboard, which by default is available on [http://127.0.0.1:9001/](http://127.0.0.1:9001/).
+分析完成后，Sonar仪表板将显示该信息，默认情况下, 默认可以在[http://127.0.0.1:9001/](http://127.0.0.1:9001/).
 
-## Automatic analysis of the default generated project
+## 自动代码分析
 
-The JHipster generator project publishes a sample project which is analyzed every time a new commit is merged in the "master" branch:
+JHipster生成器项目发布一个示例项目，每次在“master”分支中合并一个新的提交时都会分析该示例项目：
 
 [Analysis of the sample JHipster project](https://sonarcloud.io/dashboard?id=io.github.jhipster.sample%3Ajhipster-sample-application)
 
-This allows the JHipster team to make sure that you will start developing your project on the cleanest code possible.
+这允许JHipster团队确保您将开始在尽可能干净的代码上开发项目。
 
-This analysis is provided for free by [SonarCloud](https://sonarcloud.io).
+此分析由 [SonarCloud](https://sonarcloud.io)免费提供。
