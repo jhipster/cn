@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Fisher
+title: 使用 Fisher
 permalink: /fisher/
 redirect_from:
   - /fisher.html
@@ -9,19 +9,19 @@ sitemap:
     lastmod: 2018-10-20T18:40:00-00:00
 ---
 
-# <i class="fa fa-terminal"></i> Using Fisher 
+# <i class="fa fa-terminal"></i> 使用 Fisher
 
-If you are using Linux or Mac OS X, [fisher](https://github.com/jorgebucaran/fisher) is a great tool to manage your [fish shell](http://fishshell.com/) configuration.
+如果您使用的是Linux或Mac OS X，[fisher](https://github.com/jorgebucaran/fisher) 是一个不错的工具用来管理您的[fish shell](http://fishshell.com/) 配置.
 
-Some of the JHipster development team use fish shell with Fisherman, and if you see people using shortcuts in their terminal, the magic comes from here!
+一些JHipster开发团队使用fish shell with Fisherman, 如果你看到人们在他们的终端上使用快捷方式，魔法就来自这里！
 
-## Fisherman JHipster plugin
+## Fisherman JHipster 插件
 
-The JHipster Fisherman plugin is available on GitHub at [https://github.com/jhipster/jhipster-fisher-plugin](https://github.com/jhipster/jhipster-fisher-plugin).
+JHipster Fisherman 插件在 [https://github.com/jhipster/jhipster-fisher-plugin](https://github.com/jhipster/jhipster-fisher-plugin).
 
-Currently it only adds shortcuts (full list [here](https://github.com/jhipster/jhipster-fisher-plugin/blob/master/conf.d/jhipster.aliases.fish)), but we welcome contributions to have better auto-completion!
+当前只添加快捷方式 (完整列表 [here](https://github.com/jhipster/jhipster-fisher-plugin/blob/master/conf.d/jhipster.aliases.fish)), 但我们欢迎贡献有更好的自动完成！
 
-It is not part (yet) of the official plugin list, so you need to install it manually:
+它还不是官方插件列表的一部分，因此您需要手动安装它：
 
 1. Clone the plugin repository:
 

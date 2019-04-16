@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Deploying to Google Cloud Platform
+title: 部署到谷歌云平台
 permalink: /gcp/
 sitemap:
     priority: 0.5
     lastmod: 2018-10-02T00:00:00-00:00
 ---
 
-# <i class="fa fa-cloud-upload"></i> Deploying to Google Cloud Platform
+# <i class="fa fa-cloud-upload"></i> 部署到谷歌云平台
 
 [![Google Cloud Platform]({{ site.url }}/images/logo/logo-gcp.png)](https://cloud.google.com)
 

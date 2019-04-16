@@ -1,31 +1,31 @@
 ---
 layout: default
-title: Filtering
+title: 过滤
 permalink: /entities-filtering/
 sitemap:
     priority: 0.7
     lastmod: 2017-08-22T00:00:00-00:00
 ---
 
-# <i class="fa fa-filter"></i> Filtering your entities
+# <i class="fa fa-filter"></i> 过滤您的实体类
 
-## Introduction
+## 简介
 
-After the basic CRUD functionalities are implemented for an entity, there is a very common request to create various filters for the attributes of the entity,
-so the server could be used more effectively. These filters should be sent as the request parameters, so any client - and any browser - could use it easily.
-Additionally, these filters should follow a sane, and concise pattern, and they must be allowed combining them freely.
+在为一个实体实现了基本的CRUD功能之后，有一个非常常见的请求为该实体的属性创建各种过滤器，
+因此，可以更有效地使用服务器。这些过滤器应该作为请求参数发送，因此任何客户机和任何浏览器都可以轻松地使用它。
+此外，这些过滤器应该遵循一个健全、简洁的模式，并且必须允许它们自由组合。
 
-## How to activate
+## 如何激活
 
-When generating an entity with `jhipster entity` command, select services or service implementation to enable filtering on this entity. 
+使用`jhipster entity`命令生成实体时，请选择服务或服务实现以对此实体启用筛选。
 
-If you want to enable filtering for existing entities, you can modify the entity configuration in your projects `.jhipster` directory, by setting `service` to `serviceClass` or `serviceImpl` from `no`, and `jpaMetamodelFiltering` to `true` and then re-generate with `jhipster entity <entity name>`.
+如果要为现有实体启用筛选，可以修改项目`.jhipster`目录中的实体配置， 将 `service` 从`no` 设置为 `serviceClass` 或 `serviceImpl`, `jpaMetamodelFiltering` 为 `true` 然后使用 `jhipster entity <entity name>`重新生成实体类.
 
-When using JDL, add a line `filter <entity name>` to your JDL file and re-import the definitions with `jhipster import-jdl` command.
+使用JDL时，请在JDL文件中添加一行`filter<entity name>`，然后使用`jhipster import jdl`命令重新导入定义。
 
-## Public interface
+## 公共接口
 
-For each entity, you can enable filtering in the entity generator, and after, you can call your `/api/my-entity` GET endpoint with the following parameters :
+对于每个实体，可以在实体生成器中启用筛选，之后，可以使用以下参数调用`/api/my entity` get endpoint：
 
 * For each *xyz* field
     * *xyz.equals=someValue*
@@ -49,20 +49,20 @@ For each entity, you can enable filtering in the entity generator, and after, yo
     * *xyz.lessOrEqualThan=someValue*
         - To list all the entities, where xyz is less than or equal to 'someValue'.
 
-Of course, they can be combined freely.
+当然，它们可以自由组合。
 
-A good way to experience the expressiveness of this filter API is to use it from swagger-ui in the API docs page of your JHipster application.
+体验这个过滤器API的表现力的一个好方法是在JHipster应用程序的api-docs页面中的自大用户界面中使用它。
 
 ![]({{ site.url }}/images/entities_filtering_swagger.png)
 
-## Implementation
+## 实现
 
-When this feature is enabled, a new service named as `EntityQueryService` and an `EntityCriteria` is generated. Spring will convert the request parameters into the fields of the `EntityCriteria` class.
+启用此功能后，将生成名为`EntityQueryService`和`EntityCriteria`的新服务。Spring会将请求参数转换为`EntityCriteria`类的字段。
 
-In the `EntityQueryService`, we convert the criteria object into a static, and type safe, JPA query object. For this, it is **required** that the **static metamodel generation is enabled** in the build. See the [JPA Static Metamodel Generator documentation](http://docs.jboss.org/hibernate/orm/current/topical/html_single/metamodelgen/MetamodelGenerator.html) for details.
+在`EntityQueryService`, 我们将Criteria对象转换为静态的、类型安全的JPA查询对象。为此, 它 **需要** 在构建过程中设置**static metamodel generation 为 enabled**. 详见 [JPA静态元模型生成器文档](http://docs.jboss.org/hibernate/orm/current/topical/html_single/metamodelgen/MetamodelGenerator.html) for details.
 
-To prove that the generated criteria is working, and Spring is well configured, the `EntityResourceIntTest` is extended with lots of test cases, one for each individual filter.
+为了证明生成的标准有效，并且Spring配置良好，`EntityResourceInttest`扩展了许多测试用例，每个筛选器一个。
 
-## Limitations
+## 局限性
 
-Currently only SQL databases (with JPA) is supported, with the separate service or separate service implementation/interface combination.
+目前只支持SQL数据库（带JPA），并有单独的服务或单独的服务实现/接口组合。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Deploying to Heroku
+title: 部署到Heroku
 permalink: /heroku/
 redirect_from:
   - /heroku.html
@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2014-09-08T00:00:00-00:00
 ---
 
-# Deploying to Heroku
+# 部署到Heroku
 
 This sub-generator allows deployment of your JHipster application to the [Heroku cloud](https://www.heroku.com/).
 
