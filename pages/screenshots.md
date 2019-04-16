@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Screenshots of the generated application
+title: 生成的应用程序的屏幕截图
 permalink: /screenshots/
 redirect_from:
   - /screenshots.html
@@ -9,32 +9,32 @@ sitemap:
     lastmod: 2014-02-17T00:00:00-00:00
 ---
 
-# <i class="fa fa-picture-o"></i> Screenshots of the generated application
+# <i class="fa fa-picture-o"></i> 生成的应用程序的屏幕截图
 
-## The welcome screen
+## 欢迎屏幕
 
 ![]({{ site.url }}/images/screenshot_1.png)
 
 * * *
 
-## The monitoring screen
+## 监控屏幕
 
 ![]({{ site.url }}/images/screenshot_2.png)
 
 * * *
 
-## One of the generated forms
+## 生成的表单之一
 
 ![]({{ site.url }}/images/screenshot_3.png)
 
 * * *
 
-## The log management screen
+## 日志管理屏幕
 
 ![]({{ site.url }}/images/screenshot_4.png)
 
 * * *
 
-## The generated "Book" entity
+## 生成的“帐簿”实体
 
 ![]({{ site.url }}/images/screenshot_5.png)

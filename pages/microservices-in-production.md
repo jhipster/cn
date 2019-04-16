@@ -1,29 +1,29 @@
 ---
 layout: default
-title: Microservices in production
+title: 生产中的微服务
 permalink: /microservices-in-production/
 sitemap:
     priority: 0.7
     lastmod: 2017-05-03T00:00:00-00:00
 ---
 
-# <i class="fa fa-cloud"></i> Microservices in production
+# <i class="fa fa-cloud"></i> 生产中的微服务
 
-Microservices are a specific kind of JHipster applications. Please refer to our main [Using JHipster in production documentation]({{ site.url }}/production) for more information on doing a production build, optimizing it and securing it.
+微服务是一种特殊的Jhipster应用。有关执行生产构建、优化和保护生产构建的更多信息，请参阅我们的主要 [Using JHipster in production documentation]({{ site.url }}/production) 。
 
-## <a name="elk"></a> Microservices monitoring
+## <a name="elk"></a> 微服务监控
 
-Please refer to our [JHipster Registry documentation]({{ site.url }}/jhipster-registry) for learning which runtime dashboards are available, and how to use them.
+请参阅我们的 [JHipster Registry documentation]({{ site.url }}/jhipster-registry) ，了解哪些运行时仪表板可用，以及如何使用它们。
 
-Our [monitoring documentation]({{ site.url }}/monitoring) is also very important, to learn specific information on using:
+我们的 [monitoring documentation]({{ site.url }}/monitoring) 也非常重要，了解有关使用的特定信息：
 
-- The JHipster Console to use ELK with your microservices architecture
-- Zipkin to trace HTTP requests throughout your services
-- Elastalert to get alerted when an issue occurs
+- jhipster控制台与您的微服务体系结构一起使用elk
+- Zipkin在整个服务中跟踪HTTP请求
+- Elastalert，在出现问题时发出警报
 
-When using the Docker-Compose sub-generator, you will be asked if you want to add monitoring to your infrastructure. This option will add the JHipster Console to your `docker-compose.yml` file. Once started, it will be available on [http://localhost:5601](http://localhost:5601) and start to gather your applications' logs and metrics.
+使用docker compose子生成器时，将询问您是否要向基础结构添加监视。此选项将把jhipster控制台添加到“docker compose.yml”文件中。一旦启动，它将在[http://localhost:5601](http://localhost:5601)上可用，并开始收集应用程序的日志和度量。
 
-For gateways and microservices applications, additional features are provided to help you effectively monitor a microservices cluster. For example logs are enriched with each application's name, host, port and Eureka/Consul ServiceId so that you can trace from which service instance they are originating from. The JHipster Console also comes with default dashboards that give you an overview of all your services metrics.
+对于网关和微服务应用程序，还提供了其他功能来帮助您有效地监视微服务集群。例如，日志中丰富了每个应用程序的名称、主机、端口和eureka/consul serviceid，这样您就可以跟踪它们来自哪个服务实例。jhipster控制台还附带了默认的仪表盘，这些仪表盘为您提供了所有服务指标的概述。
 
 ## <a name="docker_compose"></a> Using Docker Compose to develop and deploy
 

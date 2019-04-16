@@ -1,187 +1,188 @@
 ---
 layout: default
-title: JHipster Registry
+title: JHipster 注册中心
 permalink: /jhipster-registry/
 sitemap:
     priority: 0.7
     lastmod: 2019-02-01T00:00:00-00:00
 ---
 
-# <i class="fa fa-dashboard"></i> The JHipster Registry
+# <i class="fa fa-dashboard"></i> Hipster 注册中心
 
-## Overview
+## 概述
 
-The JHipster Registry is a runtime application, provided by the JHipster team. Like the JHipster generator, it is an Open Source, Apache 2-licensed application, and its source code is available on GitHub under the JHipster organization at [jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry).
+JHipster注册中心是一个运行时应用程序，由JHipster团队提供。与JHipster生成器一样，它是一个开源的、获得Apache2许可的应用程序，其源代码可以在jhipster组织下的github上的[jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry).
 
-The JHipster Registry has three main purposes:
+JHipster注册中心有三个主要用途：
 
-- It is a an [Eureka server](https://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html), that serves as a discovery server for applications. This is how JHipster handles routing, load balancing and scalability for all applications.
-- It is a [Spring Cloud Config server](https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html), that provide runtime configuration to all applications.
-- It is an administration server, with dashboards to monitor and manage applications.
+- 它是一个[Eureka server](https://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html),作为应用程序的发现服务器。这就是JHipster如何处理所有应用程序的路由、负载平衡和可伸缩性。
+- 它是一个 [Spring Cloud Config server](https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html), 为所有应用程序提供运行时配置的。
+- 它是一个管理服务器，带有用于监视和管理应用程序的仪表盘。
 
-All those features are packaged into one convenient application with a modern Angular-based user interface.
+所有这些功能都打包成一个方便的应用程序，并具有基于角度的现代用户界面。
 
 ![]({{ site.url }}/images/jhipster-registry-animation.gif)
 
-## Summary
+## 摘要
 
-1. [Installation](#installation)
-2. [Service discovery with Eureka](#eureka)
-3. [Application configuration with Spring Cloud Config](#spring-cloud-config)
-4. [Administration dashboards](#dashboards)
-5. [Securing the JHipster Registry](#security)
+1. [安装](#installation)
+2. [使用Eureka进行服务发现](#eureka)
+3. [使用Spring Cloud配置的应用程序配置](#spring-cloud-config)
+4. [管理仪表板](#dashboards)
+5. [保护JHipster注册中心](#security)
 
 ## <a name="installation"></a> Installation
 
-### Spring profiles
+### Spring 配置文件
 
-The JHipster Registry uses the usual JHipster `dev` and `prod` Spring profiles, as well as the standard `composite` from Spring Cloud Config (See [official documentation](https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html#composite-environment-repositories)).
+JHipster注册中心使用一般的JHipster `dev` and `prod` Spring配置, 以及来自Spring Cloud Config标准的 `composite`(参见 [官方文档](https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html#composite-environment-repositories)).
 
-As a result:
+因此：
 
-- Using the `dev` profile will run the JHipster Registry with the `dev` and the `composite` profiles. The `dev` profile will load the Spring Cloud configuration from the filesystem, looking for the `central-config` directory, which is relative to the running directory, defined in `src/main/resources/config/bootstrap.yml` file.
-- Using the `prod` profile will run the JHipster Registry with the `prod` and the `composite` profiles. The `prod` profile will load the Spring Cloud configuration from a Git repository, which is by default [https://github.com/jhipster/jhipster-registry-sample-config](https://github.com/jhipster/jhipster-registry-sample-config). In a real-world usage, this repository should be changed, either by reconfiguring it in the `src/main/resources/config/bootstrap-prod.yml` file, or by reconfiguring the `spring.cloud.config.server.composite` Spring property.
+- 使用“dev”配置文件将使用“dev”和“composite”配置文件运行jhipster注册表。“dev”配置文件将从文件系统加载spring cloud配置，查找与运行目录相关的“central config”目录，该目录在“src/main/resources/config/bootstrap.yml”文件中定义。
+- 使用“prod”配置文件将使用“prod”和“composite”配置文件运行jhipster注册表。“prod”配置文件将从git存储库加载Spring Cloud配置，默认情况下为[https://github.com/jhipster/jhipster-registry-sample-config](https://github.com/jhipster/jhipster-registry-sample-config)。在实际使用中，应该通过在“src/main/resources/config/bootstrap-prod.yml”文件中重新配置存储库，或者通过重新配置“spring.cloud.config.server.composite”spring属性来更改该存储库。
 
-Once the JHipster Registry is running, you can check its configuration in the `Configuration > Cloud Config` menu. Please note that if you can't log in, it might be because the JWT signature key is not correctly set up, which is a sign that your configuration isn't good.
+JHipster注册中心运行后，您可以在`Configuration > Cloud Config`菜单中检查其配置。请注意，如果您无法登录，可能是因为JWT签名密钥设置不正确，这表明您的配置不好。
 
-### Using the pre-packaged WAR file
+### 使用预打包的war文件
 
-The JHipster Registry is available as an executable WAR file on our [Releases page](https://github.com/jhipster/jhipster-registry/releases).
+JHipster注册中心作为可执行的war文件可在 [Releases page](https://github.com/jhipster/jhipster-registry/releases).
 
-Download the WAR file, and run it as a usual JHipster application, using the profile you want to use (see the previous section about profiles). For example, to run it using a Spring Cloud Config configuration stored in the `central-config` directory:
+下载war文件，并使用您想要使用的配置文件（请参阅上一节关于配置文件的内容），将其作为普通的jhipster应用程序运行。例如，要使用存储在`central config`目录中的Spring Cloud配置运行它：
 
     ./jhipster-registry-<version>.war --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./central-config
 
-Note that it is important to provide a JWT secret key to the registry on startup, either via the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_SECRET` environment variable or with arguments as shown above. Another possible way is to set this value in the `application.yml` file of your centralized configuration source (which is loaded on startup by all your applications including the registry).
+请注意，在启动时通过`jhipster_security_authentication_jwt_secret`环境变量或上面所示的参数向注册表提供JWT密钥非常重要。另一种可能的方法是在集中式配置源的“application.yml”文件中设置该值（该文件在所有应用程序（包括注册表）启动时加载）。
 
-Please note that since JHipster 5.3.0 we have a new `jhipster.security.authentication.jwt.base64-secret` property, which is more secure, but as you might still use older releases
-we use `jhipster.security.authentication.jwt.secret` in this documentation. More information on those properties is available in our [security documentation]({{ site.url }}/security/).
+请注意，自jhipster 5.3.0以来，我们有了一个新的'jhipster.security.authentication.jwt.base64 secret'属性，它更安全，但是您可能仍然使用旧版本
 
-Similarly, to run the registry with the `prod` profile, adapt the arguments to your setup, for example:
+我们在本文档中使用了`jhipster.security.authentication.jwt.secret`。有关这些属性的详细信息，请参阅我们的[security documentation]({{ site.url }}/security/).
+
+类似地，要使用“prod”配置文件运行注册表，请根据您的设置调整参数，例如：
 
     ./jhipster-registry-<version>.war --spring.profiles.active=prod --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded --spring.cloud.config.server.composite.0.type=git --spring.cloud.config.server.composite.0.uri=https://github.com/jhipster/jhipster-registry-sample-config
 
     ./jhipster-registry-<version>.war --spring.profiles.active=prod --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded --spring.cloud.config.server.composite.0.type=git --spring.cloud.config.server.composite.0.uri=https://github.com/jhipster/jhipster-registry --spring.cloud.config.server.composite.0.search-paths=central-config
 
-### Building from source
+### 从源代码生成
 
-The JHipster Registry can be cloned/forked/downloaded directly from [jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry). As the JHipster Registry is also a JHipster-generated application, you can run it like any other JHipster application:
+JHipster注册中心可以直接从 [jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry)克隆/分叉/下载。由于jhipster注册表也是jhipster生成的应用程序，因此可以像其他任何jhipster应用程序一样运行它：
 
 - run it in development with `./mvnw` (for the Java server) and `yarn start` (for managing the front-end), it will use by default the `dev` profile and it will be available at [http://127.0.0.1:8761/](http://127.0.0.1:8761/).
 - use `./mvnw -Pprod package` to package it in production, and generate the usual JHipster executable WAR file. You can then run the WAR file using the `dev` or `prod` Spring profile, for example: `./jhipster-registry-<version>.war --spring.profiles.active=prod`
 
 Please note that to use the `dev` and `composite` profile, you need to have a `central-config` directory with your configuration, so if you run `./jhipster-registry-<version>.war --spring.profiles.active=dev`, you need to have that directory set up.
 
-### Using Docker
+### 使用Docker
 
-If you'd rather run the JHipster Registry from a Docker image, it is available on Docker Hub at [jhipster/jhipster-registry](https://hub.docker.com/r/jhipster/jhipster-registry/). A docker-compose file to easily run this image is already present within each microservice `src/main/docker` directory:
+如果您想从Docker镜像运行jhipster注册表，可以在Docker Hub上的 [jhipster/jhipster-registry](https://hub.docker.com/r/jhipster/jhipster-registry/). 每个microservice`src/main/docker`目录中都已存在一个docker-compose文件，可以轻松运行此镜像：
 
 - run `docker-compose -f src/main/docker/jhipster-registry.yml up` to start the JHipster Registry. It will be available on port `8761` of your Docker host, so if it runs on your machine it should be at [http://127.0.0.1:8761/](http://127.0.0.1:8761/).
 
-Please read our [Docker Compose documentation]({{ site.url }}/docker-compose/) for more information on using the JHipster Registry with Docker Compose.
+请阅读我们的[Docker Compose documentation]({{ site.url }}/docker-compose/)了解有关使用JHipster注册中心和docker compose的更多信息。
 
 ### Running in the cloud
 
-It's very easy to host a JHipster Registry instance in the cloud. This is mandatory in production, but this can also be useful in development (there is no need to run it on your laptop).
+在云中托管JHipster注册表实例非常容易。这在生产中是强制性的，但在开发中也很有用（不需要在笔记本电脑上运行它）。
 
-Please read [the "microservices in production" documentation]({{ site.url }}/microservices-in-production/) to learn how to deploy the JHipster Registry to Cloud Foundry or to Heroku.
+请阅读[生产中的微服务]({{ site.url }}/microservices-in-production/) 了解如何将jhipster注册表部署到Cloud Foundry或Heroku。
 
-## <a name="eureka"></a> Service discovery with Eureka
+## <a name="eureka"></a> Eureka服务发现
 
 ![]({{ site.url }}/images/jhipster-registry-eureka.png)
 
-The JHipster Registry is a [Netflix Eureka server](https://github.com/Netflix/eureka), that provides service discovery for all applications.
+JHipster注册中心是一个[Netflix Eureka server](https://github.com/Netflix/eureka), 为所有应用程序提供服务发现。
 
-- This is very useful for microservices architectures: this is how the gateways know which microservices are available, and which instances are up
-- For all applications, including monoliths, this is how the Hazelcast distributed cache can automatically scale, see [the Hazelcast cache documentation]({{ site.url }}/using-cache/)
+- 这对于微服务体系结构非常有用：这就是网关如何知道哪些微服务可用，哪些实例可用的方法
+- 对于所有应用程序，包括整体应用程序，这是Hazelcast分布式缓存自动缩放的方式，请参见[the Hazelcast cache documentation]({{ site.url }}/using-cache/)
 
-## <a name="spring-cloud-config"></a> Application configuration with Spring Cloud Config
+## <a name="spring-cloud-config"></a> Spring Cloud 应用配置
 
 ![]({{ site.url }}/images/jhipster-registry-spring-cloud-config.png)
 
-The JHipster Registry is a [Spring Config Server](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html): when applications are launched they will first connect to the JHipster Registry to get their configuration. This is true for both gateways and microservices.
+JHipster注册中心是一个 [Spring Config Server](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html): 当启动应用程序时，它们将首先连接到JHipster注册中心以获取其配置。网关和微服务都是如此。
 
-This configuration is a Spring Boot configuration, like the one found in the JHipster `application-*.yml` files, but it is stored in a central server, so it is easier to manage.
+这个配置是一个Spring引导配置， 类似于JHipster的 `application-*.yml` 文件中的配置, 但是它存储在中央服务器中，因此更容易管理。
 
-On startup, your gateways and microservices app will query the Registry's config server and overwrite their local properties with the ones defined there.
+启动时，您的网关和微服务应用程序将查询注册中心的配置服务器，并用其中定义的属性覆盖它们的本地属性。
 
-Two kinds of configurations sources are available (defined by the `spring.cloud.config.server.composite` property):
+提供两种配置源(defined by the `spring.cloud.config.server.composite` property):
 
 - A `native` configuration, which is used by default in development (using the JHipster `dev` profile), and which uses the local filesystem.
 - A `Git` configuration, which is used by default in production (using the JHipster `prod` profile), and which stores the configuration in a Git server. This allows to tag, branch or rollback configurations using the usual Git tools, which are very powerful in this use-case.
 
-To manage your centralized configuration you just need to add `appname-profile.yml` files in your configuration source where **appname** and **profile** correspond to the application's name and current profile of the service that you want to configure.
-For example, adding properties in a `gateway-prod.yml` file will set those properties only for the application named **gateway** started with a **prod** profile. Moreover, properties defined in `application[-dev|prod].yml` will be set for all your applications.
+要管理集中配置，只需在配置源中添加“appname profile.yml”文件，其中 **appname** 和 **profile** 对应于要配置的服务的应用程序名称和当前配置文件。
+例如，在“gateway-prod.yml”文件中添加属性将仅为名为**gateway**的应用程序（以**prod**配置文件开头）设置这些属性。此外，将为所有应用程序设置在'application[-dev_prod].yml'中定义的属性。
 
-As the Gateway routes are configured using Spring Boot, they can also be managed using the Spring Config Server, for example you could map application `app1-v1` to the `/app1` URL in your `v1` branch, and map application `app1-v2` to the `/app1` URL in your `v2` branch. This is a good way of upgrading microservices without any downtime for end-users.
+由于网关路由是使用Spring引导配置的，因此也可以使用Spring配置服务器对其进行管理，例如，可以将应用程序“app1-v1”映射到“v1”分支中的“/app1”URL，并将应用程序“app1-v2”映射到“v2”分支中的“/app1”URL。这是一种很好的方式，可以在不停机的情况下为最终用户升级微服务。
 
-### <a name="encryption"></a> Using encrypted configuration values
+### <a name="encryption"></a> 使用加密的配置值
 
-The JHipster Registry has a specific `configuration > encryption` page to allow easy encryption and decryption of configuration values.
+JHipsterjhipster注册表有一个特定的“配置>加密”页面，允许轻松加密和解密配置值。
 
-To encrypt configuration values (for example, database passwords) you need to:
+要加密配置值（例如，数据库密码），您需要：
 
-- download the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and install it by following the instructions in the downloaded files (this is only required if you are using the Oracle JDK).
-- set the `encrypt.key` property in `bootstrap.yml` (not `application.yml`) or use the `ENCRYPT_KEY` environment variable with your symmetric key passphrase.
+- 下载 [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)并按照下载文件中的说明进行安装（仅当使用Oracle JDK时才需要这样做）。
+- 在“bootstrap.yml”（不是“application.yml”）中设置“encrypt.key”属性，或将“encrypt.key”环境变量与对称密钥密码短语一起使用。
 
-If everything is setup correctly, you should be able to use the specific `Configuration > Encryption` page, and also send POST requests to `/config/encrypt` and `/config/decrypt` endpoints with the text you want to manipulate in the `body` of the requests.
+如果一切设置正确，您应该能够使用特定的“配置>加密”页面，并使用要在请求的“body”中操作的文本向“config/encrypt”和“config/decrypt”端点发送POST请求。
 
-For example: `curl localhost:8761/config/encrypt -d mypassword`
+例如: `curl localhost:8761/config/encrypt -d mypassword`
 
-The cipher text must be placed in any `*.yml` configuration file, in the form `password= '{cipher}myciphertextafterencryotion'` and it will be decrypted by the config server before sending it to its clients. This way your configuration files (stored in Git or stored "natively" on your filesystem) do not have plain text values.
+密码文本必须以`password= '{cipher}myciphertextafterencryotion'`的形式放在任何`*.yml`配置文件中，在发送到其客户端之前，配置服务器将对其进行解密。这样，您的配置文件（存储在git中或“本机”存储在文件系统中）就没有纯文本值。
 
-For more information, please refer to Spring Cloud Config's [Encryption and Decryption documentation](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_encryption_and_decryption).
+有关详细信息，请参阅Spring Cloud配置的[Encryption and Decryption documentation](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_encryption_and_decryption).
 
-## <a name="dashboards"></a> Administration dashboards
+## <a name="dashboards"></a> 管理仪表板
 
-The JHipster Registry provides administration dashboards, which are used for all application types. As soon as an application registers on the Eureka server, it will become available in the dashboards.
+JHipster注册中心提供用于所有应用程序类型的管理仪表盘。一旦应用程序在Eureka服务器上注册，它将在仪表板中可用。
 
-In order to access sensitive information from the applications, the JHipster Registry will use a JWT token (this is why the JHipster Registry only works for applications using JWT). The JWT key used to sign the request should be the same for the applications and the JHipster Registry: as by default the JHipster Registry configures applications through Spring Cloud Config, this should work out-of-the-box, as it will send the same key to all applications.
+为了从应用程序访问敏感信息，Jhipster注册中心将使用JWT令牌（这就是为什么Jhipster注册表只适用于使用JWT的应用程序）。用于签署请求的jwt项对于应用程序和JHipster注册中心应该是相同的：默认情况下，JHipster注册中心通过Spring Cloud配置来配置应用程序，这应该是开箱即用的，因为它将向所有应用程序发送相同的项。
 
-### The metrics dashboard
+### 指标仪表盘
 
 ![]({{ site.url }}/images/jhipster-registry-metrics.png)
 
-The metrics dashboard uses Micrometer to give a detailed view of the application performance.
+度量仪表板使用测微计提供应用程序性能的详细视图。
 
-It gives metrics on:
+它提供以下指标：
 
 - the JVM
 - HTTP requests
 - cache usage
 - database connection pool
 
-By clicking on the Expand button next to the JVM thread metrics, you will get a stacktrace of the running application, which is very useful to find out blocked threads.
+通过单击JVM线程度量旁边的展开按钮，您将获得正在运行的应用程序的stacktrace，这对于发现被阻塞的线程非常有用。
 
-Note: As we switched the JHipster Registry to monitor metrics coming from Micrometer instead of Dropwizard metrics, it implies that all JHipster application generated with version 5.7.2 or older should be migrated to Micrometer to be monitored with the JHipster Registry. If you don't want to migrate your applications, please use JHipster Registry v4.0.6 or older.
+注意：当我们将JHipster注册表切换为监视来自测微计的度量而不是DropWizard度量时，这意味着所有使用5.7.2或更高版本生成的JHipster应用程序都应该迁移到测微计，以便使用JHipster注册表进行监视。如果不想迁移应用程序，请使用JHipster注册表v4.0.6或更高版本。
 
-To migrate your applications, you can use the [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/).
+要迁移应用程序，可以使用 [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/).
 
-### The health dashboard
+### 健康仪表盘
 
 ![]({{ site.url }}/images/jhipster-registry-health.png)
 
-The health dashboard uses Spring Boot Actuator's health endpoint to give health information on various parts of the application. Many health checks are provided out-of-the-box by Spring Boot Actuator, and it's also very easy to add application-specific health checks.
+健康仪表板使用SpringBootActuator的健康端点提供应用程序各个部分的健康信息。许多健康检查都是由弹簧引导执行器提供的，并且很容易添加特定于应用程序的健康检查。
 
-### The configuration dashboard
+### 配置仪表板
 
 ![]({{ site.url }}/images/jhipster-registry-configuration.png)
 
-The configuration dashboard uses Spring Boot Actuator's configuration endpoint to give a full view of the Spring configuration of the current application.
+配置仪表板使用Spring Boot Actuator的配置端点提供当前应用程序的弹簧配置的完整视图。
 
-### The logs dashboard
+### 日志仪表板
 
 ![]({{ site.url }}/images/jhipster-registry-logs.png)
 
-The logs dashboard allows to manage at runtime the Logback configuration of the running application. Changing the log level of a Java package is as simple as clicking on a button, which is very convenient both in development and in production.
+日志仪表板允许在运行时管理正在运行的应用程序的日志配置。更改Java包的日志级别与单击按钮一样简单，这在开发和生产中都非常方便。
 
-## <a name="security"></a> Securing the JHipster Registry
+## <a name="security"></a> 保护JHipster注册中心
 
-The JHipster Registry is secured by default. You can login using the usual "admin/admin" login and password that are used in normal JHipster applications.
+JHhipster注册中心在默认情况下是安全的。您可以使用普通jhipster应用程序中使用的“admin/admin”登录名和密码登录。
 
-Applications also connect to the JHipster Registry using that same "admin" user, but use HTTP Basic authentication. So if your microservices cannot access the registry, and you see some "401 authentication error" messages, it is because you have misconfigured those applications.
+应用程序也使用相同的“admin”用户连接到jhipster注册表，但使用HTTP基本身份验证。因此，如果您的微服务无法访问注册表，并且您看到一些“401身份验证错误”消息，那是因为您错误地配置了这些应用程序。
 
-In order to secure your JHipster Registry:
+为了保护您的JHipster注册中心：
 
-- You must change the default "admin" password. This password is set using the standard Spring Boot property `spring.security.user.password`, so you can use the usual Spring Boot mechanisms to modify it: you could modify the project's `application-*.yml` files, or add a `SPRING_SECURITY_USER_PASSWORD` environment variable. The [Docker Compose sub-generator]({{ site.url }}/docker-compose/) uses the environment variable method.
-- As your applications will connect to the registry using HTTP, it is very important to secure that connection channel. There are many ways to do it, and the easiest one is probably to use HTTPS.
+- 您必须更改默认的“admin”密码。此密码是使用标准的Spring启动属性`spring.security.user.password`设置的，因此您可以使用常用的Spring启动机制来修改它：您可以修改项目的`application-*.yml`文件，或者添加一个`spring-security-user-password`环境变量。[Docker Compose sub-generator]({{ site.url }}/docker-compose/) 使用环境变量方法。
+- 由于应用程序将使用HTTP连接到注册中心，因此保护该连接通道非常重要。有很多方法可以做到这一点，最简单的方法可能是使用HTTPS。

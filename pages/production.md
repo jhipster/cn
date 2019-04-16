@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using JHipster in production
+title: 在生产中使用JHipster
 permalink: /production/
 redirect_from:
   - /production.html
@@ -9,15 +9,15 @@ sitemap:
     lastmod: 2019-02-01T00:00:00-00:00
 ---
 
-# <i class="fa fa-play-circle"></i> Using JHipster in production
+# <i class="fa fa-play-circle"></i> 在生产中使用JHipster
 
-JHipster generates a fully production-ready, optimized and secured application. This section describes the more important options - if you are in hurry, just run a normal production build, but don't forget to read the security section!
+JHipster生成一个完全可以生产、优化和安全的应用程序。本节描述了更重要的选项-如果您赶时间，只需运行正常的生产构建，但不要忘记阅读安全部分！
 
-1. [Building a production package](#build)
-2. [Running in production](#run)
-3. [Performance optimizations](#performance)
-4. [Security](#security)
-5. [Monitoring](#monitoring)
+1. [构建生产包](#build)
+2. [生产运行](#run)
+3. [性能优化](#performance)
+4. [安全](#security)
+5. [监控](#monitoring)
 
 ## <a name="build"></a> Building a production package
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Oh-My-Zsh
+title: 使用Oh-My-Zsh
 permalink: /oh-my-zsh/
 redirect_from:
   - /oh-my-zsh.html
@@ -9,11 +9,11 @@ sitemap:
     lastmod: 2016-07-25T18:40:00-00:00
 ---
 
-# <i class="fa fa-terminal"></i> Using Oh-My-Zsh
+# <i class="fa fa-terminal"></i> 使用 Oh-My-Zsh
 
-If you are using Linux or Mac OS X, [Oh-My-Zsh](http://ohmyz.sh/) is a great tool to manage your ZSH configuration.
+如果您使用的是Linux或Mac OS X，[Oh-My-Zsh](http://ohmyz.sh/) 是管理zsh配置的好工具。
 
-Most of the JHipster development team uses Oh-My-Zsh, and if you see people using shortcuts in their terminal, the magic comes from here!
+JHipster开发团队中的大多数人都使用Oh-My-Zsh，如果你看到人们在他们的终端中使用快捷方式，那么魔法就来自这里！
 
 ## Oh-My-Zsh JHipster plugin
 

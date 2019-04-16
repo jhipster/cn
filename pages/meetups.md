@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Meetups
+title: 会议
 permalink: /meetups/
 redirect_from:
   - /meetups.html
@@ -9,13 +9,13 @@ sitemap:
     lastmod: 2017-05-15T00:00:00-00:00
 ---
 
-# <i class="fa fa-meetup "></i> JHipster meetups
+# <i class="fa fa-meetup "></i> JHipster 会议
 
-We are currently creating JHipster meetups all around the world!
+我们目前正在世界各地创建JHipster会议！
 
-- If you want to create your own meetup, it's very easy! Just do a Pull Request on [this Web page](https://github.com/jhipster/jhipster.github.io/blob/master/pages/meetups.md) to add your meetup directly.
-- There is no rule for meetups: you can schedule them when you want, host it where you want, and invite who you want.
-- The JHipster team will do its best to support you: we'll RT you on Twitter, put your event on our main page, etc.
+- 如果你想创建自己的聚会，那很容易！只需在 [this Web page](https://github.com/jhipster/jhipster.github.io/blob/master/pages/meetups.md) 上执行拉请求，即可直接添加您的会议。
+- 会议没有规则：你可以在你想的时候安排会议，在你想的地方举行会议，邀请你想邀请的人。
+- JHipster团队将尽全力支持您：我们将在Twitter上提醒您，将您的活动放到主页上，等等。
 
 ## Existing meetups
 

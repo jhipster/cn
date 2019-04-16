@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Managing relationships
+title: 管理关系
 permalink: /managing-relationships/
 redirect_from:
   - /managing_relationships.html
@@ -9,34 +9,34 @@ sitemap:
     lastmod: 2019-02-07T18:40:00-00:00
 ---
 
-# <i class="fa fa-sitemap"></i> Managing relationships
+# <i class="fa fa-sitemap"></i> 管理关系
 
-When JPA is used, the [entity sub-generator]({{ site.url }}/creating-an-entity/) can create relationships between entities.
+使用JPA时， [entity sub-generator]({{ site.url }}/creating-an-entity/)可以在实体之间创建关系。
 
-## Presentation
+## 演示
 
 Relationships only work when JPA is used. If you choose to use [Cassandra]({{ site.url }}/using-cassandra/), [MongoDB]({{ site.url }}/using-mongodb/) of [Couchbase]({{ site.url }}/using-couchbase/), they won't be available.
 
-A relationship works between two entities, and JHipster will generate the code for:
+两个实体之间的关系起作用，JHipster将生成以下代码：
 
-- Managing this relationship with JPA in the generated entities
-- Creating the correct Liquibase changelog, in order for the relationship to exist in the database
-- Generating the Angular/React front-end so you can manage this relationship graphically in the user interface
+- 在生成的实体中管理与JPA的关系
+- 创建正确的liquibase changelog，以便关系存在于数据库中
+- 生成角度/反应前端，以便在用户界面中以图形方式管理此关系
 
 ## JHipster UML and JDL Studio
 
-This page describes how to create relationships with JHipster using the standard command-line interface.  If you want to create many entities and relationships, you might prefer to use a graphical tool.
+本页介绍如何使用标准命令行界面创建与JHipster的关系。如果要创建许多实体和关系，您可能更喜欢使用图形工具。
 
-In that case, two options are available:
+在这种情况下，有两种选择：
 
 - [JHipster UML]({{ site.url }}/jhipster-uml/), which allows you to use an UML editor.
 - [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language.
 
-You can generate entities with relationships from a JDL file using the `import-jdl` sub-generator, by running `jhipster import-jdl your-jdl-file.jh`.
+通过运行`jhipster import-jdl your-jdl-file.jh`，可以使用`import-jdl` 子生成器从JDL文件生成具有关系的实体。
 
-## Available relationships
+## 可用关系
 
-As we use JPA, the usual one-to-many, many-to-one, many-to-many and one-to-one relationships are available:
+当我们使用JPA时，通常的一对多、多对一、多对多和一对一关系是可用的：
 
 1. [A bidirectional one-to-many relationship](#1)
 2. [A unidirectional many-to-one relationship](#2)
@@ -48,19 +48,19 @@ As we use JPA, the usual one-to-many, many-to-one, many-to-many and one-to-one r
 
 _Tip: the `User` entity_
 
-Please note that the `User` entity, which is handled by JHipster, is specific. You can do:
+请注意，JHipster处理的“user”实体是特定的。你可以做到：
 
-- `many-to-one` relationships to this entity (a `Car` can have a many-to-one relationship to a `User`). This will generate a specific query in your new entity repository, so you can filter your entity on the current security user, which is a common requirement. On the generated Angular/React client UI you will have a dropdown in `Car` to select a `User`.
-- `many-to-many` and `one-to-one` relationships to the `User` entity, but the other entity __must__ be the owner
-of the relationship (a `Team` can have a many-to-many relationship to `User`, but only the team can add/remove users, and a user cannot add/remove a team). On the Angular/React client UI, you will also be able to select a `User` in a multi-select box.
+- 与此实体的`many-to-one`（汽车可以与“用户”有多对一关系）。这将在新的实体存储库中生成一个特定的查询，因此您可以在当前安全用户上筛选实体，这是一个常见的需求。在生成的Angular/React客户端UI上，您将在“car”中有一个下拉列表，用于选择“user”。
+- `many-to-many` 和 `one-to-one`与`User` 实体的关系，但另一个实体必须是所有者
+关系（团队可以与“用户”具有多对多关系，但只有团队可以添加/删除用户，用户不能添加/删除团队）。在Angular/React客户端用户界面上，您还可以在多选框中选择“用户”。
 
-When using the UAA authentication type, you can only create relationships to the User entity if the related entity is also within the UAA microservice.
+使用UAA身份验证类型时，如果相关实体也在UAA微服务中，则只能创建与用户实体的关系。
 
-## <a name="1"></a> A bidirectional one-to-many relationship
+## <a name="1"></a> 双向一对多关系
 
-Let's start with two entities, a `Owner` and a `Car`. A owner can have many cars, and a car can have only one owner.
+让我们从“车主”和“汽车”两个实体开始。一个车主可以拥有多辆车，而一辆车只能拥有一个车主。
 
-So this is a simple one-to-many relationship (one owner has many cars) on one side, and a many-to-one relationship (many cars have one owner) on the other side:
+因此，这是一种简单的一对多关系（一个车主有许多辆车），另一方面是多对一关系（许多辆车有一个车主）：
 
     Owner (1) <-----> (*) Car
 
@@ -348,7 +348,7 @@ This is the corresponding JDL:
     }
 
 ### <a name="8">  Using JPA Derived Identifiers(@MapsId) for one-to-one relationship
-  
+
 [JPA Derived Identifiers](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/MapsId.html) can be used to have [the most efficient mapping](https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/).
 
 This is the corresponding JDL for previous uni-directional one-to-one example:
@@ -358,7 +358,7 @@ This is the corresponding JDL for previous uni-directional one-to-one example:
     entity Passport
 
     relationship OneToOne {
-      Citizen{passport} to Passport with jpaDerivedIdentifier 
+      Citizen{passport} to Passport with jpaDerivedIdentifier
     }
 
 This is the corresponding JDL for previous bi-directional one-to-one example:
@@ -367,10 +367,10 @@ This is the corresponding JDL for previous bi-directional one-to-one example:
     entity Car
 
     relationship OneToOne {
-      Car{driver} to Driver{car} with jpaDerivedIdentifier 
+      Car{driver} to Driver{car} with jpaDerivedIdentifier
     }
 
- However, based on business requirements, there might be cases where this should be avoided because it has following constraint: 
+ However, based on business requirements, there might be cases where this should be avoided because it has following constraint:
 **Once the id(primary key) is set at owning side, it is not changeable using JPA/Hibernate. You should not change it anyway.**.
 
 **Here are a few suggestions regarding usage:**

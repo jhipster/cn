@@ -1,21 +1,21 @@
 ---
 layout: default
-title: Monitoring your JHipster Applications
+title: 监控JHipster应用程序
 permalink: /monitoring/
 sitemap:
     priority: 0.7
     lastmod: 2019-02-01T00:00:00-00:00
 ---
-# <i class="fa fa-line-chart"></i> Monitoring your JHipster Applications
+# <i class="fa fa-line-chart"></i> 监控JHipster应用程序
 
-JHipster provides several options to monitor your applications at runtime.
+JHipster提供了几个选项来在运行时监视应用程序。
 
-## Summary
+## 总结
 
-1. [Generated dashboards](#generated-dashboards)
-2. [JHipster Registry](#jhipster-registry)
-3. [JHipster Console](#jhipster-console)
-4. [Forwarding metrics to a supported third party monitoring system](#configuring-metrics-forwarding)
+1. [生成的仪表板](#generated-dashboards)
+2. [JHipster注册中心](#jhipster-registry)
+3. [JHipster控制台](#jhipster-console)
+4. [将指标转发到受支持的第三方监控系统](#configuring-metrics-forwarding)
 5. [Zipkin](#zipkin)
 6. [Alerting with Elastalert](#elastalert)
 

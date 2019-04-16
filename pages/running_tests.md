@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Running tests
+title: 运行测试
 permalink: /running-tests/
 redirect_from:
   - /running_tests.html
@@ -9,25 +9,25 @@ sitemap:
     lastmod: 2015-04-20T00:00:00-00:00
 ---
 
-# <i class="fa fa-shield"></i> Running tests
+# <i class="fa fa-shield"></i> 运行测试
 
-## Introduction
+## 介绍
 
-JHipster comes with an extensive set of tests, and each generated application has:
+JHipster提供了一组广泛的测试，每个生成的应用程序都有：
 
-*   Integration tests using the Spring Test Context framework.
-*   UI tests with [Jest](https://facebook.github.io/jest/).
+*   使用Spring测试上下文框架进行集成测试。
+*   UI tests [Jest](https://facebook.github.io/jest/).
 
-Optionally, JHipster can also generate:
+或者，JHipster还可以生成：
 
-*   Performance tests with [Gatling.](http://gatling.io/)
-*   Behaviour-driven tests with [Cucumber](https://cucumber.io/)
-*   Angular/React integration tests with [Protractor](https://angular.github.io/protractor/#/).
+*   性能测试[Gatling.](http://gatling.io/)
+*   行为驱动测试 [Cucumber](https://cucumber.io/)
+*   Angular/React集成测试 [Protractor](https://angular.github.io/protractor/#/).
 
-We have two goals in generating those tests:
+在生成这些测试时，我们有两个目标：
 
-*   Help every JHipster user to follow best practices, as we believe tests are a very useful part of every application
-*   Validate that what is being generated is correct. So even if you don't plan to use those tests at all, doing just a `./mvnw clean test` and `npm test` after generating your application is a good way of knowing if everything is fine. You are then free to ignore those tests if you think that testing is a waste of time!
+*   帮助每个Jhipster用户遵循最佳实践，因为我们相信测试是每个应用程序的一个非常有用的部分
+*   验证正在生成的内容是否正确。因此，即使您根本不打算使用这些测试，在生成应用程序后只进行`./mvnw clean test`和` npm test`是一种了解是否一切正常的好方法。如果您认为测试是浪费时间的话，那么您可以随意忽略这些测试！
 
 All those tests will be generated in the standard Maven `src/test` folder.
 

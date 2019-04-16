@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Profiles
+title: 环境
 permalink: /profiles/
 redirect_from:
   - /profiles.html
@@ -9,12 +9,12 @@ sitemap:
     lastmod: 2014-11-26T00:00:00-00:00
 ---
 
-# <i class="fa fa-group"></i> Profiles
+# <i class="fa fa-group"></i> 环境
 
-JHipster comes with two [Spring profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html) :
+JHipster定义了两个环境 [Spring profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html) :
 
-*   `dev` for development: it focuses on ease of development and productivity
-*   `prod` for production: it focuses on performance and scalability
+*   `dev` 对于开发：它关注于开发的易用性和生产力
+*   `prod` 对于生产：它关注性能和可扩展性
 
 Those profiles come in two different configurations:
 

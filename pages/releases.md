@@ -11,7 +11,7 @@ sitemap:
 
 # <i class="fa fa-file-text-o"></i> Release notes
 
-To get the latest JHipster news, please follow us on Twitter: [@java_hipster](https://twitter.com/java_hipster)
+要获取最新的JHipster新闻，请在Twitter上关注我们： [@java_hipster](https://twitter.com/java_hipster)
 
 {% for post in site.posts %}
 *   [{{ post.title }}]({{ post.url }})

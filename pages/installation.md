@@ -238,7 +238,7 @@ Kitematic是一个随Docker工具箱一起提供的易于使用的图形界面�
 
 <div class="alert alert-info"><i>提示: </i>
 
-如果您喜欢使用yarn，可以使用<code>jhipster--yarn<code>，以使用纱线而不是NPM。
+如果您喜欢使用yarn，可以使用<code>jhipster--yarn<code>，以使用yarn而不是NPM。
 
 </div>
 

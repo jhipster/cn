@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2017-04-30T00:00:00-00:00
 ---
 
-# [BETA] Deploying to OpenShift
+# [BETA] 部署到Openshift
 
 **WARNING!** This is a new sub-generator, of **BETA** quality WIP release! Feedback is highly welcome!! Happy OpenShifting!!!
 

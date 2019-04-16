@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Deploying to Kubernetes
+title: 部署到Kubernetes
 permalink: /kubernetes/
 redirect_from:
   - /kubernetes.html
@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2018-06-10T00:00:00-00:00
 ---
 
-# Deploying to Kubernetes
+# 部署到Kubernetes
 
 This sub-generator allows deployment of your JHipster application to [Kubernetes](http://kubernetes.io/).
 

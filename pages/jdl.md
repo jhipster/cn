@@ -1,34 +1,34 @@
 ---
 layout: default
-title: JHipster Domain Language
+title: JHipster域语言
 permalink: /jdl/
 sitemap:
     priority: 0.5
     lastmod: 2019-02-02T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL)
+# <i class="fa fa-star"></i> JHipster域语言 (JDL)
 
 
-The JDL is a JHipster specific domain language where you can describe all your applications, deployments, entities and their relationships in a single file (or more than one) with a simple and user-friendly syntax.
+JDL是一种JHipster特定的域语言，您可以使用简单且用户友好的语法在单个文件（或多个文件）中描述所有应用程序、部署、实体及其关系。
 
-You can use our online [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or one of the [JHipster IDE](https://www.jhipster.tech/jhipster-ide/) plugins/extensions, wich are available for [Eclipse](https://marketplace.eclipse.org/content/jhipster-ide), [VS Code](https://marketplace.visualstudio.com/items?itemName=jhipster-ide.jdl) and [Atom](https://atom.io/packages/ide-jhipster), to create a JDL file and its UML visualization. You can create and export or share the URL of your JDL model as well.
+您可以使用我们的在线[JDL-Studio](https://start.jhipster.tech/jdl-studio/) 或 [JHipster IDE](https://www.jhipster.tech/jhipster-ide/) 插件/扩展, 可用于 [Eclipse](https://marketplace.eclipse.org/content/jhipster-ide), [VS Code](https://marketplace.visualstudio.com/items?itemName=jhipster-ide.jdl) and [Atom](https://atom.io/packages/ide-jhipster), 创建JDL文件及其UML可视化。您也可以创建、导出或共享JDL模型的URL。
 
-You can generate applications, deployments and entities from a JDL file using the `import-jdl` sub-generator, by running `jhipster import-jdl your-jdl-file.jdl`. 
+您可以通过运行 `jhipster import-jdl your-jdl-file.jdl`的JDL文件生成应用, 部署和实体,
 
-If you have an existing project (either created with `jhipster import-jdl` or generated with `jhipster` command line), you can generate entities for the project by running running `jhipster import-jdl your-jdl-file.jdl`. Make sure to execute this command under your JHipster project.
+如果您有一个现有的项目（使用`jhipster import-jdl`创建或使用`jhipster`命令行生成），则可以通过运行`jhipster import-jdl your-jdl-file.jdl`为该项目生成实体。确保在JHipster项目下执行此命令。
 
-You can also generate applications, entities and export them as a JDL file using [JHipster UML]({{ site.url }}/jhipster-uml/), by running `jhipster-uml your-xmi-file.xmi --to-jdl` from the root of the generated JHipster application. To learn more about JHipster UML, and install it, go to the [JHipster UML documentation]({{ site.url }}/jhipster-uml/).
+您还可以生成应用程序、实体，通过使用[JHipster UML]({{ site.url }}/jhipster-uml/), 在生成的JHipster应用的根目录运行 `jhipster-uml your-xmi-file.xmi --to-jdl`。要了解有关JHipster UML的更多信息并安装它，请转到 [JHipster UML documentation]({{ site.url }}/jhipster-uml/).
 
-This can be used as a replacement to using the [entity sub-generator]({{ site.url }}/creating-an-entity/) and is the recommended approach. The idea is that it is much easier to [manage relationships]({{ site.url }}/managing-relationships/) using a visual tool than with the classical Yeoman questions and answers.
+这可以作为使用 [entity sub-generator]({{ site.url }}/creating-an-entity/) 的替代方法，并且是建议的方法。其理念是，使用可视化工具 [manage relationships]({{ site.url }}/managing-relationships/) 比使用经典的Yeoman问答更容易。
 
-The JDL project is [available on GitHub](https://github.com/jhipster/jhipster-core/), it is an Open Source project like JHipster (Apache 2.0 License). It can also be used as a node library to do JDL parsing.
+JDL项目[available on GitHub](https://github.com/jhipster/jhipster-core/), 它是一个开源项目，如jhipster（Apache 2.0许可证）。它还可以用作节点库来进行JDL解析。
 
-_If you like the [JHipster Domain Language](https://github.com/jhipster/jhipster-core/), the [JDL Studio](https://github.com/jhipster/jdl-studio/) or the [JHipster IDE](https://github.com/jhipster/jhipster-ide/) don't forget to give them a star on [GitHub](https://github.com/jhipster/) - thanks_!
+_如果您喜欢 [JHipster Domain Language](https://github.com/jhipster/jhipster-core/), the [JDL Studio](https://github.com/jhipster/jdl-studio/) or the [JHipster IDE](https://github.com/jhipster/jhipster-ide/) 不要忘记点赞 [GitHub](https://github.com/jhipster/) - 谢谢_!
 
 ***
 
-Here is the JDL documentation:
+JDL 文档:
 
 1. [JDL Sample](#sample)
 1. [How to use it](#howtojdl)
@@ -728,10 +728,10 @@ A Unidirectional example where a Citizen has a Passport, but the Passport has no
     relationship OneToOne {
       Citizen to Passport
     }
-    
+
     // using @MapsId
     relationship OneToOne {
-          Citizen to Passport with jpaDerivedIdentifier 
+          Citizen to Passport with jpaDerivedIdentifier
     }
 
 ### One-to-Many

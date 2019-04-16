@@ -12,11 +12,11 @@ sitemap:
 # <i class="fa fa-magic"></i> JHipster-UML
 
 
-JHipster-UML is a JHipster sub-project that can be used as a replacement to using the [entity sub-generator]({{ site.url }}/creating-an-entity/). The idea is that it is much easier to [manage relationships]({{ site.url }}/managing-relationships/) using a visual tool than with the classical Yeoman questions and answers.
+Jhipster UML是一个Jhipster子项目，可以用作使用[entity sub-generator]({{ site.url }}/creating-an-entity/)的替代。 其理念是，使用可视化工具 [manage relationships]({{ site.url }}/managing-relationships/) 比使用经典的Yeoman问答更容易。
 
-The JHipster-UML project is [available on GitHub](https://github.com/jhipster/jhipster-uml/), it is an Open Source project like JHipster (Apache 2.0 licence). If you like this project, don't forget to give us a star on GitHub!
+JHipster-UML项目 [available on GitHub](https://github.com/jhipster/jhipster-uml/),如果你喜欢这个项目，别忘了在Github上给我们一颗星星！
 
-Here's what's covered on this page:
+以下是本页介绍的内容：
 
 1. [Introduction](#introduction)
 2. [Issues and bugs](#issues)
