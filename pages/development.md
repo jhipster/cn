@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using JHipster in development
+title: 在开发中使用JHipster
 permalink: /development/
 redirect_from:
   - /development.html
@@ -9,130 +9,130 @@ sitemap:
     lastmod: 2016-12-01T00:00:00-00:00
 ---
 
-# <i class="fa fa-code"></i> Using JHipster in development
+# <i class="fa fa-code"></i> 在开发中使用JHipster
 
-_**Please check our [video tutorial]({{ site.url }}/video-tutorial/) on creating a new JHipster application!**_
+_**请查看我们的 [视频教程]({{ site.url }}/video-tutorial/) 创建新的Jhipster应用程序！**_
 
-## Summary
+## 概要
 
-1.  [General configuration](#general-configuration)
-2.  [Running the Java server](#running-java-server)
-3.  [Working with Angular/React](#working-with-angular)
-4.  [Using a database](#using-a-database)
-5.  [Internationalization](#internationalization)
+1.  [通用配置](#general-configuration)
+2.  [运行Java服务器](#running-java-server)
+3.  [使用Angular/React](#working-with-angular)
+4.  [使用数据库](#using-a-database)
+5.  [国际化](#internationalization)
 
-## <a name="general-configuration"></a> General configuration
+## <a name="general-configuration"></a> 通用配置
 
-### IDE configuration
+### IDE配置
 
-If you haven't configured your IDE yet, please go to the [Configuring your IDE]({{ site.url }}/configuring-ide/) page.
+如果您还没有配置您的IDE，请转到[配置您的IDE]({{ site.url }}/configuring-ide/) page.
 
-### Application configuration
+### 应用程序配置
 
-By default, JHipster uses the "development" profile, so you don't have to configure anything.
+默认情况下，JHipster使用“开发”概要文件，因此您不必配置任何内容。
 
-If you want more information on the available profiles, please go the section titled "[Profiles]({{ site.url }}/profiles/)".
+如果您需要有关可用配置文件的更多信息，请转到标题为"[Profiles]({{ site.url }}/profiles/)".
 
-If you want to configure some specific JHipster properties, have a look at the [common application properties]({{ site.url }}/common-application-properties/) page.
+如果要配置某些特定的JHipster属性，请查看 [常用应用程序属性]({{ site.url }}/common-application-properties/) 。
 
-## <a name="running-java-server"></a> Running the Java server
+## <a name="running-java-server"></a> 运行Java服务器
 
 ### As a "main" Java class
 
-From your IDE, right-click on the "Application" class at the root of your Java package hierarchy, and run it directly. You should also be able to debug it as easily.
+从IDE中，右键单击Java包层次结构的根上的“应用程序”类，并直接运行它。您还应该能够轻松地调试它。
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+应用程序将运行在 [http://localhost:8080](http://localhost:8080).
 
-This application will have "hot reload" enabled by default, so if you compile a class, the Spring application context should refresh itself automatically, without the need to restart the server.
+默认情况下，这个应用程序将启用“热加载”，因此如果编译一个类，那么Spring应用程序上下文应该自动刷新自己，而不需要重新启动服务器。
 
-### As a Maven project
+### 作为Maven项目
 
-You can launch the Java server with Maven. JHipster provides a Maven wrapper, so you don't need to install Maven, and you have the guarantee that all project users have the same Maven version:
+您可以使用Maven启动Java服务器。JHipster提供了一个Maven包装器，因此您不需要安装Maven，并且您可以保证所有项目用户都具有相同的Maven版本：
 
 `./mvnw` (on Mac OS X/Linux) of `mvnw` (on Windows)
 
-(this will run our default Maven task, `spring-boot:run`)
+(这将运行我们的默认maven任务, `spring-boot:run`)
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+该应用程序将运行在[http://localhost:8080](http://localhost:8080).
 
-Alternatively, if you have installed Maven, you can launch the Java server with Maven:
+或者，如果您安装了Maven，则可以用Maven启动Java服务器：
 
 `mvn`
 
-If you want more information on using Maven, please go to [http://maven.apache.org](http://maven.apache.org)
+如果您想了解更多关于使用maven的信息，请访问 [http://maven.apache.org](http://maven.apache.org)
 
-### (Optional) As a Gradle project
+### （可选）作为Gradle项目
 
-If you selected the Gradle option, JHipster provides a Gradle wrapper, so you don't need to install Gradle, and you have the guarantee that all project users have the same Gradle version:
+如果您选择了Gradle选项，JHipster提供了一个Gradle包装器，因此您不需要安装Gradle，并且您可以保证所有项目用户都具有相同的Gradle版本：
 
 `./gradlew` (on Mac OS X/Linux) of `gradlew` (on Windows)
 
-(this will run our default Gradle task, `bootRun`)
+(这将运行默认Gradle task, `bootRun`)
 
-Alternatively, if you have installed Gradle, you can launch the Java server with Gradle:
+或者，如果您安装了Gradle，您可以使用Gradle启动Java服务器：
 
 `gradle`
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+该应用程序将运行在 [http://localhost:8080](http://localhost:8080).
 
-If you want more information on using Gradle, please go to [https://gradle.org](https://gradle.org)
+如果您想了解更多关于使用Gradle的信息，请访问 [https://gradle.org](https://gradle.org)
 
-## <a name="working-with-angular"></a> Working with Angular/React
+## <a name="working-with-angular"></a> 使用 Angular/React
 
-### Running Webpack
+### 运行 Webpack
 
-_This step is required to see changes in your TypeScript code and have live reloading of your client-side code._
+_此步骤是必需的，以查看类型脚本代码中的更改并实时重新加载客户端代码。_
 
-Running Webpack is the default task in the `package.json` file, so you just need to run:
+运行webpack是`package.json`文件中的默认任务，因此只需运行：
 
 `npm start`
 
-(or, if you use Yarn, `yarn start`).
+(或者，如果你使用Yarn, `yarn start`).
 
-This provides very impressive features:
+这提供了非常令人印象深刻的功能：
 
-*   As soon as you modify one of your HTML/CSS/TypeScript file, your browser will refresh itself automatically
-*   When you test your application on several different browsers or devices, all your clicks/scrolls/inputs should be automatically synchronized on all screens
+*   一旦你修改了一个 HTML/CSS/TypeScript文件，你的浏览器就会自动刷新
+*   当您在几个不同的浏览器或设备上测试应用程序时，您的所有点击/滚动/输入都应在所有屏幕上自动同步。
 
-This will launch:
+这将启动：
 
-- A Webpack task that will automatically compile TypeScript code into JavaScript
-- A Webpack "hot module reload" server that will run on [http://localhost:9060/](http://localhost:9060/) (and has a proxy to [http://127.0.0.1:8080/api](http://127.0.0.1:8080/api) to access the Java back-end)
-- A BrowserSync task that will run on [http://localhost:9000/](http://localhost:9000/), which has a proxy to [http://localhost:9060/](http://localhost:9060/) (the Webpack "hot module reload" server), and which will synchronize the user's clicks/scrolls/inputs
-- The BrowserSync UI, which will be available on [http://localhost:3001/](http://localhost:3001/)
+- 一个Webpack任务，它将自动将typescript代码编译为javascript
+- 一个Webpack "热加载模块" 服务器，它将运行在 [http://localhost:9060/](http://localhost:9060/) (并且具有代理 [http://127.0.0.1:8080/api](http://127.0.0.1:8080/api) 来访问java后台)
+- BrowserSync任务将运行在 [http://localhost:9000/](http://localhost:9000/), 并且有一个代理 [http://localhost:9060/](http://localhost:9060/) (Webpack "热模块加载" 服务器), 它将同步用户的clicks/scrolls/inputs
+- BrowserSync UI, 它将运行在 [http://localhost:3001/](http://localhost:3001/)
 
-### Running NPM
+### 运行 NPM
 
-Direct project dependencies are configured into `package.json`, but transitive dependencies are defined into the `package-lock.json` file, that get generated when `npm install` is run.
+直接项目依赖项配置为 `package.json`,，但可传递依赖项定义为`package-lock.json`文件, 该文件在运行 `npm install` 时生成.
 
-It is advised to check `package-lock.json`[https://docs.npmjs.com/files/package-lock.json] into source control, so that all team members of a project have the same versions of all dependencies. Running `npm install` again will regenerate the `package-lock.json` with the latest versions of transitive dependencies.
+建议将 `package-lock.json`[https://docs.npmjs.com/files/package-lock.json] 文件添加到源代码版本管理服务中, 以便项目的所有团队成员都具有相同版本的所有依赖项。 再次运行 `npm install` 将使用最新版本的可传递依赖项重新生成 `package-lock.json`。
 
-### Other NPM/Yarn tasks
+### 其他 NPM/Yarn 任务
 
-Those tasks are the same whether you use NPM or Yarn, we use the `npm` command as an example but you can replace it with `yarn`.
+无论您使用 NPM 或 Yarn这些任务都是相同的，我们使用`npm`命令作为示例， 但您可以用`yarn`替换它。
 
-- `npm run lint`: check for code style issues in the TypeScript code
-- `npm run lint:fix`: try to automatically correct TypeScript lint issues
-- `npm run tsc`: compile the TypeScript code
-- `npm run test`: run unit tests with Jest
-- `npm run test:watch`: keep the Jest unit tests running, for live feedback when code is changed
-- `npm run e2e`: run "end to end" tests with Protractor (only works if the Protractor option has been selected when the project was generated)
+- `npm run lint`: 检查typescript代码中的代码样式问题
+- `npm run lint:fix`: 尝试自动更正typescript lint问题
+- `npm run tsc`: 编译TypeScript代码
+- `npm run test`: 用jest运行单元测试
+- `npm run test:watch`: 保持Jest单元测试运行，以便在代码更改时获得实时反馈
+- `npm run e2e`: 使用Protractor运行 "end to end" 测试(仅在生成项目时选择了量角器选项时有效)
 
-## <a name="using-a-database"></a> Using a database
+## <a name="using-a-database"></a> 使用数据库
 
-### Running a database
+### 运行数据库
 
-If you use a non-embedded database, like MySQL, MariaDB, PostgreSQL, MSSQL, MongoDB, Cassandra or Couchbase, you will need to install and configure that database.
+如果使用非嵌入式数据库，如 MySQL, MariaDB, PostgreSQL, MSSQL, MongoDB, Cassandra 或 Couchbase, 则需要安装和配置该数据库。
 
-The easiest and recommended way with JHipster is to use Docker Compose. [Follow our Docker Compose guide here.]({{ site.url }}/docker-compose/)
+JHipster最简单和推荐的方法是使用Docker Compose。[Follow our Docker Compose guide here.]({{ site.url }}/docker-compose/)
 
-If you prefer to install and configure your database manually, don't forget to configure your Spring Boot properties accordingly in your `src/main/resources/config/application-*.yml` files (for example your database URL, login and password).
+如果您更喜欢手动安装和配置数据库，请不要忘记在`src/main/resources/config/application-*.yml`文件中相应地配置您的Spring引导属性（例如数据库URL、登录名和密码）。
 
-### Using the H2 database in development
+### 在开发中使用H2数据库
 
-If you choose the H2 database, you will have an in-memory database running inside your application, and you can access its console at [http://localhost:8080/h2-console](http://localhost:8080/h2-console) by default.
+如果选择H2数据库，则应用程序内部将运行内存中的数据库，默认情况下，您可以在 [http://localhost:8080/h2-console](http://localhost:8080/h2-console)访问其控制台.
 
-To connect to the database, select the pre-configured options:
+要连接到数据库，请选择预先配置的选项：
 
 *   Driver Class: org.h2.Driver
 *   JDBC URL: jdbc:h2:mem:jhipster
@@ -141,78 +141,78 @@ To connect to the database, select the pre-configured options:
 
 ![]({{ site.url }}/images/h2.png)
 
-### Using MySQL, MariaDB or PostgreSQL in development
+### 在开发中使用MySQL, MariaDB or PostgreSQL
 
-This option is bit more complex than using H2, but you have a some important benefits:
+这个选项比使用H2要复杂一些，但是您有一些重要的好处：
 
-*   Your data is kept across application restarts
-*   Your application starts a little bit faster
-*   You can use the great `./mvnw liquibase:diff` goal (see below)
+*   您的数据在应用程序重新启动时保留
+*   您的应用程序启动速度快一点
+*   您可以使用`./mvnw liquibase:diff` 目标（见下文）
 
-**Note**: for MySQL, you probably need to start your database with these options:
+**注意**: 对于MySQL, 您可能需要使用以下选项启动数据库：
 
 *   `--lower_case_table_names=1` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html)
 *   `--skip-ssl` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/encrypted-connection-options.html#option_general_ssl)
 *   `--character_set_server=utf8` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_character-set-server)
 *   `--explicit_defaults_for_timestamp` : see the [documentation](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
 
-The command is:
+命令是：
 
     mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8 --explicit_defaults_for_timestamp
 
-## Database updates
+## Database更新
 
-If you add or modify a JPA entity, you will need to update your database schema.
+如果添加或修改JPA实体，则需要更新数据库模式。
 
-JHipster uses [Liquibase](http://www.liquibase.org) to manage the database updates, and stores its configuration in the `/src/main/resources/config/liquibase/` directory. There are 3 ways to work with Liquibase: use the entity sub-generator, use the liquibase:diff Maven goal, or update the configuration files manually.
+JHipster 使用 [Liquibase](http://www.liquibase.org)来管理数据库更新, 并将配置存储在 `/src/main/resources/config/liquibase/` 目录.使用liquibase有三种方法：使用实体子生成器、使用liquibase:diff maven目标或手动更新配置文件。
 
-### Database updates with the entity sub-generator
+### 使用实体子生成器更新数据库
 
-If you use the [entity sub-generator]({{ site.url }}/creating-an-entity/), here is the development workflow:
+如果您使用 [entity sub-generator]({{ site.url }}/creating-an-entity/),以下是开发工作流：
 
-*   Run the [entity sub-generator]({{ site.url }}/creating-an-entity/)
-*   A new "change log" is created in your `src/main/resources/config/liquibase/changelog` directory, and has been automatically added to your `src/main/resources/config/liquibase/master.xml` file
-*   Review this change log, it will be applied the next time you run your application
+*   运行 [entity sub-generator]({{ site.url }}/creating-an-entity/)
+*   在 `src/main/resources/config/liquibase/changelog` 目录中创建了一个新的“更改日志”，, 并已自动添加到 `src/main/resources/config/liquibase/master.xml` 文件中。
+*   查看此更改日志，它将在下次运行应用程序时应用。
 
-### Database updates with the Maven liquibase:diff goal
+### 使用maven liquibase更新数据库:diff goal
 
-If you have choosen to use MySQL, MariaDB or PostgreSQL in development, you can use the `./mvnw liquibase:diff` goal to automatically generate a changelog.
+如果您在开发中选择使用MySQL, MariaDB or PostgreSQL, 可以使用`./mvnw liquibase:diff`目标自动生成变更日志。
 
-If you are running H2 with disk-based persistence, this workflow is not yet working perfectly, but you can start trying to use it (and send us feedback!).
+如果您使用基于磁盘的持久性运行H2，则此工作流尚未完全工作，但您可以开始尝试使用它（并向我们发送反馈！）.
 
-[Liquibase Hibernate](https://github.com/liquibase/liquibase-hibernate) is a Maven plugin that is configured in your pom.xml, and is independant from your Spring application.yml file, so if you have changed the default settings (for example, changed the database password), you need to modify both files.
+[Liquibase Hibernate](https://github.com/liquibase/liquibase-hibernate) 是在pom.xml中配置的maven插件，与spring application.yml文件无关，因此如果更改了默认设置（例如更改了数据库密码），则需要修改这两个文件。
 
-Here is the development workflow:
+以下是开发工作流：
 
-*   Modify your JPA entity (add a field, a relationship, etc.)
-*   Compile your application (this works on the compiled Java code, so don't forget to compile!)
-*   Run `./mvnw liquibase:diff` (or `./mvnw compile liquibase:diff` to compile before)
-*   A new "change log" is created in your `src/main/resources/config/liquibase/changelog` directory
-*   Review this change log and add it to your `src/main/resources/config/liquibase/master.xml` file, so it is applied the next time you run your application
+*   修改JPA实体（添加字段、关系等）
+*   编译你的应用程序（这是在编译的Java代码上工作的，所以别忘了编译！）
+*   运行 `./mvnw liquibase:diff` (或 `./mvnw compile liquibase:diff` 来编译)
+*   在`src/main/resources/config/liquibase/changelog` 目录中创建了一个新的“更改日志”
+*   查看此更改日志并将其添加到 `src/main/resources/config/liquibase/master.xml` 文件中，以便下次运行应用程序时应用它
 
-If you use Gradle instead of Maven, you can use the same workflow by running `./gradlew liquibaseDiffChangelog -PrunList=diffLog`, and change the database configuration in `build.gradle` in the liquibase configuration if required.
+如果使用Gradle而不是Maven，则可以通过运行 `./gradlew liquibaseDiffChangelog -PrunList=diffLog`, 来使用相同的工作流，如果需要，还可以在liquibase配置的'build.gradle'中更改数据库配置。
 
-### Database updates by manually editing the change log
+### 通过手动编辑更改日志来更新数据库
 
-If you prefer (or need) to do a database update manually, here is the development workflow:
+如果您喜欢（或需要）手动更新数据库，以下是开发工作流：
 
-*   Modify your JPA entity (add a field, a relationship, etc.)
-*   Create a new "change log" in your `src/main/resources/config/liquibase/changelog` directory. The files in that directory are prefixed by their creation date (in yyyyMMddHHmmss format), and then have a title describing what they do. For example, `20141006152300_added_price_to_product.xml` is a good name.
-*   Add this "change log" file in your `src/main/resources/config/liquibase/master.xml` file, so it is applied the next time you run your application
+*   修改JPA实体（添加字段、关系等）
+*   在`src/main/resources/config/liquibase/changelog` 目录中创建一个新的“更改日志”。该目录中的文件以其创建日期(格式为 yyyyMMddHHmmss), 然后具有一个描述它们所做操作的标题。 例如, `20141006152300_added_price_to_product.xml`是一个不错的名字.
+*   将此“更改日志”文件添加到“src/main/resources/config/liquibase/master.xml”文件中，以便下次运行应用程序时应用此文件。
 
-If you want more information on using Liquibase, please go to [http://www.liquibase.org](http://www.liquibase.org).
+如果您想了解有关使用liquibase的更多信息，请访问 [http://www.liquibase.org](http://www.liquibase.org).
 
-## <a name="internationalization"></a> Internationalization
+## <a name="internationalization"></a> 国际化
 
-Internationalization (or i18n) is a first-class citizen in JHipster, as we believe it should be set up at the beginning of your project (and not as an afterthought).
+国际化（或I18N）是Jhipster的一流公民，我们认为它应该在项目开始时建立（而不是事后诸葛亮）。
 
-Usage is really easy:
+使用非常简单：
 
-- With Angular, thanks to [NG2 translate](https://github.com/ocombe/ng2-translate) and a specific JHipster component, which uses simple JSON files for translation
-- With React, thanks to a specific JHipster component, which works the same way as the Angular component, and uses the same files
+- 使用Angular, 多亏了[NG2 translate](https://github.com/ocombe/ng2-translate) 和一个特定的JHipster组件，它使用简单的json文件进行翻译
+- 使用React, 由于特定的JHipster组件，其工作方式与角度组件相同，并且使用相同的文件
 
-For example, to add a translation to the "first name" field, just add a "translate" attribute with a key: `<label jhiTranslate="settings.form.firstname">First Name</label>`
+例如，要将翻译添加到“first name”字段中，只需添加一个带有键的“translate”属性：`<label jhiTranslate="settings.form.firstname">First Name</label>`
 
-This key references a JSON document, which will return the translated String. Angular/React will then replace the "First Name" String with the translated version.
+这个键引用了一个JSON文档，它将返回翻译后的字符串。然后，Angular/React将用翻译版本替换“first name”字符串。
 
-If you want more information on using languages, read our [Installing new languages documentation]({{ site.url }}/installing-new-languages/).
+如果您想了解更多有关使用语言的信息，请阅读我们的[安装新语言文档]({{ site.url }}/installing-new-languages/).

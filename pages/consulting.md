@@ -24,5 +24,5 @@ _Professional help is provided by core committers of JHipster._
 
 ## China
 
-#### Ippon Technologies USA
+#### 微信社区
 <img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">
