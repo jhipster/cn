@@ -9,11 +9,11 @@ sitemap:
 
 # <i class="fa fa-exchange"></i> Traefik
 
-## Traefik overview
+## Traefik概述
 
-[Traefik](https://traefik.io/) is a modern HTTP reverse proxy and load balancer made to deploy microservices with ease.
+[Traefik](https://traefik.io/)是一个现代的HTTP反向代理和负载均衡器，用于轻松部署微服务。
 
-It can route HTTP requests like Zuul, so it has some overlap with a [JHipster gateway]({{ site.url }}/api-gateway/), but it works on a lower level than an API Gateway: it only routes HTTP requests and does not provide rate limiting, security or Swagger documentation aggregation.
+它可以像zuul那样路由HTTP请求，因此它与[JHipster gateway]({{ site.url }}/api-gateway/)有一些重叠， 但它的工作级别低于API Gateway: 它只路由HTTP请求，不提供速率限制、安全性或Swagger文档聚合。
 
 One of the benefits of Traefik is that is can work with many different service discovery solutions: with JHipster, however, it only works with [Consul]({{ site.url }}/consul/) by default.
 

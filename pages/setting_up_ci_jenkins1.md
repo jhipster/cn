@@ -1,22 +1,22 @@
 ---
 layout: default
-title: Setting up Jenkins 1
+title: 设置Jenkins 1
 permalink: /setting-up-ci-jenkins1/
 sitemap:
     priority: 0.7
     lastmod: 2016-11-03T12:40:00-00:00
 ---
 
-# <i class="fa fa-wrench"></i> Setting up a Jenkins server
+# <i class="fa fa-wrench"></i> 设置Jenkins服务器
 
-To configure a Jenkins server for JHipster, refer to the following guides:
+要为JHipster配置Jenkins服务器，请参阅以下指南：
 
 - [Setting up Jenkins 1 on Linux]({{ site.url }}/setting-up-ci-linux/)
 - [Setting up Jenkins 1 on Windows]({{ site.url }}/setting-up-ci-windows/)
 
-# <i class="fa fa-sliders"></i> Jenkins Configuration
+# <i class="fa fa-sliders"></i> Jenkins配置
 
-To setup a JHipster project in Jenkins, use the following configuration:
+要在Jenkins中设置JHipster项目，请使用以下配置：
 
 ## For Maven:
 
@@ -64,4 +64,3 @@ To setup a JHipster project in Jenkins, use the following configuration:
 * Post-build Actions
     * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
 ```
-

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Showcase
+title: 案例
 permalink: /showcase/
 redirect_from:
   - /showcase.html
@@ -9,11 +9,11 @@ sitemap:
     lastmod: 2014-10-18T00:00:00-00:00
 ---
 
-# <i class="fa fa-file-image-o"></i> Showcase
+# <i class="fa fa-file-image-o"></i> 案例
 
-A showcase of awesome applications built with JHipster.
+JHipster构建的精彩应用程序展示。
 
-If you want your application to be featured here just submit a PR to the [website](https://github.com/jhipster/jhipster.github.io) or let us know via Twitter by mentioning the [@java_hipster](https://twitter.com/java_hipster) handle.
+如果你想在这里展示你的应用程序，只需向[website](https://github.com/jhipster/jhipster.github.io)提交一份公关，或者通过Twitter通知我们，方法是提及 [@java_hipster](https://twitter.com/java_hipster)
 
 <br/><br/><br/>
 

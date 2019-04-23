@@ -1,76 +1,76 @@
 ---
 layout: default
-title: Separating the front-end and the API server
+title: 分离前端和API服务器
 permalink: /separating-front-end-and-api/
 sitemap:
     priority: 0.7
     lastmod: 2017-12-28T00:00:00-00:00
 ---
 
-# <i class="fa fa-unlink"></i> Separating the front-end and the API server
+# <i class="fa fa-unlink"></i> 分离前端和API服务器
 
-## Introduction
+## 介绍
 
-JHipster is a "full-stack" development tool, and its goal is to make you work efficiently with your front-end code (Angular/React) and your back-end code (Spring Boot).
+JHipster是一个“全栈”开发工具，它的目标是使您能够有效地处理前端代码（angular/react）和后端代码（spring boot）。
 
-However, it is a common requirement to separate the front-end and the back-end codes, typically because they are developed by different teams and have a different lifecycle.
+但是，将前端和后端代码分开是一个常见的需求，这通常是因为它们由不同的团队开发，并且具有不同的生命周期。
 
-**Please note** that this isn't the default JHipster way of working: this isn't complex to do, and works well, but this is an advanced topic. If you are just getting started with JHipster, we recommend that you begin by using our standard way of working.
+**请注意** 这不是默认的JHipster工作方式：这并不复杂，而且工作得很好，但这是一个高级主题。如果您刚开始使用JHipster，我们建议您从使用我们的标准工作方式开始。
 
-## Generating only a front-end or a back-end application
+## 仅生成前端或后端应用程序
 
-You can choose to generate only a JHipster back-end or JHipster front-end application. At generation time, this is only a matter of choosing flags which are described in our [application generation documentation]({{ site.url }}/creating-an-app/):
+您可以选择只生成JHipster后端或JHipster前端应用程序。在生成时，这只是选择标记的问题，这些标记在我们的 [application generation documentation]({{ site.url }}/creating-an-app/)中描述：
 
-- `jhipster --skip-client` will only generate a back-end application (this is typically what JHipster microservices are)
-- `jhipster --skip-server` will only generate a front-end application
+- `jhipster --skip-client` 只会生成后端应用程序（这通常是jhipster微服务的特点）
+- `jhipster --skip-server` 将只生成前端应用程序
 
-This should only work well for monoliths, as this doesn't make much sense for microservices (which have no front-end anyway) and gateways (which are basically a monolith with the Zuul gateway service enabled).
+这只适用于单块，因为这对于微服务（无论如何都没有前端）和网关（基本上是启用zuul网关服务的单块）没有多大意义。
 
-## Directory layout
+## 目录布局
 
-JHipster uses the standard Maven directory layout. When working on the back-end, you can just read the [Maven standard directory layout documentation](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html).
+JHipster使用标准的maven目录布局。在后端工作时，您只需阅读[Maven standard directory layout documentation](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html).
 
-When working on the front-end, there are 2 directories you need to know:
+在前端工作时，您需要知道两个目录：
 
-- `src/main/webapp` is where the client application will be developed
-- `target/www` is where your client application will be packaged
+- `src/main/webapp` 是开发客户端应用程序的地方
+- `target/www` 客户端应用程序的打包位置
 
-If you have separate teams working on the front-end and back-end, you have two solutions:
+如果您有独立的团队在前端和后端工作，那么您有两个解决方案：
 
-- Both teams can work on the same project. As the directories are separated, there won't have much conflicts between teams. To make things even cleaner, both teams could work on separate branches.
-- The front-end code can be stored in a specific Git project, and then imported into the main back-end project as a Git sub-module. This would require to move the client-side build scripts, but this is a simple refactoring.
+- 两个团队可以在同一个项目上工作。由于目录是分开的，所以团队之间不会有太多冲突。为了使事情更干净，两个团队可以在不同的分支上工作。
+- 前端代码可以存储在特定的Git项目中，然后作为Git子模块导入到主后端项目中。这需要移动客户端构建脚本，但这只是一个简单的重构。
 
 ## HTTP requests routing and caching
 
-Once the front-end and back-end have been separated, the issue will be how to handle HTTP requests:
+一旦前端和后端分离，问题将是如何处理HTTP请求：
 
-- All API calls will use a `/api` prefix. If you are using Angular, there is also a specific `SERVER_API_URL` constant, defined in the `webpack.common.js` configuration, that can enrich this prefix. For example, you can use `"http://api.jhipster.tech:8081/"` as a back-end API server (If you do this, please read our documentation on CORS below).
-- Calls to `/` serve static assets (from the front-end), which should not be cached by the browser.
-- Calls to `/app` (which contains the client-side application) and to `/content` (which contains the static content, like images and CSS) should be cached in production, as those assets are hashed.
+- 所有API调用都将使用`/api`前缀。如果您使用的是angular，那么在“webpack.common.js”配置中还定义了一个特定的“server-api-url”常量，它可以丰富这个前缀。例如，您可以使用`“http://api.jhipster.tech:8081/”`作为后端API服务器（如果这样做，请阅读下面关于CORS的文档）。
+- 调用`/`服务静态资产（从前端），浏览器不应缓存这些资产。
+- 对`/app`（包含客户端应用程序）和`/content`（包含静态内容，如图像和CSS）的调用应在生产中缓存，因为这些资产是散列的。
 
-# Using BrowserSync
+# 使用BrowserSync
 
-In `dev` mode, JHipster uses BrowserSync for hot-reload of the front-end application. BrowserSync has a proxy ([here is its documentation](https://www.browsersync.io/docs/options#option-proxy)) that will route requests from `/api` to a back-end server (by default, `http://127.0.0.1:8080`).
+在 `dev` 模式下, JHipster使用BrowserSync对前端应用程序进行热重新加载。BrowserSync有一个代理 ([here is its documentation](https://www.browsersync.io/docs/options#option-proxy)) that will route requests from `/api` to a back-end server (by default, `http://127.0.0.1:8080`).
 
-This only works in `dev` mode, but this is a very powerful way of accessing different API servers from the front-end.
+这只在`dev`模式下工作，但这是一种从前端访问不同API服务器的非常强大的方法。
 
-## Using CORS
+## 使用CORS
 
-CORS ([Cross-origin request sharing](https://wikipedia.org/wiki/Cross-origin_resource_sharing)) allow to access different back-end servers with the same front-end, without configuring a proxy.
+CORS ([Cross-origin request sharing](https://wikipedia.org/wiki/Cross-origin_resource_sharing)) 允许访问具有相同前端的不同后端服务器，而无需配置代理。
 
-This is an easy-to-use solution, but it can be less secure in production.
+这是一个易于使用的解决方案，但在生产中可能不太安全。
 
-JHipster provides out-of-the-box a CORS configuration:
+JHipster提供开箱即用的CORS配置：
 
-- CORS can be configured using the `jhipster.cors` property, as defined in [the JHipster common application properties]({{ site.url }}/common-application-properties/)
-- It is enabled by default in `dev` mode for monoliths and gateways. It is disabled by default for microservices as you are supposed to access them through a gateway.
-- It is disabled by default in `prod` mode, for security reasons.
+- 可以使用`jhipster.cors`属性配置CORS，如[the JHipster common application properties]({{ site.url }}/common-application-properties/)
+- 它默认在`dev`模式下为单片和网关启用。默认情况下，它对微服务是禁用的，因为您应该通过网关访问它们。
+- 出于安全原因，它在默认情况下在`prod`模式下被禁用。
 
-## Using NGinx
+## 使用NGinx
 
-Another solution to separate the front-end and back-end codes is to use a proxy server. This is very common in production, and some teams also use this technique in development.
+分离前端和后端代码的另一个解决方案是使用代理服务器。这在生产中很常见，一些团队在开发中也使用了这种技术。
 
-This configuration will change depending on your specific use-case, so this cannot be automated by the generator, here is below a working configuration.
+此配置将根据您的特定用例而更改，因此生成器无法自动执行此配置，下面是一个工作配置。
 
 Create a `src/main/docker/nginx.yml` Docker Compose file:
 
@@ -84,9 +84,9 @@ Create a `src/main/docker/nginx.yml` Docker Compose file:
         ports:
         - "8000:80"
 
-This Docker image will configure an NGinx server, that reads the static assets from `target/www`: this is where the JHipster front-end application is generated by default. In production, you will probably have a specific folder for this.
+这个docker映像将配置一个Nginx服务器，从“target/www”读取静态资产：这是默认情况下生成JHipster前端应用程序的地方。在生产环境中，您可能有一个特定的文件夹。
 
-It also reads a `./nginx/site.conf` file: this is a NGinx-specific configuration file. Here is a sample `site.conf`:
+它还读取一个`./nginx/site.conf`文件：这是一个特定于nginx的配置文件。以下是`site.conf`示例：
 
     server {
         listen 80;

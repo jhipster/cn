@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - e-mail not found
+title: Error - 找不到电子邮件
 permalink: /problem/email-not-found/
 sitemap:
     priority: 0.7

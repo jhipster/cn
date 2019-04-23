@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Couchbase
+title: 使用Couchbase
 permalink: /using-couchbase/
 redirect_from:
   - /using_couchbase.html
@@ -9,15 +9,15 @@ sitemap:
     lastmod: 2015-02-24T00:00:00-00:00
 ---
 
-# <i class="fa fa-database"></i> Using Couchbase
+# <i class="fa fa-database"></i> 使用Couchbase
 
-Couchbase is one of the supported databases that can be selected when your application is being generated.
+CouchBase是在生成应用程序时可以选择的受支持数据库之一。
 
-When Couchbase is selected:
+选择CouchBase时：
 
-*   Spring Data Couchbase will be used to access the database. This is very close to Spring Data JPA, and this is why Couchbase support is very close to the (default) JPA support
-*   [Couchmove](https://github.com/differentway/couchmove) is used instead of [Liquibase](http://www.liquibase.org/) to manage database changes
-*   The [entity sub-generator]({{ site.url }}/creating-an-entity/) will not ask you for entity relationships, as you can't have relationships with a NoSQL database (at least not in the way you have relationships with JPA)
-*   [Couchbase TestContainers](https://github.com/differentway/testcontainers-java-module-couchbase) is used to launch a containerized version of the database for running unit tests.
+*   Spring数据库将用于访问数据库。这非常接近SpringDataJPA，这就是为什么CouchBase支持非常接近（默认）JPA支持的原因
+*   使用[Couchmove](https://github.com/differentway/couchmove) 而不是[Liquibase](http://www.liquibase.org/)来管理数据库更改
+*   [entity sub-generator]({{ site.url }}/creating-an-entity/) 不会要求您提供实体关系，因为您无法与NoSQL数据库建立关系（至少不会以与JPA建立关系的方式）
+*   [Couchbase TestContainers](https://github.com/differentway/testcontainers-java-module-couchbase) 用于启动用于运行单元测试的数据库的容器化版本
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

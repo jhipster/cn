@@ -16,7 +16,7 @@ JHipster定义了两个环境 [Spring profiles](http://docs.spring.io/spring-boo
 *   `dev` 对于开发：它关注于开发的易用性和生产力
 *   `prod` 对于生产：它关注性能和可扩展性
 
-Those profiles come in two different configurations:
+这些配置文件有两种不同的配置：
 
 *   The Maven/Gradle profiles are used at build time. For example `./mvnw -Pprod package` or `./gradlew bootWar -Pprod` will package a production application.
 *   The Spring profiles work at run time. Some Spring beans will behave differently, depending on the profile.

@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Using Angular
+title: 使用Angular
 permalink: /using-angular/
 sitemap:
     priority: 0.7
     lastmod: 2015-01-29T23:41:00-00:00
 ---
 
-# <i class="fa fa-html5"></i> Using Angular
+# <i class="fa fa-html5"></i> 使用Angular
 
-## Tooling
+## 工具
 
 Angular is using TypeScript instead of JavaScript, and as a result some specific tooling is necessary to work efficiently with it. Our [development]({{ site.url }}/development/) workflow for an Angular 2+ application is as below, use `npm` instead of `yarn` if you prefer that.
 
@@ -27,7 +27,7 @@ Other available yarn/npm commands can be found in the `scripts` section of your 
 
 - To work on your code in your browser, we recommend using [Angular Augury](https://augury.angular.io/), so you can visualize your routes and debug your code easily
 
-## Project Structure
+## 项目结构
 
 The JHipster client code can be found under `src/main/webapp`, and follows closely the  [John Papa Angular 2 style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a2/README.md). Please read this guide first if you have any question on our application structure, file names, TypeScript conventions...
 
@@ -89,7 +89,7 @@ Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) to create a
 
 Please note that the default language translations would be based on what you have choosen during app generation. 'en' and 'fr' are shown here only for demonstration.
 
-## Authorizations
+## 授权
 
 JHipster uses [the Angular router](https://angular.io/docs/ts/latest/guide/router.html) to organize the different parts of your client application.
 
@@ -124,7 +124,7 @@ For example, the following text will only be displayed to users having one of th
 
 *Please note* that those directives only show or hide HTML components on the client-side, and that you also need to secure your code on the server-side!
 
-## The ng-jhipster library
+## ng-jhipster库
 
 The ng-jhipster library is free and OSS, and available on [https://github.com/jhipster/ng-jhipster](https://github.com/jhipster/ng-jhipster).
 
@@ -136,7 +136,7 @@ The ng-jhipster library contains utility functions and common components that ar
 - Base64, date and pagination handling services
 - A notification system (see below)
 
-### Notification System
+### 通知系统
 
 JHipster uses a custom notification system to send events from the server-side to the client-side, and has i18n-capable `JhiAlertComponent` and `JhiAlertErrorComponent` components which can be used throughout the generated applications.
 
@@ -159,7 +159,7 @@ The shorthand methods `success`, `info`, `warning` and `error` will have a defau
         )
     );
 
-## Using Angular CLI
+## 使用Angular CLI
 
 <div class="alert alert-info"><i>Info: </i>
 
@@ -167,23 +167,23 @@ Angular CLI and JHipster can be used in parallel for development, and both have 
 
 </div>
 
-### Overview
+### 概述
 
 [Angular CLI](https://cli.angular.io/) is a tool to develop, scaffold and maintain Angular applications. JHipster generates the Angular CLI configuration file, so the Angular CLI workflows work with JHipster.
 
 This integration is done by generating a `angular.json` file in the application root folder and adding its dependencies in the `package.json` file.
 
-### Usage
+### 用法
 
 ```bash
 ng help
 ```
 
-### Building
+### 构建
 
 You should not use `ng build` to build your front-end, as JHipster has its own scripts. Check our ["using in development" documentation]({{ site.url }}/development/) and our ["using in production" documentation]({{ site.url }}/production/).
 
-### Generating Components, Directives, Pipes and Services
+### 生成组件、指令、管道和服务
 
 You can use the `ng generate` (or just `ng g`) command to generate Angular components:
 
@@ -214,7 +214,7 @@ Scaffold  | Usage
 [Module](https://github.com/angular/angular-cli/wiki/generate-module)       | `ng g module my-module`
 
 
-### Test
+### 测试
 
 For consistency purpose on JHipster application, tests execution are only available through the `npm` command:
 
@@ -226,7 +226,7 @@ npm test
 
 JHipster is using the `ng2-translate` dependency for translation purpose. Angular CLI i18n is based on the default Angular i18n support, which is incompatible with JHipster.
 
-### Running the server
+### 运行服务器
 
 If you prefer to use Angular CLI to develop you application, you can run your server directly by using its dedicated command.
 
@@ -244,6 +244,6 @@ ng serve --proxy-conf proxy.conf.json
 
 You will then be able to access your API.
 
-### Conclusion
+### 结论
 
 For more information about the Angular CLI, please visit the official website [https://cli.angular.io/](https://cli.angular.io/)

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Sponsors
+title: 赞助商
 permalink: /sponsors/
 sitemap:
     priority: 0.1
     lastmod: 2017-11-29T00:00:00-00:00
 ---
-# <i class="fa fa-usd"></i> Sponsors
+# <i class="fa fa-usd"></i> 赞助商
 
 JHipster uses [OpenCollective](https://opencollective.com/generator-jhipster) to gather money. This money is used to cover project expenses (like running this website) in a transparent way ([See the OpenCollective documentation](https://opencollective.com/learn-more)), and your donation will help the project live and grow successfully.
 

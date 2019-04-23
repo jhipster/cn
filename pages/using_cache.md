@@ -1,31 +1,31 @@
 ---
 layout: default
-title: Using a cache
+title: 使用缓存
 permalink: /using-cache/
 sitemap:
     priority: 0.7
     lastmod: 2017-02-10T18:40:00-00:00
 ---
 
-# <i class="fa fa-line-chart"></i> Using a cache
+# <i class="fa fa-line-chart"></i> 使用缓存
 
-A cache can be used at two levels in JHipster:
+JHipster中的缓存可以在两个级别上使用：
 
-- With the Spring Cache abstraction, which is a specific question when your application is generated, and which uses the Spring Boot `@EnableCaching` annotation. This needs to be tuned according to your specific business needs, and works at a higher level than the Hibernate 2nd-level cache.
-- As an Hibernate 2nd-level cache, a caching solution can give a huge performance boost to your application, and this is what people usually do with JHipster. Please note that this option is only available for SQL databases, and if you have selected to use Spring Cache.
+- 使用Spring缓存抽象，这是生成应用程序时的一个特定问题，它使用Spring引导`@enablecaching`注释。这需要根据您的特定业务需求进行调整，并在比Hibernate二级缓存更高的级别上工作。
+- 作为一个Hibernate二级缓存，缓存解决方案可以为您的应用程序带来巨大的性能提升，这就是人们通常使用Jhipster所做的。请注意，此选项仅适用于SQL数据库，并且如果您已选择使用Spring缓存。
 
-Spring Cache and the Hibernate 2nd-level cache will use the same caching solution, but do not work at the same level: we do not recommend to use both for the same objects, as this will make cache invalidation issues even more complex. Instead, we recommend you use:
+Spring缓存和Hibernate二级缓存将使用相同的缓存解决方案，但不能在同一级别上工作：我们不建议对同一对象同时使用这两种方法，因为这将使缓存失效问题更加复杂。相反，我们建议您使用：
 
-- Spring Cache for higher-level or aggregate objects, like you typically have with DTOs
-- The Hibernate 2nd-level cache for entities mapped to the database, in order to reduce the number of SQL requests
+- 用于更高级别或聚合对象的Spring缓存，就像您通常使用DTO一样
+- 为映射到数据库的实体提供Hibernate二级缓存，以减少SQL请求的数量。
 
-JHipster supports 4 caches implementations: Ehcache, Hazelcast, Infinispan and Memcached. They are all detailed below.
+JHipster支持4个缓存实现: Ehcache, Hazelcast, Infinispan and Memcached. They are all detailed below.
 
-## Common configuration
+## 通用配置
 
 Caches are configured in the `CacheConfiguration` class, and can also be tuned using the JHipster [common application properties]({{ site.url }}/common-application-properties/).
 
-## Caching with Ehcache
+## 使用Ehcache缓存
 
 [Ehcache](http://www.ehcache.org/) is the default cache with monoliths in JHipster. Ehcache is simple to setup and configure, and starts up very fast, so it's a perfect solution for "normal" monoliths.
 
@@ -37,7 +37,7 @@ By default, `time-to-live-seconds` has a default value of 3600 seconds (1 hour) 
 
 Those values should be tuned depending on your specific business needs, and the JHipster monitoring screen can help you better understand cache usage in your application. Please also refer to the Ehcache documentation to fine-tune those values.
 
-## Caching with Hazelcast
+## 使用Hazelcast缓存
 
 [Hazelcast](https://hazelcast.com/) can work as a local cache (like Ehcache), but can also work as a distributed cache. As a result:
 
@@ -63,7 +63,7 @@ To work better with Hazelcast, JHipster includes support for the Hazelcast Manag
 - It is configured using JHipster [common application properties]({{ site.url }}/common-application-properties/), using the key `jhipster.cache.hazelcast.management-center`, in your `application-dev.yml` and `application-prod.yml` files. Please note that it is disabled by default.
 - JHipster generates a Docker Compose configuration to run easily the Hazelcast Management Center. Please read our [Docker Compose documentation]({{ site.url }}/docker-compose/), and run the application using `docker-compose -f src/main/docker/hazelcast-management-center.yml up -d`.
 
-## Caching with Infinispan
+## 使用Infinispan缓存
 
 [Infinispan](http://infinispan.org/) is a highly performant caching solution that can work as an in-memory local cache as well as clustered cache. It offers support for multiple cache modes,
   - [local](http://infinispan.org/docs/stable/user_guide/user_guide.html#local_mode)
@@ -90,7 +90,7 @@ If the JHipster Registry is enabled, then the host list will be populated from t
 
 Though Infinispan 9.0.0.Final GA and later releases added support to run Infinispan embedded caching applications on Kubernetes and OpenShift by making use of native KUBE_PING discovery, Hibernate dependency is not yet updated to 9.x releases and hence native discovery is not supported on Kubernetes and OpenShift. However you can run the applications by making use of JHipster Registry for instances discovery.
 
-## Caching with Memcached
+## 使用Memcached缓存
 
 [Memcached](https://memcached.org/) is an Open Source distributed cache. It is quite different from the other cache implementations supported by JHipster:
 

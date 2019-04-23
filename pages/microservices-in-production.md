@@ -25,9 +25,9 @@ sitemap:
 
 对于网关和微服务应用程序，还提供了其他功能来帮助您有效地监视微服务集群。例如，日志中丰富了每个应用程序的名称、主机、端口和eureka/consul serviceid，这样您就可以跟踪它们来自哪个服务实例。jhipster控制台还附带了默认的仪表盘，这些仪表盘为您提供了所有服务指标的概述。
 
-## <a name="docker_compose"></a> Using Docker Compose to develop and deploy
+## <a name="docker_compose"></a> 使用Docker Compose开发和部署
 
-Working on a microservices architecture means you will need several different services and databases working together, and in that context Docker Compose is a great tool to manage your development, testing and production environments.
+在微服务体系结构上工作意味着您将需要几个不同的服务和数据库一起工作，在这种情况下，Docker Compose是管理开发、测试和生产环境的一个很好的工具。
 
 A specific section on microservices is included in our [Docker Compose documentation]({{ site.url }}/docker-compose#microservices), and we highly recommend that you get familiar with it when working on a microservices architecture.
 

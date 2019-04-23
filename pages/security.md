@@ -41,53 +41,53 @@ JHipster提供了4种主要的安全机制：
 
 此解决方案使用一个安全令牌来保存用户的登录名和权限。由于令牌已签名，因此用户不能更改它。
 
-### Securing JWT
+### JWT安全
 
-- JHipster uses a secret key, which can be configured using two Spring Boot properties: `jhipster.security.authentication.jwt.secret` and `jhipster.security.authentication.jwt.base64-secret`.
-The second option uses a Base64-encoded string, so it is considered more secured and thus it is recommended. If both properties are configured, the `secret` property (less secured) will be used, for legacy reasons.
-A warning will be shown at application startup if you don't use the Base64 property.
-- Those keys should have a minimum length of 512 bits: if they are not long enough, you will not be able to use them to login. If that happens, there will be a clear warning at the console to explain that issue.
-- The secret keys are configured in the `application-*.yml` files. As those keys must be kept secret, you **should** store them in a secure way for your production profile.
-It can be set up using the usual Spring Boot property configuration: using a Spring Cloud Config server like the [JHipster Registry]({{ site.url }}/jhipster-registry/) (our recommended option),
-using an environment variable, or even a specific `application-prod.yml` file which is SCP'd by a sysadmin into the same directory as your application's executable WAR file.
-- You **should** change the default "user" and "admin" passwords. The easiest way to do this is to deploy your application, login as "user/user" and then "admin/admin", and for each of them use the "Account > Password" menu to change the password.
+- JHipster使用一个密钥，可以使用两个Spring引导属性配置该密钥： `jhipster.security.authentication.jwt.secret` and `jhipster.security.authentication.jwt.base64-secret`.
+第二个选项使用base64编码字符串，因此它被认为更安全，因此建议使用。如果同时配置了这两个属性，出于遗留原因，将使用`secret`属性（安全性较低）。
+如果不使用base64属性，应用程序启动时将显示警告。
+- 这些密钥的最小长度应为512位：如果它们不够长，您将无法使用它们登录。如果发生这种情况，控制台上会有一个明确的警告来解释这个问题。
+- 密钥在`application-*.yml`文件中配置。因为这些密钥必须保密，所以您 **应该** 为您的生产配置文件以安全的方式存储它们。
+它可以使用通常的Spring引导属性配置进行设置：使用像 [JHipster Registry]({{ site.url }}/jhipster-registry/)这样的Spring云配置服务器（我们推荐的选项）,
+使用一个环境变量，甚至是一个特定的`application-prod.yml`文件，该文件由系统管理员将其scp'd保存到与应用程序的可执行war文件相同的目录中。
+- 您 **应该** 更改默认的“用户”和“管理员”密码。最简单的方法是部署应用程序，以“用户/用户”的身份登录，然后以“管理员/管理员”的身份登录，对于每个用户，使用“帐户>密码”菜单更改密码。
 
-## <a name="session"></a> Session-based authentication
+## <a name="session"></a> 基于会话的身份认证
 
-This is the "classical" Spring Security authentication mechanism, but we have improved it quite significantly. It uses the HTTP Session, so it is a stateful mechanism: if you plan to scale your application on multiple servers, you need to have a load balancer with sticky sessions so that each user stays on the same server.
+这是“经典”的Spring安全认证机制，但我们已经对其进行了相当大的改进。它使用HTTP会话，因此这是一种有状态的机制：如果计划在多个服务器上扩展应用程序，则需要一个带有粘性会话的负载平衡器，以便每个用户都保持在同一个服务器上。
 
-### Securing Session-based authentication
+### 保护基于会话的身份认证
 
-- For remember-me authentication, the remember-me key is configured in the `application-dev.yml` and `application-prod.yml` files, as the `jhipster.security.remember-me.key` property. As this key must be kept secret, you **should** store it in a secure way for your production profile. It can be set up using the usual Spring Boot property configuration: using a Spring Cloud Config server like the [JHipster Registry]({{ site.url }}/jhipster-registry/) (our recommended option), using an environment variable, or even a specific `application-prod.yml` file which is SCP'd by a sysadmin into the same directory as your application's executable WAR file.
-- You **should** change the default "user" and "admin" passwords. The easiest way to do this is to deploy your application, login as "user/user" and then "admin/admin", and for each of them use the "Account > Password" menu to change the password.
+- 对于remember-me身份验证，remember me密钥在 `application-dev.yml` 和 `application-prod.yml` 文件中, 属性 `jhipster.security.remember-me.key`. 因为这个密钥必须保密，所以您 **应该** 为您的生产配置文件以安全的方式存储它。它可以使用通常的Spring引导属性配置进行设置：使用像[JHipster Registry]({{ site.url }}/jhipster-registry/) (推荐), 使用环境变量，甚至使用特定的 `application-prod.yml` 文件，该文件由系统管理员将 SCP保存到与应用程序可执行WAR文件中.
+- 您 **应该** 更改默认的“用户”和“管理员”密码。最简单的方法是部署应用程序，以“用户/用户”的身份登录，然后以“管理员/管理员”的身份登录，对于每个用户，使用“帐户>密码”菜单更改密码。
 
-### Improved remember-me mechanism
+### 改进的“记住我”机制
 
-We have modified the Spring Security remember-me mechanism so that you have a unique token, that is stored in your database (SQL or NoSQL database, depending on your choice during generation!). We also store more information than the standard implementation, so you have a better understanding of where those tokens come from: IP address, browser, date... And we generate a complete administration screen, so that you can invalidate sessions, for example if you forgot to log out on another computer.
+我们已经修改了Spring安全记住我机制，这样您就有了一个惟一的令牌，它存储在您的数据库中（SQL或NoSQL数据库，这取决于您在生成过程中的选择！）我们还存储了比标准实现更多的信息，因此您可以更好地了解这些令牌的来源：IP地址、浏览器、日期…我们会生成一个完整的管理屏幕，这样您就可以使会话无效，例如，如果您忘记在另一台计算机上注销。
 
-### Cookie theft protection
+### cookie盗窃保护
 
-We have added a very complete cookie theft protection mechanism: we store your security information in a cookie, as well as in the database, and each time a user logs in we modify those values and check if they have been altered. That way, if a user ever steals your cookie, he will be able to use only once, at most.
+我们添加了一个非常完整的cookie盗窃保护机制：我们将您的安全信息存储在cookie和数据库中，每次用户登录时，我们都会修改这些值并检查它们是否被更改。这样，如果用户偷了你的cookie，他最多只能使用一次。
 
-### CSRF protection
+### CSRF保护
 
-Spring Security and Angular both have CSRF protection out-of-the-box, but unfortunately they don't use the same cookies or HTTP headers! In practice, you have in fact no protection at all for CSRF attacks. Of course, we re-configure both tools so that they correctly work together.
+Spring Security和Angular都有现成的CSRF保护，但不幸的是它们不使用相同的cookie或HTTP头！实际上，对于CSRF攻击，您根本没有任何保护措施。当然，我们重新配置这两个工具，以便它们正确地协同工作。
 
-## <a name="oauth2"></a> OAuth2 and OpenID Connect
+## <a name="oauth2"></a> OAuth2和OpenID连接
 
-OAuth is a stateful security mechanism, like HTTP Session. Spring Security provides OAuth 2.0 support, and this is leveraged by JHipster with its `@EnableOAuth2Sso` annotation.  If you're not sure what OAuth and OpenID Connect (OIDC) are, please see [What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth)
+OAuth是一种状态安全机制，如HTTP会话。SpringSecurity提供了OAuth2.0支持，Jhipster通过其`@enableOAuth2sso`注释来利用它。如果您不确定OAuth和OpenID Connect（OIDC）是什么，请参阅[What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth)
 
 ### Keycloak
 
-[Keycloak](https://keycloak.org) is the default OpenID Connect server configured with JHipster.
+[Keycloak](https://keycloak.org) 是用JHipster配置的默认OpenID连接服务器。
 
-To log into your application, you'll need to have [Keycloak](https://keycloak.org) up and running. The JHipster Team has created a Docker container for you that has the default users and roles. Start Keycloak using the following command.
+要登录到您的应用程序，您需要启动并运行[Keycloak](https://keycloak.org)。JHipster团队已经为您创建了一个具有默认用户和角色的Docker容器。使用以下命令启动keyclaft。
 
 ```
 docker-compose -f src/main/docker/keycloak.yml up
 ```
 
-If you want to use Keycloak with Docker Compose, be sure to read our [Docker Compose documentation]({{ site.url }}/docker-compose/), and configure correctly your `/etc/hosts` for Keycloak.
+如果您想将keyclaft与docker compose结合使用，请务必阅读我们的[docker compose documentation](site.url/docker compose/)，并正确配置您的`/etc/hosts`作为keyclaft。
 
 The security settings in `src/main/resources/application.yml` are configured for this image.
 
@@ -106,18 +106,18 @@ security:
             user-info-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
 ```
 
-As by default Keycloak uses an embedded H2 database, you will lose the created users if you restart your Docker container. To keep your data, please read the [Keycloak Docker documentation](https://hub.docker.com/r/jboss/keycloak/). One solution, with keeping the H2 database, is to do the following:
+默认情况下，keyclaft使用嵌入的H2数据库，如果重新启动Docker容器，将丢失创建的用户。要保留您的数据，请阅读 [Keycloak Docker documentation](https://hub.docker.com/r/jboss/keycloak/)。保留h2数据库的一个解决方案是执行以下操作：
 
-- Add a volume that will be persisted: `./keycloak-db:/opt/jboss/keycloak/standalone/data`
-- Change the migration strategy from `OVERWRITE_EXISTING`, to `IGNORE_EXISTING` (in the command section)
+- 添加将被持久化的卷：`./keycloak-db:/opt/jboss/keycloak/standalone/data`
+- 将迁移策略从 `OVERWRITE_EXISTING`, to `IGNORE_EXISTING` (在命令部分)
 
-In production, it is required by Keycloak that you use HTTPS. There are several ways to achieve this, including using a reverse proxy or load balancer that will manage HTTPS. We recommend that you read the [Keycloak HTTPS documentation](https://www.keycloak.org/docs/latest/server_installation/index.html#setting-up-https-ssl) to learn more about this topic.
+在生产中，keyscoat要求您使用https。实现这一点有几种方法，包括使用反向代理或负载均衡器来管理HTTPS。我们建议您阅读[keyclaft https文档](https://www.keycloak.org/docs/latest/server_installation/index.html#setting-up-https-ssl)以了解有关此主题的更多信息。
 
 ### Okta
 
-If you'd like to use Okta instead of Keycloak, you'll need to change a few things. First, you'll need to create a free developer account at <https://developer.okta.com/signup/>. After doing so, you'll get your own Okta domain, that has a name like `https://dev-123456.okta.com`.
+如果你想用Okta替代Keycloak，你需要改变一些东西。 首先，您需要在 <https://developer.okta.com/signup/>上创建一个免费的开发人员帐户。这样做之后，您将得到自己的okta域，其名称类似于`https://dev-123456.okta.com`.
 
-Modify `src/main/resources/application.yml` to use your Okta settings. Hint: replace `{yourOktaDomain}` with your org's name (e.g., `dev-123456.okta.com`).
+修改 `src/main/resources/application.yml` 以使用OKTA设置。提示：用您组织的名称 (例如, `dev-123456.okta.com`) 替换`{yourOktaDomain}` .
 
 ```yaml
 security:
@@ -134,15 +134,15 @@ security:
             user-info-uri: https://{yourOktaDomain}/oauth2/default/v1/userinfo
 ```
 
-Create an OIDC App in Okta to get a `{client-id}` and `{client-secret}`. To do this, log in to your Okta Developer account and navigate to **Applications** > **Add Application**. Click **Web** and click the **Next** button. Give the app a name you’ll remember, and specify `http://localhost:8080` as a Base URI and `http://localhost:8080/login` as a Login Redirect URI. Click **Done** and copy the client ID and secret into your `application.yml` file. You'll need to edit your app and add `http://localhost:8080` as a Logout Redirect URI if you want logout to work.
+在Okta中创建一个OIDC应用程序，以获取 `{client-id}` 和 `{client-secret}`.为此，请登录您的OKTA开发人员帐户并导航到 **Applications** > **Add Application**. 单击 **Web** 然后单击 **Next** 按钮为应用程序指定一个您能记住的名称，并将`http://localhost:8080` 指定为base URI `http://localhost:8080/login`指定为登录重定向URI。单击**完成**，然后将客户机ID和机密复制到`application.yml`文件中。如果您希望注销工作，则需要编辑应用程序并添加 `http://localhost:8080`作为注销重定向URI。
 
-Create a `ROLE_ADMIN` and `ROLE_USER` group (**Users** > **Groups** > **Add Group**) and add users to them. You can use the account you signed up with, or create a new user (**Users** > **Add Person**). Navigate to **API** > **Authorization Servers**, click the **Authorization Servers** tab and edit the default one. Click the **Claims** tab and **Add Claim**. Name it "groups", and include it in the ID Token. Set the value type to "Groups" and set the filter to be a Regex of `.*`.
+创建一个 `ROLE_ADMIN` and `ROLE_USER` group (**Users** > **Groups** > **Add Group**)并向其中添加用户。您可以使用您注册的帐户，或者创建一个新用户 (**Users** > **Add Person**)。导航到 **API** > **Authorization Servers**, 单击 **Authorization Servers** 选项卡并编辑默认服务器。单击 **Claims** tab and **Add Claim**。将其命名为 "groups", 并将其包含在ID令牌中。 将值类型设置为"Groups"，并将筛选器设置为`.*`的Regex.
 
-**NOTE:** If you want to use Okta all the time (instead of Keycloak), modify JHipster’s Protractor tests to use this account when running. Do this by changing the credentials in `src/test/javascript/e2e/account/account.spec.ts` and `src/test/javascript/e2e/admin/administration.spec.ts`.
+**注意:** 如果您想一直使用OKTA（而不是keycloft），请修改jhipster的量角器测试，以便在运行时使用此帐户。通过更改`src/test/javascript/e2e/account/account.spec.ts` 和 `src/test/javascript/e2e/admin/administration.spec.ts`.
 
-After making these changes, you should be good to go! If you have any issues, please post them to [Stack Overflow](https://stackoverflow.com/questions/tagged/jhipster). Make sure to tag your question with "jhipster" and "okta".
+在做了这些改变之后，你应该可以走了！如果您有任何问题，请将其发布到[Stack Overflow](https://stackoverflow.com/questions/tagged/jhipster)。一定要用“jhipster”和“okta”标记你的问题。
 
-You can also use environment variables to override the defaults. For example:
+您还可以使用环境变量来覆盖默认值。例如：
 
 ```bash
 export SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI="https://{yourOktaDomain}/oauth2/default/v1/token"

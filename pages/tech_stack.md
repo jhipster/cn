@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Technology stack
+title: 技术栈
 permalink: /tech-stack/
 redirect_from:
   - /tech_stack.html
@@ -9,11 +9,11 @@ sitemap:
     lastmod: 2014-05-16T00:00:00-00:00
 ---
 
-# <i class="fa fa-stack-overflow"></i> Technology stack
+# <i class="fa fa-stack-overflow"></i> 技术栈
 
-## Technology stack on the client side
+## 客户端技术栈
 
-Single Web page application:
+单网页应用程序：
 
 *   [Angular](https://angular.io/) or [React](https://reactjs.org/)
 *   Responsive Web Design with [Twitter Bootstrap](http://getbootstrap.com/)
@@ -23,17 +23,17 @@ Single Web page application:
 *   Optional [Sass](https://www.npmjs.com/package/node-sass) support for CSS design
 *   Optional WebSocket support with Spring Websocket
 
-With the great development workflow:
+开发工作流程：
 
 *   Easy installation of new JavaScript libraries with [NPM](https://www.npmjs.com/get-npm)
 *   Build, optimization and live reload with [Webpack](https://webpack.js.org/)
 *   Testing with [Jest](https://facebook.github.io/jest/) and [Protractor](http://www.protractortest.org)
 
-And what if a single Web page application isn't enough for your needs?
+如果一个网页应用程序不足以满足您的需求呢？
 
-*   Support for the [Thymeleaf](http://www.thymeleaf.org/) template engine, to generate Web pages on the server side
+*   支持 [Thymeleaf](http://www.thymeleaf.org/) 模板引擎，在服务器端生成网页
 
-## Technology stack on the server side
+## 服务器端技术栈
 
 A complete [Spring application](http://spring.io/):
 
@@ -50,14 +50,14 @@ A complete [Spring application](http://spring.io/):
 *   [Cassandra](http://cassandra.apache.org/) support if you'd rather use a column-oriented NoSQL database instead of JPA
 *   [Kafka](http://kafka.apache.org/) support if you want to use a publish-subscribe messaging system
 
-## Technology stack for microservices
+## 微服务技术栈
 
 Microservices are optional, and fully supported:
 
 * HTTP routing using [Netflix Zuul](https://github.com/Netflix/zuul) or [Traefik](https://traefik.io/)
 * Service discovery using [Netflix Eureka](https://github.com/Netflix/eureka) or [HashiCorp Consul](https://www.consul.io/)
 
-## Ready to go into production:
+## 准备投入生产：
 
 *   Monitoring with [Metrics](http://metrics.dropwizard.io/) and [the ELK Stack](https://www.elastic.co/products)
 *   Caching with [ehcache](http://ehcache.org/) (local cache), [hazelcast](http://www.hazelcast.com/) or [Infinispan](http://infinispan.org/)

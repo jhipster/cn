@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - parameterized
+title: Error - 参数化
 permalink: /problem/parameterized/
 sitemap:
     priority: 0.7

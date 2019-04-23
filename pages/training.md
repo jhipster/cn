@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Training
+title: 培训
 permalink: /training/
 redirect_from:
   - /training.html
@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2014-08-27T00:00:00-00:00
 ---
 
-# <i class="fa fa-graduation-cap"></i> Training
+# <i class="fa fa-graduation-cap"></i> 培训
 
 If you need help to get started on JHipster, you should attend one of our training sessions!
 

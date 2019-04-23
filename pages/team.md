@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Team
+title: 团队
 permalink: /team/
 redirect_from:
   - /team.html
@@ -9,11 +9,11 @@ sitemap:
     lastmod: 2015-07-30T18:40:00-00:00
 ---
 
-# <i class="fa fa-coffee"></i> Team
+# <i class="fa fa-coffee"></i> 团队
 
-JHipster is developed by a team of people around the world. We have a lot of contributors ([top 100 list here](https://github.com/jhipster/generator-jhipster/graphs/contributors)), but members of the core team are listed here.
+JHipster是由世界各地的一个团队开发的。我们有很多贡献者（[这里的前100个列表](https://github.com/jhipster/generator-jhipster/graphs/contributors))，但是核心团队的成员在这里列出。
 
-If you want to join the team, or just see how we work, our community rules are at the end of this page.
+如果你想加入这个团队，或者只是看看我们是如何工作的，我们的社区规则就在这一页的末尾。
 
 ## Project leads
 <div class="row">

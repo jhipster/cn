@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using JHipster UAA for Microservice Security
+title: 使用Jhipster UAA实现微服务安全
 permalink: /using-uaa/
 redirect_from:
   - /security.html
@@ -8,186 +8,188 @@ sitemap:
     priority: 0.7
     lastmod: 2016-08-25T00:00:00-00:00
 ---
-# <i class="fa fa-lock"></i> Using JHipster UAA for Microservice Security
+# <i class="fa fa-lock"></i> 使用Jhipster UAA实现微服务安全
 
-JHipster UAA is a user accounting and authorizing service for securing JHipster microservices using the OAuth2 authorization protocol.
+JHipster UAA是一种用户记帐和授权服务，用于使用OAuth2授权协议保护JHipster微服务。
 
-To clearly distinct JHipster UAA from other "UAA"s such as [Cloudfoundry UAA](https://github.com/cloudfoundry/uaa), JHipster UAA is a fully configured OAuth2 authorization server with the users and roles endpoints inside, wrapped into a usual JHipster application. This allows the developer to deeply configure every aspect of his user domain, without restricting on policies by other ready-to-use UAAs.
+为了清楚地将JHipster UAA与其他“UAA”区别开来，例如[CloudFoundry UAA](https://github.com/cloudfoundry/uaa)，JHipster UAA是一个完全配置的OAuth2授权服务器，其中包含用户和角色终结点，并封装到一个普通的Jhipster应用程序中。这允许开发人员深入配置其用户域的各个方面，而不受其他随时可用的UAA对策略的限制。
 
-## Summary
+## 总结
 
-1. [Architecture diagram](#architecture_diagram)
-2. [Security claims of microservice architecture](#claims)
-3. [Understanding OAuth2 in this context](#oauth2)
-4. [Using JHipster UAA](#jhipster-uaa)
-  * Basic setup
-  * Understanding the components
-  * Refresh Tokens
-  * Common mistakes
-5. [Securing inter-service-communication using Feign clients](#inter-service-communication)
+1. [体系结构图](#architecture_diagram)
+2. [微服务体系结构的安全声明](#claims)
+3. [在此上下文中了解OAuth2](#oauth2)
+4. [使用 JHipster UAA](#jhipster-uaa)
+ * 基本设置
+ * 了解组件
+ * 刷新令牌
+ * 常见错误
+5. [使用外部客户端确保服务间通信安全](#inter-service-communication)
   * Using Eureka, Ribbon, Hystrix and Feign
   * Using `@AuthorizedFeignClients`
-6. [Testing UAA applications](#testing)
+6. [测试UAA应用程序](#testing)
   * Stubbing feign clients
   * Emulating OAuth2 authentication
 
-## <a name="architecture_diagram"></a> Architecture diagram
+## <a name="architecture_diagram"></a> 体系结构图
 
 <img src="{{ site.url }}/images/microservices_architecture_detail.002.png" alt="Diagram" style="width: 800; height: 600" class="img-responsive"/>
 
-## <a name="claims"></a> 1. Security claims of microservice architecture
+## <a name="claims"></a> 1. 微服务体系结构的安全声明
 
-Before digging into OAuth2 and its application on JHipster microservices, it's important to clarify the claims to a solid security solution.
+在深入研究OAuth2及其在JHipster微服务上的应用之前，必须澄清对可靠安全解决方案的声明。
 
-### 1. Central authentication
+### 1. 中央身份验证
 
-Since microservices is about building mostly independent and autonomous applications, we want to have a consistent authentication experience, so the user won't notice his requests are served by different applications with possibly individual security configuration.
+由于微服务主要是构建独立和自主的应用程序，因此我们希望拥有一致的认证体验，这样用户就不会注意到他的请求是由不同的应用程序提供的，并且可能具有单独的安全配置。
 
-### 2. Statelessness
+### 2. 无状态
 
-The core benefit of building microservices is scalability. So the chosen security solution shouldn't affect this. Holding the users session state on server becomes a tricky task, so a stateless solution is highly preferred in this scenario.
+构建微服务的核心好处是可扩展性。所以选择的安全解决方案不应该影响这一点。在服务器上保持用户会话状态是一项棘手的任务，因此在这种情况下，无状态解决方案是非常首选的。
 
-### 3. User/machine access distinction
+### 3. 用户/机器访问区别
 
-There is a need of having a clear distinction of different users, and also different machines. Using microservice architecture leads to building a large multi-purpose data-center of different domains and resources, so there is a need to restrict different clients, such as native apps, multiple SPAs etc. in their access.
+需要对不同的用户以及不同的机器进行明确的区分。使用微服务架构可以构建一个具有不同域和资源的大型多用途数据中心，因此需要限制不同客户机的访问，如本地应用程序、多个SPA等。
 
-### 4. Fine-grained access control
+### 4. 细粒度访问控制
 
-While maintaining centralized roles, there is a need of configuring detailed access control policies in each microservice. A microservice should be unaware of the responsibility of recognizing users, and must just authorize incoming requests.
+在维护集中角色的同时，需要在每个微服务中配置详细的访问控制策略。微服务应该不知道识别用户的责任，必须只授权传入的请求。
 
-### 5. Safe from attacks
+### 5. 免受攻击
 
-No matter how much problems a security solution may solve, it should be strong against vulnerabilities as best as possible.
+无论安全解决方案可以解决多少问题，它都应该尽可能强大地抵御漏洞。
 
-### 6. Scalability
+### 6. 可扩展性
 
-Using stateless protocols is not a warranty of the security solution is scalable. In the end, there should not be any single point of failure. A counter-example is a shared auth database or single auth-server-instance, which is hit once per request.
+使用无状态协议不是安全解决方案可扩展性的保证。最后，不应该有任何单一的故障点。计数器示例是共享的身份验证数据库或单个身份验证服务器实例，每个请求点击一次。
 
 
-## <a name="oauth2"></a> 2. Understanding OAuth2 in this context
+## <a name="oauth2"></a> 2. 在此上下文中了解OAuth2
 
-Using the OAuth2 protocol (note: it's a **protocol**, not a framework, not an application) is satisfying all 6 claims. It follows strict standards, what makes this solution compatible to other microservices as well, and remote systems, too. JHipster provides a couple of solutions, based on the following security design:
+使用OAuth2协议（注意：它是一个 **协议** ，不是框架，不是应用程序）可以满足所有6个声明。它遵循严格的标准，是什么使得这个解决方案与其他微服务以及远程系统兼容。Jhipster基于以下安全设计提供了几种解决方案：
 
-![JHipster UAA architecture]({{ site.url }}/images/jhipster_uaa.png)
+![JHipster UAA 架构]({{ site.url }}/images/jhipster_uaa.png)
 
-* Every request to any endpoint of the architecture is performed via an "client"
-* A "client" is an abstract word for things like "Angular $http client", some "REST-Client", "curl", or anything able to perform requests.
-* A "client" may also be used in conjunction with user authentication, like the Angular $http in the frontend client application
-* Every microservice serving resources on endpoints (including the UAA), are resource servers
-* Blue arrows show clients authenticate on an Oauth authorization server
-* Green arrows show requests on resource servers performed by the client
-* The UAA server is a combination of authorization server and resource server
-* The UAA server is the owner of all the data inside the microservice applications (it approves automatically access to resource servers)
-* Clients accessing resources with user authentication, are authenticated using "password grant" with the client ID and secret safely stored in the gateway configuration files
-* Clients accessing resources without user, are authenticated using "client credentials grant"
-* Every client is defined inside UAA (web-app, internal, ...)
+* 对体系结构任何端点的每个请求都是通过“客户机”执行的。
+* “client”是“angular$http client”、一些“rest client”、“curl”或任何能够执行请求的抽象词。
+* “客户机”也可以与用户身份验证一起使用，例如前端客户机应用程序中的angular$http
+* 为端点（包括UAA）上的资源提供服务的每个微服务都是资源服务器
+* 蓝色箭头显示OAuth授权服务器上的客户端身份验证
+* 绿色箭头显示客户端在资源服务器上执行的请求
+* UAA服务器是授权服务器和资源服务器的组合
+* UAA服务器是微服务应用程序中所有数据的所有者（它批准自动访问资源服务器）
+* 使用用户身份验证访问资源的客户端使用“密码授予”进行身份验证，客户端ID和机密安全存储在网关配置文件中。
+* 在没有用户的情况下访问资源的客户端使用“客户端凭据授予”进行身份验证
+* 每个客户端都在UAA（Web应用程序、内部…）中定义。
 
-This design may be applied to any microservice architecture independent from language or framework.
+这种设计可以应用于任何独立于语言或框架的微服务体系结构。
 
-As an addition, the following rules can be applied for access control:
+此外，以下规则可用于访问控制：
 
-* User access is configured using "roles" and [RBAC][]
-* Machines access is configured using "scopes" and [RBAC][]
-* Complex access configuration is expressed using [ABAC][], using boolean expressions over both "roles" and "scopes"
-  * example: hasRole("ADMIN") and hasScope("shop-manager.read", "shop-manager.write")
+* 使用“角色”和[RBAC][]配置用户访问
+* 使用“作用域”和[RBAC][]配置机器访问
+* 复杂的访问配置使用[abac][]表示，在“角色”和“作用域”上使用布尔表达式。
+* 示例：hasrole（“admin”）和hasscope（“shop manager.read”，“shop manager.write”）。
 
-## <a name="jhipster-uaa"></a> 3. Using JHipster UAA
+## <a name="jhipster-uaa"></a> 3. 使用JHipster UAA
 
-When scaffolding a JHipster microservice, you may choose the UAA options instead of JWT authentication.
+搭建JHipster微服务时，可以选择UAA选项而不是JWT身份验证。
 
-**Note**: the UAA solution is also using JWT, which are addressable to custom configuration as well as JWT, using default Spring Cloud Security.
+**注意**: UAA解决方案也在使用JWT，它可以使用默认的SpringCloud安全性进行定制配置和JWT。
 
-### Basic setup
+### 基本设置
 
-The very basic setup consists of:
+最基本的设置包括：
 
-1. A JHipster UAA server (as type of application)
-2. At least one other microservice (using UAA authentication)
-3. A JHipster gateway (using UAA authentication)
+1. JHipster UAA服务器（作为应用程序类型）
+2. 至少一个其他微服务（使用UAA身份验证）
+3. JHipster网关（使用UAA身份验证）
 
-This is the order in which it should be generated.
+这是生成它的顺序。
 
-In addition to the authentication type, the location of the UAA must be provided.
+除了身份验证类型之外，还必须提供UAA的位置。
 
-For very basic usage, this setup is working the same way as it does for JWT authentication type, but with one more service.
+对于非常基本的用法，此设置的工作方式与JWT身份验证类型相同，但还有一个服务。
 
-### Understanding the components
+### 了解组件
 
-The JHipster UAA server does three things out of the box:
+JHipster UAA服务器可以完成三件事：
 
-* It serves the default JHipster user domain, containing user and account resource (this is done by gateway in JWT authentication)
-* It implements `AuthorizationServerConfigurerAdapter` for OAuth2 and is defining basic clients ("web_app" and "internal")
-* It serves the JWT public key on `/oauth/token_key`, which has to be consumed by all other microservices
+* 它服务于默认的jhipster用户域，包含用户和帐户资源（这是由jwt身份验证中的网关完成的）
+* 它为OAuth2实现了`authorizationServerConfigurerAdapter`，并定义了基本客户端（“web_-app”和“internal”）。
+* 它服务于`/oauth/token_key`上的JWT公钥，该公钥必须由所有其他微服务使用。
 
-The choices of a database, cache solution, search engine, build tools and further JHipster options are open to the developer.
+数据库、缓存解决方案、搜索引擎、构建工具和其他JHipster选项的选择对开发人员开放。
 
-When a microservice boots up, it usually expects the UAA server is already up to share its public key. The service first calls `/oauth/token_key` to fetch the public key and configure it for key signing (`JwtAccessTokenConverter`).
+当一个微服务启动时，它通常期望UAA服务器已经开始共享它的公钥。服务首先调用`/oauth/token_key`获取公钥并将其配置为密钥签名（`jwtacesstokenconverter`）。
 
-If the UAA is not up, the application will continue to start and fetch the public key at a later time.  There are two properties - `uaa.signature-verification.ttl` controls how long the key lives before it is fetched again, `uaa.signature-verification.public-key-refresh-rate-limit` limits requests to UAA to avoid spamming it. These values are usually left at their default values. In any case, if verification fails, then the microservice will check if there's a new key. That way, keys can be replaced on the UAA and the services will catch up.
+如果UAA没有启动，应用程序将在稍后继续启动并获取公钥。有两个属性-“uaa.signature verification.ttl”控制再次提取密钥之前密钥的生存时间，“uaa.signature verification.public key refresh rate limit”限制对UAA的请求以避免垃圾邮件。这些值通常保留为其默认值。在任何情况下，如果验证失败，那么微服务将检查是否有新的密钥。这样，UAA上的密钥就可以被替换，服务也会迎头赶上。
 
-From this point there are two use cases that may happen in this basic setup: user calls and machine calls.
+从这一点来看，在这个基本设置中可能会发生两个用例：用户调用和机器调用。
 
-For the user calls, a login request is sent to the gateway's `/auth/login` endpoint.  This endpoint uses `OAuth2TokenEndpointClientAdapter` to send a request to the UAA authenticating with the "password" grant.  Because this request happens on the gateway, the client ID and secret are not stored in any client-side code and are inaccessible to users.  The gateway returns a new Cookie containing the token, and this cookie is sent with each request performed from the client to the JHipster backend.
+对于用户调用，将向网关的`/auth/login`端点发送登录请求。此终结点使用“oauth2tokenendpointclientadapter”向UAA发送请求，并使用“密码”授权进行身份验证。因为这个请求发生在网关上，所以客户机ID和秘密不存储在任何客户机端代码中，用户无法访问。网关返回一个包含令牌的新cookie，该cookie与从客户端执行的每个请求一起发送到JHipster后端。
 
-For the machine calls, the machine has to authenticate as a UAA using client credentials grant. JHipster provides a standard solution, described in [secure inter-service-communication using feign clients](#inter-service-communication)
+对于机器调用，机器必须使用客户端凭据授权作为UAA进行身份验证。JHipster提供了一个标准的解决方案，如[secure inter-service-communication using feign clients](#inter-service-communication)
 
-### Refresh Tokens
+### 刷新令牌
 
-The general flow for refreshing access tokens happens on the gateway and is as follows:
+刷新访问令牌的一般流程发生在网关上，如下所示：
 
-- Authentication is done via `AuthResource` calling `OAuth2AuthenticationService`'s authenticate which will set Cookies.
-- For each request, the `RefreshTokenFilter` (installed by `RefreshTokenFilterConfigurer`) checks whether the access token is expired and whether it has a valid refresh token
-- If so, then it triggers the refresh process via `OAuth2AuthenticationService` refreshToken.
-- This uses the `OAuth2TokenEndpointClient` interface to send a refresh token grant to the OAuth2 server of choice, in our case UAA (via `UaaTokenEndpointClient`).
-- The result of the refresh grant is then used downstream as new cookies and set upstream (to the browser) as new cookies.
+- 身份验证通过`authresource`调用`oauth2authenticationservice`的authenticate完成，authenticate将设置cookie。
+- 对于每个请求，`refreshtokenfilter`（由`refreshtokenfilterconfigurer`安装）检查访问令牌是否过期以及是否具有有效的刷新令牌。
+- 如果是，那么它将通过`oauth2authenticationservice` refreshttoken触发刷新过程。
+- 这将使用`oauth2tokenendpointclient`接口向所选的oauth2服务器发送刷新令牌授权，在我们的示例中是uaa（通过`uaatokenendpointclient`）。
+- 刷新授权的结果将在下游作为新cookie使用，并将上游（对浏览器）设置为新cookie。
 
-### Common mistakes
+### 常见错误
 
-Here is a brief list of the very major things a developer should be aware of.
+以下是开发人员应该注意的主要事项的简要列表。
 
-#### ***Using the same signing key for production and staging***
+#### ***使用相同的签名密钥进行生产和转移***
 
-It is strictly recommended to use different signing keys as much as possible. Once a signing key gets into wrong hands, it is possible to generate full access granting key without knowing login credentials of any user.
+严格建议尽可能使用不同的签名密钥。一旦签名密钥落入错误的手中，就可以在不知道任何用户的登录凭据的情况下生成完全访问授权密钥。
 
-#### ***Not using TLS***
+#### ***不使用TLS***
 
-If an attacker manages to intercept an access token, he will gain all the rights authorized to this token, until the token expires. There are a lot of ways to achieve that, in particular when there is no TLS encryption. This was not a problem in the days of version 1 of OAuth, because protocol level encryption was forced.
+如果攻击者成功拦截了一个访问令牌，他将获得该令牌的所有授权，直到令牌到期。实现这一点有很多方法，特别是在没有TLS加密的情况下。在OAuth版本1的时代这不是问题，因为协议级加密是强制的。
 
-#### ***Using access tokens in URL***
+#### ***在URL中使用访问令牌***
 
-As of standard, access tokens can be either passed by URL, in headers, or in a cookie. From the TLS point of view, all three ways are secure. In practice passing tokens via URL is less secure, since there several ways of getting the URL from records.
+标准情况下，访问令牌可以通过URL、头文件或cookie传递。从TLS的角度来看，这三种方法都是安全的。实际上，通过URL传递令牌的安全性较低，因为有几种方法可以从记录中获取URL。
 
-#### ***Switching to symmetric signing keys***
+#### ***切换到对称签名密钥***
 
-RSA is not required for JWT signing, and Spring Security does provide symmetric token signing as well. This also solves some problems, which make development harder. But this is insecure, since an attacker just needs to get into one single microservice to be able to generate its own JWT tokens.
+JWT签名不需要RSA，Spring Security也提供对称令牌签名。这也解决了一些问题，使开发更加困难。但这是不安全的，因为攻击者只需要进入一个微服务就可以生成自己的JWT令牌。
 
-## <a name="inter-service-communication"></a> 4. Secure inter-service-communication using Feign clients
+## <a name="inter-service-communication"></a> 4. 使用外部客户端确保服务间通信的安全
 
-Currently only JHipster UAA is providing an scalable approach of secure inter-service-communication.
+目前，只有JHipster UAA提供了一种可扩展的安全服务间通信方法。
 
-Using JWT authentication without manually forwarding JWTs from request to internal request forces microservices to call other microservices over the gateway, which involves additional internal requests per one master requests. But even with forwarding, it's not possible to cleanly separate user and machine authentication.
+使用JWT身份验证而不手动将JWT从请求转发到内部请求，会迫使微服务通过网关调用其他微服务，这涉及每个主请求的额外内部请求。但是，即使使用转发，也不可能完全分离用户和机器身份验证。
 
-Since JHipster UAA is based on OAuth2, all these problems are solved on protocol definition.
+由于JHipster UAA是基于OAuth2的，所有这些问题都在协议定义上得到了解决。
 
-This chapter covers how to easily get started with this.
+本章介绍了如何轻松开始。
 
-### Using Eureka, Ribbon, Hystrix and Feign
+### 使用 Eureka, Ribbon, Hystrix 和 Feign
 
-When one service wants to request data from another, finally all these four players come into play. So it is important, to briefly know what each of them is responsible for:
+当一个服务想要从另一个服务请求数据时，最后这四个参与者都开始发挥作用。因此，重要的是，简要了解他们各自的责任：
 
-* Eureka: this is where services (un-)register, so you can ask "foo-service" and get a set of IPs of instances of the foo-service, registered in Eureka
-* Ribbon: when someone asked for "foo-service" and already retrieved a set of IPs, Ribbon does the load balancing over these IPs.
+* eureka：这是服务（un-）注册的地方，因此您可以请求“foo服务”，并获取在eureka中注册的foo服务实例的一组IP。
 
-So to sum up, when we got a URL like "http://uaa/oauth/token/" with 2 instances of JHipster UAA server running on 10.10.10.1:9999 and 10.10.10.2:9999, we may use Eureka and Ribbon to quickly transform that URL either to "http://10.10.10.1:9999/oauth/token" or "http://10.10.10.2:9999/oauth/token" using a Round Robin algorithm.
+* Ribbon：当有人请求“foo服务”并且已经检索到一组IP时，Ribbon会在这些IP上进行负载平衡。
 
-* Hystrix: a circuit breaker system solving fall-back scenarios on service fails
-* Feign: using all that in a declarative style
+综上所述，当我们得到一个类似“http://uaa/oauth/token/”的URL，其中2个jhipster UAA服务器实例运行在10.10.10.1:9999和10.10.10.2:9999上时，我们可以使用eureka和功能区，使用循环算法将该URL快速转换为“http://10.10.10.1:9999/oauth/token”或“http://10.10.10.2:9999/oauth/token”。
 
-In real world, there is no warranty of all instances of all services to be up. So Hystrix works as a circuit breaker, to handle failure scenarios in a well-defined way, using fallbacks.
+* Hystrix：一个断路器系统，解决服务故障时的回退方案
 
-But wiring and coding all these things manually is a lot of work: Feign provides the option of writing ***Ribbon*** load balanced REST clients for endpoints registered in ***Eureka***, with fallback implementations controlled using ***Hystrix***, using nothing more then an Java interfaces with some annotations.
+* 装腔作势：以声明式使用所有这些内容
 
-So for inter-service-communication, Feign clients are very helpful. When one service needs a REST client to access an "other-service", serving some "other-resource", it's possible to declare an interface like:
+在现实中，所有要提供的服务的所有实例都没有保修。因此，Hystrix作为一个断路器，使用回退以一种定义明确的方式处理故障场景。
+
+但是，手动地对所有这些东西进行布线和编码是一个很大的工作：FIGON提供了在 ***Eureka**** 中为端点注册的 ***Ribbon*** 负载平衡的REST客户端的选项，使用 ***Hystrix*** 来控制回退实现，不使用更多的Java接口和一些注释。
+
+因此，对于跨业务的沟通，外来客户是非常有帮助的。当一个服务需要一个REST客户机来访问“其他服务”，为一些“其他资源”提供服务时，可以声明一个接口，如：
 
 ``` java
 @FeignClient(name = "other-service")
@@ -211,14 +213,13 @@ class SomeService {
 }
 ```
 
-Similar to Spring Data JPA, there is no need to implement that interface. But you may do so, if using Hystrix. Implemented classes of Feign client interfaces act as fallback implementations.
-
-One open issue is, to make this communication secure using UAA. To accomplish this, there should be some request interceptor for Feign, which implements the client credentials flow from OAuth, to authorize the current service for requesting the other service. In JHipster, you just use `@AuthorizedFeignClients` instead. This is a special annotation provided by JHipster, which does exactly that.
+与Spring Data JPA类似，不需要实现该接口。但是，如果你使用了Hystrix，你可以这样做。实现的虚客户端接口类充当回退实现。
+一个悬而未决的问题是，要使用UAA确保此通信的安全性。为了实现这一点，应该有一些请求拦截器来执行来自OAuth的客户端凭证流，以授权当前服务请求其他服务。在Jhipster中，您只需使用`@authorizedFeignclients`。这是Jhipster提供的一个特殊注释，它确实做到了这一点。
 
 ### Using `@AuthorizedFeignClients`
 
-Considering the above Feign client should be used to an "other-service", which
-serves protected resources, the interface must be annotated like this:
+考虑到上述Feign客户应被用于“其他服务”，即
+服务于受保护的资源，接口必须按如下方式注释：
 
 ``` java
 @AuthorizedFeignClient(name = "other-service")
@@ -228,8 +229,8 @@ interface OtherServiceClient {
 }
 ```
 
-**note**: Due to a bug in Spring Cloud, it's currently not possible to use a different
-notation for the service name, as
+**注意**: 由于Spring Cloud中的一个bug，目前无法使用不同的
+服务名称的符号，如
 
 ``` java
 
@@ -243,19 +244,19 @@ or
 @AuthorizedFeignClient(value = "other-service")
 ```
 
-The REST client automatically gets authorized with your UAA server, when there is no valid access token stored in memory.
+当内存中没有有效的访问令牌时，REST客户机将自动获得UAA服务器的授权。
 
-This approach addresses a scenario when machine request run over a separate OAuth client not referring to an user session. This is important, in particular when entity auditing is used on a request, issued by another request in another service. As an alternative, the access token of the initial request may be forwarded to further calls. Currently, there is no "default solution" provided by JHipster.
+这种方法解决了当机器请求在不引用用户会话的单独OAuth客户机上运行时的场景。这一点很重要，特别是当实体审计用于由另一个服务中的另一个请求发出的请求时。作为替代方案，初始请求的访问令牌可以转发给其他调用。目前，Jhipster没有提供“默认解决方案”。
 
 ## <a name="testing"></a> 5. Testing UAA applications
 
 ### Mocking Feign clients
 
-Components working with Feign clients should be testable. Using Feign in tests the same way it is used in production would force the JHipster Registry and the UAA server to be up and reachable to the same machine where the tests are run. But in most cases, you don't want to test that Feign itself works (it usually does), but your components using Feign clients.
+与外部客户机一起工作的组件应该是可测试的。以生产中使用的相同方式在测试中使用feign将强制jhipster注册表和UAA服务器启动并可访问运行测试的同一台计算机。但在大多数情况下，您不想测试假体本身是否正常工作（通常是这样），而是使用假体客户机测试组件。
 
-To test components, which are using feign clients inside is possible using `@MockBean`, which is part of spring boot since 1.4.0.
+为了测试组件，可以使用`@mockbean`，这是自1.4.0以来Spring引导的一部分。
 
-Here is an example, testing `SomeService` works as expected, with mocked values for the client:
+下面是一个示例，测试“someservice”可以按预期工作，对客户机使用模拟值：
 
 ``` java
 
@@ -281,14 +282,14 @@ public class SomeServiceTest {
 }
 ```
 
-So with this technology you are simulating the behavior of the other service, and provide expected resource entity, which would come from the origin.
-All Beans injecting a client will behave as mocked, so you can focus on the logic of these Beans.
+因此，使用这项技术，您可以模拟其他服务的行为，并提供预期的资源实体，这些实体将来自于源站。
+所有注入客户机的bean都将表现为模拟的，因此您可以关注这些bean的逻辑。
 
-### Emulating OAuth2 authentication
+### Emulating OAuth2 认证
 
-Using Spring's integration tests against the REST controllers is usually bypassing the security configuration, since it would make testing hard, when the only intention is to prove the controller is functional doing what it should do. But sometimes, testing a controller's security behavior is part of testing, too.
+对其余控制器使用Spring的集成测试通常会绕过安全配置，因为这样做会使测试变得困难，而唯一的目的是证明控制器的功能是做它应该做的事情。但有时，测试控制器的安全行为也是测试的一部分。
 
-For this use-case, JHipster is providing an component called `OAuth2TokenMockUtil`, which can emulate a valid authentication without forcing the user or client to exist.
+对于这个用例，JHipster提供了一个名为“oauth2tokenmockUtil”的组件，该组件可以模拟有效的身份验证，而不必强制用户或客户端存在。
 
 To use this feature, two things have to be done:
 

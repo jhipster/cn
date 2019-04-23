@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - problem with a message
+title: Error - 消息有问题
 permalink: /problem/problem-with-message/
 sitemap:
     priority: 0.7

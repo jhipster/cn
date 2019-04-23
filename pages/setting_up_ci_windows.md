@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setting up Jenkins 1 on Windows
+title: 在 Windows上设置Jenkins 1
 permalink: /setting-up-ci-windows/
 redirect_from:
   - /setting_up_ci_windows.html
@@ -9,46 +9,46 @@ sitemap:
     lastmod: 2015-01-09T12:40:00-00:00
 ---
 
-# <i class="fa fa-stethoscope"></i> Setting up Jenkins 1 on Windows
+# <i class="fa fa-stethoscope"></i> 在 Windows上设置Jenkins 1
 
-## Installing Jenkins
+## 安装Jenkins
 
-Download the Jenkins Windows Installer from [https://jenkins.io/](https://jenkins.io/)
+从[https://jenkins.io/](https://jenkins.io/)下载Jenkins Windows安装程序
 
-The installer configures Jenkins to run as a service using the SYSTEM user which can be dangerous, it's safer to change the user's service to a non priviledged one:
+安装程序将Jenkins配置为使用系统用户作为服务运行，这可能很危险，将用户的服务更改为非特权服务更安全：
 
 [http://antagonisticpleiotropy.blogspot.fr/2012/08/running-jenkins-in-windows-with-regular.html](http://antagonisticpleiotropy.blogspot.fr/2012/08/running-jenkins-in-windows-with-regular.html)
 
-## Configuring Jenkins
+##配置Jenkins
 
-### Installing JDK 8
+### 安装JDK 8
 
-Through Jenkins administration, add a JDK 8 automatic installer.
+通过Jenkins管理，添加一个JDK8自动安装程序。
 
-### Installing Maven
+### 安装Maven
 
-Through Jenkins administration, add a Maven automatic installer from Apache's site.
+通过Jenkins管理，从Apache的站点添加一个Maven自动安装程序。
 
-### Installing PhantomJS
+### 安装PhantomJS
 
-Install binaries from [http://phantomjs.org/download.html](http://phantomjs.org/download.html)
+下载可执行程序[http://phantomjs.org/download.html](http://phantomjs.org/download.html)
 
-Check that the executable is included in PATH:
+检查可执行文件是否包含在路径中：
 
 ~~~
 phantomjs --version
 2.1.1
 ~~~
 
-## Installing NodeJS
+## 安装NodeJS
 
-Jenkins NodeJS plugin does not work on Windows, so we'll do a manual installation.
+Jenkins Nodejs插件在Windows上不起作用，所以我们将进行手动安装。
 
-Download latest LTS (Long Term Support) 64-bit version from [http://nodejs.org/](http://nodejs.org/)
+下载最新的LTS (Long Term Support) 64-bit 版本[http://nodejs.org/](http://nodejs.org/)
 
-Don't install NodeJS to the default directory `C:\Program Files\nodejs` as it requires administration rights, prefer a simpler path like `c:\nodejs`.
+不要将NodeJS安装到默认目录 `C:\Program Files\nodejs` 因为它需要管理权限，所以最好使用类似 `c:\nodejs`的简单路径。
 
-Edit `C:\nodejs\node_modules\npm\npmrc` to replace
+编辑 `C:\nodejs\node_modules\npm\npmrc` 替换
 
 ~~~
 prefix=${APPDATA}\npm
@@ -60,9 +60,9 @@ by
 prefix=C:\nodejs\node_modules\npm
 ~~~
 
-Add the 'C:\nodejs\node_modules\npm' folder to the PATH environment variable, remove the one that was added by the installer: 'C:\Users\<user>\AppData\Roaming\npm'
+将'C:\nodejs\node_modules\npm'文件夹添加到path环境变量，删除安装程序添加的文件夹： 'C:\Users\<user>\AppData\Roaming\npm'
 
-npm may require Git, install it from [https://git-for-windows.github.io/](https://git-for-windows.github.io/)
+NPM可能需要Git，从 [https://git-for-windows.github.io/](https://git-for-windows.github.io/)安装
 
 Add Bower and Gulp:
 
@@ -72,4 +72,4 @@ bower --version
 gulp --version
 ~~~
 
-It can be useful to have multiple versions of NodeJS on the same machine but `nvm` equivalents on Windows focus more on development environment than continuous integration. So if a job requires another version of NodeJS, change its PATH variable.
+在同一台机器上有多个版本的NodeJS可能很有用，但是在windows上的`nvm`等价物更多地关注开发环境，而不是持续集成。因此，如果一个作业需要另一个版本的nodejs，请更改它的路径变量。

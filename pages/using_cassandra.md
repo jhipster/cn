@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Cassandra
+title: 使用Cassandra
 permalink: /using-cassandra/
 redirect_from:
   - /using_cassandra.html
@@ -9,80 +9,80 @@ sitemap:
     lastmod: 2015-02-24T00:00:00-00:00
 ---
 
-# <i class="fa fa-eye"></i> Using Cassandra
+# <i class="fa fa-eye"></i> 使用Cassandra
 
-Cassandra is one of the supported databases that can be selected when your application is being generated.
+Cassandra是在生成应用程序时可以选择的受支持数据库之一。
 
-This generator has one limitation:
+此生成器有一个限制：
 
-*   It does not support OAuth2 authentication (we need to implement a Cassandra back-end to Spring Security's OAuth2 server)
+*   它不支持OAuth2身份验证（我们需要实现Cassandra后端到Spring Security的OAuth2服务器）
 
-When Cassandra is selected:
+选择Cassandra时：
 
-*   The Cassandra CQL driver is used to access the database. We don't use Spring Data Cassandra, as we prefer to use the driver directly. As a result, the repositories contain quite a lot of code
-*   The [entity sub-generator]({{ site.url }}/creating-an-entity/) will not ask you for entity relationships, as you can't have relationships with a NoSQL database (at least not in the way you have relationships with JPA)
-*   The generated entities only support one partition key, which is the ID. Future versions will provide composite primary keys and clustering keys
+*   Cassandra CQLcassandra cql驱动程序用于访问数据库。我们不使用Spring数据Cassandra，因为我们更喜欢直接使用驱动程序。因此，存储库包含大量的代码
+*   [entity sub-generator]({{ site.url }}/creating-an-entity/)不会要求您提供实体关系，因为您无法与NoSQL数据库建立关系（至少不会以与JPA建立关系的方式）
+*   生成的实体只支持一个分区键，即ID。将来的版本将提供复合主键和群集键。
 
-## Migration tool
+## 迁移工具
 
-Similar to [Liquibase](http://www.liquibase.org/), JHipster provide a tool to apply your CQL migration scripts, with some restrictions:
+类似于[Liquibase](http://www.liquibase.org/), JHipster提供了一个工具来应用您的cql迁移脚本，但有一些限制：
 
-*   The tool is not run by the application itself when it is started but inside a Docker container or manually
-*   All CQL scripts must follow the pattern `{timestamp}_{description}.cql` and be placed in the changelog directory: `src/main/resources/config/cql/changelog/`
-*   All non already applied scripts located in the changelog directory are applied in alphabetical order (ie: following the timestamp)
-*   Because Cassandra is not a transactional database, if an error happen before inserting the metadata in the table used by the tool there is a risk to have your CQL migration script run multiple times
+*   该工具在启动时不是由应用程序本身运行的，而是在Docker容器中或手动运行的。
+*   所有CQL脚本必须遵循模式` timestamp description.cql`并放置在changelog目录中：`src/main/resources/config/cql/changelog/`
+*   位于changelog目录中的所有未应用的脚本都按字母顺序应用（即：跟随时间戳）
+*   因为Cassandra不是事务性数据库，如果在工具使用的表中插入元数据之前发生错误，那么CQL迁移脚本可能会多次运行。
 
-Some information on the tool:
+有关工具的一些信息：
 
-*   After generating an entity, its CQL file will be generated in `src/main/resources/config/cql/changelog/` in the same way we generate Liquibase changelogs for JPA
-*   For running tests, all the CQL scripts in the `src/main/resources/config/cql/changelog/` directory are automically applied to the in memory cluster
-    *   Meaning you have nothing to do but to drop your script in the changelog directory to have it applied for the tests
-*   The tool uses its own cassandra table `schema_version` to store the metadata info
+*   生成实体后，其cql文件将在 `src/main/resources/config/cql/changelog/`中生成，方法与生成jpa的liquibase changelogs相同
+*   对于运行测试，`src/main/resources/config/cql/changelog/`目录中的所有cql脚本都自动应用于内存集群
+*   也就是说，您只需将脚本放到changelog目录中，就可以将其应用于测试。
+*   该工具使用自己的cassandra表`schema_version`来存储元数据信息
 
-The tool will apply the migration scripts from `src/main/resources/config/cql/` in the following order:
+该工具将按以下顺序应用来自`src/main/resources/config/cql/`的迁移脚本：
 
 1.  `create-keyspace.cql` - create the keyspace and the `schema_version` table to store the migration metadata
 2.  all `cql/changelog/\*.cql` files in alphabetical order
 
-### Running the tool
+### 运行工具
 
-Depending if you are using Docker or not, you have several options to run the migration tool.
+根据您是否使用Docker，您有几个选项可以运行迁移工具。
 
-#### With Docker:
+#### 使用Docker:
 
-If you have started the Cassandra cluster with docker-compose, using the generated `app.yml` or `cassandra.yml` compose files, the tool has already been run and all cql scripts applied.
+如果使用生成的`pp.yml`或`cassandra.yml`撰写文件启动了带有docker compose的cassandra集群，则该工具已经运行并且应用了所有cql脚本。
 
-After adding a CQL script in the changelog directory, you can relaunch the docker-service responsible to run the migration service again without stopping the cluster:  
+在changelog目录中添加cql脚本后，可以重新启动负责再次运行迁移服务的Docker服务，而不停止群集：
 `docker-compose -f src/main/docker/cassandra.yml up <app>-cassandra-migration`
 
-#### Manually:
+#### 手动:
 
-With some prerequisites, you can run the tool manually. It could be useful to familiarize you with the tool to later include it to your deployment pipeline.
+有了一些先决条件，您可以手动运行该工具。熟悉该工具之后将其包含到部署管道中可能会很有用。
 
-##### Prerequisites:
+##### 先决条件:
 
 *   Add the Cassandra contact point environment variable, typically locally: ``export CASSANDRA_CONTACT_POINT=`127.0.0.1` ``
 *   Install a recent (>4) bash version and md5sum with your favorite package manager
 *   Have CQLSH in your classpath
 
-To run the tool use this command: `src/main/docker/cassandra/scripts/autoMigrate.sh src/main/resources/config/cql/changelog/`
+要运行该工具，请使用以下命令：`src/main/docker/cassandra/scripts/autoMigrate.sh src/main/resources/config/cql/changelog/`
 
 By default, the `src/main/resources/config/create-keyspace.cql` script is used to create the keyspace if necessary.
 You can override it with a second argument: `src/main/docker/cassandra/scripts/autoMigrate.sh src/main/resources/config/cql/changelog/ create-keyspace-prod.cql`
 
 If you only want to execute a specific script against your cluster use: `src/main/docker/cassandra/scripts/execute-cql.sh src/main/resources/config/cql/changelog/<your script>.cql`
 
-## Cassandra and Docker on non-linux OSs
+## 非Linux操作系统上的Cassandra和Docker
 
-On Mac OSx and Windows, Docker containers are not hosted directly but on a VirtualBox VM.  
-Those, you can not access them in localhost but have to hit the VirtualBox IP.
+在MacOSX和Windows上，Docker容器不直接托管，而是托管在一个virtualbox虚拟机上。
+这些，您不能在本地主机中访问它们，但必须点击VirtualBox IP。
 
-You can override the Cassandra contact point (localhost by default) with this environment variable: ``export SPRING_DATA_CASSANDRA_CONTACTPOINTS=`docker-machine ip default` ``
+您可以使用以下环境变量覆盖Cassandra接触点（默认为localhost）： ``export SPRING_DATA_CASSANDRA_CONTACTPOINTS=`docker-machine ip default` ``
 
-#### Cassandra nodes:
+#### Cassandra节点：
 
-Because Cassandra nodes are also hosted in the Virtual machine, the Cassandra Java driver will receive an error when trying to contact them after receiving their address from the contact point.  
-To workaround this, you can add a routing rule to your routing table, [(source)](http://krasserm.github.io/2015/07/13/chaos-testing-with-docker-and-cassandra/#port-mapping).
+因为Cassandra节点也被托管在虚拟机中，当从接触点接收到它们的地址时，Cassandra Java驱动程序将在尝试与它们进行接触时接收到错误。
+要解决此问题，可以将路由规则添加到路由表中，[(source)](http://krasserm.github.io/2015/07/13/chaos-testing-with-docker-and-cassandra/#port-mapping).
 
-Assuming the containers running the Cassandra nodes have IP address 172.18.0.x:  
+假设运行cassandra节点的容器的IP地址为172.18.0.x: 
 ``sudo route -n add 172.18.0.0/16 `docker-machine ip default` ``

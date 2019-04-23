@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setting up Continuous Integration
+title: 建立持续集成
 permalink: /setting-up-ci/
 redirect_from:
   - /setting_up_ci.html
@@ -9,16 +9,16 @@ sitemap:
     lastmod: 2018-08-03T14:40:00-00:00
 ---
 
-# <i class="fa fa-stethoscope"></i> Setting up Continuous Integration
+# <i class="fa fa-stethoscope"></i> 建立持续集成
 
-Setting up Continuous Integration (CI) for a JHipster application is harder than for a classic typical Spring MVC application because of the complexity associated with maintaining a build composed of 2 software stacks:
+为JHipster应用程序设置持续集成（CI）比典型的Spring MVC应用程序更困难，因为维护由两个软件栈组成的构建时会比较复杂：
 
-- the Java back-end code with Maven or Gradle
-- the JavaScript front-end with NodeJS, NPM or Yarn
+- 使用Maven或Gradle的Java后端代码
+- 带有NodeJS、NPM或Yarn的JavaScript前端
 
-Each stack comes with its own dependency management (Maven artifacts, NPM packages) with potential conflicts to solve.
+每个堆栈都有自己的依赖性管理（Maven工件、NPM包）和要解决的潜在冲突。
 
-JHipster should support the following CI systems out of the box:
+JHipster支持以下现成的CI系统：
 
 - Jenkins:
     - [Setting up Jenkins 1]({{ site.url }}/setting-up-ci-jenkins1/)
@@ -27,84 +27,84 @@ JHipster should support the following CI systems out of the box:
 - GitLab CI: refer to the [GitLab CI Documentation](https://about.gitlab.com/gitlab-ci/)
 - Azure Pipelines: refer to the [Azure Pipelines Documentation](https://docs.microsoft.com/fr-fr/azure/devops/pipelines/?view=vsts)
 
-## Running the sub-generator
+## 运行sub-generator
 
-To generate these config files, run this command in your project folder:
+要生成这些配置文件，请在项目文件夹中运行此命令：
 
 `jhipster ci-cd`
 
-Then answer all the questions.
+然后回答所有问题。
 
 
-### What CI/CD pipeline do you want to generate ?
+### 您希望生成什么CI/CD管道？
 
-The CI/CD pipeline you want to generate:
+要生成的CI/CD管道：
 
 - Jenkins pipeline
 - Azure Pipelines
 - GitLab CI
 - Travis CI
 
-**Note**: when you select Jenkins pipeline, a new `src/main/docker/jenkins.yml` file will be generated.
-So you can test Jenkins locally by running:
+**注意**：当您选择Jenkins管道时，将生成一个新的`src/main/docker/jenkins.yml`文件。
+因此，您可以通过运行以下命令在本地测试Jenkins：
 
 ```
 docker-compose -f src/main/docker/jenkins.yml up -d
 ```
 
-### Would you like to perform the build in a Docker container ? (Jenkins / GitLab)
+### 是否要在Docker容器中执行构建？（Jenkins/Gitlab）
 
-If Docker is installed, you can perform the build inside a Docker container.
+如果安装了Docker，则可以在Docker容器内执行构建。
 
-### In GitLab CI, perform the build in a docker container (hint: GitLab.com uses Docker container) ? (GitLab)
+### 在Gitlab CI中，在Docker容器中执行构建（提示：Gitlab.com使用Docker容器）？（GITLAB）
 
-If you use a private GitLab CI, you can use directly the runners.
+如果您使用的是专用的Gitlab CI，则可以直接使用runner。
 
-If you use official GitLab.com pipeline, you need to use Docker container.
+如果使用正式的gitlab.com管道，则需要使用docker容器。
 
-### Would you like to send build status to GitLab ? (Jenkins)
+### 是否要将生成状态发送到Gitlab？(Jenkins)
 
-If your Jenkins relies to a GitLab repository, you can send build status to GitLab. Your Jenkins must be correctly configured.
+如果您的Jenkins依赖于Gitlab存储库，则可以将构建状态发送到Gitlab。您的Jenkins必须正确配置。
 
-### What tasks/integrations do you want to include ?
+### 您希望包括哪些任务/集成？
 
 - Deploy your application to an *Artifactory*
 - Analyze your code with *Sonar*
 - Build and publish a *Docker* image
 - Deploy to *Heroku* (requires HEROKU_API_KEY set on CI service)
 
-### Deploy your application to an *Artifactory* (Jenkins / GitLab)
+### 将应用程序部署到*Artifactory*（Jenkins/Gitlab）
 
 - *Artifactory*: what is the ID of distributionManagement for snapshots ?
 - *Artifactory*: what is the URL of distributionManagement for snapshots ?
 - *Artifactory*: what is the ID of distributionManagement for releases ?
 - *Artifactory*: what is the URL of distributionManagement for releases ?
 
-### Analyze your code with *Sonar*
+### 使用*Sonar*分析代码
 
-- *Sonar*: what is the name of the Sonar server ?
+- *Sonar*: Sonar服务器的名称是什么？
 
-Choose the name of the Sonar server, defined in your Jenkins Configuration.
+选择在Jenkins配置中定义的Sonar服务器的名称。
 
 - *Sonar*: what is the URL of the Sonar server ?
-- *Sonar*: what is the Organization of the Sonar server ? 
+- *Sonar*: what is the Organization of the Sonar server ?
 
-Here, you can choose to push your Sonar Analyze to [SonarCloud.io](https://sonarcloud.io).
-In this case, you have to add the `SONAR_TOKEN` environment variable.
+在这里，您可以选择将您的Sonar分析推到[SonarCloud.io](https://sonarcloud.io).
+在这种情况下，您必须添加 `SONAR_TOKEN`环境变量。
 
-### Build and publish a *Docker* image
+### 创建并发布一个 *Docker* 图像
 
-- *Docker*: what is the URL of the Docker registry ?
+- *Docker*: Docker注册表的URL是什么？
 
-By default, you can use Docker Hub: [https://registry.hub.docker.com](https://registry.hub.docker.com)
+默认情况下，您可以使用Docker Hub:[https://registry.hub.docker.com](https://registry.hub.docker.com)
 
-- *Docker*: what is the Jenkins Credentials ID for the Docker registry ?
+- *Docker*: Docker注册表的Jenkins凭证ID是什么？
 
-By default, you can use: `docker login`
+默认情况下，您可以使用：`docker login`
 
-- *Docker*: what is the Organization Name for the Docker registry ?
+- *Docker*: Docker注册表的组织名称是什么？
 
-### Deploy to *Heroku*
+### 发布到*Heroku*
 
 - *Heroku: name of your Heroku Application ?
 

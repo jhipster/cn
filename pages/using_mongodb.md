@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using MongoDB
+title: 使用MongoDB
 permalink: /using-mongodb/
 redirect_from:
   - /using_mongodb.html
@@ -9,20 +9,20 @@ sitemap:
     lastmod: 2015-02-24T00:00:00-00:00
 ---
 
-# <i class="fa fa-leaf"></i> Using MongoDB
+# <i class="fa fa-leaf"></i> 使用MongoDB
 
-MongoDB is one of the supported databases that can be selected when your application is being generated.
+MongoDB是在生成应用程序时可以选择的受支持数据库之一。
 
-When MongoDB is selected:
+选择MongoDB时：
 
-*   Spring Data MongoDB will be used to access the database. This is very close to Spring Data JPA, and this is why MongoDB support is very close to the (default) JPA support
-*   [Mongobee](https://github.com/mongobee/mongobee) is used instead of [Liquibase](http://www.liquibase.org/) to manage database changes
-*   The [entity sub-generator]({{ site.url }}/creating-an-entity/) will not ask you for entity relationships, as you can't have relationships with a NoSQL database (at least not in the way you have relationships with JPA)
-*   [de.flapdoodle.embed.mongo](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo) is used to run an in-memory version of the database for running unit tests.
+*   Spring数据MongoDB将用于访问数据库。这非常接近于SpringDataJPA，这就是为什么MongoDB支持非常接近（默认）JPA支持的原因。
+*   使用[mongobee](https://github.com/mongobee/mongobee)而不是[liquibase](http://www.liquibase.org/)来管理数据库更改。
+*   [实体子生成器](site.url/创建实体/)不会要求您提供实体关系，因为您无法与NoSQL数据库建立关系（至少不会以与JPA建立关系的方式）。
+*   [de.flapdoodle.embed.mongo](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo)用于运行单元测试的数据库内存版本。
 
 ### MongoDB Atlas
 
-If you want to use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), you can encounter this error:
+如果你想用[MongoDB Atlas](https://www.mongodb.com/cloud/atlas), 您可能会遇到此错误：
 
 ```json
 error: {

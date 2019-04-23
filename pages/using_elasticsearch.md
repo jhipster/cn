@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Elasticsearch
+title: 使用Elasticsearch
 permalink: /using-elasticsearch/
 redirect_from:
   - /using_elasticsearch.html
@@ -9,39 +9,39 @@ sitemap:
     lastmod: 2017-04-16T00:00:00-00:00
 ---
 
-# <i class="fa fa-search"></i> Using Elasticsearch
+# <i class="fa fa-search"></i> 使用Elasticsearch
 
-Elasticsearch is an option that adds search capabilities on top of your database.
+ElasticSearch是一个在数据库顶部添加搜索功能的选项。
 
-This option has some limitations:
+此选项有一些限制：
 
-*   It only works with SQL databases and MongoDB. Cassandra and Couchbase support will be added in the future (help is welcome!).
-*   There is no automatic replication mechanism between your database and Elasticsearch, so you might have out-of-sync data. As a result, you will probably need to write some specific code to synchronize your data, for example using the Spring `@Scheduled` annotation, to run every evening.
-    *   This also means if your database is changed outside of your application, your search indexes will be out-of-sync.  The [Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer) JHipster module can help in these situations.
+*   它只适用于SQL数据库和MongoDB。Cassandra和CouchBase的支持将在未来增加（欢迎帮助！）
+*   您的数据库和ElasticSearch之间没有自动复制机制，因此您可能有不同步的数据。因此，您可能需要编写一些特定的代码来同步您的数据，例如使用Spring`@scheduled`注释每天晚上运行。
+*   这也意味着，如果数据库在应用程序之外被更改，则搜索索引将不同步。 [Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer) JHipster module can help in these situations.
 
-When the Elasticsearch option is selected:
+选择ElasticSearch选项时：
 
-*   Spring Data Elasticsearch is used, with the help of [Spring Data Jest](https://github.com/VanRoy/spring-data-jest). Spring Data Jest which allows communication with Elasticsearch's REST API. It disables Spring Boot's autoconfiguration and uses its own instead.
-*   The "repository" package has new subpackage, called "search", that holds all Elasticsearch repositories.
-*   The "User" entity gets indexed in Elasticsearch, and you can query is using the `/api/_search/users/:query` REST endpoint.
-*   When the [entity sub-generator]({{ site.url }}/creating-an-entity/) is used, the generated entity gets automatically indexed by Elasticsearch, and is used in the REST endpoint. Search capabilities are also added to the Angular/React user interface, so you can search your entity in the main CRUD screen.
+*   在[Spring Data Jest](https://github.com/VanRoy/spring-data-jest)的帮助下，使用了Spring Data ElasticSearch。Spring数据笑话，允许与ElasticSearch的RESTAPI通信。它禁用了SpringBoot的自动配置并使用自己的配置。
+*   "repository"包有新的子包，称为“search”，它包含所有的ElasticSearch存储库。
+*   "User"实体在elasticsearch中得到索引，您可以使用`/api/_search/users/：query` REST端点进行查询。
+*   当使用[entity sub-generator]({{ site.url }}/creating-an-entity/)时，生成的实体将被ElasticSearch自动索引，并用于REST端点。搜索功能也添加到Angular/React用户界面，因此您可以在主CRUD屏幕中搜索您的实体。
 
-### Using in Development
+### 在开发中使用
 
-In development, JHipster runs with an embedded Elasticsearch instance. You can also use an external Elasticsearch instance if you set a `SPRING_DATA_JEST_URI` environment variable (or add a `spring.data.jest.uri` property to your `application-dev.yml`). 
+在开发中，JHipster使用嵌入式ElasticSearch实例运行。 如果设置了`SPRING_DATA_JEST_URI`环境变量 (或将 `spring.data.jest.uri`属性添加到 `application-dev.yml`)，也可以使用外部ElasticSearch实例。
 
-The easiest way to run an external Elasticsearch instance is to use the provided Docker Compose configuration:
+运行外部ElasticSearch实例的最简单方法是使用提供的Docker Compose配置：
 
     docker-compose -f src/main/docker/elasticsearch.yml up -d
-    
-Then set an environment variable to point to it:
+
+然后设置一个环境变量指向它：
 
     export SPRING_DATA_JEST_URI=http://localhost:9200
 
-### Using in Production
+### 在生产中使用
 
-In production, JHipster expects an external Elasticsearch instance. By default, the application looks for an Elasticsearch instance running on localhost. This can be configured by using the standard Spring Boot properties, in the `application-prod.yml` file.
+在生产中，JHipster需要一个外部ElasticSearch实例。默认情况下，应用程序查找在本地主机上运行的ElasticSearch实例。这可以通过使用`application-prod.yml`文件中的标准Spring引导属性进行配置。
 
-### Using on Heroku
+### 在Heroku上使用
 
-On Heroku, the [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) is configured as an add-on. JHipster is automatically configured to talk to it. 
+On Heroku, the [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) is configured as an add-on. JHipster is automatically configured to talk to it.

@@ -1,25 +1,26 @@
 ---
 layout: default
-title: Using React
+title: 使用React
 permalink: /using-react/
 sitemap:
     priority: 0.7
     lastmod: 2018-04-02T23:41:00-00:00
 ---
 
-# <i class="fa fa-html5"></i> Using React (with Redux)
-This section refers to the JavaScript library **React** used with **Redux**.
+# <i class="fa fa-html5"></i> 使用React (with Redux)
+本节介绍与**React**一起使用的**Redux**JavaScript库
 
-## Project Structure
+## 项目结构
 
-The JHipster client code can be found under `src/main/webapp`, and follows closely the [Piotr Witek React style guide](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md).
+JHipster客户机代码可以在`src/main/webapp`下找到，并严格遵循[Piotr Witek React style guide](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md).
 
- Please read this guide first if you have any question on our application structure, file names, TypeScript conventions...
+如果您对我们的应用程序结构、文件名、打印脚本约定有任何疑问，请先阅读本指南…
 
-For React routes we follow a dash cased naming convention so that the URLs are clean and consistent.
-When you generate an entity the route names, route URLs and REST API endpoint URLs are generated according to this convention, also entity names are automatically pluralized where required.
+对于react路由，我们遵循破折号命名约定，这样URL就干净一致了。
 
-Here is the main project structure:
+当您生成一个实体时，路由名称、路由URL和RESTAPI端点URL将根据此约定生成，并且在需要时，实体名称也将自动复数。
+
+主要项目结构如下：
 
 ```
 webapp
@@ -69,17 +70,16 @@ webapp
          └── foo.json                     - French translation of Foo name, fields, ...
 ```
 
-Please note that the default language translations would be based on what you have choosen during app generation. 'en' and 'fr' are shown here only for demonstration.
+请注意，默认语言翻译将基于您在应用程序生成期间选择的内容。此处显示的“en”和“fr”仅供演示。
 
 ## Redux
 
-[Redux](https://redux.js.org/) is a predictable state container for JavaScript. It is used
-together with React to manage the state of your React components.
+[Redux](https://redux.js.org/)是JavaScript的可预测状态容器。它被用来与React一起管理React组件的状态。
 
-Basically, Redux provide an object **store** used to store the whole state of your application.
-To access this store and therefore update your state components, the only way is to dispatch
-**actions** which describe the fact that an update is requested, then the **reducers** will
-define how the state is updated in response to these actions.
+基本上，redux提供了一个对象 **store** ，用于存储应用程序的整个状态。
+要访问此存储并因此更新状态组件，唯一的方法是
+**操作** 描述请求更新的事实，然后 **减速器** 将
+定义如何响应这些操作更新状态。
 
 Here is an example of a reducer:
 
@@ -126,10 +126,10 @@ export default (state = initialState, action) => {
 };
 ```
 
-In order to access your store and update the current application state, you need to dispatch
-actions to the store as mentioned previously. Actions are simple JavaScript objects and must have a **type**, which describe what
-the action is going to perform and a usually they have also a **payload** which corresponds to
-data you want to pass to the store.
+为了访问存储并更新当前应用程序状态，需要调度
+对商店的操作，如前所述。操作是简单的javascript对象，必须具有**类型**，它描述了
+该操作将执行，通常它们也有一个 **有效载荷** ，对应于
+要传递到存储区的数据。
 
 Here is an action to access the store:
 
@@ -143,16 +143,16 @@ export const getFoos = () => ({
 });
 ```
 
-The action described above indicates that we want to retrieve all the Foo objects by
-sending a GET request. The action type will match
-Notice that the **export** keyword is used to able the connected component to use that action
-when necessary (for instance, everytime the component is updated).
+上面描述的操作表明我们希望通过
+发送GET请求。操作类型将匹配
+请注意，**export** 关键字用于使连接的组件能够使用该操作。
+必要时（例如，每次更新组件时）。
 
 ## Authorizations
 
 Jhipster uses the [React router](https://github.com/ReactTraining/react-router) to organize the differents parts of your application.
 
-When it comes to routes that require authentication, the `PrivateRoute` component generated is used. This component will simply prevent any unauthenticated user from accessing a route.
+当涉及到需要身份验证的路由时，将使用生成的`privateroute`组件。此组件只会阻止任何未经身份验证的用户访问路由。
 
 Here is an example of PrivateRoute usage:
 
@@ -166,17 +166,17 @@ const Routes = () => (
 );
 ```
 
-As you can see, unauthenticated user can access `/` and `/login` but accessing `/account` requires to be logged in.
+如您所见，未经身份验证的用户可以访问`/`和`/login`但访问`/account`需要登录。
 
-Please note that PrivateRoute uses the `authentication.isAuthenticated` store value to know if the user is authenticated.
+请注意，privateroute使用`authentication.isAuthenticated` 存储值来确定用户是否已通过身份验证。
 
-## Notification System
+## 通知系统
 
 JHipster uses [react-toastify](https://github.com/fkhadra/react-toastify) alerts for the notification system.
 
-By default JHipster will show success notifications whenever an entity is created/updated/deleted
-and error notifications when there is an error caught from the response.
+默认情况下，只要创建/更新/删除实体，JHipster就会显示成功通知。
+以及从响应中捕获错误时的错误通知。
 
-## React JHipster library
+## React JHipster库
 
-The [react-jhipster](https://github.com/jhipster/react-jhipster) lib provides utilities and generic services for a generated application. It handles i18n as well.
+[react-jhipster](https://github.com/jhipster/react-jhipster) 库为生成的应用程序提供实用程序和通用服务。它还可以处理i18n。
