@@ -135,7 +135,7 @@ JHipster有一个特定的[Dockerfile](https://github.com/jhipster/generator-jhi
 <div class="alert alert-warning"><i>警告: </i>
 
 根据您的操作系统，您的<code>DOCKER_HOST</code>将有所不同。在Linux上，它只是您的本地主机。
-对于Mac/Windows，您必须使用以下命令获取IP:<code>docker machine ip default<code>
+对于Mac/Windows，您必须使用以下命令获取IP:<code>docker machine ip default</code>
 
 </div>
 
@@ -238,7 +238,7 @@ Kitematic是一个随Docker工具箱一起提供的易于使用的图形界面�
 
 <div class="alert alert-info"><i>提示: </i>
 
-如果您喜欢使用yarn，可以使用<code>jhipster--yarn<code>，以使用yarn而不是NPM。
+如果您喜欢使用yarn，可以使用<code>jhipster--yarn</code>，以使用yarn而不是NPM。
 
 </div>
 
@@ -254,12 +254,12 @@ On your host machine, you should be able to :
 *   Get all the generated files inside your shared folder
 
 <div class="alert alert-warning"><i>Warning: </i>
-  默认情况下，Docker不安装在<code>jhipster/jhipster<code>image中。
+  默认情况下，Docker不安装在<code>jhipster/jhipster</code>image中。
     <br/>
     所以你不能：
     <ul>
         <li>使用docker-compose文件</li>
         <li>用docker守护进程构建docker映像 (Maven goal: <code>jib:dockerBuild</code> or Gradle task: <code>jibDockerBuild</code>)</li>
     </ul>
-    但是，您可以使用 [jib](https://github.com/GoogleContainerTools/jib)的无守护模式，它可以构建Docker映像并将其推送到注册表，而无需访问Docker守护进程（maven目标：<code>jib:build<code>or gradle task:<code>jib build<code>）。但是，您需要将凭证设置到Docker注册表，作为构建应用程序的先决条件。有关详细信息，请参阅[Jib plugin configuration documentations](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration)。
+    但是，您可以使用 [jib](https://github.com/GoogleContainerTools/jib)的无守护模式，它可以构建Docker映像并将其推送到注册表，而无需访问Docker守护进程（maven目标：<code>jib:build</code>or gradle task:<code>jib build</code>）。但是，您需要将凭证设置到Docker注册表，作为构建应用程序的先决条件。有关详细信息，请参阅[Jib plugin configuration documentations](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration)。
 </div>
