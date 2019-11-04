@@ -11,37 +11,37 @@ sitemap:
 
 # <i class="fa fa-search"></i> 使用Elasticsearch
 
-ElasticSearch是一个在数据库顶部添加搜索功能的选项。
+Elasticsearch是一个在数据库之上添加搜索功能的选项。
 
 此选项有一些限制：
 
-*   它只适用于SQL数据库和MongoDB。Cassandra和CouchBase的支持将在未来增加（欢迎帮助！）
-*   您的数据库和ElasticSearch之间没有自动复制机制，因此您可能有不同步的数据。因此，您可能需要编写一些特定的代码来同步您的数据，例如使用Spring`@scheduled`注释每天晚上运行。
-*   这也意味着，如果数据库在应用程序之外被更改，则搜索索引将不同步。 [Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer) JHipster module can help in these situations.
+*   它仅适用于SQL数据库和MongoDB。将来会添加Cassandra和Couchbase支持（欢迎提供帮助！）。
+*   您的数据库和Elasticsearch之间没有自动复制机制，因此您的数据可能不同步。结果，您可能需要编写一些特定的代码来同步数据，例如使用Spring `@Scheduled`注解，使其每天晚上运行。
+    *   这也意味着，如果在应用程序外部更改数据库，则搜索索引将不同步。在这些情况下，[Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer)JHipster模块可以提供帮助。
 
-选择ElasticSearch选项时：
+选择Elasticsearch选项时：
 
-*   在[Spring Data Jest](https://github.com/VanRoy/spring-data-jest)的帮助下，使用了Spring Data ElasticSearch。Spring数据笑话，允许与ElasticSearch的RESTAPI通信。它禁用了SpringBoot的自动配置并使用自己的配置。
-*   "repository"包有新的子包，称为“search”，它包含所有的ElasticSearch存储库。
-*   "User"实体在elasticsearch中得到索引，您可以使用`/api/_search/users/：query` REST端点进行查询。
-*   当使用[entity sub-generator]({{ site.url }}/creating-an-entity/)时，生成的实体将被ElasticSearch自动索引，并用于REST端点。搜索功能也添加到Angular/React用户界面，因此您可以在主CRUD屏幕中搜索您的实体。
+*   在[Spring Data Jest](https://github.com/VanRoy/spring-data-jest)的帮助下，使用了Spring Data Elasticsearch。Spring Data Jest，可与Elasticsearch的REST API通信。它会禁用Spring Boot的自动配置，而是使用自己的自动配置。
+*   "repository"软件包具有一个名为"search"的新子软件包，其中包含所有Elasticsearch repositories。
+*   "User"实体在Elasticsearch中建立索引，您可以使用`/api/_search/users/:query`REST端点进行查询。
+*   当使用[实体子生成器]({{ site.url }}/creating-an-entity/)时，所生成的实体将由Elasticsearch自动索引，并在REST端点中使用。Angular/React用户界面中还添加了搜索功能，因此您可以在CRUD主屏幕中搜索实体。
 
 ### 在开发中使用
 
-在开发中，JHipster使用嵌入式ElasticSearch实例运行。 如果设置了`SPRING_DATA_JEST_URI`环境变量 (或将 `spring.data.jest.uri`属性添加到 `application-dev.yml`)，也可以使用外部ElasticSearch实例。
+在开发中，JHipster与嵌入式Elasticsearch实例一起运行。如果您设置了`SPRING_DATA_JEST_URI`环境变量（或向您的`application-dev.yml`添加`spring.data.jest.uri`属性），您还可以使用外部Elasticsearch实例。
 
-运行外部ElasticSearch实例的最简单方法是使用提供的Docker Compose配置：
+运行外部Elasticsearch实例的最简单方法是使用提供的Docker Compose配置：
 
     docker-compose -f src/main/docker/elasticsearch.yml up -d
-
+    
 然后设置一个环境变量指向它：
 
     export SPRING_DATA_JEST_URI=http://localhost:9200
 
 ### 在生产中使用
 
-在生产中，JHipster需要一个外部ElasticSearch实例。默认情况下，应用程序查找在本地主机上运行的ElasticSearch实例。这可以通过使用`application-prod.yml`文件中的标准Spring引导属性进行配置。
+在生产中，JHipster需要一个外部Elasticsearch实例。默认情况下，应用程序查找在localhost上运行的Elasticsearch实例。可以使用`application-prod.yml`文件中的标准Spring Boot属性进行配置。
 
 ### 在Heroku上使用
 
-On Heroku, the [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) is configured as an add-on. JHipster is automatically configured to talk to it.
+在Heroku上，将[Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai)配置为附加组件。JHipster被自动配置为与会话。

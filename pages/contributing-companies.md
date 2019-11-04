@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 贡献的公司
+title: 公司贡献
 permalink: /contributing-companies/
 redirect_from:
   - /thanks/
@@ -9,41 +9,41 @@ sitemap:
     priority: 0.1
     lastmod: 2017-11-29T00:00:00-00:00
 ---
-# <i class="fa fa-building"></i> 贡献的公司
+# <i class="fa fa-building"></i> 或帮助Jhipster的公司
 
-## 给JHipster贡献的公司
+## 为JHipster贡献的公司
 
-*   [Ippon Technologies](http://www.ippon.fr/), which provides time and hardware to [@juliendubois](https://twitter.com/juliendubois) so he can improve the project. Ippon Technologies also provides 1 day per month to contribute for everyone who is in Julien's team, as well as 2 paid internships every year on the project.
-*   [XebiaLabs](https://xebialabs.com/), which provides time and hardware to [@deepu105](https://twitter.com/deepu105) so he can improve the project.
-*   [Okta](https://developer.okta.com/), which provides time and hardware to [@mraible](https://twitter.com/mraible) so he can improve the project. They also contributed the [OIDC support]({{ site.url }}/security/#oauth2) and [Ionic module]({{ site.url }}/modules/marketplace/#/details/generator-jhipster-ionic).
-*   [Google](https://google.com) contributed the [Kubernetes sub-generator]({{ site.url }}/kubernetes/). It is maintained by [Ray Tsang](https://twitter.com/saturnism).
-*   [Heroku](https://www.heroku.com/) contributed the [Heroku sub-generator]({{ site.url }}/heroku/). It is maintained by [Joe Kutner](https://twitter.com/codefinger).
-*   [Boxfuse](https://boxfuse.com/) has added [specific support for JHipster]({{ site.url }}/boxfuse/). It is maintained by [Axel Fontaine](https://twitter.com/axelfontaine).
-*   [Software AG](http://www.softwareag.com/), which sponsors Ehcache, contributed to greatly improve our Ehcache support.
-*   [Hazelcast](https://hazelcast.com/) contributed to greatly improve our Hazelcast support.
-*   [Datical](http://www.datical.com/), the makers of Liquibase, have continuously helped us and corrected bugs for our Liquibase support.
-*   [Redhat](https://www.redhat.com/en) contributed the [Openshift sub-generator]({{ site.url }}/openshift/) and Infinispan support. It is maintained by [Srinivasa Vasu](https://twitter.com/srinivasavasu) who is also a core JHipster team member.
-*   [JFrog](https://jfrog.com/) which provides us with a free Artifactory instance, which is used for our builds and our releases.
+*   [Ippon Technologies](http://www.ippon.fr/), 为[@juliendubois](https://twitter.com/juliendubois)提供时间和机器, 以便他改善项目. Ippon Technologies每月还提供1天的时间为Julien团队中的每个人募捐, 并每年为这个项目提供2个带薪实习职位.
+*   [XebiaLabs](https://xebialabs.com/),为[@deepu105](https://twitter.com/deepu105)提供时间和机器, 以便他改善项目.
+*   [Okta](https://developer.okta.com/), 为[@mraible](https://twitter.com/mraible)提供时间和机器, 以便他改善项目. 他们还提供了[OIDC support]({{ site.url }}/security/#oauth2)和[Ionic模块]({{ site.url }}/modules/marketplace/#/details/generator-jhipster-ionic).
+*   [Google](https://google.com)贡献了[Kubernetes子生成器]({{ site.url }}/kubernetes/). 现在由[Ray Tsang](https://twitter.com/saturnism)维护.
+*   [Heroku](https://www.heroku.com/)贡献了[Heroku子生成器]({{ site.url }}/heroku/). 现在由[Joe Kutner](https://twitter.com/codefinger)维护.
+*    [Boxfuse](https://boxfuse.com/)增加了对JHipster的特定支持. 现在由[Axel Fontaine](https://twitter.com/axelfontaine)维护.
+*   [Software AG](http://www.softwareag.com/), 赞助Ehcache的公司, 极大地改善了我们对Ehcache的支持.
+*   [Hazelcast](https://hazelcast.com/)为我们大幅改善Hazelcast支持做出了贡献.
+*   [Datical](http://www.datical.com/), Liquibase的厂家, 一直为我们提供帮助，并修复对Liquibase支持的错误.
+*   [Redhat](https://www.redhat.com/en)贡献了[Openshift子生成器]({{ site.url }}/openshift/)和Infinispan支持, 它现在由JHipster团队的核心成员[Srinivasa Vasu](https://twitter.com/srinivasavasu)维护.
+*   [JFrog](https://jfrog.com/)为我们提供了一个免费的Artifactory实例，可用于我们项目的构建和发布.
 
 ## 帮助开发JHipster的公司
 
-These companies help us to develop JHipster
+这些公司帮助我们开发JHipster
 
-*   [Google](https://google.com), which has given the project $7,000 worth of "Google cloud credits" since 2016.
-*   Pivotal, which gives us free credits on their [Pivotal Web Services](http://run.pivotal.io/) cloud
-*   [ElephantSQL](http://www.elephantsql.com/), which gives us several of their "Pretty Panda" Postgresql databases.
-*   YourKit, LLC, which gives us free licenses for the [YourKit Java profiler](http://www.yourkit.com/java/profiler/index.jsp).
-*   EJ Technologies, which gives us free licenses for the [JProfiler Java profiler](http://www.ej-technologies.com/products/jprofiler/overview.html).
+*   [Google](https://google.com),自2016年以来，已为该项目提供了价值7,000美元的“Google云”额度.
+*   Pivotal, 为我们提供了[Pivotal Web Services](http://run.pivotal.io/)云的免费额度。
+*   [ElephantSQL](http://www.elephantsql.com/), 为我们提供了一些“Pretty Panda” Postgresql数据库。.
+*   YourKit, LLC, 为我们提供了[YourKit Java profiler](http://www.yourkit.com/java/profiler/index.jsp)免费许可证.
+*   EJ Technologies, 为我们提供了[JProfiler Java profiler](http://www.ej-technologies.com/products/jprofiler/overview.html)免费许可证.
 
-## 对JHipster有贡献的项目和社区
+## 为JHipster做出贡献的项目和社区
 
-JHipster works closely with other OSS communities, which often contributes code, advice and reviews to the project.  Important contributions have been made by:
+JHipster与其他OSS社区紧密合作，后者经常为项目贡献代码，建议和审查。以下举例一些重要贡献：
 
-*   [Webpack](https://webpack.github.io/), the module bundler that JHipster uses for its Angular and React support.
-*   [Gradle](https://gradle.org/), one of the build tools supported by JHipster.
+*   [Webpack](https://webpack.github.io/), JHipster用于Angular和React的模块打包工具.
+*   [Gradle](https://gradle.org/), JHipster支持的构建工具之一.
 *   [Angular](https://angular.io/).
-*   [UI Router](https://ui-router.github.io/), the Angular router used until JHipster 4.
+*   [UI Router](https://ui-router.github.io/), 在JHipster4之前使用的Angular路由器。.
 
 ## 特别感谢
 
-感谢[Galeries Lafayette](http://www.galerieslafayette.com/)的开发团队, 它最初的想法是让Grunt与Ant一起工作，并在更经典的SpringMVC应用程序之上创建一个现代的Web前端。
+非常感谢[Galeries Lafayette](http://www.galerieslafayette.com/)的开发团队，他们是最初提出使Grunt与Ant一起工作的想法，并在更经典的Spring MVC应用程序之上创建现代Web前端.

@@ -6,35 +6,35 @@ title: Release 0.6.0
 JHipster release 0.6.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-- Upgrade to Spring Security 3.2, and moved the Spring Security configuration from XML to Java Config thanks to the great work of [Jerome Mirc](https://twitter.com/JeromeMirc)
-- The whole Spring Configuration is now XML-less. The last XML configuration file is web.xml (Java EE always loved XML!!).
-- We have a new "service" sub-generator, for generating business services. You can find its new and up-to-date documentation [here]({{ site.url }}/creating-a-service/).
+- 更新到Spring Security 3.2, 并使用Java Config类替换了之前的XML配置文件, 感谢[Jerome Mirc](https://twitter.com/JeromeMirc)巨大的贡献.
+- 现在所有的Spring配置文件都不依赖XML. 最后一个依赖XML的配置文件是web.xml (Java EE太爱XML了!!).
+- 我们更新了一个"services"子生成器, 用于业务服务类生成. 你可以在[此处]({{ site.url }}/creating-a-service/)找到最新的文档.
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

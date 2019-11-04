@@ -3,12 +3,20 @@ layout: default
 layout_grid: true
 home: true
 angularjs: true
-title: JHipster - 自动生成 Spring Boot + Angular/React 应用!
+title: JHipster - 生成你的 Spring Boot + Angular/React 应用!
 sitemap:
     priority: 1.0
     lastmod: 2016-05-25T00:00:00-00:00
 ---
 <div ng-app="jhipster.home" ng-controller="HomeController" class="home-container">
+    <div class="mobile-search-container container">
+        <div class="row">
+            <form id="mobile-content-search-form">
+                <i class="fa fa-search"></i>
+                <input type="text" name="search" class="form-control mobile-doc-search-algolia" placeholder="Search..." />
+            </form>
+        </div>
+    </div>
     <!-- Header -->
     <header id="header" class="home-section">
         <div class="container">
@@ -16,12 +24,12 @@ sitemap:
                 <div class="col-lg-12">
                     <div class="logo-big"><img class="img-responsive" id="hipster" src="images/logo/jhipster_family_member_1.svg" alt=""></div>
                     <div class="intro-text">
-                        <span class="brand">你好, Java爱好者!</span>
+                        <span class="brand">你好, Java 热爱者!</span>
                         <hr class="star-light">
                         <span class="open-collective-info">
-                            JHipster现在在 <a href="https://opencollective.com/generator-jhipster" target="_blank">Open Collective</a>,
-                            如果你 <i class="fa fa-heart"></i> JHipster， 可以考虑成为一个
-                            <a href="https://opencollective.com/generator-jhipster#sponsor" target="_blank">赞助者</a> 或者
+                            JHipster 在 <a href="https://opencollective.com/generator-jhipster" target="_blank">Open Collective</a>开启赞助,
+                            如果你 <i class="fa fa-heart"></i> JHipster, 考虑成为我们的
+                            <a href="https://opencollective.com/generator-jhipster#sponsor" target="_blank">赞助商</a> 或者
                             <a href="https://opencollective.com/generator-jhipster#backer" target="_blank">支持者</a>
                         </span>
                         <div class="row stats">
@@ -32,7 +40,7 @@ sitemap:
                                             <i class="icon fa fa-download fa-3x"></i>
                                             <div class="content" ng-cloak>
                                                 <div class="title">{(npmDownloads)}</div>
-                                                <div class="sub-title">过去30天下载量</div>
+                                                <div class="sub-title">过去三十天下载量</div>
                                             </div>
                                             <div class="clear-both"></div>
                                         </div>
@@ -46,7 +54,7 @@ sitemap:
                                             <i class="icon fa fa-github fa-3x"></i>
                                             <div class="content" ng-cloak>
                                                 <div class="title">{(gitConfig.stargazers_count)}</div>
-                                                <div class="sub-title">星</div>
+                                                <div class="sub-title">点赞</div>
                                             </div>
                                             <div class="clear-both"></div>
                                         </div>
@@ -79,59 +87,63 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">Sponsors &amp; backers</h2>
+                    <h2 class="heading">赞助商 &amp; 支持者</h2>
                     <hr class="star-primary">
                 </div>
                 <div class="col-md-12 text-center">
                     <p>
-                        如果您发现Jhipster对工作有用，请考虑请求您的公司通过 <a href="https://opencollective.com/generator-jhipster#sponsor" target="_blank">成为一个赞助商</a>. 你也可以通过 <a href="https://opencollective.com/generator-jhipster#backer" target="_blank"> 成为一个支持者来单独赞助这个项目。</a>.
+                        如果您发现Jhispter给您的工作中带来了不错的便利, 请考虑请求您的公司<a href="https://opencollective.com/generator-jhipster#sponsor" target="_blank">成为我们的赞助商</a>来支持这个开源项目, 您也可以通过 <a href="https://opencollective.com/generator-jhipster#backer" target="_blank"> 成为一个独立的支持者</a>来赞助我们.
                     </p>
                 </div>
                 <div class="col-md-12 text-center">
                     <p>
-                        <strong>感谢我们的金牌赞助商！</strong>
+                        <strong>感谢我们的金牌赞助商!</strong>
                     </p>
                     <div class="row">
-                        <!-- change to below commented line when adding more logos -->
-                        <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
+                        <div class="col-md-offset-2 col-sm-12 col-md-4">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <a href="https://developer.okta.com/?utm_campaign=display_website_all_multiple_dev_dev_jhipster-q2_&utm_source=jhipster&utm_medium=cpc" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="175px"></a>
+                                </div>
+                                <div class="caption">
+                                    <a href="https://developer.okta.com/blog/2019/05/23/java-microservices-spring-cloud-config?utm_campaign=text_website_all_multiple_dev_dev_jhipster-q2_&utm_source=jhipster&utm_medium=cpc" target="_blank">使用JHipster和OAuth 2.0构建微服务架构</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <a href="http://www.octoconsulting.com/" target="_blank"><img src="{{ site.url }}/images/open-collective/octoconsulting.png" width="180px" height="175px"></a>
+                                </div>
+                                <div class="caption">
+                                    <a href="http://www.octoconsulting.com/" target="_blank">Octo Consulting Group</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <p>
+                        <strong>感谢我们的银牌赞助商!</strong>
+                    </p>
+                    <div class="row">
                         <div class="col-md-offset-4 col-sm-12 col-md-4">
                             <div class="thumbnail no-margin-bottom">
                                 <div class="logo-container">
-                                    <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
+                                    <a href="https://www.bizequity.com" target="_blank"><img src="{{ site.url }}/images/open-collective/bizequity.png" width="320px" height="110px"></a>
                                 </div>
                                 <div class="caption">
-                                    <a href="https://developer.okta.com/blog/2017/10/20/oidc-with-jhipster?utm_source=JHipster&utm_medium=text-link&utm_campaign=Gold-Sponsor" target="_blank">Add SSO to your JHipster apps with Okta</a>
+                                    <a href="https://www.bizequity.com" target="_blank">BizEquity</a>
                                 </div>
                             </div>
                         </div>
-                        <!--
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="thumbnail no-margin-bottom">
-                                <div class="logo-container">
-                                    <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
-                                </div>
-                                <div class="caption">
-                                    <a href="https://developer.okta.com/blog/2017/10/20/oidc-with-jhipster?utm_source=JHipster&utm_medium=text-link&utm_campaign=Gold-Sponsor" target="_blank">Add SSO to Your JHipster Apps with Okta</a>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                     </div>
                 </div>
-                <!--
-                <div class="col-md-12 text-center">
-                    <p>
-                        <strong>Thank you to our silver sponsors!</strong>
-                    </p>
-                    <a href="https://opencollective.com/generator-jhipster" target="_blank"><img src="https://opencollective.com/generator-jhipster/tiers/gold-sponsor.svg?avatarHeight=80&width=890"></a>
-                </div>
-                -->
                 <div class="col-md-12 text-center">
                     <p>
                         <strong>感谢我们的铜牌赞助商!</strong>
                     </p>
                     <div class="row">
-                        <div class="col-md-1"></div>
                         <div class="col-sm-6 col-md-2">
                             <div class="thumbnail no-margin-bottom">
                                 <div class="logo-container">
@@ -180,11 +192,47 @@ sitemap:
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <div class="logo-container">
+                                        <a href="https://blokt.com/" target="_blank" style="padding: 0px"><img src="{{ site.url }}/images/open-collective/blokt.png" width="60px" height="16"></a>
+                                    </div>
+                                    <div class="caption">
+                                        <a href="https://blokt.com/" target="_blank">Blokt</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <div class="logo-container">
+                                        <a href="https://clay.global/" target="_blank" style="padding: 0px"><img src="{{ site.url }}/images/open-collective/clay.png" width="60px" height="16"></a>
+                                    </div>
+                                    <div class="caption">
+                                        <a href="https://clay.global/" target="_blank">Clay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <div class="logo-container">
+                                        <a href="https://uxplanet.org/" target="_blank" style="padding: 0px"><img src="{{ site.url }}/images/open-collective/uxplanet.png" width="60px" height="16"></a>
+                                    </div>
+                                    <div class="caption">
+                                        <a href="https://uxplanet.org/" target="_blank">UX Planet</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12 text-center">
                     <p>
-                        <strong>感谢所有的支持者!</strong>
+                        <strong>感谢我们所有的支持者!</strong>
                     </p>
                     <div class="row">
                         <div class="col-md-offset-2 col-sm-12 col-md-4">
@@ -199,38 +247,99 @@ sitemap:
         </div>
     </section>
 
+    <!-- Companies supporting JHipster section -->
+    <section id="sponsors" class="padding-t-50 padding-b-25 home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="heading">支持JHipster的公司</h2>
+                    <hr class="star-primary">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <p>这些支持包括提供</p>
+                            <ul>
+                                <li>为核心贡献者募捐(Ippon Technologies, XebiaLabs, Okta)</li>
+                            </ul>
+                            <p>如果您希望将您的公司添加到此处，请随时与我们联系并说明来由。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <a href="https://en.ippon.tech/" target="_blank">
+                                        <img src="{{ site.url }}/images/support/Logo_IPPON-Rouge.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <a href="https://xebialabs.com/" target="_blank">
+                                        <img src="{{ site.url }}/images/support/XebiaLabs.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="thumbnail no-margin-bottom">
+                                <div class="logo-container">
+                                    <a href="https://developer.okta.com/?utm_campaign=display_website_all_multiple_dev_dev_jhipster-q2_&utm_source=jhipster&utm_medium=cpc" target="_blank">
+                                        <img src="{{ site.url }}/images/support/okta.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- News section -->
     <section id="news" class="padding-t-25 padding-b-25 home-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">JHipster 新闻</h2>
+                    <h2 class="heading">JHipster动态</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                <b>To get the latest JHipster news, please follow us on Twitter:
-                <a href="https://twitter.com/java_hipster" target="_blank"><i class="fa fa-twitter"></i> @java_hipster</a></b>
+                <b>请关注我们推特
+                <a href="https://twitter.com/java_hipster" target="_blank"><i class="fa fa-twitter"></i> @java_hipster</a>获取Jhipster最新动态</b>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <h3>JHipster 2019 大会</h3>
+                        <h3>Jhipster中文站</h3>
+                        <p>官方<a href="/cn/">JHipster中文站</a>现已推出! <a href="/cn/">JHipster的中文官方网站</a>终于和大家见面了！</p>
+                        <p>请在这个专属的 <a href="https://github.com/jhipster/cn">Github项目</a>审查和提升中文站的质量. 欢迎大家来<a href="https://github.com/jhipster/cn">Github的翻译项目</a>上添砖加瓦！</p>
+                        <h3>JHipster 2019大会</h3>
                         <p>
-                            <b><a href="https://jhipster-conf.github.io/">JHipster 2019 大会</a></b> 召开! 经过去年的成功，这个新版本将更大（2平台，350人）, 但我们将保持高质量的内容，国际演讲者和顶级Jhipster贡献者! 该活动将于2019年6月27日在法国巴黎举行。议程、门票和更多信息都可以在<a href="https://jhipster-conf.github.io/">会议网站</a>上找到。我们希望在那里见到你!
+                            <b><a href="https://jhipster-conf.github.io/">JHipster 2019大会</a></b>已结束! 感谢大家所有的关注. 相关的视频在 <a href="https://www.youtube.com/playlist?list=PL6IFaLdAcgE3aSgmRyhi6eULdlrwjA5sm">Youtube</a>可以观看.
                         </p>
-                        <h3>News</h3>
+                        <h3>活动</h3>
                         <ul>
-                            <li><b>由Matt Raible编写的《The JHipster Mini-Book 5.0》</b> 已经出版! 免费下载 <a href="https://www.infoq.com/minibooks/jhipster-mini-book-5" target="_blank">InfoQ</a> or 或从<a href="http://www.lulu.com/shop/matt-raible/the-jhipster-mini-book/paperback/product-23871310.html">Lulu</a>购买印刷版.</li>
-                            <li>由Deepu K Sasidharan和Sendil Kumar编写的<b>JHipster全栈开发</b>已经发布。 可以从 <a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank">Packt</a> 和 <a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank">Amazon</a>获取. 使用优惠券 <b>JHIPSTER50</b> 电子书有50%的折扣 and <b>JHIPSTER15</b> 从Packt购买有15%的折扣</li>
-                            <li><i class="fa fa-trophy" aria-hidden="true"></i> JHipster 获得铜牌大奖 <a href="https://jaxenter.com/winners-jax-innovation-awards-2017-137993.html" target="_blank">JAX Innovation award</a> 在JAX 2017伦敦大会上获得对Java生态系统最具创新性的贡献.</li>
-                            <li><i class="fa fa-trophy" aria-hidden="true"></i> JHipster 获得 <a href="https://blogs.oracle.com/java/announcing-2017-dukes-choice-award-nominations" target="_blank">Duke's Choice Award</a> JavaOne 2017使用Java技术进行极端创新。</li>
+                            <!--<li><b>2019年10月18日:</b> 在 <a href="https://2019.geecon.cz/" target="_blank">Geecon Prague</a>, <a href="https://twitter.com/juliendubois" target="_blank">Julien Dubois</a> 将举行一场Jhipster介绍</a></li>-->
+                            <!--<li><b>2019年10月24日:</b> 在 <a href="https://www.jug-ostfalen.de" target="_blank">JUG Ostfalen, Germany</a>, <a href="https://twitter.com/atomfrede" target="_blank">Frederik Hahne</a> 将介绍Jhipster和现场演示. <a href="https://www.jug-ostfalen.de/event/2019/10/24/jhipster.html" target="_blank">现在注册!</a></li>-->
+                            <li><b>2019年11月12-13日:</b> 在 <a href="https://events.codemotion.com/conferences/berlin/2019" target="_blank">CodeMotion, Berlin</a>, <a href="https://twitter.com/deepu105" target="_blank">Deepu K Sasidharan</a> 将举办一场会议讨论Jhipster微服务. <a href="https://events.codemotion.com/conferences/berlin/2019/speaker/3135/" target="_blank">会议详情</a></li>
+                            <li><b>2019年11月15日:</b> 在 <a href="http://www.jugth.de/#/" target="_blank">JUG Thüringen, Germany</a>, <a href="https://twitter.com/atomfrede" target="_blank">Frederik Hahne</a> 将介绍Jhipster和现场演示. <a href="https://www.meetup.com/jugthde/events/264702033/" target="_blank">现在注册!</a></li>
+                            <li><b>2019年11月21日:</b> 在 <a href="https://www.codeursenseine.com/2019/" target="_blank">Codeurs en Seine in Rouen, France</a>, <a href="https://twitter.com/juliendubois" target="_blank">Julien Dubois</a>将举办一场Jhipster介绍</a></li>
                         </ul>
-                        <h3>Events</h3>
+                        <h3>动态</h3>
                         <ul>
-                            <li><b>2019年2月22日:</b> at <a href="https://www.meetup.com/JHipster-NYC/events/258529587/">JHipster NYC</a>, Theo Lebrun 对Vue.js和JHipster进行一整天的研讨。</li>
+                            <li>Matt Raible编写的<b>《The JHipster Mini-Book 5.0》</b> 现已出版! 可以在<a href="https://www.infoq.com/minibooks/jhipster-mini-book-5" target="_blank">InfoQ</a>免费下载或者在<a href="http://www.lulu.com/shop/matt-raible/the-jhipster-mini-book/paperback/product-23871310.html">Lulu</a>购买印刷版本.</li>
+                            <li>Deepu K Sasidharan与Sendil Kumar编写的<b>《Full Stack Development with JHipster》</b>现已出版. 可以在<a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank">Packt</a>和<a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank">Amazon</a>购买. 在Packt, 购买电子版可以使用优惠码<b>JHIPSTER50</b>获取50%折扣, 购买平装书可以使用优惠码<b>JHIPSTER15</b>获取15%折扣</li>
+                            <li><i class="fa fa-trophy" aria-hidden="true"></i>2017伦敦JAX大会, JHipster获得<a href="https://jaxenter.com/winners-jax-innovation-awards-2017-137993.html" target="_blank">JAX创新奖</a>铜奖, 奖励其对Java生态系统作出的重大贡献.</li>
+                            <li><i class="fa fa-trophy" aria-hidden="true"></i>2017年JavaOne大会, JHipster获得<a href="https://blogs.oracle.com/java/announcing-2017-dukes-choice-award-nominations" target="_blank">Duke's Choice Award</a>, 表彰Jhipster在Java技术上卓越的创新.</li>
                         </ul>
                     </div>
                 </div>
@@ -243,7 +352,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">什么是JHipster?</h2>
+                    <h2 class="heading">JHipster是什么?</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -255,13 +364,14 @@ sitemap:
                         <a href="https://angular.io/" target="_blank"><img src="images/logo/svg/angular.svg" class="project-icon img-responsive"></a><br class="visible-xs">
                         <i class="fa fa-4x">/</i>
                         <a href="https://reactjs.org/" target="_blank"><img src="images/logo/svg/react.svg" class="project-icon img-responsive"></a><br class="visible-xs">
+                        <i class="fa fa-4x">/</i>
+                        <a href="https://vuejs.org/" target="_blank"><img src="images/logo/svg/vue.svg" class="project-icon img-responsive"></a><br class="visible-xs">
                         <i class="fa fa-4x">=</i>
                         <a href="/"><img id="hipster-head" src="images/logo/jhipster_family_member_0_head.svg" class="project-icon img-responsive"></a>
                     </div>
                     <p class="lead">
-                      Jhipster是一个生成、开发和部署的开发平台
-                      <a class="dark" href="http://projects.spring.io/spring-boot/" target="_blank">Spring Boot</a> + <a class="dark" href="https://angular.io/" target="_blank">Angular</a>/<a class="dark" href="https://reactjs.org/" target="_blank">React</a>
-                      Web 应用 and Spring 微服务. <br>
+                        JHipster是一个生成、开发和部署<a class="dark" href="http://projects.spring.io/spring-boot/" target="_blank">Spring Boot</a> + <a class="dark" href="https://angular.io/" target="_blank">Angular</a> / <a class="dark" href="https://reactjs.org/" target="_blank">React</a> / <a class="dark" href="https://vuejs.org/" target="_blank">Vue</a>
+                        Web应用与Spring微服务的开发平台. <br>
                     </p>
                 </span>
             </div>
@@ -269,32 +379,43 @@ sitemap:
                 <div class="col-md-6">
                     <h3 class="hipster-font heading">目标</h3>
                     <p>
-                        我们的目标是为您生成一个完整、现代的Web应用程序或微服务架构, 统一:
+                        我们的目标为您生成一个完整和现代Web应用或者微服务架构, 具体如下:
                     </p>
                     <ul>
-                        <li>服务器端使用Spring Boot的高性能健壮Java堆栈</li>
-                        <li>时尚, 现代化, 移动优先 前端Angular, React and Bootstrap</li>
-                        <li>一个强大的微服务架构，包含jhipster注册表、Netflix OSS、弹性堆栈和Docker</li>
-                        <li>使用Yeoman、Webpack和Maven/Gradle构建应用程序的强大工作流</li>
+                        <li>基于Spring Boot, 提供高性能和健壮的Java技术栈服务端</li>
+                        <li>基于Angular、React和Bootstrap, 提供时尚、现代、移动优化的前端</li>
+                        <li>一个健壮的微服务架构, 包括Jhipster Registry, Netflix OSS, Elastic组件和Docker</li>
+                        <li>使用Yeoman, Webpack和Maven/Gradle为应用构建提供强大的工作流</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h3 class="hipster-font heading">样例 &amp; 源代码</h3>
+                    <h3 class="hipster-font heading">示例 &amp; 源码</h3>
                     <p>
-
-                        <a href="https://github.com/jhipster/jhipster-sample-app" target="_blank">链接</a>.
+                        你可以在
+                        <a href="https://github.com/jhipster/jhipster-sample-app" target="_blank">这里 </a>查看一个生成的Angular应用例子.
                     </p>
                     <p>
-                        您可以签出一个生成的样例React应用程序
-                        <a href="https://github.com/jhipster/jhipster-sample-app-react" target="_blank">链接</a>.
+                        你可以在
+                        <a href="https://github.com/jhipster/jhipster-sample-app-react" target="_blank">这里 </a>查看一个生成的Vue.js应用例子.
                     </p>
                     <p>
-                        JHipster是开源的，所有的开发都是在
-                        <a href="https://github.com/jhipster/generator-jhipster" target="_blank">GitHub</a>
+                        你可以在
+                        <a href="https://github.com/jhipster/jhipster-sample-app-vuejs" target="_blank">这里 </a>查看一个生成的Angular应用例子.
+                    </p>
+                    <p>
+                        你可以在
+                        <a href="https://github.com/jhipster/jhipster-sample-app-kotlin" target="_blank">这里 </a>查看一个生成的Kotlin应用例子.
+                    </p>
+                    <p>
+                        你可以在
+                        <a href="https://github.com/jhipster/jhipster-net-sample-app-template" target="_blank">这里 </a>查看一个生成的.Net应用例子.
+                    </p>
+                    <p>
+                        JHipster是一个开源项目, 所有的开发都在<a href="https://github.com/jhipster/generator-jhipster" target="_blank">GitHub</a>进行
                     </p>
                     <ul>
-                        <li> 如果您想和我们一起编码，请随时加入！</li>
-                        <li> 如果你喜欢这个项目，请给我们在GitHub点赞！</li>
+                        <li> 如果你想与我们一同为Jhipster添砖加瓦, 尽情加入我们吧!</li>
+                        <li> 如果你喜欢这个项目, 请在GitHub为我们点赞</li>
                     </ul>
                 </div>
             </div>
@@ -306,62 +427,61 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading" id="video">与Matt Raible一起学习JHipster，共16分钟</h2>
+                    <h2 class="heading" id="video">花上大约十五分钟和Matt Raible一起学习Jhipster</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p>
-                        <a href="https://twitter.com/mraible"><i>Matt Raible</i></a> 发布了一个视频，使用 JHipster 5 开发 Spring Boot 2 + Angular 6 应用.
+                        <a href="https://twitter.com/mraible"><i>Matt Raible</i></a>发布了一个如何使用Jhipster6来开发一个Spring Boot2.1+Angular8应用的教学视频.
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
                     <div class="video-container">
-                        <iframe height=498 width=510 src='http://player.youku.com/embed/XNDEwMzA0NDA4OA==' frameborder=0 allowfullscreen="true"></iframe>
+                        <iframe width="640" height="360" src="https://www.youtube.com/embed/uQqlO3IGpTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="row padding-t-25">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">Trainings &amp; Books</h2>
+                    <h2 class="heading">课程 &amp; 书籍</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <h3>新的在线培训 (MOOCs)</h3>
+                            <h3>在线课程(慕课)</h3>
                         <ul>
-                            <li><a href="https://www.pluralsight.com/courses/play-by-play-developing-microservices-mobile-apps-jhipster" target="_blank">Play by Play: Developing Microservices and Mobile Apps with JHipster</a> by <a href="https://twitter.com/mraible" target="_blank">Matt Raible</a> and <a href="https://twitter.com/mhi_inc">Michael Hoffman</a></li>
-                            <li><a href="https://therealdanvega.teachable.com/p/jhipster/?product_id=456739&coupon_code=JHIPSTER" target="_blank">Angular 4 Java Developers by Dan Vega and John Thompson</a> (by using this link, you will get a big discount over the normal price!)</li>
-                            <li><a href="https://www.pluralsight.com/courses/scaffolding-spring-boot-and-angular-with-jhipster" target="_blank">Scaffolding Spring Boot and Angular Web Apps with JHipster by Michael Hoffman</a></li>
-                            <li>JHipster: Build and Deploy Spring Boot Microservices by Chris Anatalio (<a href="https://linkedin-learning.pxf.io/c/1252615/449670/8005?u=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fjhipster-build-and-deploy-spring-boot-microservices%3Ftrk%3Dinsiders_43129714_learning" target="_blank">LinkedIn Learning</a>, <a href="https://www.lynda.com/course-tutorials/JHipster-Build-Deploy-Microservices/624352-2.html" target="_blank">Lynda.com</a>)</li>
+                            <li><a href="https://www.pluralsight.com/courses/play-by-play-developing-microservices-mobile-apps-jhipster" target="_blank">手把手教学: 使用Jhispter开发微服务和移动应用.</a> <a href="https://twitter.com/mraible" target="_blank">(Matt Raible</a>与<a href="https://twitter.com/mhi_inc">Michael Hoffman)</a></li>
+                            <li><a href="https://therealdanvega.teachable.com/p/jhipster/?product_id=456739&coupon_code=JHIPSTER" target="_blank">Angular 4+Java开发(Dan Vega与John Thompson)</a> (点击此链接可以获取一个惊人的折扣!)</li>
+                            <li>JHipster:构建和部署Spring Boot微服务（Chris Anatalio） (<a href="https://linkedin-learning.pxf.io/c/1252615/449670/8005?u=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fjhipster-build-and-deploy-spring-boot-microservices%3Ftrk%3Dinsiders_43129714_learning" target="_blank">领英学习</a>, <a href="https://www.lynda.com/course-tutorials/JHipster-Build-Deploy-Microservices/624352-2.html" target="_blank">Lynda.com</a>)</li>
                         </ul>
-                        <h3>新的书籍</h3>
+                        <h3>新书</h3>
                         <ul>
-                            <li><a href="https://www.infoq.com/minibooks/jhipster-mini-book-5" target="_blank">The JHipster Mini-Book 5.0</a> by Matt Raible. This edition includes new sections on progressive web apps (PWA), code quality, and securing user data.</li>
-                            <li><b>Full Stack Development with JHipster</b> by Deepu K Sasidharan and Sendil Kumar. Get it on <a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank">Packt</a> and <a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank">Amazon</a>.</li>
+                            <li><a href="https://www.infoq.com/minibooks/jhipster-mini-book-5" target="_blank">《The JHipster Mini-Book 5.0》</a>(Matt Raible), 这个版本更新一些新的章节, 包括渐进式Web应用、代码质量和用户数据安全.</li>
+                            <li><b>《Full Stack Development with JHipster》</b>(Deepu K Sasidharan与Sendil Kumar), 可以通过<a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank">Packt</a> and <a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank">Amazon</a>购买.</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row padding-t-25">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">JHipster快速开始</h2>
+                    <h2 class="heading">快速开始JHipster</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <ol class="text-body">
-                        <li>安装 JHipster <code>npm install -g generator-jhipster</code></li>
-                        <li>创建一个新的目录并进入该目录 <code>mkdir myApp &amp;&amp; cd myApp</code></li>
-                        <li>运行JHipster并根据屏幕提示进行 <code>jhipster</code></li>
-                        <li>使用 <a href="https://start.jhipster.tech/jdl-studio/" target="_blank">JDL Studio</a>创建实体类，然后下载 <code>jhipster-jdl.jh</code>文件</li>
-                        <li>生成实体类代码 <code>jhipster import-jdl jhipster-jdl.jh</code></li>
+                        <li>安装JHipster <code>npm install -g generator-jhipster</code></li>
+                        <li>创建一个新目录并进入该目录 <code>mkdir myApp &amp;&amp; cd myApp</code></li>
+                        <li>运行Jhipster并按照屏幕指引操作<code>jhipster</code></li>
+                        <li>使用 <a href="https://start.jhipster.tech/jdl-studio/" target="_blank">JDL Studio</a>定义您的实体类后, 下载<code>jhipster-jdl.jh</code>文件</li>
+                        <li>生成实体类代码<code>jhipster import-jdl jhipster-jdl.jh</code></li>
                     </ol>
                 </div>
                 <div class="col-lg-12">
@@ -382,7 +502,7 @@ sitemap:
     <section id="opts" class="blue padding-t-50 padding-b-25 home-section">
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="heading">客户端选择</h2>
+                <h2 class="heading">前端技术栈</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -411,6 +531,10 @@ sitemap:
                 <li class="clip img-circle new">
                     <img src="images/logo/svg/react.svg" />
                     <span class="title_sub_tech">React</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="images/logo/svg/vue.svg" />
+                    <span class="title_sub_tech">Vue</span>
                 </li>
                 <li class="clip img-circle new">
                     <img src="images/logo/svg/redux.svg" />
@@ -449,7 +573,7 @@ sitemap:
         </div>
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="heading">服务端选择</h2>
+                <h2 class="heading">服务端技术栈</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -472,7 +596,7 @@ sitemap:
                     <span class="title_sub_tech">Consul</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="images/logo/icons/gradle-new.png" class="invert-hover-white"/>
+                    <img src="images/logo/icons/gradle.png" class="invert-hover-white"/>
                     <span class="title_sub_tech">Gradle</span>
                 </li>
                 <li class="clip img-circle new">
@@ -524,6 +648,10 @@ sitemap:
                     <span class="title_sub_tech">EhCache</span>
                 </li>
                 <li class="clip img-circle new">
+                    <img src="images/logo/icons/caffeine.png" />
+                    <span class="title_sub_tech">Caffeine</span>
+                </li>
+                <li class="clip img-circle new">
                     <img src="images/logo/icons/Hazelcast.png" class="invert-hover-white"/>
                     <span class="title_sub_tech">Hazelcast</span>
                 </li>
@@ -563,12 +691,16 @@ sitemap:
                     <img src="images/logo/svg/cucumber.svg"/>
                     <span class="title_sub_tech">Cucumber</span>
                 </li>
+                <li class="clip img-circle new">
+                    <img src="images/logo/svg/archunit.svg"/>
+                    <span class="title_sub_tech">ArchUnit</span>
+                </li>
                 <li class="clear"></li>
             </ul>
         </div>
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="heading">开发选择</h2>
+                <h2 class="heading">部署技术栈</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -599,8 +731,8 @@ sitemap:
                     <span class="title_sub_tech">Boxfuse</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="images/logo/svg/rancher.svg" class="width"/>
-                    <span class="title_sub_tech">Rancher</span>
+                    <img src="images/logo/gcp.png"/>
+                    <span class="title_sub_tech">Google Cloud<br/> Platform</span>
                 </li>
                 <li class="clip img-circle new">
                     <img src="images/logo/svg/openshift.svg"/>
@@ -611,7 +743,7 @@ sitemap:
         </div>
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="heading">持续集成选择</h2>
+                <h2 class="heading">CI/CD技术栈</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -630,8 +762,8 @@ sitemap:
                     <span class="title_sub_tech">GitLab CI</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="images/logo/svg/circleci.svg"/>
-                    <span class="title_sub_tech">CircleCI</span>
+                    <img src="images/logo/azure-pipelines.png"/>
+                    <span class="title_sub_tech">Azure Pipelines</span>
                 </li>
                 <li class="clear"></li>
             </ul>
@@ -643,7 +775,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">谁在使用JHipster?</h2>
+                    <h2 class="heading">谁在使用Jhipster?</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -651,7 +783,7 @@ sitemap:
                 <div class="col-md-12" ng-controller="UsersCtrl">
                     <div>
                         <p>
-                            世界各地许多大公司都使用JHipster! <a href="{{ site.url }}/companies-using-jhipster/">查看整个列表</a>, 一旦你开始使用JHipster，别忘了添加你的公司 <i class="fa fa-smile-o"></i>
+                            全世界许多大公司都在使用Jhipster! <a href="{{ site.url }}/companies-using-jhipster/">点击此处查看完整的列表</a>, 如果你的公司也使用了Jhipster, 不要忘记在这里也添加您的公司<i class="fa fa-smile-o"></i>
                         </p>
                     </div>
                     <div id="carousel-customers" class="carousel slide" data-ride="carousel">
@@ -678,12 +810,12 @@ sitemap:
 
                         <div align="center" style="margin-top:20px;">
                             <!-- Controls -->
-                              <a class="left" href="#carousel-customers" data-slide="prev">
+                            <a class="left" href="#carousel-customers" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
-                              </a>
-                              <a class="right" href="#carousel-customers" data-slide="next">
+                            </a>
+                            <a class="right" href="#carousel-customers" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
-                              </a>
+                            </a>
                         </div>
 
                     </div>
@@ -698,7 +830,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="heading">模块 &amp; 模板</h2>
+                    <h2 class="heading">模块 &amp; 蓝图</h2>
                     <hr class="star-light">
                 </div>
             </div>
@@ -706,14 +838,14 @@ sitemap:
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <input type="text" ng-model="searchText" class="form-control search-text" placeholder="Search" id="name" required data-validation-required-message="Please enter a module to search">
+                            <input type="text" ng-model="searchText" class="form-control search-text" placeholder="搜索" id="name" required data-validation-required-message="Please enter a module to search">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <p>热门模块和模板</p>
+                <p>热门模块和蓝图</p>
                 <br>
             </div>
             <div class="row">
@@ -749,10 +881,19 @@ sitemap:
 {
   "@context": "http://schema.org",
   "@type": "Organization",
-  "url": "https://www.jhipster.tech/cn",
-  "logo": "https://www.jhipster.tech/cn/images/logo-jhipster.png",
+  "url": "https://www.jhipster.tech",
+  "logo": "https://www.jhipster.tech/images/logo-jhipster.png",
   "name" : "JHipster",
   "sameAs" : [ "https://twitter.com/java_hipster",
     "https://github.com/jhipster/generator-jhipster"]
 }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '9bd47d3de4af6f3662fd11a7f0e38819',
+        indexName: 'jhipster',
+        inputSelector: '.mobile-doc-search-algolia',
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
 </script>

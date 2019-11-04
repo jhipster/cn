@@ -1,24 +1,24 @@
 ---
 layout: default
-title: 公共端口
+title: 通用端口
 permalink: /common-ports/
 sitemap:
     priority: 0.7
     lastmod: 2018-10-15T10:20:00-00:00
 ---
 
-# <i class="fa fa-plug"></i> 公共端口
+# <i class="fa fa-plug"></i> 通用端口
 
-JHipster配置了许多工具和服务，它们中的每一个都可能使用一个或多个端口。以下是帮助理解每个端口所做工作的文档，并在端口冲突时提供帮助。
+JHipster配置了许多工具和服务，每个工具和服务都可能使用一个或多个端口。这个文档可帮助您了解每个端口的功能，并在端口冲突的情况下提供帮助。
 
-请注意，根据[Policy 1]({{ site.url }}/policies/), 的规定，使用每种技术的标准端口，除非这会导致问题（应在此处解释）。
+请注意，根据JHipster[规范1]({{ site.url }}/policies/)，除非有问题（请在此处进行说明），否则每种技术均使用标准端口。
 
-这里的端口按顺序列出，但最常见的问题是端口 `8080`, `9000` and `9060`.
+此处的端口按顺序列出，最常见的问题是端口`8080`, `9000`和`9060`。
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>Port</th>
-    <th>Description</th>
+    <th>端口</th>
+    <th>描述</th>
   </tr>
   <tr>
     <td>80</td>

@@ -9,16 +9,16 @@ sitemap:
 
 # <i class="fa fa-wrench"></i> 设置Jenkins服务器
 
-要为JHipster配置Jenkins服务器，请参阅以下指南：
+要为JHipster配置Jenkins服务器，请参考以下指南：
 
-- [Setting up Jenkins 1 on Linux]({{ site.url }}/setting-up-ci-linux/)
-- [Setting up Jenkins 1 on Windows]({{ site.url }}/setting-up-ci-windows/)
+- [在Linux设置Jenkins 1]({{ site.url }}/setting-up-ci-linux/)
+- [在Windows设置Jenkins 1]({{ site.url }}/setting-up-ci-windows/)
 
 # <i class="fa fa-sliders"></i> Jenkins配置
 
 要在Jenkins中设置JHipster项目，请使用以下配置：
 
-## For Maven:
+## 对于Maven:
 
 ```
 * Project name: `yourApplicationName`
@@ -42,7 +42,7 @@ sitemap:
     * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
 ```
 
-## For Gradle:
+## 对于Gradle:
 ```
 * Project name: `yourApplicationName`
 * Source Code Management
@@ -64,3 +64,4 @@ sitemap:
 * Post-build Actions
     * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
 ```
+

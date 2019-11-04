@@ -8,33 +8,33 @@ JHipster release 1.8.0
 
 *JHipster gives you Spring Boot + AngularJS working together in one handy Yeoman generator.*
 
-What's new
+更新日志
 ----------
 
 We have a major change in this release: we swichted our JPA ID generation strategy, from "TABLE" to "AUTO". Originally we selected "TABLE" as it's the easiest way to be portable across databases, but we discovered (thanks to our friends from YourKit!) that this was consuming extra database connections. As a result of this change, you can now use JHipster applications without any trouble on "free" cloud databases like ClearDB or ElephantSQL (which only give you 4 connections available).
 
 And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.8.0+is%3Aclosed)__.
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

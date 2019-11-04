@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - 电子邮件已被使用
+title: Error - e-mail already used
 permalink: /problem/email-already-used/
 sitemap:
     priority: 0.7

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 在Linux上设置Jenkins 1
+title: 在Linux设置Jenkins 1
 permalink: /setting-up-ci-linux/
 redirect_from:
   - /setting_up_ci_linux.html
@@ -9,13 +9,13 @@ sitemap:
     lastmod: 2015-01-09T12:40:00-00:00
 ---
 
-# <i class="fa fa-stethoscope"></i> 在Linux上设置Jenkins 1
+# <i class="fa fa-stethoscope"></i> 在Linux设置Jenkins 1
 
-下面的说明适用于Red Hat/CentOS服务器，但可以很容易地适用于其他Linux发行版。
+以下说明适用于Red Hat/CentOS服务器，但也可以轻松地适用于其他Linux发行版。
 
 ## 安装Jenkins
 
-请遵循以下说明：[https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions)
+请遵循[https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions)中的说明
 
 ~~~~
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
@@ -25,36 +25,36 @@ sudo yum install jenkins
 sudo service jenkins start
 ~~~~
 
-A `jenkins` user has been created, its home directory is `/var/lib/jenkins`
+已创建一个`jenkins`用户，其主目录为`/var/lib/jenkins`
 
 ## 配置Jenkins
 
 ### 安装JDK 8
 
-通过Jenkins管理，添加一个JDK8自动安装程序。
+通过Jenkins管理，添加JDK 8自动安装程序。
 
 ### 安装Maven
 
-通过Jenkins管理，从Apache的站点添加一个Maven自动安装程序。
+通过Jenkins管理，从Apache站点添加Maven自动安装程序。
 
 ### 安装NodeJS
 
-您可以在全球范围内安装nodejs，但很可能您希望为不同的项目使用不同版本的nodejs。
+您可以全局安装NodeJS，但也可能希望为不同的项目安装不同版本的NodeJS。
 
-我们建议以下两种选择，选择您喜欢的一种。
+我们建议以下2种选择，选择您喜欢的一种。
 
-#### Jenkins NodeJS plugin
+#### Jenkins NodeJS插件
 
-安装Jenkins Nodejs插件。
+安装Jenkins NodeJS插件。
 
-通过Jenkins管理，添加nodejs安装：
+通过Jenkins管理，添加NodeJS安装：
 
-- Automatic installer from nodejs.org, use the latest LTS (Long Term Support) 64-bit version
-- Global npm packages to install: bower gulp
+- 来自nodejs.org的自动安装程序，使用最新的LTS（长期支持）64位版本
+- 要安装的全局NPM软件包：bower gulp
 
-#### 本地安装NodeJS
+#### 本地NodeJS安装
 
-使用下面的脚本在本地安装NodeJS，然后更新Jenkins PATH以使用它。
+使用以下脚本在本地安装NodeJS，然后更新Jenkins PATH以使用它。
 
 ~~~ bash
 # specify which version we want
@@ -84,4 +84,4 @@ gulp --version
 # 3.9.1
 ~~~
 
-Make sure you update the Jenkins PATH.
+确保您更新了Jenkins PATH。

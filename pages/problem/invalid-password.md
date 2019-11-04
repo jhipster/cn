@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - 无效密码
+title: Error - invalid password
 permalink: /problem/invalid-password/
 sitemap:
     priority: 0.7

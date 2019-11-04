@@ -6,16 +6,16 @@ title: Release 0.1.0
 JHipster release 0.1.0
 ==================
 
-JHipster now has a new home on [{{ site.url }}/]({{ site.url }}/)!
+JHipster现在更新了一个全新的主页 [{{ site.url }}/]({{ site.url }}/)!
 
-We have also moved the JHipster github repository to the newly created JHipster GitHub organization:
+我们将Jhipster Github代码迁移到由JHipster GitHub组织创建的仓库:
 
 [https://github.com/jhipster](https://github.com/jhipster)
 
-So please:
+您需要:
 
-- Update your bookmarks
-- If you have forked JHipster, update your remote origin:
+- 更新你的书签
+- 如果你克隆了Jhispter仓库, 请更新你git的remote origin:
 
 ```
 git remote set-url origin https://github.com/jhipster/generator-jhipster.git

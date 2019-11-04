@@ -7,12 +7,12 @@ JHipster release 0.0.28
 ==================
 
 
-The Maven profiles named "development" and "production" have been renamed "dev" and "prod" so they are quicker to type.
+Maven配置文件"development"和"production"已改名为"dev"和"prod", 简化输入
 
-In "dev" mode, there shouldn't be anything new.
+"dev"模式, 没有添加额外的功能.
 
-In "prod" mode, there are many new things:
+"prod"模式, 新增了以下功能:
 
-- A full "grunt build" is automatically triggered when you package the application
-- This will put a minified, optimized version of the static resources in "src/main/webapp/dist"
-- 2 new Servlet filters are activated: one is just used to serve the static content from the "/dist" directory, and the other adds HTTP headers so this content is cached
+- 打包应用时候会自动触发完整的"grunt build"
+- 最小化、优化后的静态资源会写入"src/main/webapp/dist"目录
+- 更新了两个全新的Servlet filter: 一个管理"/dist"目录下的静态文件, 另一个添加HTTP头部缓存信息

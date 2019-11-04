@@ -11,10 +11,10 @@ sitemap:
 
 # <i class="fa fa-keyboard-o"></i> 配置IDE
 
-JHipster项目可以在没有任何IDE的情况下开发，您只需要一个文本编辑器和命令行。当然，为了提高效率，人们要么使用成熟的IDE，要么使用高级文本编辑器。以下是如何配置它们：
+JHipster项目可以在没有任何IDE的情况下进行开发，您只需要一个文本编辑器和命令行工具即可。当然，为了提高工作效率，人们要么使用成熟的IDE， 要么使用高级文本编辑器。以下就是配置它们的方法：
 
-- [Configuring Eclipse with Maven]({{ site.url }}/configuring-ide-eclipse/)
-- [Configuring Eclipse with Gradle]({{ site.url }}/configuring-ide-eclipse-gradle/)
-- [Configuring Intellij IDEA]({{ site.url }}/configuring-ide-idea/)
-- [Configuring Visual Studio Code]({{ site.url }}/configuring-ide-visual-studio-code/)
-- [Configuring Netbeans]({{ site.url }}/configuring-ide-netbeans/)
+- [配置使用Maven的Eclipse]({{ site.url }}/configuring-ide-eclipse/)
+- [配置使用Gradle的Eclipse]({{ site.url }}/configuring-ide-eclipse-gradle/)
+- [配置Intellij IDEA]({{ site.url }}/configuring-ide-idea/)
+- [配置Visual Studio Code]({{ site.url }}/configuring-ide-visual-studio-code/)
+- [配置Netbeans]({{ site.url }}/configuring-ide-netbeans/)

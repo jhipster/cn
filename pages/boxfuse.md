@@ -11,43 +11,39 @@ sitemap:
 
 # 使用Boxfuse部署到AWS
 
-本指南介绍如何使用[boxfuse](https://boxfuse.com/)将Jhipster应用程序部署到AWS。
+本指南展示了如何使用[Boxfuse](https://boxfuse.com/)将JHipster应用程序部署到AWS。
 
 [![]({{ site.url }}/images/logo/logo-boxfuse.png)](https://boxfuse.com/)
 
-Boxfuse附带 **first-class support for JHipster**，它通过为您的应用程序创建最小的不可变机器映像来工作，然后可以在virtualbox或AWS上部署这些映像。
+Boxfuse**对JHipster具有一等支持**，通过为您的应用程序创建最小的不可变机器镜像来工作，然后可以将其部署在VirtualBox或AWS上。
 
-<div class="alert alert-info"><i>Tip: </i>
-
-作为Boxfuse的替代方案，您也可以使用弹性Beanstalk将JHipster应用程序部署到AWS。
-
+<div class="alert alert-info"><i>提示: </i>
+作为Boxfuse的替代方法，您还可以使用<a href="{{ site.url }}/aws/">Elastic Beanstalk</a>将JHipster应用程序部署到AWS。
 </div>
 
-## 前置条件
+## 先决条件
 
-要能够部署，必须首先[创建一个Boxfuse账号](https://console.boxfuse.com)并安装 [Boxfuse Client](https://boxfuse.com/getstarted/download).
+为了能够进行部署，您必须首先创建一个[Boxfuse帐户](https://console.boxfuse.com)并安装[Boxfuse客户端](https://boxfuse.com/getstarted/download)。
 
-您还需要在[Boxfuse Console](https://console.boxfuse.com)中连接您的AWS帐户。
+您还需要在[Boxfuse Console](https://console.boxfuse.com)中连接您的AWS账户。
 
 ## 准备部署
 
-当应用程序准备就绪时，您可以通过键入以下内容来准备部署：
+准备好应用程序后，可以通过输入以下内容来准备进行部署：
 
 `./mvnw package -Pprod -DskipTests`
 
-或者使用gradle:
+或使用gradle时：
 
-`./gradlew -Pprod bootWar -x test`
+`./gradlew -Pprod bootJar -x test`
 
 ## 部署到AWS
 
-要将应用程序部署到AWS类型，请执行以下操作：
+要将您的应用程序部署到AWS，请输入：
 
 `boxfuse run -env=prod`
 
-然后BoxFuse将分析您的应用程序，为其融合最小的机器图像，并自动提供、配置和保护所有必要的
-
-AWS基础设施(instances, security groups, Elastic IPs, ELBs, MySQL or PostgreSQL RDS databases, ...)
+然后，Boxfuse将分析您的应用程序，为其打包一个最小的机器镜像，并自动配置，配置和保护所有必需的AWS基础架构（实例，安全组，弹性IP，ELB，MySQL或PostgreSQL RDS数据库，等等）。
 
 <pre>Creating jhipster ...
 Mapping jhipster-dev-myuser.boxfuse.io to 127.0.0.1 ...
@@ -77,16 +73,13 @@ Remapping Elastic IP 52.29.78.197 to i-95d15028 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Deployment completed successfully. myuser/jhipster:1.0 is up and running at http://jhipster-myuser.boxfuse.io:8080/</pre>
 
-Note that you didn't need to explicitly specify things like ports, healthcheck urls or database types. By default Boxfuse auto-discovers those
-from your JHipster war based on your `application-prod.yml` file and the included jars. You can of course
-override those auto-discovered settings if you want to, but in most cases you won't need to.
+请注意，您无需明确指定端口，健康检查URL或数据库类型之类的内容。默认情况下，Boxfuse会根据JHipster war中`application-prod.yml`文件和包含的jar文件来自动发现。当然，您可以根据需要覆盖这些自动发现的设置，但是在大多数情况下，您不需要这样做。
 
 ## 部署更新
 
-要将更新部署到现有应用程序，只需遵循上面概述的准备和部署步骤。所有更新
-执行为零停机蓝色部署。
+要将更新部署到现有应用程序，只需遵循上面概述的准备和部署步骤。所有更新均可零停机时间，蓝色部署来执行。
 
 ## 更多信息
 
-*   [Get Started with Boxfuse and JHipster](https://boxfuse.com/getstarted/jhipster)
-*   [JHipster Boxfuse documentation](https://boxfuse.com/docs/payloads/jhipster)
+*   [Boxfuse和JHipster入门](https://boxfuse.com/getstarted/jhipster)
+*   [JHipster Boxfuse文档](https://boxfuse.com/docs/payloads/jhipster)

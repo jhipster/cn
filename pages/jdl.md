@@ -4,130 +4,126 @@ title: JHipster域语言
 permalink: /jdl/
 sitemap:
     priority: 0.5
-    lastmod: 2019-02-02T12:00:00-00:00
+    lastmod: 2019-08-17T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster域语言 (JDL)
+# <i class="fa fa-star"></i> JHipster域语言（JDL）
 
 
-JDL是一种JHipster特定的域语言，您可以使用简单且用户友好的语法在单个文件（或多个文件）中描述所有应用程序、部署、实体及其关系。
+JDL是JHipster特定的领域语言，您可以在一个文件（或多个文件）中，使用简单易用的语法描述所有应用程序、部署、实体及其关系。
 
-您可以使用我们的在线[JDL-Studio](https://start.jhipster.tech/jdl-studio/) 或 [JHipster IDE](https://www.jhipster.tech/jhipster-ide/) 插件/扩展, 可用于 [Eclipse](https://marketplace.eclipse.org/content/jhipster-ide), [VS Code](https://marketplace.visualstudio.com/items?itemName=jhipster-ide.jdl) and [Atom](https://atom.io/packages/ide-jhipster), 创建JDL文件及其UML可视化。您也可以创建、导出或共享JDL模型的URL。
+您可以使用我们的在线[JDL-Studio](https://start.jhipster.tech/jdl-studio/)或[JHipster IDE](https://www.jhipster.tech/jhipster-ide/)插件/扩展（可用于[Eclipse](https://marketplace.eclipse.org/content/jhipster-ide), [VS Code](https://marketplace.visualstudio.com/items?itemName=jhipster-ide.jdl)和[Atom](https://atom.io/packages/ide-jhipster)）来创建JDL文件及其UML可视化。您也可以创建和导出JDL模型，或共享JDL模型的URL。
 
-您可以通过运行 `jhipster import-jdl your-jdl-file.jdl`的JDL文件生成应用, 部署和实体,
+您可以通过运行`jhipster import-jdl your-jdl-file.jdl`使用`import-jdl`子生成器从JDL文件生成应用程序，部署和实体。
 
-如果您有一个现有的项目（使用`jhipster import-jdl`创建或使用`jhipster`命令行生成），则可以通过运行`jhipster import-jdl your-jdl-file.jdl`为该项目生成实体。确保在JHipster项目下执行此命令。
+如果您有一个现有项目（使用`jhipster import-jdl`创建或通过`jhipster`命令行生成），则可以通过运行`jhipster import-jdl your-jdl-file.jdl`来为该项目生成实体。确保在您的当前JHipster项目下执行此命令。
 
-您还可以生成应用程序、实体，通过使用[JHipster UML]({{ site.url }}/jhipster-uml/), 在生成的JHipster应用的根目录运行 `jhipster-uml your-xmi-file.xmi --to-jdl`。要了解有关JHipster UML的更多信息并安装它，请转到 [JHipster UML documentation]({{ site.url }}/jhipster-uml/).
+您还可以通过从生成的JHipster应用程序根目录运行`jhipster-uml your-xmi-file.xmi --to-jdl`来生成应用程序，实体，并使用[JHipster UML]({{ site.url }}/jhipster-uml/)将它们导出为JDL文件。要了解有关JHipster UML的更多信息并进行安装，请转到[JHipster UML文档]({{ site.url }}/jhipster-uml/)。
 
-这可以作为使用 [entity sub-generator]({{ site.url }}/creating-an-entity/) 的替代方法，并且是建议的方法。其理念是，使用可视化工具 [manage relationships]({{ site.url }}/managing-relationships/) 比使用经典的Yeoman问答更容易。
+这可以替代使用[实体子生成器]({{ site.url }}/creating-an-entity/)，并且这是推荐的方法。这个思路是，使用视觉工具来[管理关系]({{ site.url }}/managing-relationships/)比使用经典的Yeoman问答更容易。
 
-JDL项目[available on GitHub](https://github.com/jhipster/jhipster-core/), 它是一个开源项目，如jhipster（Apache 2.0许可证）。它还可以用作节点库来进行JDL解析。
+JDL项目[可在GitHub上获得](https://github.com/jhipster/jhipster-core/)，与JHipster（Apache 2.0许可证）一样，它也是一个开源项目，。它也可以用作执行JDL解析的node库。
 
-_如果您喜欢 [JHipster Domain Language](https://github.com/jhipster/jhipster-core/), the [JDL Studio](https://github.com/jhipster/jdl-studio/) or the [JHipster IDE](https://github.com/jhipster/jhipster-ide/) 不要忘记点赞 [GitHub](https://github.com/jhipster/) - 谢谢_!
+_如果您喜欢[JHipster域语言](https://github.com/jhipster/jhipster-core/)，[JDL Studio](https://github.com/jhipster/jdl-studio/)或者[JHipster IDE](https://github.com/jhipster/jhipster-ide/)，请不要忘记在GitHub上给它们加星-谢谢！_!
 
 ***
 
-JDL 文档:
+以下便是JDL文档：
 
-1. [JDL Sample](#sample)
-1. [How to use it](#howtojdl)
-   1. [Importing a JDL file](#importingjdl)
-   1. [Exporting to a JDL file](#exportingjdl)
-1. [The language](#jdllanguage)
-   1. [Application Declaration](#applicationdeclaration)
-   1. [Entity Declaration](#entitydeclaration)
-   1. [Relationship Declaration](#relationshipdeclaration)
-   1. [Enumerations](#enumerationdeclaration)
+1. [JDL示例](#sample)
+1. [如何使用它](#howtojdl)
+   1. [导入JDL文件](#importingjdl)
+   1. [导出到JDL文件](#exportingjdl)
+1. [语言](#jdllanguage)
+   1. [申请声明](#applicationdeclaration)
+   1. [实体声明](#entitydeclaration)
+   1. [关系声明](#relationshipdeclaration)
+   1. [枚举](#enumerationdeclaration)
    1. [Blobs](#blobdeclaration)
-   1. [Option declaration](#optiondeclaration)
-   1. [Microservice-related options](#microserviceoptions)
-   1. [Annotations](#annotations)
-   1. [Deployment declaration](#deploymentdeclaration)
-1. [Commenting](#commentingjdl)
-1. [All the relationships](#jdlrelationships)
-1. [Constants](#constants)
-1. [Workflows](#workflows)
-1. [Annexes](#annexes)
-   1. [Available application options](#application_options)
-   1. [Available deployment options](#deployment_options)
-   1. [Available field types and constraints](#types_and_constraints)
-   1. [Available options](#all_options)
-1. [Issues and bugs](#issues)
+   1. [选项声明](#optiondeclaration)
+   1. [与微服务相关的选项](#microserviceoptions)
+   1. [注解](#annotations)
+   1. [部署声明](#deploymentdeclaration)
+1. [注释](#commentingjdl)
+1. [所有关系](#jdlrelationships)
+1. [常数](#constants)
+1. [工作流程](#workflows)
+1. [备注](#annexes)
+   1. [可用的应用程序选项](#application_options)
+   1. [可用的部署选项](#deployment_options)
+   1. [可用的字段类型和约束](#types_and_constraints)
+   1. [可用选项](#all_options)
+1. [故障排除](#troubleshooting)
+1. [问题与错误](#issues)
 
 ***
 
-# <a name="sample"></a> JDL Sample
+## <a name="sample"></a> JDL示例
 
-The Oracle "Human Resources" sample application has been translated into JDL, and is available [here](https://github.com/jhipster/jdl-samples/blob/master/Oracle-Human-Resources-sample.jdl).
-The same application is loaded by default in [JDL-Studio](https://start.jhipster.tech/jdl-studio/) and [JHipster IDE](https://www.jhipster.tech/jhipster-ide/) as well.
+Oracle的"人力资源"示例应用程序已转换为JDL，可在[此处](https://github.com/jhipster/jdl-samples/blob/master/Oracle-Human-Resources-sample.jdl)获得。
+默认情况下，[JDL-Studio](https://start.jhipster.tech/jdl-studio/)和[JHipster IDE](https://www.jhipster.tech/jhipster-ide/)也会加载这个例子。
 
-If you're looking for more samples, there is a repository for that right [here](https://github.com/jhipster/jdl-samples).
+如果您正在寻找更多示例，[这里](https://github.com/jhipster/jdl-samples)有一仓库例子。
 
-## <a name="howtojdl"></a> How to use it
+## <a name="howtojdl"></a> 如何使用它
 
-###  <a name="importingjdl"></a> Importing a JDL file
-You can then use JDL files to generate entities:
-  - Simply create a file with the extension '.jh' or '.jdl',
-  - Declare your applications, deployments, entities and relationships or create and download the file with [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or [JHipster IDE](https://www.jhipster.tech/jhipster-ide/),
-  - If you are creating only entities in then run `jhipster import-jdl my_file.jdl` in your JHipster application's root folder.
-  - If you are creating applications then just run `jhipster import-jdl my_file.jdl` in a folder.
+###  <a name="importingjdl"></a> 导入JDL文件
+然后，您可以使用JDL文件生成实体：
+  - 只需创建扩展名为'.jh'或'.jdl'的文件，
+  - 使用[JDL-Studio](https://start.jhipster.tech/jdl-studio/)或[JHipster IDE](https://www.jhipster.tech/jhipster-ide/)声明您的应用程序，部署，实体和关系，或创建和下载文件，
+  - 如果仅在其中创建实体，则在JHipster应用程序的根文件夹中运行`jhipster import-jdl my_file.jdl`。
+  - 如果要创建应用程序，则只需在文件夹中运行`jhipster import-jdl my_file.jdl`。
+  
+*没错！*，您完成了！
 
-and *Voilà*, you are done!
-
-If you work in a team, perhaps you would like to have multiple files instead of one.
-We added this option so that you don't manually concatenate all the files into one,
-you just have to run.
+如果您在团队中工作，也许您希望拥有多个文件而不是一个文件。
+我们添加了此选项，因此您不必手动将所有文件合并在一起，
+而只需运行即可。
 
     jhipster import-jdl my_file1.jdl my_file2.jdl
 
-If you do not want to regenerate your entities while importing a JDL, you can use the `--json-only` flag to skip the
-entity creation part and create only the json files in `.jhipster` folder.
+如果不想在导入JDL时重新生成实体，则可以使用`--json-only`标志跳过实体创建部分，仅在`.jhipster`文件夹中创建json文件。
 
     jhipster import-jdl ./my-jdl-file.jdl --json-only
 
-By default `import-jdl` regenerates only entities that have changed, if you want all your entities to be regenerated
-then pass in the `--force`  flag.
-Please note that this will overwrite all your local changes to the entity files
+默认情况下，`import-jdl`仅重新生成已更改的实体，如果要重新生成所有实体，则传递`--force` 标志。
+请注意，这将覆盖您对实体文件的所有本地更改
 
     jhipster import-jdl ./my-jdl-file.jdl --force
 
-If you want to use it in your project, you can add do so by doing:
+如果要在项目中使用它，可以通过执行以下操作来添加它：
   - NPM: `npm install jhipster-core --save`
   - Yarn: `yarn add jhipster-core`
 
-to install it locally, and save it in your `package.json` file.
+将其安装在本地，并将其保存在`package.json`文件中。
 
-###  <a name="exportingjdl"></a> Exporting to a JDL file
+###  <a name="exportingjdl"></a> 导出到JDL文件
 
-If you already have entities in your application and wish to have a JDL file, fear not! You don't have
-to write it from scratch as there's a sub-generator that does that for you.
+如果您的应用程序中已经有实体并且希望拥有JDL文件，请不要担心！您无需从头开始编写它，因为有一个子生成器可以为您完成此任务。
 
-Simply do `jhipster export-jdl <FILE_NAME>` in your app's root folder and you'll have all your entities,
-relationships and options exporting in a single JDL file.
-Note: you can also not provide a file name to the sub-generation, a default one will be chosen.
+只需在应用程序的根文件夹中运行`jhipster export-jdl <FILE_NAME>`，即可将所有实体，关系和选项导出到单个JDL文件中。
+注意：您也可以不能为子生成器提供文件名，其将选择默认名称。
 
 ---
 
-## <a name="jdllanguage"></a> The language
-We tried to keep the syntax as friendly as we can for developers.
-You can do these things with it:
-  - Declare applications with their options and entities,
-  - Declare entities with their attributes,
-  - Declare the relationships between them,
-  - And declare some JHipster specific options.
+## <a name="jdllanguage"></a> 语言
+我们试图使语法对开发人员尽可能友好。
+您可以使用它们执行以下操作：
+  - 使用选项和实体声明应用程序，
+  - 声明实体及其属性，
+  - 声明他们之间的关系，
+  - 并声明一些JHipster特定的选项。
 
-If you wish to view the JDL's grammar, there is an HTML file available
-[here](https://github.com/jhipster/jhipster-core/blob/master/lib/dsl/gen/grammar.html).
+如果您想查看JDL的语法，[这里](https://github.com/jhipster/jhipster-core/blob/master/lib/dsl/gen/grammar.html).有一个HTML文件。
 
 
-### <a name="applicationdeclaration"></a> Application declaration
+### <a name="applicationdeclaration"></a> 应用声明
 
-As of v2.0.0, application declaration is possible (compatible with JHipster v5).
+从v2.0.0开始，可以进行应用程序声明（与JHipster v5兼容）。
 
-_To import one or several applications, you needn't be in a JHipster application folder._
+_要导入一个或多个应用程序，您不必位于JHipster应用程序文件夹中。_
 
-The most basic declaration is done as follows:
+最基本的声明如下：s
 
 ```
 application {
@@ -135,15 +131,16 @@ application {
 }
 ```
 
-A JHipster application has a config with default values and using the previous syntax will
-ensure your application use the default values (as if you didn't make any specific choice).
-The resulting application will have:
+JHipster应用程序带有一个默认配置，
+并且使用预先的语法将确保您的应用程序使用默认值（就像您没有做出任何特定选择一样）。
+生成的应用程序将具有：
+
   - baseName: `jhipster`
   - applicationType: `monolith`
   - databaseType: `sql`
   - etc.
 
-Now, if you want some custom options:
+现在，如果您需要一些自定义选项：
 
 ```
 application {
@@ -156,19 +153,19 @@ application {
 }
 ```
 
-Those options are only a sample of what's available in the JDL.
-The complete list of options is available in the annexes, [here](#annexes).
+这些选项只是JDL中可用选项的一个示例。
+选项的完整列表在[此处](#annexes)的附件中。
 
-If you want more than one application, here's how you do it:
+如果您需要多个应用程序，请按以下步骤操作：
 
 ```
-application { // will be generated under the 'myFirstApp' folder
+application { // 将在“ myFirstApp”文件夹下生成
   config {
     baseName myFirstApp
   }
 }
 
-application { // will be generated under the 'mySecondApp' folder
+application { // 将在“ mySecondApp”文件夹下生成
   config {
     baseName mySecondApp
     applicationType microservice
@@ -176,12 +173,12 @@ application { // will be generated under the 'mySecondApp' folder
 }
 ```
 
-You can have as many application as you want in as many file as you wish: there's no limitation.
+您可以在任意数量的文件中拥有任意数量的应用程序：没有限制。
 
-Declaring entities is the most basic thing available and now you can set what entity should be generated
-in the applications you want.
+声明实体是最基本的方法，
+现在您可以设置要在所需的应用程序中生成的实体。
 
-Let's improve the previous example:
+让我们改进前面的示例：
 
 ```
 application {
@@ -228,46 +225,45 @@ service * with serviceClass
 paginate D with pager
 ```
 
-Now, several things will happen when generating these applications and folders:
-  - Four applications will be created:
-    - myMonolith in `./myMonolith`, with the server port `8080`
-    - myGateway in `./myGateway`, with the server port `9042`
-    - microserviceA in `./microserviceA`, with the server port `8081`
-      - Even though we didn't specify a server port, JHipster sets one by default.
-      - For microservices, the default one is `8081`
-      - For gateways and monoliths, it's `8080`
-      - For UAA apps, it's `9999`
-    - microserviceB in `./microserviceB` with the server port `8082`
-  - Four entities will be generated
-    - `A` and `B` in the monolith
-    - `C` and `D` both in the gateway
-      - `C` in the first microservice
-      - `D` in the second microservice
-  - The `microservice` option is implicit for `C` and `D`
-    - Because they get generated on the two microservices, this option will be set by default.
-  - Options work the same way as before
+现在，生成这些应用程序和文件夹时将发生几件事：
+  - 将创建四个应用程序：
+    - myMonolith位于`./myMonolith`，服务端口为`8080`
+    - myGateway位于`./myGateway`，服务端口为`9042`
+    - microserviceA位于`./microserviceA`，服务端口为`8081`
+      - 即使我们未指定服务端口，JHipster也会默认设置一个端口。
+      - 对于微服务，默认值是`8081`
+      - 对于网关和整体而言，它是`8080`
+      - 对于UAA应用，为9999
+    - microserviceB位于`./microserviceB`，服务端口为`8082`
+  - 将生成四个实体
+    - monolith中的`A`和`B`
+    - 网关中的`C`和`D`
+      - 第一个微服务中的`C`
+      - 第二个微服务中的`D`
+  - `microservice`选项对于`C`和`D`是隐式的
+    - 由于它们是在两个微服务上生成的，因此默认情况下将设置此选项。
+  - 选项的工作方式与以前相同
 
-Note that the generator sets default values if they aren't present (like the `databaseType`).
-JHipster Core does the exact same things.
+请注意，如果默认值不存在，则生成器会设置默认值（例如`databaseType`）。
 
-### <a name="entitydeclaration"></a> Entity declaration
+JHipster核心功能完全相同。
 
-The entity declaration is done as follows:
+### <a name="entitydeclaration"></a> 实体声明
+
+实体声明如下：
 
     entity <entity name> {
       <field name> <type> [<validation>*]
     }
 
-  - `<entity name>` is the name of the entity,
-  - `<field name>` the name of one field of the entity,
-  - `<type>` the JHipster supported type of the field,
-  - and as an option `<validation>` the validations for the field.
+  - `<entity name>` 是实体的名称，
+  - `<field name>` 实体一个字段的名称，
+  - `<type>` JHipster支持的字段类型，
+  - 以及作为`<validation>`选项的字段验证。
 
-The possible types and validations are those described [here](#annexes), if the validation requires a value, simply
-add `(<value>)` right after the name of the validation.
+可能的类型和验证可参照[此处](#annexes)，如果验证需要一个值，只需在验证名称后添加（<value>）。
 
-
-Here's an example of a JDL code:
+这是一个JDL代码示例：
 
 ```
 entity A
@@ -280,37 +276,36 @@ entity D {
 }
 ```
 
-Regexes are a bit special as they are used like this (from v1.3.6):
+正则表达式有点特殊，它们的用法如下（来自v1.3.6）：
+
 ```
 entity A {
   myString String required minlength(1) maxlength(42) pattern(/[A-Z]+/)
 }
 ```
-If you're using the generator prior to v4.9.X, you'd need to use patterns like this `pattern('[A-Z]+'`).
+如果您使用的是v4.9.X之前的生成器，则需要使用像这种模式`pattern('[A-Z]+'`)。
 
-Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can just declare an
-entity with `entity A` or `entity A {}`.
+因为JDL的易于使用和可读，所以如果您的实体为空（无字段），则只需声明`entity A`或`entity A {}`即可。
 
-Note that JHipster adds a default `id` field so that you needn't worry about it.
+请注意，JHipster添加了默认的`id`字段，因此您不必担心。
 
+### <a name="relationshipdeclaration"></a> 关系声明
 
-### <a name="relationshipdeclaration"></a> Relationship declaration
-
-The relationships declaration is done as follows:
+关系声明如下：
 
     relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
       <from entity>[{<relationship name>[(<display field>)]}] to <to entity>[{<relationship name>[(<display field>)]}]
     }
 
-  - `(OneToMany | ManyToOne| OneToOne | ManyToMany)` is the type of your relationship,
-  - `<from entity>` is the name of the entity owner of the relationship: the source,
-  - `<to entity>` is the name of the entity where the relationship goes to: the destination,
-  - `<relationship name>` is the name of the field having the other end as type,
-  - `<display field>` is the name of the field that should show up in select boxes (default: `id`),
-  - `required` whether the injected field is required.
-  - `with jpaDerivedIdentifier` whether `@MapsId` is used for the association (applicable only for one-to-one)
+  - `(OneToMany | ManyToOne| OneToOne | ManyToMany)`是关系类型
+  - `<from entity>`是关系的实体所有者的名称：来源，
+  - `<to entity>` 是关系要到达的实体的名称：目的地，
+  - `<relationship name>` 是具有另一端类型的字段名称，
+  - `<display field>` 是应显示在选择框中的字段名称（默认值：`id`），
+  - `required` 是否字段是必须的
+  - `with jpaDerivedIdentifier` `@MapsId`是否用于关联（仅适用于一对一）
 
-Here's a simple example:
+这是一个简单的示例：
 
     entity Book
     entity Author
@@ -319,8 +314,8 @@ Here's a simple example:
       Book to Author
     }
 
-Declaring an injected field is optional, as one (or both) is set by default as needed.
-The previous example is equivalent to this one:
+声明外键字段是可选的，因为默认情况下会根据需要设置一个（或两个）。
+前面的示例与此等效：
 
     entity Book
     entity Author
@@ -329,8 +324,8 @@ The previous example is equivalent to this one:
       Book{author} to Author
     }
 
-Let's make it more complex.
-A Book has one required Author, an Author has several Books.
+让我们举个更复杂的例子。
+一本书必需有一个作者，一个作者可以写几本书。
 
     entity Book
     entity Author {
@@ -341,10 +336,9 @@ A Book has one required Author, an Author has several Books.
       Author{book} to Book{writer(name) required}
     }
 
-Here, the `Book` class will have a **required** field named `writer` that will be linked through the `name` field of `Author`.
+在这里，`Book`类将具有一个名为`writer` 的**必填**字段，该字段将通过`Author`的`name`字段进行连接。
 
-Of course, in real cases, you'd have a lot of relationships and always writing the same three lines could be tedious.
-That's why you can declare something like:
+当然，在实际情况下，实体间将有很多关系，总是写相同的三行可能很乏味。因此，您可以参照以下内容来声明：
 
 ```
 entity A
@@ -362,8 +356,7 @@ relationship ManyToMany {
 }
 ```
 
-The join is always done using the `id` field which is also the default field shown when editing a relation in the
-front-end. If another field should be shown instead, you can specify it like this:
+默认始终使用`id`字段完成连接，该字段也是在前端编辑关系时显示的默认字段。如果需要显示另一个字段，则可以这样指定：
 
 ```
 entity A {
@@ -377,7 +370,7 @@ relationship OneToOne {
 }
 ```
 
-JPA Derived Identifier - @MapsId can be declared as following which is currently only supported for one-to-one:
+JPA Derived Identifier-@MapsId可以声明为以下形式，当前仅一对一支持：
 
 ```
 entity A {
@@ -391,21 +384,19 @@ relationship OneToOne {
 }
 ```
 
+这使得JHipster生成一个REST资源，该资源将连接实体的`id`和`name`都返回到前端，因此可以将名称显示给用户。
 
-This makes JHipster generate a REST resource that returns both the `id` and `name` of the linked entity to the front-end,
-so the name can be shown to the user instead.
+### <a name="enumerationdeclaration"></a> 枚举
 
-### <a name="enumerationdeclaration"></a> Enumerations
+要使用JDL枚举，请执行以下操作：
 
-To make Enums with JDL just do as follows:
-
-- Declare an Enum where you want in the file:
+- 在文件中的相应位置声明一个枚举：
 
         enum Language {
           FRENCH, ENGLISH, SPANISH
         }
 
-- In an entity, add fields with the Enum as a type:
+- 在实体中，添加以Enum作为类型的字段：
 
         entity Book {
           title String required,
@@ -415,19 +406,17 @@ To make Enums with JDL just do as follows:
 
 
 ### <a name="blobdeclaration"></a> Blob (byte[])
-JHipster gives a great choice as one can choose between an image type or any binary type. JDL lets you do the same.
-Just create a custom type (see DataType) with the editor, name it according to these conventions:
-  - `AnyBlob` or just `Blob` to create a field of the "any" binary type;
-  - `ImageBlob` to create a field meant to be an image.
-  - `TextBlob` to create a field for a CLOB (long text).
+JHipster提供了可以在图像类型或任何二进制类型之间进行自由选择的选项。JDL允许您执行相同的操作。只需使用编辑器就可以创建一个自定义类型（请参见DataType），然后根据以下约定对其进行命名：
+  - `AnyBlob`或`Blob`创建一个任意二进制类型字段;
+  - `ImageBlob`创建一个标识为图片二进制字段。
+  - `TextBlob`创建CLOB（长文本）字段。
 
-And you can create as many DataTypes as you like.
+您可以根据需要，创建任意数量的数据类型。
 
+### <a name="optiondeclaration"></a> 选项声明
 
-### <a name="optiondeclaration"></a> Option declaration
-
-In JHipster, you can specify options for your entities such as pagination or DTO.
-You can do the same with the JDL:
+在JHipster中，您可以为实体指定选项，例如分页或DTO。
+在JDL中您可以执行相同的操作：
 
     entity A {
       name String required
@@ -444,21 +433,16 @@ You can do the same with the JDL:
     service A with serviceClass
     service C with serviceImpl
 
-The keywords `dto`, `paginate`, `service` and `with` were added to the grammar to support these changes.
-If a wrong option is specified, JDL will inform you of that with a nice, red message and will just ignore it so as not
-to corrupt JHipster's JSON files.
+关键字`dto`, `paginate`, `service`和`with`已被添加到语法中来以支持这些修改。如果指定了错误的选项，JDL会用红色的消息通知您，并且会忽略这个错误的选项，避免损坏JHipster的JSON文件。
 
-#### Service option
+#### 服务选项
 
-No services specified will create a resource class which will call the repository interface directly. This is the
-default and simplest option, see A.
-Service with serviceClass (see B) will make the resource call the service class which will call the repository interface.
-Service with serviceImpl (see C) will make a service interface which will be used by the resource class.
-The interface is implemented by an concrete class which will call the repository interface.
+指定的服务不会创建将直接调用repository接口的resource类。这是默认和最简单的选项，请参阅A。
+带有serviceClass的Service（请参见B）将使资源调用服务类，后者将调用repository接口。
+带serviceImpl的Service（请参阅C）将创建一个服务接口，
+该接口将由资源类使用。该接口由将调用存储库接口的具体类实现。
 
-Using no service uless sure is the simplest option and good for CRUD. Use service with a Class if you will have a lot
-of business logic which will use multiple repositories making it ideal for a service class. Jhipsters are not fan of
-unnecessary Interfaces but if you like them go for service with impl.
+除非确定，否则不使用任何服务，这对CRUD来说是最简单的选择。如果您将有很多业务逻辑，这些业务逻辑将使用多个存储库，则非常适合将服务与类一起使用，这使其成为服务类的理想选择。Jhipster不喜欢不需要的接口，但是如果您喜欢它们，请使用impl进行服务。
 
     entity A
     entity B
@@ -469,7 +453,7 @@ unnecessary Interfaces but if you like them go for service with impl.
     service C with serviceImpl
 
 
-JDL also supports mass-option setting. it is possible to do:
+JDL还支持批量设置选项。可以这样做：
 
     entity A
     entity B
@@ -480,8 +464,8 @@ JDL also supports mass-option setting. it is possible to do:
     service all with serviceImpl
     paginate C with pagination
 
-Note that `*` and `all` are equivalent.
-Latest version introduces exclusions (which is quite a powerful option when setting options for every entity):
+请注意，`*`和`all`是等效的。
+最新版本引入了排除功能（在为每个实体设置选项时，这是一个功能强大的选项）：
 
     entity A
     entity B
@@ -492,13 +476,10 @@ Latest version introduces exclusions (which is quite a powerful option when sett
     service all with serviceImpl except A, B, C
     paginate C with pagination
 
-
-With JHipster, you can also tell whether you don't want any client code, or server code.
-Even if you want to add a suffix to Angular-related files, you can do that in JHipster.
-[
-Filtering](https://www.jhipster.tech/entities-filtering/) options can be activated on a per entity basis: filter `<entity name>` or for all entities: filter `*`.
-In your JDL file, simply add these lines to do the same:
-
+使用JHipster，您还可以设置是否不需要任何客户端代码或服务器代码。
+即使您想在与Angular相关的文件中添加后缀，也可以在JHipster中操作。
+可以在每个实体的基础上激活[Filtering](https://www.jhipster.tech/entities-filtering/)选项：filter `<entity name>`，或对于所有实体：filter `*`。
+在您的JDL文件中，只需添加以下几行即可：
 ```
 entity A
 entity B
@@ -510,7 +491,7 @@ angularSuffix * with mySuperEntities
 filter C
 ```
 
-Finally, table names can also be specified (the entity's name will be used by default):
+最后，还可以指定表名（默认使用实体名称）：
 
 ```
 entity A // A is the table's name here
@@ -518,12 +499,10 @@ entity B (the_best_entity) // the_best_entity is the table's name
 ```
 
 
-### <a name="microserviceoptions"></a> Microservice-related options
+### <a name="microserviceoptions"></a> 与微服务相关的选项
 
-As of JHipster v3, microservices can be created. You can specify some options to generate your entities in the JDL:
-the microservice's name and the search engine.
-
-Here is how you can specify your microservice's name (the JHipster app's name):
+从JHipster v3开始可以创建微服务。您可以指定一些选项以在JDL中生成您的实体：微服务的名称和搜索引擎。
+您可以通过以下方法指定微服务的名称（JHipster应用的名称）：
 
 ```
 entity A
@@ -535,16 +514,13 @@ microservice C with myotherjhipsterapp
 search * with elasticsearch except C
 ```
 
-The first option is used to tell JHipster that you want your microservice to deal with your entities, whereas the second
-specifies how and if you want your entities searched.
+第一个选项用于告诉JHipster您希望微服务处理您的实体，而第二个选项指定如何，以及是否希望搜索实体。
 
+### <a name="annotations"></a> 注解
 
-### <a name="annotations"></a> Annotations
+从JHipster v5开始可以使用注释。注释与Java中的功能类似，因此注释的工作方式相同，因此您可以使用注释选项对实体进行注释。
 
-Annotations are available since JHipster v5. Similarly to what's possible in Java, annotations work the same way so that
-you annotate your entities with annotations options.
-
-Take this JDL code for instance:
+以这个JDL代码为例：
 ```
 entity A
 entity B
@@ -555,7 +531,7 @@ paginate * with pager except C
 search A with elasticsearch
 ```
 
-Here's its equivalent with annotations:
+这与注解等效：
 
 ```
 @paginate(pager)
@@ -569,16 +545,15 @@ entity B
 entity C
 ```
 
-While this adds more code than it actually removes, it's actually useful when using multiple JDL files
-(with microservices for instance).
+尽管添加的代码多于实际删除的代码，但在使用多个JDL文件（例如用于微服务）时，它实际上很有用。
 
-### <a name="deploymentdeclaration"></a> Deployment declaration
+### <a name="deploymentdeclaration"></a> 部署声明
 
-As of v3.6.0, deployment declaration is possible (compatible with JHipster v5.7 or above).
+从v3.6.0开始，可以进行部署声明（与JHipster v5.7或更高版本兼容）。
 
-_To import one or several deployments, you need not be in a JHipster application folder._
+_要导入一个或多个部署，您不必位于JHipster应用程序文件夹中。_
 
-The most basic declaration is done as follows:
+最基本的声明如下：
 
 ```
 deployment {
@@ -588,8 +563,8 @@ deployment {
 }
 ```
 
-A JHipster deployment has a config with default values for all other properties and using the previous syntax will
-ensure your deployment will use the default values (as if you didn't make any specific choice).
+JHipster部署的配置具有所有其他属性的默认值，并且使用以前的语法将确保您的部署将使用默认值（就像您没有做出任何特定选择一样）。
+最终的部署将具有：
 The resulting deployment will have:
   - deploymentType: `docker-compose`
   - appsFolders: `foo, bar`
@@ -599,7 +574,7 @@ The resulting deployment will have:
   - directoryPath: `../`
   - etc.
 
-Now, if you want some custom options:
+现在，如果您需要一些自定义选项：
 
 ```
 deployment {
@@ -608,17 +583,15 @@ deployment {
   dockerRepositoryName "yourDockerLoginName"
   serviceDiscoveryType no
   istio autoInjection
-  istioRoute true
   kubernetesServiceType Ingress
   kubernetesNamespace jhipster
   ingressDomain "jhipster.192.168.99.100.nip.io"
 }
 ```
 
-Those options are only a sample of what's available in the JDL.
-The complete list of options is available in the annexes, [here](#annexes).
+这些选项只是JDL中可用选项的一个示例。选项的完整列表在[此处](#annexes)的附件中。
 
-If you want more than one deployment, here's how you do it:
+如果您需要多个部署，请按以下步骤进行：
 
 ```
 // will be created under 'docker-compose' folder
@@ -638,6 +611,8 @@ deployment {
 
 You can have one deployment per deploymentType. The applications defined in `appsFolders` should be in the same folder where you are creating deployments or in the folder defined in `directoryPath`. For example for above you need to have a folder structure like this
 
+每个DeploymentType可以有一个部署。`appsFolders`中定义的应用程序应位于创建部署所在的文件夹中，或位于`directoryPath`中定义的文件夹中。例如，对于上面的示例，您需要具有这样的文件夹结构
+
 ```
 .
 ├── yourJdlFile.jdl
@@ -647,9 +622,11 @@ You can have one deployment per deploymentType. The applications defined in `app
 └── docker-compose // will created by the JDL
 ```
 
-## <a name="commentingjdl"></a> Commenting & Javadoc
-It is possible to add Javadoc & comments to JDL files.  
-Just like in Java, this example demonstrates how to add Javadoc comments:
+## <a name="commentingjdl"></a> 注释 & Javadoc
+
+可以将Javadoc和注释添加到JDL文件。
+
+就像在Java中一样，此示例演示了如何添加Javadoc注释：
 
     /**
      * Class comments.
@@ -676,44 +653,44 @@ Just like in Java, this example demonstrates how to add Javadoc comments:
       MySecondEntity{myEntity}
     }
 
-These comments will later be added as Javadoc comments by JHipster.
+这些注释稍后将由JHipster添加为Javadoc注释。
 
-JDL possesses its own kind of comment:
+JDL内部一种类型评论：
 
     // an ignored comment
     /** not an ignored comment */
 
-Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
+因此，以 `// `开头的任何内容都被视为JDL的内部注释，因此不会被视为Javadoc。
 
-Please note that the JDL Studio directives that start with `#` will be ignored during parsing.
+请注意，在解析期间，以 `#`开头的JDL Studio指令将被忽略。
 
-Another form of comments are the following comments:
+注释的另一种形式是以下注释：
 ```
 entity A {
   name String /** My super field */
   count Integer /** My other super field */
 }
 ```
-Here A's name will be commented with `My super field`, B with `My other super field`.
-Yes, commas are not mandatory but it's wiser to have them so as not to make mistakes in the code.
-If you want to mix commas and following comments, beware!
+
+在这里，A的名称将用`My super field`进行注释，B则用`My other super field`进行注释。
+是的，逗号不是强制性的，但最好使用逗号，以免在代码中犯错误。
+如果您想混合使用逗号和以下注释，请当心！
 ```
 entity A {
   name String, /** My comment */
   count Integer
 }
 ```
-A's name won't have the comment, because the count will.
 
+A的名字将不会有评论，因为count字段会有。
 
-## <a name="jdlrelationships"></a>All the relationships
+## <a name="jdlrelationships"></a>所有关系
 
-Explanation on how to create relationships with JDL.
+有关如何使用JDL创建关系的说明。
 
+### 一对一
 
-### One-to-One
-
-A bidirectional relationship where the Car has a Driver, and the Driver has a Car.
+双向关系，其中汽车有驾驶员，而驾驶员也有汽车。
 
     entity Driver
     entity Car
@@ -721,7 +698,7 @@ A bidirectional relationship where the Car has a Driver, and the Driver has a Ca
       Car{driver} to Driver{car}
     }
 
-A Unidirectional example where a Citizen has a Passport, but the Passport has no access to sole its owner.
+一个单向示例，一个公民拥有一个护照，但该护照无法独占其所有者。
 
     entity Citizen
     entity Passport
@@ -734,9 +711,9 @@ A Unidirectional example where a Citizen has a Passport, but the Passport has no
           Citizen to Passport with jpaDerivedIdentifier
     }
 
-### One-to-Many
+### 一对多
 
-A bidirectional relationship where the Owner has none, one or more Car objects, and the Car knows its owner.
+双向关系，其中所有者0个，一个或多个Car对象，并且Car知道其所有者。
 
     entity Owner
     entity Car
@@ -744,7 +721,7 @@ A bidirectional relationship where the Owner has none, one or more Car objects, 
       Owner{car} to Car{owner}
     }
 
-Unidirectional versions for this relationship are not supported by JHipster, but it would look like this:
+JHipster不支持一对多的单向版本，但是看起来像这样：
 
     entity Owner
     entity Car
@@ -753,10 +730,10 @@ Unidirectional versions for this relationship are not supported by JHipster, but
     }
 
 
-### Many-to-One
+### 多对一
 
-The reciprocal version of One-to-Many relationships is the same as previously.
-The unidirectional version where the Car knows its owners:
+一对多关系的相反版本，
+汽车认识车主的单向版本：
 
     entity Owner
     entity Car
@@ -765,9 +742,9 @@ The unidirectional version where the Car knows its owners:
     }
 
 
-### Many-to-Many
+### 多对多
 
-Finally, in this example we have the Car that knows of its drivers, and the Driver object can access its cars.
+最后，在此示例中，我们的汽车知道其驾驶员，并且驾驶员对象也可以访问其汽车。
 
     entity Driver
     entity Car
@@ -775,12 +752,12 @@ Finally, in this example we have the Car that knows of its drivers, and the Driv
       Car{driver} to Driver{car}
     }
 
-Please note that the owning side of the relationship has to be on the left side
+请注意，关系的拥有方必须在左侧
 
-# <a name="constants"></a>Constants
+## <a name="constants"></a>常量
 
-As of JHipster Core v1.2.7, the JDL supports numerical constants.
-Here is an example:
+从JHipster Core v1.2.7开始，JDL支持数字常量。
+这是一个例子：
 
 ```
 DEFAULT_MIN_LENGTH = 1
@@ -797,21 +774,21 @@ entity A {
 }
 ```
 
-# <a name="workflows"></a>Workflows
+## <a name="workflows"></a>工作流程
 
-## <a name="workflow_monolith"></a>Monolith workflow
+## <a name="workflow_monolith"></a>Monolith工作流程
 
-There's no special workflow here:
-  - Create your application
-  - Create your JDL file
-  - Import it
+这里没有特殊的工作流程：
+  - 创建你的应用
+  - 创建您的JDL文件
+  - 导入
 
-## <a name="workflow_microservice"></a>Microservice workflow
+## <a name="workflow_microservice"></a>微服务工作流程
 
-Dealing with microservices is a bit trickier, but the JDL gives you some options to handle your entities as you see fit.
+处理微服务有点棘手，但是JDL为您提供了一些处理您认为合适的实体选项。
 
-With the `microservice <ENTITIES> with <MICROSERVICE_APP_NAME>` you can specify which entity gets generated in which microservice.
-Take this setup for instance:
+通过`microservice <ENTITIES> with <MICROSERVICE_APP_NAME>`，您可以指定在哪个微服务中生成哪个实体。
+以以下设置为例：
 ```
 entity A
 entity B
@@ -820,21 +797,18 @@ entity C
 microservice A with firstMS
 microservice B with secondMS
 ```
-Given two JHipster applications ('firstMS' and 'secondMS'), here's what you're going to get if you import the JDL file
-in the two applications:
-  - In 'firstMS', entities `A` and `C` will be generated.
-  - In 'secondMS', entities `B` and `C` will be generated.
 
-`C` gets generated in both because if there's no microservice option specifying where this entity gets generated, it
-will be generated everywhere.
-If you decide to import this JDL in a monolith app, every entity will be generated (monoliths don't have restriction
-options in the JDL).
+给定两个JHipster应用程序（'firstMS'和'secondMS'），如果在两个应用程序中导入JDL文件，将获得以下内容：
+  - 在'firstMS'中，将生成实体`A`和`C`。
+  - 在'secondMS'中，将生成实体`B`和`C`。
 
-Note: if you want to make the same entity be generated in two different microservices, you can write two JDL files
-instead of updating the JDL file. everytime.
+两者都会生成`C` ，因为如果没有微服务选项指定该实体的生成位置，那么它将在各处生成。
+如果您决定将这个JDL导入Monolith应用程序中，则会生成每个实体（Monolith在JDL中没有限制选项）。
 
-The previous example couldn't have been written like this:
-```
+注意：如果要在两个不同的微服务中生成同一实体，则可以编写两个JDL文件而不是每次更新JDL文件。
+
+前面的示例不能这样写：
+``` 
 entity A
 entity B
 entity C
@@ -842,28 +816,26 @@ entity C
 microservice * except B with firstMS
 microservice * except A with secondMS
 ```
-Here's the result:
-  - In 'firstMS', only the entity `C` will be generated
-  - In 'secondMS', entities `B` and `C` will be generated.
-It's because, at parsing-time, if an option overlaps with another, the latter takes precedence.
+结果如下：
+  - 在'firstMS'，只会生成实体 `C` 
+  - 在'secondMS'中，将生成实体`B`和`C`。这是因为，在解析时，如果一个选项与另一个选项重叠，则后者优先。
 
-You can also create entire microservice stack using JDL, [see this blog post](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77) for example
+您还可以使用JDL创建整个微服务框架，例如，请[参考此博客文章](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77)。
 
 ---
 
+## <a name="annexes"></a>备注
 
-# <a name="annexes"></a>Annexes
+## <a name="application_options">可用的应用程序选项
 
-## <a name="application_options">Available application options
-
-Here are the application options supported in the JDL:
+这是JDL支持的应用程序选项：
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>JDL option name</th>
-    <th>Default value</th>
-    <th>Possible values</th>
-    <th>Comment</th>
+    <th>JDL选项名称</th>
+    <th>默认值</th>
+    <th>可选值</th>
+    <th>备注</th>
   </tr>
   <tr>
     <td>applicationType</td>
@@ -872,34 +844,51 @@ Here are the application options supported in the JDL:
     <td></td>
   </tr>
   <tr>
+    <td>authenticationType</td>
+    <td>jwt or uaa</td>
+    <td>jwt, session, uaa, oauth2</td>
+    <td>uaa指定UAA应用，否则为jwt</td>
+  </tr>
+  <tr>
     <td>baseName</td>
     <td>jhipster</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td>packageName</td>
-    <td>com.mycompany.myapp</td>
-    <td></td>
-    <td>Sets the packageFolder option</td>
-  </tr>
-  <tr>
-    <td>authenticationType</td>
-    <td>jwt or uaa</td>
-    <td>jwt, session, uaa, oauth2</td>
-    <td>uaa for UAA apps, jwt otherwise</td>
-  </tr>
-  <tr>
-    <td>uaaBaseName</td>
-    <td></td>
-    <td></td>
-    <td>Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes</td>
-  </tr>
-  <tr>
     <td>buildTool</td>
     <td>maven</td>
     <td>maven, gradle</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>cacheProvider</td>
+    <td>ehcache or hazelcast</td>
+    <td>ehcache, hazelcast, infinispan, no</td>
+    <td>用于整体和网关的ehcache，否则为hazelcast</td>
+  </tr>
+    <td>clientFramework</td>
+    <td>angularX</td>
+    <td>angularX, react</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>clientPackageManager</td>
+    <td>npm</td>
+    <td>npm, yarn</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>clientTheme</td>
+    <td>none</td>
+    <td>Something or none</td>
+    <td>您可以输入所需的任何值，前提是您知道它会起作用（例如Yeti）。</td>
+  </tr>
+  <tr>
+    <td>clientThemeVariant</td>
+    <td></td>
+    <td>Something or primary</td>
+    <td>您可以输入所需的任何值，前提是您知道它会起作用（例如dark或light），也可以为空</td>
   </tr>
   <tr>
     <td>databaseType</td>
@@ -911,19 +900,13 @@ Here are the application options supported in the JDL:
     <td>devDatabaseType</td>
     <td>h2Disk</td>
     <td>h2Disk, h2Memory, *</td>
-    <td>* + the prod database type</td>
+    <td>* + prod数据库类型</td>
   </tr>
   <tr>
-    <td>prodDatabaseType</td>
-    <td>mysql</td>
-    <td>mysql, mariadb, mssql, postgresql, oracle, no</td>
+    <td>dtoSuffix</td>
+    <td>DTO</td>
     <td></td>
-  </tr>
-  <tr>
-    <td>cacheProvider</td>
-    <td>ehcache or hazelcast</td>
-    <td>ehcache, hazelcast, infinispan, no</td>
-    <td>ehcache for monoliths and gateways, hazelcast otherwise</td>
+    <td>DTO的后缀。对于空字符串，为false。</td>
   </tr>
   <tr>
     <td>enableHibernateCache</td>
@@ -932,38 +915,8 @@ Here are the application options supported in the JDL:
     <td></td>
   </tr>
   <tr>
-    <td>clientFramework</td>
-    <td>angularX</td>
-    <td>angularX, react</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>useSass</td>
+    <td>enableSwaggerCodegen</td>
     <td>false</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>clientPackageManager</td>
-    <td>npm</td>
-    <td>npm, yarn</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>entitySuffix</td>
-    <td></td>
-    <td></td>
-    <td>Suffix for entities. false for empty string.</td>
-  </tr>
-  <tr>
-    <td>dtoSuffix</td>
-    <td>DTO</td>
-    <td></td>
-    <td>Suffix for DTOs. false for empty string.</td>
-  </tr>
-  <tr>
-    <td>jhiPrefix</td>
-    <td>jhi</td>
     <td></td>
     <td></td>
   </tr>
@@ -974,33 +927,51 @@ Here are the application options supported in the JDL:
     <td></td>
   </tr>
   <tr>
-    <td>nativeLanguage</td>
-    <td>en</td>
-    <td>Any language supported by JHipster</td>
+    <td>entitySuffix</td>
+    <td></td>
+    <td></td>
+    <td>实体的后缀。对于空字符串，为false。</td>
+  </tr>
+  <tr>
+    <td>jhiPrefix</td>
+    <td>jhi</td>
+    <td></td>
     <td></td>
   </tr>
   <tr>
     <td>languages</td>
     <td>[en, fr]</td>
-    <td>Languages available in JHipster</td>
+    <td>JHipster中可用的语言</td>
     <td>Braces are mandatory</td>
-  </tr>
-  <tr>
-    <td>enableSwaggerCodegen</td>
-    <td>false</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>serviceDiscoveryType</td>
-    <td>false</td>
-    <td>eureka, consul, no</td>
-    <td></td>
   </tr>
   <tr>
     <td>messageBroker</td>
     <td>false</td>
     <td>kafka, false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>nativeLanguage</td>
+    <td>en</td>
+    <td>JHipster支持的任何语言</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>packageName</td>
+    <td>com.mycompany.myapp</td>
+    <td></td>
+    <td>设置packageFolder选项</td>
+  </tr>
+  <tr>
+    <td>prodDatabaseType</td>
+    <td>mysql</td>
+    <td>mysql, mariadb, mssql, postgresql, oracle, no</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>reactive</td>
+    <td>false</td>
+    <td></td>
     <td></td>
   </tr>
   <tr>
@@ -1013,19 +984,13 @@ Here are the application options supported in the JDL:
     <td>serverPort</td>
     <td>8080, 8081 or 9999</td>
     <td></td>
-    <td>Depends on the app type</td>
+    <td>取决于应用程序类型</td>
   </tr>
   <tr>
-    <td>websocket</td>
+    <td>serviceDiscoveryType</td>
     <td>false</td>
-    <td>spring-websocket, false</td>
+    <td>eureka, consul, no</td>
     <td></td>
-  </tr>
-  <tr>
-    <td>testFrameworks</td>
-    <td>[]</td>
-    <td>protractor, cucumber, gatling</td>
-    <td>Braces mandatory</td>
   </tr>
   <tr>
     <td>skipClient</td>
@@ -1045,18 +1010,44 @@ Here are the application options supported in the JDL:
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>testFrameworks</td>
+    <td>[]</td>
+    <td>protractor, cucumber, gatling</td>
+    <td>Braces mandatory</td>
+  </tr>
+  <tr>
+    <td>uaaBaseName</td>
+    <td></td>
+    <td></td>
+    <td>如果auth类型为uaa，则对于网关和微服务是必需的，必须在包含双引号之间</td>
+  </tr>
+  <tr>
+    <td>useSass</td>
+    <td>false</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>websocket</td>
+    <td>false</td>
+    <td>spring-websocket, false</td>
+    <td></td>
+  </tr>
 </table>
 
-## <a name="deployment_options">Available deployment options
+---
 
-Here are the application options supported in the JDL:
+## <a name="deployment_options">可用的部署选项
+
+这是JDL支持的应用程序选项：
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>JDL option name</th>
-    <th>Default value</th>
-    <th>Possible values</th>
-    <th>Comment</th>
+    <th>JDL选项名称</th>
+    <th>默认值</th>
+    <th>可选值</th>
+    <th>备注</th>
   </tr>
   <tr>
     <td>deploymentType</td>
@@ -1068,25 +1059,25 @@ Here are the application options supported in the JDL:
     <td>directoryPath</td>
     <td>"../"</td>
     <td></td>
-    <td>Relative path. Must be in double quotes</td>
+    <td>相对路径。必须用双引号括起来</td>
   </tr>
   <tr>
     <td>appsFolders</td>
     <td>[]</td>
     <td></td>
-    <td>Directory names for the applications separated by comma. Must be a list, example [foo, bar]</td>
+    <td>应用程序的目录名称，以逗号分隔。必须是列表，例如[foo，bar]</td>
   </tr>
   <tr>
     <td>clusteredDbApps</td>
     <td>[]</td>
     <td></td>
-    <td>Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]</td>
+    <td>具有集群数据库的应用程序的目录名称，以逗号分隔。必须是列表，例如[foo，bar]</td>
   </tr>
   <tr>
     <td>gatewayType</td>
     <td>zuul</td>
     <td>zuul, traefik</td>
-    <td>Value is ignored when serviceDiscoveryType is `no`</td>
+    <td>当serviceDiscoveryType为`no`时，将忽略该值</td>
   </tr>
   <tr>
     <td>monitoring</td>
@@ -1098,7 +1089,7 @@ Here are the application options supported in the JDL:
     <td>consoleOptions</td>
     <td>[]</td>
     <td>[curator, zipkin]</td>
-    <td>Must be a list</td>
+    <td>必须是列表</td>
   </tr>
   <tr>
     <td>serviceDiscoveryType</td>
@@ -1110,63 +1101,57 @@ Here are the application options supported in the JDL:
     <td>dockerRepositoryName</td>
     <td></td>
     <td></td>
-    <td>The name or URL of the docker repository. Must be in double quotes</td>
+    <td>docker仓库的名称或URL。必须用双引号括起来</td>
   </tr>
   <tr>
     <td>dockerPushCommand</td>
     <td>"docker push"</td>
     <td></td>
-    <td>The docker push command to use. Must be in double quotes</td>
+    <td>要使用的docker push命令。必须用双引号括起来</td>
   </tr>
   <tr>
     <td>kubernetesNamespace</td>
     <td>default</td>
     <td></td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>kubernetesServiceType</td>
     <td>LoadBalancer</td>
     <td>LoadBalancer, NodePort, Ingress</td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>ingressDomain</td>
     <td></td>
     <td></td>
-    <td>The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes</td>
+    <td>设置Ingress Domain, 当kubernetesServiceType为`Ingress`时，。必须用双引号引起来。仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>istio</td>
     <td>no</td>
     <td>no, manualInjection, autoInjection</td>
-    <td>Applicable only when deploymentType is kubernetes</td>
-  </tr>
-  <tr>
-    <td>istioRoute</td>
-    <td>false</td>
-    <td></td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>openshiftNamespace</td>
     <td>default</td>
     <td></td>
-    <td>Applicable only when deploymentType is openshift</td>
+    <td>仅当DeploymentType为openshift时适用</td>
   </tr>
   <tr>
     <td>storageType</td>
     <td>ephemeral</td>
     <td>ephemeral, persistent</td>
-    <td>Applicable only when deploymentType is openshift</td>
+    <td>仅当DeploymentType为openshift时适用</td>
   </tr>
 </table>
 
-## <a name="types_and_constraints"></a>Available field types and constraints
+## <a name="types_and_constraints"></a>可用的字段类型和约束
 
-Here are the types supported in the JDL:
+以下是JDL支持的类型：
 
-Common databases:
+常用数据库：
   - PostgreSQL
   - MySQL
   - MariaDB
@@ -1177,9 +1162,9 @@ Common databases:
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>Common databases</th>
+    <th>通用数据库</th>
     <th>Cassandra</th>
-    <th>Validations</th>
+    <th>验证方式</th>
   </tr>
   <tr>
     <td>String</td>
@@ -1237,7 +1222,12 @@ Common databases:
     <td><dfn>required, unique</dfn></td>
   </tr>
   <tr>
+    <td>Duration</td>
     <td></td>
+    <td><dfn>required, unique</dfn></td>
+  </tr>
+  <tr>
+    <td>UUID</td>
     <td>UUID</td>
     <td><dfn>required, unique</dfn></td>
   </tr>
@@ -1268,39 +1258,53 @@ Common databases:
   </tr>
 </table>
 
-## <a name="all_options"></a> Available options
+---
 
-### Unary options
+## <a name="all_options"></a> 可用选项
 
-These options don't have any value:
+### 一元选项
+
+这些选项不需要指定值：
   - `skipClient`
   - `skipServer`
   - `noFluentMethod`
   - `filter`
 
-They can be used like this: `<OPTION> <ENTITIES | * | all> except? <ENTITIES>`
+可以这样使用它们：`<OPTION> <ENTITIES | * | all> except? <ENTITIES>`
 
-### Binary options
+### 二元选项
 
-These options take values:
+这些选项采用以下值：
   - `dto` (`mapstruct`)
   - `service` (`serviceClass`, `serviceImpl`)
   - `paginate` (`pager`, `pagination`, `infinite-scroll`)
   - `search` (`elasticsearch`)
-  - `microservice` (custom value)
-  - `angularSuffix` (custom value)
-  - `clientRootFolder` (custom value)
+  - `microservice` (自定义值)
+  - `angularSuffix` (自定义值)
+  - `clientRootFolder` (自定义值)
 
-# <a name="issues"></a>Issues and bugs
+---
 
-JDL is [available on GitHub](https://github.com/jhipster/jhipster-core), and follows the same
-[contributing guidelines as JHipster]( https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
+## <a name="troubleshooting"></a>故障排除
 
-Please use our project for submitting issues and Pull Requests concerning the library itself.
+### 匹配MS baseName时，JDL导入仅找到一个实体
+
+这是解析系统的已知问题，解决它很棘手。
+显而易见的解决方法是为微服务和内部实体使用不同的名称。
+
+有关更多信息，请参见[JHipster Core issue #308](https://github.com/jhipster/jhipster-core/issues/308)。
+
+---
+
+## <a name="issues"></a>问题与错误
+
+JDL[在GitHub上可用](https://github.com/jhipster/jhipster-core)，并[遵循与JHipster相同的贡献准则]( https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md)。
+
+请使用我们的项目提交有关库本身的问题和Pull Requests。
 
 - [JDL issue tracker](https://github.com/jhipster/jhipster-core/issues)
 - [JDL Pull Requests](https://github.com/jhipster/jhipster-core/pulls)
 
-When submitting anything, you must be as precise as possible:  
-  - **One posted issue must only have one problem** (or one demand/question);  
-  - Pull requests are welcome, but the commits must be 'atomic' to really be understandable.  
+提交任何内容时，您都必须尽可能精确：
+  - **一个isuue必须只包含一个问题** (一个需求或一个问题);  
+  - 欢迎Pull requests，但是提交日志必须简洁明了，具有'原子'可读性。

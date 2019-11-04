@@ -2,7 +2,7 @@ Glossary for Chinese translators
 
 为了保证翻译风格的统一，在翻译专业术语的时候请尽量参考如下对照表，同时也欢迎大家针对下表进行补充和讨论。
 
-appliction		应用程序  
+application		应用程序  
 bug tracker     错误跟踪器  
 build tool      构建工具   
 change set      更改集  

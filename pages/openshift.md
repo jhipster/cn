@@ -9,153 +9,144 @@ sitemap:
     lastmod: 2017-04-30T00:00:00-00:00
 ---
 
-# [BETA] 部署到Openshift
+# [BETA]部署到OpenShift
 
-**WARNING!** This is a new sub-generator, of **BETA** quality WIP release! Feedback is highly welcome!! Happy OpenShifting!!!
+**警告！** 这是**BETA**WIP版本的新子生成器！非常欢迎大家反馈！！享受OpenShifting！
 
-This sub-generator allows deployment of JHipster applications to [Openshift Container Platform](https://www.openshift.com/) / [OpenShift Origin](https://www.openshift.org/).
+该子生成器允许将JHipster应用程序部署到[Openshift容器平台](https://www.openshift.com/)/[OpenShift Origin](https://www.openshift.org/)。
 
 [![]({{ site.url }}/images/logo/logo-openshift.png)](https://www.openshift.com/)
 
-## Work-in-progress
+## 进行中的工作
 
-- Mongo and Cassandra replication mode is not yet tested
+- Mongo和Cassandra复制模式尚未测试
 
-## Install Options
+## 安装选项
 
-OpenShift offers two options,
+OpenShift提供两个选项，
 
-- OpenShift Origin - is the open source upstream project that powers OpenShift
-- OpenShift Container Platform - is the enterprise container application platform supported by Red Hat
+- OpenShift Origin-是为增强OpenShift的开源上游项目
+- OpenShift容器平台-是Red Hat支持的企业容器应用程序平台
 
 ## Minishift
 
-[Minishift](https://github.com/minishift/minishift) is a toolkit that makes it easy to run the all in one OpenShift VM locally. Minishift runs a single-node OpenShift cluster inside a VM on a laptop for users to try it out locally.
+[Minishift](https://github.com/minishift/minishift)是一个工具包，可以轻松地在一个OpenShift VM中本地运行所有功能。Minishift在笔记本电脑上的VM内运行一个单节点OpenShift群集，供用户在本地试用。
 
-Minishift requires a hypervisor to start the virtual machine on which the OpenShift cluster is provisioned. Make sure that the hypervisor of your choice is installed and enabled on your system before you start Minishift.
+Minishift需要虚拟机监控程序才能启动配置了OpenShift群集的虚拟机。在启动Minishift之前，请确保已在系统上安装并启用了所选的虚拟机管理程序。
 
-## Pre-requisites
+## 先决条件
 
-You have to install:
+您必须安装：
 
 - [Docker](https://docs.docker.com/installation/#installation)
-- Hypervisor - Depending on your host OS, you have the choice of different options
+- Hypervisor - 根据您的主机操作系统，您可以选择不同的选项
 
-You must have a Docker registry. If you don’t have one, you can use the official [Docker Hub](https://hub.docker.com/)
+您必须具有Docker仓库。如果您没有，可以使用官方的[Docker Hub](https://hub.docker.com/)
 
-Minishift allows you to try out both Origin and Container Platform locally,
+Minishift可让您在本地试用Origin和Container Platform，
 
 - [OpenShift Origin](https://github.com/minishift/minishift)
-- [OpenShift Container Platform](https://developers.redhat.com/products/cdk/overview/) - Red Hat Container Development Kit provides a Minishift packaged pre-built Container Development Environment based on Red Hat Enterprise Linux. Developers can now get Red Hat Container Development Kit via the no-cost Red Hat Enterprise Linux® Developer Suite subscription for development purposes by registering and downloading through [redhat.com](https://developers.redhat.com).
+- [OpenShift容器平台](https://developers.redhat.com/products/cdk/overview/)-Red Hat Container Development Kit提供了一个基于Red Hat Enterprise Linux的Minishift打包的预构建容器开发环境。现在，开发人员可以通过[redhat.com](https://developers.redhat.com)进行注册和下载，通过免费的Red Hat EnterpriseLinux®Developer Suite订阅获得Red Hat容器开发套件，用于开发目的。
 
-The sub-generator works fine with both Origin and Container Platform and uses the same image versions as Docker.
+子生成器可与Origin和Container Platform一起正常工作，并使用与Docker相同的镜像版本。
 
-## Running the sub-generator
+## 运行子生成器
 
-To generate config files for OpenShift, run this command in the project/root folder:
+要为OpenShift生成配置文件，请在project/root文件夹中运行以下命令：
 
 `jhipster openshift`
 
-Then answer all the questions to deploy your application.
+然后回答所有问题以部署您的应用程序。
+
+### Which *type* of application would you like to deploy? (您要部署哪种*类型*的应用程序？)
+
+应用程序的类型取决于您是否希望部署微服务或monoliths。
+
+### Enter the root directory where your applications are located (输入应用程序所在的根目录)
+
+输入路径。所有OpenShift生成器文件都将保留在此路径中
+
+### Which applications do you want to include in your OpenShift configuration? (您要在OpenShift配置中包括哪些应用程序？)
+
+选择您的应用程序。
 
 
-### Which *type* of application would you like to deploy?
+### Enter the admin password used to secure the JHipster Registry admin (输入用于保护JHipster Registry admin的管理员密码)
 
-Type of application depends on whether you wish to deploy a microservices or monoliths.
+仅当您选择微服务架构时，才会显示此问题。
 
+### What should we use for the OpenShift namespace? (我们应该使用什么OpenShift命名空间？)
 
-### Enter the root directory where your applications are located
+这是OpenShift项目空间，其中部署了所有服务，并将生成的文件标记到此模板
 
-Enter the path. All the OpenShift generator files will be persisted in this path
+### Which *type* of database storage would you like to use? （您想使用哪种*类型*的数据库存储？）
 
+仅当任何选定的应用程序选择了数据库类型时，才会显示此问题。这会提示您提供临时存储或持久存储选项。本质上，容器是短暂的（在重新启动/崩溃之间不会保留数据）。永久存储选项允许安装外部存储，例如NFS，EBS等。这样数据就可以在重启和崩溃之间保留下来。
 
-### Which applications do you want to include in your OpenShift configuration?
+### What should we use for the base Docker repository name? （Docker仓库基本名称应该使用什么？）
 
-Select your applications.
+如果您选择[Docker Hub](https://hub.docker.com/)作为主仓库，则将是您的Docker Hub登录名。
 
+### What command should we use for push Docker image to repository? (我们应该使用什么命令将Docker镜像推送到仓库？)
 
-### Enter the admin password used to secure the JHipster Registry admin
+推送到Docker Hub的默认命令是`docker image push`
 
-This question is only displayed if you choose microservices architecture.
+例如，如果您使用Google Cloud托管Docker镜像，则将是：`gcloud docker push`
 
+## 更新已部署的应用程序
 
-### What should we use for the OpenShift namespace?
+### 准备新的部署
 
-This is the OpenShift project space where all the services get deployed and the generated files are tagged to this template
-
-
-### Which *type* of database storage would you like to use?
-
-This question is only displayed if any of the chosen apps has database type selected. This prompts for ephemeral or persistent storage options. Containers by very nature are ephemeral (data will not be retained between restarts/crashes). Persistent storage option allows
-to mount external storage like NFS, EBS etc,. so that data survives between restarts and crashes.
-
-
-### What should we use for the base Docker repository name?
-
-If you choose [Docker Hub](https://hub.docker.com/) as main registry, it will be your Docker Hub login.
-
-
-### What command should we use for push Docker image to repository?
-
-The default command to push to Docker Hub is `docker image push`
-For example, if you use the Google Cloud to host your Docker images, it will be: `gcloud docker push`
-
-
-## Updating your deployed application
-
-### Preparing a new deployment
-
-When your application is already deployed, you can re-deploy it by building a new Docker image:
+在已经部署了应用程序之后，可以通过构建新的Docker镜像来重新部署它：
 
 `./mvnw package -Pprod -DskipTests jib:dockerBuild`
 
-Or when using gradle:
+使用gradle:
 
-`./gradlew -Pprod bootWar jibDockerBuild -x test`
+`./gradlew -Pprod bootJar jibDockerBuild -x test`
 
-If you face any issue in running the image built by jib plugin (like `chmod +x entrypoint.sh not permitted`), then you might have to update scc. Do the following change,
-`oc edit scc restricted` and update `runAsUser.Type` strategy to `RunAsAny`
+如果您在运行由jib插件生成的镜像时遇到任何问题（例如`chmod +x entrypoint.sh not permitted`），那么您可能必须更新scc。进行以下更改，`oc edit scc restricted`并将`runAsUser.Type`策略更新为`RunAsAny`
 
-### Pushing to Docker Hub
+### 推送到Docker Hub
 
-Tag locally your image:
+在本地标记您的镜像：
 
 `docker image tag application username/application`
 
-Push your image to Docker Hub:
+将镜像推送到Docker Hub：
 
 `docker image push username/application`
 
-## Deploying application(s)
+## 部署应用程序
 
-Deploy application(s):
+部署应用程序：
 
-You can deploy all your apps by either running:
+您可以通过以下任一方式部署所有应用程序：
   `<directoryPath>/ocp/ocp-apply.sh`
 
-OR
+或者
 
   `oc apply -f <directoryPath>/ocp/registry`
   `oc apply -f <directoryPath>/ocp/app1gw`
-and then install the apps from OpenShift console by choosing the template created in the chosen namespace
+然后通过选择在所选命名空间中创建的模板从OpenShift控制台安装应用程序
 
-It will create a OpenShift deployment for your application and its associated dependent services (database, elasticsearch...) as well as OpenShift service for pod to pod communications(inter service) and a route to access the application from outside.
+它将为您的应用程序及其相关的依赖服务（数据库，elasticsearch…）以及用于Pod到Pod通信（内部服务）的OpenShift服务以及从外部访问应用程序的路由创建OpenShift部署。
 
-## Info regarding microservice application(s)
+## 有关微服务应用程序的信息
 
-### Deploying a Service Registry
+### 部署服务Registry
 
-Although, OpenShift does feature its own internal service discovery with **Kube-DNS**, centralized config management with ConfigMaps and centralized logging through EFK stack, as JHipster relies on Spring Cloud for configuration management, Eureka/Consul for service discovery and jhipster-console(ELK) for log management, OpenShift deployment does support the same as well.
+虽然，OpenShift确实具有通过**Kube-DNS**进行内部服务发现，通过ConfigMaps进行集中配置管理以及通过EFK Stack进行集中日志记录的功能，因为JHipster依靠Spring Cloud进行配置管理，依靠Eureka/Consul进行服务发现和jhipster-console（ELK）对于日志管理，OpenShift部署也支持相同功能。
 
-Consequently, for microservices applications, the JHipster OpenShift sub-generator will generate manifest files to deploy the **JHipster-Registry** (based on Eureka) or **Consul**. Moreover, the generated microservices and gateway manifests will contain the appropriate configuration to register themselves to their central registry service.
+因此，对于微服务应用程序，JHipster OpenShift子生成器将生成清单文件，以部署**JHipster-Registry**（基于Eureka）或**Consul**。此外，生成的微服务和网关清单将包含适当的配置，以将其自身注册到其中央registry服务。
 
-### Managing the JHipster Registry or Consul
+### 管理JHipster Registry或Consul
 
-For the JHipster Registry and Consul, [StatefulSets](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/) configurations are provided. Those are a special kind of deployment artifact that can handle stateful applications and will let you scale your service registries for high-availability. Kindly note **StatefulSets** are not yet production ready feature in OpenShift. It is in technology preview (BETA) and you need **OpenShift version >=3.5** to use this feature.
+对于JHipster Registry和Consul，提供了[StatefulSets](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/)配置。这些是一种特殊的部署artifact，可以处理有状态的应用程序，并使您可以扩展服务registry以实现高可用性。请注意，**StatefulSets**尚未在OpenShift中投入生产。它处于技术预览（BETA）中，您需要OpenShift版本> = 3.5才能使用此功能。
 
-### Centralized configuration
+### 集中配置
 
-Centralized configuration is also setup using either **Spring Cloud Config Server** (when using the JHipster-Registry) or the **Consul Key/Value store** (when using Consul). By default, both configuration servers load their configuration from a OpenShift [ConfigMap](https://docs.openshift.org/latest/dev_guide/configmaps.html) which contains property files in this format :
+还可以使用**Spring Cloud Config Server**（使用JHipster-Registry时）或Consul密钥/值存储（使用Consul时）来设置集中式配置。默认情况下，两个配置服务器都从OpenShift [ConfigMap](https://docs.openshift.org/latest/dev_guide/configmaps.html)加载其配置，该映射包含以下格式的属性文件：
 
 ```
 apiVersion: v1
@@ -175,19 +166,18 @@ data:
       bar: foobar
 ```
 
-## Troubleshooting Tips
+## 故障排除技巧
 
-- If you are running All-in-one VM, make sure to run the following command before pushing docker images,
-  ` eval $(docker-machine env <machine_name>) `
-- If you face issues running StatefulSets or Services with persistent storage, make sure persistent volumes are properly initialized  
-- If you face issues running StatefulSets, check the persistent volume claims. If PVCs' take longer time than usual while initializing, try creating it manually
-- After running the generators, make sure you are in the chosen namespace **oc project <namespace>** before applying the oc commands
-- Image pulling for services like elasticsearch, registry, console etc,. for the first time will take some time as it needs to be pulled from public registry to the container registry. If any of the dependent services fail because of this, try deploying it once the services with which it is dependent on are up and running.
-- Please make sure you have the necessary privilege (may require admin) to run scc service that is required to run some of the pods.
+- 如果您正在运行多合一VM，请确保在推送Docker镜像之前运行以下命令，`eval $(docker-machine env <machine_name>)`
+- 如果您在使用永久存储运行StatefulSets或Services时遇到问题，请确保正确初始化了永久卷。
+- 如果您在运行StatefulSets时遇到问题，请检查持久卷声明。如果PVC在初始化时比平时花费更长的时间，请尝试手动创建。
+- 运行生成器后，在应用oc命令之前，请确保您位于选定的名称空间**oc项目<namespace>**中。
+- 用于elasticsearch，registry，console等服务的镜像拉取。第一次需要一些时间，因为它需要从公共仓库中拉到容器仓库中。如果任何从属服务因此而失败，请在其所依赖的服务启动并运行后，尝试对其进行部署。
+- 请确保您具有运行某些Pod所需的scc服务所需的特权（可能需要管理员）。
 
-## More information
+## 更多信息
 
-*   [OpenShift Origin documentation](https://docs.openshift.org/latest/welcome/index.html)
-*   [OpenShift Container Platform](https://access.redhat.com/documentation/en/openshift-container-platform/)
+*   [OpenShift Origin文档](https://docs.openshift.org/latest/welcome/index.html)
+*   [OpenShift容器平台](https://access.redhat.com/documentation/en/openshift-container-platform/)
 *   [Minishift](https://github.com/minishift/minishift#documentation)
 *   [OpenShift CLI](https://docs.openshift.org/latest/cli_reference/get_started_cli.html)

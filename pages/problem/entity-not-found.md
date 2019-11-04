@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - 找不到实体
+title: Error - entity not found
 permalink: /problem/entity-not-found/
 sitemap:
     priority: 0.7

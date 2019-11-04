@@ -1,27 +1,27 @@
 ---
 layout: default
-title: Using Vue
+title: 使用Vue
 permalink: /using-vue/
 sitemap:
     priority: 0.7
     lastmod: 2019-03-27T23:41:00-00:00
 ---
 
-# <i class="fa fa-html5"></i> Using Vue
-This section refers to the JavaScript library **Vue.js**.
+# <i class="fa fa-html5"></i> 使用Vue
+本节引用JavaScript库**Vue.js**。
 
-## Project Structure
+## 项目结构
 
-The JHipster client code can be found under `src/main/webapp`.
+可以在`src/main/webapp`下找到JHipster前端代码。
 
-Please read this guide first if you have any question on our application structure, file names, TypeScript conventions...
+如果您对我们的应用程序结构，文件名，TypeScript约定有任何疑问，请先阅读本指南。
 
-Note that we use TypeScript in our generated Vue application following [vue-class-component](https://github.com/vuejs/vue-class-component) style and guidelines.
+请注意，在生成的Vue应用程序中使用TypeScript，我们遵循[vue-class-component](https://github.com/vuejs/vue-class-component)样式和准则。
 
-For Vue routes we follow a dash cased naming convention so that the URLs are clean and consistent.
-When you generate an entity the route names, route URLs and REST API endpoint URLs are generated according to this convention, also entity names are automatically pluralized where required.
+对于Vue路由，我们遵循双引号命名约定，以便URL干净且一致。
+当您生成实体时，将根据此约定生成路由名称，路由URL和REST API端点URL，并且实体名称也会在需要时自动复数。
 
-Here is the main project structure:
+这是主要的项目结构：
 
 ```
 webapp
@@ -48,7 +48,7 @@ webapp
 └── robots.txt                      - Configuration for bots and Web crawlers
 ```
 
-Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) to create a new entity called `Foo` generates the following front-end files under `src/main/webapp`:
+使用[实体子生成器]({{ site.url }}/creating-an-entity/)创建名为`Foo`的新实体会在`src/main/webapp`下生成以下前端文件：
 
 ```
 webapp
@@ -76,26 +76,26 @@ webapp
 
 Please note that the default language translations would be based on what you have choosen during app generation. 'en' and 'fr' are shown here only for demonstration.
 
-## Store using VuexStore
+## 使用VuexStore进行存储
 
-Application will use a store [VuexStore](https://vuex.vuejs.org/guide/state.html) to maintain state within the application.
+应用程序将使用存储[VuexStore](https://vuex.vuejs.org/guide/state.html)来维护应用程序内的状态。
 
-This store is configured at startup in `app/config/config.ts:initVueXStore`. Please refer to Vuex documentation to add new states or mutations.
+该存储启动时在`app/config/config.ts:initVueXStore`中配置。请参考Vuex文档以添加新状态或变异。
 
-The application will use the store to maintain:
+该应用程序将使用存储来维护：
 
-* User authentication information
-* Language and translation 
-* Notification and alert information
-* Active profiles data
+* 用户认证信息
+* 语言和翻译
+* 通知和警报信息
+* 活动配置文件数据
 
-## Authorizations
+## 鉴权
 
-JHipster uses the [Vue router](https://router.vuejs.org/) to organize the differents parts of your application.
+JHipster使用[Vue路由器](https://router.vuejs.org/)来组织应用程序的不同部分。
 
-When it comes to routes that require authentication, the meta `authorities` is used on desired route. This component will simply prevent any unauthenticated or unauthorized user from accessing a route.
+对于需要身份验证的路由，将在所需路由上使用`authorities`元数据。该组件将仅阻止任何未经身份验证或未经授权的用户访问路由。
 
-Here is an example of PrivateRoute usage:
+这是PrivateRoute用法的示例：
 
 ``` typescript
 const Routes = () => [{
@@ -111,13 +111,13 @@ const Routes = () => [{
     }];
 ```
 
-As you can see, unauthenticated user can access `/public` but accessing `/private` requires at least to be logged in.
+如您所见，未经身份验证的用户可以访问`/public`，但是访问`/private`至少需要登录。
 
-Please note that the interceptor uses the `$store.getters.authenticated` store value to know if the user is authenticated.
+请注意，拦截器使用`$store.getters.authenticated`存储值来了解用户是否已通过身份验证。
 
-## Validation system
+## 校验系统
 
-In order to perform form validation, we use [Vuelidate](https://vuelidate.netlify.com/) library. Besides adding validation constraints, several filters are already furnished and enable a full validation on form. Custom validation can obviously be added as such:
+为了执行表单验证，我们使用[Vuelidate](https://vuelidate.netlify.com/)库。除了添加校验约束之外，还提供了一些过滤器，它们可以对表单进行全面验证。自定义验证可以显式这样添加：
 
 ```typescript
 import { required } from 'vuelidate/lib/validators';
@@ -137,6 +137,6 @@ export default class FooComponent extends Vue {
 }
 ```
 
-## Bootswatch theme
+## Bootswatch主题
 
-Theming Bootstrap can be done directly using [Bootswatch](https://bootswatch.com) themes. We now provide questions during generation to pick one of the many themes served by Bootswatch.
+可以使用[Bootswatch](https://bootswatch.com)主题直接完成Bootstrap主题设置。现在，我们在生成期间提供选择，以选择Bootswatch提供的众多主题之一。

@@ -11,32 +11,32 @@ sitemap:
 
 ## 工具
 
-Angular is using TypeScript instead of JavaScript, and as a result some specific tooling is necessary to work efficiently with it. Our [development]({{ site.url }}/development/) workflow for an Angular 2+ application is as below, use `npm` instead of `yarn` if you prefer that.
+Angular使用TypeScript而不是JavaScript，因此需要一些特定的工具来有效地使用它。我们针对Angular 2+应用程序的[开发]({{ site.url }}/development/)工作流程如下所示，如果您愿意，可以使用`npm`代替`yarn`。
 
-1. When you generate an application the files are created and at the end of generation `npm install` task is triggered.
-2. Once `npm install` is complete it calls the `postInstall` script in `package.json`, this step triggers the `webpack:build` task.
-3. Now you should have all files generated and compiled into the `www` folder inside the `target` or `build` folder based on the build tool (Maven or Gradle) selected.
-4. Now run `./mvnw` or `./gradlew` to launch the application server and it should be available at [localhost:8080](localhost:8080) this also serves the client side code compiled from the above steps.
-5. Now run `npm start` or `yarn start` in a new terminal to launch Webpack dev-server with BrowserSync. This will take care of compiling your TypeScript code, and automatically reloading your browser.
+1. 生成应用程序时，将创建新的文件，并在生成结束时触发`npm install`任务。
+2. 一旦`npm install`完成，它将在`package.json`中调用`postInstall`脚本，此步骤将触发`webpack:build`任务。
+3. 现在，基于您选择的生成工具（Maven或Gradle），所有的文件应该被生成并编译到`target`或`build`文件夹内的`www`文件夹中。
+4. 现在运行`./mvnw`或`./gradlew`来启动应用程序服务器，它应该在[localhost:8080](localhost:8080)上可用，这也可以提供根据上述步骤编译的前端代码。
+5. 现在，在新终端中运行`npm start`或`yarn start`，以使用BrowserSync启动Webpack开发服务器。这将负责编译您的TypeScript代码，并自动重新加载浏览器。
 
-If you start making changes to the client side code without having `npm start` or `yarn start` running, nothing will be reflected as the changes are not compiled so you need to either run `npm run webpack:build` manually after changes or have `npm start` or `yarn start` running.
+如果您在没有运行`npm start`或`yarn start`的情况下开始对前端代码进行更改，则不会反映任何内容，因为更改未被编译，因此您需要在更改后手动运行`npm run webpack:build`或运行`npm start`或`yarn start`运行。
 
-You can also force maven/gradle to run the `webpack:dev` task while starting by passing the `webpack` profile like `./mvnw -Pdev,webpack` or `./gradlew -Pdev -Pwebpack`. This is especially helpful after running a `clean` task.
+您还可以在传递诸如`./mvnw -Pdev,webpack`或`./gradlew -Pdev -Pwebpack`之类的`webpack`配置文件开始时，强制maven/gradle运行`webpack:dev`任务。这在运行`clean`任务之后特别有用。
 
-Other available yarn/npm commands can be found in the `scripts` section of your project's `package.json` file.
+其他可用的yarn/npm命令可以在您项目的`package.json`文件的`scripts`部分中找到。
 
-- To work on your code in your browser, we recommend using [Angular Augury](https://augury.angular.io/), so you can visualize your routes and debug your code easily
+- 要在浏览器中处理代码，我们建议使用[Angular Augury](https://augury.angular.io/)，以便您可以直观地查看路由并调试代码
 
 ## 项目结构
 
-The JHipster client code can be found under `src/main/webapp`, and follows closely the  [John Papa Angular 2 style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a2/README.md). Please read this guide first if you have any question on our application structure, file names, TypeScript conventions...
+可以在`src/main/webapp`下找到JHipster前端代码，该代码与[John Papa Angular 2样式指南](https://github.com/johnpapa/angular-styleguide/blob/master/a2/README.md)密切相关。如果您对我们的应用程序结构，文件名，TypeScript约定有任何疑问，请先阅读本指南。
 
-This style guide is endorsed by the Angular team, and provides best practices that every Angular project should follow.
+该样式指南已被Angular团队认可，并提供了每个Angular项目都应遵循的最佳实践。
 
-For Angular routes we follow a dash cased naming convention so that the URLs are clean and consistent.
-When you generate an entity the route names, route URLs and REST API endpoint URLs are generated according to this convention, also entity names are automatically pluralized where required.
+对于Angular路由，我们遵循双引号命名约定，以使URL干净且一致。
+当您生成实体时，将根据此约定生成路由名称，路由URL和REST API端点URL，并且实体名称也会在需要时自动复数。
 
-Here is the main project structure:
+这是主要的项目结构：
 
     webapp
     ├── app                               - Your application
@@ -61,7 +61,7 @@ Here is the main project structure:
     ├── index.html                        - Index page
     ├── robots.txt                        - Configuration for bots and Web crawlers
 
-Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) to create a new entity called `Foo` generates the following front-end files under `src/main/webapp`:
+使用[实体子生成器]({{ site.url }}/creating-an-entity/)创建名为`Foo`的新实体会在`src/main/webapp`下生成以下前端文件：
 
     webapp
     ├── app
@@ -87,17 +87,17 @@ Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) to create a
     │   ├── fr                                         - French translations
     │   │   ├── foo.json                               - French translation of Foo name, fields, ...
 
-Please note that the default language translations would be based on what you have choosen during app generation. 'en' and 'fr' are shown here only for demonstration.
+请注意，默认语言翻译将基于您在应用生成过程中选择的语言。在此处仅显示'en'和'fr'以进行演示。
 
-## 授权
+## 鉴权
 
-JHipster uses [the Angular router](https://angular.io/docs/ts/latest/guide/router.html) to organize the different parts of your client application.
+JHipster使用[Angular路由器](https://angular.io/docs/ts/latest/guide/router.html) 来组织前端应用程序的不同部分。
 
-For each state, the required authorities are listed in the state's data, and when the authority list is empty it means that the state can be accessed anonymously.
+对于每个路径，所需的权限都列在该路径的数据中，并且当权限列表为空时，表示可以匿名访问该路径。
 
-The authorities are also defined on the server-side in the class `AuthoritiesConstants.java`, and logically the client and server-side authorities should be the same.
+权限也在服务器端`AuthoritiesConstants.java`类中定义，并且从逻辑上讲，前端和服务器端权限应相同。
 
-In the example below, the 'sessions' state is designed to be accessed only by authenticated users who have `ROLE_USER` authority:
+在下面的示例中，'sessions'路径设计为仅由具有`ROLE_USER`权限的经过身份验证的用户访问：
 
     export const sessionsRoute: Route = {
         path: 'sessions',
@@ -109,42 +109,42 @@ In the example below, the 'sessions' state is designed to be accessed only by au
         canActivate: [UserRouteAccessService]
     };
 
-Once those authorities are defined in the router, they can be used through `jhiHasAnyAuthority` directive within its 2 variants based on type of argument:
+一旦在路由器中定义了这些权限，就可以根据参数类型通过`jhiHasAnyAuthority`指令在其2个变量中使用它们：
 
-- for a single string, the directive only displays the HTML component if the user has the required authority
-- for an array of strings, the directive displays the HTML component if the user has one of the listed authorities
+- 对于单个字符串，该指令仅在用户具有所需权限时才显示HTML组件
+- 对于字符串数组，如果用户具有列出的权限之一，则伪指令将显示HTML组件
 
-For example, the following text will only be displayed to users having the `ROLE_ADMIN` authority:
+例如，以下文本仅显示给具有`ROLE_ADMIN`权限的用户：
 
     <h1 *jhiHasAnyAuthority="'ROLE_ADMIN'">Hello, admin user</h1>
 
-For example, the following text will only be displayed to users having one of the `ROLE_ADMIN` or `ROLE_USER` authorities:
+例如，以下文本仅显示给具有`ROLE_ADMIN`或`ROLE_USER`权限之一的用户：
 
     <h1 *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER']">Hello, dear user</h1>
 
-*Please note* that those directives only show or hide HTML components on the client-side, and that you also need to secure your code on the server-side!
+*请注意* 这些指令仅在前端显示或隐藏HTML组件，并且您还需要在服务器端保护代码！
 
 ## ng-jhipster库
 
-The ng-jhipster library is free and OSS, and available on [https://github.com/jhipster/ng-jhipster](https://github.com/jhipster/ng-jhipster).
+ng-jhipster库是免费和OSS的，可在[https://github.com/jhipster/ng-jhipster](https://github.com/jhipster/ng-jhipster)上获得。
 
-The ng-jhipster library contains utility functions and common components that are used by Angular 2+ applications. They include:
+ng-jhipster库包含Angular 2+应用程序使用的实用程序功能和通用组件。他们包括：
 
-- Validation directives
-- Internationalization components
-- Commonly-used pipes like capitalization, ordering and word truncation
-- Base64, date and pagination handling services
-- A notification system (see below)
+- 校验指令
+- 国际化组件
+- 常用管道，例如大写，排序和单词截断
+- Base64，日期和分页处理服务
+- 通知系统（见下文）
 
 ### 通知系统
 
-JHipster uses a custom notification system to send events from the server-side to the client-side, and has i18n-capable `JhiAlertComponent` and `JhiAlertErrorComponent` components which can be used throughout the generated applications.
+JHipster使用自定义通知系统将事件从服务器端发送到前端，并具有支持i18n的`JhiAlertComponent`和`JhiAlertErrorComponent`组件，这些组件可在整个生成的应用程序中使用。
 
-By default JHipster will show error notifications when there is an error caught from an HTTP response.
+默认情况下，当HTTP响应捕获到错误时，JHipster将显示错误通知。
 
-To show a custom notification or alert, use the below methods after injecting the `AlertService` to your controller, directive or service.
+要显示自定义通知或警报，请在将`AlertService`注入控制器，指令或服务后使用以下方法。
 
-The shorthand methods `success`, `info`, `warning` and `error` will have a default timeout of 5 seconds, which can be configured:
+简化方法`success`、`info`、`warning`和`error`的默认超时为5秒，可以被配置：
 
     this.alerts.push(
         this.alertService.addAlert(
@@ -161,17 +161,17 @@ The shorthand methods `success`, `info`, `warning` and `error` will have a defau
 
 ## 使用Angular CLI
 
-<div class="alert alert-info"><i>Info: </i>
+<div class="alert alert-info"><i>信息：</i>
 
-Angular CLI and JHipster can be used in parallel for development, and both have their own configuration files. By default, JHipster is using its own configuration when deploying applications or when using the CI-CD sub-generator.
+Angular CLI和JHipster可以并行用于开发，并且都有自己独立的配置文件。默认情况下，JHipster在部署应用程序或使用CI-CD子生成器时使用其自己的配置。
 
 </div>
 
-### 概述
+### 总览
 
-[Angular CLI](https://cli.angular.io/) is a tool to develop, scaffold and maintain Angular applications. JHipster generates the Angular CLI configuration file, so the Angular CLI workflows work with JHipster.
+[Angular CLI](https://cli.angular.io/)是用于开发，构建和维护Angular应用程序的工具。JHipster生成Angular CLI配置文件，因此Angular CLI工作流程可与JHipster一起使用。
 
-This integration is done by generating a `angular.json` file in the application root folder and adding its dependencies in the `package.json` file.
+通过在应用程序根文件夹中生成`angular.json`文件，并将其依赖项添加到`package.json`文件中来完成此集成。
 
 ### 用法
 
@@ -181,27 +181,27 @@ ng help
 
 ### 构建
 
-You should not use `ng build` to build your front-end, as JHipster has its own scripts. Check our ["using in development" documentation]({{ site.url }}/development/) and our ["using in production" documentation]({{ site.url }}/production/).
+您不应该使用`ng build`来构建前端，因为JHipster具有自己的脚本。查看我们的[开发使用文档]({{ site.url }}/development/)和[生产使用文档]({{ site.url }}/production/)。
 
-### 生成组件、指令、管道和服务
+### 生成组件，指令，管道和服务
 
-You can use the `ng generate` (or just `ng g`) command to generate Angular components:
+您可以使用`ng generate`（或仅`ng g`）命令生成Angular组件：
 
 ```bash
 ng generate component my-new-component
 ng g component my-new-component # using the alias
 
-# Components support relative path generation
-# Go to src/app/feature/ and run
+# 组件支持相对路径生成
+# 转到src/app/feature/并运行
 ng g component new-cmp
-# your component will be generated in src/app/feature/new-cmp
-# but if you were to run
+# 您的组件将在src/app/feature/new-cmp中生成
+# 但是如果你运行了
 ng g component ../newer-cmp
-# your component will be generated in src/app/newer-cmp
+# 您的组件将在src/app/newer-cmp中生成
 ```
-You can find all possible blueprints in the table below:
+您可以在下表中找到所有可能的蓝图：
 
-Scaffold  | Usage
+脚手架  | 用法
 ---       | ---
 [Component](https://github.com/angular/angular-cli/wiki/generate-component) | `ng g component my-new-component`
 [Directive](https://github.com/angular/angular-cli/wiki/generate-directive) | `ng g directive my-new-directive`
@@ -216,7 +216,7 @@ Scaffold  | Usage
 
 ### 测试
 
-For consistency purpose on JHipster application, tests execution are only available through the `npm` command:
+为了考虑JHipster应用程序上的一致性，只通过`npm`命令执行测试执行：
 
 ```bash
 npm test
@@ -224,26 +224,26 @@ npm test
 
 ### i18n
 
-JHipster is using the `ng2-translate` dependency for translation purpose. Angular CLI i18n is based on the default Angular i18n support, which is incompatible with JHipster.
+JHipster使用`ng2-translate`依赖项进行翻译。Angular CLI i18n基于默认的Angular i18n支持，该支持与JHipster不兼容。
 
-### 运行服务器
+### 运行服务
 
-If you prefer to use Angular CLI to develop you application, you can run your server directly by using its dedicated command.
+如果您更喜欢使用Angular CLI开发应用程序，则可以使用其专用命令直接运行服务器。
 
 ```bash
 ng serve
 ```
 
-By using it, it will compile your Angular application and allow you to access it on `http://localhost:4200`. However your backend will not be available from it by default.
+通过使用它，它将编译您的Angular应用程序，并允许您在`http://localhost:4200`上对其进行访问。但是，默认情况下您的后端不可用。
 
-To use your local backend server, use:
+要使用本地后端服务器，请使用：
 
 ```bash
 ng serve --proxy-conf proxy.conf.json
 ```
 
-You will then be able to access your API.
+然后，您将可以访问您的API。
 
 ### 结论
 
-For more information about the Angular CLI, please visit the official website [https://cli.angular.io/](https://cli.angular.io/)
+有关Angular CLI的更多信息，请访问官方网站[https://cli.angular.io/](https://cli.angular.io/)

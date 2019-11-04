@@ -6,63 +6,63 @@ title: Release 4.0.5
 JHipster release 4.0.5
 ==================
 
-What's new
+更新日志
 ----------
 
 This is the fifth patch release for JHipster 4.0.0.
 
 The main reason of this release is to add [this fix](https://github.com/jhipster/generator-jhipster/commit/5727c318b865d826adf377ba95909becf00f5395) which would made "prod" builds with JHipster v4.0.4 fail.
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A4.0.5+is%3Aclosed)__.
+一如既往, __[你可以在此处查看所有已关闭的工单与已接受合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A4.0.5+is%3Aclosed)__.
 
-How to upgrade
+更新指引
 ------------
 
-**Manual upgrades (works for JHipster 4.x applications)**
+**手动升级 (works for JHipster 4.x applications)**
 
-For a manual upgrade, first upgrade your version of JHipster with:
+选择手动升级, 需要先升级你的Jhipster版本:
 
 ```
 yarn global upgrade generator-jhipster
 ```
 
-If you have an existing project, it will still use the JHipster version with which it was generated.
-To upgrade your project, you must first delete its `node_modules` folder and then run:
+如果你已经有了一个项目, 将会继续使用当时项目生成的Jhipster版本.
+如果需要升级你的项目, 你需要先删除`node_modules`文件夹再运行:
 
 ```
 yo jhipster
 ```
 
-You can also update your project and all its entities by running
+更新你的项目和所有的实体类
 
 ```
 yo jhipster --with-entities
 ```
 
-You can also update your entities one-by-one by running again the entity sub-generator, for example if your entity is named _Foo_
+你也可以使用实体类子生成器挨个更新你的实体类, 例如你的实体类名字是_Foo_
 
 ```
 yo jhipster:entity Foo
 ```
 
-**Automatic upgrade only works for JHipster 3.x applications**
+**自动升级 only works for JHipster 3.x applications**
 
-For an automatic upgrade, use the [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/) on an existing application:
+在已存在的项目上使用[JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/)自动升级:
 
 ```
 yo jhipster:upgrade
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
 If the issue you have is an urgent bug or security issue, please:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)

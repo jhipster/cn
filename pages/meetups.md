@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 会议
+title: 聚会
 permalink: /meetups/
 redirect_from:
   - /meetups.html
@@ -9,35 +9,35 @@ sitemap:
     lastmod: 2017-05-15T00:00:00-00:00
 ---
 
-# <i class="fa fa-meetup "></i> JHipster 会议
+# <i class="fa fa-meetup "></i> JHipster聚会
 
-我们目前正在世界各地创建JHipster会议！
+我们目前正在世界各地创建JHipster聚会。
 
-- 如果你想创建自己的聚会，那很容易！只需在 [this Web page](https://github.com/jhipster/jhipster.github.io/blob/master/pages/meetups.md) 上执行拉请求，即可直接添加您的会议。
-- 会议没有规则：你可以在你想的时候安排会议，在你想的地方举行会议，邀请你想邀请的人。
-- JHipster团队将尽全力支持您：我们将在Twitter上提醒您，将您的活动放到主页上，等等。
+- 如果您想创建自己的聚会，非常简单！只需在[此网页上](https://github.com/jhipster/jhipster.github.io/blob/master/pages/meetups.md)执行Pull Request即可直接添加您的聚会。
+- 聚会没有规则：您可以在需要时安排聚会，在需要的地方举办聚会并邀请想要的人。
+- JHipster团队将竭尽全力为您提供支持：我们将在Twitter上转发您，将您的活动发布到我们的主页上，等等。
 
-## Existing meetups
+## 现有聚会
 
-**North America**
+**北美**
 
-- [New York, USA - JHipster meetup](https://www.meetup.com/JHipster-NYC/)
-- [Washington, USA - JHipster meetup](https://www.meetup.com/JHipster-DC/)
+- [美国纽约-JHipster聚会](https://www.meetup.com/JHipster-NYC/)
+- [美国华盛顿-JHipster聚会](https://www.meetup.com/JHipster-DC/)
 
-**Europe**
+**欧洲**
 
-- [Dublin, Ireland - JHipster meetup](https://www.meetup.com/JHipsterDublin/)
-- [Lyon, France - JHipster meetup](https://www.meetup.com/JHipster-Lyon/)
-- [Paris, France - JHipster meetup](https://www.meetup.com/JHipster-User-Group/)
-- [Zurich, Switzerland - JHipster meetup](https://www.meetup.com/JHipster/)
+- [爱尔兰都柏林-JHipster聚会](https://www.meetup.com/JHipsterDublin/)
+- [法国里昂-JHipster聚会](https://www.meetup.com/JHipster-Lyon/)
+- [法国巴黎-JHipster聚会](https://www.meetup.com/JHipster-User-Group/)
+- [瑞士苏黎世-JHipster聚会](https://www.meetup.com/JHipster/)
 
-**Oceania**
+**大洋洲**
 
-- [Melbourne, Australia - JHipster meetup](https://www.meetup.com/fr-FR/jHipster-Melbourne/)
+- [澳大利亚墨尔本-JHipster聚会](https://www.meetup.com/fr-FR/jHipster-Melbourne/)
 
-## Meetups being created
+## 正在创建聚会
 
-*Contact the team if you want to help creating one of those meetups*
+*如果您想帮助创建其中一个聚会，请与团队联系*
 
-- Amsterdam, Netherlands JHipster meetup
-- Brussels, Belgium JHipster meetup
+- 荷兰阿姆斯特丹JHipster聚会
+- 比利时布鲁塞尔JHipster聚会

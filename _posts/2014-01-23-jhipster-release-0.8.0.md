@@ -6,56 +6,56 @@ title: Release 0.8.0
 JHipster release 0.8.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-This is our biggest release ever.
+这是我们至今以来最大的一个更新.
 
-We have migrated everything to use [Spring Boot](http://projects.spring.io/spring-boot/) instead of "normal" Spring. This has caused a big number of changes:
+我们从"正常"的Spring完全迁移至[Spring Boot](http://projects.spring.io/spring-boot/). 所以带来了许多新变更:
 
-- To run the application you can either run the "Application" class from your IDE, or execute "mvn spring-boot:run". This runs Tomcat behind-the-scenes.
-- The configuration Java package has been renamed from "conf" to "config"
-- The configuration property files are now in Yaml format
-- The liquibase configuration is now in the src/main/resources/config/liquibase directory
+- 需要运行应用, 可以从你的IDE中运行"Application"类, 或者执行"mvn spring-boot:run". 底层使用Tomcat.
+- Java项目配置包名从"conf"重命名为"config"
+- Yaml格式配置文件
+- liquibase配置文件现在移到src/main/resources/config/liquibase目录
 
-And of course we updated all libraries to their latest versions!
+我们将所有库都已更新至最新版本!
 
-As Spring Boot is really new, we expect you have a few questions about this upgrade:
+Spring Boot是一门新技术, 希望大家谨慎升级:
 
-### What's good?
+### 好消息
 
-- Running the application from an IDE without Maven. It's faster (no need to launch Maven) and it's easier to run with a debugger
-- Less lines of configuration. It's complicated to compare as we also improved a lot of things, but we probably gained 200-300 lines of code
-- The Yaml configuration is much more easy to read and use
-- Spring Boot Actuator gives us a lot of new features, we plan to use more of them in the next releases
+- IDE可以脱离Maven运行应用. 更快(无需启动Maven)并且和debugger一起更容易运行
+- 更精简的配置文件. 很难量化我们的提升程度, 大约精简了200~300行代码
+- Yaml格式配置带来更好的可读性与使用便利
+- Spring Boot Actuator带来许多特性, 我们计划下次更新添加更多这些特性
 
-### What's bad?
+### 坏消息
 
-- We lose 2 seconds at start-up with Tomcat (no problem with Jetty): this looks like an issue with Tomcat, when no web.xml file exists
+- 使用Tomcat启动会比之前慢２秒(Jetty没有问题): 貌似是由于没有web.xml导致Tomcat出现这个问题
 
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

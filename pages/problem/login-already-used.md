@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - 登录名已被使用
+title: Error - login already used
 permalink: /problem/login-already-used/
 sitemap:
     priority: 0.7

@@ -11,42 +11,49 @@ sitemap:
 
 # <i class="fa fa-magic"></i> JHipster-UML
 
+请注意，该项目已过时，不再使用。
 
-Jhipster UML是一个Jhipster子项目，可以用作使用[entity sub-generator]({{ site.url }}/creating-an-entity/)的替代。 其理念是，使用可视化工具 [manage relationships]({{ site.url }}/managing-relationships/) 比使用经典的Yeoman问答更容易。
+替代方案，我们建议您使用此项目的JDL导出功能将XMI文件导出到可以使用的JDL文件，并通过JDL Studio建立实体模型。
 
-JHipster-UML项目 [available on GitHub](https://github.com/jhipster/jhipster-uml/),如果你喜欢这个项目，别忘了在Github上给我们一颗星星！
-
-以下是本页介绍的内容：
-
-1. [Introduction](#introduction)
-2. [Issues and bugs](#issues)
-3. [Installation](#install)
-4. [How to use JHipster-UML](#howtouse)  
-    4.1. [The UML file](#umlfile)  
-    4.2. [Use JHipster-UML](#usejuml)  
-    4.3. [What's generated](#whatsgenerated)  
-    4.4. [JHipster notes](#jhipsternotes)  
-    4.5. [Reserved words](#reservedwords)  
-5. [Examples](#examples)  
-    5.1. [Modelio](#modelioexample)  
-    5.2. [UML Designer](#umldesignerexample)  
-    5.3. [GenMyModel](#genmymodelexample)  
-    5.4. [Other editors](#othereditors)  
-    5.5. [Enumerations](#enumerationexamples)  
-    5.6. [Table names](#tablenames)  
-    5.7. [Required relationships](#requiredrels)  
-6. [Testing](#testing-juml)
-7. [Contributing: issues and enhancements](#contributing)  
-    7.1. [Parser modifications](#parsermodifications)
-8. [Annexes](#annexes)
+要了解有关JDL的更多信息，请前往[此处]({{ site.url }}/profiles/)。
 
 ***
 
-# <a name="introduction"></a>Introduction
+JHipster-UML是一个JHipster子项目，可以用来代替[实体子生成器]({{ site.url }}/creating-an-entity/)。这个想法是，使用视觉工具来[管理关系]({{ site.url }}/managing-relationships/)比使用经典的Yeoman问答更容易。
 
-JHipster-UML is an alternative to the usual Q&A as it offers you the possibility to use a UML editor to create a diagram that will be parsed by JHipster-UML.
+JHipster-UML项目 [可在GitHub上获得](https://github.com/jhipster/jhipster-uml/)，它是一个开源项目，类似JHipster（Apache 2.0许可证）。如果您喜欢这个项目，别忘了在GitHub上给我们加星！
 
-Here is a list of the editors we support:
+这是此页面上介绍的内容：
+
+1. [介绍](#introduction)
+2. [问题与错误](#issues)
+3. [安装](#install)
+4. [如何使用JHipster-UML](#howtouse)  
+    4.1. [UML文件](#umlfile)  
+    4.2. [使用JHipster-UML](#usejuml)  
+    4.3. [生成了什么](#whatsgenerated)  
+    4.4. [JHipster笔记](#jhipsternotes)  
+    4.5. [保留字](#reservedwords)  
+5. [示例](#examples)  
+    5.1. [Modelio](#modelioexample)  
+    5.2. [UML Designer](#umldesignerexample)  
+    5.3. [GenMyModel](#genmymodelexample)  
+    5.4. [其他编辑器](#othereditors)  
+    5.5. [枚举](#enumerationexamples)  
+    5.6. [表名](#tablenames)  
+    5.7. [必要的关系](#requiredrels)  
+6. [测试](#testing-juml)
+7. [贡献：问题和提升](#contributing)  
+    7.1. [解析器修改](#parsermodifications)
+8. [附录](#annexes)
+
+***
+
+# <a name="introduction"></a>介绍
+
+JHipster-UML是常用的问答式实体生成器替代方法，因为它使您可以使用UML编辑器创建将由JHipster-UML解析的图。
+
+这是我们支持的编辑器列表：
 
   - [Modelio](https://www.modeliosoft.com/);
   - [UML Designer](http://www.umldesigner.org/);
@@ -54,30 +61,29 @@ Here is a list of the editors we support:
 
 ***
 
-# <a name="issues"></a>Issues and bugs
+# <a name="issues"></a>问题与错误
 
-JHipster-UML is [available on GitHub](https://github.com/jhipster/jhipster-uml), and follows the same [contributing guidelines as JHipster](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
+JHipster-UML[在GitHub上可用](https://github.com/jhipster/jhipster-uml)，并[遵循与JHipster相同的贡献准则](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md)。
 
-Please use our project for submitting issues and Pull Requests:
+请使用我们的项目提交问题和Pull Requests：
 
 - [JHipster-UML issue tracker](https://github.com/jhipster/jhipster-uml/issues)
 - [JHipster-UML Pull Requests](https://github.com/jhipster/jhipster-uml/pulls)
 
-When submitting anything, you must be as precise as possible:
-  - **One posted issue must only have one problem** (or one demand/question);
-  - Pull requests are welcome, but the commits must be 'atomic' to really be understandable.
+提交任何内容时，您都必须尽可能精确：
+  - **一个isuue必须只包含一个问题**  (一个需求或一个问题);
+  - 欢迎Pull requests，但是提交日志必须简洁明了，具有’原子’可读性。
 
+请注意，使用JHipster-UML（或JHipster）可能会很麻烦（必须安装一些工具才能不会出现任何问题，真正使用Node环境）。如果您在Windows上遇到问题，此[链接](https://gist.github.com/nullivex/7115612)可能会有所帮助。
+    
+在Windows上可能遇到的另一个问题是[这个](https://stackoverflow.com/questions/30344858/node-script-executable-not-working-on-mac-env-node-r-no-such-file-or-directo#answer-30349952)。该链接提供了解决此问题的解决方案。
 
-Please note that using JHipster-UML (or JHipster) might be troublesome (one has to install some tools to really be able to use the Node environment without any issue). This [link](https://gist.github.com/nullivex/7115612) may help if you encounter an issue on Windows.
-
-Another issue that can be encountered on Windows is [this one](https://stackoverflow.com/questions/30344858/node-script-executable-not-working-on-mac-env-node-r-no-such-file-or-directo#answer-30349952). The link provides a solution to fix that if such a thing happens.
-
-Finally, an issue has been reported from a Windows user using Git Bash. The JHipster generator's questions (from InquirerJS) could not work (the user is stuck when answering the questions). You might want to use Powershell or another shell when using JHipster UML (or JHipster).
+最后，Windows用户使用Git Bash报告的一个问题。JHipster生成器的问题（来自InquirerJS），无法正常工作（用户在回答问题时陷入困境）。使用JHipster UML（或JHipster）时，可能要使用Powershell或其他Shell。
 
 ***
 
-# <a name="install"></a>Installation
-To install JHipster UML simply use the command:
+# <a name="install"></a>安装
+要安装JHipster UML，只需使用以下命令：
 
  ```
    npm install -g jhipster-uml
@@ -85,7 +91,7 @@ To install JHipster UML simply use the command:
    yarn global add jhipster-uml
  ```
 
-If, however, you don't want to install the latest version globally because it doesn't match your version of the generator (see below) or if you want it contained locally, use this command instead:
+但是，如果您不希望在全局安装最新版本，因为它与您的生成器版本不匹配（请参见下文），或者您希望仅在当前目录安装，请使用以下命令：
 
   ```
     npm install jhipster-uml --save-dev
@@ -93,84 +99,74 @@ If, however, you don't want to install the latest version globally because it do
     yarn add jhipster-uml --dev
   ```
 
-If you want the 'bleeding edge' (almost perfectly safe to use) version, you can clone our git repo from [our GitHub project](https://github.com/jhipster/jhipster-uml):
+如果您想要一个“前卫”的（几乎完全可以安全使用）版本，则可以从[我们GitHub项目](https://github.com/jhipster/jhipster-uml)中克隆git repo：
 
-  `git clone https://github.com/jhipster/jhipster-uml.git` for HTTPS
+  `git clone https://github.com/jhipster/jhipster-uml.git` 用于HTTPS
 
-  `git clone git@github.com:jhipster/jhipster-uml.git` for SSH
+  `git clone git@github.com:jhipster/jhipster-uml.git` 用于SSH
 
 
-JHipster UML is a tool that _can_ be used with the JHipster's generator. If you're using the generator before v3.0.0, then you must use JHipster UML v1.6.5 (latest patch release). Otherwise, using v2.0.0+ is the choice for v3.0.0+ of the generator.
+JHipster UML是 _可以_ 与JHipster的生成器一起使用的工具。如果您使用的是v3.0.0之前的生成器，则必须使用JHipster UML v1.6.5（最新修补版本）。否则，使用v2.0.0+是生成器v3.0.0+的选择。
 
 ***
 
-# <a name="howtouse"></a>How to use it
-JHipster-UML is quite easy to use, you only need a class diagram exported in XMI and JHipster-UML will parse it to create your entities.
+# <a name="howtouse"></a>如何使用它
+JHipster-UML非常易于使用，您只需要在XMI中导出一个类图，JHipster-UML就会对其进行解析以创建您的实体。
 
+## <a name="umlfile"></a>UML文件
 
-## <a name="umlfile"></a>The UML file
+类图应该对JHipster应用程序域的实体进行建模，因此存在一些限制，必须遵循这些方法。
 
-The class diagram should modelize the entities of your JHipster application domain, thus you have restrictions, you have to follow the methodology.
-
-
-### Entities
-Each entity is represented by a class, its fields are the class' attributes. An attribute must have a type supported by JHipster, otherwise it won't work. To have JHipster supported types like “BigDecimal”, “LocalDate”..., you can create a _PrimitiveType_ or a _DataType_ for it.
-You can look at the tables with all the types supported by JHipster and the validations you can use for each [here](#annexes).
+### 实体
+每个实体都由一个类表示，其字段是该类的属性。属性必须具有JHipster支持的类型，否则它将不起作用。要使JHipster支持“BigDecimal”，“LocalDate”…等类型，可以为其创建 _PrimitiveType_ 或 _DataType_。您可以在[此处](#annexes)查看具有JHipster支持的所有类型的表格以及可用于每种类型的验证方式。
 
 ![Book Entity]({{ site.url }}/images/jhipsteruml_book_datatype.png)
 
-Here is an example of a properly created class for JHipster. We have the attributes _publicationDate_ and price set with the types _BigDecimal_ and _LocalDate_ we created as _DataType._
+这是为JHipster正确创建的类的示例。具有属性 _publicationDate_ 和 _price_，它们的类型为 _BigDecimal_ 和 _LocalDate_，我们将其创建为 _DataType。_
+请注意，您不需要将类型名称大写（**除了诸如BigDecimal**，JHipster-UML的组合名称大写简单名称）之外。
 
-Note that you don't need to capitalize type names (**except for composed names like BigDecimal**, JHipster-UML capitalizes simple names).
+### 关系
+我们仅使用JHipster中的示例来展示如何使用编辑器。
+请注意，我们**仅**支持[关系管理]({{ site.url }}/managing-relationships/)页面中列出的关系。
 
-
-### Relationships
-We just use the examples from JHipster in order to show how to do it with an editor.
-Please note that we **only** support the relationships listed in the [Managing relationships]({{ site.url }}/managing-relationships/) page.
-
-
-#### One-to-One
+#### 一对一
 ![One-to-One]({{ site.url }}/images/jhipsteruml_bi_oto.png)
 
-Here, we have a bidirectional one-to-one relationship between Driver and Car, with Driver as the owner of the relationship.
+在这里，我们在Driver和Car之间存在双向一对一关系，其中驾驶员为该关系的所有者。
 
-If you're looking for a unidirectional relationship:
+如果您正在寻找单向关系：
 
 ![One-to-One2]({{ site.url }}/images/jhipsteruml_uni_oto.png)
 
-Notice that in order to achieve a unidirectional relationship we just removed the `citizen` label so that `Passport` doesn't have it.
+请注意，为了实现单向关系，我们只是删除了`citizen`标签，以便`Passport`没有包含它。
 
-
-#### One-to-Many
+#### 一对多
 ![One-to-Many]({{ site.url }}/images/jhipsteruml_bi_otm.png)
 
-In this bidirectional relationship, an Owner can have many cars, and a Car can have only one owner.
+在这种双向关系中，所有者可以拥有许多汽车，而一辆汽车只能具有一个所有者。
 
-Unidirectional relationships for One-to-Many relationships are not (yet) supported by JHipster (see [this]({{ site.url }}/managing-relationships/#3) page for more information about this).
-This is an example of such an association:
+JHipster尚不支持一对多关系的单向关系（有关此信息，请参阅[此]({{ site.url }}/managing-relationships/#3页面）。这是这种关联的一个示例：
 
 ![One-to-Many2]({{ site.url }}/images/jhipsteruml_uni_otm.png)
 
 
-#### Many-to-One
+#### 多对一
 
-As showed previously, the equivalent of a One-to-Many relationship is a Many-to-One:
+如先前所示，一对多关系的等效关系是多对一：
 
 ![One-to-Many2]({{ site.url }}/images/jhipsteruml_uni_mto.png)
 
-Now the cars know their owner, but not the opposite.
+现在，汽车知道了它们的所有者，但相反却不可以。
 
-
-#### Many-to-Many
+#### 多对多
 ![Many-to-Many]({{ site.url }}/images/jhipsteruml_bi_mtm.png)
 
-Here, we have a many-to-many relationship between Car (the owner) and Driver.
+在这里，我们在车（所有者）和驾驶员之间建立了多对多关系。
 
+#### 声明要用于在Angular中显示关系的字段
+为此，必须在注入的字段名称之后的`(``)`之间添加字段名称。
 
-#### Declare the field you want to use to display a relationship in Angular
-To do that you must add the field name between `(``)` after the injected field name.
-
-In a One-to-Many relationship you can add it in the 'Many' side of the relationship:
+在一对多关系中，您可以将其添加到关系的'Many'侧：
 
 - UML
 
@@ -182,7 +178,7 @@ In a One-to-Many relationship you can add it in the 'Many' side of the relations
         One{many} to Many{one(<otherEntityField>)}
       }
 
-In a Many-to-Many relationship you can add it in the owner side of the entity:
+在多对多关系中，您可以将其添加到实体的所有者侧：
 
 - UML
 
@@ -195,440 +191,423 @@ In a Many-to-Many relationship you can add it in the owner side of the entity:
       }
 
 
-#### Reflexivity cases
+#### 自反案例
 ![Reflexivity]({{ site.url }}/images/jhipsteruml_reflexivity.png)
 
-As you can see, there are 3 types of reflexivity. JHipster-UML only supports the first two (one-to-one and one-to-many). The many-to-many case is **not** supported because:
+如您所见，自反性有3种类型。JHipster-UML仅支持前两个（一对一和一对多）。**不**支持多对多情况，因为：
 
-  - It can lead to over-complexified and wrong models (the same effect can be achieved more easily);
+  - 这可能导致模型过于复杂和错误（可以更轻松地实现相同的效果）；
+  - JHipster不支持（这是一件好事）。
 
-  - JHipster doesn't support it (this is a good thing);
 
+### 一个完整的例子
+我们使用[此处](http://docs.oracle.com/cd/B28359_01/server.111/b28328/diagrams.htm#G5482)提供的Oracle HR示例中的图表。
 
-### A complete example
-We use a diagram from the Oracle HR example available [here](http://docs.oracle.com/cd/B28359_01/server.111/b28328/diagrams.htm#G5482).
-
-Here's a screenshot of such a diagram (from Modelio):  
+以下是此图表的屏幕截图（来自Modelio）：
 ![HR UML diagram]({{ site.url }}/images/jhipsteruml_overviewdiagram.png)
 
-As you can see, we changed it as to make it a bit more interesting.
-JHipster can generate entities and associations between them (one-to-one, one-to-many, etc.), and in this example we added every type of association (even the reflexive and the inheritance). JHipster doesn't support inheritance yet (but reflexivity is supported by JHipster, with a warning), but we decided to include it in the example so as to have a solid base to work with.
+如您所见，我们对其进行了更改，以使其更加有趣。
+JHipster可以在它们之间生成实体和关联（一对一，一对多等），并且在此示例中，我们添加了每种关联类型（甚至是自反和继承）。JHipster尚不支持继承（但JHipster支持自反，但会警告），但我们决定将其包括在示例中，以便具有坚实的基础。
 
+## <a name="usejuml"></a>使用JHipster-UML
 
-## <a name="usejuml"></a>Use JHipster-UML
+设置好JHipster应用程序并在UML编辑器中创建类图后，请按照以下步骤操作：
 
-Once you have your JHipster application set up and your class diagram in a UML editor, follow these steps:
+- 第1步-将类图导出为XMI文件格式
 
-- step 1 - export your class diagram to the XMI file format
-
-- step 2 - in your JHipster application root folder, execute the command
+- 步骤2-在您的JHipster应用程序根文件夹中，执行命令
 
  `jhipster-uml <your_file.xmi>`
 
-Note that you don't need to supply the database type (sql, mongodb, or cassandra), as JHipster-UML detects the type for you (from the _.yo-rc.json_ file).
+请注意，您不需要提供数据库类型（sql，mongodb或cassandra），因为JHipster-UML会从 _.yo-rc.json_ 文件中为您检测到该类型。
 
-If, however, you wish to execute JHipster-UML outside a JHipster app, you need to pass an extra argument: the database type name.
-Here is the command to execute:
+但是，如果您希望在JHipster应用程序外部执行JHipster-UML，则需要传递一个额外的参数：数据库类型名称。
+这是要执行的命令：
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)]`
 
-The JHipster DTOs can be generated too, simply pass the `--dto` arg to enable this feature.
+也可以生成JHipster DTO，只需传递`--dto`参数即可启用此功能。
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)] [--dto]`
 
-You can choose the pagination for your entities using `--paginate`.
+您可以使用`--paginate`为实体选择分页。
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)] [--paginate]`
 
-Finally, you can choose the service for your entities using `--service`.
+最后，您可以使用`--service`为您的实体选择服务。
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)] [--service]`
 
-**Please note that using the `paginate` option and not selecting any entity to generate the pagination for cancels your choice of using this option.**
+**请注意，使用`paginate`选项而不选择任何实体来生成分页，将取消您选择使用此选项的选择。**
 
-Finally, if you need help, there's a command for that too:
+最后，如果您需要帮助，也可以使用以下命令：
 
  `jhipster-uml --help`
 
 
-* step 3 - that's it!
+* 步骤3-就是这样！
 
 
-**Note: If you want to use the classes and methods available, the preferred entry point of JHipster-UML is the ParserFactory (so that you don't open the file, read it, find the root element, etc.).**
+**注意：如果要使用可用的类和方法，则JHipster-UML的首选入口点是ParserFactory（这样就不必打开，读取文件，查找根元素等）。**
 
-## <a name="jumlfile"></a>JHipster-UML file
+## <a name="jumlfile"></a>JHipster-UML文件
 
-JHipster-UML can be configured by the command line and / or by a JSON based configuration file, the `jumlfile`.
-The options described in the help can be used in the both but the commande line take precedence over the `jumlfile`.
+可以通过命令行和/或基于JSON的配置文件`jumlfile`来配置JHipster-UML。
+帮助中描述的选项可以在两者中使用，但是命令行优先于`jumlfile`。
 
-### A concrete example
+### 一个具体的例子
 
-jumlfile content:
-```javascript
+jumlfile内容：
+```json
 {
   "db": "sql",
   "force": "true"
 }
 ```
-Call:
+使用:
 ```
 jhipster-uml --no-force
 ```
-You Will have the following executed options:
+您将具有以下执行的选项：
 - db : sql
 - force : false (without force)
 
 
-## <a name="whatsgenerated"></a>What's generated
+## <a name="whatsgenerated"></a>发生了什么
 
-After executing JHipster-UML, the _.jhipster_ folder will be created (if it didn't exist before) and filled with the entities present in the XMI file in the JSON format.
+执行JHipster-UML后，将创建 _.jhipster_ 文件夹（如果以前不存在），并以JSON格式填充XMI文件中存在的实体。
 
-Please note that one entity may, at least, not be generated: the User entity. It is actually scaffolded by JHipster when creating a new app (and a warning message is displayed by JHipster-UML).
+请注意，至少可能不会生成一个实体：用户实体。创建新应用程序时，它实际上是由JHipster搭建的（JHipster-UML会显示警告消息）。
 
-Next, it's pretty straightforward: just run your app!
+接下来，这非常简单：只需运行您的应用程序即可！
 
+## <a name="jhipsternotes"></a>JHipster笔记
 
-## <a name="jhipsternotes"></a>JHipster notes
+JHipster是一个很棒的脚手架工具，具有许多约定，使用JHipster-UML生成实体时，其中一些值得一提：
 
-JHipster is a great scaffolding tool with many conventions, some of them are worth mentioning when generating entities with JHipster-UML:
+  - 您无需在实体中使用`id`字段，因为JHipster默认会生成一个ID字段，并且JHipster-UML会在检测到任何ID字段时将其删除；
+  - 您不必在关系中使用复数形式，JHipster会在需要时添加。例如，如果实体A和实体B之间存在多对多关系，那么您不必将关系的结尾命名为`as`或`bs`，因为JHipster会自动为您做到这一点。
 
-  - You don't have to use an `id` field in your entities because JHipster generates one by default, and JHipster-UML removes any field if it is detected as an ID;
-  - You don't have to use the plural form in your relationships, JHipster adds an `s` when needed. For instance, if there's a many-to-many relationship between entity A and entity B, you don't have to name the relationship's end `as` or `bs` because JHipster will do that for you;
+## <a name="reservedwords"></a>保留字
 
+JHipster维护（*在某些条件下*）禁止的单词列表。
+例如，如果您想为您的应用程序生成实体，并且此应用程序使用Cassandra，则不能在字段名称或表名称中使用`BATCH`字样。
 
-## <a name="reservedwords"></a>Reserved words
-
-JHipster maintains a list of forbidden (*under some conditions*) words.
-For instance, if you want to generate entities for your app, and if this app uses Cassandra, you can't use the words `BATCH` in either a field name or a table name.
-
-As of v2.0.0, JHipster UML detects such words and immediately throws an exception if it encounters such a case. However, JHipster UML can't assert with 100% accuracy when a reserved word can or can't be used. That's why it warns the user with a yellow message when there could be a risk of using such a keyword.
-
+从v2.0.0版本开始，JHipster UML会检测到此类单词，并在遇到这种情况时立即引发异常。但是，当保留字不能使用或不能使用时，JHipster UML不能以100％的准确度检测。因此，当存在使用此类关键字的风险时，它会向用户发出黄色消息警告。
 
 ***
 
-# <a name="examples"></a>Examples
+# <a name="examples"></a>范例
 
-Each editor will be discussed here, so that you know how to get a good XMI file.
+这里将讨论每个编辑器，以便您知道如何获取一个优秀的XMI文件。
 
-**Note : JHipster-UML can detect faulty XMI files, it will display the first error it finds and exit right away (fail-fast behavior).**
+**注意：JHipster-UML可以检测到错误的XMI文件，它将显示找到的第一个错误并立即退出（故障快速行为）。**
 
-In JHipster-UML, each editor has been tested with the Oracle example. If you wish to see the examples in a "dummy project", you just have to download these files for each editor, and test JHipster and JHipster-UML:
-  - For Modelio: [modelio.xmi](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/modelio.xmi);
-  - For UML Designer: [umldesigner.uml](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml);
-  - For GenMyModel: [genmymodel_evolve.xmi](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/genmymodel_evolve.xmi).
+在JHipster-UML中，每个编辑器均已通过Oracle示例进行了测试。如果您希望在"dummy project"中看到示例，则只需为每个编辑器下载这些文件，然后测试JHipster和JHipster-UML：
+
+  - 使用Modelio: [modelio.xmi](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/modelio.xmi);
+  - 使用UML Designer: [umldesigner.uml](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml);
+  - 使用GenMyModel: [genmymodel_evolve.xmi](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/genmymodel_evolve.xmi).
 
 
 ## <a name="modelioexample"></a>Modelio
 
-**Note for Mac users: Modelio is behaving weirdly on Mac (the GUI), it may be caused by the graphics and window manager on Mac, as it has not been diagnosed on Linux Ubuntu. It works, but the interaction may not be pleasant.**
+**Mac用户注意：Modelio在Mac（GUI）上表现异常，可能是由于Mac上的图形和窗口管理器引起的，因为尚未在Linux Ubuntu上对其进行诊断。它可以工作，但是互动体验可能并不愉快。**
 
-**Important version notes:**  
-  - Modelio v3.3 is tested and working, however a bug exists in v3.4 preventing the user from exporting the diagram. This bug is fixed as of v3.4.1.
-  - Modelio v3.5.X introduces a bug when dealing with bidirectional Many-to-Many relationships (the error when JHipster UML parses the XMI is `Cannot read property '0' of undefined`). This problem seems to have been fixed in later version (v3.6.X).
+**重要版本说明：**  
+  - Modelio v3.3已通过测试并可以正常工作，但是v3.4中存在一个错误，阻止用户导出图表。自v3.4.1起，此错误已修复。
+  - Modelio v3.5.X在处理双向多对多关系时引入了一个错误（JHipster UML解析XMI时的错误是`Cannot read property '0' of undefined`）。此问题似乎已在更高版本（v3.6.X）中修复。
 
+可在[此处](https://www.modelio.org/)免费下载Modelio。如果要下载任何3.3+版本，请确保您具有Java 8环境（否则将无法正常运行）。
 
-Modelio can be downloaded for free [here](https://www.modelio.org/). Make sure you have Java 8 if you're downloading any of the 3.3+ versions (it won't work otherwise).
+示例文件在[这里](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/modelio.xmi)。
 
-The example file is [here](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/modelio.xmi).
-
-Once launched, create a project and you'll be seeing this view:
+启动后，创建一个项目，您将看到以下视图：
 
 ![Empty Modelio project]({{ site.url }}/images/jhipsteruml_modelio_1.png)
 
-Notice the left panel entitled 'Class Model'. You only need the 'Class', 'Attributes', 'Aggregation', 'Composition' and 'Data Type' objects.
-You can already guess why you need the first 2. The 'Aggregation' object is used to defined aggregations:
-B is aggregated to A means that A has 0, 1 or more (n) instances of B. A doesn't create (and destroy) B instances.
-Composition means that if A is composed of B (0, 1, or n instances), then it creates, manages and destroys B instances.
+请注意左侧面板上的'Class Model'。您只需要'Class', 'Attributes', 'Aggregation', 'Composition'和'Data Type'对象。
+您已经猜到了为什么需要第一个2。'Aggregation'对象用于定义聚合：B聚合到A意味着A具有0、1或更多（n）个B实例。A不创建（并且销毁）B实例。
+组合意味着如果A由B（0、1或n个实例）组成，那么它将创建，管理和销毁B实例。
 
-You can use either of them, the parser will just see the two as associations anyway.
+您可以使用它们中的任何一个，无论如何，解析器只会将两者视为关联。
 
-In both situations, cardinalities and association names are important.
+在两种情况下，基数名和关联名都很重要。
 
+最后，'Data Types'对象使您可以创建自定义类型（M​​odelio不建议使用的类型），例如`BigDecimal`或`LocalDate`。
 
-Finally, 'Data Types' objects enables you to create custom types (types that are not proposed by Modelio), like `BigDecimal`, or `LocalDate`.
-
-In this example, we'll explain how to connect two classes:
+在此示例中，我们将说明如何连接两个类：
 
 ![Modelio composition example]({{ site.url }}/images/jhipsteruml_modelio_2.png)
 
-As you can see, employee has a job (but also can have no job at all). The parser will notice a few things:
+如您所见，员工有工作（但也根本没有工作）。解析器将注意以下几点：
 
-  - Two classes (Employee and Job);
+  - 两个类（员工和工作）；
+  - 两个字段（电子邮件和标题），它们的类型，它们属于哪个类（每个类都包含其字段）。没有考虑它们的可见性；
+  - 将它们链接起来的关联以及关联的**方向**（很重要！）；
+  - 基数（1和0..1）表示一个雇员可以拥有一份工作（0或1），并且该工作不能由两名雇员共享（在此示例中，只有一名雇员）；
+  - 有一个**注入的字段**：在员工中的job。
+    
+这种关联称为一对一。返回上几节以查看其他类型的关联。
 
-  - Two fields (email and title), their type, which class they belong (each class contains its fields). Their visibility is not taken into account;
+Modelio支持约束。双击一个字段，转到'Notes and constraints'选项卡，第一个图标应为'Add a constraint'，然后选择'Constraint'，双击约束，并为其命名（它应该是JHipster约束之一）。对于约束值，请在'Body'字段中输入。
 
-  - The association linking them and the **direction** of the association (it matters!);
-
-  - The cardinalities (1 and 0..1) mean that an employee can have a job (0 or 1), and a job isn't shared by two employees (only one, for this example's sake);
-
-  - There is one **injected field**: job, in employee.
-
-This association is called a one-to-one. Go back a few sections to see the other types of associations.
-
-Modelio supports constraints. Double-click on a field, go to the 'Notes and constraints' tab, the first icon should then be 'Add a constraint', then select 'Constraint', double-click on the constraint, and give it a name (it should be one of the JHipster constraints). For the constraint value, enter it the 'Body' field.
-
-Finally, once your diagram is finished, you just have to export it.
+最后，完成图后，只需导出即可。
 
 ![Export to XMI Modelio]({{ site.url }}/images/jhipsteruml_modelio_3.png)
 
 Check the Model perspective, once you locate your project, get down one level and right click the last element (you lower-cased project's name), XMI, Export XMI. A window should pop up, select the output path, change the compatibility to OMG UML2.4.1, leave the extension to XMI and you're ready to go.
+检查模型透视图，找到项目后，进入下一层并右键单击最后一个元素（您的小写项目名称），XMI，导出XMI。应该会弹出一个窗口，选择输出路径，将兼容性更改为OMG UML2.4.1，将扩展名保留为XMI，您就可以开始了。
 
+### 注释
 
-### Commenting
-
-To comment a class (or an attribute), just double-click on the element, select the `Notes and constraints` tab, and add a `note`.
+要注释一个类（或属性），只需双击该元素，选择`Notes and constraints`选项卡，然后添加`note`。
 
 ![Modelio, commenting]({{ site.url }}/images/jhipsteruml_modelio_commenting.png)
 
-Please note that commenting relationships is not possible with this editor.
-
+请注意，此编辑器无法注解关系。
 
 ## <a name="umldesignerexample"></a>UML Designer
 
-UML Designer can be downloaded [here](http://www.umldesigner.org/).
-It works the same way as Eclipse.
-To create an empty project, just click on File -> New -> Modeling Project. Enter the name, and validate.
-If no file.uml is created, right-click on your project, and New -> Other -> UML Designer -> UML Model, and enter any name you want.
+UML Designer可以在[这里](http://www.umldesigner.org/)下载。
+它的工作方式与Eclipse相同。
+要创建一个空项目，只需单击File-> New-> Modeling Project。输入名称，然后验证。
+如果未创建file.uml，请右键单击您的项目，然后单击New -> Other -> UML Designer -> UML Model，然后输入所需的任何名称。
 
-The example XMI file is available [here](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml).
+示例XMI文件在[此处](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml)可用。
 
-You'll then be presented by a view like this one:
+然后，您将看到类似这样的视图：
 
 ![UML Designer, dashboard]({{ site.url }}/images/jhipsteruml_umldesigner_1.png)
 
-Double-click on 'Class diagram' under 'Design' category.
-You can now see on the right the 'Palette'. You only need these objects: 'Class', 'PrimitiveType', 'DataType' (both under 'Enumeration'), 'Composition' and 'Aggregation' (both under 'Association').
+双击'Design'类别下的'Class diagram'。
+现在，您可以在右侧看到'Palette'。您只需要这些对象：'Class', 'PrimitiveType', 'DataType'（均在'Enumeration'下），'Composition'和'Aggregation'（均在'Association'下）。
 
-With UML Designer, you can create custom types by either using a DataType or a PrimitiveType (the parser recognizes both).
+使用UML Designer，您可以使用DataType或PrimitiveType（解析器识别两者）来创建自定义类型。
 
-Here is an example using this editor:
+这是使用此编辑器的示例：
 
 ![Employee and Job with UML Designer]({{ site.url }}/images/jhipsteruml_umldesigner_2.png)
 
-To create attributes, just double-click on the class, and add your attribute. You can import types by right-clicking somewhere on the diagram (in the white-space), then import Primitive Types, then select UML and Java.
-This will spare you the _chore_ of creating types manually (with DataTypes or PrimitiveTypes).
+要创建属性，只需双击该类，然后添加您的属性。您可以通过右键单击图上的某个地方（在空白处）来导入类型，然后导入原始类型，然后选择UML和Java。
+这将省去手动创建类型（使用DataTypes或PrimitiveTypes）的 _繁琐_ 工作。
 
-Unfortunately, UML Designer doesn't support constraints yet.
+不幸的消息是，UML Designer还不支持约束。
 
-One of the nice things UML Designer provides is that you don't need to export to XMI, just go to your workspace, and you'll see that the saved project is already in the right format, so that's pretty cool.
+UML Designer提供的好处之一是，您无需导出到XMI，只需转到工作区，您将看到保存的项目已经采用了正确的格式，因此非常酷。
 
-## Unidirectional relationships
+## 单向关系
 
-This editor supports unidirectional relationships. To do that, create the relationship you want between your two classes, double-click on the relationship and tweak it.
+该编辑器支持单向关系。为此，请在两个类之间创建所需的关系，双击该关系并进行调整。
 
+### 注释
 
-### Commenting
-
-Commenting is possible for classes and attributes (not relationships), and achieving this is pretty easy: click on an element, and select `comment` to add your own.
+可以对类和属性（而不是关系）进行注释，并且很容易做到：单击一个元素，然后选择`comment`以添加自己的注释。
 
 ![Uml Designer, commenting]({{ site.url }}/images/jhipsteruml_umldesigner_commenting.png)
 
 
 ## <a name="genmymodelexample"></a>GenMyModel
 
-GenMyModel is an in-browser UML editor that can be found [here](https://dashboard.genmymodel.com/). You can use it for free but with restrictions, we hope that this editor will enable users to fiddle around with JHipster-UML without the constraint of downloading an application.
+GenMyModel是一个基于浏览器访问的UML编辑器，可以在[这里](https://dashboard.genmymodel.com/)找到。您可以免费使用它，但有限制，我们希望该编辑器将使用户能够轻松使用JHipster-UML，而无需下载应用程序。
 
-The XMI file example is located [here](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/genmymodel_evolve.xmi).
+XMI文件示例位于[此处](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/genmymodel_evolve.xmi)。
 
-After signing up go in Projects ->  New Projects, give a it name, in Model Type choose UML, in default diagram choose Class Diagram and then click on Create project.
-Then this screen will be displayed:
+注册后，转到Projects ->  New Projects，给它一个名称，在Model Type中选择UML，在默认图中选择Diagram，然后单击Create project。
+然后将显示此屏幕：
 
 ![GenMyModel dashbord]({{ site.url }}/images/jhipsteruml_genmymodel_empty_diagram.png)
 
-On the panel on the left of the grid, is all the elements possible to make a diagram. We will need only the elements 'Class', 'DataType', 'Attribute', 'Aggregation' and 'Composition'. You can use either 'Aggregation' or 'Composition', the parser will only see the association between two classes and its cardinality.
+在网格左侧的面板上，显示了所有可以绘制图表的元素。我们只需要元素'Class', 'DataType', 'Attribute', 'Aggregation'和'Composition'。您可以使用'Aggregation'或'Composition'，解析器将仅看到两个类之间的关联及其基数。
 
-Here is an example on how to create two entities with a one-to-many relationship between them and the declaration of the JHipster types through 'DataType':
+这是一个示例，说明如何创建两个实体，它们之间具有一对多的关系，并通过'DataType'声明JHipster类型：
 
 ![GenMyModel diagram]({{ site.url }}/images/jhipsteruml_genmymodel_relation.png)
 
-The parser will notice a few things:
+解析器将注意以下几点：
 
-  - Two classes, 'Author' and 'Book'.
+  - 两个类, 'Author'和'Book'.
 
-  - Two DataTypes, 'LocalDate' and 'BigDecimal'
+  - 两种数据类型, 'LocalDate'和'BigDecimal'.
 
-  - Attributes, you can set the type with the default ones, or with the declared DataTypes.
+  - 属性，您可以使用默认属性或声明的DataTypes设置类型。
 
-  - An Aggregation between 'Author' and 'Book' (the direction matters!).
+  - 'Author'和'Book'之间的聚合关系（方向很重要！）。
 
-  - Two injected field 'author' in Book and 'book' in Author.
+  - 两个注入字段，Book中的'author'和Author的'book'。
 
-  - The cardinalities (1 and 0..\*) mean that a Book can have one author and an Author can have several books, which correspond to a one-to-many relationship between Author and Book.
+  - 基数（1和0..\*）表示一本书可以有一个作者，而一个作者可以有几本书，这对应于作者和图书之间的一对多关系。
 
-Unfortunately, you can not create custom constraints for attributes to fit the JHipster ones.
+不幸的是，您不能为属性创建适合JHipster的自定义约束。
 
-Once the diagram is done, you can export it to XMI. To do it, simply click on Tool -> Export as UML (XMI)
+完成类图后，可以将其导出到XMI。为此，只需单击Tool -> Export as UML (XMI)
 
+### 单向关系
 
-### Unidirectional relationships
+在GenMyModel中，创建单向关系非常简单：只需从不需要的字段中删除该名称，就可以了。
 
-In GenMyModel, creating unidirectional relationships is pretty easy: just remove the name from the field you don't want and you're good to go.
-
-For instance, take this simple case:
+例如，考虑以下简单情况：
 
 ![GenMyModel, unidirectional]({{ site.url }}/images/jhipsteruml_genmymodel_unidirectional.png)
 
-Here, `MyClass` will have a `myClass2` attribute, but `MyClass2` won't have a `myClass` field.
+在这里，`MyClass`将具有`myClass2`属性，但`MyClass2`将没有`myClass`字段。
 
+### 注释
 
-### Commenting
+注释可用于类，属性和关系字段。
 
-Commenting is available for classes, attributes and relationship fields.
-
-Just click on an element and write a comment in the description field.
+只需单击一个元素，然后在描述字段中写一条注释即可。
 
 ![GenMyModel, commenting]({{ site.url }}/images/jhipsteruml_genmymodel_commenting.png)
 
 
-## <a name="#othereditors"></a> Other editors
+## <a name="#othereditors"></a> 其他编辑器
 
 ### Sparx EA
 
-Support for dealing with this editor has been added by Guillaume Finance.
-Here is the [repo](https://github.com/guillaumefinance/MDG-Sparx-EA-UML-JHipster), and you can read the presentation [here](http://www.umlchannel.com/en/enterprise-architect/item/204-mdg-viseo-ea-uml-to-jhipster-generator-jdl-uml-model-sparx-enterprise-architect).
+Guillaume Finance已添加了与该编辑器对接的支持。这是[仓库](https://github.com/guillaumefinance/MDG-Sparx-EA-UML-JHipster)，您可以在[此处](http://www.umlchannel.com/en/enterprise-architect/item/204-mdg-viseo-ea-uml-to-jhipster-generator-jdl-uml-model-sparx-enterprise-architect)阅读演示。
 
+## <a name="enumerationexamples"></a>列举
 
-## <a name="enumerationexamples"></a>Enumerations
-
-JHipster and JHipster UML support both support enumerations.
-Here's how you define them:
-  - For Modelio, drag and drop the `Enumeration` object and place it somewhere. Finally, add the `Enumeration Literal` object to the enum to add it;
+JHipster和JHipster UML都支持枚举。
+您如何定义它们：
+  - 对于Modelio，将`Enumeration`对象拖放到某处。最后，将`Enumeration Literal`对象添加到枚举中以将其添加；
   - For UML Designer, there is the `Enumeration` object that can be placed and used. However, the literal is not called `Enumeration Literal` but just `Literal`;
-  - GenMyModel possess the objects needed: `Enum` and `Enum Literal` in the main object panel (on the left hand side of the screen).
+  - 对于UML Designer，存在可以放置和使用的`Enumeration`对象。但是，literal不被称为`Enumeration Literal`，而只是`Literal`。
+  - GenMyModel拥有所需的对象：主对象面板（在屏幕的左侧）中的`Enum`和`Enum Literal`。
+  
+## <a name="tablenames"></a>表名
 
-## <a name="tablenames"></a>Table names
+从v1.6.2开始，现在可以为实体指定表名。
 
-Since v1.6.2, it is now possible to specify table names for entities.
-
-To do that, one just has to specify the table name along with the class name like that:
+为此，只需指定表名以及类似的类名即可：
 
 ![tablenameimage](http://i.imgur.com/ECdb1bx.png)
 
-The convention `<ENTITY_NAME>\s*(<TABLE_NAME>)` is universal no matter the editor.
+该命名规则`<ENTITY_NAME>\s*(<TABLE_NAME>)`是通用的，与编辑器无关。
 
-However, if you don't want to pick a special table name, you can just write the class name. JHipster UML will take care of converting it to an appropriate table name. For instance, if you class name is `MyClass`, then your table name would be `my_class`.
+但是，如果您不想选择特殊的表名，则只需编写类名。JHipster UML将负责将其转换为适当的表名。例如，如果您的类名是`MyClass`，则表名将是`my_class`。
 
-Note that this feature is available for UML editors since v1.6.2.
+请注意，自v1.6.2起，此功能可用于UML编辑器。
 
-## <a name="requiredrels"></a>Required relationships
+## <a name="requiredrels"></a>必要的关系
 
-As of v2.0.0, required relationships are possible to make.
-To specify one, just make sure the end of the relationship to make required isn't "0" ("1", or "*" will do the trick).
-To see an example of that, just remember the complete HR example from Oracle, and notice that the JobHistory class has 3 required relationships.
+从v2.0.0开始，可以建立所需的关系。
+要指定一个，只需确保需要建立的关系的结尾不是"0"（"1"或"*"即可解决问题）。
+要查看其中的一个示例，只需记住Oracle的完整HR示例，并注意JobHistory类具有3个必需的关系。
 
 ***
 
-# <a name="testing-juml"></a>Testing JHipster-UML
+# <a name="testing-juml"></a>测试JHipster UML
 
-The tests are available in the test folder and can be run via `npm test`.
-We use Mocha for testing (along with chai and expect from chai).
+这些测试位于test文件夹中，可以通过`npm test`运行。我们使用Mocha进行测试（使用chai和排除chai）。
 
 If you want, an alternative command to run the tests, or run only the tests you want, is: `mocha`.
 Please note that you need to be in the root directory for this command to work, and you also may need to install globally mocha with `npm install -g mocha` (or just use the file in the node_modules folder, which is available to you provided you do `npm install` in JHipster-UML's directory).
 If, however, you don't want to install everything globally, just do:
-  - `npm install` to install the mocha dependency,
-  - `./node_modules/mocha/bin/mocha` to run the tests, please note that you may need to use the `\` on some "exotic" operating system/s.
+
+如果需要，另一种运行测试或仅运行所需测试的命令是：`mocha`。
+请注意，您需要在根目录中才能运行此命令，并且还可能需要使用`npm install -g mocha`全局安装mocha（或仅使用node_modules文件夹中的文件，只要您提供该文件即可）请在JHipster-UML的目录中进行`npm install`）。
+但是，如果您不想在全局范围内安装所有软件，请执行以下操作：
+
+  - `npm install`安装mocha依赖
+  - `./node_modules/mocha/bin/mocha`运行测试，请注意，您可能需要在某些特殊操作系统上使用`\`。
 
 ***
 
-# <a name="contributing"></a>Contributing: issues and enhancements
+# <a name="contributing"></a>贡献：问题和增强
 
-Because our tool isn't perfect (_yet_), you may notice some irregularities. GitHub provides a pretty nice issue tracker so that everyone can post about an issue.
-We follow the same guidelines as JHipster, with a few additions:
+由于我们的工具(_尚_)不完善，您可能会注意到一些不合规定之处。GitHub提供了一个非常不错的问题跟踪器，
+因此每个人都可以发布问题。我们遵循与JHipster相同的准则，但也有一些补充：
 
-  - Bugs found internally (by the JHipster-UML team) may be posted in the issue tracker, except for bugs regarding the supported UML editors.
+  - 内部（由JHipster-UML团队发现）的错误可能会发布在问题跟踪器中，但与受支持的UML编辑器有关的错误除外。
 
-  - The same goes for enhancements.
+  - 增强功能也是如此。
 
-<b>Note: Post PRs and Issues on JHipster-UML's github page, [here](https://github.com/jhipster/jhipster-uml). Not on the main JHipster page.</b>
+<b>注意：请在[此处](https://github.com/jhipster/jhipster-uml)的JHipster-UML的github页面上发布PR和问题。不在JHipster主页上。</b>
 
-## <a name="parsermodifications"></a>Parser modifications
+## <a name="parsermodifications"></a>解析器修改
 
-The 1.0.0 release brings a new parser system making any change (parser creation, update, deletion) ultra-easy, provided the XMI is easy to parse.
+1.0.0版本带来了一个新的解析器系统，只要是易于解析XMI，就可以轻松进行任何更改（创建，更新，删除解析器）。
 
+### 添加解析器
 
-### Adding a parser
+#### 解析器实现
 
-#### Parser implementation
+添加解析器非常容易。如果您是Java开发人员，则可能对OOP原理非常熟悉（我们希望如此）。在开发JHipster-UML时，我们会像 _通常_ 在Java中那样考虑其体系结构。
 
-Adding a parser is quite easy. If you're a Java dev, you're probably quite familiar with OOP principles (we hope so anyway). When developing JHipster-UML, we thought of its architecture as we'd _normally_ do in Java.
+您只需要扩展我们的抽象解析器([AbstractParser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/abstract_parser.js))，或实现我们的接口([Parser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js))即可添加解析器的具体实现。
 
-You just have to "extend" our abstract parser ([AbstractParser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/abstract_parser.js)), or implement our interface ([Parser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js)) to add your concrete implementation of a parser.
+您应该注意到，解析器接口的某些方法会引发 _UnimplementedOperationException_ 。这个想法显然来自Java，您可以在具体的解析器中实现此方法。
 
-You should notice that some methods of the Parser interface throw an _UnimplementedOperationException_. This idea is obviously taken from Java, and you can implement this methods in your concrete parser.
+有些方法不会引发任何异常，而只会调用其他方法。如果您熟悉Java 8，我们只是复制了其出色的默认方法，并做了相同的操作（因此您无需手动实现它们）。
 
-Some methods don't throw any exception, but only call other methods. If you're familiar with Java 8, we just copied its awesome default methods, and did the same (so that you don't manually implement them).
+就像在Java中一样，您可以覆盖所需的任何方法，然后创建自己的方法。您不受限制（除非您想大改）。
 
-Just like in Java, you can override any method you want, and create your own. You're not limited (except if you want to overload).
+AbstractParser类提供了一些字段，默认构造函数和一些方法，因此您以后不必创建或实现它们。
 
-The AbstractParser class provides some fields, a default constructor and some methods so that you don't have to create or implement them later.
+显然，您 _应该_ 实现所有这些方法（或重写[#parse](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L13)或[#findElements](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L25)方法）。
 
-Obviously, you _should_ implement each of these methods (or override the [#parse](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L13) or [#findElements](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L25) methods).
+getters不是强制性的，但可以用作获取一些重要字段的方法，并提供一种在发送这些字段之前对其进行修改的方法。
 
-The getters are not mandatory, but serve as a way of getting some important fields and provide a way to modify them before sending those fields.
+#### 编辑器检测
 
+完成创建崭新的新解析器后，应将其添加到可用编辑器的列表中：
 
-#### Editor detection
+- 参照[这里](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L3)一样先要求它；
 
-When you're done creating your shiny new parser, you should add it to the "list" of available editors:
+- 像[这里](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L9)一样使它可用；
 
-- Require it first just like [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L3);
+- 就像[这里](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L16)一样，将其添加到列表中。
 
-- Make it available just like [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L9);
+但是，必须遵守一些准则：
 
-- Add it to the list just like [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L16).
+- 您的解析器名称必须为\<editor_parser\>;
 
-However, a few guidelines must be respected:
+- 编辑器的JS文件不得大写，并且不得包含任何空格（Modelio-> `modelio_parser.js`，UML Designer-> `umldesigner_parser.js`）；
 
-- Your parser's name must be \<editor_parser\>;
+- 编辑器的类名必须大写（Modelio-> `ModelioParser`，UML Designer-> `UMLDesignerParser`）。
 
-- The editor's JS file must not be upper-cased, and must not contain any whitespace, (Modelio -> `modelio_parser.js`, UML Designer -> `umldesigner_parser.js`);
+关于EditorDetector，它可以检测到创建XMI文件的编辑器。为此，您必须首先找到XMI文件中提到编辑器的位置，然后像[此处](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L23)一样添加返回编辑器的代码。如果无法检测到您的编辑器，请在[此处](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L23)添加它，并在此处指示其名称，就像在[此处](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L56)为UML Designer所做的一样。
 
-- The editor's class name must be capitalized (Modelio -> `ModelioParser`, UML Designer -> `UMLDesignerParser`).
+#### 测试
 
-Concerning the EditorDetector, it can detect the editor that created your XMI file. For that to happen, you must first locate where the editor is mentionned in the XMI file, and then add the code that returns your editor just like [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L23). If your editor can't be detected, add it [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editors.js#L23), and indicate its name just like it has been done for UML Designer [here](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L56).
+最后，在提交你的超级解析器之前，您需要做的下一件事就是对其进行测试。
+因为我们相信测试，而且真心喜欢好的测试（使用BDD），所以我们的测试是通过Mocha和chai完成的。如果您还不知道全部内容，建议您访问[ChaiJS](http://chaijs.com/)页面，并查看我们的测试文件[之一](https://github.com/jhipster/jhipster-uml/blob/master/test/editors/modelio_parser_test.js)以了解它。
 
+您可能想知道应该使用哪种测试形式。答案很简单：由您决定！无论是[应该的](http://chaijs.com/guide/styles/#should)还是[期望的](http://chaijs.com/guide/styles/#expect)（(à la RSpec），我们都不会在此处执行任何特殊规则。但是，我们建议使用Expect，因为我们这样做了，它应该使测试相当容易理解。
 
-#### Testing
+我们只希望您测试"值得测试"的所有内容：
 
-Finally, the next thing you'll need to do before committing your super parser is test it.
-Because we believe in testing, but really like good testing (with BDD), our tests are done with Mocha and chai. If you don't know what it's all about yet, we recommend you visit the [ChaiJS](http://chaijs.com/) page, and see [one](https://github.com/jhipster/jhipster-uml/blob/master/test/editors/modelio_parser_test.js) of our test file to get acquainted with it.
+  - 接口的方法（_公共_ 方法不是接口类！）；
 
-You should probably wonder what form of testing you should use. The answer is pretty simple: it's up to you! Whether it's [should](http://chaijs.com/guide/styles/#should), or [expect](http://chaijs.com/guide/styles/#expect) (à la RSpec), we don't enforce any special rule here. We, however, recommend using Expect because we do, and it should keep the tests fairly easy to understand.
+  - 您没有义务测试其他方法（_私有_ 方法，因为它们在短期/长期内被认为是安全且不断变化的），但是（据我们所知）由于未在JS中实现可见性，因此您可能想要测试它们（取决于您）。
 
-We just want you to test everything that is 'test-worthy':
+名称和文件的一般准则：
 
-  - The interface's methods (the _public_ methods not an interface class!);
+- 测试文件的名称应遵循前面提到的相同规则。例如，如果您的解析器名称为"Modelio"，则您的测试文件应为`modelio_parser_test.js`。
+- 用于测试的XMI文件也是如此。如果解析器的名称是UMLDesigner，则测试XMI文件的名称之一可以是`umldesigner_parser_problem_test.[...]`（文件扩展名不是静态的）。
 
-  - You're not obliged to test the other methods (_private_ ones, because they are supposed to be safe and ever-changing in the short/long term), but as visibility is not implemented in JS (to our knowledge), you may want to test them (it's up to you).
+### 修改解析器
 
-The general guidelines for names and files:
+更改解析器（然后提交更改）非常简单：只需进行更改并进行测试（如果需要，请创建测试）。
 
-- Your test file's name should respect the same rules as previously mentioned. For instance, if your parser's name is "Modelio", then your test file should be `modelio_parser_test.js`.
+如果需要通过测试（是否抛出异常等等），可以制作一个XMI文件。
 
-- The same goes for XMI files used for testing. If your parser's name is UMLDesigner, then one of your test XMI file's name can be `umldesigner_parser_problem_test.[...]` (the file extension is not static).
+如果您更改任何名称，请不要忘记修改[编辑器检测器](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js)。
 
+### 删除解析器
 
-### Modifying a parser
+删除解析器是一件很容易的事情。
+首先，将其从编辑器（`editors/editors.js`）中删除，然后将其从EditorDetector（`editors/editor_detector.js`）中删除。最后，只需删除解析器文件并为其创建测试。
 
-Changing a parser (and then committing the change) is pretty straightforward: just do the change and test it (create tests if need be).
-
-You can make an XMI file if you need a test to pass (exception throwing, or not, etc.).
-
-Don't forget to modify the [editor detector](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js) if you change any name.
-
-### Deleting a parser
-
-Removing a parser is quite an easy thing to do.
-First, remove it from the editors (`editors/editors.js`) and then remove it from the EditorDetector (`editors/editor_detector.js`). Finally, just remove the parser file and the test created for it.
-
-Don't forget to modify the [editor detector](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L38) if you delete any parser.
+如果您删除任何解析器，请不要忘记修改[编辑器检测器](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L38)。
 
 ***
 
-# <a name="annexes"></a>Annexes
+# <a name="annexes"></a>附录
 
-Here is the types supported by this project:
+这是该项目支持的类型：
 
 <table class="table table-striped table-responsive">
   <tr>

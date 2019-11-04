@@ -9,8 +9,8 @@ sitemap:
 
 # <i class="fa fa-laptop"></i> JHipster App
 
-<b>DEPRECATED</b> 由于缺乏成功，JHipster应用程序现在已被弃用。你仍然可以在上面找到它[the JHipster App GitHub repository](https://github.com/jhipster/jhipster-app).
+<b>DEPRECATED</b> Due to lack of success, the JHipster App is now deprecated. You can still find it on [the JHipster App GitHub repository](https://github.com/jhipster/jhipster-app).
 
-## 下载
+## Downloads
 
-应用程序二进制文件（适用于Mac、Windows和Linux）可在[the GitHub release page](https://github.com/jhipster/jhipster-app/releases)下载。
+The application binairies (for Mac, Windows and Linux) are available on [the GitHub release page](https://github.com/jhipster/jhipster-app/releases).
