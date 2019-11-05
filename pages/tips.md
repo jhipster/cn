@@ -1,23 +1,22 @@
 ---
 layout: default
-title: 提示
+title: 使用技巧
 permalink: /tips/
 redirect_from:
   - /tips.html
 sitemap:
     priority: 0.7
-    lastmod: 2018-03-19T08:40:00-00:00
+    lastmod: 2019-01-29T08:40:00-00:00
 ---
 
-# <i class="fa fa-cogs"></i> 提示
+# <i class="fa fa-cogs"></i> 使用技巧
 
-本节包含用户提交的关于使用JHipster的技巧。
+本部分包含使用Jhipster __用户提交的使用技巧__
 
-_如果你想做出贡献，请随时向我们发送一份Pull Request[GitHub repository](https://github.com/jhipster/jhipster.github.io)._
+如果您想做出贡献，请随时在我们的[GitHub仓库](https://github.com/jhipster/jhipster.github.io)中向我们提交您的使用技巧。
 
 1. [Create a static Swagger API documentation]({{ site.url }}/tips/008_tips_static_swagger_docs.html)
 1. [Using Bootswatch themes]({{ site.url }}/tips/009_tips_using_bootswatch_themes.html)
-1. [Configuring HTML 5 Mode]({{ site.url }}/tips/010_tip_configuring_html_5_mode.html)
 1. [Configuring Email with - Gmail and more]({{ site.url }}/tips/011_tip_configuring_email_in_jhipster.html)
 1. [Speed up the generator-jhipster]({{ site.url }}/tips/013_tip_speed_up_generator.html)
 1. [Local SMTP Server]({{ site.url }}/tips/015_tip_local_smtp_server.html)
@@ -30,3 +29,4 @@ _如果你想做出贡献，请随时向我们发送一份Pull Request[GitHub re
 1. [Protecting Kibana with Apache (Basic Authentication)]({{ site.url }}/tips/023_tip_protecting_kibana_with_apache_basic_authent.html)
 1. [Enabling Social Login with OAuth2]({{ site.url }}/tips/024_tip_enabling_social_login_with_oauth2.html)
 1. [How to create a new Authority]({{ site.url }}/tips/025_tip_create_new_authority.html)
+1. [Issue of @OneToOne with @MapsId and how to avoid it]({{ site.url }}/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html)

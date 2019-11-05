@@ -11,7 +11,7 @@ April Fools 2017
 JHipster introduces Bitcoin mining
 ==================
 
-What's new
+更新日志
 ----------
 
 JHipster helps thousands of people and companies create Spring Boot and Angular projects in seconds, and not months.

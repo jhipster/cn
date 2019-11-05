@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Error - 违反约束
+title: Error - constraint violation
 permalink: /problem/constraint-violation/
 sitemap:
     priority: 0.7

@@ -6,35 +6,35 @@ title: Release 0.7.0
 JHipster release 0.7.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-- JHipster now supports Websocket, for the new "real-time Web", thanks to the great [Atmosphere framework](http://async-io.org/). After studying carefully both Atmosphere and the new Spring Websocket support, we found Atmosphere to be a better tool for our needs. But of course, if you disagree, there is still the possibility to make this an option in the Yeoman generator.
-- We now have a usable [Docker](https://www.docker.io/) configuration, which is fully documentated on our [updated installation page](/installation/).
-- We updated all Maven/NPM/Bower dependencies, so that your generated application stays on the cutting edge!
+- JHipster现已支持Websocket, 可以支撑"实时Web应用", 感谢这个优秀的[Atmosphere framework](http://async-io.org/). 仔细调研Atmosphere和新的Spring Websocket支持之后, 我们发现Atmosphere更符合我们的需求. 当然, 如果你们不同意, 我们也可以在Yeoman生成器添加一个选项来支持Spring Websocket.
+- 更新了一个可用的[Docker](https://www.docker.io/)配置, 我们在这里[updated installation page](/installation/)更新了详细的文档.
+- 更新了所有Maven/NPM/Bower依赖, 让你生成的应用处于技术前沿!
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

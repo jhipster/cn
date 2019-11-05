@@ -6,9 +6,9 @@ title: Release 0.11.0
 JHipster release 0.11.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
 This is the most important version we have done, ever. More than one month of work to give you full hot reloading of your Java code.
@@ -30,26 +30,26 @@ This version also comes with some less important changes:
 - We have switched from HSQLDB to H2, as it provides a nice Web console, available with the "/console" URL of your application. This allows you to check that hot reload really updated your database!
 - Several bugfixes, most noticeably in the Atmosphere code
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

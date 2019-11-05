@@ -6,35 +6,35 @@ title: Release 0.9.1
 JHipster release 0.9.1
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-* Our "hot reload" features are getting better and better: we now support hot reloading Spring Beans (in *most* cases) as well as Jackson beans (the Jackson serializer and deserializer caches get flushed on reload). We are now focusing on hot reloading JPA entities.
-* We have upgraded to the latest Spring Boot 1.0.0.RC2. This causes a [warning when running the executable WAR](https://github.com/spring-projects/spring-boot/issues/348)
-* We updated the generator dependencies version, as we had some issues running the generator on Mac OS X
+* "热重载"特性变得越来越好: 现在我们支持热载入Spring Beans(在*大多*情况)和Jackson beans(序列化和反序列化的缓存在重载会被清除), 我们现在着重解决重载JPA的实体类..
+* 更新Spring Boot至最新的1.0.0.RC2. 这个会导致[warning when running the executable WAR](https://github.com/spring-projects/spring-boot/issues/348)
+* 更新了生成器依赖库的版本, 在Mac OS X运行我们发现还有一些问题
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

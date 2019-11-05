@@ -1,28 +1,28 @@
 ---
 layout: default
-title: 贡献的个人
+title: 个人贡献
 permalink: /contributing-individuals/
 sitemap:
     priority: 0.1
     lastmod: 2017-11-29T00:00:00-00:00
 ---
-# <i class="fa fa-keyboard-o"></i> 贡献的个人
+# <i class="fa fa-keyboard-o"></i> 个人贡献
 
-JHipster有很多[contributors](https://github.com/jhipster/generator-jhipster/graphs/contributors), 我们尽最大努力帮助人们投稿！
+JHipster拥有许多[贡献者](https://github.com/jhipster/generator-jhipster/graphs/contributors), 我们尽自己最大努力支持大家为我们添砖加瓦! 非常期待你的加入!
 
 ## 行为守则
 
-在您投稿之前，请阅读我们的 [Code of Conduct](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md).
+在你提交之前, 请阅读我们的[行为守则](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md).
 
-## 寻求帮助
+## 获取帮助
 
-作为项目中的任何人，您都可以使用我们通常的支持渠道寻求帮助，如[ [Help page]({{ site.url }}/help/).
+与项目中的其他人一样，您可以使用[帮助]({{ site.url }}/help/)页面上列出的常用支持途径来寻求帮助。
 
-无论你做什么，团队都会尽力帮助你：
+无论你有什么困难, 我们团队都会尽最大努力来帮助你:
 
-- Commenting your tickets
-- Reviewing your Pull Requests
+- 回复你的工单
+- 审查你的提交申请
 
 ## 如何贡献
 
-我们的 [Contributing guide](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md) 应该为您提供开始和执行第一个拉请求的所有指导。
+我们的[贡献指引](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md) 提供了入门的所有注意事项以及帮助你第一次提交.

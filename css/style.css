@@ -1390,15 +1390,20 @@ body.login-page {
 .x-ng-cloak {
   display: none !important; }
 
+#about a {
+  color: white;
+  text-decoration: underline;
+}
+
 footer {
-  color: #fff;
+  color: #000000;
   background-color: #fff; }
   footer a {
-    color: #fff; }
+    color: #000000; }
     footer a.link {
       color: #91d5fb; }
       footer a.link:hover {
-        color: #fff; }
+        color: #000000; }
   footer h3 {
     margin-bottom: 30px; }
   footer .footer-logos {
@@ -1419,9 +1424,12 @@ footer {
     margin-bottom: 50px; }
   footer .footer-below {
     padding: 25px 0;
+    color: #ccc;
     background-color: #233140; }
     footer .footer-below a {
-      color: white; }
+      color: #ccc;
+      text-decoration: underline;
+    }
 
 .btn-social {
   display: inline-block;
@@ -1562,4 +1570,66 @@ table tr > td, th {
 }
 table tr:nth-child(even) {
     background: #f0f0f0;
+}
+@media (max-width: 1080px) {
+  #content-search-form {
+    display: none;
+  }
+  #mobile-content-search-form {
+    padding: 5px 0 5px 10px;
+  }
+  #mobile-content-search-form > span.algolia-autocomplete {
+    width: 90%;
+    margin-left: 5px;
+  }
+  #mobile-content-search-form input.mobile-doc-search-algolia {
+    width: 100%;
+  }
+  #mobile-content-search-form .algolia-autocomplete .ds-dropdown-menu {
+    min-width: auto;
+  }
+  #mobile-content-search-form .algolia-autocomplete .ds-dropdown-menu:before {
+    right: 90%;
+  }
+}
+@media (min-width: 1080px) {
+  #mobile-content-search-form {
+    display: none;
+  }
+}
+#content-search-form input[type=text] {
+  float: right;
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px 40px 10px 15px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+#content-search-form input[type=text]:focus {
+  width: 100%;
+}
+#content-search-form i {
+  position: relative;
+  font-size: 20px;
+  top: 18px;
+  right: 25px;
+  color: #ccc;
+  z-index: 1;
+  float: right;
+}
+#content-search-form > span.algolia-autocomplete,
+#content-search-form > input {
+  margin-top: 7px;
+}
+#content-search-form .algolia-autocomplete .algolia-docsearch-suggestion--wrapper {
+  padding: 0;
+}
+#content-search-form .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  color: #3d8acc;
 }

@@ -6,7 +6,7 @@ title: Release 3.0.0
 JHipster release 3.0.0
 ==================
 
-What's new
+更新日志
 ----------
 
 After months of efforts, with a [great international team]({{ site.url }}/team/), our 3.0.0 version is out!
@@ -42,22 +42,22 @@ Closed tickets
 ------------
 This is a huge release for us and as always, __[you can check all the 596 closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A3.0.0+is%3Aclosed)__.
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-You can also update your project and all its entities by running
+更新你的项目和所有的实体类
 
 ```
 yo jhipster --with-entities
@@ -69,14 +69,14 @@ You can also update your entities by running again the entity sub-generator, for
 yo jhipster:entity Foo
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
 If the issue you have is an urgent bug or security issue, please:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)

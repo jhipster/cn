@@ -11,20 +11,20 @@ sitemap:
 
 # 部署到Heroku
 
-This sub-generator allows deployment of your JHipster application to the [Heroku cloud](https://www.heroku.com/).
+该子生成器允许将您的JHipster应用程序部署到[Heroku云](https://www.heroku.com/)。
 
 [![]({{ site.url }}/images/logo/logo-heroku.png)](https://www.heroku.com/)
 
-Heroku is helping JHipster in two ways:
+Heroku通过两种方式帮助JHipster：
 
-- Joe Kutner, from Heroku, is currently maintaining this sub-generator
-- Heroku gives us free credits, allowing us to test generated applications with complex, high-end setups, to guarantee everything works well for our common users
+- Heroku的Joe Kutner目前正在维护此子生成器
+- Heroku提供了免费的信用额度，使我们能够使用复杂的高端设置来测试生成的应用程序，以确保所有普通用户都能正常使用
 
-## Running the sub-generator
+## 运行子生成器
 
-Before running the sub-generator, you must install the [Heroku CLI](https://cli.heroku.com/), and have a Heroku account created.
+在运行子生成器之前，您必须安装[Heroku CLI](https://cli.heroku.com/)，并创建一个Heroku帐户。
 
-You must also [create a Heroku account](http://signup.heroku.com/) and log in with the CLI by running the following command:
+您还必须[创建一个Heroku帐户](http://signup.heroku.com/)并通过运行以下命令使用CLI登录：
 
 <pre>**$ heroku login**
 Enter your Heroku credentials.
@@ -33,72 +33,73 @@ Password (typing will be hidden): YOUR_PASSWORD
 Authentication successful.
 </pre>
 
-To deploy your application to Heroku, run this command:
+要将应用程序部署到Heroku，请运行以下命令：
 
 `jhipster heroku`
 
-This should package your application in "production" mode, create an Heroku application with a database, upload your code, and start the application.
+这应该以"production"模式打包您的应用程序，使用数据库创建一个Heroku应用程序，上传您的代码，然后启动该应用程序。
 
-Note that if your application is a microservice, you will be prompted to provide a registry URL. Scroll down to learn how to do this.
+请注意，如果您的应用程序是微服务，系统将提示您提供registryURL。向下滚动以了解如何执行此操作。
 
-_Please be aware that your application must start under 90 seconds, or it will be killed. Depending on the platform load, starting under 60 seconds is of course not guaranteed!_
+_请注意，您的应用程序必须在90秒内启动，否则将被终止。根据平台负载，当然不能保证在60秒以内开始！_
 
-## Updating your deployed application
+## 更新已部署的应用程序
 
-### Preparing a new deployment
+### 准备新的部署
 
-When your application is already deployed, you can prepare a new deployment by typing:
+在部署了应用程序之后，可以通过输入以下内容准备新的部署：
 
 `./mvnw package -Pprod -DskipTests`
 
-Or when using gradle:
+使用gradle:
 
-`./gradlew -Pprod bootWar -x test`
+`./gradlew -Pprod bootJar -x test`
 
-### Pushing to production
+### 推送到生产
 
-_Note: This assumes you have run the generator on the machine you are executing this command from. If you have not, you will need to follow the instructions for installing the [Heroku Java CLI](https://devcenter.heroku.com/articles/deploying-executable-jar-files).
+_注意：假定您已在执行此命令的计算机上运行了生成器。如果尚未安装，则需要按照说明安装[Heroku Java CLI](https://devcenter.heroku.com/articles/deploying-executable-jar-files)。_
 
-To push to production, type:
+要推送生产，请输入：
 
-`heroku deploy:jar target/*.war`
+`heroku deploy:jar target/*.jar`
 
-Or when using gradle:
+使用gradle:
 
-`heroku deploy:jar build/libs/*war`
+`heroku deploy:jar build/libs/*jar`
 
-## Deploying Microservices
+## 部署微服务
 
-JHipster microservices require a JHipster Registry as described in the [Doing microservices with JHipster](/microservices-architecture/) documentation. You can deploy a registry to Heroku by clicking this button:
+JHipster微服务需要[使用JHipster进行微服务](/microservices-architecture/)文档中所述的JHipster Registry。您可以通过单击以下按钮将registry部署到Heroku：
 
-[![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry)
+[![部署到Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry)
 
-Once the registry is deployed, you can run the `jhipster heroku` command against your microservice or gateway. The Heroku sub-generator will prompt you for the URL of your registry, which will be in the form `https://[appname].herokuapp.com`.
+部署registry后，您可以对微服务或网关运行`jhipster heroku`命令。Heroku子生成器将提示您输入registry的URL，其格式为`https://[appname].herokuapp.com`。
 
-A registry running on Heroku has a few limitations, including:
+在Heroku上运行的registry有一些限制，包括：
 
-*   The registry will only work with native configuration (and not Git config).
-*   The registry service cannot be scaled up to multiple dynos to provide redundancy. You must deploy multiple applications (i.e. click the button more than once). This is because Eureka requires distinct URLs to synchronize in-memory state between instances.
+*   registry仅适用于本机配置（不适用于Git配置）。
+*   registry服务不能扩展多个dyno以提供冗余。您必须部署多个应用程序（即多次单击按钮）。这是因为Eureka需要不同的URL才能在实例之间同步内存中状态。
 
-### Using security with your JHipster Registry on Heroku
+### 在Heroku上使用JHipster Registry的安全性
 
-To get the automatically-generated admin password on the JHipster Registry, type:
+要在JHipster Registry上获取自动生成的管理员密码，请输入：
 
 `heroku config:get JHIPSTER_PASSWORD`
 
-To use this password, update all of your microservices and your gateway to use the credentials for the registry by running this command:
+要使用此密码，请通过运行以下命令来更新所有微服务和网关，以使用registry的凭据：
 
 `heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com"`
 
-## Troubleshooting
+## 故障排除
 
-If your application is killed by Heroku when your Liquibase changelog is being applied, your database will be marked as "locked" by Liquibase. You will need to manually clean the lock table. On Postgres, you make sure you have a [local Postgres client installed](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup) and run the following command:
+如果在应用Liquibase变更日志时您的应用程序被Heroku杀死，则Liquibase将数据库标记为"locked"。您将需要手动清理锁定表。在Postgres上，请确保[已安装本地Postgres客户端](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup)，然后运行以下命令：
 
 `heroku pg:psql -c "update databasechangeloglock set locked=false;"`
 
-Heroku has a default boot-timeout limit of 90 seconds. If your app takes longer than this, Heroku will kill the process, which may leave the database in a locked state. If the problem is persistent, try contacting [Heroku Support](http://help.heroku.com) to request a longer boot limit for your app.
+Heroku的默认启动超时限制为90秒。如果您的应用花费的时间超过此时间，Heroku将终止该进程，这可能会使数据库处于锁定状态。如果问题仍然存在，请尝试与[Heroku支持](http://help.heroku.com)联系，以请求为您的应用设置更长的启动限制。
 
-## More information
+## 更多信息
 
-*   [Example Application](https://github.com/kissaten/jhipster-example)
-*   [Spring Boot Heroku documentation](http://docs.spring.io/spring-boot/docs/current/reference/html/cloud-deployment.html#cloud-deployment-heroku)
+*   [应用范例](https://github.com/kissaten/jhipster-example)
+*   [Spring Boot Heroku文档](http://docs.spring.io/spring-boot/docs/current/reference/html/cloud-deployment.html#cloud-deployment-heroku)
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 使用 Fisherman
+title: Using Fisherman
 permalink: /fisherman/
 redirect_from:
   - /fisherman.html
@@ -9,6 +9,6 @@ sitemap:
     lastmod: 2016-08-14T18:40:00-00:00
 ---
 
-# <i class="fa fa-terminal"></i> 使用 Fisherman
+# <i class="fa fa-terminal"></i> Using Fisherman
 
-Fisherman 已更名为 [fisher](https://github.com/jorgebucaran/fisher). 详见 [Fisher JHipster plugin]({{ site.url }}/fisher/) 。
+Fisherman has been renamed to [fisher](https://github.com/jorgebucaran/fisher). See the the [Fisher JHipster plugin]({{ site.url }}/fisher/) documentation for details.

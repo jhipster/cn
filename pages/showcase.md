@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 案例
+title: 展示柜
 permalink: /showcase/
 redirect_from:
   - /showcase.html
@@ -9,11 +9,11 @@ sitemap:
     lastmod: 2014-10-18T00:00:00-00:00
 ---
 
-# <i class="fa fa-file-image-o"></i> 案例
+# <i class="fa fa-file-image-o"></i> 展示柜
 
-JHipster构建的精彩应用程序展示。
+Jhipster创建的优秀应用展示.
 
-如果你想在这里展示你的应用程序，只需向[website](https://github.com/jhipster/jhipster.github.io)提交一份公关，或者通过Twitter通知我们，方法是提及 [@java_hipster](https://twitter.com/java_hipster)
+如果你想在这里展示你的应用, 请提交一个PR到这个[官网仓库](https://github.com/jhipster/jhipster.github.io) 或者在Twitter[@java_hipster](https://twitter.com/java_hipster)上联系我们.
 
 <br/><br/><br/>
 

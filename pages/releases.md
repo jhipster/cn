@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release notes
+title: 版本通知
 permalink: /releases/
 redirect_from:
   - /releases.html
@@ -9,10 +9,20 @@ sitemap:
     lastmod: 2014-02-17T00:00:00-00:00
 ---
 
-# <i class="fa fa-file-text-o"></i> Release notes
+# <i class="fa fa-file-text-o"></i> 版本通知
 
-要获取最新的JHipster新闻，请在Twitter上关注我们： [@java_hipster](https://twitter.com/java_hipster)
+获取Jhipster的最新动态, 请关注我们的推特: [@java_hipster](https://twitter.com/java_hipster)
 
 {% for post in site.posts %}
-*   [{{ post.title }}]({{ post.url }})
+  {% assign split_post_title = post.title | split: "Release " %}
+  {% assign split_post_version = split_post_title[1] | split: "." %}
+  {% assign post_minor_version = split_post_version[1] %}
+  {% assign post_patch_version = split_post_version[2] %}
+  {% assign split_post_date = post.date | split: " " %}
+  {% assign post_date = split_post_date.first %}
+  {% if post_minor_version == '0' and post_patch_version == '0' %}
+  *   **[{{ post.title }}]({{ post.url }}) ({{ post_date }})** :rocket:
+  {% else %}
+  *   [{{ post.title }}]({{ post.url }})
+  {% endif %}
 {% endfor %}

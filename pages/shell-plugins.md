@@ -11,9 +11,9 @@ sitemap:
 
 # <i class="fa fa-terminal"></i> JHipster Shell插件
 
-Shell插件为使用JHipster提供了额外的快捷方式，这使得它更快、更容易使用。如果你看到人们有一个漂亮的外壳，有漂亮的自动完成和超快速的捷径，魔术来自这里！
+Shell插件带来了使用JHipster的其他快捷方式，从而使其更快捷，更易于使用。如果您看到大家拥有漂亮的、出色的自动完成功能和超便捷的快捷键Shell，这就是魔术！
 
-目前有两个shell插件：
+当前有两个shell插件：
 
-* [Oh-My-Zsh JHipster plugin]({{ site.url }}/oh-my-zsh/) for [Oh-My-Zsh](https://ohmyz.sh/)
-* [Fisher JHipster plugin]({{ site.url }}/fisher/) for [Fisher](https://github.com/jorgebucaran/fisher)
+* [Oh-My-Zsh](https://ohmyz.sh/)的[Oh-My-Zsh JHipster插件]({{ site.url }}/oh-my-zsh/) 
+* [Fisher](https://github.com/jorgebucaran/fisher)的[Fisher JHipster插件]({{ site.url }}/fisher/)

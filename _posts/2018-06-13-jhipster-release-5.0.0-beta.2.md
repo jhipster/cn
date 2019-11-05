@@ -12,7 +12,7 @@ It has [204 closed tickets and pull requests on the main project](https://github
 
 _It is not available through the usual channels as this is a beta release, please read below for more information!_
 
-What's new?
+更新日志?
 ----------
 
 - React support is now complete, and at the same level of quality as our Angular support.
@@ -57,18 +57,18 @@ However, as this is a BETA release it will not be available using our other usua
 
 You also won’t be able to use the `jhipster upgrade` sub-generator, as it won’t “see” the BETA release, which is distributed through a specific beta channel on NPM.
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.0.0-beta.2+is%3Aclosed)__.
+一如既往, __[你可以在此处查看所有已关闭的工单与已接受合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.0.0-beta.2+is%3Aclosed)__.
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
 If the issue you have is an urgent bug or security issue, please:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)

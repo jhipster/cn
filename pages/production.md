@@ -6,156 +6,205 @@ redirect_from:
   - /production.html
 sitemap:
     priority: 0.7
-    lastmod: 2019-02-01T00:00:00-00:00
+    lastmod: 2019-02-04T00:00:00-00:00
 ---
 
 # <i class="fa fa-play-circle"></i> 在生产中使用JHipster
 
-JHipster生成一个完全可以生产、优化和安全的应用程序。本节描述了更重要的选项-如果您赶时间，只需运行正常的生产构建，但不要忘记阅读安全部分！
+JHipster生成了完全可用于生产，优化和安全的应用程序。本部分介绍了更重要的选项-如果您急于赶时间，请运行常规的生产版本，但不要忘记阅读安全性部分！
 
 1. [构建生产包](#build)
-2. [生产运行](#run)
+2. [在生产中运行](#run)
 3. [性能优化](#performance)
 4. [安全](#security)
 5. [监控](#monitoring)
 
-## <a name="build"></a> Building a production package
+## <a name="build"></a> 构建生产包
 
-### Testing a production build
+### 测试生产版本
 
-This allows to test a production build from Maven, without building a real package.
+这样就可以从Maven测试生产版本，而无需构建真正的程序包。
 
-To use JHipster in "production" mode, use the pre-configured `prod` profile. With Maven, please run:
+要在生产模式下使用JHipster，请使用预先配置的`prod`概要文件。使用Maven，请运行：
 
 `./mvnw -Pprod`
 
-When using Gradle, please run:
+使用Gradle时，请运行：
 
 `./gradlew -Pprod`
 
-This profile will compile, test and package your application with all productions settings.
+此配置文件将使用所有生产设置编译，测试和打包您的应用程序。
 
-If you want more information on the available profiles, please go the section titled "[Development and Production profiles]({{ site.url }}/profiles/)".
+如果需要有关可用配置文件的更多信息，请转到标题为"[开发和生产配置文件]({{ site.url }}/profiles/)"部分。
 
-### Building an executable WAR file
+### 构建可执行的JAR/WAR文件
 
-To package the application as a "production" WAR, with Maven please type:
+要将应用程序打包为生成JAR，请使用Maven输入：
 
-`./mvnw -Pprod package`
+`./mvnw -Pprod clean verify`
 
-Or when using Gradle, please type:
+或使用Gradle时，请输入：
 
-`./gradlew -Pprod bootWar`
+`./gradlew -Pprod clean bootJar`
 
-This will generate two files (if your application is called "jhipster"):
+这将生成此文件（如果您的应用程序称为“jhipster”）：
 
-When using Maven:
+使用Maven时：
+*   `target/jhipster-0.0.1-SNAPSHOT.jar`
+
+使用Gradle时：
+*   `build/libs/jhipster-0.0.1-SNAPSHOT.jar`
+
+
+要将应用程序打包为生产WAR，请使用Maven输入：
+
+`./mvnw -Pprod,war clean verify`
+
+或使用Gradle时，请输入：
+
+`./gradlew -Pprod -Pwar clean bootWar`
+
+**请注意** 在构建具有上下文路径的JAR或WAR文件时，您将需要使用适当的baseHref更新webpack.prod.js。
+
+这将生成以下文件（如果您的应用程序称为“jhipster”）：
+
+使用Maven时：
 *   `target/jhipster-0.0.1-SNAPSHOT.war`
-*   `target/jhipster-0.0.1-SNAPSHOT.war.original`
 
-When using Gradle:
+使用Gradle时：
 *   `build/libs/jhipster-0.0.1-SNAPSHOT.war`
-*   `build/libs/jhipster-0.0.1-SNAPSHOT.war.original`
 
-The first one is an executable WAR file (see next section to run it). It can also be deployed on an application server, but as it includes runtime libraries, we recommend you use the second, `.original` file if you want to deploy JHipster on an application server like Tomcat, Weblogic or Websphere.
+**请注意** 当使用`prod`配置文件构建JAR或WAR文件时，生成的档案将不包含`dev` 资产。
 
-When running JHipster in an application server, some of the tuning described in this documentation (like GZipping, HTTP/2 or HTTPS support) will not work anymore, as they will need to be configured at the application server level. This is why we do not recommend using an application server with JHipster.
+**请注意** 如果要使用Maven生成WAR原始文件，则需要编辑`pom.xml`文件以使用`war`打包而不是`jar`打包：
 
-**Please note** that when building a WAR file with the `prod` profile, the generated archive will not include the `dev` assets.
+```diff
+-    <packaging>jar</packaging>
++    <packaging>war</packaging>
+```
 
-## <a name="run"></a> Running in production
+## <a name="run"></a> 在生产中运行
 
-### Executing the WAR file without an application server
+### 在没有应用程序服务器的情况下执行JAR文件
 
-Instead of deploying to an application server, many people find it easier to just have an executable WAR file.
+与部署到应用程序服务器相比，许多人发现仅拥有可执行的JAR文件更加容易。
 
-The first WAR file generated in the previous step is such a WAR, so you can run it in "production" mode by typing (on Mac OS X or Linux):
+使用上一步中生成的JAR文件，以生产模式运行它，您可以通过输入（在Mac OS X或Linux上）：
 
-`./jhipster-0.0.1-SNAPSHOT.war`
+`./jhipster-0.0.1-SNAPSHOT.jar`
 
-If you are on Windows, use:
+如果您使用的是Windows，请使用：
 
-`java -jar jhipster-0.0.1-SNAPSHOT.war`
+`java -jar jhipster-0.0.1-SNAPSHOT.jar`
 
-**Please note** that this WAR file uses the profile we selected when building it. As it was built using the `prod` file in the previous section, it will therefore run with the `prod` profile.
+**请注意** 该JAR文件使用我们在构建文件时选择的配置文件。由于它是使用上一节中的`prod`文件构建的，因此它将与`prod`配置文件一起运行。
 
-### Running the application in a Docker container
+### 在Docker容器中运行应用程序
 
-JHipster has first-class support for Docker: it is very easy to bundle your executable WAR file in a Docker image, and run it inside Docker.
+JHipster对Docker具有一等公民的支持：将可执行JAR文件捆绑在Docker镜像中并在Docker中运行非常容易。
 
-To learn how to package your application with Docker, please read our [Docker Compose documentation]({{ site.url }}/docker-compose/).
+要了解如何使用Docker打包您的应用程序，请阅读我们的[Docker Compose文档]({{ site.url }}/docker-compose/)。
 
-## <a name="performance"></a> Performance optimizations
+### 作为服务运行
 
-### Cache tuning
+也可以将Jar作为Linux服务运行，并且您可能希望在打包之前强制在`pom.xml`文件指定。为此，请在`spring-boot-maven-plugin`插件的`<configuration>`内添加以下属性。
 
-If you selected a cache provider when generating your application, it has been automatically configured for you by JHipster.
+```
+<embeddedLaunchScriptProperties>
+    <mode>service</mode>
+</embeddedLaunchScriptProperties>
+```
 
-However, the default cache values are quite low, so the application can run on modest hardware, and as those values should be tuned depending on your application's specific business requirements.
+接下来，使用以下命令设置您的init.d：
 
-Please read:
+`ln -s jhipster-0.0.1-SNAPSHOT.jar /etc/init.d/jhipster`
 
-- [The JHipster "using cache" documentation]({{ site.url }}/using-cache/) to learn more about the caching provider you have selected, and how it can be tuned
-- The [last section on monitoring](#monitoring), so you can fine-tune your cache according to your application's real-world usage
+使用以下方法保护您的应用程序安全：
 
-### HTTP/2 support
+`chown jhuser:jhuser jhipster-0.0.1-SNAPSHOT.jar
+sudo chattr +i your-app.jar`
 
-JHipster supports HTTP/2 using the `jhipster.http.version` property, which is configured in the `application-prod.yml` file.
+考虑到`jhuser`是将运行该应用程序的非root操作系统帐户，则可以通过以下方式运行该应用程序：
 
-To enable HTTP/2, you need to:
+`service jhipster start|stop|restart`
 
-- Set `jhipster.http.version: V_2_0`
-- Configure HTTPS (see this documentation's [security section](#security)), as browsers force to use HTTPS with HTTP/2
+您可以在[Spring Boot文档](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)中找到许多其他选项，包括更多安全步骤和Windows服务相关。
+
+### 在上下文路径下运行应用程序
+
+将JHipster应用程序部署到应用服务器或自定义上下文路径时，需要将`webpack.common.js`或`webpack.prod.js`中的baseHref值设置为期望的上下文路径。
+
+## <a name="performance"></a> 性能优化
+
+### 缓存调整
+
+如果在生成应用程序时选择了缓存提供程序，则JHipster会自动为您配置它。
+
+但是，默认缓存值非常低，因此应用程序可以在适度的硬件上运行，所以应该根据应用程序的特定业务需求来调整这些值。
+
+请阅读：
+
+- [JHipster“使用缓存”文档]({{ site.url }}/using-cache/)可了解有关所选缓存提供程序的更多信息，以及如何对其进行调整
+- 关于[最后一部分的监控](#monitoring)，因此您可以根据应用程序的实际使用情况微调缓存
+
+### HTTP/2支持
+
+JHipster使用`jhipster.http.version`属性（在`application-prod.yml`文件中配置）支持HTTP/2。
+
+要启用HTTP/2，您需要：
+
+- 设置`jhipster.http.version: V_2_0`
+- 配置HTTPS（请参阅本文档的[安全性部分](#security)），因为浏览器会强制将HTTPS与HTTP/2结合使用
 
 ### GZipping
 
-Within an executable WAR file, which uses the `prod` profile, JHipster configures GZip compression on your Web resources.
+在使用`prod`配置文件的可执行JAR文件中，JHipster会在您的Web资源上配置GZip压缩。
 
-By default, compression will work on all static resources (HTML, CSS, JavaScript) and on all REST requests. You can have more information on this configuration by looking at the `server.compression.*` keys in the Spring Boot application properties, configured in the `application-prod.yml` file.
+默认情况下，压缩将对所有静态资源（HTML，CSS，JavaScript）和所有REST请求起作用。通过查看在`application-prod.yml`文件中配置的Spring Boot应用程序属性中的`server.compression.*`键，可以获取有关此配置的更多信息。
 
-**Please note** that GZipping is done by the application server, so this section only applies if you use the "executable WAR" option described above. If you run your application in an external application server, you will need to configure it separately.
+**请注意** GZipping由应用程序服务器完成，因此本节仅在您使用上述“可执行的JAR”选项时适用。如果您在外部应用程序服务器上运行应用程序，则需要单独进行配置。
 
-### Cache headers
+### 缓存头
 
-With the `prod` profile, JHipster configures a Servlet filter that puts specific HTTP cache headers on your static resources (JavaScript, CSS, fonts...) so they are cached by browsers and proxies.
+使用`prod`配置文件，JHipster配置了一个Servlet过滤器，该过滤器将特定的HTTP缓存头放在您的静态资源（JavaScript，CSS，字体等）上，以便浏览器和代理缓存它们。
 
-### Generating an optimized JavaScript application with Webpack
+### 使用Webpack生成优化的JavaScript应用程序
 
-This step is automatically triggered when you build your project with the `prod` profile. If you want to run it without launching a Maven build, please run:
+使用`prod`配置文件构建项目时，将自动触发此步骤。如果要运行它而不想启动Maven构建，请运行：
 
 `npm run build`
 
-This will use [Webpack](https://webpack.github.io/) to process all your static resources (CSS, TypeScript, HTML, JavaScript, images...) in order to generate an optimized client-side application.
+这将使用[Webpack](https://webpack.github.io/)处理所有静态资源（CSS，TypeScript，HTML，JavaScript，图片等），以生成优化的前端应用程序。
 
-During this process, Webpack will compile the TypeScript code into JavaScript code, and will also generate source maps, so the client-side application can still be debugged.
+在此过程中，Webpack会将TypeScript代码编译为JavaScript代码，还将生成源映射，因此仍可以调试前端应用程序。
 
-Those optimized assets will be generated in `target/www` for Maven or `build/www` for Gradle, and will be included in your final production WAR.
+这些优化后的资源，如果使用Maven，将在`target/classes/static`中生成，对于Gradle，将在`build/resources/main/static`中生成，并将包含在最终的生产JAR中。
 
-This code will be served when you run the application with the `prod` profile.
+当您使用`prod`配置文件运行应用程序时，这些代码将被服务托管。
 
-## <a name="security"></a> Security
+## <a name="security"></a> 安全
 
-### Securing the default user and admin accounts
+### 保护默认用户和管理员帐户
 
-JHipster comes with some default users generated for you. In production, you **should** change those default passwords!
+JHipster会为您生成一些默认用户。在生产中，您应该更改这些用户的默认密码！
 
-Please follow our [security documentation]({{ site.url }}/security/) to learn how to change those passwords, and secure your application.
+请遵循我们的[安全文档]({{ site.url }}/security/)，以了解如何更改这些密码并保护您的应用程序安全。
 
-### HTTPS support
+### HTTPS支持
 
-HTTPS can be configured directly in your JHipster application, or using a specific front-end proxy.
+可以直接在JHipster应用程序中配置HTTPS，也可以使用特定的前端代理进行配置。
 
-#### HTTPS configuration with JHipster
+#### 使用JHipster进行HTTPS配置
 
-HTTPS is configured using Spring Security's standard `server.ssl` configuration keys in your `application-prod.yml` file.
+HTTPS是使用`application-prod.yml`文件中的Spring Security的标准`server.ssl`配置键配置的。
 
-To enable SSL, generate a certificate using:
+要启用SSL，请使用以下方法生成证书：
 
     keytool -genkey -alias <your-application> -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 
-You can also use Let's Encrypt using [this tutorial](https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm).
+您也可以通过[本教程](https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm)使用Let's Encrypt。
 
-Then, modify the `server.ssl` properties so your `application-prod.yml` configuration looks like:
+然后，修改`server.ssl`属性，以便您的`application-prod.yml`配置如下所示：
 
     server:
         port: 443
@@ -167,39 +216,40 @@ Then, modify the `server.ssl` properties so your `application-prod.yml` configur
             ciphers: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256
             enabled-protocols: TLSv1.2
 
-The ciphers suite enforce the security by deactivating some old and deprecated SSL ciphers, this list was tested against [SSL Labs](https://www.ssllabs.com/ssltest/)
+ciphers suite通过停用一些旧的和已弃用的SSL密码来增强安全性，此列表已通过[SSL实验室](https://www.ssllabs.com/ssltest/)测试
 
 Once `server.ssl.ciphers` property is enabled JHipster will force the order on Undertow with this property (true by default) : `jhipster.http.useUndertowUserCipherSuitesOrder`
+启用`server.ssl.ciphers`属性后，JHipster将使用以下属性（默认为true）在Undertow上强制执行请求：`jhipster.http.useUndertowUserCipherSuitesOrder`
 
-The `enabled-protocols` deactivate old SSL protocols.
+`enabled-protocols`会停用旧的SSL协议。
 
-Then, the final touch for achieving the perfect forward secrecy. Add the following flag at the JVM startup :
+然后，实现完美的前向保密性的最后一步。在JVM启动时添加以下标志：
 
     -Djdk.tls.ephemeralDHKeySize=2048
 
-For testing your configuration you can go to [SSL Labs](https://www.ssllabs.com/ssltest/).
+要测试您的配置，可以转到[SSL Labs](https://www.ssllabs.com/ssltest/)。
 
-If everything is OK, you will get A+
+如果一切正常，您将获得A+
 
-#### HTTPS configuration with a front-end proxy
+#### 带有前端代理的HTTPS配置
 
-There are many solutions to setup a front-end HTTPS proxy in front of a JHipster application. We describe here the 2 most common ones.
+有许多解决方案可在JHipster应用程序的前面设置前端HTTPS代理。我们在这里描述两种最常见的方法。
 
-With a microservice architecture, you can use JHipster's Traefik support:
+通过微服务架构，您可以使用JHipster的Traefik支持：
 
-- Follow our [Traefik documentation]({{ site.url }}/traefik/) to configure your architecture
-- Follow the [Official Traefik website documentation](https://docs.traefik.io/user-guide/examples/) to set up HTTPS
+- 请遵循我们的[Traefik文档]({{ site.url }}/traefik/)来配置您的架构
+- 请遵循[Traefik官方网站文档](https://docs.traefik.io/user-guide/examples/)来设置HTTPS
 
-If you'd rather use the Apache HTTP server, you can set it up with Let's Encrypt:
+如果您想使用Apache HTTP服务器，则可以使用Let's Encrypt来进行设置：
 
-- Install Apache and Let's Encrypt: `apt-get install -y apache2 python-certbot-apache`
-- Configure Let's Encrypt: `certbot --apache -d <your-domain.com> --agree-tos -m <your-email> --redirect`
-- Configure auto-renewal of SSL certificates: add `10 3 * * * /usr/bin/certbot renew --quiet` in your crontab
+- 安装Apache和Let's Encrypt：`apt-get install -y apache2 python-certbot-apache`
+- 配置Let's Encrypt: `certbot --apache -d <your-domain.com> --agree-tos -m <your-email> --redirect`
+- 配置SSL证书的自动续订: 想您的crontab添加 `10 3 * * * /usr/bin/certbot renew --quiet` 
 
-## <a name="monitoring"></a> Monitoring
+## <a name="monitoring"></a> 监控
 
-JHipster comes with full monitoring support from [Micrometer](https://micrometer.io/).
+JHipster带有[Micrometer](https://micrometer.io/)的全面监视支持。
 
-In development, Metrics data will be available through JMX: launch your JConsole and you will be able to access it
+在开发中，可以通过JMX获得Metrics数据：启动JConsole，您将可以访问它
 
-In production, your application expose its metrics data on an endpoint that a [Prometheus server](https://prometheus.io/docs/introduction/overview/) can scrape at regular intervals, depending on what you have configured.
+在生产中，您的应用程序将其指标数据公开在[Prometheus服务器](https://prometheus.io/docs/introduction/overview/)定期采集的服务端点上，具体取决于您配置的内容。

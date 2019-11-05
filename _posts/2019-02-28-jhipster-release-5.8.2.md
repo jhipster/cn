@@ -1,35 +1,35 @@
 ---
 layout: default
-title: 版本 5.8.2
+title: Release 5.8.2
 ---
 
-JHipster 发布版本 5.8.2
+JHipster release v5.8.2
 ==================
 
-我们正在准备 JHipster 6，JHipster 5 目前处于维护模式，这个版本是 JHipster 5 的一个补丁。
+This is a patch release for JHipster 5, which is currently in maintenance mode as we are preparing JHispter 6.
 
-此版本解决了[这些问题](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed), 其中最主要的是一个会使JHipster模块崩溃的错误.
+This fixes a [several issues](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed), the most important one being a bug making JHipster modules crash.
 
-此外还有一些库升级，比如 [React 中用到的 Jest](https://github.com/jhipster/generator-jhipster/commit/5f1ae61a8a52fdcc5bba8307ff3fd057fc9d2037) 和 [Angular](https://github.com/jhipster/generator-jhipster/commit/154326fc2c72358163fed917a762e30b70c3412e).
+There are also a few library upgrades, the most important ones being [Jest for React](https://github.com/jhipster/generator-jhipster/commit/5f1ae61a8a52fdcc5bba8307ff3fd057fc9d2037) and [Angular](https://github.com/jhipster/generator-jhipster/commit/154326fc2c72358163fed917a762e30b70c3412e).
 
-已完成的工单 （closed tickets） 和 已合并的拉回请求 pull requests
+关闭的工单与合并请求
 ------------
-像往常一样, __[您可以在这里查看所有已完成的工单和已合并的拉回请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed)__。
+一如既往, __[你可以在此处查看所有已关闭的工单与已接受合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A5.8.2+is%3Aclosed)__.
 
-如何升级
+更新指引
 ------------
 
 **自动升级**
 
-自动升级是指在已有的应用程序上使用 [JHipster 升级（upgrade）子生成器（sub-generator）]({{ site.url }}/upgrading-an-application/)：
+在已存在的项目上使用[JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/)自动升级:
 
-首先，升级您的 JHipster 版本：
+升级Jhipster版本:
 
 ```
 npm update -g generator-jhipster
 ```
 
-再运行升级子生成器：
+然后升级子生成器:
 
 ```
 jhipster upgrade
@@ -37,38 +37,39 @@ jhipster upgrade
 
 **手动升级**
 
-手动升级首先需要您升级您的 JHipster 版本：
+选择手动升级, 需要先升级你的Jhipster版本:
 
 ```
 npm update -g generator-jhipster
 ```
 
-已有的项目使用它当时生成时的版本。如果您希望它升级，您需要先删除它的 `node_modules` 文件夹然后运行以下命令：
+如果你已经有了一个项目, 将会继续使用当时项目生成的Jhipster版本.
+如果需要升级你的项目, 你需要先删除`node_modules`文件夹再运行:
 
 ```
 jhipster
 ```
 
-您也可以用这个命令更新您的应用程序和它的所有实体：
+更新你的项目和所有的实体类
 
 ```
 jhipster --with-entities
 ```
 
-当然您也可以通过再次运行实体子生成器逐个更新您的实体，比如，如果您有个叫做 _Foo_ 的实体
+你也可以使用实体类子生成器挨个更新你的实体类, 例如你的实体类名字是_Foo_
 
 ```
 jhipster entity Foo
 ```
 
-帮助和错误
+帮助和缺陷
 --------------
 
-如果您发现此版本有任何问题，请不要犹豫：
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 添加错误到我们的 [错误跟踪器](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- 在 [Stack Overflow](http://stackoverflow.com/tags/jhipster/info) 上发布问题
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
-如果您遇到的问题是紧急错误或安全问题，请：
+If the issue you have is an urgent bug or security issue, please:
 
-- 在推特上联系 [@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)

@@ -1,131 +1,134 @@
 ---
 layout: default
-title: 常用应用程序属性
+title: 通用应用程序属性
 permalink: /common-application-properties/
 sitemap:
     priority: 0.7
     lastmod: 2018-03-18T18:20:00-00:00
 ---
 
-# <i class="fa fa-flask"></i> 常用应用程序属性
+# <i class="fa fa-flask"></i> 通用应用程序属性
 
-JHipster生成一个Spring引导应用程序，可以使用标准的Spring引导属性机制进行配置。
+JHipster生成一个Spring Boot应用程序，并且可以使用标准的Spring Boot属性机制进行配置。
 
-这些属性是由jhipster在生成时配置的，并且在开发和生产模式中通常具有不同的值：在我们的[Profiles documentation]({{ site.url }}/profiles/)中了解更多信息。
+这些属性是由JHipster在生成时配置的，并且在开发和生产模式中通常具有不同的值：请在我们的[Profiles文档]({{ site.url }}/profiles/)中了解有关此属性的更多信息。
 
-在JHipster应用程序中，有三种属性：
+在JHipster应用程序中，存在三种属性：
 
-1. [Spring Boot standard application properties](#1)
-2. [JHipster application properties](#2)
-3. [Application-specific properties](#3)
+1. [Spring Boot标准应用程序属性](#1)
+2. [JHipster应用程序属性](#2)
+3. [应用程序特殊属性](#3)
 
-## <a name="1"></a> Spring Boot标准应用属性
+## <a name="1"></a> Spring Boot标准应用程序属性
 
-与任何Spring Boot应用程序一样，JHipster允许您配置任何标准 [Spring Boot application property](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).
+与其他任何Spring Boot应用程序一样，JHipster允许您配置任何标准[Spring Boot应用程序属性](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)。
 
-## <a name="2"></a> JHipster应用属性
+## <a name="2"></a> JHipster应用程序属性
 
-JHipster提供特定的应用程序属性，这些属性来自[JHipster server-side library](https://github.com/jhipster/jhipster). 这些属性是所有JHipster项目的标准属性，但其中一些属性仅根据您在构建应用程序时选择的内容工作: 例如 `jhipster.cache.hazelcast` 键仅在您选择Hazelcast作为二级Hibernate缓存时工作。.
+JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipster)的特定应用程序属性。这些属性是所有JHipster项目的标准属性，但是其中一些属性仅取决于您在构建应用程序时选择的属性：例如，`jhipster.cache.hazelcast`键仅在您选择Hazelcast作为第二级Hibernate缓存时才有效。
 
-这些属性是使用 `io.github.jhipster.config.JHipsterProperties`类配置的。
+这些属性是使用`io.github.jhipster.config.JHipsterProperties`类配置的。
 
-以下是这些属性的文档：
+这是这些属性的文档：
 
     jhipster:
 
-        # Thread pool that will be used for asynchronous method calls in JHipster
+        # 在JHipster中用于异步方法调用的线程池
         async:
-            core-pool-size: 2 # Initial pool size
-            max-pool-size: 50 # Maximum pool size
-            queue-capacity: 10000 # Queue capacity of the pool
+            core-pool-size: 2 # 初始池大小
+            max-pool-size: 50 # 最大池大小
+            queue-capacity: 10000 # 池的队列容量
 
-        # Specific configuration for JHipster gateways
-        # See https://www.jhipster.tech/api-gateway/ for more information on JHipster gateways
+        # JHipster网关的特定配置
+        # 有关JHipster网关的更多信息，请参见https://www.jhipster.tech/api-gateway/
         gateway:
             rate-limiting:
-                enabled: false # Rate limiting is disabled by default
-                limit: 100_000L # By default we allow 100,000 API calls
-                duration-in-seconds: 3_600 # By default the rate limiting is reinitialized every hour
-            authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
-                app1: /api # recommended prod configuration, it allows the access to all API calls from the "app1" microservice
+                enabled: false # 速率限制默认为禁用
+                limit: 100_000L # 默认情况下，我们允许100,000个API调用
+                duration-in-seconds: 3_600 # 默认情况下，每小时限制速率会重新初始化
+            authorized-microservices-endpoints: # 访问控制策略，如果将路由留空，则所有端点均可访问
+                app1: /api # 建议的prod配置，它允许从"app1"微服务访问所有API调用
 
         # HTTP configuration
         http:
-            # V_1_1 for HTTP/1.1 or V_2_0 for HTTP/2.
-            # To use HTTP/2 you will need SSL support (see the Spring Boot "server.ssl" configuration)
+            # V_1_1代表HTTP/1.1或V_2_0代表HTTP/2。
+            # 要使用HTTP/2，您将需要SSL支持（请参阅Spring Boot "server.ssl"配置）
             version: V_1_1
-            #Force the server cipher suite to follow the exact order specifying in server.ssl.ciphers (For perfect forward secrecy)
+            # 强制服务器密码套件遵循server.ssl.ciphers中指定的确切顺序（以实现完美的前向保密性）
             useUndertowUserCipherSuitesOrder: true
-            cache: # Used by io.github.jhipster.web.filter.CachingHttpHeadersFilter
-                timeToLiveInDays: 1461 # Static assets are cached for 4 years by default
+            cache: # 由io.github.jhipster.web.filter.CachingHttpHeadersFilter使用
+                timeToLiveInDays: 1461 # 静态资源默认缓存4年
 
-        # Hibernate 2nd level cache, used by CacheConfiguration
+        # Hibernate 2级缓存，由CacheConfiguration使用
         cache:
-            hazelcast: # Hazelcast configuration
-                time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-                backup-count: 1 # Number of objects backups
-                # Configure the Hazelcast management center
-                # Full reference is available at: http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
+            hazelcast: # Hazelcast配置
+                time-to-live-seconds: 3600 # 默认情况下，对象在缓存中停留1小时
+                backup-count: 1 # 对象备份数
+                # 配置Hazelcast管理中心
+                # 完整的参考资料可在以下网址获得：http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
                 management-center:
-                    enabled: false # Hazelcast management center is disabled by default
-                    update-interval: 3 # Updates are sent to the Hazelcast management center every 3 seconds by default
-                    # Default URL for Hazelcast management center when using JHipster's Docker Compose configuration
-                    # See src/main/docker/hazelcast-management-center.yml
-                    # Warning, the default port is 8180 as port 8080 is already used by JHipster
+                    enabled: false # 默认情况下，Hazelcast管理中心处于禁用状态
+                    update-interval: 3 # 默认情况下，更新每3秒钟将发送到Hazelcast管理中心
+                    # 使用JHipster的Docker Compose配置时Hazelcast管理中心的默认URL
+                    # 参见src/main/docker/hazelcast-management-center.yml
+                    # 警告，默认端口为8180，因为JHipster已使用端口8080
                     url: http://localhost:8180/mancenter
-            ehcache: # Ehcache configuration
-                time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-                max-entries: 100 # Number of objects in each cache entry
-            infinispan: #Infinispan configuration
+            ehcache: # Ehcache配置
+                time-to-live-seconds: 3600 # 默认情况下，对象在缓存中停留1小时
+                max-entries: 100 # 每个高速缓存条目中的对象数
+            caffeine: # Caffeine配置
+                time-to-live-seconds: 3600 # 默认情况下，对象在缓存中停留1小时
+                max-entries: 100 # 每个高速缓存条目中的对象数   
+            infinispan: #Infinispan配置
                 config-file: default-configs/default-jgroups-tcp.xml
-                # local app cache
+                # 本地应用程序缓存
                 local:
-                    time-to-live-seconds: 60 # By default objects stay 1 hour (in minutes) in the cache
-                    max-entries: 100 # Number of objects in each cache entry
-                #distributed app cache
+                    time-to-live-seconds: 60 # 默认情况下，对象在缓存中保留1小时（以分钟为单位）
+                    max-entries: 100 # 每个高速缓存条目中的对象数
+                #分布式应用程序缓存
                 distributed:
-                    time-to-live-seconds: 60 # By default objects stay 1 hour (in minutes) in the cache
-                    max-entries: 100 # Number of objects in each cache entry
+                    time-to-live-seconds: 60 # 默认情况下，对象在缓存中保留1小时（以分钟为单位）
+                    max-entries: 100 # 每个高速缓存条目中的对象数
                     instance-count: 1
-                #replicated app cache
+                #复制的应用程序缓存
                 replicated:
-                    time-to-live-seconds: 60 # By default objects stay 1 hour (in minutes) in the cache
-                    max-entries: 100 # Number of objects in each cache entry
-            # Memcached configuration
-            # Uses the Xmemcached library, see https://github.com/killme2008/xmemcached
+                    time-to-live-seconds: 60 # 默认情况下，对象在缓存中保留1小时（以分钟为单位）
+                    max-entries: 100 # 每个高速缓存条目中的对象数
+            # Memcached配置
+            # 使用Xmemcached库，请参阅https://github.com/killme2008/xmemcached
             memcached:
-             # Disabled by default in dev mode, as it does not work with Spring Boot devtools
+             # 默认情况下在dev模式下禁用，因为它不适用于Spring Boot devtools
                 enabled: true
-                servers: localhost:11211 # Comma or whitespace separated list of servers' addresses
-                expiration: 300 # Expiration time (in seconds) for the cache
-                use-binary-protocol: true # Binary protocol is recommended for performance (and security)
+                servers: localhost:11211 # 用逗号或空格分隔的服务器地址列表
+                expiration: 300 # 缓存的过期时间（以秒为单位）
+                use-binary-protocol: true # 建议使用二进制协议以提高性能（和安全性）
 
-        # E-mail properties
+        # E-mail属性
         mail:
-            enabled: false # If e-mail sending is enabled. The standard `spring.mail` keys will need to be configured
-            from: jhipster@localhost # The default "from" address for e-mails
-            base-url: http://127.0.0.1:8080 # URL to the application, used inside e-mails
+            enabled: false # 如果启用了电子邮件发送。需要配置标准的`spring.mail`键
+            from: jhipster@localhost # 电子邮件的默认"from"地址
+            base-url: http://127.0.0.1:8080 # 应用程序的URL，在电子邮件中使用
 
-        # Spring Security specific configuration
+        # Spring Security特定的配置
         security:
-            remember-me: # JHipster secure implementation of the remember-me mechanism, for session-based authentication
-                # security key (this key should be unique for your application, and kept secret)
+            remember-me: # JHipster的"记住我"机制的安全实现，用于基于会话的身份验证
+                # 安全密钥（此密钥对于您的应用程序应该是唯一的，并且应保密）
                 key: 0b32a651e6a65d5731e869dc136fb301b0a8c0e4
-            client-authorization: # Used with JHipster UAA authentication
-                access-token-uri: # URL of the JHipster UAA server OAuth tokens
-                token-service-id: # ID of the current application
-                client-id: # OAuth client ID
-                client-secret: # OAuth client secret
+            client-authorization: # 与JHipster UAA认证一起使用
+                access-token-uri: # JHipster UAA服务器OAuth令牌的URL
+                token-service-id: # 当前应用程序的ID
+                client-id: # OAuth客户端ID
+                client-secret: # OAuth客户端密钥
             authentication:
-                jwt: # JHipster specific JWT implementation
-                    # The secret token should be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line).
-                    # If both properties are configured, the `secret` property has a higher priority than the `base64-secret` property.
-                    secret: # JWT secret key in clear text (not recommended)
-                    base64-secret:  # JWT secret key encoded in Base64 (recommended)
-                    token-validity-in-seconds: 86400 # Token is valid 24 hours
-                    token-validity-in-seconds-for-remember-me: 2592000 # Remember me token is valid 30 days
+                jwt: # JHipster特定的JWT实现
+                    # 秘密令牌应使用Base64进行编码（您可以在命令行中输入`echo 'secret-key'|base64`）。
+                    # 如果同时配置了这两个属性，则`secret`属性的优先级高于`base64-secret`属性。
+                    secret: # JWT明文密钥（不推荐）
+                    base64-secret:  # 使用Base64编码的JWT秘密密钥（推荐）
+                    token-validity-in-seconds: 86400 # 令牌有效期为24小时
+                    token-validity-in-seconds-for-remember-me: 2592000 # Remember me令牌有效期为30天
 
-        # Swagger configuration
+        # Swagger配置
         swagger:
             default-include-pattern: /api/.*
             title: JHipster API
@@ -140,42 +143,41 @@ JHipster提供特定的应用程序属性，这些属性来自[JHipster server-s
             host:
             protocols:
 
-        # DropWizard Metrics configuration, used by MetricsConfiguration
+        # DropWizard Metrics配置，由MetricsConfiguration使用
         metrics:
-            jmx: # Export metrics as JMX beans
-                enabled: true # JMX is enabled by default
-            # Send metrics to a Graphite server
-            # Use the "graphite" Maven profile to have the Graphite dependencies
+            jmx: # 将指标导出为JMX Bean
+                enabled: true # 默认情况下启用JMX
+            # 将指标发送到Graphite服务器
+            # 使用"graphite" Maven配置文件来具有Graphite依赖项
             graphite:
-                enabled: false # Graphite is disabled by default
+                enabled: false # 默认情况下禁用Graphite
                 host: localhost
                 port: 2003
                 prefix: jhipster
-            # Send metrics to a Prometheus server
+            # 将指标发送到Prometheus服务器
             prometheus:
-                enabled: false # Prometheus is disabled by default
+                enabled: false # 默认情况下禁用Prometheus
                 endpoint: /prometheusMetrics
-            logs: # Reports Dropwizard metrics in the logs
+            logs: # 在日志中报告Dropwizard指标
                 enabled: false
-                reportFrequency: 60 # frequency of reports in seconds
+                reportFrequency: 60 # 报告频率（以秒为单位）
 
-        # Logging configuration, used by LoggingConfiguration
+        # 日志记录配置，由LoggingConfiguration使用
         logging:
-            logstash: # Forward logs to Logstash over a socket
-                enabled: false # Logstash is disabled by default
-                host: localhost # Logstash server URL
-                port: 5000 # Logstash server port
-                queue-size: 512 # Queue for buffering logs
-            spectator-metrics: # Reports Netflix Spectator metrics in the logs
-                enabled: false # Spectator is disabled by default
+            logstash: # 通过socket将日志转发到Logstash
+                enabled: false # 默认情况下禁用Logstash
+                host: localhost # Logstash服务器URL
+                port: 5000 # Logstash服务器端口
+                queue-size: 512 # 队列缓存日志
+            spectator-metrics: # 在日志中报告Netflix Spectator指标
+                enabled: false # Spectator默认是禁用的
 
-        # By default cross-origin resource sharing (CORS) is enabled in "dev" mode for
-        # monoliths and gateways.
-        # It is disabled by default in "prod" mode for security reasons, and for microservices
-        # (as you are supposed to use a gateway to access them).
-        # This configures a standard org.springframework.web.cors.CorsConfiguration
-        # Note that "exposed-headers" is mandatory for JWT-based security, which uses
-        # the "Authorization" header, and which is not a default exposed header.
+        # 默认情况下，跨域资源共享（CORS）在"dev"模式下的monoliths和网关上启用
+        # 出于安全原因和微服务的考虑，默认情况下在"prod"模式下将其禁用
+        # （因为您应该使用网关来访问它们）。
+        # 这将配置标准的org.springframework.web.cors.CorsConfiguration
+        # 请注意，"exposed-headers"对于基于JWT的安全性是强制性的，它使用
+        # "Authorization"头部，这不是默认的暴露头部。
         cors:
             allowed-origins: "*"
             allowed-methods: "*"
@@ -184,13 +186,13 @@ JHipster提供特定的应用程序属性，这些属性来自[JHipster server-s
             allow-credentials: true
             max-age: 1800
 
-        # Ribbon displayed on the top left-hand side of JHipster applications
+        # Ribbon显示在JHipster应用程序的左上方
         ribbon:
-            # Comma-separated list of profiles that display a ribbon
+            # 以逗号分隔的显示ribbon的配置文件列表
             display-on-active-profiles: dev
 
-## <a name="3"></a> Application-specific properties
+## <a name="3"></a> 应用程序特殊属性
 
-生成的应用程序也可以有自己的Spring引导属性。强烈建议这样做，因为它允许应用程序的类型安全配置，以及在一个IDE中自动完成和记录。
+您生成的应用程序还可以具有自己的Spring Boot属性。强烈建议这样做，因为它允许对应用程序进行类型安全的配置，以及IDE中的自动完成和文档。
 
-JHipster在“config”包中生成了一个“applicationproperties”类，该类已经预配置，并且已经在底部记录了“application.yml”、“application-dev.yml”和“application-prod.yml”文件。您需要做的只是编写您自己的特定属性代码。
+JHipster已在`config`包中生成了一个`ApplicationProperties`类，该类已经预先配置，并且已经在文件`application.yml`, `application-dev.yml`和`application-prod.yml`的底部进行了说明。您所需要做的就是编写自己的特定属性。

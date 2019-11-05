@@ -7,20 +7,19 @@ sitemap:
     lastmod: 2018-04-02T23:41:00-00:00
 ---
 
-# <i class="fa fa-html5"></i> 使用React (with Redux)
-本节介绍与**React**一起使用的**Redux**JavaScript库
+# <i class="fa fa-html5"></i> 使用React（与Redux）
+本部分引用与**Redux**一起使用的JavaScript库**React**。
 
 ## 项目结构
 
-JHipster客户机代码可以在`src/main/webapp`下找到，并严格遵循[Piotr Witek React style guide](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md).
+您可以在`src/main/webapp`下找到JHipster前端代码，该代码与[Piotr Witek React样式指南](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md)密切相关。
 
-如果您对我们的应用程序结构、文件名、打印脚本约定有任何疑问，请先阅读本指南…
+如果您对我们的应用程序结构、文件名、TypeScript约定有任何疑问，请先阅读本指南。
 
-对于react路由，我们遵循破折号命名约定，这样URL就干净一致了。
+对于React路由，我们遵循破折号命名约定，以便URL干净且一致。
+当您生成实体时，将根据此约定生成路由名称，路由URL和REST API端点URL，并且实体名称也会在需要时自动复数。
 
-当您生成一个实体时，路由名称、路由URL和RESTAPI端点URL将根据此约定生成，并且在需要时，实体名称也将自动复数。
-
-主要项目结构如下：
+这是主要的项目结构：
 
 ```
 webapp
@@ -49,7 +48,7 @@ webapp
 └── robots.txt                      - Configuration for bots and Web crawlers
 ```
 
-Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) to create a new entity called `Foo` generates the following front-end files under `src/main/webapp`:
+使用[实体子生成器]({{ site.url }}/creating-an-entity/)创建名为`Foo`的新实体会在`src/main/webapp`下生成以下前端文件：
 
 ```
 webapp
@@ -70,18 +69,17 @@ webapp
          └── foo.json                     - French translation of Foo name, fields, ...
 ```
 
-请注意，默认语言翻译将基于您在应用程序生成期间选择的内容。此处显示的“en”和“fr”仅供演示。
+请注意，默认语言翻译将基于您在应用生成过程中选择的语言。在此处仅显示'en'和'fr'以进行演示。
 
 ## Redux
 
-[Redux](https://redux.js.org/)是JavaScript的可预测状态容器。它被用来与React一起管理React组件的状态。
+[Redux](https://redux.js.org/)是一个用于应用程序状态管理的开源JavaScript库。它与React一起使用来管理React组件的状态。
 
-基本上，redux提供了一个对象 **store** ，用于存储应用程序的整个状态。
-要访问此存储并因此更新状态组件，唯一的方法是
-**操作** 描述请求更新的事实，然后 **减速器** 将
-定义如何响应这些操作更新状态。
+基本上，Redux提供了一个对象**存储**，用于存储应用程序的整个状态。
+要访问此存储并因此更新状态组件，唯一的方法是调度描述请求更新的**动作**，
+然后**reducers**将定义如何响应这些操作来更新状态。
 
-Here is an example of a reducer:
+这是reducers的示例：
 
 ``` typescript
 export const ACTION_TYPES = {
@@ -126,12 +124,9 @@ export default (state = initialState, action) => {
 };
 ```
 
-为了访问存储并更新当前应用程序状态，需要调度
-对商店的操作，如前所述。操作是简单的javascript对象，必须具有**类型**，它描述了
-该操作将执行，通常它们也有一个 **有效载荷** ，对应于
-要传递到存储区的数据。
+为了访问您的商店并更新当前应用程序状态，您需要如前所述，将操作分派到商店。动作是简单的JavaScript对象，并且必须具有描述动作将要执行的操作的**类型**，通常，它们还具有与要传递给存储的数据相对应的**负载**。
 
-Here is an action to access the store:
+这是访问商店的操作：
 
 ``` typescript
 const apiUrl = SERVER_API_URL + '/api/foos';
@@ -143,18 +138,16 @@ export const getFoos = () => ({
 });
 ```
 
-上面描述的操作表明我们希望通过
-发送GET请求。操作类型将匹配
-请注意，**export** 关键字用于使连接的组件能够使用该操作。
-必要时（例如，每次更新组件时）。
+上述动作表明我们要通过发送GET请求来检索所有Foo对象。操作类型将匹配。
+请注意，**export**关键字用于使连接的组件能够在必要时使用该操作（例如，每次更新组件时）。
 
-## Authorizations
+## 鉴权
 
-Jhipster uses the [React router](https://github.com/ReactTraining/react-router) to organize the differents parts of your application.
+Jhipster使用[React路由器](https://github.com/ReactTraining/react-router)来组织应用程序的不同部分。
 
-当涉及到需要身份验证的路由时，将使用生成的`privateroute`组件。此组件只会阻止任何未经身份验证的用户访问路由。
+当涉及需要身份验证的路由时，将使用生成的`PrivateRoute`组件。该组件将仅阻止任何未经身份验证的用户访问路由。
 
-Here is an example of PrivateRoute usage:
+这是PrivateRoute用法的示例：
 
 ``` typescript
 const Routes = () => (
@@ -166,17 +159,16 @@ const Routes = () => (
 );
 ```
 
-如您所见，未经身份验证的用户可以访问`/`和`/login`但访问`/account`需要登录。
+如您所见，未经身份验证的用户可以访问`/`和`/login`，但是访问`/account`需要登录。
 
-请注意，privateroute使用`authentication.isAuthenticated` 存储值来确定用户是否已通过身份验证。
+请注意，PrivateRoute使用`authentication.isAuthenticated`存储值来了解用户是否已通过身份验证。
 
 ## 通知系统
 
-JHipster uses [react-toastify](https://github.com/fkhadra/react-toastify) alerts for the notification system.
+JHipster使用[react-toastify](https://github.com/fkhadra/react-toastify)为通知系统提供告警。
 
-默认情况下，只要创建/更新/删除实体，JHipster就会显示成功通知。
-以及从响应中捕获错误时的错误通知。
+默认情况下，每当创建/更新/删除实体时，JHipster都会显示成功通知，而从响应中捕获到错误时，JHipster将显示错误通知。
 
 ## React JHipster库
 
-[react-jhipster](https://github.com/jhipster/react-jhipster) 库为生成的应用程序提供实用程序和通用服务。它还可以处理i18n。
+[react-jhipster](https://github.com/jhipster/react-jhipster)库为生成的应用程序提供实用程序和通用服务。它也处理i18n。

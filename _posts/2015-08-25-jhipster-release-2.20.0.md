@@ -13,7 +13,7 @@ Documentation
 
 Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/documentation-archive)!
 
-What's new
+更新日志
 ----------
 
 Like last month, this new release was largely done by [the new dev team]({{ site.url }}/team/), so kudos to all of you guys!
@@ -28,16 +28,16 @@ The new and noteworthy features are:
 
 And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.20.0+is%3Aclosed)__.
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
@@ -49,11 +49,11 @@ You can also update your entities by running again the entity sub-generator, for
 yo jhipster:entity Foo
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

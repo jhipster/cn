@@ -6,42 +6,42 @@ title: Release 0.3.0
 JHipster release 0.3.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-- JDK 7 is now a required minimum (if you use JDK 6, don't call yourself a hipster!)
-- Spring configuration is now XML-less! The only XML configuration file we have left belongs to Spring Security. We need to wait until the next version of Spring Security to replace this file.
-- The connection pool has changed: we now use [HikariCP](https://github.com/brettwooldridge/HikariCP)
-- For users who have chosen to use Spring 4, updated the application to Spring 4.0.0.RC2
+- JDK 7是最低要求 (如果你还在使用Java6, 你就不能自称Java狂热者了!)
+- Spring的配置几乎没有XML的存在! 我们唯一保持XML配置文件的组件是Spring Security. 我们需要等待Spring Security下次更新才替换这个文件.
+- 替换新的连接池库: 我们现在使用[HikariCP](https://github.com/brettwooldridge/HikariCP)
+- 由于很多用户开始使用Spring4, 我们也与时俱进升级到了Spring 4.0.0.RC2
 
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-You can suppress the now useless XML files:
+你现在可以弃用这些已经不使用的XML文件:
 
 - src/main/resources/META-INF/persistence.xml
 - src/main/resources/META-INF/spring/applicationContext-database.xml
 - src/test/resources/META-INF/spring/applicationContext-database.xml
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告

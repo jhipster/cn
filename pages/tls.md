@@ -1,40 +1,40 @@
 ---
 layout: default
-title: 使用TLS and HTTP/2
+title: 使用TLS和HTTP/2
 permalink: /tls/
 sitemap:
     priority: 0.7
     lastmod: 2018-10-04T00:00:00-00:00
 ---
 
-# <i class="fa fa-lock"></i> 使用
+# <i class="fa fa-lock"></i> 在开发中使用TLS和HTTP/2
 
 ## 介绍
 
-此页用于在开发中使用TLS和HTTP/2（主要用于测试目的）。有关生产配置，请阅读[security section in the production documentation]({{ site.url }}/production/#security) .
+此页面用于在开发中使用TLS和HTTP/2（主要用于测试目的）。对于生产配置，请阅读[生产文档中的安全性部分]({{ site.url }}/production/#security)。
 
-TLS是在具有`https://` URL时使用的协议, 在现代浏览器上使用HTTP/2。
+TLS是具`https://` URL时使用的协议，并且在现代浏览器中使用HTTP/2是必需的。
 
-在测试应用程序时使用这些协议非常有用，主要是出于性能原因。
+主要出于性能原因，在测试应用程序时使用这些协议很有用。
 
-## 在Spring Booth中使用TLS and HTTP/2
+## 在Spring Boot中使用TLS和HTTP/2
 
-JHipster有一个特定的配置，用于配置TLS和HTTP/2 (请参见[common application properties documentation]({{ site.url }}/common-application-properties/)):
+JHipster具有用于配置TLS和HTTP/2的特定配置（请参阅[通用应用程序属性文档]({{ site.url }}/common-application-properties/))），并且使事情变得更加简单：
 
 - JHipster在应用程序生成时生成自签名证书
-- 提供了特定的`tls`配置文件(请参见[profiles documentation]({{ site.url }}/profiles/))
+- 提供了特定的`tls`配置文件（请参阅[配置文件文档]({{ site.url }}/profiles/)）
 
-为了在启用了TLS and HTTP/2 的情况下使用提供的自签名证书运行JHipster， 只需使用此`tls`配置:
+为了使用提供的自签名证书（启用了TLS和HTTP/2）运行JHipster，您只需要使用以下`tls`配置文件：
 
-*   with Maven: `./mvnw -Pdev,tls`
-*   with Gradle: `./gradlew -Ptls`
+*   使用Maven: `./mvnw -Pdev,tls`
+*   使用Gradle: `./gradlew -Ptls`
 
-该应用程序将在`https://localhost:8080/`.
+该应用程序将在`https://localhost:8080/`上可用。
 
-由于证书是自签名的，浏览器将发出警告，您需要忽略它（或导入它）才能访问应用程序。
+由于证书是自签名的，因此浏览器将发出警告，并且您将需要忽略它（或将其导入）以访问该应用程序。
 
-## 使用带有Angular或React的TLS和HTTP/2
+## 在Angular或React或Vue.js中使用TLS和HTTP/2
 
-Instead of using `npm start` in order to run the front-end (with Webpack and BrowserSync), just run `npm run start-tls`, and it will connect to the back-end running on `https://localhost:8080/`.
+无需使用`npm start`来运行前端（使用Webpack和BrowserSync），只需运行`npm run start-tls`，它将连接`https://localhost:8080/`上运行的后端。
 
-Everything should then work the same as without TLS and HTTP/2.
+然后，所有内容应与没有使用TLS和HTTP/2的情况相同。

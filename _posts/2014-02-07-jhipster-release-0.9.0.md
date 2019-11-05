@@ -6,37 +6,37 @@ title: Release 0.9.0
 JHipster release 0.9.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-- Full "hot reload" of Java classes is working a lot better, thanks to [@andy_clement](https://twitter.com/andy_clement) who corrected our issues. However, we still have an annoying [bug](https://github.com/spring-projects/spring-loaded/issues/39)
-- [@JeromeMirc](https://twitter.com/JeromeMirc) added a default second user, and greatly improved the way we manage user authorizations
-- We greatly improved the generated WAR files, especially for using them in production
-- We updated to the latest Spring 4.0.1 version, which corrects a number of issues. If you had issues with wrong stacktraces with *org.springframework.scheduling.annotation.SchedulingConfiguration.setBeanFactory*, that should now be solved
-- The whole documentation has been updated to reflect those changes
+- 完全的Java类"热重载"较以前有了很大提升, 感谢[@andy_clement](https://twitter.com/andy_clement)解决了我们的问题. 但是, 我们还有一个恼人的[缺陷](https://github.com/spring-projects/spring-loaded/issues/39)
+- [@JeromeMirc](https://twitter.com/JeromeMirc)添加了第二个默认用户, 而且极大的提升了用户授权管理逻辑
+- 改进了生成的WAR文件, 尤其是在生产环境使用
+- 更新Spring至4.0.1, 这个版本修复了许多问题. 如果你使用*org.springframework.scheduling.annotation.SchedulingConfiguration.setBeanFactory*遇到了问题, 现在应该可以解决了.
+- 以上更新已全同步至文档
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

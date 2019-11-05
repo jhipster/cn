@@ -6,37 +6,37 @@ title: Release 0.5.0
 JHipster release 0.5.0
 ==================
 
-*JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.*
+*JHipster为您提供集Yeoman + Maven + Spring + AngularJS于一体的应用生成器.*
 
-What's new
+更新日志
 ----------
 
-- The "entity" sub-generator is now in ready to use. A full documentation is available [here](/creating-an-entity/)
-- You can now create a single executable JAR file of the application, for easy deployment. It is documentated in the [production section](/production/)
-- Several bug fixes and minor improvements, and updated documentation
+- 实体类的子生成器现在已可以使用. 完整的使用文档参考[此处](/creating-an-entity/)
+- 你现在可以创建一个单独的可执行Jar文件用于简便部署. 文档参考[生产环境章节](/production/)
+- 一些缺陷修复与些许性能提升, 以及文档更新
 
-How to upgrade
+更新指引
 ------------
 
-Update your version of JHipster with:
+使用以下命令更新Jhipster:
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then you can update your project when you run again
+使用以下命令更新你的项目
 
 ```
 yo jhipster
 ```
 
-As we have changed the Liquibase changeSet, to include the "HIBERNATE_SEQUENCES" table, you might need to drop your existing schema, or add this table manually.
+我们修改了Liquebase变更集, 添加了"HIBERNATE_SEQUENCES"表, 你需要删除你现有的表结构或者手动添加.
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
+- 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
