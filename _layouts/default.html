@@ -146,24 +146,24 @@
                             </li>
                             <li {% if '/releases/' == page.url %}class="active" {% endif %}>
                                 <a href="{{ site.url }}/releases/">
-                                    <span class="icon fa fa-file-text-o"></span><span class="title">发行说明</span>
+                                    <span class="icon fa fa-file-text-o"></span><span class="title">更新日志</span>
                                 </a>
                             </li>
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-1">
-                                    <span class="icon fa fa-road"></span><span class="title">JHipster快速入门</span>
+                                    <span class="icon fa fa-road"></span><span class="title">快速入门</span>
                                 </a>
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-1" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/tech-stack/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/tech-stack/"><i class="fa fa-fw fa-stack-overflow"></i> 技术栈</a></li>
-                                            <li {% if '/presentation' == page.url %}class="active" {% endif %}><a href="/presentation" target="_blank"><i class="fa fa-fw fa-desktop"></i> JHipster官方幻灯片</a></li>
-                                            <li {% if '/screenshots/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/screenshots/"><i class="fa fa-fw fa-picture-o"></i> JHipster屏幕截图</a></li>
-                                            <li {% if '/video-tutorial/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/video-tutorial/"><i class="fa fa-fw fa-film"></i> 视频教程 (16 分钟)</a></li>
-                                            <li><a href="https://github.com/jhipster/jhipster-guides" target="_blank"><i class="fa fa-fw fa-road"></i> Online guides</a></li>
-                                            <li {% if '/companies-using-jhipster/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/companies-using-jhipster/"><i class="fa fa-fw fa-thumbs-up"></i> 使用JHipster的公司</a></li>
-                                            <li {% if '/showcase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/showcase/"><i class="fa fa-fw fa-file-image-o"></i> JHipster应用展示</a></li>
+                                            <li {% if '/presentation' == page.url %}class="active" {% endif %}><a href="/presentation" target="_blank"><i class="fa fa-fw fa-desktop"></i> 官方幻灯片</a></li>
+                                            <li {% if '/screenshots/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/screenshots/"><i class="fa fa-fw fa-picture-o"></i> 屏幕截图</a></li>
+                                            <li {% if '/video-tutorial/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/video-tutorial/"><i class="fa fa-fw fa-film"></i> 视频教程 (16')</a></li>
+                                            <li><a href="https://github.com/jhipster/jhipster-guides" target="_blank"><i class="fa fa-fw fa-road"></i> 在线教程</a></li>
+                                            <li {% if '/companies-using-jhipster/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/companies-using-jhipster/"><i class="fa fa-fw fa-thumbs-up"></i> 谁在用</a></li>
+                                            <li {% if '/showcase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/showcase/"><i class="fa fa-fw fa-file-image-o"></i> 应用展示</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -191,24 +191,24 @@
                                 <div id="dropdown-3" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li {% if '/installation/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installation/"><i class="fa fa-fw fa-cloud-download"></i> 安装JHipster</a></li>
+                                            <li {% if '/installation/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installation/"><i class="fa fa-fw fa-cloud-download"></i> 安装方法</a></li>
                                             <li {% if '/configuring-a-corporate-proxy/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/configuring-a-corporate-proxy/"><i class="fa fa-fw fa-exchange"></i> 配置代理</a></li>
                                             <li {% if '/configuring-ide/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/configuring-ide/"><i class="fa fa-fw fa-keyboard-o"></i> 配置开发环境</a></li>
-                                            <li {% if '/docker-compose/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-compose/"><i class="fa fa-fw fa-music"></i> Docker Compose</a></li>
-                                            <li {% if '/shell-plugins/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/shell-plugins/"><i class="fa fa-fw fa-terminal"></i> Shell Plugins</a></li>
+                                            <li {% if '/docker-compose/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-compose/"><i class="fa fa-fw fa-music"></i> 容器映像</a></li>
+                                            <li {% if '/shell-plugins/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/shell-plugins/"><i class="fa fa-fw fa-terminal"></i> 命令行插件</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-4"><span class="icon fa fa-fw fa-list-ol"></span><span class="title">Core JHipster tasks</span></a>
+                                <a data-toggle="collapse" href="#dropdown-4"><span class="icon fa fa-fw fa-list-ol"></span><span class="title">核心工作</span></a>
                                 <div id="dropdown-4" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/creating-an-app/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-an-app/"><i class="fa fa-fw fa-rocket"></i> 创建应用</a></li>
                                             <li {% if '/creating-an-entity/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-an-entity/"><i class="fa fa-fw fa-bolt"></i> 创建实体类</a></li>
-                                            <li {% if '/creating-a-spring-controller/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-controller/"><i class="fa fa-fw fa-bolt"></i> 创建Spring controller</a></li>
-                                            <li {% if '/creating-a-spring-service/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-service/"><i class="fa fa-fw fa-bolt"></i> 创建Spring service</a></li>
+                                            <li {% if '/creating-a-spring-controller/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-controller/"><i class="fa fa-fw fa-bolt"></i> 创建Controller</a></li>
+                                            <li {% if '/creating-a-spring-service/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-service/"><i class="fa fa-fw fa-bolt"></i> 创建Service</a></li>
                                             <li {% if '/using-dtos/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-dtos/"><i class="fa fa-fw fa-briefcase"></i> 创建DTO</a></li>
                                             <li {% if '/managing-relationships/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/managing-relationships/"><i class="fa fa-fw fa-sitemap"></i> 配置实体类关系</a></li>
                                             <li {% if '/installing-new-languages/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installing-new-languages/"><i class="fa fa-fw fa-flag"></i> 国际化</a></li>
@@ -218,15 +218,15 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-5"><span class="icon fa fa-fw fa-sitemap"></span><span class="title">Microservices</span></a>
+                                <a data-toggle="collapse" href="#dropdown-5"><span class="icon fa fa-fw fa-sitemap"></span><span class="title">微服务相关</span></a>
                                 <div id="dropdown-5" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/microservices-architecture/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-architecture/"><i class="fa fa-fw fa-map-signs"></i> 概述</a></li>
                                             <li {% if '/api-gateway/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/api-gateway/"><i class="fa fa-fw fa-exchange"></i> API 网关</a></li>
-                                            <li {% if '/traefik/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/traefik/"><i class="fa fa-fw fa-exchange"></i> Traefik</a></li>
+                                            <li {% if '/traefik/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/traefik/"><i class="fa fa-fw fa-exchange"></i> 反向代理（Traefik）</a></li>
                                             <li {% if '/jhipster-registry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jhipster-registry/"><i class="fa fa-fw  fa-dashboard"></i> JHipster 注册中心</a></li>
-                                            <li {% if '/consul/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/consul/"><i class="fa fa-fw fa-bullseye"></i> Consul</a></li>
+                                            <li {% if '/consul/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/consul/"><i class="fa fa-fw fa-bullseye"></i> 服务治理（Consul）</a></li>
                                             <li {% if '/using-uaa/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-uaa/"><i class="fa fa-fw fa-lock"></i> JHipster UAA</a></li>
                                             <li {% if '/creating-microservices/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-microservices/"><i class="fa fa-fw fa-bolt"></i> 创建微服务</a></li>
                                             <li {% if '/microservices-in-production/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-in-production/"><i class="fa fa-fw fa-cloud"></i> 生产环境</a></li>
@@ -235,7 +235,7 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-6"><span class="icon fa fa-fw fa-puzzle-piece"></span><span class="title">Options</span></a>
+                                <a data-toggle="collapse" href="#dropdown-6"><span class="icon fa fa-fw fa-puzzle-piece"></span><span class="title">可选配置</span></a>
                                 <div id="dropdown-6" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -255,14 +255,14 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-7"><span class="icon fa fa-fw fa-code"></span><span class="title">Development</span></a>
+                                <a data-toggle="collapse" href="#dropdown-7"><span class="icon fa fa-fw fa-code"></span><span class="title">开发说明</span></a>
                                 <div id="dropdown-7" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/development/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/development/"><i class="fa fa-fw fa-code"></i> 开发环境的使用</a></li>
                                             <li {% if '/profiles/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/profiles/"><i class="fa fa-fw fa-group"></i> 管理配置文件</a></li>
                                             <li {% if '/common-application-properties/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-application-properties/"><i class="fa fa-fw fa-flask"></i> 常规应用参数</a></li>
-                                            <li {% if '/common-ports/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-ports/"><i class="fa fa-fw fa-plug"></i> Common ports</a></li>
+                                            <li {% if '/common-ports/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-ports/"><i class="fa fa-fw fa-plug"></i> 通用端口</a></li>
                                             <li {% if '/separating-front-end-and-api/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/separating-front-end-and-api/"><i class="fa fa-fw fa-unlink"></i> 前后端分离</a></li>
                                             <li {% if '/managing-server-errors/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/managing-server-errors/"><i class="fa fa-fw fa-fire-extinguisher"></i> 管理服务端错误</a></li>
                                             <li {% if '/using-angular/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-angular/"><i class="fa fa-fw fa-html5"></i> 使用Angular</a></li>
@@ -275,7 +275,7 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-8"><span class="icon fa fa-fw fa-umbrella"></span><span class="title">Test &amp; QA</span></a>
+                                <a data-toggle="collapse" href="#dropdown-8"><span class="icon fa fa-fw fa-umbrella"></span><span class="title">测试与质量保证</span></a>
                                 <div id="dropdown-8" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -309,7 +309,7 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-10"><span class="icon fa fa-fw fa-cubes"></span><span class="title">模块 &amp; 模板</span></a>
+                                <a data-toggle="collapse" href="#dropdown-10"><span class="icon fa fa-fw fa-cubes"></span><span class="title">模块和方案</span></a>
                                 <div id="dropdown-10" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
