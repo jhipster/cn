@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 版本通知
+title: 版本日志
 permalink: /releases/
 redirect_from:
   - /releases.html
@@ -9,7 +9,7 @@ sitemap:
     lastmod: 2014-02-17T00:00:00-00:00
 ---
 
-# <i class="fa fa-file-text-o"></i> 版本通知
+# <i class="fa fa-file-text-o"></i> 版本日志
 
 获取Jhipster的最新动态, 请关注我们的推特: [@java_hipster](https://twitter.com/java_hipster)
 

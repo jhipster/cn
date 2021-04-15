@@ -87,4 +87,4 @@ All those new features will be showcased at the upcoming [JHipster Conf](https:/
 
 If the issue you have is an urgent bug or security issue, please:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

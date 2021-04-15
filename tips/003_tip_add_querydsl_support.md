@@ -6,7 +6,7 @@ priority: 0.5
 lastmod: 2017-04-27T08:40:00-00:00
 ---
 
-# Add Querydsl support
+# 添加Querydsl支持
 
 __Tip submitted by [@omrzljak](https://github.com/omrzljak), updated by [@arnaud-deprez](https://github.com/arnaud-deprez)__
 

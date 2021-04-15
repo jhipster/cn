@@ -13,7 +13,7 @@ This is a bug-fix release for our recently-released v4.5.0 version, which had a 
 
 Unfortunately, the only way for us to validate that everything is fine is to do a release, so if you have any issue when running `jhipster`, please:
 
-- Check our [Twitter account @java_hipster](https://twitter.com/java_hipster) and notify us if necessary
+- Check our [Twitter account @jhipster](https://twitter.com/jhipster) and notify us if necessary
 - Use our [GitHub issue tracker](https://github.com/jhipster/generator-jhipster/issues) to track the problem
 
 关闭的工单与合并请求
@@ -74,4 +74,4 @@ jhipster entity Foo
 
 If the issue you have is an urgent bug or security issue, please:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

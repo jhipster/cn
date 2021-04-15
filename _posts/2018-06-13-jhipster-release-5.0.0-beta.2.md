@@ -71,4 +71,4 @@ You also won’t be able to use the `jhipster upgrade` sub-generator, as it won�
 
 If the issue you have is an urgent bug or security issue, please:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
