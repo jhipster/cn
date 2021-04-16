@@ -68,14 +68,14 @@ Closed tickets and merged pull requests
 ------------
 As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.0.0-beta.0+is%3Aclosed)__.
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们：
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 提交Bug请到 [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
+- 提交问题请到 [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

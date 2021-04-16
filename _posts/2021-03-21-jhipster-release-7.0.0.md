@@ -1,179 +1,179 @@
 ---
 layout: default
-title: Release 7.0.0
+title: JHipster 发布 v7.0.0 版本
 ---
 
-JHipster release v7.0.0
+JHipster 发布 v7.0.0 版本
 ==================
 
-This is our first stable release of JHipster v7!
+这是我们的第一个稳定的JHipster v7版本！
 
-Here is a summary of the release notes from our 2 beta releases of JHipster v7.0.0, updated with our latest changes.
+这是我们的2个v7.0.0 beta版本的更新日志的摘要，并通过我们的最新更改进行了更新。
 
-It includes a total of 2371 closed tickets and pull requests on the main project:
+它总共包含2371个关闭的工单和主要项目的合并请求：
 
-- 825 closed tickets and pull requests: [v7.0.0](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)
-- 226 closed tickets and pull requests: [v7.0.0-beta.1](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1)
-- 1320 closed tickets and pull requests: [v7.0.0-beta.0](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.0)
+- 825个关闭的工单和合并请求： [v7.0.0](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)
+- 226个关闭的工单和合并请求： [v7.0.0-beta.1](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1)
+- 1320个关闭的工单和合并请求：: [v7.0.0-beta.0](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.0)
 
-Breaking changes
+重大变化
 ------------
 
-Related to Blueprints and Modules:
-- Remove getAllJhipsterConfig - [#12023](https://github.com/jhipster/generator-jhipster/issues/12023). Use getJhipsterConfig instead of getAllJhipsterConfig.
-- Create jhipsterConfig for synchronised config and move configOptions to generator-base - [#12026](https://github.com/jhipster/generator-jhipster/pull/12026). generators-base-blueprint's jhipsterConfig field is now a proxy instead of a Storage object look at the PR description for migration.
-- Updates to `getXXXAppName()` methods on `base-generator` [#12325](https://github.com/jhipster/generator-jhipster/issues/12325):
-  - added `getFrontendAppName()` and `frontendAppName` attribute
-  - removed `getAngularAppName()` and `angularAppName` attribute
-  - removed `getAngularXName()` and `angularXAppName` attribute
-- Removed `setup*Options()` operations
-  - A replacement may not be required. Use `load(App/Client/Server)Config` if needed.
-- `id` field is added to fields at jhipster 7.
-  - Remove id fields if the blueprint/module doesn't support. `this.fields = this.fields.filter(field => !field.id);`
+方案（Blueprint）和模块（Module)相关：
+- 删除getAllJhipsterConfig - [#12023](https://github.com/jhipster/generator-jhipster/issues/12023)，使用getJhipsterConfig代替。
+- 为同步配置创建jhipsterConfig并将configOptions移动到Generator-base中[#12026](https://github.com/jhipster/generator-jhipster/pull/12026)， 现在generators-base-blueprint的jhipsterConfig字段是一个代理，而不是存储对象，请查看PR描述以进行迁移。
+- 在 `base-generator` 更新为 `getXXXAppName()`。 [#12325](https://github.com/jhipster/generator-jhipster/issues/12325):
+  - 增加 `getFrontendAppName()` 方法和 `frontendAppName` 属性
+  - 移除 `getAngularAppName()` 方法和 `angularAppName` 属性
+  - 移除 `getAngularXName()` 方法和 `angularXAppName` 属性
+- 移除 `setup*Options()` 一系列操作
+  - 必要时使用 `load(App/Client/Server)Config` ，也可能不需要替换。
+- `id` 字段被添加到JHipster 7的字段（fields）中。
+  - 如果您的方案（Blueprint）或模块（Module）不支持，通过以下方法过滤掉。 `this.fields = this.fields.filter(field => !field.id);`
 
-Related to front:
-- Angular: follow closer Angular Style Guide - [#13125](https://github.com/jhipster/generator-jhipster/issues/13125)
-- React: tests next to the files they are testing [#13425](https://github.com/jhipster/generator-jhipster/issues/13425)
-- Login page refactoring - [#11926](https://github.com/jhipster/generator-jhipster/pull/11926)
-- Replace moment by Day.js - [#12575](https://github.com/jhipster/generator-jhipster/issues/12575)
-- Server common scripts - webpack profile replaced by webapp [#13196](https://github.com/jhipster/generator-jhipster/pull/13196)
+前端相关：
+- Angular: 进一步遵循Angular样式指南 - [#13125](https://github.com/jhipster/generator-jhipster/issues/13125)
+- React: 测试文件与被测文件同目录 [#13425](https://github.com/jhipster/generator-jhipster/issues/13425)
+- 登录页面重构 - [#11926](https://github.com/jhipster/generator-jhipster/pull/11926)
+- 用Day.js替换 moment - [#12575](https://github.com/jhipster/generator-jhipster/issues/12575)
+- 服务器通用脚本 - 由Webapp替换Webpack profile [#13196](https://github.com/jhipster/generator-jhipster/pull/13196)
 
-Related to backend:
-- Protect user api and create a filtered user api for relationships - [#12374](https://github.com/jhipster/generator-jhipster/issues/12374)
-- Springfox 3 upgrade - [#12133](https://github.com/jhipster/generator-jhipster/pull/12133) and [jhipster/jhipster#764](https://github.com/jhipster/jhipster/pull/764)
-  - `swagger` maven profile becomes `api-docs`
-  - `jhipster.swagger` property becomes `jhipster.api-docs`
-  - `SwaggerCustomizer` becomes `SpringfoxCustomizer`
-  - `swaggerSpringfoxApiDocket` becomes `openapiSpringfoxApiDocket`
-  - `swaggerSpringfoxManagementDocket` becomes `openAPISpringfoxManagementDocket`
-- All generated Gateways are Reactive instead of Spring MVC - [#13855](https://github.com/jhipster/generator-jhipster/issues/13855)
-  - Zuul is replaced by Spring Cloud Gateway
-  - Ribbon is replaced by Spring Cloud Load Balancer
-- Add id to PUT request - [#14139](https://github.com/jhipster/generator-jhipster/issues/14139)
+后端相关：
+- 保护user api并为关系创建一个过滤的 user api - [#12374](https://github.com/jhipster/generator-jhipster/issues/12374)
+- Springfox 3升级 - [#12133](https://github.com/jhipster/generator-jhipster/pull/12133) and [jhipster/jhipster#764](https://github.com/jhipster/jhipster/pull/764)
+  - `swagger` maven profile 修改为 `api-docs`
+  - `jhipster.swagger` property 修改为 `jhipster.api-docs`
+  - `SwaggerCustomizer` 修改为 `SpringfoxCustomizer`
+  - `swaggerSpringfoxApiDocket` 修改为 `openapiSpringfoxApiDocket`
+  - `swaggerSpringfoxManagementDocket` 修改为 `openAPISpringfoxManagementDocket`
+- 所有生成的网关都是 Reactive  的，而不是Spring MVC - [#13855](https://github.com/jhipster/generator-jhipster/issues/13855)
+  - Zuul被Spring Cloud Gateway取代
+  - Ribbon  被Spring Cloud Load Balancer取代
+- 将id添加到PUT请求中 - [#14139](https://github.com/jhipster/generator-jhipster/issues/14139)
 
-Entities:
-- Change relationship table name - [#11025](https://github.com/jhipster/generator-jhipster/issues/11025)
+实体相关:
+- 更改关系表表名 - [#11025](https://github.com/jhipster/generator-jhipster/issues/11025)
 
-Most important new features and upgrades
+最重要的新功能和升级
 -------------
 
-New features
-- Vue.js support - [#12064](https://github.com/jhipster/generator-jhipster/pull/12064)
-- Cypress support - [#12307](https://github.com/jhipster/generator-jhipster/pull/12307)
+新的功能
+- 支持 Vue.js  - [#12064](https://github.com/jhipster/generator-jhipster/pull/12064)
+- 支持 Cypress - [#12307](https://github.com/jhipster/generator-jhipster/pull/12307)
 - JDL Studio V2
-- JHipster Control Center - See the [project](https://github.com/jhipster/jhipster-control-center)
+- JHipster控制中心（JHipster Control Center） - 详情： [project](https://github.com/jhipster/jhipster-control-center)
 - Prettier for Java - [#12109](https://github.com/jhipster/generator-jhipster/issues/12109)
-- Angular CLI support - [#10539](https://github.com/jhipster/generator-jhipster/issues/10539)
-- Snyk support - [#12441](https://github.com/jhipster/generator-jhipster/issues/12441)
-- Add support to --pk-type - [#13296](https://github.com/jhipster/generator-jhipster/issues/13296)
-- Add support to @MapstructExpression - [#13195](https://github.com/jhipster/generator-jhipster/pull/13195)
-- Support Neo4j with k8s subgenerator - [#13548](https://github.com/jhipster/generator-jhipster/pull/13548)
+- 支持 Angular CLI - [#10539](https://github.com/jhipster/generator-jhipster/issues/10539)
+- 支持 Snyk - [#12441](https://github.com/jhipster/generator-jhipster/issues/12441)
+- 添加–-pk-type支持 - [#13296](https://github.com/jhipster/generator-jhipster/issues/13296)
+- 添加 @MapstructExpression 支持 - [#13195](https://github.com/jhipster/generator-jhipster/pull/13195)
+- 使用k8s子生成器支持Neo4j - [#13548](https://github.com/jhipster/generator-jhipster/pull/13548)
 - NPM 7 - [#13060](https://github.com/jhipster/generator-jhipster/pull/13060)
 
-Entities
-- add support for custom ids - [#13258](https://github.com/jhipster/generator-jhipster/pull/13258)
-- Incremental Liquibase - [#12178](https://github.com/jhipster/generator-jhipster/issues/12178)
+实体相关
+- 支持自定义ID - [#13258](https://github.com/jhipster/generator-jhipster/pull/13258)
+- 增量 Liquibase - [#12178](https://github.com/jhipster/generator-jhipster/issues/12178)
 
-Improvements
+改进
 - Angular 11 - [#13035](https://github.com/jhipster/generator-jhipster/pull/13035)
-- Blueprint improvement
-- Webflux improvement
+- 改进 Blueprint
+- 改进 Webflux 
 - Spring Boot 2.4 - [#13551](https://github.com/jhipster/generator-jhipster/pull/13551)
-- Java 11 by default - [#12021](https://github.com/jhipster/generator-jhipster/pull/12021)
-- PostgreSQL as default database - [#11736](https://github.com/jhipster/generator-jhipster/issues/11736)
-- IntegrationTest annotation - [#12460](https://github.com/jhipster/generator-jhipster/issues/12460)
+- 默认Java 11 - [#12021](https://github.com/jhipster/generator-jhipster/pull/12021)
+- PostgreSQL作为默认数据库 - [#11736](https://github.com/jhipster/generator-jhipster/issues/11736)
+- IntegrationTest注解 - [#12460](https://github.com/jhipster/generator-jhipster/issues/12460)
 - Annotation to detect generated files - [#12459](https://github.com/jhipster/generator-jhipster/issues/12459)
-- Remove system and anonymoususer - [#13043](https://github.com/jhipster/generator-jhipster/pull/13043)
+- 删除system和anonymoususer用户 - [#13043](https://github.com/jhipster/generator-jhipster/pull/13043)
 - Docker-Compose v3 - [#12428](https://github.com/jhipster/generator-jhipster/issues/12428)
 - Typescript 4 - [#12435](https://github.com/jhipster/generator-jhipster/pull/12435)
-- Webpack 5 for React and Vue - [#13615](https://github.com/jhipster/generator-jhipster/pull/13615)
+- Webpack5用于React和Vue - [#13615](https://github.com/jhipster/generator-jhipster/pull/13615)
 
-Refactoring
-- JHipster library, with `tech.jhipster` as package name - [#12854](https://github.com/jhipster/generator-jhipster/issues/12854)
-- JHipster Core is merged with generator-jhipster - [#11694](https://github.com/jhipster/generator-jhipster/pull/11694)
-- ng-jhipster is merged with generator-jhipster - [#12909](https://github.com/jhipster/generator-jhipster/issues/12909)
+重构内容
+- JHipster库，使用`tech.jhipster`作为包名称 - [#12854](https://github.com/jhipster/generator-jhipster/issues/12854)
+- JHipster Core与generator-jhipster合并 - [#11694](https://github.com/jhipster/generator-jhipster/pull/11694)
+- ng-jhipster与generator-jhipster合并 - [#12909](https://github.com/jhipster/generator-jhipster/issues/12909)
 
-Removed
-- Removed audit page - [#12024](https://github.com/jhipster/generator-jhipster/pull/12024)
-- Yarn support dropped - [#12134](https://github.com/jhipster/generator-jhipster/pull/12134)
-- Remove deprecated JHipster Console (ELK) - [#12414](https://github.com/jhipster/generator-jhipster/pull/12414)
-- UAA support dropped - [#13081](https://github.com/jhipster/generator-jhipster/issues/13081)
-- Traefik support dropped - [#14233](https://github.com/jhipster/generator-jhipster/issues/14233)
+已移除内容
+- 删除Audit页面 - [#12024](https://github.com/jhipster/generator-jhipster/pull/12024)
+- 删除Yarn 支持 - [#12134](https://github.com/jhipster/generator-jhipster/pull/12134)
+- 删除不推荐使用的JHipster Console（ELK） - [#12414](https://github.com/jhipster/generator-jhipster/pull/12414)
+- 删除UAA支持 - [#13081](https://github.com/jhipster/generator-jhipster/issues/13081)
+- 删除Traefik支持 - [#14233](https://github.com/jhipster/generator-jhipster/issues/14233)
 
 
-Closed tickets and merged pull requests
+关闭的工单与合并的请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)__.
+像往常一样，查看这里： __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)__.
 
-How to upgrade
+更新方法
 ------------
 
-**Automatic upgrade**
+**自动升级**
 
-For an automatic upgrade, use the [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/) on an existing application:
+在原有的项目上使用 [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/)自动更新：
 
-Upgrade your version of JHipster:
+首先，升级JHipster版本：
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then run the upgrade sub-generator:
+然后运行upgrade子生成器：
 
 ```
 jhipster upgrade
 ```
 
-**Manual upgrades**
+**手动升级**
 
-For a manual upgrade, first upgrade your version of JHipster with:
+同样，需要先升级您的JHipster到最新版：
 
 ```
 npm update -g generator-jhipster
 ```
 
-If you have an existing project, it will still use the JHipster version with which it was generated.
-To upgrade your project, you must first delete its `node_modules` folder and then run:
+对于已经存在的项目，它仍使用原来生成该项目时的JHipster版本。
+要升级项目，必须首先删除其`node_modules`文件夹，然后运行：
 
 ```
 jhipster
 ```
 
-You can also update your project and all its entities by running
+您还可以通过运行以下命令来更新项目及其所有实体：
 
 ```
 jhipster --with-entities
 ```
 
-You can also update your entities one-by-one by running again the entity sub-generator, for example if your entity is named _Foo_
+您还可以通过再次运行entity子生成器（jhipster entity）来逐一更新实体，例如，如果您的实体名为_Foo_，则运行：
 
 ```
 jhipster entity Foo
 ```
 
-**Tips**
+**小提示**
 
-To generate your project with incremental Liquibase changelogs, you should use:
+要使用增量Liquibase更改日志生成项目，应使用：
 
 ```
 jhipster --incremental-changelog
 ```
 
-To generate your project with `@GeneratedByJHipster` annotation in your Java classes, you should use:
+要在Java类中使用`@GeneratedByJHipster`注释生成项目，应使用：
 
 ```
 jhipster --with-generated-flag
 ```
 
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们：
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 提交Bug请到 [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
+- 提交问题请到 [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

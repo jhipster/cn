@@ -14,53 +14,53 @@ Closed tickets and merged pull requests
 ------------
 As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.10.1+is%3Aclosed)__.
 
-How to upgrade
+更新方法
 ------------
 
-**Automatic upgrade**
+**自动升级**
 
-For an automatic upgrade, use the [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/) on an existing application:
+在原有的项目上使用 [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/)自动更新：
 
-Upgrade your version of JHipster:
+首先，升级JHipster版本：
 
 ```
 npm update -g generator-jhipster
 ```
 
-And then run the upgrade sub-generator:
+然后运行upgrade子生成器：
 
 ```
 jhipster upgrade
 ```
 
-**Manual upgrades**
+**手动升级**
 
-For a manual upgrade, first upgrade your version of JHipster with:
+同样，需要先升级您的JHipster到最新版：
 
 ```
 npm update -g generator-jhipster
 ```
 
-If you have an existing project, it will still use the JHipster version with which it was generated.
-To upgrade your project, you must first delete its `node_modules` folder and then run:
+对于已经存在的项目，它仍使用原来生成该项目时的JHipster版本。
+要升级项目，必须首先删除其`node_modules`文件夹，然后运行：
 
 ```
 jhipster
 ```
 
-You can also update your project and all its entities by running
+您还可以通过运行以下命令来更新项目及其所有实体：
 
 ```
 jhipster --with-entities
 ```
 
-You can also update your entities one-by-one by running again the entity sub-generator, for example if your entity is named _Foo_
+您还可以通过再次运行entity子生成器（jhipster entity）来逐一更新实体，例如，如果您的实体名为_Foo_，则运行：
 
 ```
 jhipster entity Foo
 ```
 
-**Tips**
+**小提示**
 
 To generate your project with all Java classes already formatted using [prettier-java](https://github.com/jhipster/prettier-java), you should use:
 
@@ -68,14 +68,14 @@ To generate your project with all Java classes already formatted using [prettier
 jhipster --prettier-java
 ```
 
-Help and bugs
+帮助和缺陷
 --------------
 
-If you find any issue with this release, don't hesitate to:
+如果您发现这个版本的任何问题, 请随时联系我们：
 
-- Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
-- Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
+- 提交Bug请到 [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
+- 提交问题请到 [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
