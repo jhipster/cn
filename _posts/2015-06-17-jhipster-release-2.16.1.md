@@ -19,7 +19,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 - For Cassandra users: we merged a great PR (see [#1564](https://github.com/jhipster/generator-jhipster/pull/1564)) from [Alexander Dejanovski](https://twitter.com/alexanderDeja), which adds significant improvements on our DataStax Java Driver configuration.
 - For Heroku users: we solved an important issue (see [#1610](https://github.com/jhipster/generator-jhipster/issues/1610)). Thanks to [Matt Raible](https://twitter.com/mraible) who submitted that issue!
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.16.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.16.1+is%3Aclosed)__.
 
 更新指引
 ------------

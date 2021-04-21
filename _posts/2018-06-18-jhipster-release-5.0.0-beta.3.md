@@ -19,7 +19,7 @@ Do you want to know more?
 
 JHipster 5 will be showcased at the upcoming [JHipster Conf](https://jhipster-conf.github.io/) where most of the core development team will present their work. Join us in Paris on June, 21st!
 
-How to install
+安装方法
 ------------
 
 As this a beta version, we are using a `beta` tag on NPM.

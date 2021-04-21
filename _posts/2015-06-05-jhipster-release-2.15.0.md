@@ -20,7 +20,7 @@ This release fixes a few minor issues, but the biggest change is in our internal
 
 A lot of things have changed under-the-hood: you should expect faster builds, but also maybe some new issues! Don't hesitate to send us feedback on GitHub/StackOverflow/Gitter.im.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.15.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.15.0+is%3Aclosed)__.
 
 更新指引
 ------------

@@ -15,9 +15,9 @@ Warning, this release fixes an **important security vulnerabilities**:
 
 This release closes [48 tickets and pull requests](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.3.1+is%3Aclosed). It's a patch release, so those are mostly library upgrades, bug fixes, as well as a number of smaller feature enhancements.
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.3.1+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.3.1+is%3Aclosed)__.
 
 更新方法
 ------------

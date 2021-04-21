@@ -26,7 +26,7 @@ Other noteworthy news are:
 - Cleaned up translations to use directives everywhere [#1537](https://github.com/jhipster/generator-jhipster/pull/1537)
 
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.0+is%3Aclosed)__.
 
 更新指引
 ------------

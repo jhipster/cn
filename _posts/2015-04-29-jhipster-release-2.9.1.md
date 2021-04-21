@@ -18,7 +18,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 
 This is a minor release to fix [#1419](https://github.com/jhipster/generator-jhipster/issues/1419), which was making hot reloading of CSS files fail.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.1+is%3Aclosed)__.
 
 更新指引
 ------------

@@ -25,7 +25,7 @@ As this is a major Spring Security release, some of its API has changed: you wil
 
 Spring Security 4 also has better support for Spring Websocket, so we have refactored and optimized our Spring Websocket implementation.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.7.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.7.0+is%3Aclosed)__.
 
 更新指引
 ------------

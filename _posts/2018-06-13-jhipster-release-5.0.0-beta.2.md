@@ -33,7 +33,7 @@ Do you want to know more?
 
 All those new features will be showcased at the upcoming [JHipster Conf](https://jhipster-conf.github.io/) where most of the core development team will present their work. Join us in Paris on June, 21st!
 
-How to install
+安装方法
 ------------
 
 This is the first time we use a BETA tag on NPM, so please note this is new for everyone!

@@ -37,7 +37,7 @@ What’s missing
 - We’re mostly waiting for Spring Cloud to have a stable release compatible with Spring Boot 2.0.0. This is why this release depends on the Maven Spring milestone repository. If you are not using microservices (and so not using Spring Cloud), you’re not concerned by this.
 - End-to-end tests with React using Protractor. You can follow the issue here: [#7469](https://github.com/jhipster/generator-jhipster/pull/7469)
 
-How to install
+安装方法
 ------------
 
 This is the first time we use a BETA tag on NPM, so please note this is new for everyone!

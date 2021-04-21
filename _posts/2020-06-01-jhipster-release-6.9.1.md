@@ -10,9 +10,9 @@ This is a patch release, which corrects some important issues:
 - Fix double page loading in Angular - [#11773](https://github.com/jhipster/generator-jhipster/issues/11773)
 - Don't use read-only transaction to persist changes - [#11839](https://github.com/jhipster/generator-jhipster/issues/11839)
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.9.1+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.9.1+is%3Aclosed)__.
 
 更新方法
 ------------

@@ -43,7 +43,7 @@ Most important new features and upgrades
 - Prettier transform to prettify the output from all sub-generators [#9371](https://github.com/jhipster/generator-jhipster/pull/9371)
 - Removed deprecated 'rancher-compose' sub-generator
 
-How to install
+安装方法
 ------------
 
 This is a beta release, so it is not available on our usual "stable" release channel.
@@ -64,9 +64,9 @@ However, as this is a BETA release it will not be available using our other usua
 You also won’t be able to use the `jhipster upgrade` sub-generator, as it won’t “see” the BETA release, which is distributed through a specific beta channel on NPM.
 
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.0.0-beta.0+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.0.0-beta.0+is%3Aclosed)__.
 
 帮助和缺陷
 --------------

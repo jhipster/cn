@@ -8,9 +8,9 @@ JHipster release v6.1.2
 
 This is a patch release to fix a liquibase exception. See [#9973](https://github.com/jhipster/generator-jhipster/issues/9973) for more information.
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.1.2+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.1.2+is%3Aclosed)__.
 
 更新方法
 ------------

@@ -18,7 +18,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 
 This is small bug-fixing release for issue [#1549](https://github.com/jhipster/generator-jhipster/issues/1549), which was causing UI errors when dates are used (so this is affecting almost everyone!).
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.14.2+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.14.2+is%3Aclosed)__.
 
 更新指引
 ------------

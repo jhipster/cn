@@ -34,9 +34,9 @@ Here are the most significant ones:
 - Fix interactions between main generator and blueprint when one is installed globally and the other locally [#10257](https://github.com/jhipster/generator-jhipster/issues/10257)
 - Fix issues with Istio URLs [#10135](https://github.com/jhipster/generator-jhipster/issues/10135)
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.3.0+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.3.0+is%3Aclosed)__.
 
 更新方法
 ------------

@@ -85,12 +85,12 @@ Removed
 - Remove deprecated JHipster Console (ELK) - [#12414](https://github.com/jhipster/generator-jhipster/pull/12414)
 
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.0)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.0)__.
 
 
-How to install
+安装方法
 ------------
 
 This is a beta release, so it is not available on our usual "stable" release channel.

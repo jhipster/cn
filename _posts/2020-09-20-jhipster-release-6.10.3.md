@@ -16,9 +16,9 @@ This is a patch release which contains these fixes:
 - Angular: fix protractor waiting for timeout with angular - [#12420](https://github.com/jhipster/generator-jhipster/pull/12420)
 
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.10.3+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.10.3+is%3Aclosed)__.
 
 更新方法
 ------------

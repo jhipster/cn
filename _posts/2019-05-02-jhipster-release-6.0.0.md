@@ -49,9 +49,9 @@ We also removed a few features:
 - Removed Chocolatey and Homebrew installations, as we found out they didn't provide much benefits to users
 - Deprecated the [JHipster Devbox](https://github.com/jhipster/jhipster-devbox) for the moment: we are looking for a maintainer, if you are interested please ping us!
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.0.0+is%3Aclosed)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A6.0.0+is%3Aclosed)__.
 
 更新方法
 ------------

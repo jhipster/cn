@@ -18,7 +18,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 
 This is a bug-fixing release, which mainly fixes issue [#1448](https://github.com/jhipster/generator-jhipster/issues/1448), which made an error in the AngularJS code if your application isn't named 'jhipster'.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.10.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.10.1+is%3Aclosed)__.
 
 更新指引
 ------------

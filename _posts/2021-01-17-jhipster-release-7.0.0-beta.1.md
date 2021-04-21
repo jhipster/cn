@@ -1,54 +1,54 @@
 ---
 layout: default
-title: Release 7.0.0-beta.1
+title: JHipster 发布 v7.0.0-beta.1 版本
 ---
 
-JHipster release v7.0.0-beta.1
+JHipster 发布 v7.0.0-beta.1 版本
 ==================
 
-This is our second beta release for JHipster v7, and the first of this new year.
+这是我们的JHipster v7的第二个Beta版本，也是今年的第一个Beta版本。
 
-It includes [227 closed tickets and pull requests on the main project](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1).
+包括 [227个已关闭的凭单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1).
 
-_It is not available through the usual channels as this is a beta release, please read below for more information!_
+_由于这是测试版，因此无法通过常规渠道获得，请阅读以下内容以获取更多信息！_
 
-What's new?
+新特性
 ------------
 
-- Tests next to the files they are testing in React [#13425](https://github.com/jhipster/generator-jhipster/issues/13425)
-- Add support to --pk-type [#13296](https://github.com/jhipster/generator-jhipster/issues/13296)
-- Add support to @MapstructExpression [#13195](https://github.com/jhipster/generator-jhipster/issues/13296)
-- Server common scripts - webpack profile replaced by webapp [#13196](https://github.com/jhipster/generator-jhipster/pull/13196)
-- Broken Swagger with Microservices [#13446](https://github.com/jhipster/generator-jhipster/pull/13446)
-- Support neo4j with k8s subgenerator [#13548](https://github.com/jhipster/generator-jhipster/pull/13548)
-- Many improvements
-- Many libraries upgrades
-- Many bug fixes
+- React中测试文件与被测文件同目录 [#13425](https://github.com/jhipster/generator-jhipster/issues/13425)
+- 支持 --pk-type [#13296](https://github.com/jhipster/generator-jhipster/issues/13296)
+- 支持 @MapstructExpression [#13195](https://github.com/jhipster/generator-jhipster/issues/13296)
+- 服务器通用脚本-由Webapp替换的Webpack配置文件 [#13196](https://github.com/jhipster/generator-jhipster/pull/13196)
+- 微服务中Swagger异常 [#13446](https://github.com/jhipster/generator-jhipster/pull/13446)
+- K8S子生成器支持neo4j [#13548](https://github.com/jhipster/generator-jhipster/pull/13548)
+- 其他诸多改进
+- 大量依赖库升级
+- 一些错误修复
 
-Closed tickets and merged pull requests
+关闭的工单与合并请求
 ------------
-As always, __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1)__.
+一如既往， __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0-beta.1)__.
 
 
-How to install
+安装方法
 ------------
 
-This is a beta release, so it is not available on our usual "stable" release channel.
+这是一个beta版本，因此在我们通常的“稳定”发布渠道上不可用。
 
-To install JHipster v7.0.0-beta.1 using using NPM:
+要使用NPM安装JHipster v7.0.0-beta.1，请执行以下操作：
 
     npm install -g generator-jhipster@beta
 
-It is also available using the JHipster Docker image, as it is automatically built from our source code.
+它也可以通过JHipster Docker映像使用，因为它是根据我们的源代码自动构建的。
 
-However, as this is a BETA release it will not be available using our other usual channels like:
+但是，由于这是一个BETA版本，因此无法通过我们的其他常用渠道使用，例如：
 
 - [JHipster Online](https://start.jhipster.tech)
 - [JHipster Devbox](https://github.com/jhipster/jhipster-devbox)
 
-You also won’t be able to use the `jhipster upgrade` sub-generator, as it won’t “see” the BETA release, which is distributed through a specific beta channel on NPM.
+您也将无法使用`jhipster upgrade`子生成器，因为它不会“看到” BETA版本，该版本通过NPM上的特定Beta渠道分发。
 
-You can look at [v7 upgrade tips]({{ site.url }}/tips/033_tip_v7_upgrade.html) page for v7 upgrade hints.
+您可以查看 [v7 upgrade tips]({{ site.url }}/tips/033_tip_v7_upgrade.html) 页面以获取v7升级提示。
 
 
 帮助和缺陷

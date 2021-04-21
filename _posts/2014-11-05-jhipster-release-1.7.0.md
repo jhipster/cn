@@ -15,7 +15,7 @@ The main new improvement of this release is the [Cloud Foundry sub-generator]({{
 
 You can now easily deploy your application to any Cloud Foundry instance available, with MySQL, Postgresql or MongoDB!
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.7.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.7.0+is%3Aclosed)__.
 
 更新指引
 ------------

@@ -64,7 +64,7 @@ What’s missing
 - We’re mostly waiting for Spring Cloud to have a stable release compatible with Spring Boot 2.0.0. This is why this release depends on the Maven Spring milestone repository. If you are not using microservices (and so not using Spring Cloud), you’re not concerned by this.
 - A lot more tests, as we have changed many things. For Angular users: we have modified the project layout, but otherwise this shouldn’t be a big upgrade for you, and you should be pretty safe with this beta release.
 
-How to install
+安装方法
 ------------
 
 This is the first time we use a BETA tag on NPM, so please note this is new for everyone!

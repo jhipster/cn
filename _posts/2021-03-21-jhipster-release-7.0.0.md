@@ -103,7 +103,7 @@ JHipster 发布 v7.0.0 版本
 
 关闭的工单与合并的请求
 ------------
-像往常一样，查看这里： __[you can check all closed tickets and merged pull requests here](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)__.
+一如既往, __[您可以在此处查看所有已关闭的工单和合并请求](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aclosed+milestone%3A7.0.0)__.
 
 更新方法
 ------------

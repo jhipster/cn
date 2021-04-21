@@ -40,7 +40,7 @@ Other important changes
 
 Closed tickets
 ------------
-This is a huge release for us and as always, __[you can check all the 596 closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A3.0.0+is%3Aclosed)__.
+This is a huge release for us and 一如既往， __[you can check all the 596 closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A3.0.0+is%3Aclosed)__.
 
 更新指引
 ------------
