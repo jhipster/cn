@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">{% if '/index.html' == page.url or '/' == page.url %}
-    <meta name="description" content="Jhipster是一个完全开放的源代码，广泛使用的应用生成器。 能够很方便地创建Spring Boot + Angular/React项目!">
+    <meta name="description" content="JHipster是一个开发平台，可以快速生成，开发和部署现代Web应用程序+微服务架构。">
     <meta name="author" content="JHipster中国社区">
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@java_hipster" />
-    <meta name="twitter:title" content="Generate a full stack Java + Angular/React application in a few steps" />
-    <meta name="twitter:description" content="JHipster is a fully Open Source, widely used application generator. It leverages cool technologies like Spring Boot, Angular and React to give you a high level of productivity and quality." />
-    <meta name="twitter:image:src" content="https://www.jhipster.tech/images/twitter-card.png?20170202" />
+    <meta name="twitter:site" content="@jhipster" />
+    <meta name="twitter:title" content="JHipster-适用于现代开发人员的全栈开发平台！" />
+    <meta name="twitter:description" content="JJHipster是一个开发平台，可以快速生成，开发和部署现代Web应用程序+微服务架构。" />
+    <meta name="twitter:image:src" content="https://www.jhipster.tech/images/twitter-card.png?20210212" />
     <meta name="twitter:url" content="https://www.jhipster.tech/" />{% endif %}
     <meta name="google-site-verification" content="JSA7VC5gSwD5KKbXlxK8F9rXJtC91rKJq0aWhfpBC0k" />
     <!-- Chrome, Firefox OS and Opera -->
@@ -77,19 +77,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         {% if page.home == true %}
                         <li class="page-scroll">
+                            <a href="#learn">教程</a>
+                        </li>
+                        <li class="page-scroll">
                             <a href="#sponsors">赞助商</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#news">新闻</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#learn">教程</a>
+                            <a href="#about">简介</a>
                         </li>
                         <li class="page-scroll">
                             <a href="#opts">技术栈</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#modules">模块</a>
+                            <a href="#modules">方案和模块</a>
                         </li>
                         {% endif %}
                         {% if page.home != true %}
@@ -101,6 +101,12 @@
                             <a href="{{ site.url }}/sponsors/">Sponsor</a>
                         </li>
                         {% endif %}
+                        <li>
+                            <a href="https://start.jhipster.tech/jdl-studio/" target="_blank" rel="noopener" role="button"><i class="fa fa-terminal"></i> JDL设计</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jhipster/generator-jhipster" target="_blank" role="button"><i class="fa fa-github"></i> Github</a>
+                        </li>
                         <li class="page-scroll">
                             <a href="#weixin">微信群</a>
                         </li>
@@ -110,9 +116,7 @@
                                 <input type="text" name="search" class="doc-search-algolia" placeholder="搜索..." />
                             </form>
                         </li>
-                        <li>
-                            <a href="https://github.com/jhipster/generator-jhipster" target="_blank" role="button"><i class="fa fa-github"></i> Github</a>
-                        </li>
+
                         <li>
                             <!-- Redirect to the same page on the english website -->
                             <a href="{{ page.url }}"><i class="fa fa-fw fa-globe"></i> English</a>
@@ -225,12 +229,11 @@
                                         <ul class="nav navbar-nav">
                                             <li {% if '/microservices-architecture/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-architecture/"><i class="fa fa-fw fa-map-signs"></i> 概述</a></li>
                                             <li {% if '/api-gateway/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/api-gateway/"><i class="fa fa-fw fa-exchange"></i> API 网关</a></li>
-                                            <li {% if '/traefik/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/traefik/"><i class="fa fa-fw fa-exchange"></i> 反向代理（Traefik）</a></li>
                                             <li {% if '/jhipster-registry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jhipster-registry/"><i class="fa fa-fw  fa-dashboard"></i> JHipster 注册中心</a></li>
                                             <li {% if '/consul/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/consul/"><i class="fa fa-fw fa-bullseye"></i> 服务治理（Consul）</a></li>
-                                            <li {% if '/using-uaa/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-uaa/"><i class="fa fa-fw fa-lock"></i> JHipster UAA</a></li>
                                             <li {% if '/creating-microservices/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-microservices/"><i class="fa fa-fw fa-bolt"></i> 创建微服务</a></li>
                                             <li {% if '/microservices-in-production/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-in-production/"><i class="fa fa-fw fa-cloud"></i> 生产环境</a></li>
+                                            <li {% if '/jhipster-control-center/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jhipster-control-center/"><i class="fa fa-fw fa-codepen"></i> 控制中心</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -249,6 +252,7 @@
                                             <li {% if '/using-oracle/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-oracle/"><i class="fa fa-fw fa-database"></i> 使用Oracle</a></li>
                                             <li {% if '/using-mongodb/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-mongodb/"><i class="fa fa-fw fa-leaf"></i> 使用MongoDB</a></li>
                                             <li {% if '/using-couchbase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-couchbase/"><i class="fa fa-fw fa-database"></i> 使用Couchbase</a></li>
+                                            <li {% if '/using-neo4/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-neo4j/"><i class="fa fa-fw fa-database"></i> 使用Neo4j</a></li>
                                             <li {% if '/using-cassandra/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-cassandra/"><i class="fa fa-fw fa-eye"></i> 使用Cassandra</a></li>
                                             <li {% if '/using-kafka/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-kafka/"><i class="fa fa-fw fa-envelope"></i> 使用Kafka</a></li>
                                         </ul>
@@ -296,15 +300,15 @@
                                             <li {% if '/production/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/production/"><i class="fa fa-fw fa-play-circle"></i> 生产环境的使用</a></li>
                                             <li {% if '/monitoring/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/monitoring/"><i class="fa fa-fw fa-line-chart"></i> 监控</a></li>
                                             <li {% if '/docker-hub/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-hub/"><i class="fa fa-fw fa-cloud-upload"></i> Docker Hub</a></li>
-                                            <li {% if '/kubernetes/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/kubernetes/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Kubernetes</a></li>
-                                            <li {% if '/openshift/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/openshift/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到OpenShift</a></li>
-                                            <li {% if '/heroku/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/heroku/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Heroku</a></li>
-                                            <li {% if '/cloudfoundry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/cloudfoundry/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Cloud Foundry</a></li>
                                             <li {% if '/aws/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/aws/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到AWS</a></li>
                                             <li {% if '/azure/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/azure/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Azure</a></li>
-                                            <li {% if '/gcp/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/gcp/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Google Cloud Platform</a></li>
-                                            <li {% if '/rancher/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/rancher/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Rancher</a></li>
                                             <li {% if '/boxfuse/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/boxfuse/"><i class="fa fa-fw fa-cloud-upload"></i> 使用Boxfuse发布</a></li>
+                                            <li {% if '/clever-cloud/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/clever-cloud/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Clever Cloud</a></li>
+                                            <li {% if '/cloudfoundry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/cloudfoundry/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Cloud Foundry</a></li>
+                                            <li {% if '/gcp/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/gcp/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Google Cloud Platform</a></li>
+                                            <li {% if '/heroku/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/heroku/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Heroku</a></li>
+                                            <li {% if '/kubernetes/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/kubernetes/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Kubernetes</a></li>
+                                            <li {% if '/openshift/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/openshift/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到OpenShift</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -318,6 +322,7 @@
                                             <li {% if '/modules/marketplace/' == page.url %}class="active" {% endif %}><a href="/modules/marketplace/"><i class="fa fa-fw fa-shopping-cart"></i> 市场</a></li>
                                             <li {% if '/modules/creating-a-module/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-module/"><i class="fa fa-fw fa-cube"></i> 创建一个模块</a></li>
                                             <li {% if '/modules/creating-a-blueprint/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-blueprint/"><i class="fa fa-fw fa-cube"></i> 创建一个模板</a></li>
+                                            <li {% if '/blueprints/quarkus/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/blueprints/quarkus/"><i class="fa fa-fw fa-book"></i> Quarkus文档</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -363,6 +368,9 @@
                     {% if page.layout_grid == true %} {{ content }} {% else %}
                     <div class="row page-content-wrapper">
                         <div class="col-lg-12">
+                            <div class="float-right visible-md visible-lg">
+                                <a href="https://github.com/jhipster/jhipster.github.io/edit/main/{{ page.path }}"><i class="fa fa-pencil"></i> &nbsp;改善此页面</a>
+                            </div>
                             {{ content }}
                         </div>
                     </div>
@@ -377,33 +385,56 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        JHipster is sponsored by:
+                                        JHipster由以下机构赞助：
                                     </div>
-                                    <!-- change to below commented line when adding more logos -->
-                                    <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
-                                    <div class="col-md-offset-4 col-sm-12 col-md-4">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
                                         <div class="thumbnail no-margin-bottom">
                                             <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
+                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/okta.png" width="550px" height="186px"></a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <a href="https://developer.okta.com/blog/2021/01/20/reactive-java-microservices?utm_campaign=text_website_all_multiple_dev_dev_jhipster-q2_&utm_source=jhipster&utm_medium=cpc" target="_blank" rel="noopener">使用JHipster和OAuth 2.0构建反应式微服务</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--
-                                    <div class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="thumbnail no-margin-bottom">
-                                            <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="http://www.octoconsulting.com/" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/octoconsulting.png" width="180px" height="175px"></a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <a href="http://www.octoconsulting.com/" target="_blank" rel="noopener">Octo咨询集团</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="https://dev.entando.org/jhipster" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/entandoe.png" width="180px" height="175px"></a>
+                                                </div>
+                                                <div class="caption">
+                                                    <a href="https://dev.entando.org/jhipster" target="_blank" rel="noopener">Kubernetes的微前端平台</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="https://www.datastax.com/" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/datastax.png" width="180px" height="175px"></a>
+                                                </div>
+                                                <div class="caption">
+                                                    <a href="https://www.datastax.com/" target="_blank" rel="noopener">DataStax是适用于开放、多云的现代数据应用。</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="thumbnail no-margin-bottom">
-                                            <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -413,15 +444,15 @@
                                 <div class="row">
                                     <div class="footer-col col-md-4">
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-coffee fa-fw"></i> <a class="link" href="{{ site.url }}/team/">Team</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-coffee fa-fw"></i> <a class="link" href="{{ site.url }}/team/">团队</a></h5>
                                             <h5 class="text-left"><i class="fa fa-pencil fa-fw"></i> <a class="link" href="{{ site.url }}/artwork/">Artwork</a></h5>
                                         </div>
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-gavel fa-fw"></i> <a class="link" href="{{ site.url }}/policies/">Policies</a></h5>
-                                            <h5 class="text-left"><i class="fa fa-meetup fa-fw"></i> <a class="link" href="{{ site.url }}/meetups/">Meetups</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-gavel fa-fw"></i> <a class="link" href="{{ site.url }}/policies/">政策</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-meetup fa-fw"></i> <a class="link" href="{{ site.url }}/meetups/">活动</a></h5>
                                         </div>
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-database fa-fw"></i> <a class="link" href="{{ site.url }}/documentation-archive/">Archives</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-database fa-fw"></i> <a class="link" href="{{ site.url }}/documentation-archive/">文档</a></h5>
                                         </div>
                                     </div>
                                     <div class="footer-col col-md-4" id="weixin">
@@ -430,10 +461,10 @@
                                                 <img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">
                                             </li>
                                             <li>
-                                                <a href="https://github.com/jhipster/generator-jhipster" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                                                <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-comments"></i></a>
+                                                <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-comments"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -452,7 +483,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        Copyright &copy; JHipster 2013-2019 | Theme based on <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank">Freelancer</a> and <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank">Flat admin</a>
+                                        Copyright &copy; JHipster 2013-2021 | Theme based on <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank" rel="noopener">Freelancer</a> and <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank" rel="noopener">Flat admin</a>
                                     </div>
                                 </div>
                             </div>
