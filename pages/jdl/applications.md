@@ -1,33 +1,33 @@
 ---
 layout: default
-title: JHipster Domain Language - Applications
+title: JHipster领域语言-应用程序配置
 permalink: /jdl/applications
 sitemap:
     priority: 0.5
     lastmod: 2019-10-27T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Applications
+# <i class="fa fa-star"></i> JHipster领域语言 (JDL) - 应用程序配置
 
-## Summary
+## 概要
 
-1. [Syntax](#syntax)
-1. [Options in applications](#options-in-applications)
-1. [Examples](#examples)
-   1. [Basic Example](#basic-example)
-   1. [More than one application](#more-than-one-application)
-   1. [With entities](#with-entities)
-   1. [With options](#with-options)
-1. [Microservice workflow](#microservice-workflow)
-1. [Complete example breakdowns](#complete-example-breakdowns)
-1. [Available application configuration options](#available-application-configuration-options)
-1. [See also](#see-also)
+1. [语法](#syntax)
+1. [应用程序中的选项](#options-in-applications)
+1. [示例](#examples)
+   1. [简单例子](#basic-example)
+   1. [多个应用](#more-than-one-application)
+   1. [关联实体](#with-entities)
+   1. [配置项](#with-options)
+1. [微服务流程](#microservice-workflow)
+1. [详细完整示例](#complete-example-breakdowns)
+1. [可用的应用程序配置选项](#available-application-configuration-options)
+1. [也可以看看](#see-also)
 
 ***
 
-### Syntax
+### 语法
 
-The application declaration is done as follows:
+应用程序声明如下：
 
 ```
 application {
@@ -39,24 +39,22 @@ application {
 }
 ```
 
-  - Application configuration keys/values are specified under `config` (which must be inside `application`)
-  - There can be 0, 1 or any application option as you want (provided they are valid)
-  - Entities that will be generated inside the application are listed via `entities`, this is the recommended way to
-    generate entities in applications.
-    - This can be omitted but generating entities inside the app would require doing it:
-      - from another JDL file inside the app
-      - or with the CLI
-  - The `entities` keyword is optional: you can omit it, but every entity in the JDL file will be generated inside the
-    application
-  - Applications can have regular options (like `dto` or `service`), more information in the [next](#options-in-applications) section.
+  - 应用程序配置项（Key/Value）在`config`(必须在`application`内)下指定。
+  - 您可以根据需要选择0个、1个或任何多个应用程序选项（只要它们有效）。
+  - 将在应用程序内部生成的实体通过`entities`列出，这是在应用程序中生成实体推荐的方法。
+    - 你可以不使用以上方法，但要在应用内生成实体必须执行以下操作:
+      - 来自应用程序内的另一个JDL文件
+      - 或使用CLI
+  - 关键字`entities`是可选的： 如果不配置，文件中的每个实体都将在应用程序内部生成。
+  - 应用程序可以有常规选项 (像 `dto` 或 `service`) ，更多信息 [下一节](#options-in-applications) 。
 
 ---
 
-### Options in applications
+### 应用程序中的选项
 
-Option declarations (`dto`, `service`, `skipServer`, etc.) are supported in JDL applications, but with some rules.
+选项声明 (`dto`、`service`、`skipServer`等) 在JDL应用程序中受支持，但有一些规则。
 
-Say we have this JDL file:
+假设我们有这样的JDL文件：
 ```jdl
 application {
   config {
@@ -92,51 +90,48 @@ entity F
 paginate * with infinite-scroll
 ```
 
-In this sample, we can see a few things:
-  - There are 6 declared entities in the JDL file: `A, B, C, D, E and F`.
-  - We have 3 applications: `app1, app2 and app3`
-    - `app1` uses `A, B and C`
-    - `app2` uses `C and D`
-    - `app3` uses `E` (`* except A, B, C, D, F`)
-  - Each of these applications declare options and a **global** option in also declared.
-    - `app1` uses `dto` for `A, B and C`
-    - `app2` uses `paginate` for `C` (because there's an exception)
-    - `app3` uses `service` for `E`
-    - The global one also uses `pagination` (for every entity)
+在此示例中，我们可以看到：
+  - JDL文件中有6个声明的实体： `A, B, C, D, E and F`.
+  - 有3个应用程序: `app1, app2 and app3`
+    - `app1` 使用 `A, B and C`
+    - `app2` 使用 `C and D`
+    - `app3` 使用 `E` (`* except A, B, C, D, F`)
+  - 这些应用程序中的每一个都声明了选项，并且还声明了**全局**选项。
+    - `app1` 应用 `dto` 于 `A, B and C`
+    - `app2` 应用 `paginate` 于 `C` (因为有一个例外)
+    - `app3` 应用 `service` 于 `E`
+    - 全局使用 `pagination` (对每个实体有效)
 
-Here's how files are generated:
+这是文件的生成方式：
   - `app1`
-    - `A`: will use `paginate with infinite-scroll` (the global option isn't overridden by a local one) and
+    - `A`: 将使用`paginate with infinite-scroll` （全局选项不会被本地选项覆盖），并且
       `dto with mapstruct`
-    - `B`: will use the same options
-    - `C`: will also use the same options
+    - `B`: 将使用相同的选项
+    - `C`: 也使用相同的选项
   - `app2`:
-    - `C`: will use `paginate with pagination` (and not `infinite-scroll`, because the local one takes precedence)
-    - `D`: will use `paginate with infinite-scroll` as the previous option doesn't include `D`
+    - `C`: 将使用 `paginate with pagination` （而不是 `infinite-scroll` ，因为本地优先）
+    - `D`: 将使用 `paginate with infinite-scroll` 因为上一个选项不包括 `D`
   - `app3`:
-    - `E`: will `paginate with infinite-scroll` and `service E with serviceClass`
+    - `E`: 将使用 `paginate with infinite-scroll` 和 `service E with serviceClass`
 
-This example illustrates the **shadowing** principle. Global options are supported and will be used by every declared
-application **unless** options are also declared in applications.
+本示例说明了**遮蔽**原理。 全局选项受支持，并且将在每个已声明的应用程序中使用，**除非**在应用程序中也声明了选项。
 
-Also note this snippet taken from the previous sample in `app3`:
+另请注意，该片段摘自上一个示例 `app3`:
 ```jdl
 entities * except A, B, C, D, F
 service * with serviceClass
 ```
+这基本上意味着`app3`将仅使用`E`，而应用程序的实体将使用“ service”选项，意思是`E`，而不是` A - F`。
 
-This basically means that `app3` will only use `E` and that the application's entities will use the `service` option,
-that means `E` and not `A to F`.
+最后，存在不在任何应用程序中的“ F”实体，因此不会生成该实体。
 
-Finally, there the `F` entity which isn't in any application and this entity will not be generated because of that.
-
-_Note: all regular options are supported at the moment._
+_注意：目前支持所有常规选项。_
 
 ---
 
-### Examples
+### 示例
 
-#### Basic example
+#### 简单例子
 
 ```jdl
 application {
@@ -149,7 +144,7 @@ application {
 
 ---
 
-#### More than one application
+#### 多个应用
 
 ```jdl
 application {
@@ -179,7 +174,7 @@ application {
 
 ---
 
-#### With entities
+#### 关联实体
 
 ```jdl
 application {
@@ -207,7 +202,7 @@ entity C
 
 ---
 
-#### With options
+#### 配置项
 
 ```jdl
 application {
@@ -237,9 +232,9 @@ entity C
 
 ---
 
-### Complete example breakdowns
+### 详细完整示例
 
-Example 1:
+示例 1:
 
 ```jdl
 application {
@@ -281,40 +276,39 @@ service * with serviceClass
 paginate D with pager
 ```
 
-Now, several things will happen when generating these applications and folders:
-  - Four applications will be created:
-    - myMonolith in `./myMonolith`, with the server port `8080`
-    - myGateway in `./myGateway`, with the server port `9042`
-    - microserviceA in `./microserviceA`, with the server port `8081`
-      - Even though we didn't specify a server port, JHipster sets one by default.
-      - For microservices, the default one is `8081`
-      - For gateways and monoliths, it's `8080`
-    - microserviceB in `./microserviceB` with the server port `8082`
-  - Four entities will be generated
-    - `A` and `B` in the monolith
-    - `C` and `D` both in the gateway
-      - `C` in the first microservice
-      - `D` in the second microservice
-  - The `microservice` option is implicit for `C` and `D`
-    - Because they get generated on the two microservices, this option will be set by default.
-  - Options work the same way as before
+现在，生成这些应用程序和文件夹时将发生以下事件：
+  - 将创建四个应用程序：
+    - myMonolith 在 `./myMonolith`文件夹中，并且配置服务器端口 `8080`
+    - myGateway 在 `./myGateway`文件夹中， 并且配置服务器端口 `9042`
+    - microserviceA 在 `./microserviceA`文件夹中，并且配置服务器端口 `8081`
+      - 即使我们没有指定服务器端口，JHipster也会默认设置一个端口。
+      - 对于微服务，默认值是`8081`
+      - 对于网关和单体应用而言，它是`8080`
+    - microserviceB 在 `./microserviceB`文件夹中，并且配置服务器端口 `8082`
+  - 将生成四个实体
+    - `A` 和 `B` 在单体应用（monolith）中
+    - `C` 和 `D` 都在网关（gateway）中
+      - `C` 在第一个微服务
+      - `D` 在第二个微服务
+  - 选项`microservice`对`C` 和 `D`而言是隐式的
+    - 由于它们是在两个微服务上生成的，因此默认情况下将设置此选项。
+  - 选项的工作方式与以前相同
 
-Note that the generator sets default values if they aren't present (like the `databaseType`).
-JHipster Core does the exact same things for you.
-
----
-
-Example 2: with options
-See the [option section](#options-in-applications).
+请注意，如果不存在默认值，则生成器将设置默认值（例如`databaseType`）。JHipster Core可以为您做完全相同的事情。
 
 ---
 
-### Microservice workflow
+示例 2: 存在配置项
+请看 [配置项一节](#options-in-applications).
 
-Dealing with microservices is a almost tricky, but the JDL gives you some options to handle your entities as you see fit.
-With the `microservice <ENTITIES> with <MICROSERVICE_APP_NAME>` you can specify which entity gets generated in which microservice.
+---
 
-Take this setup for instance:
+### 微服务工作流程
+
+处理微服务几乎是一件棘手的事情，但是JDL为您提供了一些您认为合适的选项来处理您的实体。
+使用 `microservice <ENTITIES> with <MICROSERVICE_APP_NAME>` ，您可以指定在哪个微服务中生成哪个实体。
+
+参考以下设置为例：
 ```
 entity A
 entity B
@@ -323,21 +317,17 @@ microservice A with firstMS
 microservice B with secondMS
 ```
 
-Given two JHipster applications ('firstMS' and 'secondMS'), here's what you're going to get if you import the JDL file
-in the two applications:
-  - In 'firstMS', entities `A` and `C` will be generated.
-  - In 'secondMS', entities `B` and `C` will be generated.
+给定两个JHipster应用程序（'firstMS'和'secondMS'），如果在两个应用程序中导入JDL文件，将获得以下内容：
+  - 在 'firstMS' 中，将生成实体 `A` 和 `C` 。
+  - 在 'secondMS' 中，将生成实体`B` and `C` 。
 
-`C` gets generated in both because if there's no microservice option specifying where this entity gets generated, it
-will be generated everywhere.
+`C` 之所以会同时生成，是因为如果没有微服务选项指定在何处生成该实体，将每个都生成。
 
-If you decide to import this JDL in a monolith app, every entity will be generated (monoliths don't have restriction
-options in the JDL).
+如果您决定在单体应用中导入此JDL，则会生成每个实体（单体没有限制JDL中的选项）。
 
-_Note: if you want to make the same entity be generated in two different microservices, you can write two JDL files
-instead of updating the JDL file. Everytime._
+_注意：如果要在两个不同的微服务中生成同一实体，则可以编写两个JDL文件 而不是每次更新JDL文件。_
 
-The previous example couldn't have been written like this:
+前面的示例不能这样写：
 ```
 entity A
 entity B
@@ -346,27 +336,27 @@ microservice * except B with firstMS
 microservice * except A with secondMS
 ```
 
-Here's the result:
-  - In 'firstMS', only the entity `C` will be generated
-  - In 'secondMS', entities `B` and `C` will be generated.
+结果如下：
+  - 在 'firstMS' 中，仅有实体 `C` 被生成。
+  - 在 'secondMS' 中, 实体 `B` 和 `C` 都会生成。
 
-It's because, at parsing-time, if an option overlaps with another, the latter takes precedence.
-You can also create an entire microservice stack using JDL, [see this blog post](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77) for example
+这是因为，在解析时，如果一个选项与另一个选项重叠，则后者优先。
+您还可以使用JDL创建整个微服务栈， [这篇博客文章](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77) 有示例
 
 ---
 
-### Available application configuration options
+### 可用的应用程序配置选项
 
-Here are the application options supported in the JDL:
+这是JDL支持的应用程序选项：
 
-_Not what you're looking for? Check the [regular options](/jdl/options#available-options)._
+_不是您要找的，请查看 [常规选项](/jdl/options#available-options)。_
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>JDL option name</th>
-    <th>Default value</th>
-    <th>Possible values</th>
-    <th>Comment</th>
+    <th>JDL选项名称</th>
+    <th>默认值</th>
+    <th>可选值</th>
+    <th>说明</th>
   </tr>
   <tr>
     <td>applicationType</td>
@@ -390,12 +380,12 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>blueprint</td>
     <td></td>
     <td>Name of an additional blueprint (see <a href="https://www.jhipster.tech/modules/marketplace/#/list">Marketplace</a>)</td>
-    <td>DEPRECATED. String</td>
+    <td>已过时，字符型</td>
   </tr>
   <tr>
     <td>blueprints</td>
     <td></td>
-    <td>Names of additional blueprints (see <a href="https://www.jhipster.tech/modules/marketplace/#/list">Marketplace</a>)</td>
+    <td>其他方案(Blueprint)的名称 (可查看 <a href="https://www.jhipster.tech/modules/marketplace/#/list">方案和模块市场</a>)</td>
     <td></td>
   </tr>
   <tr>
@@ -408,7 +398,7 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>cacheProvider</td>
     <td>ehcache or hazelcast</td>
     <td>caffeine, ehcache, hazelcast, infinispan, memcached, redis, no</td>
-    <td>ehcache for monoliths and gateways, hazelcast otherwise</td>
+    <td>ehcache用于单体和网关的，否则为hazelcast</td>
   </tr>
   <tr>
     <td>clientFramework</td>
@@ -426,13 +416,13 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>clientTheme</td>
     <td>none</td>
     <td>Something or none</td>
-    <td>You can put whatever value you want, provided you know it will work (like yeti).</td>
+    <td>您可以输入所需的任何值，前提是您知道它会起作用（例如Yeti）。</td>
   </tr>
   <tr>
     <td>clientThemeVariant</td>
     <td></td>
     <td>Something or primary</td>
-    <td>You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty</td>
+    <td>您可以输入所需的任何值，前提是您知道它会起作用（例如深色或浅色），也可以为空</td>
   </tr>
   <tr>
     <td>databaseType</td>
@@ -444,13 +434,13 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>devDatabaseType</td>
     <td>h2Disk</td>
     <td>h2Disk, h2Memory, *</td>
-    <td>* + the prod database type</td>
+    <td>* 生产用数据库类型</td>
   </tr>
   <tr>
     <td>dtoSuffix</td>
     <td>DTO</td>
     <td></td>
-    <td>Suffix for DTOs. false for empty string.</td>
+    <td>DTO的后缀。 如果为空字符串，则为false。</td>
   </tr>
   <tr>
     <td>enableHibernateCache</td>
@@ -474,7 +464,7 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>entitySuffix</td>
     <td></td>
     <td></td>
-    <td>Suffix for entities. false for empty string.</td>
+    <td>实体的后缀。 如果为空字符串，则为false。</td>
   </tr>
   <tr>
     <td>jhiPrefix</td>
@@ -486,7 +476,7 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>languages</td>
     <td>[en, fr]</td>
     <td>Languages available in JHipster</td>
-    <td>Braces are mandatory</td>
+    <td>中括号必须有</td>
   </tr>
   <tr>
     <td>messageBroker</td>
@@ -497,14 +487,14 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
   <tr>
     <td>nativeLanguage</td>
     <td>en</td>
-    <td>Any language supported by JHipster</td>
+    <td>JHipster支持的任何语言</td>
     <td></td>
   </tr>
   <tr>
     <td>packageName</td>
     <td>com.mycompany.myapp</td>
     <td></td>
-    <td>Sets the packageFolder option</td>
+    <td>设置包名选项</td>
   </tr>
   <tr>
     <td>prodDatabaseType</td>
@@ -528,7 +518,7 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>serverPort</td>
     <td>8080, 8081 or 9999</td>
     <td></td>
-    <td>Depends on the app type</td>
+    <td>取决于应用程序类型</td>
   </tr>
   <tr>
     <td>serviceDiscoveryType</td>
@@ -558,7 +548,7 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
     <td>testFrameworks</td>
     <td>[]</td>
     <td>protractor, cucumber, gatling</td>
-    <td>Braces mandatory</td>
+    <td>中括号必须有</td>
   </tr>
   <tr>
     <td>websocket</td>
@@ -570,6 +560,6 @@ _Not what you're looking for? Check the [regular options](/jdl/options#available
 
 ---
 
-### See also
+### 也可以看看
 
-The regular options are available [here](/jdl/options)
+ [可用常规选项](/jdl/options)

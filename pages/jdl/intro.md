@@ -7,44 +7,38 @@ sitemap:
     lastmod: 2019-10-27T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL)
+# <i class="fa fa-star"></i> JHipster 领域语言 (JDL)
 
-The JDL is a JHipster-specific domain language where you can describe all your applications, deployments, entities and
-their relationships in a single file (or more than one) with a user-friendly syntax.
+JDL是JHipster特定的领域语言，您可以在一个文件（或多个文件）中，使用简单易用的语法描述所有应用程序、部署、实体及其关系。
 
-You can use our online [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or one of the 
-[JHipster IDE](https://www.jhipster.tech/jhipster-ide/) plugins/extensions, which are available for:
+您可以使用我们的在线工具 [JDL-Studio](https://start.jhipster.tech/jdl-studio/) 或 
+[JHipster IDE](https://www.jhipster.tech/jhipster-ide/) 相应的插件或扩展：
   - [Eclipse](https://marketplace.eclipse.org/content/jhipster-ide), 
   - [VS Code](https://marketplace.visualstudio.com/items?itemName=jhipster-ide.jdl)
 
-to create a JDL file and its UML visualization. You can create and export or share the URL of your JDL model as well.
+来创建JDL文件及其UML可视化。您也可以创建和导出JDL模型，或共享JDL模型的URL。
 
-This can be used as a replacement to using the [entity sub-generator]({{ site.url }}/creating-an-entity/) and is the
-recommended approach.
-The idea is that it is much easier to [manage relationships]({{ site.url }}/managing-relationships/) using a visual tool
-than with the classical Yeoman questions and answers.
+这可以替代使用 [entity sub-generator]({{ site.url }}/creating-an-entity/) ，并且这是推荐的方法。
+这个方法是使用可视化工具来 [管理关系]({{ site.url }}/managing-relationships/) 要容易得多，而不是经典的Yeoman问答。
 
-The JDL project is [available on GitHub](https://github.com/jhipster/jhipster-core/), it is an Open Source project like
-JHipster (Apache 2.0 License). It can also be used as a node library to do JDL parsing.
+JDL项目 [GitHub地址](https://github.com/jhipster/jhipster-core/) ，与JHipster（Apache 2.0许可证）一样，它也是一个开源项目，它也可以用作执行JDL解析的node库。
 
-_If you like the [JHipster Domain Language](https://github.com/jhipster/jhipster-core/),
-the [JDL Studio](https://github.com/jhipster/jdl-studio/) or the
-[JHipster IDE](https://github.com/jhipster/jhipster-ide/) don't forget to give them a star on
-[GitHub](https://github.com/jhipster/) - thanks_!
+_如果您喜欢 [JDL领域语言](https://github.com/jhipster/jhipster-core/),
+ [JDL设计器](https://github.com/jhipster/jdl-studio/) 或者
+[JHipster IDE](https://github.com/jhipster/jhipster-ide/) ，请不要忘记在
+[GitHub](https://github.com/jhipster/) 上给它们加星-谢谢！_!
 
 ---
 
-If you don't know the JDL yet, it is recommended to go through the [Getting Started](/jdl/getting-started) page first.
+如果您还不了解JDL，建议您先仔细阅读 [入门指南](/jdl/getting-started) 页面。
 
-However, if you're already familiar with the JDL and what you can do with it, you can also browse the detailed
-documentation:
-  1. [Applications](/jdl/applications)
-  1. [Entities & fields](/jdl/entities-fields)
-  1. [Enums](/jdl/enums)
-  1. [Relationships](/jdl/relationships)
-  1. [Options](/jdl/options)
-  1. [Deployments](/jdl/deployments)
-  1. [Troubleshooting](/jdl/troubleshooting)
+但是，如果您已经熟悉JDL及其使用方法，则还可以浏览详细的文档：
+  1. [应用配置](/jdl/applications)
+  1. [实体和属性](/jdl/entities-fields)
+  1. [枚举](/jdl/enums)
+  1. [关系](/jdl/relationships)
+  1. [选项](/jdl/options)
+  1. [部署](/jdl/deployments)
+  1. [故障排除](/jdl/troubleshooting)
 
-You can also check the official [JDL sample repository](https://github.com/jhipster/jdl-samples) and propose examples 
-if you want!
+您还可以查看官方 [JDL示例库](https://github.com/jhipster/jdl-samples)，如果愿意的话，还可以提供你的示例。
