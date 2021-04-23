@@ -9,15 +9,15 @@ sitemap:
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Deployments
 
-## Summary
+## 概要
 
-1. [Syntax](#syntax)
-1. [Examples](#examples)
+1. ## 语法(#syntax)
+1. [示例](#示例)
 1. [Available deployment options](#available-deployment-options)
 
 ---
 
-### Syntax
+### 语法
 
 The deployment declaration is done as follows:
 
@@ -31,9 +31,9 @@ deployment {
 
 ---
 
-### Examples
+### 示例
 
-#### Basic example
+### 简单例子
 
 ```jdl
 deployment {

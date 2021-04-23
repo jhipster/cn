@@ -9,7 +9,7 @@ sitemap:
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Options
 
-## Summary
+## 概要
 
 In JHipster, you can specify options for your entities such as pagination or DTO.
 You can do the same with the JDL, either with annotations on the entity, or with the following syntax:
@@ -32,9 +32,9 @@ You can do the same with the JDL, either with annotations on the entity, or with
 The complete list of available options is [here](#available-options).
 
 1. [How to](#how-to)
-1. [Syntax](#syntax)
+1. ## 语法(#syntax)
 1. [The use XYZ options](#the-use-xyz-options)
-1. [Examples](#examples)
+1. [示例](#示例)
    1. [Basic unary example](#basic-unary-example)
    1. [Basic binary example](#basic-binary-example)
    1. [all, * example](#all--example)
@@ -65,7 +65,7 @@ Mixing them is not recommended as it reduces readability.
 
 ---
 
-### Syntax
+### 语法
 
 For the regular form:
 ```
@@ -160,7 +160,7 @@ use pagination for C
 
 ---
 
-### Examples
+### 示例
 
 Each example will have three forms:
   - the regular one

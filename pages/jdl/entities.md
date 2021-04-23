@@ -1,32 +1,32 @@
 ---
 layout: default
-title: JHipster Domain Language - Entities & fields
+title: JHipster领域语言 (JDL) - 实体和属性
 permalink: /jdl/entities-fields
 sitemap:
     priority: 0.5
     lastmod: 2019-10-27T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Entities
+# <i class="fa fa-star"></i> JHipster领域语言 (JDL) - 实体和属性
 
-## Summary
+## 概要
 
-1. [Syntax](#syntax)
-1. [Examples](#examples)
-   1. [Basic example](#basic-example)
-   1. [With a custom table name](#with-a-custom-table-name)
-   1. [With fields](#with-fields)
-   1. [With field validations](#with-field-validations)
-   1. [Blob declaration](#blob-declaration)
-   1. [Regular expressions](#regular-expressions)
-   1. [Commenting](#commenting)
-1. [Field types and validations](#field-types-and-validations)
+1. [语法](#语法)
+1. [示例](#示例)
+   1. [简单例子](#简单例子)
+   1. [自定义表名](#自定义表名)
+   1. [属性](#属性)
+   1. [属性校验](#属性校验)
+   1. [声明二进制](#声明二进制)
+   1. [正则表达式](#正则表达式)
+   1. [注释](#注释)
+1. [字段类型和校验](#字段类型和校验)
 
 ---
 
-### Syntax
+### 语法
 
-The entity declaration is done as follows:
+实体声明如下：
 ```
 [<entity javadoc>]
 [<entity annotation>*]
@@ -37,40 +37,40 @@ entity <entity name> [(<table name>)] {
 }
 ```
 
-  - `<entity name>` the name of the entity,
-  - `<field name>` the name of one field of the entity,
-  - `<field type>` the JHipster supported type of the field,
-  - and as an option:
-    - `<entity javadoc>` the documentation of the entity,
-    - `<entity annotation>` the options for the entity (see [Options][] for a complete list of available options),
-    - `<table name>` the database table name (if you want to specify something different that the name automatically computed from the entity name),
-    - `<field javadoc>` the documentation of the field,
-    - `<field annotation>` the options for the field,
-    - `<validation>` the validations for the field.
+  - `<entity name>` 实体名称，
+  - `<field name>` 实体属性名称，
+  - `<field type>` JHipster支持的属性类型，
+  - 以下为可选项：
+    - `<entity javadoc>` 实体描述，
+    - `<entity annotation>`  实体的选项（有关可用选项的完整列表，请参见[选项][]），
+    - `<table name>` 数据库表名称（如果要指定与实体名称自动转换不同的名称），
+    - `<field javadoc>` 属性描述，
+    - `<field annotation>` 属性的选项，
+    - `<validation>` 属性的校验规则。
 
 ---
 
-### Examples
+### 示例
 
-#### Basic example
+### 简单例子
 
 ```jdl
 entity A
 ```
 
-This is equivalent to:
+这等效于：
 
 ```jdl
 entity A(a) {}
 ```
 
-The former the simpler form, without specifying a "body" (braces for fields) and a table name.
+前者是一种较简单的形式，没有指定"主体"（字段的大括号）和表名。
 
 ---
 
-#### With a custom table name
+#### 自定义表名
 
-Specifying a custom table name is possible too:
+也可以指定自定义表名称：
 
 ```jdl
  entity A(my_super_entity)
@@ -78,7 +78,7 @@ Specifying a custom table name is possible too:
 
 ---
 
-#### With fields
+#### 属性
 
 ```jdl
 entity A {
@@ -89,7 +89,7 @@ entity A {
 
 ---
 
-#### With field validations
+#### 属性校验
 
 ```jdl
 entity A {
@@ -100,21 +100,21 @@ entity A {
 
 ---
 
-#### Blob declaration
+#### 声明二进制
 
-JHipster gives a great choice as one can choose between an image type or any binary type. JDL lets you do the same.
-Create a custom type (see DataType) with the editor, name it according to these conventions:
-  - `AnyBlob` or `Blob` to create a field of the "any" binary type;
-  - `ImageBlob` to create a field meant to be an image.
-  - `TextBlob` to create a field for a CLOB (long text).
+JHipster提供了一个不错的选择，因为可以在图像类型或任何二进制类型之间进行选择。 JDL允许您执行相同的操作。
+使用编辑器创建一个自定义类型（请参阅DataType），并根据以下约定为其命名：
+  - `AnyBlob` 或 `Blob` 创建一个"任意"的二进制类型的字段；
+  - `ImageBlob` 创建一个图像的字段。
+  - `TextBlob` 为CLOB（长文本）创建一个字段。
 
-And you can create as many DataTypes as you like.
+而且，您可以根据需要创建任意数量的数据类型。
 
 ---
 
-#### Regular expressions
+#### 正则表达式
 
-This is a certain validation (only available to String types), and its syntax is:
+这是一个确定的验证（仅适用于String类型），其语法为：
 
 ```jdl
 entity A {
@@ -122,17 +122,16 @@ entity A {
 }
 ```
 
-Let's break it down:
-  - `pattern` is the keyword to declare a regex validation (with the normal parenthesises)
-  - `/.../` the pattern is declared inside two slashes
-  - `\` anti-slashes needn't be escaped
+让我们分解一下：
+  - `pattern` 是用于声明正则表达式验证的关键字（使用常规括号）
+  - `/.../` 该模式在两个斜杠内声明
+  - `\` 反斜杆不需要进行转义
 
 ---
 
-#### Commenting
+#### 注释
 
-Commenting is possible in the JDL for entities and fields, and will generate documentation (Javadoc or JSDoc, depending
-on the backend).
+可以在JDL中对实体和字段进行注释，并且注释会生成文档（Javadoc或JSDoc，取决于后端）。
 
 ```jdl
 /**
@@ -150,14 +149,14 @@ entity A {
 }
 ```
 
-These comments will later be added as Javadoc comments by JHipster. The JDL possesses its own kind of comment:
+这些注释稍后将由JHipster添加为Javadoc注释。 JDL拥有自己的注释类型：
   - // an ignored comment
   - /** not an ignored comment */
 
-Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
-Please note that the JDL Studio directives that start with `#` will be ignored during parsing.
+因此，以`//`开头的任何内容都被视为JDL的内部注释，因此不会被视为Javadoc。
+请注意，在解析期间，以`＃`开头的JDL Studio指令将被忽略。
 
-Another form of comments are the following comments:
+注释的另一种形式是以下注释：
 ```
 entity A {
   name String /** My super field */
@@ -165,28 +164,28 @@ entity A {
 }
 ```
 
-Here A's name will be commented with `My super field`, B with `My other super field`.
+在这里，A的名称将用 `My super field`注释，B则用 `My other super field`注释。
 
-Yes, commas are not mandatory but it's wiser to have them so as not to make mistakes in the code.
-**If you want to mix commas and following comments, beware!**
+是的，逗号不是强制性的，但最好不要使用逗号，以免在代码中出错。
+**如果您想混合使用逗号和以下注释，请当心！**
 ```
 entity A {
   name String, /** My comment */
   count Integer
 }
 ```
-A's name won't have the comment, because the count will.
+A的名字将没有注释（because the count will）。
 
 ---
 
-### Field types and validations
+### 字段类型和校验
 
-Each field type has its own validation list. Here are the types supported in the JDL:
+每个字段类型都有其自己的校验列表。 以下是JDL支持的类型：
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>JDL type</th>
-    <th>Validations</th>
+    <th>JDL类型</th>
+    <th>校验规则</th>
   </tr>
   <tr>
     <td>String</td>
@@ -258,4 +257,4 @@ Each field type has its own validation list. Here are the types supported in the
   </tr>
 </table>
 
-[Options]: options#available-options "Options"
+[选项]: 选项#可用选项 "选项"

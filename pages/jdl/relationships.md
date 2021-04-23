@@ -9,14 +9,14 @@ sitemap:
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Relationships
 
-## Summary
+## 概要
 
 1. [Relationship types](#relationship-types)
 1. [Relationship methods](#relationship-methods)
 1. [Multiple relationship bodies](#multiple-relationship-bodies)
-1. [Syntax](#syntax)
-1. [Examples](#examples)
-   1. [Basic example](#basic-example)
+1. ## 语法(#syntax)
+1. [示例](#示例)
+   1. [简单例子](#简单例子)
    1. [With injected fields](#with-injected-fields)
    1. [With joint fields](#with-joint-fields)
    1. [With methods](#with-methods)
@@ -89,7 +89,7 @@ This syntax is really useful when:
 
 ---
 
-### Syntax
+### 语法
 
 Relationship declaration is done as follows:
 ```
@@ -110,9 +110,9 @@ relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
 
 ---
 
-### Examples
+### 示例
 
-#### Basic example
+### 简单例子
 
 ```jdl
 relationship OneToOne {

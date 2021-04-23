@@ -9,7 +9,7 @@ sitemap:
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Getting Started
 
-## Summary
+## 概要
 
 In this page, you'll learn about the JDL and how to create applications and everything around them.
 

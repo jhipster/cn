@@ -9,17 +9,17 @@ sitemap:
 
 # <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Enums
 
-## Summary
+## 概要
 
-1. [Syntax](#syntax)
-1. [Examples](#examples)
-   1. [Basic example](#basic-example)
+1. ## 语法(#syntax)
+1. [示例](#示例)
+   1. [简单例子](#简单例子)
    1. [With values](#with-values)
    1. [Commenting](#commenting)
 
 ---
 
-### Syntax
+### 语法
 
 Enumeration declaration is done as follows:
 
@@ -35,9 +35,9 @@ enum [<enum name>] {
 
 ---
 
-### Examples
+### 示例
 
-#### Basic example
+### 简单例子
 
 ```jdl
 enum Country {

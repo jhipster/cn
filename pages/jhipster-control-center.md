@@ -17,7 +17,7 @@ All its features are packaged into one external application with a modern Vue us
 
 ![]({{ site.url }}/images/jhipster-control-center-animation.gif)
 
-## Summary
+## 概要
 
 1. [Specific Spring profiles](#profiles)
 2. [Installation](#installation)
