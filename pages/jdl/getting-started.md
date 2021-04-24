@@ -1,84 +1,82 @@
 ---
 layout: default
-title: JHipster Domain Language - Getting Started
+title: JHipster 领域语言 (JDL) - 入门指南
 permalink: /jdl/getting-started
 sitemap:
   priority: 0.5
   lastmod: lastmod: 2021-03-08T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Getting Started
+# <i class="fa fa-star"></i> JHipster 领域语言 (JDL) - 入门指南
 
 ## 概要
 
-In this page, you'll learn about the JDL and how to create applications and everything around them.
+在此页面中，您将了解JDL以及如何创建应用程序及其相关的所有内容。
 
-1. [Generating content](#generating-content)
-   1. [Using files](#using-files)
-   1. [Using an inline JDL](#using-an-inline-jdl)
-1. [Applications](#generating-applications)
-1. [Entities](#generating-entities)
-1. [Fields](#generating-fields)
-1. [Enums](#enumerations)
-1. [Relationships](#adding-relationships)
-1. [Options](#options)
-1. [Deployments](#deployments)
-1. [Constants](#constants)
-1. [Exporting to a JDL file](#exporting-to-a-jdl-file)
+1. [生成内容](#生成内容)
+   1. [使用文件](#使用文件)
+   1. [使用单行JDL](#使用单行JDL)
+1. [生成应用](#生成应用)
+1. [生成实体](#生成实体)
+1. [生成属性](#生成属性)
+1. [枚举](#枚举)
+1. [关联关系](#关联关系)
+1. [选项](#选项)
+1. [部署](#部署)
+1. [常量](#常量)
+1. [导出JDL](#导出JDL)
 
 ---
 
-## Generating content
+## 生成内容
 
-### Using files
+### 使用文件
 
-You can use JDL files to generate entities:
+您可以使用JDL文件生成实体，过程如下：
 
-- Create a file with the extension '.jh' or '.jdl',
-- Declare your applications, deployments, entities and relationships or create and download the file with [JDL-Studio](https://start.jhipster.tech/jdl-studio/) or [JHipster IDE](https://www.jhipster.tech/jhipster-ide/),
-- If you are creating only entities then run `jhipster jdl my_file.jdl` in your JHipster application's root folder.
-- If you are creating applications then run `jhipster jdl my_file.jdl` in a folder.
+- 创建扩展名为“ .jh”或“ .jdl”的文件，
+- 声明您的应用程序，部署，实体和关系，或者使用 [JDL-Studio](https://start.jhipster.tech/jdl-studio/) 或 [JHipster IDE](https://www.jhipster.tech/jhipster-ide/)创建和下载文件，
+- 如果仅创建实体，则在JHipster应用程序的根文件夹中运行`jhipster jdl my_file.jdl`。
+- 如果要创建应用程序，请在文件夹中运行“ jhipster jdl my_file.jdl”。
 
-and _Voilà_, you are done!
+_至此_，大功告成！
 
-If you work in a team, perhaps you would like to have multiple files instead of one.
-We added this option so that you don't manually concatenate all the files into one, you have to run:
+如果您在团队中工作，也许你有多个文件而不是一个文件。
+我们添加了此选项，以便您不必手动将所有文件连接为一个文件，而只要运行：
 
     jhipster jdl my_file1.jdl my_file2.jdl
 
-If you do not want to regenerate your entities while importing a JDL, you can use the `--json-only` flag to skip the
-entity creation part and create only the json files in `.jhipster` folder.
+如果您不想在导入JDL时重新生成实体，则可以使用`--json-only`标志来跳过实体创建部分，仅在`.jhipster`文件夹中创建json文件。
 
     jhipster jdl ./my-jdl-file.jdl --json-only
 
-By default `jdl` regenerates only entities that have changed, if you want all your entities to be regenerated
-then pass in the `--force` flag.
-Please note that this will overwrite all your local changes to the entity files:
+默认情况下，`jdl`仅重新生成已更改的实体。如果您希望重新生成所有实体，然后传递`--force`标志。
+请注意，这将覆盖您对实体文件的所有本地更改：
 
     jhipster jdl ./my-jdl-file.jdl --force
 
-If you want to use it in your project, you can add do so by doing:
+如果要在项目中使用它，可以通过执行以下操作来添加它：
 
 - NPM: `npm install jhipster-core --save`
 - Yarn: `yarn add jhipster-core`
 
-to install it locally, and save it in your `package.json` file.
+在本地安装，并将其保存在您的`package.json` 文件中。
 
 ---
 
-### Using an inline JDL
+### 使用单行JDL
 
-The other way to generate content is to pass a JDL code in your CLI, this way:
+生成代码的另一种方法是在CLI中传递JDL代码，方法是：
 `jhipster jdl --inline "application { config { baseName jhipster, applicationType microservice } }"`.
 
-This way of generating content is especially useful when generating entities.
+生成实体时，这种生成代码的方式特别有用。
 
 ---
 
-For now, we'll start with small JDL content to get to know the various ways to generate content.
-Explanations will be made in other sections about the syntax but focus is gonna be made on the generation here.
+现在，我们将从一个小的JDL内容开始，以了解生成内容的各种方法。
+其他部分将对语法进行说明，但此处将重点介绍生成器。
 
-Here's the basic content we'll use:
+这是我们将使用的基本内容：
 
 ```jdl
 application {
@@ -89,16 +87,15 @@ application {
 }
 ```
 
-This is a very basic microservice application named "jhipster", and we'll see the various ways to generate a
-application from this sample.
+这是一个非常基本的微服务应用程序，名为“ jhipster”，我们将看到从该示例生成应用程序的各种方法。
 
-You'll see that, with this little sample, you've managed to create an application from scratch.
+您将看到，通过这个小示例，您已经成功地从头创建了一个应用程序。
 
 ---
 
-## Using a remote JDL file
+## 使用远程JDL文件
 
-You can also use an URL with the `jdl` command. Just pass the URL instead of the file name as below
+您也可以在`jdl`命令中使用URL。 只需传递URL而不是文件名，如下所示
 
 ```
 jhipster jdl https://my-site.com/my.jdl
@@ -107,16 +104,15 @@ jhipster jdl https://my-site.com/my.jdl
 jhipster jdl https://gist.githubusercontent.com/user/id/raw/id/myapp.jdl
 ```
 
-You can also fetch a remote JDL file from our [JDL sample repository](https://github.com/jhipster/jdl-samples) by just specifying the filename and we will automatically resolve the URL
+您还可以仅通过指定文件名从我们的[JDL示例仓库]（https://github.com/jhipster/jdl-samples）获取远程JDL文件，我们将自动解析URL。
 
 ```
 jhipster jdl default.jdl
 ```
 
-## Generating applications
+## 生成应用
 
-As we've seen in the previous example, generating applications is quite straightforward, let's take the previous example
-and add more things to it:
+正如我们在前面的示例中看到的那样，生成应用程序非常简单，让我们以前面的示例为基础，并向其中添加更多内容：
 
 ```jdl
 application {
@@ -129,47 +125,46 @@ application {
 }
 ```
 
-Let's break it down:
+让我们分解一下：
 
-- `application` is the keyword to say you want to declare an application
-- `config` to say that you want to specify the configuration
-  - we'll later see that you can also declare entities in applications
-- `baseName`, `applicationType`, etc. are keywords to tweak the application
+- `application` 是你要声明一个应用程序的关键字
+- `config` 是你要指定配置
+  - 稍后会看到你还可以在应用程序中声明实体
+- `baseName`, `applicationType`等是配置应用程序的关键字
 
-This is how you create an application using the JDL.
-To see all supported application options, head to [this page](/jdl/applications).
+这就是使用JDL创建应用程序的方式。
+要查看所有受支持的应用程序选项，请转到 [应用生成](/jdl/applications).
 
 ---
 
-## Generating entities
+## 生成实体
 
-Generating entities is a bit less straightforward.
-You can also go to the dedicated [entity page](/jdl/entities-fields) to know more about what you can do with entities.
+生成实体可能没有想像的那么简单。
+您也可以去 [实体和属性](/jdl/entities-fields) 进一步了解您可以对实体执行的操作。
 
-### Generating a basic entity
+### 生成基本实体
 
 ```jdl
 entity A
 ```
 
-This entity doesn't have fields, or even an explicit table name (even though JHipster sets one for you from the entity's
-name).
-This is the simplest way possible to declare an entity.
+该实体没有属性，甚至没有明确的表名（即便JHipster从该实体的名称自动设置了一个表名）。
+这是声明实体的最简单方法。
 
-Note that this form is equivalent to:
+请注意，此形式等效于：
 
 ```jdl
 entity A(a) {}
 ```
 
-We've added a table name and braces.
-By default, JHipster generates a table name based on the specified entity name.
+我们添加了数据库表名和大括号。
+默认情况下，JHipster基于指定的实体名称生成表名称。
 
-The braces are needed when declaring fields.
+声明实体的属性时需要大括号。
 
-### Adding comments
+### 添加注释
 
-This is the way to add a comment to an entity:
+这是给实体添加注释的方法：
 
 ```jdl
 /**
@@ -178,11 +173,11 @@ This is the way to add a comment to an entity:
 entity A
 ```
 
-If the backend is in Java, this will add a Javadoc comment.
+如果后端使用Java，则将添加Javadoc注释。
 
-### Entities in applications
+### 应用中的实体
 
-To only generate some entities in an application, the `entities` keyword can be used:
+仅在应用程序中生成某些实体，可以使用`entities`关键字：
 
 ```jdl
 application {
@@ -200,13 +195,13 @@ entity B
 entity C
 ```
 
-This is especially useful in microservice architectures.
+这在微服务架构中特别有用。
 
 ---
 
-## Generating fields
+## 生成属性
 
-Fields are declared in entities, by specifying a body to an entity:
+在实体中声明属性，需要声明实体的结构体并在其中实现：
 
 ```jdl
 entity MyEntity {
@@ -215,11 +210,11 @@ entity MyEntity {
 }
 ```
 
-There are more than these two types, check them out in the [entities & fields page](/jdl/entities-fields).
+除以上两种方法外，更多请查看 [实体和属性](/jdl/entities-fields).
 
-### Adding comments and validations
+### 添加注释和校验
 
-The same way we've added comments to entities, we can add comments to fields:
+和注释添加到实体的方式相同，我们也可以将注释添加到字段：
 
 ```jdl
 entity MyEntity {
@@ -228,13 +223,13 @@ entity MyEntity {
 }
 ```
 
-Validations depend on the field type, and are also detailed in the [entities & fields page](/jdl/entities-fields).
+校验取决于属性类型，有关校验的详细信息，请参见 [实体和属性](/jdl/entities-fields).
 
 ---
 
-## Enumerations
+## 枚举
 
-Enumerations are types with fixed values:
+枚举是具有固定值的类型：
 
 ```jdl
 enum Type {
@@ -247,17 +242,17 @@ entity E {
 }
 ```
 
-Notice how enumeration's values are optional.
+注意枚举的值是如何可选的。
 
-They only have one validation: `required`.
+他们只有一个校验规则：`required`。
 
-You can check the dedicated [enum page](/jdl/enums) for details about enums.
+你可以查看更多关于 [枚举](/jdl/enums) 的详细信息。
 
 ---
 
-## Adding relationships
+## 关联关系
 
-Relationships between entities are also available and are declared with the `relationship` keyword.
+实体之间的关系也是可用的，并使用关键字`relationship`声明。
 
 ```jdl
 entity A
@@ -268,20 +263,20 @@ relationship OneToOne {
 }
 ```
 
-Here's what we can see:
+在此我们可以看到：
 
-- `OneToOne` is the relationship type
-  - there are also `OneToMany`, `ManyToMany` and `ManyToOne`
-- we declare the source and the destination of the relationship (from `A` to `B`)
-- we also declare the injected fields in each entity (`a` in `B`, and `b` in `A`)
-  - this means the relationship is bidirectional
+- `OneToOne` 是关系类型
+  - 还有 `OneToMany`, `ManyToMany` 和 `ManyToOne`
+- 我们声明关系的来源和目的地（从 `A` 到 `B`）
+- 我们还声明了每个实体中的引入的属性名（在`B`实体中为属性`a`，在`A`实体中为属性`b`）
+  - 这意味着关系是双向的，即：双向一对一关联关系。
 
-To know more about relationships, you can head to [the dedicated page](/managing_relationships).
+要了解更多关于关系的详细内容，你可以前往 [关联关系](/managing_relationships).
 
-### Unidirectional or bidirectional relationships?
+### 单向关系还双向关系？
 
-Depending on how you design your models, you may want unidirectional relationships instead of bidirectional ones.
-This is achieved by not specifying an injected field like this:
+你可能希望单向的关系，而不是双向的，这取决于你如何设计你的模型。
+可以通过不指定如下所示的引入属性来实现：
 
 ```jdl
 relationship OneToOne {
@@ -289,7 +284,7 @@ relationship OneToOne {
 }
 ```
 
-You can also not specify them, and at least one will be injected by default (the source)
+你可以都不指定引入的属性名，默认情况下将至少引入一个（在源中）
 
 ```jdl
 relationship OneToOne {
@@ -297,9 +292,9 @@ relationship OneToOne {
 }
 ```
 
-### Relationship comments & validations
+### 关系注释和校验
 
-Relationships also have comments, validations (only one: `required`):
+关系也有注释和校验规则（只有`required`）：
 
 ```jdl
 relationship OneToOne {
@@ -307,18 +302,18 @@ relationship OneToOne {
 }
 ```
 
-In this example we can see:
+在此示例中，我们可以看到：
 
-- `required` to specify if a side of the relationship is required
-  - instead of having 0..1, this One to One relationship requires 1 side not to be nil
+- `required` 指定是否需要关系的一方。
+  - 代替0..1，这种一对一关系要求`b`不能为空。
 
-To know more about relationships, you can go to the dedicated [relationship page](/jdl/relationships)
+要了解更多关于关系的内容，你可以去相应的 [关联关系](/jdl/relationships)页面。
 
 ---
 
-## Options
+## 选项
 
-The same way you can apply options to entities in the CLI, you can also do that in the JDL:
+和在CLI中将选项应用于实体的方法相同，也可以在JDL中执行以下操作：
 
 ```jdl
 entity A
@@ -331,22 +326,22 @@ service * with serviceImpl
 paginate A, B with pager
 ```
 
-There a some interesting things happening here:
+下面发生的事情，让你有意外的惊喜：
 
-- `dto`, `paginate` and `service` are binary options as they need an entity list and a value
-  - `with` is used to specify the option value
-  - note the `*` which means the option is to be applied to all the entities
-- `readOnly` is an unary option, that means that such options only take an entity list
+- `dto`、`paginate` 和 `service` 是二元选项，因为它们需要一个实体列表和一个值
+  - `with` 用于指定选项值
+  - 注意 `*` 意味着该选项将应用于所有实体
+- `readOnly` 是一元选项，这意味着此类选项仅包含实体列表
 
-There are more than one way to declare an entity list:
+声明实体列表的方法有多种：
 
-- you can enumerate them one by one: `A, B, C`
-- you can select all of them: `*` or `all`
-  - you can have exceptions to exclude entities: `service * with serviceImpl except A, B`
+- 你可以一一列举，如：`A, B, C`
+- 您可以选择所有的：`*` 或 `all`
+  - 您可以指定排除某些实体： `service * with serviceImpl except A, B`
 
-### Annotations
+### 注解
 
-Annotations are another way to declare options, let's rewrite the previous example:
+注释是声明选项的另一种方法，让我们重写前面的示例：
 
 ```jdl
 @readOnly
@@ -365,18 +360,17 @@ entity B
 entity C
 ```
 
-Similar to Java, or Typescript, annotations are "decorators", options to entities.
+类似于Java或Typescript，注释是"装饰器"，是实体的选项。
 
-This example and the previous are equivalent as they can be used to generate the same code.
+此示例与先前的示例等效，因为它们可用于生成相同的代码。
 
-To know more about options, you can go to the [option page](/jdl/options)
+要了解有关选项的更多信息，您可以转到 [选项](/jdl/options)
 
 ---
 
-## Deployments
+## 部署
 
-Finally, deployments can also be generated from a JDL file using the `deployment` keyword, compatible with JHipster
-v5.7 and above:
+最后，还可以使用`deployment`关键字从JDL文件生成部署，该关键字与JHipster v5.7及更高版本兼容：
 
 ```jdl
 deployment {
@@ -386,13 +380,12 @@ deployment {
 }
 ```
 
-_To import one or several deployments, you need not be in a JHipster application folder._
+_要导入一个或多个部署，您不必位于JHipster应用程序文件夹中。_
 
-Deployments are described in [their own page](/jdl/deployments).
+有关部署的说明，请参见 [部署](/jdl/deployments).
 
-A JHipster deployment has a config with default values for all other properties and using the previous syntax will
-ensure your deployment will use the default values (as if you didn't make any specific choice).
-The resulting deployment will have:
+一个JHipster部署具有对所有其他属性的默认值的配置和使用以前的语法将确保您的部署将使用默认值（就像您没有做出任何特定选择一样）。
+最终的部署将具有：
 
 - deploymentType: `docker-compose`
 - appsFolders: `foo, bar`
@@ -400,9 +393,9 @@ The resulting deployment will have:
 - serviceDiscoveryType: `eureka`
 - gatewayType: `SpringCloudGateway`
 - directoryPath: `../`
-- etc.
+- 等等
 
-Now, if you want some custom options:
+现在，如果您需要一些自定义选项：
 
 ```jdl
 deployment {
@@ -417,15 +410,15 @@ deployment {
 }
 ```
 
-Those options are only a sample of what's available in the JDL.
-The complete list of options is available in the deployment page, [here](/jdl/deployments).
+这些选项只是JDL中可用选项的一个示例。
+部署页面上提供了完整的选项列表，请查看 [部署](/jdl/deployments).
 
 ---
 
-## Constants
+## 常量
 
-The JDL supports numerical constants.
-Here is an example:
+JDL支持数字常量。
+这是一个例子：
 
 ```jdl
 DEFAULT_MIN_LENGTH = 1
@@ -444,13 +437,10 @@ entity A {
 
 ---
 
-## Exporting to a JDL file
+## 导出JDL
 
-If you already have entities in your application and wish to have a JDL file, don't worry! You don't have to write it from
-scratch as there's a sub-generator that does that for you.
+如果您的应用程序中已经有实体并且希望拥有JDL文件，请不用担心！ 您不必从头开始，因为有一个子生成可以为您完成此任务。
 
-Run `jhipster export-jdl <FILE_NAME>` in your app's root folder and you'll have all your applications, entities,
-relationships and options exporting in a single JDL file.
+在应用程序的根文件夹中运行 `jhipster export-jdl <FILE_NAME>` ，您将拥有所有应用程序、实体、关系和选项在单个JDL文件中导出。
 
-Note: you can also not provide a file name to the sub-generator, the exported JDL file will be named after the app's
-base name. For instance, if your application's named 'mySuperApp' then your JDL file will be `mySuperApp.jdl`.
+注意：您也不能为子生成器提供文件名，导出的JDL文件将以应用程序的基本名称命名。 例如，如果您的应用程序名为`mySuperApp`，则您的JDL文件将为`mySuperApp.jdl`。
