@@ -1,25 +1,25 @@
 ---
 layout: default
-title: JHipster Domain Language - Deployments
+title: JHipster领域语言 (JDL) - 部署
 permalink: /jdl/deployments
 sitemap:
     priority: 0.5
     lastmod: 2021-03-08T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL) - Deployments
+# <i class="fa fa-star"></i> JHipster领域语言 (JDL) - 部署
 
 ## 概要
 
-1. ## 语法(#syntax)
+1. [语法](#语法)
 1. [示例](#示例)
-1. [Available deployment options](#available-deployment-options)
+1. [可用的部署选项](#可用的部署选项)
 
 ---
 
 ### 语法
 
-The deployment declaration is done as follows:
+部署声明如下：
 
 ```
 deployment {
@@ -27,7 +27,7 @@ deployment {
 }
 ```
 
-  - Similar to applications, deployment declaration works by specifying option keys & values
+  - 与应用程序类似，部署声明通过指定选项键和值来工作
 
 ---
 
@@ -45,9 +45,9 @@ deployment {
 
 ---
 
-#### More than one deployment
+#### 多个部署
 
-If you want more than one deployment, here's how you do it:
+如果您需要多个部署，请按以下步骤进行：
 
 ```
 // will be created under 'docker-compose' folder
@@ -65,10 +65,9 @@ deployment {
 }
 ```
 
-You can have one deployment per `deploymentType`. The applications defined in `appsFolders` should be in the same 
-folder where you are creating deployments or in the folder defined in `directoryPath`.
+每个`deploymentType`您可以有一个部署。 `appsFolders`中定义的应用程序应位于创建部署所在的文件夹中，或`directoryPath`中定义的文件夹中。
 
-For example, above you need to have a folder structure like this:
+例如，在上面，您需要具有以下文件夹结构：
 
 ```
 .
@@ -81,16 +80,16 @@ For example, above you need to have a folder structure like this:
 
 ---
 
-### Available deployment options
+### 可用的部署选项
 
-Here are the deployment options supported in the JDL:
+这是JDL支持的部署选项：
 
 <table class="table table-striped table-responsive">
   <tr>
-    <th>JDL option name</th>
-    <th>Default value</th>
-    <th>Possible values</th>
-    <th>Comment</th>
+    <th>JDL选项名称</th>
+    <th>默认值</th>
+    <th>可选值</th>
+    <th>说明</th>
   </tr>
   <tr>
     <td>deploymentType</td>
@@ -102,24 +101,25 @@ Here are the deployment options supported in the JDL:
     <td>directoryPath</td>
     <td>"../"</td>
     <td></td>
-    <td>Relative path. Must be in double quotes</td>
+    <td>相对路径。 必须用双引号引起来</td>
   </tr>
   <tr>
     <td>appsFolders</td>
     <td>[]</td>
     <td></td>
-    <td>Directory names for the applications separated by comma. Must be a list, example [foo, bar]</td>
+    <td>应用程序的目录名称，以逗号分隔。 必须为列表，例如[foo, bar]</td>
   </tr>
   <tr>
     <td>clusteredDbApps</td>
     <td>[]</td>
     <td></td>
-    <td>Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]</td>
+    <td>带有群集数据库的应用程序的目录名称，以逗号分隔。 必须为列表，例如[foo, bar]</td>
   </tr>
   <tr>
     <td>gatewayType</td>
     <td>SpringCloudGateway</td>
-    <td>Value is ignored when serviceDiscoveryType is `no`</td>
+    <td></td>
+    <td>当serviceDiscoveryType为`no`时，将忽略该值</td>
   </tr>
   <tr>
     <td>monitoring</td>
@@ -137,48 +137,48 @@ Here are the deployment options supported in the JDL:
     <td>dockerRepositoryName</td>
     <td></td>
     <td></td>
-    <td>The name or URL of the docker repository. Must be in double quotes</td>
+    <td>Docker仓库的名称或URL，必须用双引号引起来</td>
   </tr>
   <tr>
     <td>dockerPushCommand</td>
     <td>"docker push"</td>
     <td></td>
-    <td>The docker push command to use. Must be in double quotes</td>
+    <td>要使用的docker push命令。 必须用双引号引起来</td>
   </tr>
   <tr>
     <td>kubernetesNamespace</td>
     <td>default</td>
     <td></td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>kubernetesServiceType</td>
     <td>LoadBalancer</td>
     <td>LoadBalancer, NodePort, Ingress</td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>ingressDomain</td>
     <td></td>
     <td></td>
-    <td>The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes</td>
+    <td>当kubernetesServiceType为`Ingress`时，Ingress的域。 必须用双引号引起来。 仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>istio</td>
     <td>false</td>
     <td>true, false</td>
-    <td>Applicable only when deploymentType is kubernetes</td>
+    <td>仅当DeploymentType为kubernetes时适用</td>
   </tr>
   <tr>
     <td>openshiftNamespace</td>
     <td>default</td>
     <td></td>
-    <td>Applicable only when deploymentType is openshift</td>
+    <td>仅当DeploymentType为openshift时适用</td>
   </tr>
   <tr>
     <td>storageType</td>
     <td>ephemeral</td>
     <td>ephemeral, persistent</td>
-    <td>Applicable only when deploymentType is openshift</td>
+    <td>仅当DeploymentType为openshift时适用</td>
   </tr>
 </table>
