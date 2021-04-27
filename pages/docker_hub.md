@@ -15,9 +15,9 @@ sitemap:
 
 [![]({{ site.url }}/images/logo/docker-hub.png)](https://hub.docker.com/u/jhipster/)
 
-JHipster在Docker Hub拥有自己的[组织]，并提供不同的Docker镜像。
+JHipster在Docker Hub拥有自己的[organization]，并提供不同的Docker镜像。
 
-[jhipster-docker-hub]项目提供所有docker-compose文件，可以轻松启动这些镜像。
+[jhipster-docker-hub]项目提供所有docker-compose文件，可以启动这些镜像。
 要使用docker-compose命令，您必须：
 
 - 克隆项目: `git clone https://github.com/jhipster/jhipster-docker-hub`
@@ -27,7 +27,7 @@ JHipster在Docker Hub拥有自己的[组织]，并提供不同的Docker镜像。
 <div class="alert alert-warning"><i>注意: </i>
 
 根据您的操作系统，您的<code>DOCKER_HOST</code>将有所不同。
-在Linux上，它将只是您的<code>localhost</code>。对于Mac/Windows，必须使用以下命令获取IP：<code>docker-machine ip default</code>
+在Linux上，它将是您的<code>localhost</code>。对于Mac/Windows，必须使用以下命令获取IP：<code>docker-machine ip default</code>
 
 </div>
 
@@ -70,7 +70,7 @@ docker container run -d -p 18080:80 jhipster/jdl-studio
 
 ### 快速启动
 
-在开发配置文件中直接使用Docker直接运行一个简单的jhipster应用程序
+在开发配置文件中直接使用Docker直接运行一个jhipster应用程序
 
 ```
 docker container run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev jhipster/jhipster-sample-app

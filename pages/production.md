@@ -39,11 +39,54 @@ JHipster生成了完全可用于生产，优化和安全的应用程序。本部
 
 ### 构建可执行的JAR/WAR文件
 
-要将应用程序打包为生成JAR，请使用Maven输入：
+#### With Maven
 
-`./mvnw -Pprod clean verify`
+- 要将应用程序打包为生成JAR，请输入：
 
-或使用Gradle时，请输入：
+  `./mvnw -Pprod clean verify`
+
+  这将生成一个文件`target/jhipster-0.0.1-SNAPSHOT.jar`（如果您的应用程序称为`jhipster`）。
+
+- 要将应用程序打包为生成WAR：
+  
+    - 修改pom.xml，将应用程序包装更改为war，例如：
+
+    ```diff
+    -    <packaging>jar</packaging>
+    +    <packaging>war</packaging>
+    ``` 
+  - 修改`pom.xml`以将`spring-boot-starter-undertow`的依赖范围更改为`provided`，例如：
+
+    ```diff
+        <id>prod</id>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-undertow</artifactId>
+    +           <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    ``` 
+    - 要将原始`war`生成可执行文件`war`，请输入命令：
+    ```bash
+    ./mvnw -Pprod clean verify
+    ```
+    - 这将生成以下文件（如果您的应用程序称为`jhipster`）：
+      * `target/jhipster-0.0.1-SNAPSHOT.war`
+      * `target/jhipster-0.0.1-SNAPSHOT.war.original`
+        
+**请注意**，当使用`context path`构建JAR或WAR文件时，并且**React client**或**Vue client**，则需要更新`webpack.prod.js`或`webpack.common.js`（使用**Vue**时更新两个文件）具有正确的`base`属性值。
+将`jhipster`作为上下文路径，`base`属性值应如下所示：
+```
+new HtmlWebpackPlugin({
+    ...
+    base: '/jhipster/'
+})
+```
+
+
+
+        或使用Gradle时，请输入：
 
 `./gradlew -Pprod clean bootJar`
 
