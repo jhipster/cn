@@ -30,7 +30,7 @@ JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipst
 这些属性是使用`io.github.jhipster.config.JHipsterProperties`类配置的。
 
 这是这些属性的文档：
-
+```YAML
     jhipster:
 
         # 在JHipster中用于异步方法调用的线程池
@@ -51,11 +51,6 @@ JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipst
 
         # HTTP configuration
         http:
-            # V_1_1代表HTTP/1.1或V_2_0代表HTTP/2。
-            # 要使用HTTP/2，您将需要SSL支持（请参阅Spring Boot "server.ssl"配置）
-            version: V_1_1
-            # 强制服务器密码套件遵循server.ssl.ciphers中指定的确切顺序（以实现完美的前向保密性）
-            useUndertowUserCipherSuitesOrder: true
             cache: # 由io.github.jhipster.web.filter.CachingHttpHeadersFilter使用
                 timeToLiveInDays: 1461 # 静态资源默认缓存4年
 
@@ -97,11 +92,23 @@ JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipst
             # Memcached配置
             # 使用Xmemcached库，请参阅https://github.com/killme2008/xmemcached
             memcached:
-             # 默认情况下在dev模式下禁用，因为它不适用于Spring Boot devtools
+                # 默认情况下在dev模式下禁用，因为它不适用于Spring Boot devtools
                 enabled: true
                 servers: localhost:11211 # 用逗号或空格分隔的服务器地址列表
                 expiration: 300 # 缓存的过期时间（以秒为单位）
                 use-binary-protocol: true # 建议使用二进制协议以提高性能（和安全性）
+                authentication: # 如果需要身份验证，则可以使用以下参数进行设置。 默认禁用
+                    enabled: false,
+                    # username: 默认未设置
+                    # password: 默认未设置
+            redis: # Redis 配置
+                expiration: 3600 # 默认情况下，对象在缓存中保留1小时（以秒为单位）
+                server: redis://localhost:6379 # 服务器地址
+                cluster: false
+                connectionPoolSize: 64,
+                connectionMinimumIdleSize: 24,
+                subscriptionConnectionPoolSize: 50,
+                subscriptionConnectionMinimumIdleSize: 1 
 
         # E-mail属性
         mail:
@@ -114,11 +121,6 @@ JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipst
             remember-me: # JHipster的"记住我"机制的安全实现，用于基于会话的身份验证
                 # 安全密钥（此密钥对于您的应用程序应该是唯一的，并且应保密）
                 key: 0b32a651e6a65d5731e869dc136fb301b0a8c0e4
-            client-authorization: # 与JHipster UAA认证一起使用
-                access-token-uri: # JHipster UAA服务器OAuth令牌的URL
-                token-service-id: # 当前应用程序的ID
-                client-id: # OAuth客户端ID
-                client-secret: # OAuth客户端密钥
             authentication:
                 jwt: # JHipster特定的JWT实现
                     # 秘密令牌应使用Base64进行编码（您可以在命令行中输入`echo 'secret-key'|base64`）。
@@ -190,7 +192,7 @@ JHipster提供来自[JHipster服务器端库](https://github.com/jhipster/jhipst
         ribbon:
             # 以逗号分隔的显示ribbon的配置文件列表
             display-on-active-profiles: dev
-
+```
 ## <a name="3"></a> 应用程序特殊属性
 
 您生成的应用程序还可以具有自己的Spring Boot属性。强烈建议这样做，因为它允许对应用程序进行类型安全的配置，以及IDE中的自动完成和文档。

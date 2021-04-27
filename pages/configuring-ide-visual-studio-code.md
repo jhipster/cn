@@ -37,9 +37,8 @@ Visual Studio Code Java扩展不能用于运行命令：它不能编译，运行
 
 对于所有这些任务，有两种解决方案：
 
-- 使用[JHipster App]({{ site.url }}/jhipster-app)，该应用程序为所有这些命令提供图形界面
-
 - 使用终端（例如，Visual Studio Code提供的内部终端）手动运行这些命令
+- 使用[JHipster App]({{ site.url }}/jhipster-app)，该应用程序为所有这些命令提供图形界面。**注意**不推荐使用JHipster App。
 
 ## 使用Spring Boot开发工具的应用程序"热重启"
 

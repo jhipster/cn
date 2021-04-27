@@ -24,7 +24,7 @@ JHipster具有用于配置TLS和HTTP/2的特定配置（请参阅[通用应用�
 - JHipster在应用程序生成时生成自签名证书
 - 提供了特定的`tls`配置文件（请参阅[配置文件文档]({{ site.url }}/profiles/)）
 
-为了使用提供的自签名证书（启用了TLS和HTTP/2）运行JHipster，您只需要使用以下`tls`配置文件：
+为了使用提供的自签名证书（启用了TLS和HTTP/2）运行JHipster，您需要使用以下`tls`配置文件：
 
 *   使用Maven: `./mvnw -Pdev,tls`
 *   使用Gradle: `./gradlew -Ptls`
@@ -35,6 +35,6 @@ JHipster具有用于配置TLS和HTTP/2的特定配置（请参阅[通用应用�
 
 ## 在Angular或React或Vue.js中使用TLS和HTTP/2
 
-无需使用`npm start`来运行前端（使用Webpack和BrowserSync），只需运行`npm run start-tls`，它将连接`https://localhost:8080/`上运行的后端。
+无需使用`npm start`来运行前端（使用Webpack和BrowserSync），运行`npm run start-tls`，它将连接`https://localhost:8080/`上运行的后端。
 
 然后，所有内容应与没有使用TLS和HTTP/2的情况相同。

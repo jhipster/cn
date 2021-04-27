@@ -19,7 +19,15 @@ Spring Cache和Hibernate 2级缓存将使用相同的缓存解决方案，但不
 - Spring Cache用于更高级别或聚合的对象，就像您通常使用的DTO一样
 - 用于映射到数据库的实体的Hibernate 2级缓存，以减少SQL请求的数量
 
-JHipster支持5种缓存实现：Ehcache，Caffeine，Hazelcast，Infinispan和Memcached。它们都在下面详细说明。
+JHipster支持以下缓存实现：
+1. Ehcache，
+2. Caffeine，
+3. Hazelcast，
+4. Infinispan，
+5. Memcached，
+6. Redis。
+
+它们都在下面详细说明。
 
 ## 通用配置
 
@@ -27,7 +35,7 @@ JHipster支持5种缓存实现：Ehcache，Caffeine，Hazelcast，Infinispan和M
 
 ## 使用Ehcache缓存
 
-[Ehcache](http://www.ehcache.org/)是​​JHipster生成monoliths应用的默认缓存。Ehcache易于设置和配置，并且启动速度非常快，因此它是"常规"monoliths的完美解决方案。
+[Ehcache](http://www.ehcache.org/)是​​JHipster生成monoliths应用的默认缓存。Ehcache启动速度非常快，因此它是"常规"单体应用的完美解决方案。
 
 使用JHipster，Ehcache无法作为分布式缓存使用，因为它没有允许以编程方式添加新节点的API
 
@@ -71,8 +79,8 @@ Jhipster会为Caffeine生成与Ehcache相同的默认配置。但是，您可能
 为了更好地使用Hazelcast，JHipster包括对Hazelcast管理中心的支持：
 
 - 请注意，您只能免费监控2个节点，因为这是商业产品。但这已经足以测试您的应用程序。
-- 在`application-dev.yml`和`application-prod.yml`文件中，参考JHipster[常用应用程序属性]({{ site.url }}/common-application-properties/)，通过键`jhipster.cache.hazelcast.management-center`对其进行配置。请注意，默认情况下它是禁用的。
-- JHipster生成了Docker Compose配置以轻松运行Hazelcast管理中心。请阅读我们的[Docker Compose文档]({{ site.url }}/docker-compose/)，然后使用`docker-compose -f src/main/docker/hazelcast-management-center.yml up -d`运行该应用程序。
+- 在`application-dev.yml`和`application-prod.yml`文件中，参考JHipster[常用应用程序属性]({{ site.url }}/common-application-properties/)，通过键`jhipster.cache.hazelcast.management-center`对其进行配置。请注意，默认情况下它是关闭的。
+- JHipster生成了Docker Compose配置以运行Hazelcast管理中心。请阅读我们的[Docker Compose文档]({{ site.url }}/docker-compose/)，然后使用`docker-compose -f src/main/docker/hazelcast-management-center.yml up -d`运行该应用程序。
 
 ## 使用Infinispan缓存
 
@@ -98,7 +106,7 @@ Jhipster会为Caffeine生成与Ehcache相同的默认配置。但是，您可能
 
 可以使用JHipster[通用应用程序属性]({{ site.url }}/common-application-properties/)，微调缓存中每个独立操作模式的对象逐出，生存时间和最大条目数，以及分布式模式的副本数。微调`jhipster.cache.infinispan`中的属性以用于特定于应用程序的缓存，并微调`spring.jpa.properties`以用于Hibernate的第二级缓存。
 
-如果启用了JHipster Registry，将在Registry中注册主机列表。如果未启用JHipster Registry，则主机发现将基于Infinispan Jar中打包的`config-file`中定义的默认传输设置。Infinispan原生发现支持大多数平台（例如Kubernets/OpenShift，AWS，Azure和Google）。
+如果启用了JHipster Registry，将在Registry中注册节点列表。如果未启用JHipster Registry，则节点发现将基于Infinispan Jar中打包的`config-file`中定义的默认传输设置。Infinispan原生发现支持大多数平台（例如Kubernets/OpenShift，AWS，Azure和Google）。
 
 尽管Infinispan 9.0.0.Final GA和更高版本，通过使用本机KUBE_PING发现，增加了对在Kubernetes和OpenShift上运行Infinispan嵌入式缓存应用程序的支持，但Hibernate依赖项尚未更新至9.x版本，因此不支持在Kubernetes和OpenShift本机发现。但是，您可以通过使用JHipster Registry进行实例发现来运行应用程序。
 
@@ -107,8 +115,8 @@ Jhipster会为Caffeine生成与Ehcache相同的默认配置。但是，您可能
 [Memcached](https://memcached.org/)是一个开源分布式缓存。它与JHipster支持的其他缓存实现完全不同：
 
 - Memcached不能用作Hibernate 2级缓存，它仅支持Spring Cache抽象。
-- Memcached在远程服务下运行，没有本地缓存​​。这样，您的对象始终会通过网络进行序列化/反序列化，这意味着如果您的对象集很小，很容易放入内存中，效率反而可能会降低。
-- 它非常易于扩展，并且托管成本低。大多数大型云提供商（如Heroku，GCP或AWS）都支持Memcached。这样，拥有分布式（且便宜）的Memcached集群比使用其他缓存实现要容易得多。
+- Memcached在远程服务下运行，没有本地缓存​​。这样，您的对象始终会通过网络进行序列化/反序列化，这意味着如果您的对象集很小，放入内存中，效率反而可能会降低。
+- 它非常易于扩展，并且运营成本低。大多数大型云提供商（如Heroku，GCP或AWS）都支持Memcached。这样，拥有分布式（且便宜）的Memcached集群比使用其他缓存实现要容易得多。
 
 JHipster将流行的[Xmemcached](https://github.com/killme2008/xmemcached) Java客户端用于Memcached，并使用通常的JHipster[通用应用程序属性]({{ site.url }}/common-application-properties/)来配置其最重要的属性。
 

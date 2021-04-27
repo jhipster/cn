@@ -23,12 +23,9 @@ sitemap:
 JHipster微服务架构以以下方式工作：
 
  * [gateway]({{ site.url }}/api-gateway/)是JHipster生成的应用程序(生成时选择`microservice application``microservice gateway`)，该应用程序处理Web流量，并为Angular/React应用程序提供服务。如果您要遵循[Backends for Frontends模式](https://www.thoughtworks.com/insights/blog/bff-soundcloud)，则可以存在几种不同的网关，但这不是强制性的。
- * [Traefik]({{ site.url }}/traefik/)是可以与网关一起使用的现代HTTP反向代理和负载均衡器。
  * [JHipster Registry]({{ site.url }}/jhipster-registry/)是一个所有应用程序在运行时候在其注册并从中获取其配置的服务。它还提供了运行时监视仪表板。
  * [Consul]({{ site.url }}/consul/)是服务发现服务以及提供键/值存储。它可以用作JHipster Registry的替代服务。
- * [JHipster UAA]({{ site.url }}/using-uaa/)是基于JHipster的用户身份验证和授权系统，它使用OAuth2协议。
  * [Microservices]({{ site.url }}/creating-microservices/)是JHipster生成的应用程序（生成时选择`microservice application`），用于处理REST请求。它们是无状态的，可以并行启动它们的多个实例来达到负载均衡的目的。
- * [JHipster Console](https://github.com/jhipster/jhipster-console)是基于ELK Stack的监控和告警控制台。
 
 在下图中，绿色组件特定于您的应用程序，蓝色组件提供了其基础结构。
 

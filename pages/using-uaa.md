@@ -2,8 +2,6 @@
 layout: default
 title: 使用JHipster UAA提供微服务安全
 permalink: /using-uaa/
-redirect_from:
-  - /security.html
 sitemap:
     priority: 0.7
     lastmod: 2016-08-25T00:00:00-00:00
@@ -53,7 +51,7 @@ JHipster UAA与其他"UAA"（例如[Cloudfoundry UAA](https://github.com/cloudfo
 
 ### 4. 细粒度的访问控制
 
-在维护集中角色的同时，需要在每个微服务中配置详细的访问控制策略。微服务不应该担任识别用户的责任，而必须仅授权传入的请求。
+在维护集中角色的同时，需要在每个微服务中配置详细的访问控制策略。微服务不应该担任识别用户的责任，而必须授权传入的请求。
 
 ### 5. 免受攻击
 
@@ -159,7 +157,7 @@ JHipster UAA服务器可以立即完成三件事：
 
 #### ***切换到对称签名密钥***
 
-JWT签名不需要RSA，Spring Security确实也提供对称令牌签名。这也解决了一些使开发更加困难的问题。但这是不安全的，因为攻击者只需要进入一个微服务就可以生成自己的JWT令牌。
+JWT签名不需要RSA，Spring Security确实也提供对称令牌签名。这也解决了一些使开发更加困难的问题。但这是不安全的，因为攻击者需要进入一个微服务就可以生成自己的JWT令牌。
 
 ## <a name="inter-service-communication"></a> 4. 使用Feign客户端进行安全的服务间通信
 
@@ -169,7 +167,7 @@ JWT签名不需要RSA，Spring Security确实也提供对称令牌签名。这�
 
 由于JHipster UAA基于OAuth2，因此所有这些问题都可以通过协议定义解决。
 
-本章介绍如何轻松地开始使用它。
+本章介绍如何开始使用它。
 
 ### 使用 Eureka, Ribbon, Hystrix和Feign
 
@@ -213,7 +211,7 @@ class SomeService {
 
 与Spring Data JPA相似，不需要实现该接口。但是，如果使用Hystrix，则可以这样做。Feign客户端接口的已实现类并充当后备实现。
 
-一个未解决的问题是，使用UAA确保这种通信的安全性。为此，应该有一些Feign的请求拦截器，该拦截器实现了来自OAuth的客户端凭据流，以授权当前服务请求其他服务。在JHipster中，您只使用`@AuthorizedFeignClients`。这是JHipster提供的特殊注解，它也确实实现了这一点。
+一个未解决的问题是，使用UAA确保这种通信的安全性。为此，应该有一些Feign的请求拦截器，该拦截器实现了来自OAuth的客户端凭据流，以授权当前服务请求其他服务。在JHipster中，您使用`@AuthorizedFeignClients`。这是JHipster提供的注解，它也确实实现了这一点。
 
 ### 使用`@AuthorizedFeignClients`
 

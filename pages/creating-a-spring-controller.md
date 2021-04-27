@@ -13,9 +13,9 @@ sitemap:
 
 _注意：此子生成器比创建完整CRUD实体的[实体子生成器]({{ site.url }}/creating-an-entity/)简单得多_
 
-该子生成器生成一个Spring MVC REST Controller。它还能够创建一些简单的REST方法。
+该子生成器生成一个Spring MVC REST Controller。它还能够创建一些REST方法。
 
-为了生成名为“Foo”的Spring MVC REST控制器，只需输入：
+为了生成名为“Foo”的Spring MVC REST控制器，输入：
 
 `jhipster spring-controller Foo`
 
@@ -23,11 +23,11 @@ _注意：此子生成器比创建完整CRUD实体的[实体子生成器]({{ sit
 
 ## Can we document this Spring MVC REST Controller with Swagger? （我们可以使用Swagger来自动生成这个Spring MVC REST Controller API文档吗？）
 
-没错! 已经实现了！在`dev`模式下，只需使用`Administration > API`菜单即可访问Swagger UI并开始使用生成的控制器。
+没错! 已经实现了！在`dev`模式下，使用`Administration > API`菜单即可访问Swagger UI并开始使用生成的控制器。
 
 ## Can we add security to Spring MVC REST Controllers? （我们可以在Spring MVC REST控制器上增加安全特性吗？）
 
-可以! 只需在您的类或方法上添加Spring Security的`@Secured`注解，然后使用提供的`AuthoritiesConstants`类即可限制对特定用户权限的访问。
+可以! 在您的类或方法上添加Spring Security的`@Secured`注解，然后使用提供的`AuthoritiesConstants`类即可限制对特定用户权限的访问。
 
 ## Can we proxy it from our Microservice Gateway dev server? （我们可以代理到微服务架构的Gateway开发服务上吗？）
 

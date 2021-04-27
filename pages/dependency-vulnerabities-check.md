@@ -17,7 +17,7 @@ JHipster使用了许多技术，该项目在选择它们时非常谨慎。但是
 
 ## 为什么JHipster默认不提供依赖项检查
 
-在JHipster构建中提出默认情况下的依赖项检查已经讨论了几次（[#6329](https://github.com/jhipster/generator-jhipster/issues/6329), [#8191](https://github.com/jhipster/generator-jhipster/issues/8191)）。总而言之，拥有一份现实的报告（消除误报）和上下文相关性（确保安全始终是在实际风险/批评与努力预防之间的权衡）是很复杂的。
+在JHipster构建中提出默认情况下的依赖项检查已经讨论了几次（[#6329](https://github.com/jhipster/generator-jhipster/issues/6329), [#8191](https://github.com/jhipster/generator-jhipster/issues/8191)）。总而言之，拥有一份现实的报告（消除误报）和上下文相关依赖（确保安全始终是在实际风险/批评与努力预防之间的权衡）是很复杂的。
 
 但是，如果您在生产中使用JHipster，我们强烈建议使用诸如[Dependabot](https://dependabot.com/)或[Snyk](https://snyk.io/)之类的依赖分析工具。
 
@@ -52,7 +52,7 @@ OWASP项目提供了Maven和Gradle插件来自动检查整个依赖链，生成�
   <plugin>
       <groupId>org.owasp</groupId>
       <artifactId>dependency-check-maven</artifactId>
-      <version>3.3.1</version>
+      <version>5.2.4</version>
       <executions>
         <execution>
           <goals>
@@ -76,16 +76,11 @@ OWASP项目提供了Maven和Gradle插件来自动检查整个依赖链，生成�
 更新`build.gradle`文件以应用[OWASP依赖项检查插件](https://plugins.gradle.org/plugin/org.owasp.dependencycheck)。
 
 ```
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.owasp:dependency-check-gradle:3.3.1'
-    }
-}
+plugins {
+  // 添加插件在现有插件模块
+  id "org.owasp.dependencycheck" version "5.2.4"
 
-apply plugin: 'org.owasp.dependencycheck'
+}
 
 if(project.hasProperty('strict-security')) {
   check.dependsOn dependencyCheckAnalyze

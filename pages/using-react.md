@@ -75,11 +75,11 @@ webapp
 
 [Redux](https://redux.js.org/)是一个用于应用程序状态管理的开源JavaScript库。它与React一起使用来管理React组件的状态。
 
-基本上，Redux提供了一个对象**存储**，用于存储应用程序的整个状态。
-要访问此存储并因此更新状态组件，唯一的方法是调度描述请求更新的**动作**，
+Redux提供了一个对象**store**，用于存储应用程序的整个状态。
+要访问此存储并因此更新状态组件，唯一的方法是调度描述请求更新的**actions**，
 然后**reducers**将定义如何响应这些操作来更新状态。
 
-这是reducers的示例：
+这是`reducers`的示例：
 
 ``` typescript
 export const ACTION_TYPES = {
@@ -124,7 +124,7 @@ export default (state = initialState, action) => {
 };
 ```
 
-为了访问您的商店并更新当前应用程序状态，您需要如前所述，将操作分派到商店。动作是简单的JavaScript对象，并且必须具有描述动作将要执行的操作的**类型**，通常，它们还具有与要传递给存储的数据相对应的**负载**。
+为了访问您的商店并更新当前应用程序状态，您需要如前所述，将操作分派到商店。动作是JavaScript对象，并且必须具有描述动作将要执行的操作的**type**，通常，它们还具有与要传递给存储的数据相对应的**payload**。
 
 这是访问商店的操作：
 
@@ -145,7 +145,7 @@ export const getFoos = () => ({
 
 Jhipster使用[React路由器](https://github.com/ReactTraining/react-router)来组织应用程序的不同部分。
 
-当涉及需要身份验证的路由时，将使用生成的`PrivateRoute`组件。该组件将仅阻止任何未经身份验证的用户访问路由。
+当涉及需要身份验证的路由时，将使用生成的`PrivateRoute`组件。该组件将阻止任何未经身份验证的用户访问路由。
 
 这是PrivateRoute用法的示例：
 

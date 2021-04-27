@@ -21,12 +21,8 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
     <th>描述</th>
   </tr>
   <tr>
-    <td>80</td>
-    <td>Traefik HTTP entrypoint</td>
-  </tr>
-  <tr>
     <td>2181</td>
-    <td>Zookeeper (used with Kafka)</td>
+    <td>Zookeeper (与Kafka一起使用)</td>
   </tr>
   <tr>
     <td>3000</td>
@@ -34,7 +30,7 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>3306</td>
-    <td>MySQL and MariaDB</td>
+    <td>MySQL 和 MariaDB</td>
   </tr>
   <tr>
     <td>5000</td>
@@ -45,44 +41,44 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
     <td>PostgreSQL</td>
   </tr>
   <tr>
-    <td>5601</td>
-    <td>JHipster Console (based on Kibana)</td>
-  </tr>
-  <tr>
     <td>5701</td>
     <td>Hazelcast</td>
   </tr>
   <tr>
+    <td>7742</td>
+    <td>Swagger Editor</td>
+  </tr>
+  <tr>
     <td>8080</td>
-    <td>JHipster application back-end development port (Spring Boot server)</td>
+    <td>JHipster应用程序后端开发端口（Spring Boot服务器）</td>
   </tr>
   <tr>
     <td>8081</td>
-    <td>JHipster microservice default port</td>
+    <td>JHipster微服务默认端口</td>
   </tr>
   <tr>
     <td>8091</td>
-    <td>Couchbase - Web administration port</td>
+    <td>Couchbase - Web管理端口</td>
   </tr>
   <tr>
     <td>8092</td>
-    <td>Couchbase - API port</td>
+    <td>Couchbase - API 端口</td>
   </tr>
   <tr>
     <td>8093</td>
-    <td>Couchbase - used by query services for REST/HTTP traffic</td>
+    <td>Couchbase - 查询服务用于REST/HTTP通信</td>
   </tr>
   <tr>
     <td>8180</td>
-    <td>Hazelcast management center</td>
+    <td>Hazelcast管理中心</td>
   </tr>
   <tr>
     <td>8301</td>
-    <td>Consul - serflan-tcp and serflan-udp</td>
+    <td>Consul - serflan-tcp 和 serflan-udp</td>
   </tr>
   <tr>
     <td>8302</td>
-    <td>Consul - serfwan-tcp and serfwan-udp</td>
+    <td>Consul - serfwan-tcp 和 serfwan-udp</td>
   </tr>
   <tr>
     <td>8300</td>
@@ -94,7 +90,7 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>8500</td>
-    <td>Consul - HTTP port with the Web UI</td>
+    <td>Consul - Web UI的HTTP端口</td>
   </tr>
   <tr>
     <td>8600</td>
@@ -106,7 +102,11 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>9000</td>
-    <td>JHipster front-end development port with BrowserSync</td>
+    <td>带有BrowserSync的JHipster前端开发端口</td>
+  </tr>
+  <tr>
+    <td>9001</td>
+    <td>SonarQube</td>
   </tr>
   <tr>
     <td>9042</td>
@@ -114,7 +114,7 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>9060</td>
-    <td>JHipster front-end development port with Webpack hot-reload</td>
+    <td>带Webpack热加载功能的JHipster前端开发端口</td>
   </tr>
   <tr>
     <td>9090</td>
@@ -126,7 +126,7 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>9093</td>
-    <td>Prometheus alert manager</td>
+    <td>Prometheus 警报管理器</td>
   </tr>
   <tr>
     <td>9160</td>
@@ -134,11 +134,11 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>9200</td>
-    <td>Elasticsearch - HTTP connections (REST API)</td>
+    <td>Elasticsearch - HTTP连接 (REST API)</td>
   </tr>
   <tr>
     <td>9300</td>
-    <td>Elasticsearch - transport connections (native API)</td>
+    <td>Elasticsearch - 传输连接 (native API)</td>
   </tr>
   <tr>
     <td>9411</td>
@@ -146,22 +146,18 @@ JHipster配置了许多工具和服务，每个工具和服务都可能使用一
   </tr>
   <tr>
     <td>11210</td>
-    <td>Couchbase - Internal/external bucket port</td>
+    <td>Couchbase - 内部/外部桶端口</td>
   </tr>
   <tr>
     <td>18080</td>
-    <td>H2 (embedded database) running inside a monolith. Default port is normally 9092 but this would cause a conflict with Kafka, so it is fixed as "1" + "Spring Boot port"</td>
+    <td>H2 (嵌入式数据库) 在单体应用内部运行。默认端口通常为9092，但这会与Kafka发生冲突，因此修正为`1`+`Spring Boot端口`</td>
   </tr>
   <tr>
     <td>18081</td>
-    <td>H2 (embedded database) running inside a microservice. See line above for more information</td>
+    <td>H2 (嵌入式数据库) 在微服务中运行。有关更多信息，请参见上面的行</td>
   </tr>
   <tr>
     <td>27017</td>
     <td>MongoDB</td>
-  </tr>
-  <tr>
-    <td>28080</td>
-    <td>Traefik admin UI</td>
   </tr>
 </table>

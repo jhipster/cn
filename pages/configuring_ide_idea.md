@@ -20,7 +20,7 @@ sitemap:
 
 ## 排除目录
 
-如果您使用Git，只需初始化项目(`git init && git add . && git commit -m 'Initial commit'`)，Intellij IDEA将自动排除被Git忽略的目录（因此您无需执行任何操作）。
+如果您使用Git，初始化项目：(`git init && git add . && git commit -m 'Initial commit'`)，Intellij IDEA将自动排除被Git忽略的目录（因此您无需执行任何操作）。
 
 要手动排除目录：
 
@@ -29,7 +29,7 @@ sitemap:
 
 ![Exclude]({{ site.url }}/images/configuring_ide_idea_1.png)
 
-由于`node_modules/`目录仅由JHipster使用，因此可以安全地排除它。
+**注意：** 如果您使用的是Intellij IDEA Ultimate，并且想使用IDEA前端编码，则**不要**排除`node_modules`文件夹。 否则，您将没有任何有关前端代码的代码帮助！
 
 ## Spring支持 (在社区版中不可用)
 
@@ -41,13 +41,14 @@ sitemap:
 
 ![Spring]({{ site.url }}/images/configuring_ide_idea_3.png)
 
-它会提示您有未映射的Spring配置文件，单击右下角的`+`号（不是最初那个），然后选择您的项目的所有Spring文件，只需单击文件夹就可以选择所有内容。
+它会提示您有未映射的Spring配置文件，单击右下角的`+`号（不是最初那个），然后选择您的项目的所有Spring文件，单击文件夹就可以选择所有内容。
 
 ![Spring Application Context]({{ site.url }}/images/configuring_ide_idea_4.png)
 
 之后，单击`OK`，然后Spring应该配置了适当的代码辅助。
 
-现在，单击最初用于添加Spring的`+` 按钮，然后添加Hibernate。您无需在此这里添加任何文件，只需在其中添加提供基于Hibernate的代码帮助。请记住在“Project structure”对话框上单击`OK`。
+现在，单击最初用于添加Spring的`+` 按钮，然后添加Hibernate。
+您无需在此这里添加任何文件，只需在其中添加提供基于Hibernate的代码帮助。请记住在`Project structure`对话框上单击`OK`。
 
 现在，大多数代码库都具有Spring支持。每次启动新项目时，都必须重复此步骤，因为这些设置是基于项目特殊配置的。
 
@@ -72,4 +73,5 @@ sitemap:
 
 ## Gradle
 
-为了获得Gradle的最佳开箱即用体验，您应该将所有[IDE生成/运行操作直接委派给Gradle](https://www.jetbrains.com/idea/whatsnew/#v2017-3-gradle)。使用此设置，注解处理将自动配置，并且在混合IDE和cli构建时不会有重复的类。如果您使用的是旧版本（<2016.3），则必须手动启用注解处理。
+为了获得Gradle的最佳开箱即用体验，您应该将所有[IDE生成/运行操作直接委派给Gradle](https://www.jetbrains.com/idea/whatsnew/#v2017-3-gradle)。
+使用此设置，注解处理将自动配置，并且在混合IDE和cli构建时不会有重复的类。如果您使用的是旧版本（<2016.3），则必须手动启用注解处理。

@@ -12,7 +12,7 @@ JHipster拥有许多[贡献者](https://github.com/jhipster/generator-jhipster/g
 
 ## 行为守则
 
-在你提交之前, 请阅读我们的[行为守则](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md).
+在你提交之前, 请阅读我们的[行为守则](https://github.com/jhipster/generator-jhipster/blob/main/CODE_OF_CONDUCT.md).
 
 ## 获取帮助
 
@@ -25,4 +25,4 @@ JHipster拥有许多[贡献者](https://github.com/jhipster/generator-jhipster/g
 
 ## 如何贡献
 
-我们的[贡献指引](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md) 提供了入门的所有注意事项以及帮助你第一次提交.
+我们的[贡献指引](https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md) 提供了入门的所有注意事项以及帮助你第一次提交.

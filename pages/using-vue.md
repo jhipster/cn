@@ -93,7 +93,7 @@ Please note that the default language translations would be based on what you ha
 
 JHipster使用[Vue路由器](https://router.vuejs.org/)来组织应用程序的不同部分。
 
-对于需要身份验证的路由，将在所需路由上使用`authorities`元数据。该组件将仅阻止任何未经身份验证或未经授权的用户访问路由。
+对于需要身份验证的路由，将在所需路由上使用`authorities`元数据。该组件将阻止任何未经身份验证或未经授权的用户访问路由。
 
 这是PrivateRoute用法的示例：
 
@@ -117,7 +117,7 @@ const Routes = () => [{
 
 ## 校验系统
 
-为了执行表单验证，我们使用[Vuelidate](https://vuelidate.netlify.com/)库。除了添加校验约束之外，还提供了一些过滤器，它们可以对表单进行全面验证。自定义验证可以显式这样添加：
+为了执行表单验证，我们使用[Vuelidate](https://vuelidate.netlify.com/)库。除了添加校验约束之外，还提供了一些过滤器，它们可以对表单进行全面验证。自定义验证可以这样添加：
 
 ```typescript
 import { required } from 'vuelidate/lib/validators';

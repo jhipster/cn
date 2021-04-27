@@ -18,11 +18,11 @@ _注意：此子生成器比创建完整CRUD实体的[实体子生成器]({{ sit
 
 该子生成器生成一个Spring Service bean，您应该在此bean中编写应用程序的业务逻辑。
 
-生成"Bar"的Service bean, 只需输入：
+生成"Bar"的Service bean, 运行：
 
 `jhipster spring-service Bar`
 
-_这将生成一个简单的“ BarService”：很少的代码行，但是它们通常会带来很多疑问。我们尝试回答以下最常见的问题。_
+_这将生成一个`BarService`：很少的代码行，但是它们通常会带来很多疑问。我们尝试回答以下最常见的问题。_
 
 ## 为什么服务类不是由“entity”生成器生成的？
 
@@ -60,4 +60,4 @@ _提示:_ 如果您不修改任何数据，请在方法上使用`@Transactional(
 
 ## 我们可以为Service Bean添加安全特性吗？
 
-是!只需在您的类或方法上添加Spring Security的 `@Secured`批注，然后使用提供的`AuthoritiesConstants`类即可限制对特定用户权限的访问。
+是!您的类或方法上添加Spring Security的 `@Secured`批注，然后使用提供的`AuthoritiesConstants`类即可限制对特定用户权限的访问。
