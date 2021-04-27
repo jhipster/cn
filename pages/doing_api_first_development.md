@@ -20,7 +20,7 @@ Swagger v2和OpenAPI v3格式均受支持。
 这具有以下优点：
 
 - 您可以为使用者设计API，而不必考虑其实现。
-- 您可以使用规范文件在新服务器端点发布之前模拟它们，以便更轻松地分离前端和后端开发。
+- 您可以使用规范文件在新服务器端点发布之前模拟它们，因此，可以进一步的分离前端和后端开发。
 - 您不需要在线服务器即可使用OpenAPI文档。
 
 ### 使用OpenAPI生成器插件
@@ -79,4 +79,21 @@ $ curl -X GET --header 'Accept: application/json' 'http://localhost:8080/v2/pet/
 $ curl -X GET --header 'Accept: application/xml' 'http://localhost:8080/v2/pet/findByStatus?status=pending'
 <Pet>  <id>123456789</id>  <name>doggie</name>  <photoUrls>    <photoUrls>aeiou</photoUrls>  </photoUrls>  <tags>  </tags>  <status>aeiou</status></Pet>%
 ```
-    
+
+可能是您的IDE从源中排除了输出文件夹。 确保重新加载配置以检测生成的类。 可以通过您的IDE UI或命令来完成。
+
+使用Eclipse或VSCode时
+* with maven
+```bash
+./mvnw eclipse:clean eclipse:eclipse
+```
+使用IntelliJ时
+* with maven
+```bash
+./mvnw idea:idea
+```
+
+### 使用 `openapi-client` 子生成器
+
+JHipster还使用支持OpenAPI/Swagger规范的[Spring-Cloud FeignClients]（https://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign）生成客户端代码。
+生成的FeignClient可以在单体和微服务应用程序中使用，并支持Swagger v2和OpenAPI v3定义。 要调用此子生成器，请运行`jhipster openapi-client`。
