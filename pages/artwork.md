@@ -37,7 +37,7 @@ sitemap:
 
 ## 包容性
 
-与所有JHipster项目一样，JHipster Artwork项目也遵循[JHipster行为准则](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md)。我们的目标之一是制作广泛兼容的美工作品：目前，“ JHipster家族”只有几个成员，但想法是，正如我们的行为准则所表达的那样，这个家族不断壮大，成员众多。如果您想为该项目提供帮助，则可以以艺术家的身份参加（所有图像的源文件都可以在github仓库中找到），也可以以赞助者的身份参加（因此我们可以付钱给艺术家来创建这些新图像）。
+与所有JHipster项目一样，JHipster Artwork项目也遵循[JHipster行为准则](https://github.com/jhipster/generator-jhipster/blob/main/CODE_OF_CONDUCT.md)。我们的目标之一是制作广泛兼容的美工作品：目前，“ JHipster家族”只有几个成员，但想法是，正如我们的行为准则所表达的那样，这个家族不断壮大，成员众多。如果您想为该项目提供帮助，则可以以艺术家的身份参加（所有图像的源文件都可以在github仓库中找到），也可以以赞助者的身份参加（因此我们可以付钱给艺术家来创建这些新图像）。
 
 所有图像均由[Audrey Neveu](https://twitter.com/Audrey_Neveu)验证，他在Java社区中以参与[Devoxx4Kids](http://www.devoxx4kids.org/)和[Duchess France](https://www.duchess-france.org/)而闻名。
 

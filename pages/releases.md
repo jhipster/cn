@@ -11,7 +11,7 @@ sitemap:
 
 # <i class="fa fa-file-text-o"></i> 版本日志
 
-获取Jhipster的最新动态, 请关注我们的推特: [@java_hipster](https://twitter.com/java_hipster)
+获取Jhipster的最新动态, 请关注我们的推特: [@jhipster](https://twitter.com/jhipster)
 
 {% for post in site.posts %}
   {% assign split_post_title = post.title | split: "Release " %}

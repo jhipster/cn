@@ -15,10 +15,10 @@ sitemap:
 
 有两个不同的子生成器，用于将JHipster项目部署到AWS：
 * **aws-containers**: 基于Docker容器的子生成器，用于通过AWS Elastic Container Service部署应用程序。这对于复杂的应用程序和/或微服务架构非常有用。
-* **aws**: 基于实例的子生成器，用于通过Elastic Beanstalk部署应用程序。对于简单的应用程序来说，这很棒（而且非常便宜！）。
+* **aws**: 基于实例的子生成器，用于通过Elastic Beanstalk部署应用程序。对于比较小的应用程序来说，这很棒（而且非常便宜！）。
 
 ## *aws-containers*子生成器
-该子生成器将使用在Elastic Container Service上运行的AWS Fargate自动部署基于docker的JHipster应用程序。它利用许多AWS服务来实现此目的：
+使用单体应用流程时，该子生成器将使用在Elastic Container Service上运行的AWS Fargate自动部署基于docker的JHipster应用程序。它利用许多AWS服务来实现此目的：
 - [AWS Fargate](https://aws.amazon.com/fargate/): 一种新的AWS服务，该服务允许运行容器而无需担心基础VM实例基础架构。子生成器当前使用弹性容器服务来管理容器。
 - [Elastic Container Registry](https://aws.amazon.com/ecr/): Docker镜像仓库，用于存储应用程序镜像。
 - [Elastic Load Balanacer - Network Load Balancer](https://aws.amazon.com/elasticloadbalancing): 网络负载均器用于将流量定向到容器。
@@ -28,6 +28,10 @@ sitemap:
 - [AWS Cloudformation](https://aws.amazon.com/cloudformation):  所有必需的服务（AWS System Manager Parameters除外）均在一组CloudFormation文件中定义。基本文件包含高级服务，然后每个应用程序都在其自己的文件中定义，该文件称为嵌套架构。
 - [AWS System Manager - Parameter Store](https://aws.amazon.com/systems-manager/features/): 安全密码存储机制，用于存储数据库密码。运行子生成器将引入一个新的Spring Cloud组件，该组件将在应用程序启动时读取密码。
 - [AWS - IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html): 生成器创建一个新角色，并将使用关联的策略执行ECS任务。
+
+使用微服务流程时，这将指导您创建[Elastic Kubernetes Cluster (EKS)]（https://aws.amazon.com/eks/）
+和[Elastic Container Registries（ECR）]（https://aws.amazon.com/ecr/），用于您的所有微服务和网关。 之后，您必须使用[Kubernetes子生成器]（/ kubernetes）生成Kubernetes配置文件，
+然后 通过docker将其推送到ECR。 可以在[https://github.com/jhipster/generator-jhipster/issues/8366#issuecomment-535329759]中找到示例部署。（https://github.com/jhipster/generator-jhipster/issues/8366#issuecomment -535329759）
 
 ![AWS Component Diagram]({{ site.url }}/images/aws_component_diagram.svg?sanitize=true)
 
@@ -41,9 +45,7 @@ sitemap:
 7. 更新架构以包括ECS服务。打印出负载均衡器URL。
 
 ### 局限性
-- 当前仅适用于monolithic应用程序。
 - 仅支持以下数据库类型（全部通过Aurora）：Mysql，MariaDB和PostgreSQL。
-- 在撰写本文时，Fargate仅在`us-west-2`地区可用。在尝试针对其他区域运行子生成器之前，请检查[此列表](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)。
 - 当前不支持实例间通信。其最大的后果是节点之间不支持缓存同步。建议查看AWS的[ElasticCache](https://aws.amazon.com/elasticache/)服务以了解分布式缓存要求。
 - SSL不可用。
 
@@ -62,7 +64,7 @@ sitemap:
 `jhipster aws-containers`
 
 根据您的AWS环境, 子生成器将询问有关您如何部署应用程序的许多问题。有以下几件事情要考虑：
-- 该应用程序可以部署在单层（使用默认VPC配置）中，也可以部署在双层模型中（[此处](https://github.com/satterly/AWSCloudFormation-samples/blob/master/multi-tier-web-app-in-vpc.template)为示例CloudFormation文件）。确定部署子网时，应确保至少在两个可用区中部署了应用程序，否则Amazon Aurora将无法正确部署。
+- 一个单体应用程序可以部署在单层（使用默认VPC配置）中，也可以部署在双层模型中（[此处](https://github.com/satterly/AWSCloudFormation-samples/blob/master/multi-tier-web-app-in-vpc.template)为示例CloudFormation文件）。确定部署子网时，应确保至少在两个可用区中部署了应用程序，否则Amazon Aurora将无法正确部署。
 - 如果需要删除生成的CloudFormation stack，则必须先删除所有创建的ECR镜像，然后再尝试删除stack。如果CloudFormation仍保留镜像，则无法删除该仓库。
 
 ### 更新已部署的应用程序
@@ -96,7 +98,7 @@ Boxfuse具有对JHipster的一流支持，以及对MySQL和PostgreSQL数据库�
 
 ### 先决条件
 
-在运行子生成器之前，您需要设置您的AWS SDK凭证。使用您的Amazon AWS帐户登录并为JHipster应用程序创建用户。要授予该用户所需的权限，请附加`AWSElasticBeanstalkFullAccess`策略。
+在运行子生成器之前，您需要设置您的AWS SDK凭证。使用您的Amazon AWS帐户登录并为JHipster应用程序创建用户。要授予该用户所需的权限，请附加`AWSElasticBeanstalkFullAccess`、`AmazonRDSFullAccess` 和 `IAMFullAccess`策略。
 
 之后，在Mac/Linux上的`~/.aws/credentials`或Windows上的`C:\Users\USERNAME\.aws\credentials`处创建凭据文件。
 
@@ -123,6 +125,13 @@ aws_secret_access_key = your_secret_key
 `jhipster aws`
 
 子生成器再次询问您的数据库凭据，但在更新期间将忽略它们。
+
+### 删除您的应用程序
+
+- 删除Elastic Beanstalk。
+- 删除与应用程序相关的S3存储桶。
+- 删除 [亚马逊关系数据库服务 (RDS)](https://aws.amazon.com/rds/) 实例.
+- 删除与应用程序相关的EC2安全组。 您可以通过查看安全组的描述找到此内容，该描述应为`Enable database access to Beanstalk application`。
 
 ### 更多信息
 

@@ -1,47 +1,47 @@
 ---
 layout: default
-title: JHipster Domain Language - Troubleshooting
+title: JHipster 领域语言 (JDL) - 答疑解惑
 permalink: /jdl/troubleshooting
 sitemap:
     priority: 0.5
     lastmod: 2019-10-27T12:00:00-00:00
 ---
 
-# <i class="fa fa-star"></i> JHipster Domain Language (JDL)
+# <i class="fa fa-star"></i> JHipster 领域语言 (JDL) - 答疑解惑
 
-## Troubleshooting
+## 答疑解惑
 
-We tried to keep the syntax as friendly as we can for developers.
-You can do these things with it:
-  - Declare applications with their options and entities,
-  - Declare entities with their attributes,
-  - Declare the relationships between them,
-  - And declare some JHipster specific options.
+我们试图使语法对开发人员尽可能友好。
+您可以使用它来执行以下操作：
+  - 声明应用程序及其选项和实体，
+  - 声明实体及其属性，
+  - 声明他们之间的关系，
+  - 并声明一些特定于JHipster的选项。
 
-If you wish to view the JDL's grammar, there is an HTML file available
-[here](https://github.com/jhipster/jhipster-core/blob/master/lib/dsl/gen/grammar.html).
-
----
-
-### The JDL import only finds one entity when matching MS baseName
-
-This is a known issue regarding the parsing system and fixing it is tricky.
-A workaround is to use different names for the microservice and the entities inside.
-
-See [JHipster Core issue #308](https://github.com/jhipster/jhipster-core/issues/308) for more information.
+如果您想查看JDL的语法，则可以使用HTML文件
+[JDL的语法](https://github.com/jhipster/jhipster-core/blob/master/lib/dsl/gen/grammar.html).
 
 ---
 
-## <a name="issues"></a>Issues and bugs
+### 匹配微服务 baseName时，JDL导入仅找到一个实体
 
-The JDL is [available on GitHub](https://github.com/jhipster/jhipster-core), and follows the same
-[contributing guidelines as JHipster]( https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md).
+这是有关解析系统的已知问题，解决它很棘手。
+解决方法是对微服务和内部实体使用不同的名称。
 
-Please use our project for submitting issues and Pull Requests concerning the library itself.
+查看 [JHipster Core 议题 #308](https://github.com/jhipster/jhipster-core/issues/308) 了解详细内容。
 
-- [JDL issue tracker](https://github.com/jhipster/jhipster-core/issues)
-- [JDL Pull Requests](https://github.com/jhipster/jhipster-core/pulls)
+---
 
-When submitting anything, you must be as precise as possible:  
-  - **One posted issue must only have one problem** (or one demand/question);  
-  - Pull requests are welcome, but the commits must be 'atomic' to really be understandable.  
+## <a name="issues"></a>问题与错误
+
+JDL在[GitHub](https://github.com/jhipster/jhipster-core), 并遵循相同的
+[JHipster贡献准则]( https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md).
+
+请使用我们的项目提交有关库本身的问题和PR。
+
+- [JDL问题](https://github.com/jhipster/jhipster-core/issues)
+- [JDL合并请求](https://github.com/jhipster/jhipster-core/pulls)
+
+提交任何内容时，您都必须尽可能精确：
+  - **一个已issue只能有一个问题** (or one demand/question);  
+  - 受欢迎提交合并请求，但提交必须是“原子的”真正可理解的。 

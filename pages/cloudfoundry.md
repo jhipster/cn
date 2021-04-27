@@ -24,7 +24,7 @@ sitemap:
 *   [Pivotal Web Services](http://run.pivotal.io/), 它是JHipster的正式赞助商，因此这是我们唯一可以测试并提供支持的
 *   [Atos Canopy](https://canopy-cloud.com/)
 *   [IBM Bluemix](https://console.ng.bluemix.net/)
-*   如果您决定自己安装Cloud Foundry，当然还有您自己的私有Cloud Foundry实例！
+*   如果您决定自己安装Cloud Foundry，还有您自己的私有Cloud Foundry实例！
 
 ## 运行子生成器
 

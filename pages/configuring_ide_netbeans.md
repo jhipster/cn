@@ -20,6 +20,6 @@ sitemap:
 
 ![Open]({{ site.url }}/images/configuring_ide_netbeans_1.png)
 
-**就这样**：要运行您的项目，只需右键单击Application类（位于包层次结构的根目录），然后选择“Run File”。
+**就这样**：要运行您的项目，右键单击Application类（位于包层次结构的根目录），然后选择“Run File”。
 
 ![Open]({{ site.url }}/images/configuring_ide_netbeans_2.png)
