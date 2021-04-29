@@ -11,7 +11,7 @@ sitemap:
 
 # <i class="fa fa-stethoscope"></i> 设置持续集成
 
-为JHipster应用程序设置持续集成（CI）的过程比为典型的Spring MVC应用程序设置要困难，因为需要维护由2个软件技术架构关联带来的复杂性：
+为JHipster应用程序设置持续集成（CI）的过程比为典型的Spring MVC应用程序设置要复杂，因为需要维护由2个软件技术架构关联带来的复杂性：
 
 - Maven或Gradle的Java后端代码
 - NodeJS，NPM或Yarn的JavaScript前端
@@ -26,6 +26,8 @@ JHipster应该开箱即用地支持以下CI系统：
 - Travis: 请参阅[Travis文档](https://docs.travis-ci.com/user/getting-started/)
 - GitLab CI: 请参阅[GitLab CI文档](https://about.gitlab.com/gitlab-ci/)
 - Azure Pipelines: 请参阅[Azure Pipelines文档](https://docs.microsoft.com/fr-fr/azure/devops/pipelines/?view=vsts)
+- GitHub Actions: 请参阅 [GitHub Actions 文档](https://github.com/features/actions)
+- CircleCI: 请参阅 [CircleCI 文档](https://circleci.com/docs/)
 
 ## 运行子生成器
 
@@ -41,7 +43,9 @@ JHipster应该开箱即用地支持以下CI系统：
 - Jenkins pipeline
 - Azure Pipelines
 - GitLab CI
+- GitHub Actions
 - Travis CI
+- CircleCI
 
 **注意**: 当您选择Jenkins pipeline时，将生成一个新的`src/main/docker/jenkins.yml`文件。
 因此，您可以通过运行以下命令在本地测试Jenkins：
@@ -69,7 +73,9 @@ docker-compose -f src/main/docker/jenkins.yml up -d
 - 将您的应用程序部署到*Artifactory*
 - 使用*Sonar*分析您的代码
 - 构建并发布*Docker*镜像
+- *Snyk*: 依赖项扫描以查找安全漏洞 (需要SNYK_TOKEN)
 - 部署到*Heroku*（需要在CI服务上设置HEROKU_API_KEY）
+- 是否要Cypress仪表板（需要同时在CI服务上设置CYPRESS_PROJECT_ID和CYPRESS_RECORD_KEY）
 
 ### Deploy your application to an *Artifactory* (Jenkins / GitLab) (将您的应用程序部署到*Artifactory*（Jenkins / GitLab）)
 
@@ -102,6 +108,20 @@ docker-compose -f src/main/docker/jenkins.yml up -d
 
 - *Docker*: what is the Organization Name for the Docker registry?
 
+### Snyk: dependency scanning for security vulnerabilities （依赖项扫描以查找安全漏洞）
+
+您必须添加`SNYK_TOKEN`环境变量 (查看你的[Snyk 账户](https://app.snyk.io/account))
+
+请参阅完整的文档，网址为： [https://snyk.io/](https://snyk.io/)
+
+### Cypress Dashboard: record your tests in a web application provided by Cypress（Cypress仪表板：将测试记录在Cypress提供的Web应用程序中）
+
+您必须添加`CYPRESS_PROJECT_ID`和`CYPRESS_RECORD_KEY`环境变量 (查看[仪表盘项目](https://dashboard.cypress.io/))
+
+您可以通过将环境变量`CYPRESS_ENABLE_RECORD`的值更改为false来禁用记录。
+
+请参阅完整的文档，网址为： [cypress.io/dashboard](https://www.cypress.io/dashboard/)
+
 ### Deploy to *Heroku* （部署到*Heroku*）
 
 - *Heroku: name of your Heroku Application ?
@@ -111,8 +131,25 @@ docker-compose -f src/main/docker/jenkins.yml up -d
 注意：在将部署到Heroku之前，您需要在本地使用[Heroku子生成器]({{ site.url }}/heroku)。
 它将创建持续集成工具所需的所有文件。
 
+## 更多信息
+
+根据您的操作系统和项目的推送位置，在使用CI / CD之前，可能需要使包装程序可执行。
+
+如果您使用Maven：
+
+- `chmod +x mvnw`
+- `git update-index --chmod=+x mvnw`
+
+如果您使用Gradle：
+
+- `chmod +x gradlew`
+- `git update-index --chmod=+x gradlew`
+
+
 ## 有关环境变量的文档：
 
 - Jenkins pipeline: 您应该使用[Credentials plugin](https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Plugin)
 - GitLab CI: 阅读[documentation about secret-variables](https://docs.gitlab.com/ce/ci/variables/#secret-variables)
 - Travis CI: 阅读[environment variables](https://docs.travis-ci.com/user/environment-variables/)
+- Azure Pipelines: 阅读[documentation about predefined variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
+- CircleCI: 阅读[documentation about environment variables](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables)
