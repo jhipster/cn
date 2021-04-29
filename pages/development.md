@@ -39,7 +39,7 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 
 ### 作为"main"Java类
 
-在您的IDE中，右键单击Java包层次结构根目录下的"Application"类，然后直接运行它。您还可以轻松调试它。
+在您的IDE中，右键单击Java包层次结构根目录下的"Application"类，然后直接运行它。您也可以使用IDE调试它。
 
 该应用程序将在[http://localhost:8080](http://localhost:8080)上可用。
 
@@ -55,6 +55,10 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 
 该应用程序将在[http://localhost:8080](http://localhost:8080)上可用。
 
+如果您将实时重新加载与`npm start`或`yarn start`一起使用，则可以通过以下方式排除Webpack任务来加快服务器启动速度：
+
+`./mvnw -P-webapp`
+
 另外，如果您已经安装了Maven，则可以使用Maven启动Java服务：
 
 `mvn`
@@ -69,11 +73,16 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 
 (这将运行我们的默认Gradle任务, `bootRun`)
 
+该应用程序将在[http://localhost:8080](http://localhost:8080)上可用。
+
+如果您将实时重新加载与`npm start`或`yarn start`一起使用，则可以通过以下方式排除Webpack任务来加快服务器启动速度：
+
+`./gradlew -x webapp`
+
+
 另外，如果已经安装了Gradle，则可以使用Gradle启动Java服务：
 
 `gradle`
-
-该应用程序将在[http://localhost:8080](http://localhost:8080)上可用。
 
 如果您想了解有关使用Gradle的更多信息，请访问[https://gradle.org](https://gradle.org)
 
@@ -83,7 +92,7 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 
 _若要查看TypeScript代码更改，并实时重新加载前端代码，则需要执行此步骤。_
 
-运行Webpack是`package.json`文件中的默认任务，因此您只需要运行：
+运行Webpack是`package.json`文件中的默认任务，这样就足以运行：
 
 `npm start`
 
@@ -101,11 +110,13 @@ _若要查看TypeScript代码更改，并实时重新加载前端代码，则需
 - 一个BrowserSync任务，它将在[http://localhost:9000/](http://localhost:9000/)上运行，该任务具有 [http://localhost:9060/](http://localhost:9060/)（Webpack "hot module reload"服务）的代理，并且将同步用户的点击/滚动/输入
 - BrowserSync UI，将在[http://localhost:3001/](http://localhost:3001/)上提供
 
+**注意**默认情况下，BrowserSync启用[ghostMode](https://browsersync.io/docs/options#option-ghostMode) ，尤其在[使用多个浏览器标签](https://github.com/jhipster/generator-jhipster/issues/11116#issuecomment-589362814) 时，可能会造成一些混乱。为避免这种情况，您可以始终关闭ghostMode。 在`webpack.dev.js`中提供了一些注释的代码，以方便地禁用ghostMode。
+
 ### 运行NPM
 
 直接项目依赖项配置在`package.json`中，但是传递性依赖项定义在`package-lock.json`文件中，该文件在运行`npm install`时生成。
 
-建议将`package-lock.json`[https://docs.npmjs.com/files/package-lock.json]归入到源代码管理中，以便项目的所有团队成员都具有相同版本的所有依赖项。再次运行`npm install`将使用最新版本的传递依赖项重新生成`package-lock.json`。
+建议将[`package-lock.json`](https://docs.npmjs.com/files/package-lock.json) 归入到源代码管理中，以便项目的所有团队成员都具有相同版本的所有依赖项。再次运行`npm install`将使用最新版本的传递依赖项重新生成`package-lock.json`。
 
 ### 其他NPM/Yarn任务
 
@@ -164,7 +175,12 @@ _若要查看TypeScript代码更改，并实时重新加载前端代码，则需
 
 如果添加或修改JPA实体，则需要更新数据库结构。
 
-JHipster使用[Liquibase](http://www.liquibase.org)来管理数据库更新，并将其配置存储在`/src/main/resources/config/liquibase/`目录中。使用Liquibase的方法有3种：使用实体子生成器，使用liquibase：diff Maven goal或手动更新配置文件。
+JHipster使用[Liquibase](http://www.liquibase.org)来管理数据库更新，并将其配置存储在`/src/main/resources/config/liquibase/`目录中。
+
+使用Liquibase的方法有3种：
+* 使用实体子生成器 
+* 使用Maven`liquibase:diff`目标
+* 手动更新配置文件。
 
 ### 使用实体子生成器进行数据库更新
 
@@ -206,12 +222,12 @@ JHipster使用[Liquibase](http://www.liquibase.org)来管理数据库更新，�
 
 国际化（或i18n）是JHipster中的一等公民，因为我们认为应该在项目开始时就进行设置（而不是事后考虑）。
 
-使用非常简单：
+用法如下：
 
-- 使用Angular，得益于[NG2 translate](https://github.com/ocombe/ng2-translate)和特定的JHipster组件，该组件使用简单的JSON文件进行翻译
+- 使用Angular，得益于[NG2 translate](https://github.com/ocombe/ng2-translate)和特定的JHipster组件，该组件使用JSON文件进行翻译
 - 使用React，得益于特定的JHipster组件，该组件的工作方式与Angular组件相同，并且使用相同的文件
 
-例如，要将翻译添加到"first name"字段，只需添加一个带有关键字的"translate"属性即可：`<label jhiTranslate="settings.form.firstname">First Name</label>`
+例如，要将翻译添加到"first name"字段，添加一个带有关键字的"translate"属性即可：`<label jhiTranslate="settings.form.firstname">First Name</label>`
 
 该键引用一个JSON文档，该文档将返回已转换的字符串。然后，Angular/React将用翻译后的版本替换"First Name"字符串。
 

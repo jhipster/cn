@@ -33,10 +33,10 @@ _请注意：此Docker配置是用于在容器镜像中运行您生成的应用�
 
 JHipster提供了完整的Docker支持，以便：
 
-- 加速开发，因为即使使用复杂的微服务架构，也可以非常轻松地启动完整的基础架构
+- 加速开发，因为即使使用复杂的微服务架构，您可以使用单个命令启动完整的基础架构，
 - 对于使用Docker Swarm的用户，因为它与Docker Compose使用相同的配置，所以可以直接部署到生产中
 
-使用Docker Compose的一个重要优点是，您可以使用`docker-compose scale`命令轻松地伸缩容器数目。如果您将JHipster与[微服务架构](#3)一起使用，这将非常有益。
+使用Docker Compose的一个重要优点是，您可以使用`docker-compose scale`命令伸缩容器数目。如果您将JHipster与[微服务架构](#3)一起使用，这将非常有益。
 
 自动生成应用程序时，JHipster会为您生成：
 
@@ -62,7 +62,7 @@ JHipster提供了完整的Docker支持，以便：
 
 <div class="alert alert-warning"><i>注意: </i>
 
-如果在Mac或Windows上使用Docker Machine，则Docker守护程序对OS X或Windows文件系统仅具有有限的访问权限。Docker Machine尝试自动共享您的"/Users"（OS X）或"C\Users\[用户名]"（Windows）目录。因此，您必须在这些目录下创建项目文件夹，避免因为卷挂载导致的任何问题。尤其是在使用<a href="{{ site.url }}/monitoring/">JHipster Console</a> 进行系统监控的情况下。
+如果在Mac或Windows上使用Docker Machine，则Docker守护程序对OS X或Windows文件系统仅具有有限的访问权限。Docker Machine尝试自动共享您的"/Users"（OS X）或"C\Users\[用户名]"（Windows）目录。因此，您必须在这些目录下创建项目文件夹，避免因为卷挂载导致的任何问题。
 
 </div>
 
@@ -141,7 +141,7 @@ __解决方案2__
 
 ## <a name="4"></a> 使用数据库
 
-### MySQL, MariaDB, PostgreSQL, Oracle, MongoDB或Cassandra
+### MySQL, MariaDB, PostgreSQL, Oracle, MongoDB, Couchbase, Neo4j或Cassandra
 
 运行`docker-compose -f src/main/docker/app.yml up`将会自动启动数据库。
 
@@ -154,6 +154,7 @@ __解决方案2__
 - 使用MongoDB: `docker-compose -f src/main/docker/mongodb.yml up`
 - 使用Cassandra: `docker-compose -f src/main/docker/cassandra.yml up`
 - 使用Couchbase: `docker-compose -f src/main/docker/couchbase.yml up`
+- 使用Neo4j: `docker-compose -f src/main/docker/neo4j.yml up`
 
 ### MongoDB集群模式
 
@@ -162,12 +163,13 @@ __解决方案2__
 - 构建镜像: `docker-compose -f src/main/docker/mongodb-cluster.yml build`
 - 运行数据库: `docker-compose -f src/main/docker/mongodb-cluster.yml up -d`
 - 扩展MongoDB节点服务（您必须选择奇数个节点）: `docker-compose -f src/main/docker/mongodb-cluster.yml scale <name_of_your_app>-mongodb-node=<X>`
-- 初始化副本集（参数X是您在上一步中输入的节点数，文件夹是YML文件所在的文件夹，默认情况下为`docker`）： `docker container exec -it <yml_folder_name>_<name_of_your_app>-mongodb-node_1 mongo --eval 'var param=<X>, folder="<yml_folder_name>"' init_replicaset.js`
-- 初始化分片： `docker container exec -it <yml_folder_name>_<name_of_your_app>-mongodb_1 mongo --eval 'sh.addShard("rs1/<yml_folder_name>_<name_of_your_app>-mongodb-node_1:27017")'`
+- 初始化mongo配置服务器的副本: `docker exec -it <name_of_your_app>-mongodb-config mongo  --port 27019 --eval 'rs.initiate();'`
+- 初始化副本集（参数X是您在上一步中输入的节点数，文件夹是YML文件所在的文件夹，默认情况下为`docker`）： `docker container exec -it <yml_folder_name>_<name_of_your_app>-mongodb-node_1 mongo --port 27018 --eval 'var param=<X>, folder="<yml_folder_name>"' init_replicaset.js`
+- 初始化分片： `docker container exec -it <yml_folder_name>_<name_of_your_app>-mongodb_1 mongo --eval 'sh.addShard("rs1/<yml_folder_name>_<name_of_your_app>-mongodb-node_1:27018")'`
 - 构建应用程序的Docker镜像： `./mvnw -Pprod clean verify jib:dockerBuild`或`./gradlew -Pprod clean bootJar jibDockerBuild`
 - 启动应用：`docker-compose -f src/main/docker/app.yml up -d <name_of_your_app>-app`
 
-如果要添加或删除一些MongoDB节点，只需重复步骤3和4。
+如果要添加或删除一些MongoDB节点，重复步骤3和4。
 
 ### Couchbase集群模式
 
@@ -181,7 +183,7 @@ __解决方案2__
 
 ### Cassandra
 
-与其他数据库的架构迁移由应用程序本身执行不同，Cassandra架构迁移由专用的Docker容器来执行。
+与其他数据库中模式迁移是由应用程序本身实施不同，Cassandra模式迁移是由专用的Docker容器实施的。
 
 #### <a name="cassandra-in-development"></a>开发环境使用Cassandra
 要启动Cassandra集群用于本地运行应用，可以将此docker_compose文件用于开发：`docker-compose -f src/main/docker/cassandra.yml up -d`
@@ -197,7 +199,7 @@ Docker-compose将启动2个服务：
 
 `app.yml`docker-compose文件使用 `cassandra-cluster.yml` 配置Cassandra集群。
 
-应用程序会延迟几秒启动（依赖 _JHIPSTER_SLEEP_ 变量配置），为Cassandra集群启动和执行迁移提供时间。
+应用程序会延迟几秒启动（依赖 _JHIPSTER_SLEEP_ 变量配置），为Cassandra集群启动和实施迁移提供时间。
 
 Cassandra与其他数据库之间的最大区别是，您可以使用Docker Compose工具来动态扩展集群。要想在集群中运行X+1个节点，请运行：
 
@@ -228,7 +230,7 @@ Jhipster已经生成了一个运行Sonar的Docker Compose配置：
 
 要分析您的代码，请在您的项目上运行Sonar：
 
-- 使用Maven: `./mvnw sonar:sonar`
+- 使用Maven: `./mvnw initialize sonar:sonar`
 - 使用Gradle: `./gradlew sonar`
 
 Sonar生成的报告在这个位置可以获取：[http://localhost:9000](http://localhost:9000)
@@ -264,12 +266,12 @@ Sonar生成的报告在这个位置可以获取：[http://localhost:9000](http:/
 
     $ docker container stats {% raw %}$(docker container ps --format={{.Names}}){% endraw %}
     CONTAINER                 CPU %               MEM USAGE / LIMIT     MEM %               NET I/O               BLOCK I/O             PIDS
-    jhuaa-mysql               0.04%               221 MB / 7.966 GB     2.77%               66.69 kB / 36.78 kB   8.802 MB / 302.5 MB   37
+    jhips-mysql               0.04%               221 MB / 7.966 GB     2.77%               66.69 kB / 36.78 kB   8.802 MB / 302.5 MB   37
     00compose_msmongo-app_1   0.09%               965.6 MB / 7.966 GB   12.12%              121.3 kB / 54.64 kB   89.84 MB / 14.88 MB   35
     00compose_gateway-app_1   0.39%               1.106 GB / 7.966 GB   13.89%              227.5 kB / 484 kB     117 MB / 28.84 MB     92
     jhipster-registry         0.74%               1.018 GB / 7.966 GB   12.78%              120.2 kB / 126.4 kB   91.12 MB / 139.3 kB   63
     gateway-elasticsearch     0.27%               249.1 MB / 7.966 GB   3.13%               42.57 kB / 21.33 kB   48.16 MB / 4.096 kB   58
-    00compose_jhuaa-app_1     0.29%               1.042 GB / 7.966 GB   13.08%              101.8 kB / 78.84 kB   70.08 MB / 13.5 MB    68
+    00compose_jhips-app_1     0.29%               1.042 GB / 7.966 GB   13.08%              101.8 kB / 78.84 kB   70.08 MB / 13.5 MB    68
     msmongo-mongodb           0.34%               44.8 MB / 7.966 GB    0.56%               49.72 kB / 48.08 kB   33.97 MB / 811 kB     18
     gateway-mysql             0.03%               202.7 MB / 7.966 GB   2.54%               60.84 kB / 31.22 kB   27.03 MB / 297 MB     37
 
