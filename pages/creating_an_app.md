@@ -37,9 +37,13 @@ _**请查看有关创建新JHipster应用程序的 [视频教程]({{ site.url }}
 
 生成应用程序后，您可以使用Maven（在Linux/MacOS/Windows PowerShell上为`./mvnw`，在Windows Cmd上为`mvnw`）或Gradle（在Linux/MacOS/Windows PowerShell上为`./gradlew`，在Windows Cmd上为`gradlew`）启动它。
 
+**注意**如果您是在第一次运行`./mvnw`命令后使用Maven并更改了前端文件，则必须运行`./mvnw -Pwebapp`才能查看最新的前端版本（Gradle会检测到前端更改，自动并在需要时重新编译前端）。
+
 该应用程序将在[http://localhost:8080](http://localhost:8080)可以访问
 
 重要的是，如果需要实时重新加载JavaScript/TypeScript代码，则需要运行`npm start`或`yarn start`。您可以转到[在开发环境使用JHipster]({{ site.url }}/development/)页面以获取更多信息。
+
+如果您使用`实时重新加载`，则可以通过`./mvnw -P-webapp`或`./gradlew -x webapp`排除客户端任务来加快服务器启动速度。 它特别加快了Gradle的速度。
 
 ## <a name="2"></a> 生成应用程序时遇到的选择
 
@@ -54,7 +58,6 @@ _有些选项会根据您之前的选择而改变。例如，如果您没有选�
 *   Monolithic应用程序：这是一种经典的，集所有功能一体的应用程序。它易于使用和开发，是我们建议的默认设置。
 *   微服务应用程序：在微服务架构中，担任独立的一个服务。
 *   微服务网关：在微服务架构中，担任请求路由和请求保护的边缘服务。
-*   JHipster UAA服务器：在微服务架构中，这是保护微服务安全的OAuth2身份验证服务器。有关更多信息，请参考[JHipster UAA文档]({{ site.url }}/using-uaa/)。
 
 ### What is the base name of your application? (您的应用程序的基础名是什么？)
 
@@ -62,7 +65,8 @@ _有些选项会根据您之前的选择而改变。例如，如果您没有选�
 
 ### What is your default Java package name? （您的默认Java软件包名称是什么？）
 
-您的Java应用程序将以此为包的根名称。该值由Yeoman存储，以便下次运行生成器时，最新的一个提供的值将成为默认值。当然，您可以通过提供新的包名称来覆盖它。
+您的Java应用程序将以此为包的根名称。该值由Yeoman存储，以便下次运行生成器时，最新的一个提供的值将成为默认值。
+当然，您可以通过提供新的包名称来覆盖它。
 
 ### Do you want to use the JHipster Registry to configure, monitor and scale your application? （您是否要使用JHipster Registry来配置，监控和扩展您的应用程序？）
 
@@ -77,12 +81,10 @@ _有些选项会根据您之前的选择而改变。例如，如果您没有选�
 以下是所有可选的选项：
 
 *   JWT身份验证：使用[JSON Web Token (JWT)](https://jwt.io/)，这是默认选择，也是大多数人使用的方法。
-*  OAuth 2.0/OIDC身份验证：使用OpenID Connect服务（例如[Keycloak](http://www.keycloak.org/)或[Okta](https://developer.okta.com)）来处理应用程序外部身份验证。这比JWT更加安全，但是它需要设置OpenID Connect服务，因此有点复杂。请注意，默认情况下，JHipster将同步来自OpenID Connect服务器的用户数据，为此它将需要一个数据库。
+*  OAuth 2.0/OIDC身份验证：使用OpenID Connect服务（例如[Keycloak](https://www.keycloak.org/)或[Okta](https://developer.okta.com)）来处理应用程序外部身份验证。这比JWT更加安全，但是它需要设置OpenID Connect服务，因此有点复杂。请注意，默认情况下，JHipster将同步来自OpenID Connect服务器的用户数据，为此它将需要一个数据库。
 *   HTTP会话身份验证：基于会话的经典身份验证机制，人们通常使用 [Spring Security](http://docs.spring.io/spring-security/site/index.html)进行此操作。
-*   使用[JHipster UAA服务]({{ site.url }}/using-uaa/)进行身份验证：依赖必须单独生成的JHipster UAA服务，该服务是处理应用程序外部身份验证的OAuth2服务器。
 
-
-您可以在我们 [加固应用]({{ site.url }}/security/) 页面上找到更多信息。
+您可以在我们 [保护应用程序]({{ site.url }}/security/) 页面上找到更多信息。
 
 ### Which _type_ of database would you like to use? （您要使用哪种 _类型_ 的数据库？）
 
@@ -92,13 +94,14 @@ _有些选项会根据您之前的选择而改变。例如，如果您没有选�
 - [MongoDB]({{ site.url }}/using-mongodb/)
 - [Cassandra]({{ site.url }}/using-cassandra/)
 - [Couchbase]({{ site.url }}/using-couchbase/)
+- [Neo4j]({{ site.url }}/using-neo4j/)
 - 无数据库（仅在使用具有JWT身份验证的[微服务应用]({{ site.url }}/microservices-architecture/)时可用）
 
 ### Which _production_ database would you like to use? （您要使用哪个 _生产_ 数据库？)
 
 这是在"production"配置文件使用的数据库。要对其进行配置，请修改您的`src/main/resources/config/application-prod.yml` 文件。
 
-如果要使用Oracle，则需要[手动安装Oracle JDBC驱动程序]({{ site.url }}/using-oracle/)。
+如果要使用Oracle，您可能需要了解当前的限制，见[使用Oracle数据库]({{ site.url }}/using-oracle/)。
 
 ###  Which _development_ database would you like to use? (您要使用哪个 _开发_ 数据库？)
 
@@ -112,7 +115,13 @@ _有些选项会根据您之前的选择而改变。例如，如果您没有选�
 
 ### Do you want to use the Spring cache abstraction? (您是否要使用Spring抽象缓存？)
 
-Spring抽象缓存允许使用不同的缓存实现：您可以使用[ehcache](http://ehcache.org/)（本地缓存），[Caffeine](https://github.com/ben-manes/caffeine)（本地缓存），[Hazelcast](http://www.hazelcast.com/)（分布式缓存）[Infinispan](http://infinispan.org/)（另一个分布式缓存）。这可能会对您的应用程序的性能产生非常积极的影响，因此建议您选择该选项。
+Spring抽象缓存允许使用不同的缓存实现，您可以使用：
+
+1.[ehcache](http://ehcache.org/)（本地缓存），[Caffeine](https://github.com/ben-manes/caffeine)（本地缓存），
+
+2.[Hazelcast](http://www.hazelcast.com/)（分布式缓存）、[Infinispan](http://infinispan.org/)（另一个分布式缓存）、[Memcached](https://memcached.org/)（另一个分布式缓存）或 [Redis](https://redis.io/) （配置为单个服务器缓存）。
+
+这可能会对您的应用程序的性能产生非常积极的影响，因此建议您选择该选项。
 
 ###Do you want to use Hibernate 2nd level cache? (您是否要使用Hibernate 2级缓存？)
 
@@ -138,8 +147,8 @@ Spring抽象缓存允许使用不同的缓存实现：您可以使用[ehcache](h
 
 #### Clustered HTTP sessions using Hazelcast （使用Hazelcast的集群HTTP会话）
 
-默认情况下，JHipster仅使用HTTP会话来存储[Spring Security](http://docs.spring.io/spring-security/site/index.html)的身份验证和授权信息。当然，您可以选择在HTTP会话中放入更多数据。
-如果您在集群中运行，则使用HTTP会话会引起问题，尤其是如果您不将负载均衡器与“粘性会话”一起使用。
+默认情况下，JHipster仅使用HTTP会话来存储[Spring Security](http://docs.spring.io/spring-security/site/index.html)的身份验证和授权信息。您可以选择在HTTP会话中放入更多数据。
+如果您在集群中运行，则使用HTTP会话会引起问题，尤其是如果您不将负载均衡器与`粘滞会话（会话保持）`一起使用。
 如果要在群集中复制会话，请选择此选项以配置[Hazelcast](http://www.hazelcast.com/)。
 
 #### WebSockets using Spring Websocket （使用Spring Websocket的WebSockets）
@@ -158,6 +167,7 @@ Spring抽象缓存允许使用不同的缓存实现：您可以使用[ehcache](h
 
 *   Angular
 *   React
+*   Vue
 
 ### Would you like to use a Bootswatch theme? (您要使用Bootswatch主题吗？)
 
@@ -184,6 +194,30 @@ Spring抽象缓存允许使用不同的缓存实现：您可以使用[ehcache](h
 *   用Protractor进行Angular集合测试
 
 您可以在["运行测试"指南]({{ site.url }}/running-tests/)中找到更多信息。
+
+### Would you like to use incremental Liquibase changelogs? (您要使用增量Liquibase变更日志吗？)
+
+JHipster可以选择为您创建增量更改日志，因此您无需重新创建数据库或手动生成Liquibase差异。
+
+随时使用`--incremental-changelog`选项运行JHipster以将其启用。
+
+执行JHipster时，实体包含两种状态：
+
+*   已保存到磁盘的旧状态
+*   内存中的新状态（从jdl或提示生成）
+
+它们之间将产生差异，并创建变更日志。
+
+支持的功能：
+
+*   创建/删除字段
+*   创建/删除关系
+*   JDL和提示
+
+不支持类型和约束之类的属性更改。
+
+冲突：
+*   `--fork`选项，因为它保存到磁盘上以覆盖旧状态。
 
 ### Would you like to install other generators from the JHipster Marketplace? (您是否要从JHipster市场安装其他生成器？)
 
@@ -227,7 +261,10 @@ jhipster --blueprint kotlin
 * `--entity-suffix` - 在实体类名称后添加后缀（默认值：""）
 * `--dto-suffix` - 在DTO类名称后添加后缀（默认值：DTO）
 * `--yarn` - 使用Yarn代替NPM（默认值：false）
+* `--prettier-java` - 使用[prettier-java](https://github.com/jhipster/prettier-java) 格式化所有Java类（默认值：false）
 * `--experimental` - 启用实验功能。请注意，这些功能可能不稳定，并可能随时发生重大变更
+* `--skip-fake-data` - 跳过生成用于开发的虚拟数据
+* `--creation-timestamp` - 为可复制的构建设置时间戳。 时间戳记应该是可解析的js日期，例如：2019-01-01。 必须与--with-entities或import-jdl一起使用（generator-jhipster> 6.5.1）
 
 ## <a name="4"></a> 提醒
 
