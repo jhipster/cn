@@ -22,13 +22,13 @@ sitemap:
 
 ## JHipster Online (适用于希望以简单方式使用JHipster的用户)
 
-[JHipster Online](https://start.jhipster.tech/), 无需安装JHipster即可轻松生成JHipster应用程序.
+[JHipster Online](https://start.jhipster.tech/), 无需安装JHipster即生成JHipster应用程序.
 
-适用第一次尝试JHipster的用户，或者只想浏览JHipster提供的功能的用户.
+适用第一次尝试JHipster的用户，或者想浏览JHipster提供的功能的用户.
 
 尽管它更易于使用，但这并不是“完整的JHipster体验”，并且在生成应用程序后，您仍需要操作后续很多步骤（“使用NPM进行本地安装”），而且您仍然需要提供Java（运行应用程序）和NPM（管理前端代码）环境.
 
-当然，我们希望将来JHipster Online能提供更多功能.
+我们希望将来JHipster Online能提供更多功能.
 
 ## 使用NPM进行本地安装 (推荐给普通用户)
 
@@ -53,7 +53,7 @@ sitemap:
 ### 补充信息
 
 JHipster使用[Yeoman](http://yeoman.io/)实现代码自动生成。要查找更多信息，技巧和帮助，或在[提交错误](https://github.com/jhipster/generator-jhipster/issues?state=open)之前, 请查看[Yeoman入门指南](http://yeoman.io/learning/index.html)。
-项目的生成配置将存储在自动生成的`.yo-rc.json`文件中，因此强烈建议不要在HOME目录中生成JHipster项目。如果这样做，您将无法在其子目录中生成另一个项目。要解决此问题，只需删除`.yo-rc.json`文件即可解决。
+项目的生成配置将存储在自动生成的`.yo-rc.json`文件中，因此强烈建议不要在HOME目录中生成JHipster项目。如果这样做，您将无法在其子目录中生成另一个项目。要解决此问题，删除`.yo-rc.json`文件即可解决。
 
 ## 使用Yarn本地安装（替代NPM）
 
@@ -61,10 +61,8 @@ JHipster使用[Yeoman](http://yeoman.io/)实现代码自动生成。要查找更
 
 与使用NPM的过程类似，但有两个区别：
 
-1. 无需在步骤3中升级NPM，而是从[Yarn官网](https://yarnpkg.com/en/docs/install)安装Yarn 
-2. 使用 `yarn global add`代替`npm install -g`, 例如:
-    * 安装Yeoman, 输入: `yarn global add yo`
-    * 安装JHipster, 输入: `yarn global add generator-jhipster`
+1. 是从[Yarn官网](https://yarnpkg.com/en/docs/install)安装Yarn 
+2. 安装JHipster: `yarn global add generator-jhipster`
 
 ### 故障排除
 
@@ -78,7 +76,7 @@ JHipster使用[Yeoman](http://yeoman.io/)实现代码自动生成。要查找更
 
 ### 描述
 
-JHipster具有一个定制的[Dockerfile](https://github.com/jhipster/generator-jhipster/blob/master/Dockerfile)，该文件提供了[Docker](https://www.docker.io/)镜像。
+JHipster具有一个定制的[Dockerfile](https://github.com/jhipster/generator-jhipster/blob/main/Dockerfile)，该文件提供了[Docker](https://www.docker.io/)镜像。
 
 自动构建的Docker镜像可以在这里找到：[https://hub.docker.com/r/jhipster/jhipster/](https://hub.docker.com/r/jhipster/jhipster/)
 
@@ -88,21 +86,19 @@ JHipster具有一个定制的[Dockerfile](https://github.com/jhipster/generator-
 
 这取决于您的操作系统。
 
-1.  **Linux:** Linux支持开箱即用的Docker。您只需要遵循[Docker](https://docs.docker.com/installation/#installation)网站上的教程即可。
-2.  **Mac & Windows:** 安装[Docker Toolbox](https://www.docker.com/docker-toolbox)即可轻松安装Docker。
+1.  **Linux:** Linux支持开箱即用的Docker。您遵循[Docker](https://docs.docker.com/installation/#installation)网站上的教程即可。
+2.  **Mac & Windows:** 安装[Docker Toolbox](https://www.docker.com/docker-toolbox)即可安装Docker。
 
 由于生成的应用文件位于共享文件夹中，因此如果您停止Docker容器，它们将不会被删除。但是，如果您不希望Docker在每次启动容器时都重新下载所有Maven和NPM依赖项，您应该保存容器状态或者将宿主机的外部路径挂载进容器。
 
 <div class="alert alert-warning"><i>注意: </i>
 
-根据您的操作系统，您的<code>DOCKER_HOST</code>将有所不同。在Linux上，它将只是您的本地主机地址。对于Mac / Windows，必须使用以下命令获取IP：<code>docker-machine ip default</code>
+根据您的操作系统，您的<code>DOCKER_HOST</code>将有所不同。在Linux上，它将是您的本地主机地址。对于Mac / Windows，必须使用以下命令获取IP：<code>docker-machine ip default</code>
 
 </div>
 
 <div class="alert alert-info"><i>提示: </i>
-
-Kitematic是Docker Toolbox提供简化使用的图形界面，这将使安装过程更加容易。
-
+<a href="https://docs.docker.com/docker-for-windows/">Docker Desktop for Windows</a>/<a href="https://docs.docker.com/docker-for-mac/">Docker Desktop for Mac</a> 是Docker Toolbox提供简化使用的图形界面，这将使安装过程更加容易。
 </div>
 
 在Linux上，如果您的用户不属于docker组，则可能需要以root用户身份运行docker命令。最好将您的用户添加到docker组，以便您可以以非root用户身份运行docker命令。请按照[http://askubuntu.com/a/477554](http://askubuntu.com/a/477554)上的步骤进行操作。
@@ -155,8 +151,8 @@ Kitematic是Docker Toolbox提供简化使用的图形界面，这将使安装过
 
 #### 常用操作
 
-*  停止容器执行: `docker container stop jhipster`
-*  并再次启动，执行: `docker container start jhipster`
+*  停止容器，运行: `docker container stop jhipster`
+*  并再次启动，运行: `docker container start jhipster`
 
 如果您需要更新Docker镜像（重建或从Docker Hub拉取），最好删除现有容器，然后重新运行该容器。为此，需要首先停止容器，将其删除，然后再次运行：
 
@@ -169,7 +165,7 @@ Kitematic是Docker Toolbox提供简化使用的图形界面，这将使安装过
 
 <div class="alert alert-warning"><i>提醒: </i>
 
-在Windows上，您需要以管理员身份执行Docker Quick Terminal，以便能够在`npm install`步骤中创建符号链接。
+在Windows上，您需要以管理员身份运行Docker Quick Terminal，以便能够在`npm install`步骤中创建符号链接。
 </div>
 
 最简单方法是登录正在运行的容器执行以下命令：
@@ -206,7 +202,7 @@ Kitematic是Docker Toolbox提供简化使用的图形界面，这将使安装过
 
 **恭喜！您已经在Docker中启动了JHipster应用！**
 
-在宿主机上，您应该可以：
+在您的机器上，您应该可以：
 
 *   通过`http://DOCKER_HOST:8080`访问正在运行的应用程序
 
@@ -220,5 +216,6 @@ Kitematic是Docker Toolbox提供简化使用的图形界面，这将使安装过
         <li>使用docker-compose文件</li>
         <li>使用Docker构建Docker镜像（Maven任务：<code>jib:dockerBuild</code>或Gradle任务：<code>jibDockerBuild</code>）</li>
     </ul>
-    但是，您能够使用[jib](https://github.com/GoogleContainerTools/jib)的无守护程序模式，该模式可以构建docker镜像并将其推送到仓库，而无需访问docker守护程序（Maven任务：<code>jib:build</code>或Gradle任务：<code>jibBuild</code>）。但是作为构建应用程序的先决条件，您将需要先设置Docker仓库凭证信息。有关更多详细信息，请参见[Jib插件配置文档](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration)。
+    但是，您能够使用<a href="https://github.com/GoogleContainerTools/jib">jib</a>的无守护程序模式，该模式可以构建docker镜像并将其推送到仓库，而无需访问docker守护程序（Maven任务：<code>jib:build</code>或Gradle任务：<code>jibBuild</code>）。但是作为构建应用程序的先决条件，您将需要先设置Docker仓库凭证信息。
+    有关更多详细信息，请参见<a href="https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration">Jib插件配置文档</a>。
 </div>

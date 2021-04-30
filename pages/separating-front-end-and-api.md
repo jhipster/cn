@@ -22,9 +22,9 @@ JHipster是一个全栈开发工具，其目标是使您可以有效地使用前
 您可以选择仅生成JHipster后端或JHipster前端应用程序。在生成时，这仅是选择标志的问题，这些标志在我们的[应用程序生成文档]({{ site.url }}/creating-an-app/)中进行了说明：
 
 - `jhipster --skip-client` 只会生成一个后端应用程序（这通常是JHipster微服务）
-- `jhipster --skip-server` 只会生成一个前端应用程序
+- `jhipster --skip-server [options]` 只会生成一个前端应用程序(例如：`jhipster --skip-server --db=sql --auth=jwt`)
 
-这仅适用于monoliths，因为这对于微服务（无论如何都没有前端）和网关（基本上是启用了Zuul网关服务的monolith）没有多大意义。
+这仅适用于monoliths，因为这对于微服务（无论如何都没有前端）和网关（启用了Spring Cloud Gateway服务）没有多大意义。
 
 ## 目录布局
 
@@ -33,13 +33,13 @@ JHipster使用标准的Maven目录布局。在后端上工作时，您只需阅�
 在前端工作时，您需要知道两个目录：
 
 - `src/main/webapp` 是开发前端应用程序的地方
-- `target/www` 是您的前端应用程序将被打包的位置
+- `target/static` 是您的前端应用程序将被打包的位置
 
 如果您有分别在前端和后端工作的团队，则有两种解决方案：
 
 - 两个团队可以从事同一个项目。由于目录是分开的，因此团队之间不会有太多冲突。为了使事情变得更加清洁，两个团队可以在不同的分支上开发。
 
-- 前端代码可以存储在一个特定的Git项目中，然后作为Git子模块导入到主后端项目中。这将需要移动前端构建脚本，但这是一个简单的重构。
+- 前端代码可以存储在一个特定的Git项目中，然后作为Git子模块导入到主后端项目中。这将需要移动前端构建脚本。
 
 ## HTTP请求路由和缓存
 
@@ -65,8 +65,8 @@ CORS（[跨域请求共享](https://wikipedia.org/wiki/Cross-origin_resource_sha
 JHipster提供了开箱即用的CORS配置：
 
 - 可以使用[jHipster通用应用程序属性]({{ site.url }}/common-application-properties/)中定义的`jhipster.cors`属性来配置CORS。
-- 默认情况下，在`dev`模式下对monoliths和网关启用该功能。对于微服务，默认情况下禁用此功能，因为您应该通过网关访问它们。
-- 出于安全原因，在`prod`模式下默认禁用该功能。
+- 默认情况下，在`dev`模式下对monoliths和网关启用该功能。对于微服务，默认情况下关闭此功能，因为您应该通过网关访问它们。
+- 出于安全原因，在`prod`模式下默认关闭该功能。
 
 ## 使用NGinx
 
@@ -81,12 +81,12 @@ JHipster提供了开箱即用的CORS配置：
       nginx:
         image: nginx:1.15-alpine
         volumes:
-        - ./../../../target/www:/usr/share/nginx/html
+        - ./../../../target/static:/usr/share/nginx/html
         - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
         ports:
         - "8000:80"
 
-此Docker镜像将配置NGinx服务器，该服务器从`target/www`读取静态资源：这是默认情况下生成JHipster前端应用程序的位置。在生产环境中，您可能为此需要一个特定的文件夹。
+此Docker镜像将配置NGinx服务器，该服务器从`target/static`读取静态资源：这是默认情况下生成JHipster前端应用程序的位置。在生产环境中，您可能为此需要一个特定的文件夹。
 
 它还读取一个`./nginx/site.conf`文件：这是NGinx特定的配置文件。
 
