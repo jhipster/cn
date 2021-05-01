@@ -1,151 +1,150 @@
 ---
 layout: default
-title: JHipster Control Center
+title: JHipster控制中心
 permalink: /jhipster-control-center/
 sitemap:
     priority: 0.7
     lastmod: 2020-10-20T00:00:00-00:00
 ---
 
-# <i class="fa fa-codepen"></i> The JHipster Control Center
+# <i class="fa fa-codepen"></i> JHipster控制中心
 
-## Overview
+## 概述
 
-The main purpose of JHipster Control Center is to monitor and manage applications.
+JHipster控制中心（JHipster Control Center）的主要目的是监视和管理应用程序。
 
-All its features are packaged into one external application with a modern Vue user interface. Its source code is available on GitHub under the JHipster organization at [jhipster/jhipster-control-center](https://github.com/jhipster/jhipster-control-center).
+它的所有功能都通过现代Vue用户界面打包到一个外部应用程序中。 它的源代码可在JHipster组织下的GitHub上找到，网址为[jhipster/jhipster-control-center](https://github.com/jhipster/jhipster-control-center) 。
 
 ![]({{ site.url }}/images/jhipster-control-center-animation.gif)
 
 ## 概要
 
-1. [Specific Spring profiles](#profiles)
-2. [Installation](#installation)
-3. [Architecture](#architecture)
-4. [Authentication mechanism](#authentication)
-5. [Features](#features)
+1. [Spring特定的配置文件](#profiles)
+2. [安装](#installation)
+3. [架构](#architecture)
+4. [认证机制](#authentication)
+5. [特性](#features)
 
-## <a name="profiles"></a>  Specific Spring profiles
+## <a name="profiles"></a>  Spring特定的配置文件
 
-**The Control Center uses the usual JHipster `dev` and `prod` Spring profiles. But, to work properly, it has to be started with a spring profile corresponding to a spring cloud discovery backend.**
+**控制中心使用常规的JHipster`dev`和`prod`Spring配置文件。 但是，要正常工作，必须从与Spring Cloud Discovery后端相对应的Spring配置文件开始。**
 
-- `eureka`: Connect to an Eureka server and fetch its registered instances, configured in application-eureka.yml
-- `consul`: Connect to a Consul server and fetch its registered instances, configured in application-consul.yml
-- `static`: Uses a static list of instances provided as properties, configured in application-static.yml
-- `kubernetes`: Configured in application-kubernetes.yml
+- `eureka`: 连接到Eureka服务器并获取其注册实例，该实例在application-eureka.yml中配置
+- `consul`: 连接到Consul服务器并获取其注册实例，该实例在application-consul.yml中配置
+- `static`: 使用作为属性提供的实例的静态列表，该列表在application-static.yml中配置
+- `kubernetes`: 在application-kubernetes.yml中配置
 
-This is very useful for microservices architectures: this is how the Control Center know which microservices are available, and which instances are up.
+这对于微服务体系结构非常有用：控制中心以这种方式知道哪些微服务可用，哪些实例可用。
 
-For all applications, including monoliths, this is how the Hazelcast distributed cache can automatically scale, see [the Hazelcast cache documentation]({{ site.url }}/using-cache/)
+对于所有应用程序（包括单体式应用程序），Hazelcast分布式缓存可以自动扩展， 查阅[Hazelcast缓存文档]({{ site.url }}/using-cache/)
 
-## <a name="installation"></a> Installation
+## <a name="installation"></a> 安装
 
-### Running locally
+### 在本地运行
 
-* ### Step 1: Run server used by Spring Cloud discovery backend
+* ### 步骤1：运行Spring Cloud Discovery后端使用的服务器
 
-    Eureka and Consul docker-compose files exist under src/main/docker to ease testing the project (see [specific spring profiles](#profiles)).
+  Eureka和Consul docker-compose文件位于src/main/docker下，以简化测试项目 (查看 [specific spring profiles](#profiles)).
 
-    - for Consul: run `docker-compose -f src/main/docker/consul.yml up -d`
-    - for Eureka: run `docker-compose -f src/main/docker/jhipster-registry.yml up -d`
-    - for Kubernetes : see [kubernetes documentation](https://www.jhipster.tech/kubernetes/#deploying-to-kubernetes)
-    - Otherwise, to use a static list of instances, you can directly go to the next step.
+    - 对于Consul: 运行 `docker-compose -f src/main/docker/consul.yml up -d`
+    - 对于Eureka: 运行 `docker-compose -f src/main/docker/jhipster-registry.yml up -d`
+    - 对于Kubernetes : 查看 [kubernetes文档](https://www.jhipster.tech/kubernetes/#deploying-to-kubernetes)
+    - 否则，要使用静态实例列表，可以直接转到下一步。
 
-* ### Step 2: Choose your authentication profile
+* ### 步骤2：选择您的身份验证配置文件
 
-    There is 2 types of authentication (see [authentication mechanism](#authentication)):
+  身份验证有2种 (查看 [认证机制](#authentication)):
 
-    - JWT: This is the default authentication, if you choose this one, you have to do nothing.
-    - OAuth2: To use OAuth2 authentication, you have to launch Keycloak. Run `docker-compose -f src/main/docker/keycloak.yml up -d`
+    - JWT: 这是默认身份验证，如果选择此身份验证，则无需执行任何操作。
+    - OAuth2: 要使用OAuth2身份验证，您必须启动Keycloak。 运行 `docker-compose -f src/main/docker/keycloak.yml up -d`
     
 
-* ### Step 3: Run the cloned project
+* ### 步骤3：运行克隆的项目
 
-    Run the Control Center according to the specific spring profiles you want, here are some examples:
+    根据所需的特定Spring配置文件运行控制中心，以下是一些示例：
 
-    - For development with JWT and Consul, run `./mvnw -Dspring.profiles.active=consul,dev`
-    - For development with JWT and Eureka, run`./mvnw -Dspring.profiles.active=eureka,dev`
-    - For development with JWT and a static list of instances, run `./mvnw -Dspring.profiles.active=static,dev`
-    - For development with OAuth2 and Consul, run `./mvnw -Dspring.profiles.active=consul,dev,oauth2`
-    - For development with OAuth2 and Eureka, run `./mvnw -Dspring.profiles.active=eureka,dev,oauth2`
-    - To just start in development run `./mvnw` and in another terminal run `npm start` for hot reload of client side code
+    - 对于使用JWT和Consul开发, 运行 `./mvnw -Dspring.profiles.active=consul,dev`
+    - 对于使用JWT和Eureka开发, 运行`./mvnw -Dspring.profiles.active=eureka,dev`
+    - 对于使用JWT和静态实例列表进行开发, 运行 `./mvnw -Dspring.profiles.active=static,dev`
+    - 对于使用OAuth2和Consul进行开发， 运行 `./mvnw -Dspring.profiles.active=consul,dev,oauth2`
+    - 对于使用OAuth2和Eureka进行开发, 运行 `./mvnw -Dspring.profiles.active=eureka,dev,oauth2`
+    - 刚开始开发运行 `./mvnw` 然后在另一个终端运行 `npm start` 用于热重载客户端代码
 
-### Running from Docker
+### 从Docker运行
 
-A container image has been made available on Docker hub. To use it, run these commands:
+A 容器映像已在Docker Hub上提供。 要使用它，请运行以下命令：
 
 - `docker pull jhipster/jhipster-control-center`
 - `docker run -d --name jhcc -p 7419:7419 jhipster/jhipster-control-center:latest`
 
-## <a name="architecture"></a> Architecture
+## <a name="architecture"></a> 架构
 
-This is a standard web application that connects to one or several JHipster applications through their management API endpoints. Those management endpoints can either be exposed on the standard API port (typically 8080, 8081, ...) or preferably on a dedicated management port (typically 9999) so that they are isolated from the outside world.
+这是一个标准的Web应用程序，通过其管理API端点连接到一个或几个JHipster应用程序。 这些管理端点可以公开在标准API端口（通常为8080、8081等）上，也可以公开在专用管理端口（通常为9999）上，以便与外界隔离。
 
-The Control Center use [Spring Cloud Gateway](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/) for routing APIs and Spring Cloud LoadBalancer to provide client-side load-balancing in calls to another microservice (Ribbons is disabled by default to use implementation of load balancing by Spring Cloud LoadBalancer).
+控制中心使用 [Spring Cloud Gateway](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/) 路由API和Spring Cloud LoadBalancer以在对另一个微服务的调用中提供客户端负载平衡（默认情况下，Ribbons已禁用，以使用Spring Cloud LoadBalancer的负载平衡实现）。
 
 ![]({{ site.url }}/images/jhipster-control-center-architecture.png)
 
-## <a name="authentication"></a> Authentication mechanism
+## <a name="authentication"></a> 认证机制
 
-In order to access to your applications, the JHipster Control Center use a specific security mechanism depending on the profile.
+为了访问您的应用程序，JHipster Control Center根据配置文件使用特定的安全机制。
 
 #### ***JWT***
-This is a custom JHipster implementation. The JWT key used to sign the request should be the same for the applications and the Control Center: as by default the Control Center configures applications through Spring Cloud Config, this should work out-of-the-box, as it will send the same key to all applications.
+这是一个自定义的JHipster实现。 用于签署请求的JWT密钥对于应用程序和控制中心应该是相同的：默认情况下，控制中心通过Spring Cloud Config配置应用程序，这应该是开箱即用的，因为它将发送相同的key到所有应用程序 。
 
 #### ***OAuth2***
-This profile use a third-party authorization - authentication server like Keycloak (or Okta soon). The Control Center will use the OAuth2 protocole to generate a session in Keycloak when you connect to the Control Center. 
+此配置文件使用第三方授权-身份验证服务器，例如Keycloak（或Okta即将推出）。 当您连接到控制中心时，控制中心将使用OAuth2协议在Keycloak中生成会话。
 
-Then, our security configuration, in Oauth2SecurityConfiguration.java, will use Spring Security's filter chain to get an authorization from Keycloak ang generate a Spring's Principal (current user) with `http.oauth2Login()`. Afterwards, Spring Security's filter chain will apply `http.oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter())` to get an authentication with his roles. With this way, we can change our provider (Keycloak, Okta, etc.) easly.
+然后，在Oauth2SecurityConfiguration.java中，我们的安全配置将使用Spring Security的过滤器链从Keycloak获得授权，并使用`http.oauth2Login()`生成Spring的Principal（当前用户）。 之后，Spring Security的过滤器链将应用`http.oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter())`来获得其角色的身份验证。 通过这种方式，我们可以轻松地更改我们的提供程序（Keycloak，Okta等）。
 
-## <a name="features"></a> Features
+## <a name="features"></a> 特性
 
-### ***Instances***
+### ***实例***
 
-The JHipster Control Center provides a list of application's instances. As soon as an application registers on a server (consul or eureka), it will become available in the list.
+JHipster控制中心提供了应用程序实例的列表。 一旦应用程序在服务器（consul或eureka）上注册，它就会在列表中可用。
 
 ![]({{ site.url }}/images/jhipster-control-center-instances.png)
 
-### ***Metrics***
+### ***指标***
 
-The metrics page uses Micrometer to give a detailed view of the application performance.
+指标页面使用Micrometer来提供应用程序性能的详细视图。
 
-It gives metrics on:
+它提供有关以下方面的指标：
 
-- the JVM
-- HTTP requests
-- cache usage
-- database connection pool
+- JVM
+- HTTP请求
+- 缓存使用
+- 数据库连接池
 
-By clicking on the Expand button next to the JVM thread metrics, you will get a stacktrace of the running application, which is very useful to find out blocked threads.
+通过单击JVM线程指标旁边的Expand按钮，您将获得正在运行的应用程序的堆栈跟踪，这对于找出阻塞的线程非常有用。
 
 ![]({{ site.url }}/images/jhipster-control-center-metrics.png)
 
-### ***Health***
+### ***健康***
 
-The health page uses Spring Boot Actuator's health endpoint to give health information on various parts of the application. 
+运行状况页面使用Spring Boot Actuator运行状况端点来提供有关应用程序各个部分的运行状况信息。
 
-Many health checks are provided out-of-the-box by Spring Boot Actuator, and you can add application-specific health checks.
+Spring Boot Actuator提供了许多开箱即用的健康检查，您可以添加特定于应用程序的健康检查。
 
 ![]({{ site.url }}/images/jhipster-control-center-health.png)
 
-### ***Configuration***
+### ***配置***
 
-The configuration page uses Spring Boot Actuator's configuration endpoint to give a full view of the Spring configuration of the current application.
+配置页面使用Spring Boot Actuator的配置端点来提供当前应用程序的Spring配置的完整视图。
 
 ![]({{ site.url }}/images/jhipster-control-center-configuration.png)
 
-### ***Logs***
+### ***日志***
 
-The logs page allows to manage at runtime the Logback configuration of the running application. 
+日志页面允许在运行时管理正在运行的应用程序的Logback配置。
 
-You can change the log level of Java package by clicking on a button, which is very convenient both in development and in production.
+您可以通过单击按钮来更改Java包的日志级别，这在开发和生产中都非常方便。
 
 ![]({{ site.url }}/images/jhipster-control-center-logs.png)
 
-### ***Logfile***
+### ***日志文件***
 
-The logfile page allows to see at runtime the log of the running application. By default it is disabled, you need to configure it. This message is display if the logfile is disabled:
-
+日志文件页面允许在运行时查看正在运行的应用程序的日志。 默认情况下，它是禁用的，您需要对其进行配置。 如果禁用了日志文件，则显示此消息：
 ```
 No available logfile. Please note that it is not available by default, you need to set up the Spring Boot properties below! 
 Please check:
@@ -163,7 +162,7 @@ See:
 
 ### ***API***
 
-The API page allows to see all API documentation of your applications and test their endpoints through a single Swagger UI frame.
+API页面允许查看您应用程序的所有API文档，并通过单个Swagger UI框架测试其端点。
 
 ![]({{ site.url }}/images/jhipster-control-center-api.png)
 
