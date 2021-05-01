@@ -4,7 +4,7 @@ title: JHipster 领域语言 (JDL) - 入门指南
 permalink: /jdl/getting-started
 sitemap:
   priority: 0.5
-  lastmod: lastmod: 2021-03-08T12:00:00-00:00
+  lastmod: 2021-03-08T12:00:00-00:00
 ---
 
 # <i class="fa fa-star"></i> JHipster 领域语言 (JDL) - 入门指南
