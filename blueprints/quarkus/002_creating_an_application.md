@@ -1,40 +1,40 @@
 ---
 layout: default
-title: Creating an application
+title: 创建一个应用程序
 sitemap:
 priority: 0.5
 lastmod: 2021-01-07T08:40:00-00:00
 ---
 
-# Creating an application
+# 创建一个应用程序
 
-## Quick start
+## 快速上手
 
-First of all, create an empty directory in which you will create your application:
+首先，创建一个空目录，您将在其中创建应用程序：
 
 `mkdir my-quarkus-application`
 
-Go to that directory:
+转到该目录：
 
 `cd my-quarkus-application`
 
-To generate your JHipster Quarkus application, type:
+要生成您的JHipster Quarkus应用程序，请输入：
 
 `jhipster-quarkus`
 
-## Advanced
+## 进阶
 
-`jhipster-quarkus` embeds the `jhipster` dependency which means you don't have to install `jhipster` by your own.
-The main benefits of `jhipster-quarkus` is to ensure the compatibility between the JHipster Quarkus blueprint and the underneath JHipster.
+`jhipster-quarkus`内置`jhipster`依赖关系，这意味着您不必自己安装`jhipster`。
+`jhipster-quarkus`的主要好处是确保JHipster Quarkus方案与下面的JHipster之间的兼容性。
 
-However, if you want to use a custom `jhipster` installation, you can use the `--blueprint` flag as follow:
+但是，如果要使用自定义的`jhipster`安装，则可以使用`--blueprint`标志，如下所示：
 
 `jhipster --blueprints quarkus`
 
-Please, keep in mind that in this configuration you may face compatibility issues, that's why we do not recommend this usage.
+请记住，在这种配置下，您可能会遇到兼容性问题，因此我们不建议您使用此用法。
 
-## Questions asked when generating an application
+## 生成应用程序时的问题
 
-The question asked during JHipster Quarkus creation are identical to standard Quarkus.
+在JHipster Quarkus创建期间提出的问题与标准Quarkus相同。
 
-Please refer to the according documentation: [Questions asked when generating an application]({{ site.url }}/creating-an-app/#2)
+请参考相应的文档：[生成应用时的问题]({{ site.url }}/creating-an-app/#2)

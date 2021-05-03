@@ -1,29 +1,29 @@
 ---
 layout: default
-title: Creating an entity
+title: 创建实体
 sitemap:
 priority: 0.5
 lastmod: 2021-01-07T08:40:00-00:00
 ---
 
-# Creating an entity
+# 创建实体
 
-## Introduction 
+## 介绍
 
-JHipster Quarkus entity creations permits to generate
+JHipster Quarkus实体创建允许生成
 
-* A database table
-* A Liquibase change set
-* A JPA Entity
-* A Quarkus Panache Active Record or Repository
-* A Resteasy Controller, which has the basic CRUD operations
-* Data Transfer Objects (DTOs)
-* Pagination
-* Tests 
+* 数据库表
+* Liquibase变更集
+* JPA实体
+* Quarkus Panache活动记录或存储库
+* Resteasy控制器，具有基本的CRUD操作
+* 数据传输对象（DTO）
+* 分页
+* 测试
 
-and delegates to JHipster the client side components generation
+并将客户端组件生成委托给JHipster
 
-### Example
+### 例子
 
 ```
 $ jhipster-quarkus entity Book
@@ -75,7 +75,7 @@ isbn (String) required
 Everything is configured, generating the entity...
 ```
 
-## JHipster UML and JDL Studio
+## JHipster UML 和 JDL Studio
 
-JHipster Quarkus supports JDL imports.
-Refer to the according JHipster UML and JDL Studio section in the *[creating-an-entity](http://localhost:4000/creating-an-entity/)* tutorial.
+JHipster Quarkus支持JDL导入。
+请参考以下内容中相应的JHipster UML和JDL Studio部分： *[创建实体](http://localhost:4000/creating-an-entity/)* 。
