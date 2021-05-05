@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Official blueprints
+title: 官方方案
 permalink: /modules/official-blueprints/
 redirect_from:
   - /official-blueprints.html
@@ -10,34 +10,34 @@ sitemap:
     lastmod: 2019-09-02T11:24:00-00:00
 ---
 
-# <i class="fa fa-star"></i> Officially supported blueprints
+# <i class="fa fa-star"></i> 官方方案
 
-JHipster supports several official blueprints. These blueprints have two main goals:
+JHipster支持几种正式的方案。 这些蓝图有两个主要目标：
 
-* Enhance JHipster with new features using different languages and/or support
-* Demonstrate how the main generator behavior can be modified to fit anyone's needs
+* 使用不同语言和/或支持的新功能增强JHipster
+* 演示如何修改主生成器行为以适合任何人的需求
 
 ## Kotlin
 
-First official blueprint, it replaces most of Java back-end code with Kotlin. Source code and documentation could be found here: [repository](https://github.com/jhipster/jhipster-kotlin).
+它是第一个官方方案，它用Kotlin代替了大多数Java后端代码。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/jhipster-kotlin) 。
 
 Stream lead is: [Sendil Kumar](https://github.com/sendilkumarn).
 
 ## Vue.js
 
-Second official blueprint, it replaces the whole front-end logic with Vue.js. Source code and documentation could be found here: [repository](https://github.com/jhipster/jhipster-vuejs).
+第二个正式蓝图，它用Vue.js取代了整个前端逻辑。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/jhipster-vuejs) 。
 
 Stream lead is: [Sahbi Ktifa](https://github.com/sahbi-ktifa).
 
 ## .Net
 
-Third official blueprint, this is the first attempt to leave the Java environment and join .Net world. Source code and documentation could be found here: [repository](https://github.com/jhipster/jhipster-dotnetcore).
+第三次正式蓝图，这是离开Java环境并加入.Net世界的第一次尝试。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/jhipster-dotnetcore) 。
 
 Stream lead is: [Daniel Petisme](https://github.com/danielpetisme).
 
 ## Node.js
 
-Latest official blueprint, it replaces the server java side with the NestJS Node framework. Source code and documentation could be found here: [repository](https://github.com/jhipster/generator-jhipster-nodejs).
+最新的官方蓝图，它用NestJS Node框架替代了服务器Java端。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/generator-jhipster-nodejs) 。
 
 Stream lead is: [Angelo Manganiello](https://github.com/amanganiello90).
 
