@@ -13,7 +13,7 @@ __提交者 [@atomfrede](https://github.com/atomfrede)__
 > 您应该使用新的 [swagger2markup](https://github.com/atomfrede/generator-jhipster-swagger2markup) 模块，而不是遵循此提示！ 见 [JHipster Marketplace](https://www.jhipster.tech/modules/marketplace/) 有关模块系统的详细信息。
 
 如果要生成静态API文档（并将其与手写文档结合在一起），则[Swagger2Markup](https://swagger2markup.readme.io/) 提供了一种简便的方法来组合由以下人员生成的自动生成的API文档：
-Swagger with hand-written documentation into an up-to-date, easy-to-read, on- and offline user guide in HTML, PDF and EPUB.
+将手写文档，翻译成HTML，PDF和EPUB格式的最新，易于阅读的在线和离线用户指南。
 
 ## 添加所需的依赖项，插件和测试类
 
