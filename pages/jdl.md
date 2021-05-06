@@ -1,7 +1,7 @@
 ---
 layout: default
 title: JHipster域语言
-permalink: /jdl/
+permalink: /jdlx/
 sitemap:
     priority: 0.5
     lastmod: 2019-08-17T12:00:00-00:00

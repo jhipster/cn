@@ -1,51 +1,48 @@
 ---
 layout: default
-title: The User entity
+title: 用户实体
 permalink: /user-entity/
 sitemap:
     priority: 0.5
     lastmod: 2020-09-14T00:00:42-00:00
 ---
 
-# <i class="fa fa-user"></i> The User entity
+# <i class="fa fa-user"></i> 用户实体
 
-This entity is a special entity as JHipster creates and manages it internally.
+该实体是JHipster内部创建和管理的特殊实体。
 
-It contains some basic information:
-  - a first name and a last name,
-  - a login,
-  - an email address,
-  - a password (not in clear text),
-  - authorities,
-  - etc.
+它包含一些基本信息：
+  - 名和姓，
+  - 登录名，
+  - 一个电子邮件地址，
+  - 密码（不是明文），
+  - 权限
+  - 等
 
-Creating an application from scratch will generate you some default users like the `admin` or the `guest` users.
+从头开始创建应用程序将为您生成一些默认用户，例如admin用户或guest用户。
 
-## Possible relationships
+## 可能的关系
 
-Here are the possible relationships from/to this entity:
-  - `many-to-one` relationships to this entity (a `Car` can have a many-to-one relationship to a `User`).
-    This will generate a specific query in your new entity repository, so you can filter your entity on the current
-    security user, which is a common requirement. On the generated Angular/React client UI you will have a dropdown in
-    `Car` to select a `User`.
-  - `many-to-many` and `one-to-one` relationships to the `User` entity, but the other entity __must__ be the owner
-    of the relationship (a `Team` can have a many-to-many relationship to `User`, but only the team can add/remove users,
-    and a user cannot add/remove a team). On the front-end client UI, you will also be able to select a `User` in
-    a multi-select box.
+以下是与此实体之间的可能关系：
+  - 与`User`实体`many-to-one` 关系 (`Car`与`User`可以具有多对一关系)。
+    这将在您的新实体repository中生成一个特定的查询，因此您可以根据当前的安全用户过滤您的实体，这是常见的要求。
+    在生成的Angular/React客户端UI上，您将在`Car`下拉菜单中选择`User`。
+  - 与`User`实体的`many-to-many`和`one-to-one`关系，但是另一个实体 __必须__ 是该关系的所有者（`Team`可以与`User`具有多对多关系。 但只有`Team`可以添加/删除`User`，而`User`不能添加/删除`Team`）。 
+    在前端UI上，您还可以在多选框中选择一个`User`。
 
-## Modifying the User entity
+## 修改用户实体
 
-If you encounter a problem where you need to alter the `User` entity, we recommend not doing that.
-Modifying this default entity might break your app depending on the nature of the changes.
+如果遇到需要更改`User`实体的问题，建议不要这样做。
+修改此默认实体可能会改变您的应用程序，具体取决于更改的性质。
 
-Instead, there are other available solutions like:
-  - creating an entity composed of the `User` entity,
-  - extending the `User` entity
+相反，还有其他可用的解决方案，例如：
+  - 创建一个由`User`实体组成的实体，
+  - 扩展`User`实体
 
-### Using composition
+### 使用复合
 
-If you need to add a new field to the entity, or add relationships to it, 
-all you need do is create another entity, for instance:
+如果您需要向实体添加新字段或为其添加关系，
+您需要做的就是创建另一个实体，例如：
 
 ```jdl
 entity ApplicationUser {
@@ -57,34 +54,32 @@ relationship OneToOne {
 }
 ```
 
-Here's what this snippet does:
-  - create a new entity named `ApplicationUser` with a field,
-  - create a relationship from this entity to the standard `User` entity:
-    - we use a `OneToOne` relationship to link a JHipster-created entity to this new one,
-    - we use a unidirectional relationship in order not to modify the internally-managed `User` entity. 
+这是此代码段的作用：
+  - 用一个字段创建一个名为`ApplicationUser`的新实体，
+  - 创建一个从该实体到标准`User`实体的关系：
+    - 我们使用`OneToOne`关系将JHipster创建的实体链接到这个新实体，
+    - 我们使用单向关系，不修改内部管理的`User`实体。
 
-This is the recommended solution as it's doable using the JDL.
-This solution is great for adding new fields and relationships (amongst other things) to the `User` entity
-without actually modifying it.
+这是推荐的解决方案，因为它可以使用JDL来实现。
+该解决方案非常适合在不实际修改的情况下将新字段和关系（除其他事项外）添加到`User`实体。
 
-### Using inheritance
+### 使用继承
 
-This solution does the same thing as the previous one, but isn't as straightforward as the first one because you need to:
-  - create a new entity by hand,
-  - adapt the code to make it use this new entity,
-  - potentially manage yourself the database migration to persist this new entity (depending on the nature of the changes).
+该解决方案与上一个解决方案具有相同的功能，但是不如第一个解决方案简单明了，因为您需要：
+  - 手动创建一个新实体，
+  - 修改代码以使其使用这个新实体，
+  - 潜在地管理您自己的数据库迁移，以保留该新实体（取决于更改的性质）。
 
-It possesses, however, the same advantage as the previous one: you needn't change the `User` entity by hand.
+但是，它具有与上一个相同的优点：您无需手动更改`User`实体。
 
-### Creating your own default User entity
+### 创建自己的默认用户实体
 
-This one isn't actually recommended, but is possible through the use of the user management skipping option
-(`skipUserManagement` application option in the JDL).
+实际上不建议使用此选项，但是可以通过使用用户管理跳过选项（JDL中的`skipUserManagement`应用程序选项）来实现。
 
-JHipster uses this option internally in some cases (for some options), and using it will:
-  - not generate any user management code (front-end & back-end),
-  - allow you to update the `User` entity (add/delete any field to it),
+JHipster在某些情况下（对于某些选项）在内部使用此选项，并且使用它将：
+  - 不会生成任何用户管理代码（前端和后端），
+  - 允许您更新`User`实体（向其中添加/删除任何字段），
 
-Additionally, you'll have to create the entity and handle user management yourself.
+此外，您还必须创建实体并亲自处理用户管理。
 
-**It's better to keep it `false` as the first two solutions are quite easy to do**.
+**最好将其保留为`false`，因为前两个解决方案非常容易实现**。
