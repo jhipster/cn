@@ -10,7 +10,7 @@ lastmod: 2015-07-30T18:40:00-00:00
 
 ## /!\ This tip is deprecated since JHipster v3.0
 
-__Tip submitted by [@tomcgn](https://github.com/tomcgn)__
+__提交者 [@tomcgn](https://github.com/tomcgn)__
 
 You might want to use the nice out-of-the-box API to integrate your application into existing websites.
 One approach could be to use [Knockout](https://github.com/knockout/knockout) to bind your entities with ease and render the entity on e.g. your blog, being served from your JHipster application.

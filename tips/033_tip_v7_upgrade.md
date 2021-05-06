@@ -1,34 +1,34 @@
 ---
 layout: default
-title: JHipster v7 upgrade tips
+title: JHipster v7 升级提示
 sitemap:
 priority: 0.1
 lastmod: 2020-12-19T08:30:00-00:00
 ---
 
-# JHipster v7 upgrade tips
+# JHipster v7 升级提示
 
-**Tip submitted by [@kaidohallik](https://github.com/kaidohallik)**
+**提示提交者： [@kaidohallik](https://github.com/kaidohallik)**
 
-## **Prettier for HTML**
+## **格式化HTML**
 
-We have enabled Prettier for HTML. You can run Prettier with html enabled before upgrading and commit changes to Git to see real changes in HTML files after upgrade.
+我们为HTML启用了Prettier。 您可以在升级前运行启用了html的Prettier，然后将更改提交到Git，以查看升级后HTML文件中的实际更改。
 
-## **Translation directive change in Angular client**
+## **Angular客户端中的翻译指令更改**
 
-We have moved `jhiTranslate` directive from [ng-jhipster](https://github.com/jhipster/ng-jhipster/blob/main/src/language/jhi-translate.directive.ts) to generated application. If you have different `jhiPrefix` than `jhi` then you may want to replace all `jhiTranslate` with `yourprefixTranslate` and commit changes to Git before upgrade to reduce changes shown after upgrade.
+我们已经将`jhiTranslate`指令从[ng-jhipster](https://github.com/jhipster/ng-jhipster/blob/main/src/language/jhi-translate.directive.ts) 移到了生成的应用程序中。 如果您的`jhiPrefix`与`jhi`不同，那么您可能希望将所有`jhiTranslate`替换为`yourprefixTranslate`并在升级前提交对Git的更改，以减少升级后显示的更改。
 
-## **Files renamed in Angular client**
+## **在Angular客户端中重命名的文件**
 
-In Angular client a lot of files renamed and tests moved next to files they are testing.
+在Angular客户端中，许多文件已重命名，并且测试移到了被测文件同一目录中。
 
-In [manual upgrade]({{ site.url }}/upgrading-an-application/#manual_upgrade) instructions page is section **Hints about renamed files** - this can help in upgrading.
+在 [手动升级]({{ site.url }}/upgrading-an-application/#manual_upgrade) 中说明页是部分 **有关重命名文件的提示** - 这可以帮助升级。
 
-If the previous hint did not give a satisfactory result then you can do before upgrade:
-* move renamed files to their final location
-* commit changes after that
+如果先前的提示未提供满意的结果，则可以在升级之前执行以下操作：
+* 将重命名的文件移动到其最终位置
+* 之后提交更改
 
-### Helper node script for moving entity files
+### 用于移动实体文件的Helper node脚本
 ```node
 const fs = require('fs');
 const path = require('path');
@@ -99,7 +99,7 @@ moveEntityFilesToV7Location('appPath');
 // moveEntityFilesToV7Location(folder);
 ```
 
-### Helper node script for moving main files
+### 用于移动主文件的Helper node脚本
 ```node
 const fs = require('fs');
 const path = require('path');
@@ -185,7 +185,7 @@ moveMainFilesToV7Location('appPath');
 // moveMainFilesToV7Location(folder);
 ```
 
-### Helper script to copy tests next to files they test
+### 复制测试文件到相应目录的Helper脚本
 
 ```node
 const fs = require('fs');

@@ -1,25 +1,25 @@
 ---
 layout: default
-title: Static API documentation
+title: 静态API文档
 sitemap:
 priority: 0.5
 lastmod: 2015-07-31T18:40:00-00:00
 ---
 
-# Static API documentation with Swagger2Markup
+# 带有Swagger2Markup的静态API文档
 
-__Tip submitted by [@atomfrede](https://github.com/atomfrede)__
+__提交者 [@atomfrede](https://github.com/atomfrede)__
 
-> You should use the new [swagger2markup](https://github.com/atomfrede/generator-jhipster-swagger2markup) module instead of following this tip! See the [JHipster Marketplace](https://www.jhipster.tech/modules/marketplace/) for details about the module system.
+> 您应该使用新的 [swagger2markup](https://github.com/atomfrede/generator-jhipster-swagger2markup) 模块，而不是遵循此提示！ 见 [JHipster Marketplace](https://www.jhipster.tech/modules/marketplace/) 有关模块系统的详细信息。
 
-If you want to generate static API documentation (and combine it with hand-written documentation), [Swagger2Markup](https://swagger2markup.readme.io/) provides an easy way to combine auto-generated API documentation produced by
+如果要生成静态API文档（并将其与手写文档结合在一起），则[Swagger2Markup](https://swagger2markup.readme.io/) 提供了一种简便的方法来组合由以下人员生成的自动生成的API文档：
 Swagger with hand-written documentation into an up-to-date, easy-to-read, on- and offline user guide in HTML, PDF and EPUB.
 
-## Add required dependencies, plugins and test class
+## 添加所需的依赖项，插件和测试类
 
 ### Maven
 
-Add the following to your project dependencies:
+将以下内容添加到您的项目依赖项中：
 
     <dependency>
         <groupId>io.springfox</groupId>
@@ -28,7 +28,7 @@ Add the following to your project dependencies:
         <scope>test</scope>
     </dependency>
 
-Add the following to the plugin section:
+将以下内容添加到插件部分：
 
     <plugin>
       <groupId>org.asciidoctor</groupId>
@@ -77,7 +77,7 @@ Add the following to the plugin section:
       </configuration>
     </plugin>
 
-In `src/test/rest` create a new class called `Swagger2MarkupTest`:
+在 `src/test/rest`中创建一个名为 `Swagger2MarkupTest`的类：
 
     @RunWith(SpringJUnit4ClassRunner.class)
     @SpringApplicationConfiguration(classes = Application.class)
@@ -119,20 +119,20 @@ In `src/test/rest` create a new class called `Swagger2MarkupTest`:
 
 ### Gradle
 
-Add the following dependency to your project dependencies:
+将以下依赖项添加到您的项目依赖项中：
 
     testCompile group: 'io.springfox', name:'springfox-staticdocs', version: springfox_version
 
-Add the following to your build script dependencies:
+将以下内容添加到您的构建脚本依赖项中：
 
     classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
     classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
 
-Apply the `asciidoctor convert` plugin:
+应用`asciidoctor convert`插件：
 
     apply plugin: 'org.asciidoctor.convert'
 
-Add the following to generate HTML and PDF:
+添加以下内容以生成HTML和PDF：
 
     ext {
         generatedAsciidoc = file("${buildDir}/docs/asciidoc/generated")
@@ -156,7 +156,7 @@ Add the following to generate HTML and PDF:
         ]
     }
 
-In `src/test/rest` create a new class called `Swagger2MarkupTest`:
+在`src/test/rest`中创建一个名为 `Swagger2MarkupTest`的测试类：
 
     @RunWith(SpringJUnit4ClassRunner.class)
     @SpringApplicationConfiguration(classes = Application.class)
@@ -196,20 +196,20 @@ In `src/test/rest` create a new class called `Swagger2MarkupTest`:
         }
     }
 
-## Create index.adoc file
+## 创建index.adoc文件
 
-Create `index.adoc` in `src/docs/asciidoc` with following content:
+使用以下内容在`src/docs/asciidoc`中创建`index.adoc`：
 
     include::{generated}/overview.adoc[]
     include::{generated}/paths.adoc[]
     include::{generated}/definitions.adoc[]
 
-## Generate static documentation
+## 生成静态文档
 
-Your static documentation is generated during the test phase of your project. You find it in `src/target/docs/html` or `build/asciidoc/html5`.
+静态文档是在项目的测试阶段生成的。 您可以在`src/target/docs/html`或`build/asciidoc/html5`中找到它。
 
 ![Example documentation](../images/008_tips_static_swagger_docs_01.png)
 
-## More
+## 更多
 
-For more information (e.g. how to add hand-written documentation) see the [official reference documentation](https://swagger2markup.readme.io/).
+有关更多信息（例如，如何添加手写文档），请参见[官方参考文档](https://swagger2markup.readme.io/) 。

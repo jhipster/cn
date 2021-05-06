@@ -1,38 +1,38 @@
 ---
 layout: default
-title: Improve developer experience if opening only front end in the IDE
+title: 提高开发人员的体验，如果在IDE中只打开前端
 sitemap:
 priority: 0.1
 lastmod: 2019-10-14T12:35:00-00:00
 ---
 
-# Improve developer experience if opening only front end in the IDE
+# 提高开发人员的体验，如果在IDE中只打开前端
 
-**Tip submitted by [@kaidohallik](https://github.com/kaidohallik)**
+**提交者 [@kaidohallik](https://github.com/kaidohallik)**
 
-The following behaviour occurs at least in Visual Studio Code.
+至少在Visual Studio代码中，将发生以下行为。
 
-If generating a full stack app (not skipping server nor client) and front end developer wants to see as few files as possible and opens only folder `src/main/webapp/app` in the IDE then IDE doesn't recognize imports starting with `app`. These imports are red and developer can't see these imported classes content and can't jump with one click into these imported classes. Path `app` is defined in the `tsconfig.json` file which is located in the root folder of the generated app and therefore this information is missing if opening some subfolder.
+如果生成完整技术栈的应用程序（不跳过服务器或前端），并且前端开发人员希望看到的文件越少越好，并且仅在IDE中打开文件夹`src/main/webapp/app`，则IDE无法识别以`app`开头的导入。 这些导入是红色的，开发人员无法看到这些导入的类的内容，也无法一键跳转到这些导入的类。 路径`app`是在位于生成的应用程序的根文件夹中的`tsconfig.json`文件中定义的，因此，如果打开某些子文件夹，则会丢失此信息。
 
-## Possible solution 1
+## 可能的解决方案1
 
-Add file `src/main/webapp/app/tsconfig.json` with the following content:
+向文件 `src/main/webapp/app/tsconfig.json` 中添加以下内容：
 ```
 {
     "extends": "../../../../tsconfig.json"
 }
 ```
-And for tests add file `src/test/javascript/spec/tsconfig.json` with the same content:
+并为测试文件 `src/test/javascript/spec/tsconfig.json` 添加同样的内容：
 ```
 {
     "extends": "../../../../tsconfig.json"
 }
 ```
-After that Visual Studio Code resolves path `app` if opening only folder `src/main/webapp/app` or `src/test/javascript/spec`.
+之后，如果仅打开文件夹`src/main/webapp/app`或`src/test/javascript/spec`，Visual Studio Code会正确解析路径app。
 
-## Possible solution 2
+## 可能的解决方案2
 
-* add node script `remove-import-alias.js` to app root folder which replaces import aliases with relative paths:
+* 将node脚本`remove-import-alias.js`添加到应用程序根文件夹，该文件夹将导入别名替换为相对路径：
 
 ```
 const fs = require('fs');
@@ -69,8 +69,8 @@ removeImportAlias(`./src/main/webapp/app/`, 0);
 removeImportAlias(`./src/test/javascript/spec/`, 0, '../../../main/webapp/app/');
 ```
 
-* add `remove-import-alias.js` to `.eslintignore`
+* 在 `.eslintignore`中添加`remove-import-alias.js`
 
-* run added script: `node remove-import-alias.js`
+* 运行添加的脚本：`node remove-import-alias.js`
 
-* delete `app/*` from the file `tsconfig.json` from the section `compilerOptions.paths`
+* 从`tsconfig.json`文件的`compilerOptions.paths`部分中删除`app/*`

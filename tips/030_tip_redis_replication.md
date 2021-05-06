@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Configure Redis leader follower(master-slave) replication
+title: 配置Redis Leader-Follower（主-从）复制
 sitemap:
 priority: 0.1
 lastmod: 2020-03-23T12:30:00-00:00
 ---
 
-# Configure Redis leader follower(master-slave) replication
+# 配置Redis Leader-Follower(master-slave)复制
 
-**Tip submitted by [@zhx828](https://github.com/zhx828)**
+**提交者 [@zhx828](https://github.com/zhx828)**
 
-In the latest JHipster generator, it provides a redis cluster setting for production deployment. But oftentimes, that might be overkill for small projects. This document provides a solution to configure Redis leader follower (master-slave) replication. For more information about Redis Replication, please see [**here**](https://redis.io/topics/replication).
+在最新的JHipster生成器中，它为生产部署提供了redis集群设置。 但是通常，对于小型项目而言，这可能是过大的选择。 本文档提供了配置RedisLeader-Follower（主-从）复制的解决方案。 有关Redis复制的更多信息，请参见[** 相关文档 **](https://redis.io/topics/replication) 。
 
-The following changes are based on my own project set up. I assume you have modified your application properties to setup Redis password, so you can adjust your own accordingly.
+以下更改基于我自己的项目设置。 我假设您已经修改了应用程序属性以设置Redis密码，因此可以相应地调整自己的密码。
 
 
-## Step 1
+## 第1步
 
-Add file `RedisProperties.java`:
+增加文件 `RedisProperties.java`:
 ```
 public class RedisProperties {
     String type;
@@ -59,8 +59,8 @@ public class RedisProperties {
 }
 ```
 
-## Step 2
-Add RedisProperties to `ApplicationProperties.java`
+## 第二步
+增加Redis属性文件 `ApplicationProperties.java`
 ```
 public class ApplicationProperties {
     ...
@@ -78,8 +78,8 @@ public class ApplicationProperties {
 }
 ```
 
-## Step 3
-Update the file `CacheConfiguration.java`, method `jcacheConfiguration`. These changes have to be combined with the current cluster setup.
+## 第3步
+更新文件 `CacheConfiguration.java`中的 `jcacheConfiguration`方法。这些更改必须与当前群集设置结合在一起。
 
 ```
 if (applicationProperties.getRedis().getType().equals(RedisType.SINGLE.getType())) {
@@ -96,8 +96,8 @@ if (applicationProperties.getRedis().getType().equals(RedisType.SINGLE.getType()
 }
 ```
 
-## Step 4
-Update `application-dev.yml` to use single server
+## 第4步
+更新 `application-dev.yml` 使用单个服务器
 ```
 application:
   profile: dev
@@ -109,8 +109,8 @@ application:
 
 ```
 
-## Step 5
-Update `application-prod.yml` to use master-slave servers
+## 第5步
+更新 `application-prod.yml` 使用主从服务器
 ```
 application:
   profile: prod

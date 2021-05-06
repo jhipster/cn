@@ -1,17 +1,16 @@
 ---
 layout: default
-title: Running Protractor e2e tests within IntelliJ IDEA
+title: 在IntelliJ IDEA中运行Protractor e2e测试
 sitemap:
 priority: 0.1
 lastmod: 2018-04-14T03:57:00-00:00
 ---
 
-# Running Protractor e2e tests within IntelliJ IDEA
+# 在IntelliJ IDEA中运行Protractor e2e测试
 
-**Tip submitted by [@SudharakaP](https://github.com/SudharakaP) and [@yelhouti](https://github.com/yelhouti)**
+**提交者 [@SudharakaP](https://github.com/SudharakaP) 和 [@yelhouti](https://github.com/yelhouti)**
 
-This tip applies for JHipster v6.8.0 or above. By default, a JHipster project will have the following `beforeLanuch` 
-function within the Protractor configuration file (`src/test/javascript/protractor.conf.js`). 
+本技巧适用于JHipster v6.8.0或更高版本。 默认情况下，JHipster项目在Protractor配置文件（`src/test/javascript/protractor.conf.js`）中将具有以下`beforeLanuch`函数。
 
 ```js
 beforeLaunch: function() {
@@ -21,10 +20,10 @@ beforeLaunch: function() {
 }
 ``` 
 
-This will work well if Protractor tests are executed by running `npm run e2e` in the root folder of the project.
+如果通过在项目的根文件夹中运行`npm run e2e`来执行Protractor测试，这非常方便。
 
-However, IntelliJ Ultimate also supports [running Protractor tests within the IDE](https://www.jetbrains.com/help/idea/protractor.html#ws_protractor_running). 
-If you want to use this method you will have to alter the `beforeLanuch` function as shown below; 
+但是，IntelliJ Ultimate也支持[在IDE中运行Protractor测试](https://www.jetbrains.com/help/idea/protractor.html#ws_protractor_running) 。
+如果要使用此方法，则必须更改`beforeLanuch`函数，如下所示；
 
 ```js
 beforeLaunch: function() {
@@ -33,7 +32,6 @@ beforeLaunch: function() {
     });
 }
 ``` 
-so that IntelliJ will know where to find the `tsconfig.e2e.json` file. 
+这样IntelliJ就会知道在哪里可以找到`tsconfig.e2e.json`文件。
 
-Note that after altering the `protractor.conf.js` file as above, `npm run e2e` will not work anymore so you'll have to 
-rollback if you plan on using e2e tests using npm again. 
+请注意，按上述方式更改`protractor.conf.js`文件后，`npm run e2e`将不再起作用，因此，如果您打算再次使用npm进行e2e测试，则必须回滚。

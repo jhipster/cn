@@ -1,20 +1,18 @@
 ---
 layout: default
-title: Increase integration test performance by lazy bean initialization
+title: 通过延迟bean初始化来提高集成测试性能
 sitemap:
 priority: 0.1
 lastmod: 2019-10-01T18:20:00-00:00
 ---
 
-# Increase integration test performance by lazy bean initialization
+# 通过延迟bean初始化来提高集成测试性能
 
-__Tip submitted by [@atomfrede](https://github.com/atomfrede)__
+__提交者 [@atomfrede](https://github.com/atomfrede)__
 
-In many spring integration tests you don't need all beans, therefore initialization 
-of all beans in the context for e.g. a repository test is not required and consumes precious time.
+在许多Spring集成测试中，您不需要所有bean，因此可以在context中初始化所有bean，例如:不需要进行repository测试，这会浪费宝贵的时间。
 
-You can configure your tests to initialize beans lazy, such that only required beans are create by creating
-a class `TestLazyBeanInitConfiguration` in `src/test/java/YOUR-PACKAGE/config` with the following content:
+您可以将测试配置为延迟初始化bean，这样可以通过在`src/test/java/YOUR-PACKAGE/config`中创建类`TestLazyBeanInitConfiguration`来创建仅必需的bean，其内容如下：
 
 ```java
 import org.springframework.beans.BeansException;
@@ -39,12 +37,12 @@ public class TestLazyBeanInitConfiguration implements BeanFactoryPostProcessor {
 }
 ```
 
-If you want/need a test to initialize all beans eagerly you need to annotate this test with `@ActiveProfiles(TestLazyBeanInitConfiguration.EAGER_BEAN_INIT)`.
+如果您希望或者需要一个测试来初始化所有bean，则需要使用`@ActiveProfiles(TestLazyBeanInitConfiguration.EAGER_BEAN_INIT)`注解该测试。
 
-For reference look at [spring boot blog](https://spring.io/blog/2019/03/14/lazy-initialization-in-spring-boot-2-2) and the
+可参考 [spring boot blog](https://spring.io/blog/2019/03/14/lazy-initialization-in-spring-boot-2-2) 和
 [related pull request](https://github.com/jhipster/generator-jhipster/pull/10241).
 
-Thanks to [@rabiori](https://github.com/rabiori) for the implementation.
+谢谢 [@rabiori](https://github.com/rabiori) 的实现
 
 
 

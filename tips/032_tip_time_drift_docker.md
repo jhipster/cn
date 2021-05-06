@@ -1,19 +1,18 @@
 ---
 layout: default
-title: Time Drift in Docker
+title: Docker中的时间漂移
 sitemap:
 priority: 0.1
 lastmod: 2020-05-02T06:14:00-00:00
 ---
 
-# Time Drift in Docker
+# Docker中的时间漂移
 
-**Tip submitted by [@SudharakaP](https://github.com/SudharakaP)**
+**提交者 [@SudharakaP](https://github.com/SudharakaP)**
 
-One of the things that should be taken into account when running Docker for extended periods of time (with sleep cycles in between), is that there are instances were a 
-time drift between the Docker container(s) and OS clock can occur.
+长时间运行Docker（之间有睡眠周期）时应考虑的事情之一是，在Docker容器与OS时钟之间可能会发生时间漂移。
 
-This results in hard to find bugs such as [https://github.com/jhipster/generator-jhipster/issues/11659](https://github.com/jhipster/generator-jhipster/issues/11659). 
+这导致难以发现的错误，例如[https://github.com/jhipster/generator-jhipster/issues/11659](https://github.com/jhipster/generator-jhipster/issues/11659) 。
 
-Docker time drift has been reported for both [Macs](https://github.com/docker/for-mac/issues/2076) and [Windows](https://github.com/docker/for-win/issues/4526) 
-and the simplest solution is to restart the Docker container(s) after extended periods of sleep cycles. 
+已报道[Macs](https://github.com/docker/for-mac/issues/2076)和[Windows](https://github.com/docker/for-win/issues/4526)的Docker时间漂移，
+最简单的解决方案是在长时间的睡眠周期后重新启动Docker容器。

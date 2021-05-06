@@ -1,25 +1,26 @@
 ---
 layout: default
-title: How to connect PGAdmin (PostgreSQL) to Heroku
+title: 如何将PGAdmin（PostgreSQL）连接到Heroku
 sitemap:
 priority: 0.1
 lastmod: 2018-10-15T18:20:00-00:00
 ---
-# How to connect PGAdmin (PostgreSQL) to Heroku
+# 如何将PGAdmin（PostgreSQL）连接到Heroku
 
-__Tip submitted by [@Tonterias](https://github.com/Tonterias)__
+__提交者 [@Tonterias](https://github.com/Tonterias)__
 
-May be you need to use PGAdmin to load your Heroku database with test data.
+可能您需要使用PGAdmin将测试数据加载到Heroku数据库中。
 
-Follow the steps:
+请按照下列步骤操作：
 
+首先，使用Heroku帐户中的数据库凭据中的数据填写创建新服务器PGAdmin表单：
 First, use the data from your Database Credentials at your Heroku Account to fill the Create a New Server PGAdmin's form:
 
 ![Example documentation](../images/028_tip_pgadmin_heroku_01.png)
 
 ![Example documentation](../images/028_tip_pgadmin_heroku_02.png)
 
-Then, you will have to configure that information in your application-prod.yml:
+然后，您必须在application-prod.yml中配置该信息：
 
 /src/main/resources/config/application-prod.yml
 
@@ -37,7 +38,7 @@ Then, you will have to configure that information in your application-prod.yml:
             hikari:
                 auto-commit: false
 
-You will get the data from the Database Credentials of your Heroku Account (as in this other example):
+您将从Heroku帐户的数据库凭据中获取数据（如另一个示例所示）：
 
     Host : ec2-50-17-250-38.compute-1.amazonaws.com
     Database : d5u8osf3cgtlg
@@ -48,6 +49,6 @@ You will get the data from the Database Credentials of your Heroku Account (as i
     @ec2-50-17-250-38.compute-1.amazonaws.com:5432/d5u8osf3cgtlg
     Heroku CLI : heroku pg:psql postgresql-trapezoidal-20780 --app jhipster-press-08
 
-You just have to connect to your database and test it with a sql command at the PGAdmin query window.
+您只需要连接到数据库并在PGAdmin查询窗口中使用sql命令对其进行测试。
 
-NOTE: Here is a video that shows this process: https://www.youtube.com/watch?v=GAHsl0AfK-0
+注意：以下视频显示了此过程: https://www.youtube.com/watch?v=GAHsl0AfK-0

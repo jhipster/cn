@@ -1,23 +1,23 @@
 ---
 layout: default
-title: LDAP Authentication
+title: LDAP身份认证
 sitemap:
 priority: 0.5
 lastmod: 2018-05-9T22:22:00-00:00
 ---
 
-# LDAP Authentication
+# LDAP身份认证
 
-__Tip submitted by [@mleneveut](https://github.com/mleneveut)__ updated by [@iliasnaamane](https://github.com/iliasnaamane)__
+__提交者 [@mleneveut](https://github.com/mleneveut)__ 更新者 [@iliasnaamane](https://github.com/iliasnaamane)__
 
-To add an LDAP authentification to your JHipster application, follow these steps :
+要将LDAP身份验证添加到您的JHipster应用程序，请按照下列步骤操作：
 
-  * Add the dependencies spring-ldap-core and spring-security-ldap. Example for gradle in build.gradle :
+  * 添加依赖项spring-ldap-core和spring-security-ldap。 gradle在build.gradle中的示例：
 
 ```
     compile group: 'org.springframework.security', name: 'spring-security-ldap', version: spring_security_version
 ```
-  * Modify the SecurityConfiguration.java, add method configureGlobal(AuthenticationManagerBuilder auth) and getContextSource()
+  * 修改SecurityConfiguration.java，添加方法configureGlobal(AuthenticationManagerBuilder auth)和getContextSource()
 
 ```
     @Inject
@@ -42,7 +42,7 @@ To add an LDAP authentification to your JHipster application, follow these steps
     }
 
 ```
-  * Modify the SecurityUtils.java, method getCurrentUserLogin()
+  * 修改SecurityUtils.java方法getCurrentUserLogin()
 
 ```
     } else if (authentication.getPrincipal() instanceof LdapUserDetails) {
@@ -50,7 +50,7 @@ To add an LDAP authentification to your JHipster application, follow these steps
     	return ldapUser.getUsername();
     }
 ```
-  * Add a new CustomAuthenticationManager class which implements the AuthenticationManager interface and override the authentication method in order to force the authentication process to authenticate the user through LDAP.
+  * 添加一个新的CustomAuthenticationManager类，该类实现AuthenticationManager接口并覆盖身份验证方法，以强制身份验证过程通过LDAP对用户进行身份验证。
 
 ```
 

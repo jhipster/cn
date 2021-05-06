@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Configuring Email with - Gmail and more
+title: 配置电子邮件-使用Gmail等
 sitemap:
 priority: 0.5
 lastmod: 2015-12-23T22:40:00-00:00
 ---
-# Configuring Email with - Gmail and more...
+# 配置电子邮件-使用Gmail等
 
-__Tip submitted by [@RawSanj](https://github.com/RawSanj)__
+__提交者 [@RawSanj](https://github.com/RawSanj)__
 
-_Goal:_ By the using below mail settings you will have the default JHipster application configured to send emails from Gmail, Outlook or Yahoo.
+_目标：_ 通过使用下面的邮件设置，您将配置默认的JHipster应用程序，以从Gmail，Outlook或Yahoo发送电子邮件。
 
-Start by running JHipster with `jhipster` to create a new application or use an existing JHipster generated application.
+首先运行`jhipster`创建一个新的应用程序，或使用一个现有的JHipster生成的应用程序。
 
-## Choose any of below Email Service for your Application :
+## 为您的应用程序选择以下任何电子邮件服务：
 
-### 1. Email Config - Gmail
+### 1. 邮件配置-Gmail
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below Gmail configuration:
+进入`src\main\resources\config\application-dev.yml`并将您的应用程序更改为使用以下Gmail配置：
 
 _application-dev.yml_
 
@@ -37,20 +37,19 @@ _application-dev.yml_
                 ssl.trust: smtp.gmail.com
             [...]
 
-If you use the above configuration with your Gmail password, you might need to [allow less secure apps](https://support.google.com/accounts/answer/6010255?hl=en). 
-The configuration is simpler but less secure. Also by allowing less secure apps you won't have the ability to use two factor
-authentication with Gmail. 
+如果您将上述配置与Gmail密码一起使用，则可能需要[允许使用不太安全的应用程序](https://support.google.com/accounts/answer/6010255?hl=zh_CN) 。
+配置较为简单，但安全性较低。 同样，通过允许安全性较低的应用程序，您将无法使用双因素使用Gmail进行身份验证。
 
-Therefore we highly recommend you use an app password instead of the Gmail password. Please refer to the following Gmail
-configuration document for more information on how to set this up. 
+
+因此，我们强烈建议您使用应用密码而不是Gmail密码。 请参考以下Gmail配置文档，以获取有关如何进行设置的更多信息。
 
 [https://support.google.com/accounts/answer/185833](https://support.google.com/accounts/answer/185833)
 
-This way you will be able to use two factor authentication as well as keep the "allow less secure apps" option off.   
+这样，您将可以使用两因素身份验证，并且可以关闭“允许不太安全的应用程序”选项。
 
-### 2. Email Config - Outlook.com
+### 2. 邮件配置-Outlook.com
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below Outlook configuration:
+进入`src\main\resources\config\application-dev.yml`并将您的应用程序更改为使用以下Outlook配置：
 
 _application-dev.yml_
 
@@ -69,14 +68,14 @@ _application-dev.yml_
                 starttls.enable: true
                 ssl.trust: smtp-mail.outlook.com
             [...]
-__Note__ : If you want to send Email from a Corporate Outlook account then set `host` as the Microsoft Exchange Server of your company, for e.g. `emea.mycompany.com`. Also set `username` as Standard Id of the system provided by the company (Domain/Username) and `password` as your system password.
+__注意__ : 如果您要从Corporate Outlook帐户发送电子邮件，则将`host`设置为公司的Microsoft Exchange Server，例如 `emea.mycompany.com`。 还要将`username`设置为公司提供的系统的标准ID（域/用户名），并将`password`设置为您的系统密码。
 
-___Tip___ : To find your `Microsoft Exchange Server` : Open Outlook > Click Tools > Click Account Settings... > Double Click on Microsoft Exchange (under Email tab) and copy the Microsoft Exchange Server address.
+___提示___ : 查找`Microsoft Exchange Server`：打开Outlook>单击工具>单击帐户设置...>双击Microsoft Exchange（在“电子邮件”选项卡下），然后复制Microsoft Exchange Server地址。
 
 
-### 3. Email Config - Yahoo
+### 3. 邮件配置-Yahoo
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below Yahoo configuration:
+进入`src \ main \ resources \ config \ application-dev.yml`并更改您的应用程序以使用以下Yahoo配置：
 
 _application-dev.yml_
 
@@ -100,12 +99,12 @@ _application-dev.yml_
         mail:
             from: yahoouserid@gmail.com  #Replace this field with your Gmail username.
             [...]
-__Note__ : For Yahoo Mail, `username` property in **spring.mail** must match the `from` property in **jhipster.mail**.
+__注意__ : 对于Yahoo Mail，**spring.mail**中的username属性必须与**jhipster.mail**中的from属性匹配。
 
 
-### 4. Email Config - Zoho
+### 4. 邮件配置-Zoho
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below Zoho configuration:
+进入`src \ main \ resources \ config \ application-dev.yml`并更改您的应用程序以使用以下Zoho配置：
 
 _application-dev.yml_
 
@@ -126,9 +125,9 @@ _application-dev.yml_
             [...]
 
 
-### 4. Email Config - AWS SES
+### 4. 邮件配置-AWS SES
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below AWS SES configuration:
+进入`src \ main \ resources \ config \ application-dev.yml`并将您的应用程序更改为使用以下AWS SES配置：
 
 _application-dev.yml_
 
@@ -150,8 +149,7 @@ _application-dev.yml_
                 auth: true
 
 
-*Similarly you can configure any other email service. Just check the SMTP Mail Server and Server Port of your Email Service and change the above fields accordingly*
+*类似地，您可以配置任何其他电子邮件服务。 只需检查您的电子邮件服务的SMTP邮件服务器和服务器端口，并相应地更改以上字段即可*
+___现在运行您的应用程序！ 转到注册页面，提交带有有效电子邮件地址的表格，您应该从上面配置的电子邮件地址收到激活电子邮件。___
 
-___Now run your application! Go to Register Page, submit the form with a valid Email addrees and you should receive an Activation Email from the above configured Email Address.___
-
-__Note__ : You can try sending test Emails with your credentials using [these examples](https://github.com/RawSanj/java-mail-clients).
+__注意__ : 您可以尝试使用[这些示例](https://github.com/RawSanj/java-mail-clients)使用凭据发送测试电子邮件。
