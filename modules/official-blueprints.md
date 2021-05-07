@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 官方方案
+title: 官方蓝图
 permalink: /modules/official-blueprints/
 redirect_from:
   - /official-blueprints.html
@@ -10,16 +10,16 @@ sitemap:
     lastmod: 2019-09-02T11:24:00-00:00
 ---
 
-# <i class="fa fa-star"></i> 官方方案
+# <i class="fa fa-star"></i> 官方蓝图
 
-JHipster支持几种正式的方案。 这些蓝图有两个主要目标：
+JHipster支持几种正式的蓝图。 这些蓝图有两个主要目标：
 
 * 使用不同语言和/或支持的新功能增强JHipster
 * 演示如何修改主生成器行为以适合任何人的需求
 
 ## Kotlin
 
-它是第一个官方方案，它用Kotlin代替了大多数Java后端代码。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/jhipster-kotlin) 。
+它是第一个官方蓝图，它用Kotlin代替了大多数Java后端代码。 可以在这里找到源代码和文档：[仓库](https://github.com/jhipster/jhipster-kotlin) 。
 
 Stream lead is: [Sendil Kumar](https://github.com/sendilkumarn).
 
