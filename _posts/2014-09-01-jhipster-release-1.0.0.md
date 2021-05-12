@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 1.0.0
+title: 发布 1.0.0
 ---
 
 JHipster release 1.0.0

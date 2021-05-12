@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 5.0.0-beta.3
+title: 发布 v5.0.0-beta.3
 ---
 
 JHipster release v5.0.0-beta.3

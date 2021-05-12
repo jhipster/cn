@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.0.0 (April Fools 2014)
+title: 发布 v2.0.0 (2014年愚人节)
 ---
 
 April Fools 2014

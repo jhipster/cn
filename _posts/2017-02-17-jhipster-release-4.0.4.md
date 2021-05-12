@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 4.0.4
+title: 发布 v4.0.4
 ---
 
 JHipster release 4.0.4

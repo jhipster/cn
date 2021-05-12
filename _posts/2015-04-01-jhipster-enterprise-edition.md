@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Enterprise Edition (April Fools 2015)
+title: 发布 企业版 (2015年愚人节)
 ---
 
 April Fools 2015

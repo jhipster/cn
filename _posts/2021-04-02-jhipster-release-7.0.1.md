@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 7.0.1
+title: 发布 v7.0.1
 ---
 
 JHipster 发布 v7.0.1 版本

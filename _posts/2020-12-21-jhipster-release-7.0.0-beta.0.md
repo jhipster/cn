@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 7.0.0-beta.0
+title: 发布 v7.0.0-beta.0
 ---
 
 JHipster release v7.0.0-beta.0 🦌🎅🤶🎁🎄
