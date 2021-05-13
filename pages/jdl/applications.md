@@ -11,17 +11,17 @@ sitemap:
 
 ## 概要
 
-1. [语法](#syntax)
-1. [应用程序中的选项](#options-in-applications)
-1. [示例](#examples)
-   1. [简单例子](#basic-example)
-   1. [多个应用](#more-than-one-application)
-   1. [关联实体](#with-entities)
-   1. [配置项](#with-options)
-1. [微服务流程](#microservice-workflow)
-1. [详细完整示例](#complete-example-breakdowns)
-1. [可用的应用程序配置选项](#available-application-configuration-options)
-1. [也可以看看](#see-also)
+1. [语法](#语法)
+1. [应用程序中的选项](#应用程序中的选项)
+1. [示例](#示例)
+   1. [简单例子](#简单例子)
+   1. [多个应用](#多个应用)
+   1. [关联实体](#关联实体)
+   1. [配置项](#配置项)
+1. [微服务流程](#微服务流程)
+1. [详细完整示例](#详细完整示例)
+1. [可用的应用程序配置选项](#可用的应用程序配置选项)
+1. [更多](#更多)
 
 ***
 
@@ -560,6 +560,6 @@ _不是您要找的，请查看 [常规选项](/jdl/options#available-options)�
 
 ---
 
-### 也可以看看
+### 更多
 
  [可用常规选项](/jdl/options)

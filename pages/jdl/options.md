@@ -33,20 +33,20 @@ sitemap:
 
 1. [怎么做](#怎么做)
 1. [语法](#语法)
-1. [The use XYZ options](#the-use-xyz-options)
+1. [使用use XYZ选项](#使用use XYZ选项)
 1. [示例](#示例)
-   1. [Basic unary example](#basic-unary-example)
-   1. [Basic binary example](#basic-binary-example)
-   1. [all, * example](#all--example)
-   1. [all, * example with exclusions (unary)](#all--example-with-exclusions-unary)
-   1. [all, * example with exclusions (binary)](#all--example-with-exclusions-binary)
-   1. [Option with custom values](#option-with-custom-values)
-   1. [Mixed example](#mixed-example)
-1. [About services](#about-services)
-1. [Microservice-related options](#microservice-related-options)
-1. [Custom annotations](#custom-annotations)
-1. [Available options](#available-options)
-1. [See also](#see-also)
+   1. [基本一元示例](#基本一元示例)
+   1. [基本二元示例](#基本二元示例)
+   1. [all和*关键字示例](#all--example)
+   1. [all和 * 带有排除项的示例（一元）](#all--example-with-exclusions-unary)
+   1. [all和 * 带有排除项的示例（二元）](#all--example-with-exclusions-binary)
+   1. [具有自定义值的选项](#具有自定义值的选项)
+   1. [混合例子](#混合例子)
+1. [关于service](#关于service)
+1. [微服务相关的选项](#微服务相关的选项)
+1. [自定义注解](#自定义注解)
+1. [可用选项](#可用选项)
+1. [更多](#更多)
 
 ---
 
@@ -210,7 +210,7 @@ use mapstruct, serviceImpl, pagination for A
 
 ---
 
-#### `all`和` * `关键字示例
+#### <a name="all--example"></a>`all`和` * `关键字示例
 
 `all` 和 `*` 是相同的
 
@@ -241,7 +241,7 @@ use mapstruct, serviceImpl, pagination for *
 
 ---
 
-#### `all`和` * ` 带有排除项的示例（一元）
+#### <a name="all--example-with-exclusions-unary"></a>`all`和` * ` 带有排除项的示例（一元）
 
 常规的：
 ```jdl
@@ -269,7 +269,7 @@ use mapstruct, serviceImpl, pagination for * except A
 
 ---
 
-#### `all`和` * ` 带有排除项的示例（二元）
+#### <a name="all--example-with-exclusions-binary"></a>`all`和` * ` 带有排除项的示例（二元）
 
 常规的：
 ```jdl
@@ -340,7 +340,7 @@ entity C
 
 ---
 
-### 关于`service`
+### 关于service
 
 指定的`service`都不会创建将直接调用`repository`接口的`resource`类。 这是默认和最简单的选项，请参阅A。
 
@@ -399,7 +399,7 @@ entity A
 
 ### 可用选项
 
-Here are the entity options supported in the JDL:
+以下是JDL支持的实体选项：
 
 _不是您要找的？ 查看 [应用程序选项](/jdl/applications#available-application-configuration-options)._
 
@@ -508,6 +508,6 @@ _不是您要找的？ 查看 [应用程序选项](/jdl/applications#available-a
 
 ---
 
-### 也可以查看
+### 更多
 
 应用程序选项 [在这儿](/jdl/applications)

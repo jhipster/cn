@@ -94,11 +94,7 @@
                         {% endif %}
                         {% if page.home != true %}
                         <li class="page-scroll">
-                            <a href="https://jhipster-conf.github.io/" target="
-                            "><i class="fa fa-bell"></i>&nbsp;JHipster Conf 2019</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="{{ site.url }}/sponsors/">Sponsor</a>
+                            <a href="#sponsors">赞助商</a>
                         </li>
                         {% endif %}
                         <li>
@@ -116,7 +112,6 @@
                                 <input type="text" name="search" class="doc-search-algolia" placeholder="搜索..." />
                             </form>
                         </li>
-
                         <li>
                             <!-- Redirect to the same page on the english website -->
                             <a href="{{ page.url }}"><i class="fa fa-fw fa-globe"></i> English</a>
@@ -369,7 +364,7 @@
                     <div class="row page-content-wrapper">
                         <div class="col-lg-12">
                             <div class="float-right visible-md visible-lg">
-                                <a href="https://github.com/jhipster/jhipster.github.io/edit/main/{{ page.path }}"><i class="fa fa-pencil"></i> &nbsp;改善此页面</a>
+                                <a href="https://github.com/jhipster/cn/edit/main/{{ page.path }}"><i class="fa fa-pencil"></i> &nbsp;改善此页面</a>
                             </div>
                             {{ content }}
                         </div>
@@ -445,7 +440,7 @@
                                     <div class="footer-col col-md-4">
                                         <div class="col-md-4 col-sm-12">
                                             <h5 class="text-left"><i class="fa fa-coffee fa-fw"></i> <a class="link" href="{{ site.url }}/team/">团队</a></h5>
-                                            <h5 class="text-left"><i class="fa fa-pencil fa-fw"></i> <a class="link" href="{{ site.url }}/artwork/">Artwork</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-pencil fa-fw"></i> <a class="link" href="{{ site.url }}/artwork/">设计</a></h5>
                                         </div>
                                         <div class="col-md-4 col-sm-12">
                                             <h5 class="text-left"><i class="fa fa-gavel fa-fw"></i> <a class="link" href="{{ site.url }}/policies/">政策</a></h5>
@@ -458,7 +453,10 @@
                                     <div class="footer-col col-md-4" id="weixin">
                                         <ul class="list-inline">
                                             <li>
-                                                <img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">
+                                                <!-- HTML to write -->
+                                                <a href="#" data-toggle="tooltip" data-html="true" data-original-title='<img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">' rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-wechat"></i></a>
+
+
                                             </li>
                                             <li>
                                                 <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
@@ -483,7 +481,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        Copyright &copy; JHipster 2013-2021 | Theme based on <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank" rel="noopener">Freelancer</a> and <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank" rel="noopener">Flat admin</a>
+                                        版权所有 &copy; JHipster 2013-2021 | 主题基于 <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank" rel="noopener">Freelancer</a> 和 <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank" rel="noopener">Flat admin</a>
                                     </div>
                                 </div>
                             </div>
@@ -556,6 +554,11 @@
 
         ga('create', 'UA-46075199-1', 'auto');
         ga('send', 'pageview');
+    </script>
+    <script>
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip();
+        });
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script type="text/javascript">
