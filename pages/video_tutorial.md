@@ -15,13 +15,13 @@ sitemap:
     <div class="col-md-6 col-sm-12">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
-                <iframe width="420" height="315" src="https://www.youtube.com/embed/uQqlO3IGpTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="420" height="315" src="//player.bilibili.com/player.html?aid=845289797&bvid=BV1454y1j75g&cid=333492148&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
             </div>
             <div class="caption">
                 <h3 id="thumbnail-label">Jhipster博客Demo<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
-                <p>这个17分钟的教程演示了如何使用提供的工具生成一个Jhipster应用，使用JDL Studio创建一些具有关系的实体，并将最后成果发布到云端.</p>
-                <p>由Matt Raible(<a href="https://twitter.com/mraible">@mraible</a>)提供</p>
-                <p>发布于2019年6月25日</p>
+                <p>这个15分钟的教程演示了如何使用提供的工具生成一个Jhipster应用，使用JDL Studio创建一些具有关系的实体，并将最后成果发布到云端.</p>
+                <p>由Matt Raible(<a href="https://twitter.com/mraible">@mraible</a>)呈现</p>
+                <p>发布于2021年4月30日</p>
             </div>
         </div>
     </div>
@@ -96,6 +96,21 @@ sitemap:
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uQqlO3IGpTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="caption">
+                <h3 id="thumbnail-label">Jhipster博客Demo<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                <p>这个17分钟的教程演示了如何使用提供的工具生成一个Jhipster应用，使用JDL Studio创建一些具有关系的实体，并将最后成果发布到云端。</p>
+                <p>由Matt Raible(<a href="https://twitter.com/mraible">@mraible</a>)呈现</p>
+                <p>发布于2021年4月30日</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="thumbnail no-margin-bottom">
+            <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ktnvqoouulg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="caption">
@@ -105,8 +120,6 @@ sitemap:
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -132,6 +145,8 @@ sitemap:
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -145,8 +160,6 @@ sitemap:
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -173,6 +186,8 @@ sitemap:
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -186,8 +201,6 @@ sitemap:
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -214,6 +227,8 @@ sitemap:
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -227,8 +242,6 @@ sitemap:
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -257,6 +270,8 @@ sitemap:
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -270,8 +285,6 @@ sitemap:
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -298,6 +311,8 @@ sitemap:
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -306,13 +321,11 @@ sitemap:
             <div class="caption">
                 <h3 id="thumbnail-label">JHipster，构建一个新的Web应用程序的最佳途径<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
                 <p>Jfokus上的JHipster演示。</p>
-                <p>由Peter Lindh (<a href="https://twitter.com/peterlindh">@peterlindh</a>) 和 Rikard Thulin (<a href="https://twitter.com/rikard_thulin">@rikard_thulin</a>)提出</p>
+                <p>由Peter Lindh (<a href="https://twitter.com/peterlindh">@peterlindh</a>) 和 Rikard Thulin (<a href="https://twitter.com/rikard_thulin">@rikard_thulin</a>)展示</p>
                 <p>发布于2016年2月23日</p>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -321,7 +334,7 @@ sitemap:
             <div class="caption">
                 <h3 id="thumbnail-label">JHipster博客演示<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
                 <p>这个长达20分钟的教程展示了如何创建JHipster应用程序，如何使用提供的工具（Maven，Gulp），使用实体子生成器创建具有其关系的多个实体，以及将最终结果部署到生产中的云中。</p>
-                <p>由Matt Raible提出 (<a href="https://twitter.com/mraible">@mraible</a>)</p>
+                <p>由Matt Raible展示 (<a href="https://twitter.com/mraible">@mraible</a>)</p>
                 <p>发布于2016年2月7日</p>
             </div>
         </div>
@@ -334,11 +347,13 @@ sitemap:
             <div class="caption">
                 <h3 id="thumbnail-label">熟悉JHipster 2.0<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
                 <p>这是比利时Devoxx的JHipster 2.0演示文稿的视频。</p>
-                <p>由Matt Raible提出(<a href="https://twitter.com/mraible">@mraible</a>)</p>
+                <p>由Matt Raible展示(<a href="https://twitter.com/mraible">@mraible</a>)</p>
                 <p>发布于2015年11月11日</p>
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail no-margin-bottom">
             <div class="video-container">
@@ -347,7 +362,7 @@ sitemap:
             <div class="caption">
                 <h3 id="thumbnail-label">JHipster 20分钟教程<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
                 <p>创始人本人提供的20分钟JHipster教程。</p>
-                <p>由Julien Dubois提出 (<a href="https://twitter.com/juliendubois">@juliendubois</a>)</p>
+                <p>由Julien Dubois展示 (<a href="https://twitter.com/juliendubois">@juliendubois</a>)</p>
                 <p>发布于2015年3月13日</p>
             </div>
         </div>

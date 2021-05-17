@@ -547,7 +547,7 @@ _不是您要找的，请查看 [常规选项](/jdl/options#available-options)�
   <tr>
     <td>testFrameworks</td>
     <td>[]</td>
-    <td>protractor, cucumber, gatling</td>
+    <td>cypress, protractor, cucumber, gatling</td>
     <td>中括号必须有</td>
   </tr>
   <tr>

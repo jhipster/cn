@@ -14,7 +14,7 @@ sitemap:
 
 ## 谁可以创建漏洞悬赏?
 
-- [银牌赞助商和金牌赞助商]({{ site.url }}/sponsors/)
+- [银牌、金牌和白金赞助商]({{ site.url }}/sponsors/)
 - 三个[核心开发团队组长]({{ site.url }}/team/), [@jdubois](https://github.com/jdubois), [@deepu105](https://github.com/deepu105)和[@pascalgrimaud](https://github.com/pascalgrimaud).
 
 ## 漏洞悬赏赏金有多少？?

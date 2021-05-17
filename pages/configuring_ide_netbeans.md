@@ -9,9 +9,9 @@ sitemap:
     lastmod: 2016-08-20T18:40:00-00:00
 ---
 
-# <i class="fa fa-keyboard-o"></i> 配置Netbeans
+# <i class="fa fa-keyboard-o"></i> 配置 Apache NetBeans
 
-在Netbeans中导入JHipster应用程序非常简单。
+在NetBeans中导入JHipster应用程序非常简单。
 
 ## 1. 打开你的项目
 
