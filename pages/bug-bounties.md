@@ -14,7 +14,7 @@ sitemap:
 
 ## 谁可以创建漏洞悬赏?
 
-- [银牌赞助商和金牌赞助商]({{ site.url }}/sponsors/)
+- [银牌、金牌和白金赞助商]({{ site.url }}/sponsors/)
 - 三个[核心开发团队组长]({{ site.url }}/team/), [@jdubois](https://github.com/jdubois), [@deepu105](https://github.com/deepu105)和[@pascalgrimaud](https://github.com/pascalgrimaud).
 
 ## 漏洞悬赏赏金有多少？?
@@ -49,7 +49,7 @@ sitemap:
 
 - 创建一个Pull Request，用"\$\$ bug-bounty \$\$"标签标识已修复.
 - 为了自动关闭问题，必须在提交日志中包含"Fix"关键字，例如，`Fix #1234`将关闭`#1234`问题
-- 该Pull Request必须由核心团队中的某人合并。如果有多个Pull Request，核心团队成员则会选择最新的还是最好的一个-由他来决定最适合项目的提交。
+- 该Pull Request必须由核心团队中的某人合并。如果有多个Pull Request，核心团队成员则会选择最新的还是最好的一个-由团队成员来决定最适合项目的提交。
 - 然后，您可以在JHipster的OpenCollective上增加一个$100，$200，$300或$500的支付费用。您必须在说明中添加Pull Request的链接（例如：`$100 bug bounty claim for https://github.com/jhipster/generator-jhipster/pull/1234`).
 - 然后，您必须在Pull Request上添加注释，告知您已领取款项，并附带指向OpenCollective费用的链接。这可以确保解决此问题并和取得款项的是同一个人.
 - 然后，这笔费用将通过[@jdubois](https://github.com/jdubois)、[@deepu105](https://github.com/deepu105)或者[@pascalgrimaud](https://github.com/pascalgrimaud)进行验证，您将从您的Paypal帐户中收到款项.

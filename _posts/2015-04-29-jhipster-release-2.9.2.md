@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.9.2
+title: 发布 v2.9.2
 ---
 
 JHipster release 2.9.2
@@ -18,7 +18,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 
 This is a bug-fixing release to solve [#1420](https://github.com/jhipster/generator-jhipster/issues/1420), which was causing errors when using uppercase letters in many-to-many relationships with PostgreSQL.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.2+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.2+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -46,6 +46,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

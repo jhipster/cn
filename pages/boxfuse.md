@@ -77,7 +77,7 @@ Deployment completed successfully. myuser/jhipster:1.0 is up and running at http
 
 ## 部署更新
 
-要将更新部署到现有应用程序，只需遵循上面概述的准备和部署步骤。所有更新均可零停机时间，蓝色部署来执行。
+要将更新部署到现有应用程序，只需遵循上面概述的准备和简单部署步骤。所有更新均可零停机时间，蓝色部署来执行。
 
 ## 更多信息
 

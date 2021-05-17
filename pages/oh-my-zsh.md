@@ -19,7 +19,7 @@ JHipster开发团队中的大多数人都使用Oh-My-Zsh，如果您看到人们
 
 JHipster Oh-My-Zsh插件可从GitHub上的[https://github.com/jhipster/jhipster-oh-my-zsh-plugin](https://github.com/jhipster/jhipster-oh-my-zsh-plugin)获得。
 
-目前，它仅添加快捷方式（此处为[完整](https://github.com/jhipster/jhipster-oh-my-zsh-plugin/blob/master/jhipster.plugin.zsh)列表），但我们欢迎您提供更好的自动完成功能！
+目前，它仅添加快捷方式（此处为[完整](https://github.com/jhipster/jhipster-oh-my-zsh-plugin/blob/main/jhipster.plugin.zsh)列表），但我们欢迎您提供更好的自动完成功能！
 
 它还不是官方插件列表的一部分，因此您需要手动安装它：
 

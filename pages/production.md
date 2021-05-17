@@ -39,55 +39,97 @@ JHipster生成了完全可用于生产，优化和安全的应用程序。本部
 
 ### 构建可执行的JAR/WAR文件
 
-要将应用程序打包为生成JAR，请使用Maven输入：
+#### With Maven
 
-`./mvnw -Pprod clean verify`
+- 要将应用程序打包为生成JAR，请输入：
 
-或使用Gradle时，请输入：
+  `./mvnw -Pprod clean verify`
+
+  这将生成一个文件`target/jhipster-0.0.1-SNAPSHOT.jar`（如果您的应用程序称为`jhipster`）。
+
+- 要将应用程序打包为生成WAR：
+  
+    - 修改pom.xml，将应用程序包装更改为war，例如：
+
+    ```diff
+    -    <packaging>jar</packaging>
+    +    <packaging>war</packaging>
+    ``` 
+  - 修改`pom.xml`以将`spring-boot-starter-undertow`的依赖范围更改为`provided`，例如：
+
+    ```diff
+        <id>prod</id>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-undertow</artifactId>
+    +           <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    ``` 
+    - 要将原始`war`生成可执行文件`war`，请输入命令：
+    ```bash
+    ./mvnw -Pprod clean verify
+    ```
+    - 这将生成以下文件（如果您的应用程序称为`jhipster`）：
+      * `target/jhipster-0.0.1-SNAPSHOT.war`
+      * `target/jhipster-0.0.1-SNAPSHOT.war.original`
+        
+**请注意**，当使用`context path`构建JAR或WAR文件时，并且**React client**或**Vue client**，则需要更新`webpack.prod.js`或`webpack.common.js`（使用**Vue**时更新两个文件）具有正确的`base`属性值。
+将`jhipster`作为上下文路径，`base`属性值应如下所示：
+
+```
+new HtmlWebpackPlugin({
+    ...
+    base: '/jhipster/'
+})
+```
+
+如果您前端选择了`Angular`，则需要使用适当的`base`”`标签更新`index.html`。
+将`jhipster`作为上下文路径，`base`标签值应如下所示：
+
+```
+<base href="/jhipster/"/>
+```
+
+**请注意**，当使用`prod`配置文件构建JAR或WAR文件时，生成的归档文件将不包含`dev`资产。
+
+#### 使用Gradle
+
+要将应用程序打包为`production` JAR，请输入：
 
 `./gradlew -Pprod clean bootJar`
 
-这将生成此文件（如果您的应用程序称为“jhipster”）：
+这将生成一个文件`build/libs/jhipster-0.0.1-SNAPSHOT.jar`（如果您的应用程序称为`jhipster`）。
 
-使用Maven时：
-*   `target/jhipster-0.0.1-SNAPSHOT.jar`
-
-使用Gradle时：
-*   `build/libs/jhipster-0.0.1-SNAPSHOT.jar`
-
-
-要将应用程序打包为生产WAR，请使用Maven输入：
-
-`./mvnw -Pprod,war clean verify`
-
-或使用Gradle时，请输入：
+要将应用程序打包为`production` WAR，请输入：
 
 `./gradlew -Pprod -Pwar clean bootWar`
 
-**请注意** 在构建具有上下文路径的JAR或WAR文件时，您将需要使用适当的baseHref更新webpack.prod.js。
+**请注意**，当使用`context path`构建JAR或WAR文件时，并且**React client**或**Vue client**，则需要更新`webpack.prod.js`或`webpack.common.js`（使用**Vue**时更新两个文件）具有正确的`base`属性值。
+将`jhipster`作为上下文路径，`base`属性值应如下所示：
 
-这将生成以下文件（如果您的应用程序称为“jhipster”）：
-
-使用Maven时：
-*   `target/jhipster-0.0.1-SNAPSHOT.war`
-
-使用Gradle时：
-*   `build/libs/jhipster-0.0.1-SNAPSHOT.war`
-
-**请注意** 当使用`prod`配置文件构建JAR或WAR文件时，生成的档案将不包含`dev` 资产。
-
-**请注意** 如果要使用Maven生成WAR原始文件，则需要编辑`pom.xml`文件以使用`war`打包而不是`jar`打包：
-
-```diff
--    <packaging>jar</packaging>
-+    <packaging>war</packaging>
 ```
+new HtmlWebpackPlugin({
+    ...
+    base: '/jhipster/'
+})
+```
+
+如果您前端选择了`Angular`，则需要使用适当的`base`”`标签更新`index.html`。
+将`jhipster`作为上下文路径，`base`标签值应如下所示：
+
+```
+<base href="/jhipster/"/>
+```
+
+**请注意**，当使用`prod`配置文件构建JAR或WAR文件时，生成的归档文件将不包含`dev`资产。
 
 ## <a name="run"></a> 在生产中运行
 
 ### 在没有应用程序服务器的情况下执行JAR文件
 
-与部署到应用程序服务器相比，许多人发现仅拥有可执行的JAR文件更加容易。
+与部署到应用程序服务器相比，许多人发现拥有单个可执行的JAR文件更加容易。
 
 使用上一步中生成的JAR文件，以生产模式运行它，您可以通过输入（在Mac OS X或Linux上）：
 
@@ -98,6 +140,12 @@ JHipster生成了完全可用于生产，优化和安全的应用程序。本部
 `java -jar jhipster-0.0.1-SNAPSHOT.jar`
 
 **请注意** 该JAR文件使用我们在构建文件时选择的配置文件。由于它是使用上一节中的`prod`文件构建的，因此它将与`prod`配置文件一起运行。
+
+您可以将上下文路径指定为环境变量或命令行参数，例如：
+
+```bash 
+java -jar jhipster.jar --server.servlet.context-path=/jhipster
+```
 
 ### 在Docker容器中运行应用程序
 
@@ -129,10 +177,6 @@ sudo chattr +i your-app.jar`
 `service jhipster start|stop|restart`
 
 您可以在[Spring Boot文档](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)中找到许多其他选项，包括更多安全步骤和Windows服务相关。
-
-### 在上下文路径下运行应用程序
-
-将JHipster应用程序部署到应用服务器或自定义上下文路径时，需要将`webpack.common.js`或`webpack.prod.js`中的baseHref值设置为期望的上下文路径。
 
 ## <a name="performance"></a> 性能优化
 
@@ -233,14 +277,9 @@ Once `server.ssl.ciphers` property is enabled JHipster will force the order on U
 
 #### 带有前端代理的HTTPS配置
 
-有许多解决方案可在JHipster应用程序的前面设置前端HTTPS代理。我们在这里描述两种最常见的方法。
+有许多解决方案可在JHipster应用程序的前面设置前端HTTPS代理。
 
-通过微服务架构，您可以使用JHipster的Traefik支持：
-
-- 请遵循我们的[Traefik文档]({{ site.url }}/traefik/)来配置您的架构
-- 请遵循[Traefik官方网站文档](https://docs.traefik.io/user-guide/examples/)来设置HTTPS
-
-如果您想使用Apache HTTP服务器，则可以使用Let's Encrypt来进行设置：
+最常见的解决方案之一是使用Apache HTTP服务器，可以使用Let's Encrypt来进行设置：
 
 - 安装Apache和Let's Encrypt：`apt-get install -y apache2 python-certbot-apache`
 - 配置Let's Encrypt: `certbot --apache -d <your-domain.com> --agree-tos -m <your-email> --redirect`

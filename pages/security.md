@@ -13,12 +13,10 @@ sitemap:
 
 要将Spring Security与单个Web页面应用程序一起使用（如JHipster生成的应用程序），您需要Ajax登录/注销/错误视图。我们已经配置了Spring Security以便正确使用这些视图，当然我们会为您生成所有JavaScript和HTML代码。
 
-默认情况下，JHipster带有4个不同的用户：
+默认情况下，JHipster带有2个不同的用户：
 
-*   "system", 当自动完成某项操作时，主要由审计日志使用
-*   "anonymousUser", 匿名用户在执行操作时分配
-*   "user", 具有"ROLE_USER"授权的普通用户。它的默认密码是"user"
-*   "admin", 具有"ROLE_USER"和"ROLE_ADMIN"授权的管理员用户。它的默认密码是"admin"
+*   "user", 具有"ROLE_USER"授权的普通用户。默认密码是"user"
+*   "admin", 具有"ROLE_USER"和"ROLE_ADMIN"授权的管理员用户。默认密码是"admin"
 
 两个授权"ROLE_USER"和"ROLE_ADMIN"提供对实体的相同访问权限，这意味着"user"被授权执行与"admin"相同的CRUD操作。当应用程序投入生产时，此行为可能会成为问题，因为"user"可以例如删除任何实体。有关如何改善访问控制的更多详细信息，请参见此[博客文章](https://blog.ippon.tech/improving-the-access-control-of-a-jhipster-application/)。
 
@@ -28,8 +26,7 @@ JHipster提供了4种主要的安全机制：
 
 1. [JSON Web令牌（JWT）](#jwt)
 2. [基于会话的身份验证](#session)
-3. [OAuth2和OpenID Connect](#oauth2)
-4. [JHipster用户帐户和身份验证（UAA）]({{ site.url }}/using-uaa/)（由于更为复杂，因此具有单独的文档页面）
+3. [OAuth2.0和OpenID Connect](#oauth2)
 
 ## <a name="jwt"></a> JSON Web令牌（JWT）
 
@@ -65,19 +62,15 @@ JHipster提供了4种主要的安全机制：
 
 我们添加了非常完整的cookie盗窃保护机制：我们将您的安全性信息存储在cookie中以及数据库中，并且每次用户登录时，我们都会修改这些值并检查它们是否被更改。这样，如果用户窃取了您的Cookie，则最多只能使用一次。
 
-### CSRF保护
-
-Spring Security和Angular都具有现成的CSRF保护功能，但不幸的是，它们没有使用相同的Cookie或HTTP头部！实际上，实际上您根本没有针对CSRF攻击的保护。当然，我们将重新配置这两个工具，以便它们可以正确地协同工作。
-
 ## <a name="oauth2"></a> OAuth2和OpenID Connect
 
 OAuth是一种有状态的安全性机制，类似HTTP会话。Spring Security提供了出色的OAuth 2.0和OIDC支持，JHipster利用了这一点。如果您不确定什么是OAuth和OpenID Connect（OIDC），请参阅[OAuth到底是什么](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth)
 
 ### Keycloak
 
-[Keycloak](https://keycloak.org)是JHipster配置的默认OpenID Connect服务器。
+[Keycloak](https://www.keycloak.org)是JHipster配置的默认OpenID Connect服务器。
 
-要登录您的应用程序，您需要启动并运行[Keycloak](https://keycloak.org)。JHipster团队为您创建了一个具有默认用户和角色的Docker容器。使用以下命令启动Keycloak。
+要登录您的应用程序，您需要启动并运行[Keycloak](https://www.keycloak.org)。JHipster团队为您创建了一个具有默认用户和角色的Docker容器。使用以下命令启动Keycloak。
 
 ```
 docker-compose -f src/main/docker/keycloak.yml up
@@ -85,7 +78,7 @@ docker-compose -f src/main/docker/keycloak.yml up
 
 如果要将Keycloak与Docker Compose一起使用，请确保阅读我们的[Docker Compose文档]({{ site.url }}/docker-compose/)，并为Keycloak正确配置`/etc/hosts`。
 
-此镜像已在`src/main/resources/application.yml`配置了安全设置。
+此镜像已在`src/main/resources/config/application.yml`配置了安全设置。
 
 
 ```yaml
@@ -112,9 +105,24 @@ Keycloak默认情况下使用嵌入式H2数据库，因此，如果重新启动D
 
 ### Okta
 
-如果您想使用Okta代替Keycloak，则需要进行一些改变。首先，您需要通过<https://developer.okta.com/signup/>创建一个免费的开发者帐户。这样操作之后，您将获得自己的Okta域，其名称类似于`https://dev-123456.okta.com`。
+如果您想使用Okta代替Keycloak，那么使用[Okta CLI]（https://cli.okta.com/）很快。 安装后，运行：
 
-修改`src/main/resources/application.yml`以使用Okta设置。提示：将`{yourOktaDomain}`替换为您组织名称（例如：`dev-123456.okta.com`）。
+```shell
+okta register
+```
+然后，在您的JHipster应用程序目录中，运行`okta apps create jhipster`。 这将为您设置一个Okta应用程序，创建`ROLE_ADMIN`和`ROLE_USER`组，使用您的Okta设置创建`.okta.env`文件，并在您的ID令牌中配置`groups`声明。
+
+运行`source .okta.env`并使用Maven或Gradle启动您的应用程序。 您应该能够使用您注册时使用的凭据登录。
+
+如果您使用的是Windows，则应安装[WSL]（https://docs.microsoft.com/zh-cn/windows/wsl/install-win10），以便使用`source`命令。
+
+如果您想通过Okta管理控制台手动进行配置，请参见以下说明。
+
+#### 使用Okta管理控制台创建OIDC应用
+
+首先，您需要在<https://developer.okta.com/signup>上创建一个免费的开发人员帐户。 之后，您将获得自己的Okta域，其名称类似于`https://dev-123456.okta.com`。
+
+修改`src/main/resources/config/application.yml`以使用Okta设置。提示：将`{yourOktaDomain}`替换为您组织名称（例如：`dev-123456.okta.com`）。
 
 ```yaml
 security:
@@ -129,15 +137,26 @@ security:
           client-secret: {client-secret}
 ```
 
-在Okta中创建OIDC应用，以获取`{client-id}`和`{client-secret}`。为此，请登录您的Okta Developer帐户，然后导航至**Applications** > **Add Application**。单击**Web**，然后单击**Next**按钮。为应用命名一个需要记住的名称，，并指定`http://localhost:8080/login/oauth2/code/oidc`作为登录重定向URI。单击完成，然后编辑您的应用程序以将`http://localhost:8080`添加为注销重定向URI。将客户端ID和密码复制到`application.yml`文件中。
+在Okta中创建OIDC应用，以获取`{client-id}`和`{client-secret}`。为此，请登录您的Okta Developer帐户，然后导航至**Applications** > **Add Application** > **Create New App** 。选择**Web**、**OpenID Connect**，然后单击**Create**按钮。为应用命名并且一定要记住，并指定`http://localhost:8080/login/oauth2/code/oidc`作为登录重定向URI。将`http://localhost:8080`添加为注销重定向URI，单击**Save**。将客户端ID和密码复制到`application.yml`文件中。
 
-创建一个`ROLE_ADMIN`和`ROLE_USER`组（**Users** > **Groups** > **Add Group**）并将用户添加到其中。您可以使用注册时使用的帐户，也可以创建一个新用户（**Users** > **Add Person**）。导航到 **API** > **Authorization Servers**，然后单击`default`服务器。单击**Claims**标签，然后**Add Claim**。将其命名为`groups`，并将其包括在ID令牌中。将值类型设置为`Groups`，并将过滤器设置为`.*`正则表达式。单击**Create**。
+创建一个`ROLE_ADMIN`和`ROLE_USER`组（**Directory** > **Groups** > **Add Group**）并将用户添加到其中。您可以使用注册时使用的帐户，也可以创建一个新用户（**Directory** > **People** > **Add Person**）。导航到 **Security** > **API** > **Authorization Servers**，然后单击`default`服务器。单击**Claims**标签，然后**Add Claim**。将其命名为`groups`，并将其包括在ID令牌中。将值类型设置为`Groups`，并将过滤器设置为`.*`正则表达式。单击**Create**。
 
 <img src="{{ site.url }}/images/security-add-claim.png" alt="Add Claim" width="600" style="margin: 10px">
 
 **注意:** 如果您想一直使用Okta（而不是Keycloak），请修改JHipster的Protractor测试以在运行时使用该帐户。为此，请更改`src/test/javascript/e2e/account/account.spec.ts`和`src/test/javascript/e2e/admin/administration.spec.ts`中的凭据。
 
 进行这些更改后，您应该一切顺利！如果您有任何问题，请将其发布到[Stack Overflow](https://stackoverflow.com/questions/tagged/jhipster)。确保用"jhipster"和"okta"标记您的问题。
+
+要在运行e2e测试时使用Okta，可以设置环境变量。
+
+```shell
+export CYPRESS_E2E_USERNAME=<your-username>
+export CYPRESS_E2E_PASSWORD=<your-password>
+```
+
+如果您使用的是Protractor，请删除`CYPRESS_`前缀。
+
+#### 使用环境变量
 
 您还可以使用环境变量来覆盖默认值。例如：
 
@@ -158,34 +177,67 @@ heroku config:set \
   SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET="$SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET"
 ```
 
-对于Cloud Foundry，您可以使用类似以下的内容，其中`$appName`是您的应用程序的名称。
-
-```bash
-export appName={your-app}
-cf set-env $appName SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI "$SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI"
-cf set-env $appName SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID "$SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID"
-cf set-env $appName SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET "$SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET"
-```
-
 请参阅[将OpenID Connect支持与JHipster一起使用](https://developer.okta.com/blog/2017/10/20/oidc-with-jhipster)以了解有关JHipster 5和带有Okta的OIDC的更多信息。
 
 如果您使用的是JHipster 6，请参阅[Better, Faster, Lighter Java with Java 12 and JHipster 6](https://developer.okta.com/blog/2019/04/04/java-11-java-12-jhipster-oidc)。如果您的微服务使用JHipster 6，请参阅带[有Spring Cloud Config和JHipster的Java微服务](https://developer.okta.com/blog/2019/05/23/java-microservices-spring-cloud-config)。
 
+对于JHipster 7，请参阅[基于Spring Boot和JHipster的响应式Java微服务](https://developer.okta.com/blog/2021/01/20/reactive-java-microservices) 。
+
+Okta开发者博客还为Micronaut和Quarkus提供了一些❤️：
+
+-[使用JHipster构建安全的Micronaut和Angular应用](https://developer.okta.com/blog/2020/08/17/micronaut-jhipster-heroku)
+-[使用Quarkus和JHipster简化了Java的快速编程](https://developer.okta.com/blog/2021/03/08/jhipster-quarkus-oidc)
+
 ## <a name="https"></a> HTTPS
 
-当您的应用程序在Heroku上运行时，可以通过将以下配置添加到`SecurityConfiguration.java`中来强制使用HTTPS。
+您可以通过在SecurityConfiguration.java中添加以下配置来强制使用HTTPS。
 
 ```java
-@Configuration
-public class WebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
+// Spring MVC
+http.requiresChannel(channel -> channel
+    .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null).requiresSecure());
+    
+// WebFlux
+http.redirectToHttps(redirect -> redirect
+    .httpsRedirectWhen(e -> e.getRequest().getHeaders().containsKey("X-Forwarded-Proto")));
+```
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.requiresChannel()
-      .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
-      .requiresSecure();
-  }
+
+查阅Spring Security的 [Servlet](https://docs.spring.io/spring-security/site/docs/5.5.x/reference/html5/#servlet-http-redirect) 和 [WebFlux](https://docs.spring.io/spring-security/site/docs/5.5.x/reference/html5/#webflux-http-redirect) 文档了解更多详细信息。
+
+经过测试，已知可以在Heroku和Google Cloud上使用。 有关Heroku的更多生产技巧，请参阅[准备在Heroku上进行生产的Spring Boot应用程序](https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku) 。
+
+## <a name="implementation-details"></a> 技术实现细节泄漏
+
+每个失败/异常都映射到[problem 数据结构](https://github.com/zalando/problem) 并返回给客户端。
+
+```json
+{  
+  "type": "https://www.jhipster.tech/problem/problem-with-message",
+  "title": "Service Unavailable",
+  "status": 503,
+  "detail": "Database not reachable"
 }
 ```
 
-这将适用于Heroku和Cloud Foundry。有关Heroku的更多生产环境提示，请参阅[为在Heroku上准备生产环境的Spring Boot应用程序](https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku)。
+虽然JHipster默认情况下不包含任何堆栈跟踪，但是`detail`包含异常的`message`可能会[显示技术细节](https://github.com/jhipster/generator-jhipster/issues/12051) ，但您不希望通过API公开。
+
+```json
+{  
+  "type": "https://www.jhipster.tech/problem/problem-with-message",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "JSON parse error: Cannot deserialize instance of 
+       `java.util.LinkedHashMap<java.lang.Object,java.lang.Object>` out of VALUE_NUMBER_INT token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.util.LinkedHashMap<java.lang.Object,java.lang.Object>` 
+       out of VALUE_NUMBER_INT token\n at [Source: (PushbackInputStream); line: 1, column: 1]"
+}
+```
+
+为了防止这种情况，JHipster提供了一种专用机制来减轻实现细节的泄漏，具体方法是：
+
+* 检查常见的异常并用通用消息替换该消息（例如，`Unable to convert http message`）
+* 检查消息是否包含潜在的程序包名称 (例如：`java.` 或 `.org`)并用通用的名称替换消息（例如，`Unexpected runtime exception`）
+
+日志中仍然包含详细的异常，因此您仍然可以确定真正的问题，而外部的攻击者则无法通过滥用您的api获得有价值的技术详细信息。
+
+如果您需要修改逻辑（例如，该消息仍包含技术细节，但未被检测到），则可以通过修改`ExceptionTranslator.java`中的`prepare`方法中添加所需的逻辑

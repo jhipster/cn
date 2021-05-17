@@ -13,7 +13,7 @@ sitemap:
 
 JHipster由世界各地的团队开发。我们有很多贡献者（([排名前100位](https://github.com/jhipster/generator-jhipster/graphs/contributors)），但此处列出了核心团队的成员。
 
-如果您想加入团队，或者只是看看我们的工作方式，我们的社区规则将在此页面的结尾。
+如果您想加入团队，或者看看我们的工作方式，我们的社区规则将在此页面的结尾。
 
 ## 项目负责人
 <div class="row">
@@ -89,6 +89,15 @@ JHipster由世界各地的团队开发。我们有很多贡献者（([排名前1
     </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/3602612?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Enrico Costanzi</h3>
+                <p><a href="https://twitter.com/enricocostanzi"><i>@enricocostanzi</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/25530077?v=3" class="img-responsive">
             <div class="caption">
                 <h3>Clément Dessoude</h3>
@@ -147,6 +156,14 @@ JHipster由世界各地的团队开发。我们有很多贡献者（([排名前1
             <div class="caption">
                 <h3>Frederik Hahne</h3>
                 <p><a href="https://twitter.com/atomfrede"><i>@atomfrede</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/23017435?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Kaido Hallik</h3>
+                <p></p>
             </div>
         </div>
     </div>
@@ -222,12 +239,29 @@ JHipster由世界各地的团队开发。我们有很多贡献者（([排名前1
             </div>
         </div>
     </div>
+    <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/9989211?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Quentin Monmert</h3>
+                <p><a href="https://twitter.com/quentinmonmert"><i>@quentinmonmert</i></a></p>
+            </div>
+        </div>
+    </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/792925?v=3" class="img-responsive">
             <div class="caption">
                 <h3>Charlie Mordant</h3>
                 <p><a href="https://twitter.com/Tcharl"><i>@Tcharl</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/12435965?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Sudharaka Palamakumbura</h3>
+                <p><a href="https://twitter.com/PSudharaka"><i>@PSudharaka</i></a></p>
             </div>
         </div>
     </div>
@@ -255,6 +289,23 @@ JHipster由世界各地的团队开发。我们有很多贡献者（([排名前1
             <div class="caption">
                 <h3>Jon Ruddell</h3>
                 <p><a href="https://twitter.com/jonruddell"><i>@jonruddell</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/428639?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Julien Sadaoui</h3>
+                <p><a href="https://twitter.com/juliensadaoui"><i>@juliensadaoui</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/1417183?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Marcelo Shima</h3>
             </div>
         </div>
     </div>
@@ -326,11 +377,9 @@ JHipster为您的应用程序提供广泛的技术选择，并且随着它的不
 | React                               | Sendil Kumar N     |
 | VueJS                               | Sahbi KTIFA        |
 | JHipster Registry                   | Pierre Besson      |
-| JHipster Console                    | Pierre Besson      |
 | JHipster core/JDL                   | Mathieu Abou-Aichi |
 | JHipster Kotlin                     | Sendil Kumar N     |
 | JHipster IDE                        | Serano Colameo     |
-| UAA                                 | David Steiman      |
 | JDL studio                          | Deepu K Sasidharan |
 | JHipster online                     | Julien Dubois      |
 | Continuous Integration and Delivery | Pascal Grimaud     |
@@ -349,6 +398,7 @@ JHipster为您的应用程序提供广泛的技术选择，并且随着它的不
 | Java                                | Julien Dubois      |
 | Docker                              | Pascal Grimaud     |
 | Cassandra                           | Cedrick Lunven     |
+| OpenAPI                             | Christophe Bornet  |
 
 
 
@@ -408,7 +458,7 @@ JHipster为您的应用程序提供广泛的技术选择，并且随着它的不
 - 定期参加项目（承诺，PR等）
 - 向现任董事会的某人提供一些个人和背景信息，然后该人将在开发邮件列表中进行投票
 - 开发人员邮件列表中的每个人都可以投票（如果同意，则投票+1，否则，则投票为-1）
-    - 存在一票" -1"票将会否决新成员，但投"-1"票的人将需要解释原因
+    - 一票" -1"票将会拒绝添加新成员，但投"-1"票的人将需要解释原因
 
 # 开发者委员会的成员会获得什么？
 
@@ -423,6 +473,20 @@ JHipster是一个开源项目，我们不向成员提出任何要求：他们可
 因此，在以下情况下，董事会成员将“退休”：
 
 - 他们告诉我们他们想离开该项目
-- 他们对项目的贡献停止时间大于一年
+- 他们有2年没有为该项目做任何贡献
+
+贡献遍布整个`jhipter`和`hipster-labs`组织，其中包括：
+
+- 提交
+- 对问题/ PR的评论，对邮件列表问题的答复，与JHipster相关的社交媒体活动（Twitter，Gitter，Stack Overflow，Reddit等）
+- 项目维护（分类，PR审查和合并，问题清理，发布，项目计划）
+- CI/CD
+- 营销和宣传（在社交媒体，会议演讲，博客，书籍，培训等方面促进JHipster项目）
+
+团队负责人每年都会列出“不活跃的成员”，并发送正式电子邮件询问他们是否要退休。 然后可能会发生3种情况：
+
+1.贡献者同意退休。
+2.贡献者希望留在团队中，并尝试以任何可能的身份参与。 如果同一个人连续两次出现在不活动列表中（不活动2年），则该人将退休。
+3.贡献者五周未回复，因此此人退休。
 
 如果“退休”成员对项目做出了贡献并再次当选，则他们可以再次成为活跃成员。他们当然会比其他贡献者有优势，因为他们已经了解团队。

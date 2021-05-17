@@ -9,7 +9,7 @@ sitemap:
 
 # <i class="fa fa-diamond"></i> 代码质量
 
-使用[SonarCloud](https://sonarcloud.io)（由JHipster自动配置）可以轻松分析代码质量。
+使用[SonarCloud](https://sonarcloud.io)（由JHipster自动配置）可以分析代码质量。
 
 ## 将Sonar与JHipster结合使用
 
@@ -125,9 +125,9 @@ jacocoTestReport {
 
 ## 自动分析默认生成的项目
 
-JHipster生成器项目发布一个示例项目，每次在“master”分支中合并新提交时都会对其进行分析：
+JHipster生成器项目发布一个示例项目，每次在`main`分支中合并新提交时都会对其进行分析：
 
-[Analysis of the sample JHipster project](https://sonarcloud.io/dashboard?id=io.github.jhipster.sample%3Ajhipster-sample-application)
+[JHipster组织](https://sonarcloud.io/organizations/jhipster)下的[JHipster示例应用程序分析](https://sonarcloud.io/dashboard?id=jhipster-sample-application)
 
 这使JHipster团队可以确保您将开始使用尽可能最干净的代码来开发项目。
 

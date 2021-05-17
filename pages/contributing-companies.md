@@ -13,15 +13,15 @@ sitemap:
 
 ## 为JHipster贡献的公司
 
-*   [Ippon Technologies](http://www.ippon.fr/), 为[@juliendubois](https://twitter.com/juliendubois)提供时间和机器, 以便他改善项目. Ippon Technologies每月还提供1天的时间为Julien团队中的每个人募捐, 并每年为这个项目提供2个带薪实习职位.
-*   [XebiaLabs](https://xebialabs.com/),为[@deepu105](https://twitter.com/deepu105)提供时间和机器, 以便他改善项目.
+*   [Ippon Technologies](http://www.ippon.fr/) ，每月为Ippon JHipster团队的每个人提供1天的捐款，并每年为该项目提供2个带薪实习。
+*   [Microsoft](https://www.microsoft.com/) ，它为[@juliendubois]（https://twitter.com/juliendubois）提供了时间和硬件，以改善项目。
 *   [Okta](https://developer.okta.com/), 为[@mraible](https://twitter.com/mraible)提供时间和机器, 以便他改善项目. 他们还提供了[OIDC support]({{ site.url }}/security/#oauth2)和[Ionic模块]({{ site.url }}/modules/marketplace/#/details/generator-jhipster-ionic).
 *   [Google](https://google.com)贡献了[Kubernetes子生成器]({{ site.url }}/kubernetes/). 现在由[Ray Tsang](https://twitter.com/saturnism)维护.
 *   [Heroku](https://www.heroku.com/)贡献了[Heroku子生成器]({{ site.url }}/heroku/). 现在由[Joe Kutner](https://twitter.com/codefinger)维护.
 *    [Boxfuse](https://boxfuse.com/)增加了对JHipster的特定支持. 现在由[Axel Fontaine](https://twitter.com/axelfontaine)维护.
 *   [Software AG](http://www.softwareag.com/), 赞助Ehcache的公司, 极大地改善了我们对Ehcache的支持.
 *   [Hazelcast](https://hazelcast.com/)为我们大幅改善Hazelcast支持做出了贡献.
-*   [Datical](http://www.datical.com/), Liquibase的厂家, 一直为我们提供帮助，并修复对Liquibase支持的错误.
+*   [Liquibase](http://www.liquibase.com/) ， 一直为我们提供帮助，并为Liquibase支持更正了一些错误。
 *   [Redhat](https://www.redhat.com/en)贡献了[Openshift子生成器]({{ site.url }}/openshift/)和Infinispan支持, 它现在由JHipster团队的核心成员[Srinivasa Vasu](https://twitter.com/srinivasavasu)维护.
 *   [JFrog](https://jfrog.com/)为我们提供了一个免费的Artifactory实例，可用于我们项目的构建和发布.
 

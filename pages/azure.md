@@ -3,148 +3,224 @@ layout: default
 title: 部署到微软Azure
 permalink: /azure/
 sitemap:
-    priority: 0.7
-    lastmod: 2018-08-24T00:00:00-00:00
+priority: 0.7
+lastmod: 2018-08-24T00:00:00-00:00
 ---
 
 # <i class="fa fa-cloud-upload"></i> 部署到微软Azure
 
-[![Microsoft Azure]({{ site.url }}/images/logo/logo-azure.png)](https://azure.microsoft.com/overview/?WT.mc_id=online-jhipster-brborges)
+[Microsoft Azure](https://azure.microsoft.com/overview/?WT.mc_id=online-jhipster-judubois)是在云中运行JHipster应用程序的绝佳解决方案。
 
-将JHipster应用程序部署到Microsoft Azure就像部署Docker容器一样容易。Azure支持Uber JAR，WAR文件和Docker镜像的部署，既可以独立部署也可以在Kubernetes上进行编排。下文记录的部署选项不需要子生成器。
+- 最简单的方法是使用 [Azure App Service](https://azure.microsoft.com/services/app-service/?WT.mc_id=online-jhipster-judubois): 是一个JHipster子生成器可以自动将单体应用程序部署到该服务。
+- 如果您使用的是Spring Boot微服务，则可以使用JHipster子生成器将应用程序部署到
+  [Azure Spring Cloud](https://azure.microsoft.com/services/spring-cloud/?WT.mc_id=online-jhipster-judubois).
+- 与任何Docker和Kubernetes云提供商一样，您可以使用JHipster Docker和Kubernetes支持将Docker映像部署到Microsoft Azure. 参考我们的 [Docker Compose documentation]({{ site.url }}/docker-compose/) 和我们的 [Kubernetes documentation]({{ site.url }}/kubernetes/) 了解有关这些选项的更多信息。
 
-开发人员可以获取[Azure试用版订阅](http://azure.microsoft.com/free?WT.mc_id=online-jhipster-brborges)，并使用提供给试用帐户的免费信用执行以下所有部署选项。下文涵盖的某些服务还根据计算时间（和/或）应用程序数量提供免费配额，这不会消耗授予的免费积分。
+[![Microsoft Azure]({{ site.url }}/images/logo/logo-azure.png)](https://azure.microsoft.com/overview/?WT.mc_id=online-jhipster-judubois)
 
-对于Web应用程序，最好的入门服务是[Azure App Service](https://azure.microsoft.com/en-us/services/app-service/?WT.mc_id=online-jhipster-brborges)，通常Azure提供了三种部署应用程序的关键方法：（1）使用[Azure仪表板](https://ms.portal.azure.com/)；（2）使用[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?WT.mc_id=online-jhipster-brborges)或;（3）使用[Maven插件](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?WT.mc_id=online-jhipster-brborges)。
+1. [安装"az CLI"](#1)
+2. [目前的局限性](#2)
+3. [支持的数据库](#3)
+4. [储存密钥](#4)
+5. [将Spring Boot可执行Jar文件部署到Azure App Service](#5)
+6. [将Spring Boot微服务部署到Azure Spring Cloud](#6)
 
-本文档介绍了其中一些方法，但不是全部，也不是所有可用的服务。有关更多详细信息，请访问[Azure文档](https://docs.microsoft.com/azure?WT.mc_id=online-jhipster-brborges)网站。
+## <a name="1"></a> 安装 "az CLI"
 
-当前，Azure不提供用于Gradle的插件，因此下面的某些指引将特定于Maven项目，而其他指引可以使用Azure CLI和其他命令行工具来完成。
+您可以使用 [Web-based Azure portal](https://portal.azure.com/?WT.mc_id=online-jhipster-judubois) 或使用 [the Azure
+command-line interface](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli/?WT.mc_id=online-jhipster-judubois) ，也称为"az CLI"。
 
-## 支持的数据库
+与JHipster一样，我们总是自动进行所有操作，必须安装此"az CLI"才能与以下任何选项一起使用。
 
-配置为以下数据库的JHipster应用程序，将可以得到提供这些数据存储解决方案的服务：
+要在您的计算机上安装az CLI， [遵循“安装Azure CLI”官方文档](https://docs.microsoft.com/cli/azure/install-azure-cli/?WT.mc_id=online-jhipster-judubois).
 
-- MySQL / MariaDB
-  - 您可以使用[Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/?WT.mc_id=online-jhipster-brborges)创建一个MySQL（兼容MariaDB）实例
-- PostgreSQL
-  - 您可以使用[Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/?WT.mc_id=online-jhipster-brborges)创建PostgreSQL实例
-- MS SQL Server (MSSQL)
-  - 您可以使用[Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/?WT.mc_id=online-jhipster-brborges)创建实例
-- Apache Cassandra / MongoDB
-  - 您可以在[Azure CosmosDB](https://docs.microsoft.com/en-us/azure/cosmos-db/?WT.mc_id=online-jhipster-brborges)实例上为Cassandra或MongoDB设置兼容的API
+## <a name="2"></a>目前的局限性
 
-## 开始之前
+这些限制可以在将来解决，如果您有兴趣提供帮助，请毫不犹豫地为该项目做出贡献：
 
-在本地环境上安装并通过Azure CLI进行身份验证。有关更多信息，请访问以下链接：
+- 子生成器不会自动配置外部服务，例如数据库（有关支持的数据库，请参阅下一节），Elasticsearch，Kafka或Redis。 因此，您将需要手动创建和配置它们。
+- Azure仅提供Maven插件，因此JHipster子生成器只能与Maven一起使用。
 
-- [安装Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=online-jhipster-brborges)
-- [使用Azure CLI进行身份验证](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?WT.mc_id=online-jhipster-brborges)
+## <a name="3"></a> 支持的数据库
 
-## Monolithic JHipster应用
+### SQL数据库
 
-通常，Monolithic应用程序是最容易部署的。在本节中，我们将探索如何使用适用于Web应用程序，适用于Azure应用服务的Apache Maven插件，从JHipster项目部署Jar artifacts：
+Azure提供了所有类型的数据库，例如MySQL / PostgreSQL / Oracle / MS SQL Server。 在Azure中，默认情况下将保护它们的安全，因此，如果要从JHipster应用程序访问它们，则需要打开其防火墙。
 
-### 可执行的Jar文件
+例如，在MySQL上，您将需要转到“连接安全性（Connection security）”，然后选择“允许访问Azure服务（Allow access to Azure services）”。 您还应该单击“添加客户端IP（Add client IP）”按钮，以将当前IP自动添加到防火墙规则中：
 
-Azure App Service支持运行由JHipster生成的可执行Jar文件。
+![MySQL firewall]({{ site.url }}/images/azure_mysql_firewall.png)
 
-要继续进行部署，请按照下列步骤操作：
+__对MySQL用户的警告：__
+默认情况下，JHipster生成的MySQL连接字符串在`spring.datasource.url`属性（通常在您的`src/main/resources/config/application-prod.yml`文件中）中使用`useSSL=false`标志。 这是因为，默认情况下，JHipster使用本地数据库。 在Azure上，默认情况下，使用SSL证书保护数据库的安全，因此您需要将此标志置于`true`。
 
-1. 将以下Maven插件配置添加到`pom.xml`的主`<build>`元素中：
+例如：
 
-    ```xml
-            <plugin>
-                <groupId>com.microsoft.azure</groupId>
-                <artifactId>azure-webapp-maven-plugin</artifactId>
-                <!-- check Maven Central for the latest version -->
-                <version>1.6.0</version>
-                <configuration>
-                    <schemaVersion>v2</schemaVersion>
-                    <resourceGroup>your-application-resource-group</resourceGroup>
-                    <appName>your-application-name</appName>
-                    <runtime>
-                        <os>Linux</os>
-                        <javaVersion>java11</javaVersion>
-                    </runtime>
-                    <pricingTier>B1</pricingTier>
-                    <region>France Central</region>
-                    <deployment>
-                        <resources>
-                            <resource>
-                                <directory>${project.basedir}/target</directory>
-                                <includes>
-                                    <include>${project.build.finalName}.jar</include>
-                                </includes>
-                            </resource>
-                        </resources>
-                    </deployment>
-                </configuration>
-            </plugin>
+```yml
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://jhipster-database.mysql.database.azure.com:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: jhipster@jhipster-database
+    password: XXXXXX
+```
 
-    ```
-    请注意，必须使用正确的项目值配置属性`resourceGroup`，`appName`，`pricingTier`和`region`。
-1. 因为您可能会使用数据库，所以请不要忘记相应地修改`application-prod.yml`文件，例如，使用Azure MySQL数据库：
+### NoSQL数据库
 
-    ```
-    spring:
-      datasource:
-        url: jdbc:mysql://jhipster.mysql.database.azure.com:3306/sample?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-        username: jhipster@jhipster
-        password: MyPasswordToChangeInProduction
-    ```
+您可以安装NoSQL数据库，例如使用[the Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/?WT.mc_id=online-jhipster-judubois) 安装Cassandra或使用[CosmosDB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=online-jhipster-judubois) MongoDB。
 
-1.  与JHipster生产构建一样，使用以下命令构建项目：
+CosmosDB是Microsoft的全球分布式托管数据库。 它在API级别上与Cassandra和MongoDB兼容，因此可以与使用这些技术生成的JHipster应用程序一起使用。
 
-    ```sh
-        ./mvnw clean package -Pprod
-    ```
-1. 部署应用程序：
-    ```sh
-        ./mvnw azure-webapp:deploy
-    ```
+## <a name="4"></a> 储存密钥
 
-有关用于Azure App Service的Maven插件的最新信息，请查看[文档](https://docs.microsoft.com/en-us/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?WT.mc_id=online-jhipster-brborges)。
+您应该将几个“密钥”安全地存储在JHipster中，至少要存储数据库密码（请参见上一节）和安全令牌（请参阅我们的[安全文档]({{site.url}}/security/) 了解更多的信息）。
 
-### 基于Docker的Monolithic应用
+Azure中有许多选项，可用于将这些数据存储在比`application-prod.yml`文件更好的位置。 这是最常见的：
 
-要将整体应用程序作为Docker容器部署到Azure，理想且最简单的解决方案是在[Azure容器实例（ACI）](https://docs.microsoft.com/en-us/azure/container-instances/?WT.mc_id=online-jhipster-brborges)上运行它，该容器几乎立即配置Docker容器。但是为此，您首先必须（ACR[创建一个Azure容器仓库(ACR)](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli?WT.mc_id=online-jhipster-brborges)。您也可以将镜像推送到Docker Hub仓库，并通过从那里拉取镜像到ACI上创建Docker容器，但是这种方法是不安全的，因为您的Docker镜像可能是任何人都可以下载的，并且镜像可能会包含凭证（例如，数据库））。
+- Spring Cloud 配置服务器, 如[JHipster Registry]({{ site.url }}/jhipster-registry/) 或由管理的配置服务器 [Azure Spring Cloud](https://azure.microsoft.com/services/spring-cloud/?WT.mc_id=online-jhipster-judubois) 。这是最好的选择，因为您可以标记和回滚配置，但是它需要专用的服务器。
+- 环境变量。 这是最简单的选项，但设置起来有点烦人，而且安全性较差。
+- [Azure Key Vault](https://azure.microsoft.com/services/key-vault/?WT.mc_id=online-jhipster-judubois): 这是最安全的选项，但是它特定于Azure。有一个专用的 [Azure Spring Boot Starter for Key Vault](https://docs.microsoft.com/en-us/azure/java/spring-framework/spring-boot-starters-for-azure/?WT.mc_id=online-jhipster-judubois) ，这是我们建议使用Azure Key Vault配置JHipster的方法。
 
-创建ACR之后，可以生成JHipster Docker镜像并将其推送到仓库，将来在Azure容器实例上使用该镜像。让我们看看它是如何工作的：
+## <a name="5"></a> 将Spring Boot可执行Jar文件部署到Azure App Service
 
-1. 假设您有一个名为`myjhipsterapp`的JHipster应用程序。
-1. 为monolithic JHipster项目构建Docker镜像：
-    ```sh
-        ./mvnw package -Pprod jib:dockerBuild
-    ```
-1. 标记生成的Docker镜像并将其推送到ACR实例。例如：
-    ```sh
-        docker tag myjhipsterapp:latest <your-acr-server>/myjhipsterapp:latest
-    ```
-1. 确保您的Docker CLI已通过ACR身份验证 
-    ```sh
-        az acr login --name <acrName>
-    ```
-1. 将镜像推送到您的ACR实例：
-    ```sh
-        docker push <your-acr-server>/myjhipsterapp:latest
-    ```
+[![Deploying to Azure App Service](https://img.youtube.com/vi/kciGvVrfwpw/0.jpg)](https://www.youtube.com/watch?v=kciGvVrfwpw)
 
-现在，您的镜像在Azure容器仓库中可用，您可以在Azure容器实例（ACI）上基于它创建一个Docker容器。有关完整的步骤指南，请 [参阅此文档](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli?WT.mc_id=online-jhipster-brborges#deploy-image-to-aci)。以下步骤是为了简单起见，**不**应在*生产*中使用：
+_有关将JHipster应用程序部署到Azure App Service的5分钟视频_
 
-1. 启用管理员：
-    ```sh
-        az acr update --name <acrName> --admin-enabled true
-    ```
-1. 从ACR检索密码以验证ACI：
-    ```sh
-        az acr credential show --name <acrName> --query "passwords[0].value"
-    ```
-1.  部署具有1个CPU内核和1 GB RAM的容器：
-    ```sh
-        az container create --resource-group myResourceGroup --name myjhipsterapp --image <acrLoginServer>/myjhipsterapp:latest --cpu 1 --memory 1 --registry-username <acrName> --registry-password <acrPassword> --dns-name-label myjhipsterapp --ports 8080
-    ```
+### 生成Azure App Service的配置
 
-## Kubernetes上的Docker容器
+[Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/?WT.mc_id=online-jhipster-judubois) 是一种托管的PaaS：在Azure上，如果要部署单体应用，这是我们推荐的选项。
 
-要将JHipster微服务部署到Azure上的Kubernetes，只需要做的就是创建一个Azure Kubernetes Service群集，并将其配置为本地`kubectl`。之后，您可以按照Kubernetes文档上的通用JHipster进行操作。请按照[这些文档步骤](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough?WT.mc_id=online-jhipster-brborges)进行一个完整的操作流程。
+有两种方法可以将Spring Boot应用程序部署到Azure App Service：
+
+- 将其部署为Docker映像：这使您可以在Docker映像中交付任何内容，这对于某些特定的用例可能是好的，但是在大多数情况下，这是最复杂且安全性较低的选项。
+- 将其部署为可执行的Jar文件：这是最简单，更安全的选择，因为Microsoft将支持并自动更新OS和JVM。
+
+我们建议使用可执行的Jar文件，但是如果您想使用Docker映像，请遵循本页的最后一节“部署到Docker和Kubernetes”。
+
+要将JHipster应用程序作为可执行Jar文件部署到Azure App Service，有一个特定的`azure-app-service`子生成器：
+
+```sh
+jhipster azure-app-service
+```
+
+该子生成器可以与以下标识一起使用：
+
+- `--skip-build` 跳过构建应用程序
+- `--skip-deploy` 跳过部署到Azure App Service
+- `--skip-insights` 跳过Azure Application Insights的配置
+
+然后将需要回答以下问题。 您可能需要访问 [Azure Portal](https://portal.azure.com/?WT.mc_id=online-jhipster-judubois) 回答他们并检查配置的资源。
+
+- __Azure resource group name（Azure资源组名称）:__ 这是将在其中部署应用程序的Azure资源组的名称。 我们建议使用命令 `az configure --defaults group=<resource group name>`设置默认的Azure资源组。
+- __Azure App Service plan name（Azure应用服务计划名称）:__ 您的Azure应用服务将在[Azure服务计划](https://docs.microsoft.com/azure/app-service/overview-hosting-plans/?WT.mc_id=online-jhipster-judubois) 中运行。如果服务计划已经存在，则JHipster将使用它，否则它将创建一个新的服务计划。 默认情况下，JHipster在“ B1”层中创建一个基于Linux的服务计划（“基本”计划，免费使用30天）。 如果您需要有关服务计划层的更多信息，请查看[相关文档](https://azure.microsoft.com/pricing/details/app-service/linux/?WT.mc_id=online-jhipster-judubois) 。
+- __Azure Application Insights instance name（Azure Application Insights实例名称）:__ JHipster可以自动配置一个 [Azure Application Insights 实例](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview/?WT.mc_id=online-jhipster-judubois) ，因此将监视部署的应用程序。 这使用 [Azure Spring Boot Starter for Application Insights](https://docs.microsoft.com/en-us/azure/java/spring-framework/spring-boot-starters-for-azure/?WT.mc_id=online-jhipster-judubois) 并在`application-azure.yml` 配置文件中配置。
+- __Azure App Service application name（Azure App Service应用程序名称）:__ 您的Azure App Service实例的名称。
+- __Which type of deployment do you want（您想要哪种类型的部署） ?__ 您可以使用Maven在本地构建和部署应用程序，也可以使用GitHub Actions为您自动构建和部署应用程序。
+
+### “azure” Spring Boot配置文件
+
+该子生成器创建一个`azure` Spring Boot配置文件并对其进行配置。
+
+- 在您的Azure App Service实例中，使用环境变量`SPRING_PROFILES_ACTIVE`会自动启用`prod`和`azure`Spring配置文件。
+- 为此配置文件创建了一个新的Spring Boot配置，`src/main/resources/config/application-azure.yml`。或者在JHipster配置文件的详细信息，查阅[相关文档]({{ site.url }}/profiles/)。
+
+### 使用GitHub Actions进行部署
+
+建议使用GitHub Actions进行部署，因为它比在本地计算机上更容易并且可能更快。
+
+- 配置存储在 `.github/workflows/azure-app-service.yml`.
+- 默认情况下，每次在`main`分支上有新的`push`事件时，都会部署该应用程序。
+- 为了与本地部署保持一致，此部署机制使用了`azure-webapp`Maven插件。有另一种部署到Azure App Service的方法，该方法不需要Maven。如果您对此感兴趣，请查找`azure/webapps-deploy` GitHub Action, 并按照相应示例 [this blog post](https://dev.to/azure/the-easy-way-to-deploy-a-spring-boot-application-to-production-on-azure-2joi) 进行操作。
+
+为了被授权将应用程序部署到您的Azure App Service实例，GitHub需要有权访问名为`AZURE_CREDENTIALS`的安全令牌。
+在子生成器执行结束时，它以以下形式显示了命令行：
+
+```sh
+az ad sp create-for-rbac --name http://<your-security-role> --role contributor --scopes /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group-name> --sdk-auth
+```
+
+- `<your-security-role>` 是您要创建的安全角色的名称（默认情况下，我们使用应用程序名称）。
+- `<your-subscription-id>` 是您使用的Azure订阅的ID。可以在订阅屏幕顶部的 [Azure Portal](https://portal.azure.com/?WT.mc_id=online-jhipster-judubois) 找到。
+- `<your-resource-group-name>` 是您的资源组的名称。
+
+执行该命令以获取安全令牌。 然后，在应用程序所在的GitHub项目中，转到`Settings > Secrets`，然后创建一个名为`AZURE_CREDENTIALS`的新密钥，您需要在其中粘贴安全令牌。
+
+## <a name="6"></a> 将Spring Boot微服务部署到Azure Spring Cloud
+
+[Azure Spring Cloud](https://azure.microsoft.com/services/spring-cloud/?WT.mc_id=online-jhipster-judubois) 是Spring Boot应用程序的托管服务. 它可以承载任何类型的JHipster应用程序，包括单体，但是它特别适合于承载遵循标准JHipster[微服务架构]({{site.url}}/microservices-architecture/) 的JHipster微服务和JHipster网关。
+
+### Azure Spring Cloud子生成器的局限性
+
+Azure Spring Cloud提供基于Netflix Eureka的托管发现服务器，因此该服务器只能与服务发现设置为`no`或`JHipster Registry`的JHipster应用程序一起使用：
+
+- 如果应用程序中未配置任何服务发现，则下面描述的子生成器将自动添加Netflix Eureka。 这是使微服务在Azure Spring Cloud上运行的最简单方法。
+- JHipster Registry实际上是Netflix Eureka服务器，因此它与Azure Spring Cloud完全兼容。 JHipster为Eureka提供了许多自定义配置：由于您应由Azure Spring Cloud管理，因此需要在`application.yml`文件中删除Spring Boot属性`eureka.instance.instanceId`。 其他`eureka`属性可与Azure Spring Cloud配合使用，但是可以将其删除以使用Azure的默认值。 使用此配置时，您将受益于JHipster的某些高级功能，例如分布式缓存配置，这些功能通常依赖于JHipster Registry。
+
+因此，使用Hashicorp Consul作为服务发现机制的应用程序无法正常运行，因为Azure Spring Cloud不支持此功能。
+
+### 生成Azure Spring Cloud的配置
+
+必须将特定的Azure Spring Cloud扩展添加到"az CLI"：
+
+```sh
+az extension add --name spring-cloud
+```
+
+安装此扩展程序后，您将能够运行`az spring-cloud`命令，并使用JHipster自动执行Azure Spring Cloud配置。
+
+要在Azure Spring Cloud上部署JHipster应用程序，有一个特定的`azure-spring-cloud`子生成器：
+
+```sh
+jhipster azure-spring-cloud
+```
+
+该子生成器可以与以下标识一起使用：
+
+- `--skip-build` 跳过构建应用程序
+- `--skip-deploy` 跳过部署到Azure Spring Cloud
+
+然后将需要回答以下问题。 您可能需要访问 [Azure Portal](https://portal.azure.com/?WT.mc_id=online-jhipster-judubois) 回答他们并检查配置的资源。
+
+- __Azure resource group name（Azure资源组名称）:__ 这是将在其中部署应用程序的Azure资源组的名称。 我们建议使用命令 `az configure --defaults group=<resource group name>`设置默认的Azure资源组。
+- __Azure Spring Cloud service name (the name of your cluster):__ 这是您的Azure Spring Cloud群集实例的名称。 我们建议使用命令 `az configure --defaults spring-cloud=<resource group name>`设置默认的Azure Spring Cloud服务名称。
+- __Azure Spring Cloud application name（Azure Spring Cloud应用程序名称）:__ 您要在Azure Spring Cloud上部署的Spring Boot应用程序的名称。
+- __Which type of deployment do you want（您想要哪种类型的部署） ?__ 您可以使用Maven在本地构建和部署应用程序，也可以使用GitHub Actions为您自动构建和部署应用程序。
+
+### “azure” Maven和Spring Boot配置文件
+
+如果您已了解上面有关`azure-app-service`子生成器的文档，则`azure-spring-cloud`子生成器的工作方式会有所不同，因为它配置了：
+
+- 一个名为`azure`Spring Boot的新配置文件，配置在`src/main/resources/config/application-azure.yml`。
+- 一个新的Maven配置文件，也称为`azure`。 该Maven配置文件将在运行时自动强制使用`prod`和`azure` Spring Boot配置文件，因此无需在Azure Spring Cloud级别进行配置（这是Azure App Service的主要区别， 被配置为环境变量）。
+
+有关在JHipster配置文件的详细信息， 查阅[配置文件]({{ site.url }}/profiles/).
+
+### Azure Spring Cloud特定功能
+
+如以上部分所述，`azure-spring-cloud`子生成器添加了特定的`azure` Maven配置文件。 此配置文件在构建时添加了一些库，以便正在运行的应用程序可以从Azure Spring Cloud的特定功能中受益：
+
+- 它将应用程序连接到托管的Spring Cloud Service Discovery服务器（如上节`Azure Spring Cloud`子生成器的限制中所述）。
+- 它使用托管的Spring Cloud Config Server配置应用程序。
+- 它将分布式跟踪数据发送到Azure Monitor。
+
+### 使用GitHub Actions进行部署
+
+建议使用GitHub Actions进行部署，因为它比在本地计算机上更容易并且可能更快。
+
+- 配置存储在 `.github/workflows/azure-spring-cloud.yml` 。
+- 默认情况下，每次在`main`分支上有新的`push`事件时，都会部署该应用程序。
+- 此部署机制直接使用“az CLI”部署到Azure Spring Cloud群集。
+
+为了获得授权将应用程序部署到您的Azure Spring Cloud群集中，GitHub需要有权访问名为`AZURE_CREDENTIALS`的安全令牌。
+可以使用以下命令行生成此令牌：
+
+```sh
+az ad sp create-for-rbac --name http://<your-security-role> --role contributor --scopes /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group-name> --sdk-auth
+```
+
+- `<your-security-role>` 是您要创建的安全角色的名称（默认情况下，我们使用应用程序名称）。
+- `<your-subscription-id>` 是您正在使用的Azure订阅的ID。 可以在[Azure门户](https://portal.azure.com/?WT.mc_id=online-jhipster-judubois) 的订阅屏幕顶部找到它。
+- `<your-resource-group-name>` 是您的资源组的名称。
+
+执行该命令以获取安全令牌。 然后，在应用程序所在的GitHub项目中，转到`Settings > Secrets`，然后创建一个名为`AZURE_CREDENTIALS`的新密钥，您需要在其中粘贴安全令牌。

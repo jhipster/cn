@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 5.0.0-beta.1
+title: 发布 v5.0.0-beta.1
 ---
 
 JHipster release v5.0.0-beta.1
@@ -37,7 +37,7 @@ What’s missing
 - We’re mostly waiting for Spring Cloud to have a stable release compatible with Spring Boot 2.0.0. This is why this release depends on the Maven Spring milestone repository. If you are not using microservices (and so not using Spring Cloud), you’re not concerned by this.
 - End-to-end tests with React using Protractor. You can follow the issue here: [#7469](https://github.com/jhipster/generator-jhipster/pull/7469)
 
-How to install
+安装方法
 ------------
 
 This is the first time we use a BETA tag on NPM, so please note this is new for everyone!
@@ -85,6 +85,6 @@ All those new features will be showcased at the upcoming [JHipster Conf](https:/
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

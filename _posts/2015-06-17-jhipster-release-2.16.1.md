@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.16.1
+title: 发布 v2.16.1
 ---
 
 JHipster release 2.16.1
@@ -19,7 +19,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 - For Cassandra users: we merged a great PR (see [#1564](https://github.com/jhipster/generator-jhipster/pull/1564)) from [Alexander Dejanovski](https://twitter.com/alexanderDeja), which adds significant improvements on our DataStax Java Driver configuration.
 - For Heroku users: we solved an important issue (see [#1610](https://github.com/jhipster/generator-jhipster/issues/1610)). Thanks to [Matt Raible](https://twitter.com/mraible) who submitted that issue!
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.16.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.16.1+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -47,6 +47,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

@@ -43,11 +43,12 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 *   `--regenerate` - 不询问任何问题重新生成现有实体。
 *   `--skip-server` - -这将跳过服务器端代码，仅生成前端代码。
 *   `--skip-client` - 这将跳过前端代码，仅生成服务器端代码。
+*   `--skip-db-changelog` - 这将跳过数据库更改日志的生成（对于SQL数据库使用Liquibase）。
 *   `--db` - -跳过服务器端生成时，指定的数据库，其他时候无效。
 
 <div class="alert alert-warning"><i>注意: </i>
 
-不要为您的实体选择一个简称（请参见<a href="https://github.com/jhipster/generator-jhipster/issues/8446" target="_blank">此问题</a>）。
+不要为您的实体选择一个简称（请参见<a href="https://github.com/jhipster/generator-jhipster/issues/8446" target="_blank" rel="noopener">此问题</a>）。
 </div>
 
 ## JHipster UML与JDL Studio
@@ -61,21 +62,21 @@ _**请查看有关创建新JHipster应用程序的[视频教程]({{ site.url }}/
 
 如果您使用了JDL Studio：
 
-*   您可以使用`import-jdl`子生成器通过运行`jhipster import-jdl your-jdl-file.jh`从JDL文件生成实体。
+*   您可以使用`jdl`子生成器通过运行`jhipster jdl your-jdl-file.jh`从JDL文件生成实体。
 
     * 如果您不想在导入JDL时重新生成实体，则可以使用`--json-only`标识来跳过实体创建部分，仅在`.jhipster`文件夹中生成json文件。
     
     ```
-    jhipster import-jdl ./my-jdl-file.jdl --json-only
+    jhipster jdl ./my-jdl-file.jdl --json-only
     ```
 
-    * 默认情况下， `import-jdl`仅重新生成已更改的实体，如果要重新生成所有实体，则传递`--force`标识。请注意，这将覆盖您对实体文件的所有本地更改
+    * 默认情况下， `jdl`仅重新生成已更改的实体，如果要重新生成所有实体，则传递`--force`标识。请注意，这将覆盖您对实体文件的所有本地更改
 
     ```
-    jhipster import-jdl ./my-jdl-file.jdl --force
+    jhipster jdl ./my-jdl-file.jdl --force
     ```
 
-*   如果要使用JHipster UML代替`import-jdl`子生成器，则需要先通过运行`npm install -g jhipster-uml`来安装它，然后运行`jhipster-uml yourFileName.jh`。
+*   如果要使用JHipster UML代替`jdl`子生成器，则需要先通过运行`npm install -g jhipster-uml`来安装它，然后运行`jhipster-uml yourFileName.jh`。
 
 ## Entity字段
 
@@ -151,16 +152,15 @@ JHipster支持许多字段类型。这种支持取决于您的数据库后端，
 
 ## 分页
 
-请注意，如果使用[Cassandra]({{ site.url }}/using-cassandra/)创建应用程序，则分页不可用。当然，它将在将来的版本中添加。
+请注意，如果使用[Cassandra]({{ site.url }}/using-cassandra/)创建应用程序，则分页不可用。它将在未来的版本中添加。
 
 分页使用[GitHub API](https://developer.github.com/v3/#pagination)中[the Link header](http://tools.ietf.org/html/rfc5988)规范，。JHipster在后端（Spring MVC REST）和前端（Angular / React）都提供了该规范的定制实现。
 
-生成实体时，JHipster提供4个分页选项：
+生成实体时，JHipster提供3个分页选项：
 
 *   没有分页（在这种情况下，后端将不会分页）
-*   基于[Bootstrap分页](http://getbootstrap.com/components/#pagination-pager)的简单前端分页
-*   基于[Bootstrap分页组件]http://getbootstrap.com/components/#pagination)的完整分页系统
-*   基于[无限滚动指令](http://sroze.github.io/ngInfiniteScroll/)的无限滚动系统
+*   基于[Bootstrap分页组件](https://getbootstrap.com/docs/4.3/components/pagination/) {: target="_blank"} 的完整分页系统
+*   基于[无限滚动指令](http://sroze.github.io/ngInfiniteScroll/) 的无限滚动系统
 
 ## 更新现有实体
 
@@ -169,7 +169,6 @@ JHipster支持许多字段类型。这种支持取决于您的数据库后端，
 当您为现有实体运行实体子生成器时，系统会询问您“Do you want to update the entity? This will replace the existing files for this entity, all your custom code will be overwritten”(您确定需要更新实体吗？这将替换该实体的现有文件，所有自定义代码将被覆盖)，并具有以下选项：
 
 *   `Yes, re generate the entity` - 这将重新生成您的实体。提示：这可以通过在运行子生成器时传递`--regenerate`标志来强制执行
-
 *   `Yes, add more fields and relationships` - 这将需要您回答一些问题，以添加更多字段和关系
 *   `Yes, remove fields and relationships` - 这将需要您回答一些问题，以便从实体中删除现有字段和关系
 *   `No, exit` - 这将存在子生成器而无需更改任何内容
@@ -234,7 +233,7 @@ JHipster支持许多字段类型。这种支持取决于您的数据库后端，
 
 ### 改进生成的代码
 
-生成的文件包含所有基本的CRUD操作，如果您的需求很简单，则无需修改。
+生成的文件包含所有基本的CRUD操作，如果您无需CRUD以外的操作，则无需修改。
 
 如果要修改生成的代码或数据库架构，则应遵循我们的[开发指南]({{ site.url }}/development/)
 

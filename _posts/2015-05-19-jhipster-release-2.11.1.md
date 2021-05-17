@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.11.1
+title: 发布 v2.11.1
 ---
 
 JHipster release 2.11.1
@@ -20,7 +20,7 @@ This is a minor release, which validates that our new [Heroku](https://www.herok
 
 In the last 4 days, we've had more than 100 applications deployed on Heroku (this is a rough estimate, from the statistics we gather), and had some great feedback which helped iron out a few minor issues.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.11.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.11.1+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -48,6 +48,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

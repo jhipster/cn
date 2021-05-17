@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.9.0
+title: 发布 v2.9.0
 ---
 
 JHipster release 2.9.0
@@ -24,7 +24,7 @@ The main interest of using Spring Data Elasticsearch is that everything is autom
 
 If you want more information on our Elasticsearch support, we have a [specific documentation available]({{ site.url }}/using-elasticsearch/).
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.9.0+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -52,6 +52,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

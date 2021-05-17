@@ -11,6 +11,17 @@ sitemap:
 
 # 部署到Kubernetes
 
+可以通过以下方式部署JHipster应用程序和相关服务
+
+- 标准 kubectl/kustomize/skaffold 子生成器 `jhipster kubernetes|k8s`
+- Helm 子生成器 `jhipster kubernetes-helm|helm-k8s`
+- Knative 子生成器 `jhipster kubernetes-knative|knative`
+
+# `jhipster kubernetes | k8s`
+
+该子生成器生成清单，并通过`kubectl/kustomize/skaffold cli`部署到[Kubernetes](http://kubernetes.io/)。
+
+
 该子生成器允许将您的JHipster应用程序部署到[Kubernetes](http://kubernetes.io/)。
 
 [![]({{ site.url }}/images/logo/logo-kubernetes.png)](http://kubernetes.io/)
@@ -31,7 +42,7 @@ sitemap:
 
 ## Minikube
 
-[Minikube](https://github.com/kubernetes/minikube)是一种可以轻松在本地运行Kubernetes的工具。Minikube在笔记本电脑上的VM内运行一个单节点Kubernetes集群，供希望试用Kubernetes或每天使用它开发的用户使用。
+[Minikube](https://github.com/kubernetes/minikube)是一种有助于在本地运行Kubernetes的工具。Minikube在笔记本电脑上的VM内运行一个单节点Kubernetes集群，供希望试用Kubernetes或每天使用它开发的用户使用。
 
 在将其推送到[Kubernetes](http://kubernetes.io/)之前，可以使用它来测试您的应用程序。
 
@@ -39,7 +50,7 @@ sitemap:
 
 要为Kubernetes生成配置文件，请在新文件夹中运行以下命令：
 
-`jhipster kubernetes`
+`jhipster kubernetes | k8s`
 
 然后回答所有问题以部署您的应用程序。
 
@@ -55,6 +66,10 @@ sitemap:
 
 选择您的应用程序。
 
+### Do you want to setup monitoring for your applications? （是否要设置对应用程序的监视？）
+
+选择选项。
+
 ### Enter the admin password used to secure the JHipster Registry admin(输入用于保护JHipster Registry admin的管理员密码)
 
 仅当您选择微服务架构时，才会显示此问题。
@@ -67,14 +82,21 @@ sitemap:
 
 如果您选择[Docker Hub](https://hub.docker.com/)作为主仓库，则将是您的Docker Hub登录名。
 
-If you choose [Google Container Registry](https://cloud.google.com/container-registry/), then it'll be `gcr.io/[PROJECT ID]`, or a regional registry, such as `eu.gcr.io/[PROJECT ID]`, `us.gcr.io/[PROJECT ID]`, or `asia.gcr.io/[PROJECT ID]`. See [Pushing and Pulling Images](https://cloud.google.com/container-registry/docs/pushing-and-pulling) for more detial.
 如果您选择[Google Container Registry](https://cloud.google.com/container-registry/)，则为`gcr.io/[PROJECT ID]`或区域registry，例如`eu.gcr.io/[PROJECT ID]`，`us.gcr.io/[PROJECT ID]`，或`asia.gcr.io/[PROJECT ID]`。有关详细信息，请参见[推送拉取镜像](https://cloud.google.com/container-registry/docs/pushing-and-pulling)。
+
+如果您选择其他映像库，例如[Harbor](https://goharbor.io/) ，[Quay](https://www.openshift.com/products/quay) 或类似的映像库，则登录名将类似于`<Registry_server>/<repo>/[项目ID]`
 
 ### What command should we use for push Docker image to repository? (我们应该使用什么命令将Docker镜像推送到仓库？)
 
 推送到Docker Hub的默认命令是`docker image push`
 
-如果您使用Google Container Registry托管Docker镜像，它将是： `gcloud docker push`
+如果您使用Google Container Registry发布Docker镜像，它将是： `gcloud docker push`
+
+### Choose the Kubernetes service type for your edge services?（为您的边缘服务选择Kubernetes服务类型？）
+
+选择适当的K8s路由类型。
+
+这些是标准提示。 此外，还会根据选择的选项（例如Istio，Ingress等）显示其他提示。
 
 ## Updating your deployed application (更新已部署的应用程序)
 
@@ -98,17 +120,27 @@ If you choose [Google Container Registry](https://cloud.google.com/container-reg
 
 `docker image push username/application`
 
-## 部署monolith应用程序
+## 部署单体或微服务应用程序
 
-部署您的应用程序：
+您可以通过运行以下命令来部署所有应用程序：
 
-`kubectl apply -f application/`
+```
+./kubectl-apply.sh -f (default option)  [or] ./kubectl-apply.sh -k (kustomize option) [or] ./kubectl-apply.sh -s (skaffold run)
+```
 
-它将为您的应用程序及其关联的依赖服务（数据库，Elasticsearch…）以及Kubernetes服务创建一个Kubernetes部署，以将应用程序暴露给外部。
+您可以使用kustomize部署应用程序：
 
-## 部署微服务应用程序
+```
+kubectl apply -k ./
+```
 
-在部署微服务之前，请首先部署服务发现服务（JHipster Registry或Consul）。如果选择了JHipster Console或Prometheus，则建议在微服务之前部署它们。子生成器放置了具有正确执行顺序的README文件。
+您可以使用skaffold部署应用程序：
+
+```
+skaffold run [or] skaffold deploy
+```
+
+它将部署应用程序及其相关附属服务（数据库，elasticsearch等）。
 
 ### 自定义命名空间
 
@@ -128,7 +160,7 @@ If you choose [Google Container Registry](https://cloud.google.com/container-reg
 
 `kubectl set image deployment/<app-name>-app <app-name>=<new-image>`
 
-使用livenessProbes和ReadinessProbe可以使Kubernetes知道应用程序的状态，以确保服务的可用性。如果要零停机时间部署，则每个应用程序至少需要2个副本。这是因为滚动升级策略首先会杀死正在运行的副本以放置新副本。仅运行一个副本将导致升级期间的短暂停机时间。
+使用livenessProbes和ReadinessProbe可以使Kubernetes知道应用程序的状态，以确保服务的可用性。如果要零停机时间部署，则每个应用程序至少需要2个副本。这是因为滚动升级策略首先会终止正在运行的副本以放置新副本。仅运行一个副本将导致升级期间的短暂停机时间。
 
 ### 在Kubernetes中部署服务Registry
 
@@ -138,7 +170,7 @@ If you choose [Google Container Registry](https://cloud.google.com/container-reg
 
 ### 在Kubernetes中管理JHipster Registry或Consul
 
-对于JHipster Registry和Consul，提供了[StatefulSets](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/)配置。这些是Kubernetes的一种特殊资源，可以处理有状态的应用程序，并使您能够扩展服务Registry以实现高可用性。有关Eureka和Consul的高可用性的更多信息，请参阅它们各自的文档。
+对于JHipster Registry和Consul，提供了[StatefulSets](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/)配置。这些是Kubernetes的一种资源，可以处理有状态的应用程序，并使您能够扩展服务Registry以实现高可用性。有关Eureka和Consul的高可用性的更多信息，请参阅它们各自的文档。
 
 ### Kubernetes中的集中配置
 
@@ -182,13 +214,6 @@ data:
 
 子生成器提供监控工具和配置，以用于您的应用程序。
 
-### JHipster Console
-
-Your application logs can be found in JHipster Console (powered by Kibana). You can find its service details by
-您的应用程序日志可以在JHipster Console（由Kibana支持）中找到。您可以通过`kubectl get svc jhipster-console`找到其服务详细信息
-
-将浏览器指向任何节点的IP，然后使用输出中描述的节点端口。
-
 ### Prometheus指标
 
 如果尚未完成，请安装[Prometheus operator by CoreOS](https://github.com/coreos/prometheus-operator)。您可以使用以下方法快速部署操作员
@@ -212,8 +237,8 @@ Kubernetes提供了许多现成的工具来帮助微服务部署，例如：
 使用Kubernetes设施有很多好处：
 * 简化部署
 * 无需额外的Eureka /Consul部署
-* 无需Zuul代理/路由请求
-* 无需Ribbon
+* 无需Spring Cloud Gateway代理/路由请求
+* 无需Spring Cloud Load Balancer
 
 同时，还有一些缺点：
 * 无法通过JHipster Registry进行应用程序管理-此功能依赖于Spring Cloud的`DiscoveryClient`。未来可以更新以添加`spring-cloud-kubernetes`
@@ -224,9 +249,9 @@ Kubernetes提供了许多现成的工具来帮助微服务部署，例如：
 ### 使用Kubernetes作为服务Registry
 
 为了避免依赖Eureka或Consul，您需要完全禁用服务发现
-* 当询问`Which service discovery server do you want to use?(您要使用哪个服务发现服务器？)`时，只需选择`No service discovery`
+* 当询问`Which service discovery server do you want to use?(您要使用哪个服务发现服务器？)`时，选择`No service discovery`
 
-JHipster网关通常在API调用之前，并使用`Zuul`路由这些调用。如果没有服务registry，则无法通过`Zuul`进行路由。您需要使用Kubernetes Ingress将流量路由到微服务。
+JHipster网关通常在API调用之前，并使用`Spring Cloud Gateway`路由这些调用。如果没有服务registry，则无法通过`Spring Cloud Gateway`进行路由。您需要使用Kubernetes Ingress将流量路由到微服务。
 * 当系统询问`Choose the kubernetes service type for your edge services(您为边缘服务选择kubernetes服务类型)`时，请选择`Ingress`。
 
 ## Istio
@@ -243,7 +268,7 @@ JHipster网关通常在API调用之前，并使用`Zuul`路由这些调用。如
 
 检查您的Kubernetes集群正在访问的registry。如果您使用的是私有registry，则应通过`kubectl create secret docker-registry`将其添加到名称空间中（有关详细信息，请参阅[文档](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)）。
 
-> 我的应用程序在启动之前就被杀掉
+> 我的应用程序在启动之前就被终止
 
 如果您的群集资源不足（例如Minikube），则会发生这种情况。增加部署的livenessProbe的`initialDelySeconds`值。
 
@@ -262,6 +287,68 @@ JHipster网关通常在API调用之前，并使用`Zuul`路由这些调用。如
 > 我的基于SQL的微服务在运行多个副本的Liquibase初始化期间被卡住
 
 有时数据库更改日志锁被破坏。您将需要使用`kubectl exec -it`连接到数据库，并删除liquibases `databasechangeloglock`表的所有行。
+
+# `jhipster kubernetes-helm | k8s-helm`
+
+该子生成器生成清单，并通过`helm cli`部署到[Kubernetes](http://kubernetes.io/) 。
+
+## 前提
+
+要使用此子生成器生成的清单，`helm cli`应安装。 请遵循[此链接](https://github.com/helm/helm) 以获得安装说明。 这需要`helm 2.12.x或更高版本`。
+
+安装Helm后，您需要添加以下存储库：
+```
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com
+```
+这些存储库应添加到本地缓存中，因为此子生成器将从上述存储库中提取稳定的生产级服务图表。
+
+该子生成器将`kubernetes`子生成器用于应用程序清单，并从上述存储库中提取应用程序中引用的数据库，elasticsearch，prometheus等映像服务。
+
+## 部署
+
+您可以通过运行以下命令来部署所有应用程序：
+
+```
+bash helm-apply.sh (or) ./helm-apply.sh
+```
+
+`helm-apply.sh`将始终执行全新安装。 首先删除所有具有相同标识的现有图表，然后进行全新安装。
+
+您可以通过运行以下命令来升级所有应用程序（如果对生成的清单进行了任何更改）：
+
+```
+bash helm-upgrade.sh (or) ./helm-upgrade.sh
+```
+
+
+# `jhipster kubernetes-knative | knative`
+
+该子生成器生成清单，该清单通过`kubectl或helm cli`部署到[Kubernetes](http://kubernetes.io/) 。 它根据选定的提示响应为cli之一生成清单。
+
+## 前提
+
+此子生成器取决于Istio。 为了使用此子生成器生成的清单，您应该在群集中安装istio和kntaive。 按照[此链接](https://knative.dev/docs/install/) 进行安装说明。 它需要`knative 0.8.x或更高版本`。
+
+## 部署
+
+如果您选择使用Kubernetes Generator进行部署，请运行以下命令：
+```
+bash kubectl-knative-apply.sh (or) ./kubectl-knative-apply.sh
+```
+
+如果您选择使用Helm generator进行部署，请运行以下命令：
+```
+bash helm-knative-apply.sh (or) ./helm-knative-apply.sh
+```
+
+`helm-knative-apply.sh`将始终执行全新安装。 首先删除所有具有相同标识的现有图表，然后进行全新安装。
+
+您可以通过运行以下bash命令来升级所有应用程序（如果对生成的清单进行了任何更改）：
+
+```
+bash helm-knative-upgrade.sh (or) ./helm-knative-upgrade.sh
+```
 
 ## 更多信息
 

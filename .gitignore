@@ -15,3 +15,6 @@ Gemfile.lock
 
 # VSCode
 .vscode/
+
+# custom files #
+compare-files.txt

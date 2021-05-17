@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 3.0.0
+title: 发布 v3.0.0
 ---
 
 JHipster release 3.0.0
@@ -40,7 +40,7 @@ Other important changes
 
 Closed tickets
 ------------
-This is a huge release for us and as always, __[you can check all the 596 closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A3.0.0+is%3Aclosed)__.
+This is a huge release for us and 一如既往， __[you can check all the 596 closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A3.0.0+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -77,6 +77,6 @@ yo jhipster:entity Foo
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

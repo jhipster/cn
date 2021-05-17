@@ -27,7 +27,7 @@ _需要注意，我们所有人都本着开源精神._
 
 ## 如果您遇到缺陷或者想提出新需求
 
-首先阅读我们的[贡献指南](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
+首先阅读我们的[贡献指南](https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md).
 
 然后,  在我们的[缺陷跟踪](https://github.com/jhipster/generator-jhipster/issues/new/choose)新建一个问题, 解决您的问题是我们的荣幸!
 
@@ -37,7 +37,7 @@ _需要注意，我们所有人都本着开源精神._
 
 ## 如果有紧急消息需要分享
 
-在推特和[@java_hipster](https://twitter.com/java_hipster)联系.
+通过推特[@jhipster](https://twitter.com/jhipster)联系。
 
 ## 如果您想知道核心团队当前在做什么
 

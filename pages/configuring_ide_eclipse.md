@@ -38,7 +38,7 @@ __注意__: 如果您已经有一个现有的JHipster项目，但尚未安装相
 
 `Plugin execution not covered by lifecycle configuration: org.bsc.maven:maven-processor-plugin:2.2.4:process (execution: process, phase: generate-sources)`
 
-只需在错误标记上选择Quick Fix/Ctrl+1（在Mac上为Cmd+1），然后选择"Discover new m2e connectors"
+需在错误标记上选择Quick Fix/Ctrl+1（在Mac上为Cmd+1），然后选择"Discover new m2e connectors"
 
 ## 2. 排除生成的静态文件夹
 

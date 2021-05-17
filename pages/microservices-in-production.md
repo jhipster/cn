@@ -17,13 +17,9 @@ sitemap:
 
 我们的[监控文档]({{ site.url }}/monitoring)对于使用以下方面的特定信息也非常重要：
 
-- JHipster控制台可将ELK与您的微服务架构一起使用
+- ELK收集您的微服务日志
+- Prometheus收集您的微服务指标
 - Zipkin跟踪整个服务中的HTTP请求
-- Elastalert在发生问题时将获取警报
-
-使用Docker-Compose子生成器时，系统将询问您是否要向基础架构添加监控。该选项会将JHipster控制台添加到您的`docker-compose.yml`文件中。一旦启动，它将在[http://localhost:5601](http://localhost:5601)上可用，并开始收集应用程序的日志和指标。
-
-对于网关和微服务应用程序，提供了其他功能来帮助您有效地监控微服务集群。例如，日志中包括每个应用程序的名称，主机，端口和Eureka/Consul ServiceId，以便您可以跟踪它们来自哪个服务实例。JHipster控制台还带有默认的仪表板，可为您提供所有服务指标的概览。
 
 ## <a name="docker_compose"></a> 使用Docker Compose开发和部署
 

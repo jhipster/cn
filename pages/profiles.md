@@ -27,17 +27,17 @@ Spring配置文件用于配置JHipster应用程序属性，因此您应该对阅
 
 ## 默认情况下，JHipster将使用`dev`配置文件
 
-如果您在没有Maven/Gradle的情况下运行该应用程序，请启动"Application"类（您可以通过右键单击它来从IDE中轻松运行它）。
+如果您在没有Maven/Gradle的情况下运行该应用程序，请启动"Application"类（您可以通过右键单击它来从IDE中直接运行它）。
 
 如果您使用Maven运行该应用程序，请运行`./mvnw`使用我们的Maven包装器，或者运行`mvn`使用您自己安装的Maven。
 
 如果您使用Gradle运行应用程序，请运行`./gradlew`以使用我们的Gradle包装器，或`gradle`以使用您自己安装的Gradle。
 
-使用Angular 2+时，如果需要在为`dev`配置文件启用了webpack编译的情况下进行全新运行，则可以按以下方式传递`webpack`参数
+使用Angular 2+和Maven时，如果需要在为`dev`配置文件启用了webpack编译的情况下进行全新运行，则可以按以下方式传递`webapp`参数
 
-  `./mvnw -Pdev,webpack`
-  或
-  `./gradlew -Pdev -Pwebpack`
+  `./mvnw -Pdev,webapp`
+
+**注意**如果前端发生了变化，Gradle会在`dev`配置文件中自动运行webpack编译（仅在启动时，对于实时加载，请使用`npm start`或`yarn start`）。
 
 ## 在生产中，JHipster必须使用`prod`配置文件运行
 
@@ -59,23 +59,23 @@ Spring配置文件用于配置JHipster应用程序属性，因此您应该对阅
 
 JHipster附带了三个附加配置文件用于切换：
 
-*   `swagger` 启用swagger
+*   `api-docs` 启用swagger
 *   `no-liquibase` 禁用liquibase
 *   `tls` 启用TLS安全并使用HTTP/2协议（请参阅[TLS和HTTP/2文档]({{ site.url }}/tls/)）
 
-这些可以与`dev`和`prod`配置文件一起使用。请注意，默认情况下，通过在`application.yml`中设置`application.yml`属性，可以在`prod`中禁用`swagger`配置文件，在`dev`中启用它。
+这些可以与`dev`和`prod`配置文件一起使用。请注意，默认情况下，通过在`application.yml`中设置`application.yml`属性，可以在`prod`中禁用`api-docs`配置文件，在`dev`中启用它。
 
-`swagger`, `no-liquibase`, `tls`仅在运行时使用：
+`api-docs`, `no-liquibase`, `tls`仅在运行时使用：
 
 *   在您的IDE中，使用`spring.profiles.active=dev,no-liquibase`运行主应用程序类（请注意，您需要显式包括`dev`或`prod`配置文件）
 *   对于打包后的应用程序：`./java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod,no-liquibase`
 
 使用Maven，您还可以直接使用这些配置文件：
 
-*   `./mvnw -Pprod,swagger,no-liquibase`
+*   `./mvnw -Pprod,api-docs,no-liquibase`
 *   `./mvnw -Pdev,no-liquibase`
 
 使用Gradle，您还可以直接使用这些配置文件：
 
-*   `./gradlew -Pprod -Pswagger -Pno-liquibase`
+*   `./gradlew -Pprod -Papi-docs -Pno-liquibase`
 *   `./gradlew -Pno-liquibase`

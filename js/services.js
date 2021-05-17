@@ -20,14 +20,18 @@
                     return resp;
                 });
             },
+
+            /*
+            // Commented out as this isn't efficient (originally used in js\index.js)
             getGitHubContributors: function(author, name, page) {
                 return $http.get('https://api.github.com/repos/' + author + '/' + name + '/contributors?page=' + page).success(function (resp) {
                     return resp;
                 });
             },
+            */
 
-            getReadme: function(author, repo, version) {
-                return $http.get('https://raw.githubusercontent.com/' + author + '/' + repo + '/' + version +'/README.md').success(function (resp) {
+            getReadme: function (author, repo, version) {
+                return $http.get('https://raw.githubusercontent.com/' + author + '/' + repo + '/' + version + '/README.md').success(function (resp) {
                     return resp;
                 });
             }
@@ -49,7 +53,7 @@
             },
 
             getNpmInfo: function (npmPackageName) {
-                return $http.get('https://cors-anywhere.herokuapp.com/registry.npmjs.org/' + npmPackageName + '/latest').success(function (resp) {
+                return $http.get('https://cors.bridged.cc/registry.npmjs.org/' + npmPackageName + '/latest').success(function (resp) {
                     return resp;
                 });
             }
@@ -66,32 +70,32 @@
             },
             getAllModules: function (start, size) {
                 /* Get all Jhipster modules */
-                return $http.get('https://api.npms.io/v2/search?q=keywords%3Ajhipster-module%2Cjhipster-blueprint&from=' + start + '&size=' + size).success(function (resp) {
+                return $http.get('https://registry.npmjs.org/-/v1/search?text=keywords:jhipster-blueprint,jhipster-module&from=' + start + '&size=' + size).success(function (resp) {
                     return resp;
                 });
             },
-            setCurrent: function(module) {
+            setCurrent: function (module) {
                 currentModule = module;
             },
-            getCurrent: function(module) {
+            getCurrent: function () {
                 return currentModule;
             }
         }
     }
 
-    function jhiModuleFilter () {
-        return function(input) {
-            return input.replace('generator-jhipster-','').replace(/(?:^|[\s\-\_\.])\S/g, function(a) {
-                return a.replace(/[\-\_\.]/,' ').toUpperCase();
+    function jhiModuleFilter() {
+        return function (input) {
+            return input.replace('generator-jhipster-', '').replace(/(?:^|[\s\-_.])\S/g, function (a) {
+                return a.replace(/[\-_.]/, ' ').toUpperCase();
             });
         };
     }
 
     function jhiAuthorFilter() {
-        return function(input) {
+        return function (input) {
             var authors = [];
-            angular.forEach(input, function(author) {
-                authors.push(author.username? author.username : author.name);
+            angular.forEach(input, function (author) {
+                authors.push(author.username ? author.username : author.name);
             });
             return authors.join(', ');
         };

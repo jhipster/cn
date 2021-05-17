@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 1.6.0
+title: 发布 v1.6.0
 ---
 
 JHipster release 1.6.0
@@ -19,7 +19,7 @@ Lots of exciting stuff in the new release! Here are the most important improveme
 - We upgraded AngularJS and Angular Translate to more recent versions
 - [#701](https://github.com/jhipster/generator-jhipster/issues/701) was causing compilation errors when using OAuth2 with an SQL database
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.6.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.6.0+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -41,6 +41,6 @@ yo jhipster
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

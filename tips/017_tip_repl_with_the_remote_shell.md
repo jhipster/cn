@@ -1,46 +1,46 @@
 ---
 layout: default
-title: REPL with the remote shell
+title: 远程REPL
 sitemap:
 priority: 0.5
 lastmod: 2016-09-22T22:22:00-00:00
 ---
 
-# REPL with the remote shell
+# 远程 REPL
 
-__Tip submitted by [@cbornet](https://github.com/cbornet)__
+__提交者 [@cbornet](https://github.com/cbornet)__
 
-**As the Spring Boot remote shell will be removed in Spring Boot 2.0, this tip is deprecated**
+**由于在Spring Boot 2.0中将删除Spring Boot远程Shell，因此不建议使用此技巧**
 
-Since v3.8, JHipster has a `shell` Maven/Gradle profile that will include the [Spring Boot remote shell](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-remote-shell.html).
-If your project was generated with JHipster < 3.8, you'll need to add the `spring-boot-starter-remote-shell` dependency manually.
+从v3.8开始，JHipster拥有一个`shell` Maven/Gradle配置文件，其中将包含[Spring Boot远程shell](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-remote-shell.html) 。
+如果您的项目是使用JHipster <3.8生成的，则需要手动添加`spring-boot-starter-remote-shell`依赖项。
 
-This brings some useful commands that can help debugging a live application and you can also write your own.
+这带来了一些有用的命令，这些命令可以帮助调试实时应用程序，您也可以编写自己的命令。
 
-Another nice feature which is not documented in Spring Boot docs is that you can execute Groovy script code on a live app in a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) way.
-For this:
+Spring Boot文档中未记录的另一个不错的功能是，您可以以[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2％80％93print_loop)的方式实时在应用程序上执行Groovy脚本代码。
+为此：
 
-  * Start your app
+  * 启动你的应用
 
-  * Open an ssh session in a terminal (here for user admin, password: admin):
+  * 在终端中打开ssh会话（此处用于用户admin，密码：admin）：
 
 ```
 ssh -p2000 admin@localhost
 ```
 
-  * Once connected, switch to Groovy REPL mode:
+  * 连接后，切换到Groovy REPL模式：
 
 ```
 > repl groovy
 ```
 
-  * Get the BeanFactory:
+  * 获取BeanFactory：
 
 ```
 > bf = context.attributes['spring.beanfactory']
 ```
 
-  * Now you can use the BeanFactory to get Spring beans and call their methods:
+  * 现在，您可以使用BeanFactory来获取Spring bean并调用其方法：
 
 ```
 > bf.getBean('userRepository').findAll().login

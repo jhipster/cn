@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.13.1
+title: 发布 v2.13.1
 ---
 
 JHipster release 2.13.1
@@ -20,7 +20,7 @@ This is a small bug-fixing release, for people using DTOs on Linux.
 
 Version 2.13.0 was coded and tested on Mac OS X, which is supposed to be a Unix-like OS, and have a "real" filesystem. Turns out its filesystem is not case-sensitive by default (you can test yours with `diskutil info /`), which caused our issue [#1545](https://github.com/jhipster/generator-jhipster/pull/1545).
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.1+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.1+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -48,6 +48,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

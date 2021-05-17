@@ -13,17 +13,27 @@ sitemap:
 
 使用JPA时，可以选择使用Oracle数据库。
 
-_仅Oracle 12c及更高版本支持此选项。_
+_仅Oracle 12cR1及更高版本（例如19c，18c和12cR2）支持此选项。_
 
-由于Oracle具有专有的JDBC驱动程序，因此我们无法将其与JHipster捆绑在一起。该驱动程序可使用Oracle Maven repository提供，该repository必须进行特殊配置，因为它不是公共的仓库（您将需要一个Oracle帐户）。
+当将Oracle与JHipster一起使用时，根据Oracle数据库版本，将有以下限制。
 
-JHipster生成的Maven或Gradle配置已经使用Oracle Maven repository，但是您仍然需要配置对存储库的身份验证。为此，请遵循[这篇来自Oracle的博客文章](https://blogs.oracle.com/dev2dev/entry/how_to_get_oracle_jdbc)。
+对于19c，18c和12cR2版本：
 
-将Oracle与JHipster结合使用时，以下限制将生效
+- 实体名称不能超过124个字符，这是由于Oracle对对象名称的128个字符的限制，并且我们保留4个字符来为生成的表生成主键序列。
+- 实体字段名称不能超过128个字符。
+- 建立关系时，外键名称不能超过128个字符，因此，如果它们太长，则会被截断。
+- 建立多对多关系时，联接表名称将遵循JPA规范（格式为`firstTable_secondTable`）：如果长度超过128个字符，则将其截断。
+
+对于版本12cR1：
 
 - 实体名称不能超过26个字符，这是由于Oracle对对象名称的限制为30个字符，并且我们保留4个字符来为生成的表生成主键序列。
 - 实体字段名称不能超过30个字符。
 - 建立关系时，外键名称不能超过30个字符，因此，如果它们太长，则会被截断。
 - 在进行多对多关系时，联接表名称将遵循JPA规范（格式为" firstTable_secondTable"）：如果长度超过30个字符，则将其截断。
 - Oracle保留关键字不能用作实体名称或字段名称。
-- 我们不像其他数据库那样提供Oracle数据库Docker镜像，因为Oracle不允许拥有公共Docker镜像。
+- 可在以下位置找到Oracle数据库19c（EE，SE2，单实例和RAC）Docker映像：https://container-registry.oracle.com
+- 可以在这里找到Oracle数据库19c Docker构建文件：https://github.com/oracle/docker-images/tree/master/OracleDatabase
+
+请注意，强烈建议使用版本19c，因为它具有长期支持（到2027年结束）。
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

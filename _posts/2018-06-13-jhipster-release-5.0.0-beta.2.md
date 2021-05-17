@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 5.0.0-beta.2
+title: 发布 v5.0.0-beta.2
 ---
 
 JHipster release v5.0.0-beta.2
@@ -33,7 +33,7 @@ Do you want to know more?
 
 All those new features will be showcased at the upcoming [JHipster Conf](https://jhipster-conf.github.io/) where most of the core development team will present their work. Join us in Paris on June, 21st!
 
-How to install
+安装方法
 ------------
 
 This is the first time we use a BETA tag on NPM, so please note this is new for everyone!
@@ -69,6 +69,6 @@ You also won’t be able to use the `jhipster upgrade` sub-generator, as it won�
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

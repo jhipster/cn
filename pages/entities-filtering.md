@@ -11,7 +11,9 @@ sitemap:
 
 ## 介绍
 
-在为实体实现基本的CRUD功能之后，非常常见的请求是为实体的属性创建各种过滤器，因此可以更有效地使用服务。这些过滤器应作为请求参数发送，因此任何前端-和任何浏览器-都可以轻松使用它。此外，这些过滤器应遵循合理而简洁的模式，并且必须允许它们自由组合。
+在为实体实现基本的CRUD功能之后，非常常见的请求是为实体的属性创建各种过滤器，因此可以更有效地使用服务。
+这些过滤器应作为请求参数发送，因此任何前端-和任何浏览器-都可以使用它。
+此外，这些过滤器应遵循合理而简洁的模式，并且必须允许它们自由组合。
 
 ## 如何激活
 
@@ -47,7 +49,7 @@ sitemap:
     * *xyz.lessOrEqualThan=someValue*
         - 列出所有实体，其中xyz小于或等于'someValue'
 
-当然，它们可以自由组合。
+它们可以自由组合。
 
 体验此过滤器API的表达力的一种好方法是在JHipster应用程序的API文档页面的swagger-ui中使用它。
 
@@ -60,6 +62,26 @@ sitemap:
 在`EntityQueryService`中，我们将条件对象转换为静态对象、类型安全的JPA查询对象。为此，**需要**在构建中**启用静态元模型生成**。有关详细信息，请参见[JPA静态元模型生成器文档](http://docs.jboss.org/hibernate/orm/current/topical/html_single/metamodelgen/MetamodelGenerator.html)。
 
 为了证明所生成的条件是正确的，并且Spring配置正确，对`EntityResourceIntTest`进行了扩展，增加了许多测试用例，每个过滤器一个测试用例。
+
+### Angular
+使用Angular时，利用此有用功能的正确方法如下所示：
+* Equals (`contains` 和 `notEquals`相同)
+```javascript
+this.bookService.query({'title.equals':someValue}).subscribe(...);
+```
+* greaterThan (同样适用于`lessThan`、`greaterOrEqualThan`、`lessOrEqualThan`，数据类型`date` 和 `number` 适用)
+```javascript
+this.bookService.query({'id.greaterThan':value}).subscribe(...);
+this.bookService.query({'birthday.lessOrEqualThan':value}).subscribe(...);
+```
+* In (同样适用于`notIn`)
+```javascript
+this.bookService.query({'id.in':[value1, value2]}).subscribe(...);
+```
+* Specified
+```javascript
+this.bookService.query({'author.specified':true}).subscribe(...);
+```
 
 ## 局限性
 

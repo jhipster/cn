@@ -15,7 +15,7 @@ sitemap:
 
 替代方案，我们建议您使用此项目的JDL导出功能将XMI文件导出到可以使用的JDL文件，并通过JDL Studio建立实体模型。
 
-要了解有关JDL的更多信息，请前往[此处]({{ site.url }}/profiles/)。
+要了解有关JDL的更多信息，请前往[JDL]({{ site.url }}/jdl/)。
 
 ***
 
@@ -63,7 +63,7 @@ JHipster-UML是常用的问答式实体生成器替代方法，因为它使您�
 
 # <a name="issues"></a>问题与错误
 
-JHipster-UML[在GitHub上可用](https://github.com/jhipster/jhipster-uml)，并[遵循与JHipster相同的贡献准则](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md)。
+JHipster-UML[在GitHub上可用](https://github.com/jhipster/jhipster-uml)，并[遵循与JHipster相同的贡献准则](https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md)。
 
 请使用我们的项目提交问题和Pull Requests：
 
@@ -83,7 +83,7 @@ JHipster-UML[在GitHub上可用](https://github.com/jhipster/jhipster-uml)，并
 ***
 
 # <a name="install"></a>安装
-要安装JHipster UML，只需使用以下命令：
+要安装JHipster UML，使用以下命令：
 
  ```
    npm install -g jhipster-uml
@@ -111,7 +111,7 @@ JHipster UML是 _可以_ 与JHipster的生成器一起使用的工具。如果�
 ***
 
 # <a name="howtouse"></a>如何使用它
-JHipster-UML非常易于使用，您只需要在XMI中导出一个类图，JHipster-UML就会对其进行解析以创建您的实体。
+使用JHipster-UML，您需要在XMI中导出一个类图，JHipster-UML就会对其进行解析以创建您的实体。
 
 ## <a name="umlfile"></a>UML文件
 
@@ -123,10 +123,10 @@ JHipster-UML非常易于使用，您只需要在XMI中导出一个类图，JHips
 ![Book Entity]({{ site.url }}/images/jhipsteruml_book_datatype.png)
 
 这是为JHipster正确创建的类的示例。具有属性 _publicationDate_ 和 _price_，它们的类型为 _BigDecimal_ 和 _LocalDate_，我们将其创建为 _DataType。_
-请注意，您不需要将类型名称大写（**除了诸如BigDecimal**，JHipster-UML的组合名称大写简单名称）之外。
+请注意，您不需要将类型名称大写（**除了诸如BigDecimal**，JHipster-UML的组合名称大写名称）之外。
 
 ### 关系
-我们仅使用JHipster中的示例来展示如何使用编辑器。
+我们使用JHipster中的示例来展示如何使用编辑器。
 请注意，我们**仅**支持[关系管理]({{ site.url }}/managing-relationships/)页面中列出的关系。
 
 #### 一对一
@@ -138,7 +138,7 @@ JHipster-UML非常易于使用，您只需要在XMI中导出一个类图，JHips
 
 ![One-to-One2]({{ site.url }}/images/jhipsteruml_uni_oto.png)
 
-请注意，为了实现单向关系，我们只是删除了`citizen`标签，以便`Passport`没有包含它。
+请注意，为了实现单向关系，我们删除了`citizen`标签，以便`Passport`没有包含它。
 
 #### 一对多
 ![One-to-Many]({{ site.url }}/images/jhipsteruml_bi_otm.png)
@@ -196,7 +196,7 @@ JHipster尚不支持一对多关系的单向关系（有关此信息，请参阅
 
 如您所见，自反性有3种类型。JHipster-UML仅支持前两个（一对一和一对多）。**不**支持多对多情况，因为：
 
-  - 这可能导致模型过于复杂和错误（可以更轻松地实现相同的效果）；
+  - 这可能导致模型过于复杂和错误；
   - JHipster不支持（这是一件好事）。
 
 
@@ -215,18 +215,18 @@ JHipster可以在它们之间生成实体和关联（一对一，一对多等）
 
 - 第1步-将类图导出为XMI文件格式
 
-- 步骤2-在您的JHipster应用程序根文件夹中，执行命令
+- 第2步-在您的JHipster应用程序根文件夹中，运行命令
 
  `jhipster-uml <your_file.xmi>`
 
 请注意，您不需要提供数据库类型（sql，mongodb或cassandra），因为JHipster-UML会从 _.yo-rc.json_ 文件中为您检测到该类型。
 
-但是，如果您希望在JHipster应用程序外部执行JHipster-UML，则需要传递一个额外的参数：数据库类型名称。
-这是要执行的命令：
+但是，如果您希望在JHipster应用程序外部运行JHipster-UML，则需要传递一个额外的参数：数据库类型名称。
+这是要运行的命令：
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)]`
 
-也可以生成JHipster DTO，只需传递`--dto`参数即可启用此功能。
+也可以生成JHipster DTO，传递`--dto`参数即可启用此功能。
 
  `jhipster-uml <your_file.xmi> [--db (sql | mongodb | cassandra)] [--dto]`
 
@@ -268,7 +268,7 @@ jumlfile内容：
 ```
 jhipster-uml --no-force
 ```
-您将具有以下执行的选项：
+您将具有以下的选项：
 - db : sql
 - force : false (without force)
 
@@ -279,7 +279,7 @@ jhipster-uml --no-force
 
 请注意，至少可能不会生成一个实体：用户实体。创建新应用程序时，它实际上是由JHipster搭建的（JHipster-UML会显示警告消息）。
 
-接下来，这非常简单：只需运行您的应用程序即可！
+接下来，这非常简单：运行您的应用程序即可！
 
 ## <a name="jhipsternotes"></a>JHipster笔记
 
@@ -303,7 +303,7 @@ JHipster维护（*在某些条件下*）禁止的单词列表。
 
 **注意：JHipster-UML可以检测到错误的XMI文件，它将显示找到的第一个错误并立即退出（故障快速行为）。**
 
-在JHipster-UML中，每个编辑器均已通过Oracle示例进行了测试。如果您希望在"dummy project"中看到示例，则只需为每个编辑器下载这些文件，然后测试JHipster和JHipster-UML：
+在JHipster-UML中，每个编辑器均已通过Oracle示例进行了测试。如果您希望在"dummy project"中看到示例，需为每个编辑器下载这些文件，然后测试JHipster和JHipster-UML：
 
   - 使用Modelio: [modelio.xmi](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/modelio.xmi);
   - 使用UML Designer: [umldesigner.uml](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml);
@@ -352,7 +352,7 @@ JHipster维护（*在某些条件下*）禁止的单词列表。
 
 Modelio支持约束。双击一个字段，转到'Notes and constraints'选项卡，第一个图标应为'Add a constraint'，然后选择'Constraint'，双击约束，并为其命名（它应该是JHipster约束之一）。对于约束值，请在'Body'字段中输入。
 
-最后，完成图后，只需导出即可。
+最后，完成图后，导出即可。
 
 ![Export to XMI Modelio]({{ site.url }}/images/jhipsteruml_modelio_3.png)
 
@@ -361,7 +361,7 @@ Check the Model perspective, once you locate your project, get down one level an
 
 ### 注释
 
-要注释一个类（或属性），只需双击该元素，选择`Notes and constraints`选项卡，然后添加`note`。
+要注释一个类（或属性），双击该元素，选择`Notes and constraints`选项卡，然后添加`note`。
 
 ![Modelio, commenting]({{ site.url }}/images/jhipsteruml_modelio_commenting.png)
 
@@ -371,7 +371,7 @@ Check the Model perspective, once you locate your project, get down one level an
 
 UML Designer可以在[这里](http://www.umldesigner.org/)下载。
 它的工作方式与Eclipse相同。
-要创建一个空项目，只需单击File-> New-> Modeling Project。输入名称，然后验证。
+要创建一个空项目，单击File-> New-> Modeling Project。输入名称，然后验证。
 如果未创建file.uml，请右键单击您的项目，然后单击New -> Other -> UML Designer -> UML Model，然后输入所需的任何名称。
 
 示例XMI文件在[此处](https://github.com/jhipster/jhipster-uml/blob/master/test/xmi/umldesigner.uml)可用。
@@ -389,12 +389,12 @@ UML Designer可以在[这里](http://www.umldesigner.org/)下载。
 
 ![Employee and Job with UML Designer]({{ site.url }}/images/jhipsteruml_umldesigner_2.png)
 
-要创建属性，只需双击该类，然后添加您的属性。您可以通过右键单击图上的某个地方（在空白处）来导入类型，然后导入原始类型，然后选择UML和Java。
+要创建属性，双击该类，然后添加您的属性。您可以通过右键单击图上的某个地方（在空白处）来导入类型，然后导入原始类型，然后选择UML和Java。
 这将省去手动创建类型（使用DataTypes或PrimitiveTypes）的 _繁琐_ 工作。
 
 不幸的消息是，UML Designer还不支持约束。
 
-UML Designer提供的好处之一是，您无需导出到XMI，只需转到工作区，您将看到保存的项目已经采用了正确的格式，因此非常酷。
+UML Designer提供的好处之一是，您无需导出到XMI，转到工作区，您将看到保存的项目已经采用了正确的格式，因此非常酷。
 
 ## 单向关系
 
@@ -402,7 +402,7 @@ UML Designer提供的好处之一是，您无需导出到XMI，只需转到工�
 
 ### 注释
 
-可以对类和属性（而不是关系）进行注释，并且很容易做到：单击一个元素，然后选择`comment`以添加自己的注释。
+可以对类和属性（而不是关系）进行注释：单击一个元素，然后选择`comment`以添加自己的注释。
 
 ![Uml Designer, commenting]({{ site.url }}/images/jhipsteruml_umldesigner_commenting.png)
 
@@ -440,13 +440,13 @@ XMI文件示例位于[此处](https://github.com/jhipster/jhipster-uml/blob/mast
 
 不幸的是，您不能为属性创建适合JHipster的自定义约束。
 
-完成类图后，可以将其导出到XMI。为此，只需单击Tool -> Export as UML (XMI)
+完成类图后，可以将其导出到XMI。为此，单击Tool -> Export as UML (XMI)
 
 ### 单向关系
 
-在GenMyModel中，创建单向关系非常简单：只需从不需要的字段中删除该名称，就可以了。
+在GenMyModel中，创建单向关系非常简单：从不需要的字段中删除该名称，就可以了。
 
-例如，考虑以下简单情况：
+例如，考虑以下情况：
 
 ![GenMyModel, unidirectional]({{ site.url }}/images/jhipsteruml_genmymodel_unidirectional.png)
 
@@ -456,7 +456,7 @@ XMI文件示例位于[此处](https://github.com/jhipster/jhipster-uml/blob/mast
 
 注释可用于类，属性和关系字段。
 
-只需单击一个元素，然后在描述字段中写一条注释即可。
+单击一个元素，然后在描述字段中写一条注释即可。
 
 ![GenMyModel, commenting]({{ site.url }}/images/jhipsteruml_genmymodel_commenting.png)
 
@@ -467,7 +467,7 @@ XMI文件示例位于[此处](https://github.com/jhipster/jhipster-uml/blob/mast
 
 Guillaume Finance已添加了与该编辑器对接的支持。这是[仓库](https://github.com/guillaumefinance/MDG-Sparx-EA-UML-JHipster)，您可以在[此处](http://www.umlchannel.com/en/enterprise-architect/item/204-mdg-viseo-ea-uml-to-jhipster-generator-jdl-uml-model-sparx-enterprise-architect)阅读演示。
 
-## <a name="enumerationexamples"></a>列举
+## <a name="enumerationexamples"></a>枚举
 
 JHipster和JHipster UML都支持枚举。
 您如何定义它们：
@@ -480,21 +480,21 @@ JHipster和JHipster UML都支持枚举。
 
 从v1.6.2开始，现在可以为实体指定表名。
 
-为此，只需指定表名以及类似的类名即可：
+为此，指定表名以及类似的类名即可：
 
 ![tablenameimage](http://i.imgur.com/ECdb1bx.png)
 
 该命名规则`<ENTITY_NAME>\s*(<TABLE_NAME>)`是通用的，与编辑器无关。
 
-但是，如果您不想选择特殊的表名，则只需编写类名。JHipster UML将负责将其转换为适当的表名。例如，如果您的类名是`MyClass`，则表名将是`my_class`。
+但是，如果您不想指定特别的表名，则只需编写类名。JHipster UML将负责将其转换为适当的表名。例如，如果您的类名是`MyClass`，则表名将是`my_class`。
 
 请注意，自v1.6.2起，此功能可用于UML编辑器。
 
 ## <a name="requiredrels"></a>必要的关系
 
 从v2.0.0开始，可以建立所需的关系。
-要指定一个，只需确保需要建立的关系的结尾不是"0"（"1"或"*"即可解决问题）。
-要查看其中的一个示例，只需记住Oracle的完整HR示例，并注意JobHistory类具有3个必需的关系。
+要指定一个，确保需要建立的关系的结尾不是"0"（"1"或"*"即可解决问题）。
+要查看其中的一个示例，记住Oracle的完整HR示例，并注意JobHistory类具有3个必需的关系。
 
 ***
 
@@ -528,17 +528,17 @@ If, however, you don't want to install everything globally, just do:
 
 ## <a name="parsermodifications"></a>解析器修改
 
-1.0.0版本带来了一个新的解析器系统，只要是易于解析XMI，就可以轻松进行任何更改（创建，更新，删除解析器）。
+1.0.0版本带来了一个新的解析器系统，只要可以解析XMI，就可以轻松进行任何更改（创建，更新，删除解析器）。
 
 ### 添加解析器
 
 #### 解析器实现
 
-添加解析器非常容易。如果您是Java开发人员，则可能对OOP原理非常熟悉（我们希望如此）。在开发JHipster-UML时，我们会像 _通常_ 在Java中那样考虑其体系结构。
+如果您是Java开发人员，则可能对OOP原理非常熟悉（我们希望如此）。在开发JHipster-UML时，我们会像 _通常_ 在Java中那样考虑其体系结构。
 
-您只需要扩展我们的抽象解析器([AbstractParser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/abstract_parser.js))，或实现我们的接口([Parser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js))即可添加解析器的具体实现。
+您需要扩展我们的抽象解析器([AbstractParser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/abstract_parser.js))，或实现我们的接口([Parser](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js))即可添加解析器的具体实现。
 
-您应该注意到，解析器接口的某些方法会引发 _UnimplementedOperationException_ 。这个想法显然来自Java，您可以在具体的解析器中实现此方法。
+您应该注意到，解析器接口的某些方法会引发 _UnimplementedOperationException_ 。这个想法来自Java，您可以在具体的解析器中实现此方法。
 
 有些方法不会引发任何异常，而只会调用其他方法。如果您熟悉Java 8，我们只是复制了其出色的默认方法，并做了相同的操作（因此您无需手动实现它们）。
 
@@ -546,7 +546,7 @@ If, however, you don't want to install everything globally, just do:
 
 AbstractParser类提供了一些字段，默认构造函数和一些方法，因此您以后不必创建或实现它们。
 
-显然，您 _应该_ 实现所有这些方法（或重写[#parse](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L13)或[#findElements](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L25)方法）。
+您 _应该_ 实现所有这些方法（或重写[#parse](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L13)或[#findElements](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/parser.js#L25)方法）。
 
 getters不是强制性的，但可以用作获取一些重要字段的方法，并提供一种在发送这些字段之前对其进行修改的方法。
 
@@ -575,7 +575,7 @@ getters不是强制性的，但可以用作获取一些重要字段的方法，�
 最后，在提交你的超级解析器之前，您需要做的下一件事就是对其进行测试。
 因为我们相信测试，而且真心喜欢好的测试（使用BDD），所以我们的测试是通过Mocha和chai完成的。如果您还不知道全部内容，建议您访问[ChaiJS](http://chaijs.com/)页面，并查看我们的测试文件[之一](https://github.com/jhipster/jhipster-uml/blob/master/test/editors/modelio_parser_test.js)以了解它。
 
-您可能想知道应该使用哪种测试形式。答案很简单：由您决定！无论是[应该的](http://chaijs.com/guide/styles/#should)还是[期望的](http://chaijs.com/guide/styles/#expect)（(à la RSpec），我们都不会在此处执行任何特殊规则。但是，我们建议使用Expect，因为我们这样做了，它应该使测试相当容易理解。
+您可能想知道应该使用哪种测试形式。答案是：由您决定！无论是[应该的](http://chaijs.com/guide/styles/#should)还是[期望的](http://chaijs.com/guide/styles/#expect)（(à la RSpec），我们都不会在此处执行任何规则。但是，我们建议使用Expect，因为我们这样做了，它应该使测试更容易理解。
 
 我们只希望您测试"值得测试"的所有内容：
 
@@ -590,7 +590,7 @@ getters不是强制性的，但可以用作获取一些重要字段的方法，�
 
 ### 修改解析器
 
-更改解析器（然后提交更改）非常简单：只需进行更改并进行测试（如果需要，请创建测试）。
+更改解析器（然后提交更改）非常简单：进行更改并进行测试（如果需要，请创建测试）。
 
 如果需要通过测试（是否抛出异常等等），可以制作一个XMI文件。
 
@@ -599,7 +599,7 @@ getters不是强制性的，但可以用作获取一些重要字段的方法，�
 ### 删除解析器
 
 删除解析器是一件很容易的事情。
-首先，将其从编辑器（`editors/editors.js`）中删除，然后将其从EditorDetector（`editors/editor_detector.js`）中删除。最后，只需删除解析器文件并为其创建测试。
+首先，将其从编辑器（`editors/editors.js`）中删除，然后将其从EditorDetector（`editors/editor_detector.js`）中删除。最后，删除解析器文件并为其创建测试。
 
 如果您删除任何解析器，请不要忘记修改[编辑器检测器](https://github.com/jhipster/jhipster-uml/blob/master/lib/editors/editor_detector.js#L38)。
 

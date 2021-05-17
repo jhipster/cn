@@ -8,7 +8,7 @@ sitemap:
 ---
 # <i class="fa fa-usd"></i> 赞助
 
-JHipster现在通过[OpenCollective](https://opencollective.com/generator-jhipster)募捐. 这些资金是公开的([请参阅OpenCollective文档）](https://opencollective.com/learn-more))，用于支付整个项目的花费(比如运行这个网站), 你的赞助将会令这个项目长远的发展下去.
+JHipster现在通过[OpenCollective](https://opencollective.com/generator-jhipster)募捐. 这些资金是公开的([请参阅OpenCollective文档）](https://opencollective.com/ow-it-works))，用于支付整个项目的花费(比如运行这个网站), 你的赞助将会令这个项目长远的发展下去.
 
 请到我们的[OpenCollective页面](https://opencollective.com/generator-jhipster)成为一个支持者或者赞助商.
 
@@ -18,7 +18,6 @@ JHipster现在通过[OpenCollective](https://opencollective.com/generator-jhipst
 
 - 在官网页面[https://www.jhipster.tech](https://www.jhipster.tech)"支持者"区域显示支持者 (大约11w浏览量/每月, 2018年１月统计).
 - 在Github主仓库页面的"支持者"区域显示支持者 (大约15k浏览量/每月, 2018年１月统计).
-- 推特[@java_hipster](https://twitter.com/java_hipster)感谢.
 
 ## 铜牌赞助商福利
 
@@ -30,18 +29,35 @@ JHipster现在通过[OpenCollective](https://opencollective.com/generator-jhipst
 
 ## 银牌赞助商福利
 
+最多只能有10个银牌赞助商。
+
 银牌赞助商每个月捐赠500刀, 具体的福利如下:
 
-- 享受铜牌赞助商一样福利 (主页显示, 推特感谢).
+- 享受铜牌赞助商一样福利 (主页显示)。
+- 推荐致谢[@jhipster](https://twitter.com/jhipster)。
 - 每个月可以新建一个"[缺陷赏金]({{ site.url }}/bug-bounties/)", 不可赠送. 未使用下个月失效.
 
 ## 金牌赞助商福利
+
+最多只能有3个金牌赞助商。
 
 金牌赞助商每个月捐赠1000刀, 具体的福利如下:
 
 - 享受银牌赞助商一样福利 (主页显示, 推特感谢).
 - 每个月可以新建三个 "[bug bounties]({{ site.url }}/bug-bounties/)", 不可赠送. 未用完下个月失效.
 - 公司的Logo显示在网站[https://www.jhipster.tech](https://www.jhipster.tech)的所有底部 (大约55w浏览量/每月, 2018年１月统计).
+
+## 白金赞助商福利
+
+最多只能有1个白金赞助商。
+
+白金赞助商每个月捐赠2500刀，并获得以下福利：
+
+- 享受金牌赞助商一样福利（主页显示, 推特感谢，3个Bug悬赏）。
+- JHipster在线和生成的应用程序主页上可见，并且在欢迎页面具有LOGO。 
+- 在每一个生成器末尾添加一条消息。 该消息将需要由赞助者作为PR提交，并将在赞助期间内发布的每个发行版上发布。
+- 在官方徽标列表中添加自定义JHipster徽标的选项。 该徽标将由赞助商作为PR提交，并将出现在JHipster官方徽标列表中。 它将需要遵守JHipster的行为准则。
+- 由JHipster开发人员协会组织的每次JHipster会议的预留位置。 出于组织方面的原因，这些空位将在首次赞助付款后3个月开始保留，并将在最后一次赞助付款后3个月内可用。
 
 ## 项目资金计划
 

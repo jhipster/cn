@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 4.5.1
+title: 发布 v4.5.1
 ---
 
 JHipster release 4.5.1
@@ -13,7 +13,7 @@ This is a bug-fix release for our recently-released v4.5.0 version, which had a 
 
 Unfortunately, the only way for us to validate that everything is fine is to do a release, so if you have any issue when running `jhipster`, please:
 
-- Check our [Twitter account @java_hipster](https://twitter.com/java_hipster) and notify us if necessary
+- Check our [Twitter account @jhipster](https://twitter.com/jhipster) and notify us if necessary
 - Use our [GitHub issue tracker](https://github.com/jhipster/generator-jhipster/issues) to track the problem
 
 关闭的工单与合并请求
@@ -72,6 +72,6 @@ jhipster entity Foo
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题
 
-If the issue you have is an urgent bug or security issue, please:
+如果您遇到的问题是紧急错误或安全问题，请：
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)

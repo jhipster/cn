@@ -70,7 +70,7 @@ Cassandra是生成应用程序时可以选择的受支持数据库之一。
 默认情况下，`src/main/resources/config/create-keyspace.cql`在必要时使用脚本创建键空间。
 您可以使用第二个参数覆盖它：`src/main/docker/cassandra/scripts/autoMigrate.sh src/main/resources/config/cql/changelog/ create-keyspace-prod.cql`
 
-如果只想针对集群执行特定的脚本，请使用：`src/main/docker/cassandra/scripts/execute-cql.sh src/main/resources/config/cql/changelog/<your script>.cql`
+如果只想针对集群运行特定的脚本，请使用：`src/main/docker/cassandra/scripts/execute-cql.sh src/main/resources/config/cql/changelog/<your script>.cql`
 
 ## 非Linux操作系统上的Cassandra和Docker
 

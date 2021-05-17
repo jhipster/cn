@@ -1,25 +1,25 @@
 ---
 layout: default
-title: Registering a user with additional information
+title: 用户注册时附加其他信息
 sitemap:
 priority: 0.5
 lastmod: 2017-02-15T22:30:00-00:00
 ---
 
-# Registering a user with additional information
+# 用户注册时附加其他信息
 
-__Tip submitted by [@Paul-Etienne](https://github.com/Paul-Etienne)__
+__提交者 [@Paul-Etienne](https://github.com/Paul-Etienne)__
 
-If we need to store more information concerning a user than what JHipster provides by default, a few tweaks are needed.
+如果我们需要存储的信息比JHipster默认提供的信息更多，则需要进行一些调整。
 
-To illustrate this, let's assume we want to store the user's phone number.
+为了说明这一点，假设我们要存储用户的电话号码。
 
-## Creating a new entity in a One to One relationship with JHI_User
+## 与JHI_User建立一对一关系的新实体
 
-The best way to add information that is not handled by the default JHipster User is by using composition in a new entity linked to it with a One to One relationship.
+添加默认JHipster用户无法处理的信息的最佳方法是，在通过一对一关系与其链接的新实体中使用聚合。
 
-After this entity is created, let's call it UserExtra, the best way to handle its id is by mapping it to the JHI_User's one. This way, our UserExtra will have the same id as the User's, accelerating the different requests.
-To achieve this, you will need to use the @MapsId annotation :
+创建此实体后，我们将其称为UserExtra，处理其ID的最佳方法是将其映射到JHI_User的ID。 这样，我们的UserExtra将具有与用户相同的ID，从而加速了不同的请求。
+为此，您将需要使用@MapsId注解：
 
 ```
 public class UserExtra implements Serializable {
@@ -40,24 +40,24 @@ public class UserExtra implements Serializable {
 }
 ```
 
-Note that the @GeneratedValue annotation on the id needs to be removed.
+请注意，需要删除ID上的@GeneratedValue注解。
 
-## Updating the register HTML page to take this change into account
+## 更新注册HTML页面以考虑此更改
 
-Now that an entity exists to store the phone number, we need to add an input in the register form to ask for the user's phone number.
+现在已经存在一个实体来存储电话号码，我们需要在注册表单中添加输入以询问用户的电话号码。
 
-Nothing easier than that, just update webapp/app/account/register/register.html to add an input field bound to the variable already used to store the basic information (vm.registerAccount) :
+如此简单，只需更新webapp/app/account/register/register.html以添加一个输入字段，该输入字段绑定到已经用于存储基本信息（vm.registerAccount）的变量：
 
 ```
 <input class="form-control" id="phone" ng-model="vm.registerAccount.phone" placeholder="{{'global.form.phone.placeholder' | translate}}" />
 ```
 
-## Updating ManagedUserVM
+## 更新 ManagedUserVM
 
-The registerAccount() function from java/com.mycompany.myapp/web/rest/AccountResource is the one receiving the request from the registration page.
-Its only parameter is a ManagedUserVM object containing the information initially contained in the vm.registerAccount variable from the client.
+来自java/com.mycompany.myapp/web/rest/AccountResource的registerAccount()方法接收注册页面的请求。
+它的唯一参数是ManagedUserVM对象，该对象包含来自客户端的vm.registerAccount变量中最初包含的信息。
 
-This ManagedUserVM class located in web/rest/vm has to be updated as well so that it holds the phone number sent by the client. The only thing to do here is adding the phone number attribute and its getter :
+位于web/rest/vm中的ManagedUserVM类也必须进行更新，以便保存客户端发送的电话号码。 唯一要做的就是添加电话号码属性及其getter：
 
 ```
 public class ManagedUserVM extends UserDTO {
@@ -75,11 +75,11 @@ public class ManagedUserVM extends UserDTO {
 }
 ```
 
-## Updating the registerAccount() function from AccountResource
+## 更新AccountResource中registerAccount()方法
 
-The registerAccount() function now receives a ManagedUserVM object that also contains the phone number of the user. The only thing left to do is saving this phone number into a new UserExtra associated with the JHipster User.
+现在，registerAccount()方法将接收一个ManagedUserVM对象，该对象还包含用户的电话号码。 剩下要做的就是将此电话号码保存到与JHipster用户关联的新UserExtra中。
 
-To do so, we are going to add the phone parameter to the createUser() function from UserService. But first, add this parameter where this function is called in registerAccount() :
+为此，我们将把phone参数从UserService添加到createUser()方法中。 但首先，在registerAccount()中调用此函数的位置添加此参数：
 
 ```
 public ResponseEntity<?> registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
@@ -105,11 +105,11 @@ public ResponseEntity<?> registerAccount(@Valid @RequestBody ManagedUserVM manag
 }
 ```
 
-## Updating the createUser() function from UserService
+## 更新UserService中的createUser()方法
 
-Finally, we update the service layer function that saves the JHI_User to now save the UserExtra as well. Rather than updating the existing function, I suggest you create a new one with the additional parameter. This way, updating the test classes isn't necessary.
+最后，我们更新了保存JHI_User的服务层功能，现在也保存了UserExtra。建议您使用其他参数来创建一个新方法，而不是更新现有方法。
 
-Do not forget to inject the UserExtra repositories :
+不要忘记注入UserExtra的Repository：
 
 ```
 @Inject
@@ -156,4 +156,4 @@ public User createUser(String login, String password, String firstName, String l
 }
 ```
 
-And it's done !
+完成了！

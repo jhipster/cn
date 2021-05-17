@@ -34,3 +34,5 @@ timestamp       时间戳
 topic           话题   
 validation rule 验证规则  
 view            视图  
+
+blueprint 方案

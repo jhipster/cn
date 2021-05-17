@@ -8,7 +8,7 @@ lastmod: 2016-03-07T23:23:00-00:00
 
 # Configuring HTML 5 mode
 
-__Tip submitted by [@brevleq](https://github.com/brevleq) and updated by [@wmarques](https://github.com/wmarques)__
+__提交者 [@brevleq](https://github.com/brevleq) and updated by [@wmarques](https://github.com/wmarques)__
 
 #### HTML 5 Mode has been added to the generator since this [pull request #9098](https://github.com/jhipster/generator-jhipster/pull/9098), so you don't need to do any specific configuration anymore!
 

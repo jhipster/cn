@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">{% if '/index.html' == page.url or '/' == page.url %}
-    <meta name="description" content="Jhipster是一个完全开放的源代码，广泛使用的应用生成器。 能够很方便地创建Spring Boot + Angular/React项目!">
+    <meta name="description" content="JHipster是一个开发平台，可以快速生成，开发和部署现代Web应用程序+微服务架构。">
     <meta name="author" content="JHipster中国社区">
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@java_hipster" />
-    <meta name="twitter:title" content="Generate a full stack Java + Angular/React application in a few steps" />
-    <meta name="twitter:description" content="JHipster is a fully Open Source, widely used application generator. It leverages cool technologies like Spring Boot, Angular and React to give you a high level of productivity and quality." />
-    <meta name="twitter:image:src" content="https://www.jhipster.tech/images/twitter-card.png?20170202" />
+    <meta name="twitter:site" content="@jhipster" />
+    <meta name="twitter:title" content="JHipster-适用于现代开发人员的全栈开发平台！" />
+    <meta name="twitter:description" content="JHipster是一个开发平台，可以快速生成，开发和部署现代Web应用程序+微服务架构。" />
+    <meta name="twitter:image:src" content="https://www.jhipster.tech/images/twitter-card.png?20210212" />
     <meta name="twitter:url" content="https://www.jhipster.tech/" />{% endif %}
     <meta name="google-site-verification" content="JSA7VC5gSwD5KKbXlxK8F9rXJtC91rKJq0aWhfpBC0k" />
     <!-- Chrome, Firefox OS and Opera -->
@@ -77,30 +77,32 @@
                     <ul class="nav navbar-nav navbar-right">
                         {% if page.home == true %}
                         <li class="page-scroll">
+                            <a href="#learn">教程</a>
+                        </li>
+                        <li class="page-scroll">
                             <a href="#sponsors">赞助商</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#news">新闻</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#learn">教程</a>
+                            <a href="#about">简介</a>
                         </li>
                         <li class="page-scroll">
                             <a href="#opts">技术栈</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#modules">模块</a>
+                            <a href="#modules">蓝图和模块</a>
                         </li>
                         {% endif %}
                         {% if page.home != true %}
                         <li class="page-scroll">
-                            <a href="https://jhipster-conf.github.io/" target="
-                            "><i class="fa fa-bell"></i>&nbsp;JHipster Conf 2019</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="{{ site.url }}/sponsors/">Sponsor</a>
+                            <a href="#sponsors">赞助商</a>
                         </li>
                         {% endif %}
+                        <li>
+                            <a href="https://start.jhipster.tech/jdl-studio/" target="_blank" rel="noopener" role="button"><i class="fa fa-terminal"></i> JDL设计</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jhipster/generator-jhipster" target="_blank" role="button"><i class="fa fa-github"></i> Github</a>
+                        </li>
                         <li class="page-scroll">
                             <a href="#weixin">微信群</a>
                         </li>
@@ -109,9 +111,6 @@
                                 <i class="fa fa-search"></i>
                                 <input type="text" name="search" class="doc-search-algolia" placeholder="搜索..." />
                             </form>
-                        </li>
-                        <li>
-                            <a href="https://github.com/jhipster/generator-jhipster" target="_blank" role="button"><i class="fa fa-github"></i> Github</a>
                         </li>
                         <li>
                             <!-- Redirect to the same page on the english website -->
@@ -146,24 +145,24 @@
                             </li>
                             <li {% if '/releases/' == page.url %}class="active" {% endif %}>
                                 <a href="{{ site.url }}/releases/">
-                                    <span class="icon fa fa-file-text-o"></span><span class="title">发行说明</span>
+                                    <span class="icon fa fa-file-text-o"></span><span class="title">更新日志</span>
                                 </a>
                             </li>
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-1">
-                                    <span class="icon fa fa-road"></span><span class="title">JHipster快速入门</span>
+                                    <span class="icon fa fa-road"></span><span class="title">快速入门</span>
                                 </a>
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-1" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/tech-stack/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/tech-stack/"><i class="fa fa-fw fa-stack-overflow"></i> 技术栈</a></li>
-                                            <li {% if '/presentation' == page.url %}class="active" {% endif %}><a href="/presentation" target="_blank"><i class="fa fa-fw fa-desktop"></i> JHipster官方幻灯片</a></li>
-                                            <li {% if '/screenshots/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/screenshots/"><i class="fa fa-fw fa-picture-o"></i> JHipster屏幕截图</a></li>
-                                            <li {% if '/video-tutorial/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/video-tutorial/"><i class="fa fa-fw fa-film"></i> 视频教程 (16 分钟)</a></li>
-                                            <li><a href="https://github.com/jhipster/jhipster-guides" target="_blank"><i class="fa fa-fw fa-road"></i> Online guides</a></li>
-                                            <li {% if '/companies-using-jhipster/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/companies-using-jhipster/"><i class="fa fa-fw fa-thumbs-up"></i> 使用JHipster的公司</a></li>
-                                            <li {% if '/showcase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/showcase/"><i class="fa fa-fw fa-file-image-o"></i> JHipster应用展示</a></li>
+                                            <li {% if '/presentation' == page.url %}class="active" {% endif %}><a href="/presentation" target="_blank"><i class="fa fa-fw fa-desktop"></i> 官方幻灯片</a></li>
+                                            <li {% if '/screenshots/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/screenshots/"><i class="fa fa-fw fa-picture-o"></i> 屏幕截图</a></li>
+                                            <li {% if '/video-tutorial/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/video-tutorial/"><i class="fa fa-fw fa-film"></i> 视频教程 (17')</a></li>
+                                            <li><a href="https://github.com/jhipster/jhipster-guides" target="_blank"><i class="fa fa-fw fa-road"></i> 在线教程</a></li>
+                                            <li {% if '/companies-using-jhipster/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/companies-using-jhipster/"><i class="fa fa-fw fa-thumbs-up"></i> 谁在用</a></li>
+                                            <li {% if '/showcase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/showcase/"><i class="fa fa-fw fa-file-image-o"></i> 应用展示</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -191,24 +190,24 @@
                                 <div id="dropdown-3" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li {% if '/installation/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installation/"><i class="fa fa-fw fa-cloud-download"></i> 安装JHipster</a></li>
+                                            <li {% if '/installation/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installation/"><i class="fa fa-fw fa-cloud-download"></i> 安装方法</a></li>
                                             <li {% if '/configuring-a-corporate-proxy/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/configuring-a-corporate-proxy/"><i class="fa fa-fw fa-exchange"></i> 配置代理</a></li>
                                             <li {% if '/configuring-ide/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/configuring-ide/"><i class="fa fa-fw fa-keyboard-o"></i> 配置开发环境</a></li>
-                                            <li {% if '/docker-compose/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-compose/"><i class="fa fa-fw fa-music"></i> Docker Compose</a></li>
-                                            <li {% if '/shell-plugins/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/shell-plugins/"><i class="fa fa-fw fa-terminal"></i> Shell Plugins</a></li>
+                                            <li {% if '/docker-compose/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-compose/"><i class="fa fa-fw fa-music"></i> 容器映像</a></li>
+                                            <li {% if '/shell-plugins/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/shell-plugins/"><i class="fa fa-fw fa-terminal"></i> 命令行插件</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-4"><span class="icon fa fa-fw fa-list-ol"></span><span class="title">Core JHipster tasks</span></a>
+                                <a data-toggle="collapse" href="#dropdown-4"><span class="icon fa fa-fw fa-list-ol"></span><span class="title">核心工作</span></a>
                                 <div id="dropdown-4" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/creating-an-app/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-an-app/"><i class="fa fa-fw fa-rocket"></i> 创建应用</a></li>
                                             <li {% if '/creating-an-entity/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-an-entity/"><i class="fa fa-fw fa-bolt"></i> 创建实体类</a></li>
-                                            <li {% if '/creating-a-spring-controller/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-controller/"><i class="fa fa-fw fa-bolt"></i> 创建Spring controller</a></li>
-                                            <li {% if '/creating-a-spring-service/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-service/"><i class="fa fa-fw fa-bolt"></i> 创建Spring service</a></li>
+                                            <li {% if '/creating-a-spring-controller/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-controller/"><i class="fa fa-fw fa-bolt"></i> 创建Controller</a></li>
+                                            <li {% if '/creating-a-spring-service/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-a-spring-service/"><i class="fa fa-fw fa-bolt"></i> 创建Service</a></li>
                                             <li {% if '/using-dtos/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-dtos/"><i class="fa fa-fw fa-briefcase"></i> 创建DTO</a></li>
                                             <li {% if '/managing-relationships/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/managing-relationships/"><i class="fa fa-fw fa-sitemap"></i> 配置实体类关系</a></li>
                                             <li {% if '/installing-new-languages/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/installing-new-languages/"><i class="fa fa-fw fa-flag"></i> 国际化</a></li>
@@ -217,25 +216,25 @@
                                     </div>
                                 </div>
                             </li>
+                            <li {% if '/jdl/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jdl/"><span class="icon fa fa-fw fa-star"></span><span class="title">领域语言（JDL）</span></a></li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-5"><span class="icon fa fa-fw fa-sitemap"></span><span class="title">Microservices</span></a>
+                                <a data-toggle="collapse" href="#dropdown-5"><span class="icon fa fa-fw fa-sitemap"></span><span class="title">微服务相关</span></a>
                                 <div id="dropdown-5" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/microservices-architecture/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-architecture/"><i class="fa fa-fw fa-map-signs"></i> 概述</a></li>
                                             <li {% if '/api-gateway/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/api-gateway/"><i class="fa fa-fw fa-exchange"></i> API 网关</a></li>
-                                            <li {% if '/traefik/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/traefik/"><i class="fa fa-fw fa-exchange"></i> Traefik</a></li>
                                             <li {% if '/jhipster-registry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jhipster-registry/"><i class="fa fa-fw  fa-dashboard"></i> JHipster 注册中心</a></li>
-                                            <li {% if '/consul/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/consul/"><i class="fa fa-fw fa-bullseye"></i> Consul</a></li>
-                                            <li {% if '/using-uaa/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-uaa/"><i class="fa fa-fw fa-lock"></i> JHipster UAA</a></li>
+                                            <li {% if '/consul/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/consul/"><i class="fa fa-fw fa-bullseye"></i> 服务治理（Consul）</a></li>
                                             <li {% if '/creating-microservices/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/creating-microservices/"><i class="fa fa-fw fa-bolt"></i> 创建微服务</a></li>
                                             <li {% if '/microservices-in-production/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/microservices-in-production/"><i class="fa fa-fw fa-cloud"></i> 生产环境</a></li>
+                                            <li {% if '/jhipster-control-center/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jhipster-control-center/"><i class="fa fa-fw fa-codepen"></i> 控制中心</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-6"><span class="icon fa fa-fw fa-puzzle-piece"></span><span class="title">Options</span></a>
+                                <a data-toggle="collapse" href="#dropdown-6"><span class="icon fa fa-fw fa-puzzle-piece"></span><span class="title">可选配置</span></a>
                                 <div id="dropdown-6" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -248,6 +247,7 @@
                                             <li {% if '/using-oracle/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-oracle/"><i class="fa fa-fw fa-database"></i> 使用Oracle</a></li>
                                             <li {% if '/using-mongodb/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-mongodb/"><i class="fa fa-fw fa-leaf"></i> 使用MongoDB</a></li>
                                             <li {% if '/using-couchbase/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-couchbase/"><i class="fa fa-fw fa-database"></i> 使用Couchbase</a></li>
+                                            <li {% if '/using-neo4/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-neo4j/"><i class="fa fa-fw fa-database"></i> 使用Neo4j</a></li>
                                             <li {% if '/using-cassandra/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-cassandra/"><i class="fa fa-fw fa-eye"></i> 使用Cassandra</a></li>
                                             <li {% if '/using-kafka/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-kafka/"><i class="fa fa-fw fa-envelope"></i> 使用Kafka</a></li>
                                         </ul>
@@ -255,14 +255,14 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-7"><span class="icon fa fa-fw fa-code"></span><span class="title">Development</span></a>
+                                <a data-toggle="collapse" href="#dropdown-7"><span class="icon fa fa-fw fa-code"></span><span class="title">开发说明</span></a>
                                 <div id="dropdown-7" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li {% if '/development/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/development/"><i class="fa fa-fw fa-code"></i> 开发环境的使用</a></li>
                                             <li {% if '/profiles/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/profiles/"><i class="fa fa-fw fa-group"></i> 管理配置文件</a></li>
                                             <li {% if '/common-application-properties/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-application-properties/"><i class="fa fa-fw fa-flask"></i> 常规应用参数</a></li>
-                                            <li {% if '/common-ports/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-ports/"><i class="fa fa-fw fa-plug"></i> Common ports</a></li>
+                                            <li {% if '/common-ports/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/common-ports/"><i class="fa fa-fw fa-plug"></i> 通用端口</a></li>
                                             <li {% if '/separating-front-end-and-api/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/separating-front-end-and-api/"><i class="fa fa-fw fa-unlink"></i> 前后端分离</a></li>
                                             <li {% if '/managing-server-errors/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/managing-server-errors/"><i class="fa fa-fw fa-fire-extinguisher"></i> 管理服务端错误</a></li>
                                             <li {% if '/using-angular/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/using-angular/"><i class="fa fa-fw fa-html5"></i> 使用Angular</a></li>
@@ -275,7 +275,7 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-8"><span class="icon fa fa-fw fa-umbrella"></span><span class="title">Test &amp; QA</span></a>
+                                <a data-toggle="collapse" href="#dropdown-8"><span class="icon fa fa-fw fa-umbrella"></span><span class="title">测试与质量保证</span></a>
                                 <div id="dropdown-8" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -295,28 +295,29 @@
                                             <li {% if '/production/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/production/"><i class="fa fa-fw fa-play-circle"></i> 生产环境的使用</a></li>
                                             <li {% if '/monitoring/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/monitoring/"><i class="fa fa-fw fa-line-chart"></i> 监控</a></li>
                                             <li {% if '/docker-hub/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/docker-hub/"><i class="fa fa-fw fa-cloud-upload"></i> Docker Hub</a></li>
-                                            <li {% if '/kubernetes/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/kubernetes/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Kubernetes</a></li>
-                                            <li {% if '/openshift/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/openshift/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到OpenShift</a></li>
-                                            <li {% if '/heroku/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/heroku/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Heroku</a></li>
-                                            <li {% if '/cloudfoundry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/cloudfoundry/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Cloud Foundry</a></li>
                                             <li {% if '/aws/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/aws/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到AWS</a></li>
                                             <li {% if '/azure/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/azure/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Azure</a></li>
-                                            <li {% if '/gcp/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/gcp/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Google Cloud Platform</a></li>
-                                            <li {% if '/rancher/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/rancher/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Rancher</a></li>
                                             <li {% if '/boxfuse/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/boxfuse/"><i class="fa fa-fw fa-cloud-upload"></i> 使用Boxfuse发布</a></li>
+                                            <li {% if '/clever-cloud/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/clever-cloud/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Clever Cloud</a></li>
+                                            <li {% if '/cloudfoundry/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/cloudfoundry/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Cloud Foundry</a></li>
+                                            <li {% if '/gcp/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/gcp/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Google Cloud Platform</a></li>
+                                            <li {% if '/heroku/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/heroku/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Heroku</a></li>
+                                            <li {% if '/kubernetes/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/kubernetes/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到Kubernetes</a></li>
+                                            <li {% if '/openshift/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/openshift/"><i class="fa fa-fw fa-cloud-upload"></i> 发布到OpenShift</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-10"><span class="icon fa fa-fw fa-cubes"></span><span class="title">模块 &amp; 模板</span></a>
+                                <a data-toggle="collapse" href="#dropdown-10"><span class="icon fa fa-fw fa-cubes"></span><span class="title">模块和蓝图</span></a>
                                 <div id="dropdown-10" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li {% if '/modules/official-blueprints/' == page.url %}class="active" {% endif %}><a href="/modules/official-blueprints/"><i class="fa fa-fw fa-star"></i> 官方blueprints</a></li>
-                                            <li {% if '/modules/marketplace/' == page.url %}class="active" {% endif %}><a href="/modules/marketplace/"><i class="fa fa-fw fa-shopping-cart"></i> 市场</a></li>
-                                            <li {% if '/modules/creating-a-module/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-module/"><i class="fa fa-fw fa-cube"></i> 创建一个模块</a></li>
-                                            <li {% if '/modules/creating-a-blueprint/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-blueprint/"><i class="fa fa-fw fa-cube"></i> 创建一个模板</a></li>
+                                            <li {% if '/modules/official-blueprints/' == page.url %}class="active" {% endif %}><a href="/modules/official-blueprints/"><i class="fa fa-fw fa-star"></i>官方蓝图</a></li>
+                                            <li {% if '/modules/marketplace/' == page.url %}class="active" {% endif %}><a href="/modules/marketplace/"><i class="fa fa-fw fa-shopping-cart"></i> JHipster市场</a></li>
+                                            <li {% if '/modules/creating-a-module/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-module/"><i class="fa fa-fw fa-cube"></i> 创建模块</a></li>
+                                            <li {% if '/modules/creating-a-blueprint/' == page.url %}class="active" {% endif %}><a href="/modules/creating-a-blueprint/"><i class="fa fa-fw fa-cube"></i> 创建蓝图</a></li>
+                                            <li {% if '/blueprints/quarkus/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/blueprints/quarkus/"><i class="fa fa-fw fa-book"></i> Quarkus文档</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -326,7 +327,6 @@
                                 <div id="dropdown-11" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li {% if '/jdl/' == page.url %}class="active" {% endif %}><a href="{{ site.url }}/jdl/"><i class="fa fa-fw fa-star"></i> JDL</a></li>
                                             <li><a href="https://start.jhipster.tech/jdl-studio/"><i class="fa fa-fw fa-terminal"></i> JDL Studio</a></li>
                                             <li {% if '/jhipster-ide/' == page.url %}class="active" {% endif %}>
                                                 <a href="{{ site.url }}/jhipster-ide/"><i class="fa fa-fw fa-object-group"></i> JHipster IDE</a></li>
@@ -363,6 +363,9 @@
                     {% if page.layout_grid == true %} {{ content }} {% else %}
                     <div class="row page-content-wrapper">
                         <div class="col-lg-12">
+                            <div class="float-right visible-md visible-lg">
+                                <a href="https://github.com/jhipster/cn/edit/main/{{ page.path }}"><i class="fa fa-pencil"></i> &nbsp;改善此页面</a>
+                            </div>
                             {{ content }}
                         </div>
                     </div>
@@ -377,33 +380,56 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        JHipster is sponsored by:
+                                        JHipster由以下机构赞助：
                                     </div>
-                                    <!-- change to below commented line when adding more logos -->
-                                    <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
-                                    <div class="col-md-offset-4 col-sm-12 col-md-4">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
                                         <div class="thumbnail no-margin-bottom">
                                             <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
+                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/okta.png" width="550px" height="186px"></a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <a href="https://developer.okta.com/blog/2021/01/20/reactive-java-microservices?utm_campaign=text_website_all_multiple_dev_dev_jhipster-q2_&utm_source=jhipster&utm_medium=cpc" target="_blank" rel="noopener">使用JHipster和OAuth 2.0构建反应式微服务</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--
-                                    <div class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="thumbnail no-margin-bottom">
-                                            <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="http://www.octoconsulting.com/" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/octoconsulting.png" width="180px" height="175px"></a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <a href="http://www.octoconsulting.com/" target="_blank" rel="noopener">Octo咨询集团</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="https://dev.entando.org/jhipster" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/entandoe.png" width="180px" height="175px"></a>
+                                                </div>
+                                                <div class="caption">
+                                                    <a href="https://dev.entando.org/jhipster" target="_blank" rel="noopener">Kubernetes的微前端平台</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="thumbnail no-margin-bottom">
+                                                <div class="logo-container">
+                                                    <a href="https://www.datastax.com/" target="_blank" rel="noopener"><img src="{{ site.url }}/images/open-collective/datastax.png" width="180px" height="175px"></a>
+                                                </div>
+                                                <div class="caption">
+                                                    <a href="https://www.datastax.com/" target="_blank" rel="noopener">DataStax是适用于开放、多云的现代数据应用。</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="thumbnail no-margin-bottom">
-                                            <div class="logo-container">
-                                                <a href="https://developer.okta.com/signup?utm_source=JHipster&utm_medium=logo&utm_campaign=Gold-Sponsor" target="_blank"><img src="{{ site.url }}/images/open-collective/okta.png" width="320px" height="108px"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -413,27 +439,30 @@
                                 <div class="row">
                                     <div class="footer-col col-md-4">
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-coffee fa-fw"></i> <a class="link" href="{{ site.url }}/team/">Team</a></h5>
-                                            <h5 class="text-left"><i class="fa fa-pencil fa-fw"></i> <a class="link" href="{{ site.url }}/artwork/">Artwork</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-coffee fa-fw"></i> <a class="link" href="{{ site.url }}/team/">团队</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-pencil fa-fw"></i> <a class="link" href="{{ site.url }}/artwork/">设计</a></h5>
                                         </div>
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-gavel fa-fw"></i> <a class="link" href="{{ site.url }}/policies/">Policies</a></h5>
-                                            <h5 class="text-left"><i class="fa fa-meetup fa-fw"></i> <a class="link" href="{{ site.url }}/meetups/">Meetups</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-gavel fa-fw"></i> <a class="link" href="{{ site.url }}/policies/">政策</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-meetup fa-fw"></i> <a class="link" href="{{ site.url }}/meetups/">活动</a></h5>
                                         </div>
                                         <div class="col-md-4 col-sm-12">
-                                            <h5 class="text-left"><i class="fa fa-database fa-fw"></i> <a class="link" href="{{ site.url }}/documentation-archive/">Archives</a></h5>
+                                            <h5 class="text-left"><i class="fa fa-database fa-fw"></i> <a class="link" href="{{ site.url }}/documentation-archive/">文档</a></h5>
                                         </div>
                                     </div>
                                     <div class="footer-col col-md-4" id="weixin">
                                         <ul class="list-inline">
                                             <li>
-                                                <img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">
+                                                <!-- HTML to write -->
+                                                <a href="#" data-toggle="tooltip" data-html="true" data-original-title='<img src="{{ site.url }}/images/weixin-jhipster.png" width="120px" height="119px">' rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-wechat"></i></a>
+
+
                                             </li>
                                             <li>
-                                                <a href="https://github.com/jhipster/generator-jhipster" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                                                <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-comments"></i></a>
+                                                <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" class="btn-social btn-outline"><i class="fa fa-fw fa-comments"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -452,7 +481,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        Copyright &copy; JHipster 2013-2019 | Theme based on <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank">Freelancer</a> and <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank">Flat admin</a>
+                                        版权所有 &copy; JHipster 2013-2021 | 主题基于 <a href="https://github.com/IronSummitMedia/startbootstrap-freelancer" target="_blank" rel="noopener">Freelancer</a> 和 <a href="https://github.com/tui2tone/flat-admin-bootstrap-templates" target="_blank" rel="noopener">Flat admin</a>
                                     </div>
                                 </div>
                             </div>
@@ -525,6 +554,11 @@
 
         ga('create', 'UA-46075199-1', 'auto');
         ga('send', 'pageview');
+    </script>
+    <script>
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip();
+        });
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script type="text/javascript">

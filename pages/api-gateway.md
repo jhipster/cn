@@ -28,14 +28,14 @@ JHipster可以生成API网关。网关是普通的JHipster应用程序，因此�
 
 启动网关和微服务后，它们将在registry中注册自己（使用`src/main/resources/config/application.yml`文件中的`eureka.client.serviceUrl.defaultZone`项）。
 
-网关将使用其应用程序名字自动将所有请求代理到微服务：例如，注册微服务`app1`时，该请求在网关上的/`/app1`URL上可用。
+网关将使用其应用程序名字自动将所有请求代理到微服务：例如，注册微服务`app1`时，该请求在网关上的`/services/app1`URL上可用。
 
-例如，如果您的网关运行在`localhost:8080`上，则可以指向[http://localhost:8080/app1/rest/foos](http://localhost:8080/app1/rest/foos)来获取微服务`app1`服务的foos资源。
+例如，如果您的网关运行在`localhost:8080`上，则可以指向[http://localhost:8080/services/app1/api/foos](http://localhost:8080/services/app1/api/foos)来获取微服务`app1`服务的foos资源。
 如果您尝试使用Web浏览器执行此操作，请不要忘记REST资源在JHipster中是默认保护的，因此您需要发送正确的JWT标头（请参见下面的安全性要点），或在微服务的`MicroserviceSecurityConfiguration`类删除这些URL安全保护。
 
 如果有多个运行同一服务的实例，则网关将从JHipster Registry获取这些实例，并将：
 
-- 使用[Netflix Ribbon](https://github.com/Netflix/ribbon)负载均衡HTTP请求。
+- 使用[Spring Coud Load Balancer](https://spring.io/guides/gs/spring-cloud-loadbalancer/)负载均衡HTTP请求。
 - 使用[Netflix Hystrix](https://github.com/Netflix/hystrix)提供断路器，以便快速，安全地删除发生故障的实例。
 
 每个网关都有一个特定的"admin > gateway"菜单，可以在其中监视打开的HTTP路由和微服务实例。
@@ -71,23 +71,12 @@ JHipster提供了OpenID Connect支持，如[我们的OpenID Connect文档]({{ si
 
 使用OpenID Connect时，JHipster网关会将OAuth2令牌发送到微服务，该微服务将接受这些令牌，因为它们也已连接到Keycloak服务。
 
-与JWT不同，这些令牌不是自我描述的，而是有状态的，这导致两个主要问题：
+与JWT不同，这些令牌不是自我描述的，而是有状态的，这导致以下问题：
 
 微服务中的性能问题：由于查找当前用户的安全信息非常普遍（否则，从一开始我们就不会使用任何安全选项），几乎每个微服务都会调用OpenID Connect服务器来获取该数据。因此，在正常设置中，每个微服务都会在每次收到请求时进行这些调用，这将很快会导致性能问题。
 
   - 如果在生成JHipster微服务时选择了缓存选项([这里是使用缓存文档]({{ site.url }}/using-cache/))，则将生成特定的`CachedUserInfoTokenServices`Spring Bean，它将缓存这些调用。正确设置后，这将消除性能问题。
   - 如果您需要在“user info”请求获取更多信息，请使用`src/main/resources/application.yml`配置文件中的标准Spring Boot配置键值`security.oauth2.resource.userInfoUri`对其进行配置。
-- 认证不会在应用程序和Keycloak之间自动同步。请注意，这是标准的OpenID Connect工作流程，我们希望在此方面对JHipster进行一些特定的改进。结果是：
-  - 当用户注销应用程序时，如果刷新浏览器，则将自动再次登录：这是因为他仍然登录了Keycloak，后者提供了自动身份验证。
-  - 当用户的会话在Keycloak中失效时，如果该用户已经登录到该应用程序中，则他仍将可以使用该应用程序一段时间。这是因为OpenID Connect是一种有状态机制，并且应用程序无法立即知道会话已失效。
-
-### JHipster UAA
-
-JHipster提供了基于Spring Security生成 "UAA"（用户帐户和身份验证）服务器的选项。该服务器提供OAuth2令牌以保护网关。
-
-您可以在我们特定的[JHipster UAA文档]({{ site.url }}/using-uaa/)中找到所有与UAA相关的信息。
-
-然后，网关使用Spring Security的JWT实现将JWT令牌发送到微服务，因此，其工作原理与上述JWT配置基本相同。
 
 ## <a name="documentation"></a> 自动文档
 
@@ -112,7 +101,7 @@ JHipster提供了基于Spring Security生成 "UAA"（用户帐户和身份验证
 
 这是一项重要功能，可以保护微服务架构免于被特定用户的请求所淹没。
 
-网关在保护REST端点安全时，可以完全访问用户的安全信息，因此可以轻松地扩展它，以根据用户的安全角色提供特定的速率限制。
+网关在保护REST端点安全时，可以完全访问用户的安全信息，因此可以扩展它，以根据用户的安全角色提供特定的速率限制。
 
 要启用速率限制，请打开`application-dev.yml`或`application-prod.yml`文件，并将`enabled`设置为`true`：
 

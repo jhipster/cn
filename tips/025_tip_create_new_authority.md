@@ -1,17 +1,17 @@
 ---
 layout: default
-title: How to create a new Authority
+title: 如何创建一个新的权限（Authority）
 sitemap:
 priority: 0.1
 lastmod: 2018-10-05T18:20:00-00:00
 ---
-# How to create a new Authority
+# 如何创建一个新的权限（Authority）
 
-__Tip submitted by [@Tonterias](https://github.com/Tonterias)__
+__提交者 [@Tonterias](https://github.com/Tonterias)__
 
-Let's say that you need a new authority besides the given ones of ADMIN and USER.
+假设除了给定的ADMIN和USER之外，您还需要一个新的权限。
 
-Modify AuthoritiesConstants.java file to include your new authorities:
+修改AuthoritiesConstants.java文件以包括您的新权限：
 
 	/**
 	 * Constants for Spring Security authorities.
@@ -36,7 +36,7 @@ Do not forget to include your new role in your authorities.csv:
 	ROLE_ANONYMOUS
 
 
-With that, you will be able to use it in your SecurityConfiguration.java or in (FrontpageconfigResource.java), for example:
+这样，您将可以在SecurityConfiguration.java或（FrontpageconfigResource.java）中使用它，例如：
 	
 	@DeleteMapping("/order-items/{id}")
 	@Timed
@@ -45,7 +45,7 @@ With that, you will be able to use it in your SecurityConfiguration.java or in (
 	    ...
 	}
 
-and/or Angular files: jhiHasAnyAuthority=[‘ROLE_ADMIN’. ‘ROLE_X’ ……] or even consider to use it in the routes:
+以及Angular文件中，`jhiHasAnyAuthority=[‘ROLE_ADMIN’. ‘ROLE_X’ ……]`甚至路由文件中使用它：
 
 	export const messageRoute: Routes = [
 	    {
@@ -58,5 +58,5 @@ and/or Angular files: jhiHasAnyAuthority=[‘ROLE_ADMIN’. ‘ROLE_X’ ……]
 	        canActivate: [UserRouteAccessService]
 	    }
 	];
-	
-The open-source example is at JhipsterPress: https://github.com/Tonterias/JhipsterPress
+
+开源示例位于JhipsterPress: https://github.com/Tonterias/JhipsterPress

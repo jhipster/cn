@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Prevent error/hanging on Windows when using Gradle
+title: 使用Gradle时在Windows防止错误和挂起
 sitemap:
 priority: 0.5
 lastmod: 2017-01-03T22:30:00-00:00
 ---
 
-# Prevent error/hanging on Windows when using Gradle
+# 使用Gradle时在Windows防止错误和挂起
 
-## /!\ This tip is deprecated since JHipster v4.1.1 as we upgraded to Gradle 3.4
+## /!\ 自从我们将JHipster v4.1.1升级到Gradle 3.4以来，不推荐使用此技巧。
 
-__Tip submitted by [@kaidohallik](https://github.com/kaidohallik)__
+__提交者 [@kaidohallik](https://github.com/kaidohallik)__
 
 ## Problem description
 

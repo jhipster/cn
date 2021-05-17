@@ -1,6 +1,6 @@
 ---
 layout: default
-title: JHipster is on strike (April Fools 2016)
+title: JHipster停摆 (2016年愚人节)
 ---
 
 April Fools 2016

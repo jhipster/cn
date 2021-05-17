@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.13.0
+title: 发布 v2.13.0
 ---
 
 JHipster release 2.13.0
@@ -26,7 +26,7 @@ Other noteworthy news are:
 - Cleaned up translations to use directives everywhere [#1537](https://github.com/jhipster/generator-jhipster/pull/1537)
 
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.13.0+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -54,6 +54,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

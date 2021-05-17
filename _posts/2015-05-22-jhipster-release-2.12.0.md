@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release 2.12.0
+title: 发布 v2.12.0
 ---
 
 JHipster release 2.12.0
@@ -21,7 +21,7 @@ This is a bug-fixing release. The biggest changes come from those two issues:
 - [#1479](https://github.com/jhipster/generator-jhipster/issues/1479): we now have a new question in the entity sub-generator so you can do two relationships between the same two entities.
 - [#1468](https://github.com/jhipster/generator-jhipster/issues/1468): one-to-one mappings now have a @JsonIgnore annotation so we don't have a circular reference in our JSON views.
 
-And as always, __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.12.0+is%3Aclosed)__.
+一如既往， __[you can check all the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A2.12.0+is%3Aclosed)__.
 
 更新指引
 ------------
@@ -49,6 +49,6 @@ yo jhipster:entity Foo
 
 如果您发现这个版本的任何问题, 请随时联系我们:
 
-- 在推特上联系[@java_hipster](https://twitter.com/java_hipster)
+- 在推特上联系[@jhipster](https://twitter.com/jhipster)
 - 在我们的[bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)添加一个缺陷报告
 - 在[Stack Overflow](http://stackoverflow.com/tags/jhipster/info)提交问题

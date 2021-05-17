@@ -37,7 +37,7 @@ JHipster IDE是一个Xtext DSL，它为流行的IDE和编辑器（例如Eclipse�
 ## Eclipse安装
 
 JHipster IDE在[Eclipse Marketplace](https://marketplace.eclipse.org/content/jhipster-ide)中可用。安装它的最简单方法是拖动以下图标<a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=3184658" class="drag" title="Drag to your running Eclipse workspace to install JHipster IDE"><img class="img-responsive" src="https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png" alt="Drag to your running Eclipse workspace to install JHipster IDE" /></a>
-到Eclipse的起始页上，或者只是在Eclipse中打开"marketplace"对话框（Help > Eclipse Marketplace...）<b>JHipster</b>。
+到Eclipse的起始页上，或者在Eclipse中打开"marketplace"对话框（Help > Eclipse Marketplace...）<b>JHipster</b>。
 
 ![Eclipse installation]({{ site.url }}/images/jhipster_ide_eclipse.gif)
 

@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Protecting Kibana with Apache (Basic Authentication)
+title: 使用Apache保护Kibana（基本身份验证）
 sitemap:
 priority: 0.5
 lastmod: 2018-01-31T14:10:00-00:00
 ---
 
-# Protecting Kibana with Apache (Basic Authentication)
+# 使用Apache保护Kibana（基本身份验证）
 
-Tip submitted by [@raiden0610](https://github.com/raiden0610)
+提交者 [@raiden0610](https://github.com/raiden0610)
 
-## mod_proxy activation
+## mod_proxy激活
 
     a2enmod proxy
     a2enmod proxy_http
@@ -18,14 +18,14 @@ Tip submitted by [@raiden0610](https://github.com/raiden0610)
 
     service apache2 restart
 
-## Vitualhost configuration
-Find where your virtualhost 443 or 80 config is, depending on your distros.
+## 虚拟主机配置
+根据您的发行版，找到您的virtualhost 443或80配置所在的位置。
 
-For example in Ubuntu 16.04: the config is on the file **000-default-le-ssl.conf** in **/etc/apache2/sites-availables** directory.
+例如在Ubuntu 16.04中：配置位于 **/etc/apache2/sites-availables** 目录的 **000-default-le-ssl.conf** 文件中。
 
-If you don’t want SSL, here is the file **000-default.conf**
+如果您不想要SSL，请使用以下文件 **000-default.conf**
 
-Edit the file and in the virtualhost 443 or 80 section paste this :
+编辑文件，然后在virtualhost 443或80部分中将其粘贴：
 
     # Proxying kibana listenning on the port 5601 
     ProxyPreserveHost On
@@ -41,21 +41,21 @@ Edit the file and in the virtualhost 443 or 80 section paste this :
             Require valid-user
        </Location>
 
-Reload apache config :
+重新加载apache config：
 
     service apache2 reload
     
-## Generation of username / password
+## 生成用户名/密码
 
     htpasswd /etc/apache2/.htpasswd your_user
     
-## Activating SSL
-Follow the tutorial (you can select the ditros) :  [Let's encrypt - Certbot](https://certbot.eff.org/)
+## 激活SSL
+按照教程操作（您可以选择ditros）：[让我们加密-Certbot]（https://certbot.eff.org/）
 
-Certbot will take care of the SSL configuration in Apache automatically for you 
+Certbot会自动为您处理Apache中的SSL配置
 
-<div class="alert alert-warning"><i> Warning: </i>
-<b>Don't forget to close the port 5601 in your firewall ! </b> because if you don't kibana will still be accessible without basic authentication on the port 5601
+<div class="alert alert-warning"><i> 警告：</i>
+<b>不要忘记关闭防火墙中的5601端口！</b> 因为如果您不这样做，即使没有端口5601上的基本身份验证，kibana仍然可以访问
 </div>
 
-And voila you can now access kibana in a secure way at https://mydomain.com or http://mydomain.com
+瞧，您现在可以在https://mydomain.com或http://mydomain.com上以安全的方式访问kibana。

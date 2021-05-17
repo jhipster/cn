@@ -11,7 +11,7 @@ sitemap:
 
 # <i class="fa fa-stethoscope"></i> 在Linux设置Jenkins 1
 
-以下说明适用于Red Hat/CentOS服务器，但也可以轻松地适用于其他Linux发行版。
+以下说明适用于Red Hat/CentOS服务器，但也可以适用于其他Linux发行版。
 
 ## 安装Jenkins
 

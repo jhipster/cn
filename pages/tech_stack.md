@@ -25,7 +25,7 @@ sitemap:
 
 优秀的开发工作流:
 
-*   使用[NPM](https://www.npmjs.com/get-npm)便捷安装最新的JavaScript库
+*   使用[NPM](https://www.npmjs.com/get-npm)安装最新的JavaScript库
 *   使用[Webpack](https://webpack.js.org/)构建，优化和热重载
 *   基于[Jest](https://facebook.github.io/jest/)和[Protractor](http://www.protractortest.org)测试
 
@@ -37,7 +37,7 @@ sitemap:
 
 完整的[Spring应用](http://spring.io/):
 
-*   基于[Spring Boot](http://projects.spring.io/spring-boot/)提供应用配置简化
+*   基于[Spring Boot](http://projects.spring.io/spring-boot/)提供应用配置
 *   [Maven](http://maven.apache.org/)或[Gradle](http://www.gradle.org/)构建，测试，运行应用
 *   [开发与生产配置文件分离]({{ site.url }}/profiles/) (同时支持Maven和Gradle)
 *   [Spring Security组件](http://docs.spring.io/spring-security/site/index.html)
@@ -54,13 +54,13 @@ sitemap:
 
 微服务是可选的，但完全支持:
 
-* 基于[Netflix Zuul](https://github.com/Netflix/zuul)或[Traefik](https://traefik.io/)的HTTP流量路由
-* 基于[Netflix Eureka](https://github.com/Netflix/eureka)或[HashiCorp Consul](https://www.consul.io/)的服务发现
+* HTTP路由使用[Spring Cloud Gateway](https://github.com/spring-cloud/spring-cloud-gateway)
+* 基于[Netflix Eureka](https://github.com/Netflix/eureka)或 [HashiCorp Consul](https://www.consul.io/)的服务发现
 
 ## 适应生产环境:
 
 *   使用[Metrics](http://metrics.dropwizard.io/)和[ELK Stack](https://www.elastic.co/products)监控
-*   使用[ehcache](http://ehcache.org/)(本地缓存), [Caffeine](https://github.com/ben-manes/caffeine) (本地缓存), [hazelcast](http://www.hazelcast.com/)或[Infinispan](http://infinispan.org/)提供缓存
+*   使用[ehcache](http://ehcache.org/)(本地缓存), [Caffeine](https://github.com/ben-manes/caffeine) (本地缓存), [Hazelcast](http://www.hazelcast.com/)、 [Infinispan](http://infinispan.org/)、 [Memcached](https://memcached.org/) 或者 [Redis](https://redis.io/)提供缓存
 *   静态资源优化 (gzip filter, HTTP cache headers)
 *   使用[Logback](http://logback.qos.ch/)管理日志，可在运行时配置日志输出
 *   使用[HikariCP](https://github.com/brettwooldridge/HikariCP)连接库带来极致的性能提升
