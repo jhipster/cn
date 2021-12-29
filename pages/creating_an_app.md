@@ -123,7 +123,7 @@ Spring抽象缓存允许使用不同的缓存实现，您可以使用：
 
 这可能会对您的应用程序的性能产生非常积极的影响，因此建议您选择该选项。
 
-###Do you want to use Hibernate 2nd level cache? (您是否要使用Hibernate 2级缓存？)
+### Do you want to use Hibernate 2nd level cache? (您是否要使用Hibernate 2级缓存？)
 
 仅当您选择使用SQL数据库（因为JHipster将使用Spring Data JPA访问它）并且在上一个选择中选择了缓存实现服务时，此选项才可用。
 
