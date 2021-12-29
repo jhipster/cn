@@ -159,7 +159,7 @@ JHipster支持许多字段类型。这种支持取决于您的数据库后端，
 生成实体时，JHipster提供3个分页选项：
 
 *   没有分页（在这种情况下，后端将不会分页）
-*   基于[Bootstrap分页组件](https://getbootstrap.com/docs/4.3/components/pagination/) {: target="_blank"} 的完整分页系统
+*   基于[Bootstrap分页组件](https://getbootstrap.com/docs/4.3/components/pagination/){: target="_blank"} 的完整分页系统
 *   基于[无限滚动指令](http://sroze.github.io/ngInfiniteScroll/) 的无限滚动系统
 
 ## 更新现有实体
