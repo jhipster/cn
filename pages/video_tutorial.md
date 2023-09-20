@@ -27,7 +27,7 @@ sitemap:
     </div>
 </div>
 
-## <i class="fa fa-film"/i> 其他Jhipster相关视频
+## <i class="fa fa-film"> 其他Jhipster相关视频
 
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
