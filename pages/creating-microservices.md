@@ -9,7 +9,7 @@ sitemap:
 
 # <i class="fa fa-bolt"></i> 创建微服务
 
-微服务是一种JHipster应用程序，它没有前端（必须在[网关]({{ site.url }}/api-gateway/))上生成Angular前端），并且可以与[JHipster Registry]({{ site.url }}/jhipster-registry/)一起配置，发现和管理。
+微服务是一种JHipster应用程序，它没有前端（必须在[网关]({{ site.url }}/api-gateway/)上生成Angular前端），并且可以与[JHipster Registry]({{ site.url }}/jhipster-registry/)一起配置，发现和管理。
 
 ## <a name="generating_entities"></a> 在微服务架构中生成实体
 
