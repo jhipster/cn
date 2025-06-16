@@ -43,13 +43,13 @@ const config: Config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'en', 'jp'],
     localeConfigs: {
-      'zh-Hans': {
+      '/cn': {
         label: '中文',
       },
-      en: {
+      '/': {
         label: 'English',
       },
-      jp: {
+      '/jp': {
         label: '日本語',        
       },
     },
