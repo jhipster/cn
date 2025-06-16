@@ -27,7 +27,7 @@ export default function WeixinIcon({ className }: Props) {
         <div className={styles.qrOverlay} onClick={() => setShowQR(false)}>
           <div className={styles.qrContainer}>
             <img
-              src="/images/weixin-jhipster.png"
+              src="/cn/images/weixin-jhipster.png"
               alt="微信二维码"
               className={styles.qrImage}
             />
