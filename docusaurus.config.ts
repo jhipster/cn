@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import redirectsPlugin from './redirects.config';
 
-const baseUrl = process.env.SITE_BASE_URL ?? '/cn/';
+const baseUrl = '/cn/';
 const isDocsArchive = process.env.IS_DOCS_ARCHIVE === 'true';
 
 const archiveDocsThemeConfig = {
