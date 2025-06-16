@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import redirectsPlugin from './redirects.config';
 
-const baseUrl = '/cn/';
+const baseUrl = '/cn';
 const isDocsArchive = process.env.IS_DOCS_ARCHIVE === 'true';
 
 const archiveDocsThemeConfig = {
@@ -46,16 +46,16 @@ const config: Config = {
       'zh-Hans': {
         label: '中文',
         htmlLang: 'zh-CN',
-        path: '../cn',
+        path: 'https://www.jhipster.tech/cn',
       },
       en: {
         label: 'English',
         htmlLang: 'en-US',
-        path: '../',
+        path: 'https://www.jhipster.tech',
       },
       jp: {
         label: '日本語',        
-        path: '../jp',
+        path: 'https://www.jhipster.tech/jp',
       },
     },
   },
