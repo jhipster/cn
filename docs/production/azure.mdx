@@ -1,0 +1,36 @@
+---
+title: Deploying to Microsoft Azure
+slug: /azure/
+last_update:
+  date: 2023-12-19T00:00:00-00:00
+---
+import EmbeddedVideo from '@site/src/components/EmbeddedVideo'
+
+[Microsoft Azure](https://azure.microsoft.com/overview/?WT.mc_id=java-0000-judubois) is a great solution to run JHipster applications in the cloud.
+
+- The easiest way is to use [JHipster Azure Container Apps](https://github.com/Azure/generator-jhipster-azure-container-apps) to create and deploy your project from end to end. JHipster Azure Container Apps is designed to streamline your full-stack Spring application development, leveraging the robust infrastructure of [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/java-overview) to bring your projects to life with unprecedented ease and efficiency.
+- If you are using Spring Boot, [Azure Container Apps](https://azure.microsoft.com/products/container-apps) offers full support for JHipster applications with built-in Java capabilities. You can read more on the [Quickstart](https://learn.microsoft.com/azure/container-apps/java-get-started).
+- You can also try [Azure App Service](https://azure.microsoft.com/services/app-service/?WT.mc_id=online-jhipster-judubois) to deploy your monoliths.
+- As with any Docker and Kubernetes cloud provider, you can use the JHipster Docker and Kubernetes support to deploy your Docker images to Microsoft Azure. Follow our [Docker Compose documentation](/docker-compose) and our [Kubernetes documentation](/kubernetes) for more information on these options.
+
+[![Microsoft Azure](/images/logo/logo-azure.png)](https://azure.microsoft.com/overview/?WT.mc_id=java-0000-judubois)
+
+
+## Deploying using NubesGen
+
+[NubesGen](https://www.nubesgen.com) is a deployment platform that fully supports JHipster applications and is the best solution to deploy your applications to Azure.
+
+To deploy your JHipster application with NubesGen, select in the dropdown menu:
+
+- "Spring Boot (Java) with Maven" to run your JHipster application with Maven.
+- "Spring Boot (Java) with Gradle" to run your JHipster application with Gradle.
+- "Docker with Spring Boot" to package your JHipster application with Docker and run it with Docker. Performance might be better than with Maven or Gradle, but you will have fewer monitoring options and no Java support from Microsoft.
+
+Go to [the NubesGen website](https://www.nubesgen.com) for full documentation.
+
+
+## Deploying using azd generated at start.jhipster.tech
+
+You can also create a new JHipster application with built-in azd deployment to Azure Containers Apps via [start.jhipster.tech/generate-azure-application](https://start.jhipster.tech/generate-azure-application). This will leverage the [Azure Development CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/?WT.mc_id=java-0000-sakriema), an open-source toolkit that benefits from deployment templates and lets you deploy with one simple command: 'azd up'.
+
+Published on 21 Nov. 2024
