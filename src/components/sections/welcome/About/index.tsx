@@ -10,7 +10,7 @@ import Options from './Options';
 export default function About() {
   return (
     <SectionWrapper>
-      <SectionTitle align="start">What is JHipster?</SectionTitle>
+      <SectionTitle align="start">什么是 JHipster？</SectionTitle>
 
       <Technology />
       <Description />

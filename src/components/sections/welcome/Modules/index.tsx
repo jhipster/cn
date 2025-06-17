@@ -17,12 +17,11 @@ export default function Modules() {
 
   return (
     <SectionWrapper className={styles.section}>
-      <SectionTitle>Top trending modules and blueprints</SectionTitle>
+      <SectionTitle>热门模块和蓝图</SectionTitle>
 
       <SectionDescription>
         <p>
-          You can get started and see all top trending modules and blueprints in
-          the documentation
+          您可以在文档中查看所有热门模块和蓝图并开始使用
         </p>
       </SectionDescription>
 

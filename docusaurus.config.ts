@@ -51,7 +51,7 @@ const config: Config = {
       en: {
         label: 'English',
         htmlLang: 'en-US',
-        path: 'https://www.jhipster.tech',
+        path: 'https://www.jhipster.tech/',
       },
       jp: {
         label: '日本語',        

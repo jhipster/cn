@@ -51,18 +51,17 @@ export default function WhoUses() {
   return (
     <section ref={ref} className={styles.section}>
       <div className="container">
-        <SectionTitle>Who Uses JHipster?</SectionTitle>
+        <SectionTitle>谁在使用 JHipster？</SectionTitle>
 
         <SectionDescription>
-          Lots of great companies use JHipster, all over the world!{' '}
+          全世界有很多优秀的公司都在使用 JHipster！{' '}
           <Link
             className="text-foreground underline"
             href="/companies-using-jhipster"
           >
-            Find the full list here
+            在这里查看完整列表
           </Link>
-          , and don't forget to add your company once you have started using
-          JHipster
+          ，当您开始使用 JHipster 后，别忘了添加您的公司
         </SectionDescription>
       </div>
 

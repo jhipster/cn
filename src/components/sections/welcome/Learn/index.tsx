@@ -9,12 +9,11 @@ import styles from './styles.module.scss';
 export default function Learn() {
   return (
     <SectionWrapper className={styles.section}>
-      <SectionTitle>Learn JHipster In 15 Minutes</SectionTitle>
+      <SectionTitle>15 分钟学会 JHipster</SectionTitle>
 
       <SectionDescription>
         <p>
-          Matt Raible created a screencast that shows how to use JHipster 8 to
-          develop a Spring Boot + Angular application.
+          Matt Raible 制作了一个视频教程，展示如何使用 JHipster 8 开发 Spring Boot + Angular 应用程序。
         </p>
       </SectionDescription>
 

@@ -4,24 +4,19 @@ export default function Description() {
   return (
     <ul className={styles.section}>
       <li>
-        JHipster is a development platform to quickly generate, develop, and
-        deploy modern web applications and microservice architectures.
+        JHipster 是一个开发平台，可以快速生成、开发和部署现代 Web 应用程序和微服务架构。
       </li>
       <li>
-        We support many frontend technologies, including Angular, React, and
-        Vue. We even have mobile app support for Ionic and React Native!
+        我们支持多种前端技术，包括 Angular、React 和 Vue。我们甚至支持 Ionic 和 React Native 移动应用开发！
       </li>
       <li>
-        On the backend, we support Spring Boot (with Java or Kotlin), Micronaut,
-        Quarkus, Node.js, and .NET.
+        在后端，我们支持 Spring Boot（Java 或 Kotlin）、Micronaut、Quarkus、Node.js 和 .NET。
       </li>
       <li>
-        For deployment, we embrace cloud native principles with Docker and
-        Kubernetes.
+        在部署方面，我们采用 Docker 和 Kubernetes 的云原生原则。
       </li>
       <li>
-        Deployment support exists for AWS, Azure, Google Cloud Platform, Heroku,
-        and OpenShift.
+        支持部署到 AWS、Azure、Google Cloud Platform、Heroku 和 OpenShift。
       </li>
     </ul>
   );

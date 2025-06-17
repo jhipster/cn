@@ -13,12 +13,11 @@ import styles from './styles.module.scss';
 export default function Goals() {
   return (
     <div className={styles.section}>
-      <SectionTitle align="start">Goal</SectionTitle>
+      <SectionTitle align="start">目标</SectionTitle>
 
       <SectionDescription align="start">
         <p>
-          Our goal is to generate a complete and modern web app or microservice
-          architecture, unifying:
+          我们的目标是生成完整且现代的 Web 应用程序或微服务架构，统一：
         </p>
       </SectionDescription>
 
@@ -28,10 +27,9 @@ export default function Goals() {
             <div className={styles.cardIcon}>
               <RxStack />
             </div>
-            <h3 className={styles.cardTitle}>Robust server-side stack</h3>
+            <h3 className={styles.cardTitle}>强大的服务端技术栈</h3>
             <p className={styles.cardDescription}>
-              A high-performance and robust server-side stack with excellent
-              test coverage
+              高性能且强大的服务端技术栈，具有出色的测试覆盖率
             </p>
           </div>
         </li>
@@ -41,10 +39,9 @@ export default function Goals() {
             <div className={styles.cardIcon}>
               <MdOutlineStyle />
             </div>
-            <h3 className={styles.cardTitle}>Modern Sleek</h3>
+            <h3 className={styles.cardTitle}>现代时尚</h3>
             <p className={styles.cardDescription}>
-              A sleek, modern, mobile-first UI with Angular, React or Vue +
-              Bootstrap for CSS
+              使用 Angular、React 或 Vue + Bootstrap CSS 构建时尚、现代、移动优先的用户界面
             </p>
           </div>
         </li>
@@ -54,10 +51,9 @@ export default function Goals() {
             <div className={styles.cardIcon}>
               <GoWorkflow />
             </div>
-            <h3 className={styles.cardTitle}>Powerful workflow</h3>
+            <h3 className={styles.cardTitle}>强大的工作流</h3>
             <p className={styles.cardDescription}>
-              A powerful workflow to build your application with Webpack and
-              Maven or Gradle
+              使用 Webpack 和 Maven 或 Gradle 构建应用程序的强大工作流
             </p>
           </div>
         </li>
@@ -67,10 +63,9 @@ export default function Goals() {
             <div className={styles.cardIcon}>
               <TbCloudDataConnection />
             </div>
-            <h3 className={styles.cardTitle}>Resilient architecture</h3>
+            <h3 className={styles.cardTitle}>弹性架构</h3>
             <p className={styles.cardDescription}>
-              A resilient microservice architecture with cloud native principles
-              in mind
+              基于云原生原则的弹性微服务架构
             </p>
           </div>
         </li>
@@ -80,9 +75,9 @@ export default function Goals() {
             <div className={styles.cardIcon}>
               <GrDeploy />
             </div>
-            <h3 className={styles.cardTitle}>Quickly deploy</h3>
+            <h3 className={styles.cardTitle}>快速部署</h3>
             <p className={styles.cardDescription}>
-              Infrastructure as code so you can quickly deploy to the ☁️
+              基础设施即代码，让您可以快速部署到云端 ☁️
             </p>
           </div>
         </li>
