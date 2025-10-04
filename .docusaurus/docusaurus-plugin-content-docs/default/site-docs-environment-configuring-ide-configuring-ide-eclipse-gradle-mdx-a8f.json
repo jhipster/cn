@@ -1,0 +1,31 @@
+{
+  "id": "environment/configuring-ide/configuring-ide-eclipse-gradle",
+  "title": "Configuring Eclipse with Gradle",
+  "description": "To get full Gradle support in eclipse you should install the buildship plugin.",
+  "source": "@site/docs/environment/configuring-ide/configuring-ide-eclipse-gradle.mdx",
+  "sourceDirName": "environment/configuring-ide",
+  "slug": "/configuring-ide-eclipse-gradle/",
+  "permalink": "/cn/configuring-ide-eclipse-gradle/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/configuring-ide/configuring-ide-eclipse-gradle.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1432320000000,
+  "frontMatter": {
+    "title": "Configuring Eclipse with Gradle",
+    "slug": "/configuring-ide-eclipse-gradle/",
+    "last_update": {
+      "date": "2015-05-22T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Eclipse 配合 Maven",
+    "permalink": "/cn/configuring-ide-eclipse/"
+  },
+  "next": {
+    "title": "Intellij IDEA",
+    "permalink": "/cn/configuring-ide-idea/"
+  }
+}

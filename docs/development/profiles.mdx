@@ -1,77 +1,77 @@
 ---
-title: Profiles
+title: 配置文件
 slug: /profiles/
 last_update:
   date: 2014-11-26T00:00:00-00:00
 ---
 
-JHipster comes with two [Spring profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html):
+JHipster 带有两个 [Spring 配置文件](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html)：
 
-* `dev` for development: it focuses on ease of development and productivity
-* `prod` for production: it focuses on performance and scalability
+* `dev` 用于开发：它专注于开发的易用性和生产力
+* `prod` 用于生产：它专注于性能和可扩展性
 
-Those profiles come in two different configurations:
+这些配置文件有两种不同的配置：
 
-* The Maven/Gradle profiles are used at build time. For example `./mvnw -Pprod package` or `./gradlew -Pprod bootJar` will package a production application.
-* The Spring profiles work at run time. Some Spring beans will behave differently, depending on the profile.
+* Maven/Gradle 配置文件在构建时使用。例如 `./mvnw -Pprod package` 或 `./gradlew -Pprod bootJar` 将打包一个生产应用程序。
+* Spring 配置文件在运行时工作。一些 Spring bean 的行为会有所不同，具体取决于配置文件。
 
-Spring profiles are set by Maven/Gradle, so we have a consistency between the two methods: you will have a `prod` profile on Maven/Gradle and Spring at the same time.
+Spring 配置文件由 Maven/Gradle 设置，因此我们在两种方法之间具有一致性：您将同时在 Maven/Gradle 和 Spring 上拥有 `prod` 配置文件。
 
-_Note:_ Spring profiles are used to configure the JHipster application properties, so you should be interested in reading our [common application properties documentation](/common-application-properties).
+_注意：_ Spring 配置文件用于配置 JHipster 应用程序属性，因此您应该有兴趣阅读我们的[通用应用程序属性文档](/common-application-properties)。
 
 
-## By default, JHipster will use the `dev` profile
+## 默认情况下，JHipster 将使用 `dev` 配置文件
 
-If you run the application without Maven/Gradle, launch the "Application" class (you can probably run it directly from your IDE by right-clicking on it).
+如果您在不使用 Maven/Gradle 的情况下运行应用程序，请启动 "Application" 类（您可能可以通过右键单击直接从 IDE 中运行它）。
 
-If you run the application with Maven, run `./mvnw` to use our Maven Wrapper, or `mvn` to use your own Maven installation.
+如果您使用 Maven 运行应用程序，请运行 `./mvnw` 使用我们的 Maven 包装器，或者运行 `mvn` 使用您自己的 Maven 安装。
 
-If you run the application with Gradle, run `./gradlew` to use our Gradle Wrapper, or `gradle` to use your own Gradle installation.
+如果您使用 Gradle 运行应用程序，请运行 `./gradlew` 使用我们的 Gradle 包装器，或者运行 `gradle` 使用您自己的 Gradle 安装。
 
-When using Angular 2+ and Maven if you need to do a clean run with webpack compilation enabled for `dev` profile you can pass the `webapp` param as below
+当使用 Angular 2+ 和 Maven 时，如果您需要在 `dev` 配置文件中启用 webpack 编译进行干净运行，您可以传递 `webapp` 参数，如下所示：
 
 ```shell
 ./mvnw -Pdev,webapp
 ```
 
-**Note** Gradle automatically runs webpack compilation in `dev` profile if front end has changed (only at start up, for live reload use `npm start`).
+**注意** 如果前端发生了变化，Gradle 会在 `dev` 配置文件中自动运行 webpack 编译（仅在启动时，要实时重载请使用 `npm start`）。
 
 
-## In production, JHipster has to run with the `prod` profile
+## 在生产中，JHipster 必须使用 `prod` 配置文件运行
 
-You can run JHipster in production directly using Maven or Gradle:
+您可以直接使用 Maven 或 Gradle 在生产中运行 JHipster：
 
-* With Maven, run `./mvnw -Pprod` (or `mvn -Pprod`)
-* With Gradle, run `./gradlew -Pprod` (or `gradle -Pprod`)
+* 使用 Maven，运行 `./mvnw -Pprod`（或 `mvn -Pprod`）
+* 使用 Gradle，运行 `./gradlew -Pprod`（或 `gradle -Pprod`）
 
-If you want to package your application as an executable WAR file, you should provide Maven or Gradle with a profile. E.g.,:
+如果您想将应用程序打包为可执行的 WAR 文件，您应该为 Maven 或 Gradle 提供一个配置文件。例如：
 
-* With Maven, run `./mvnw -Pprod package` (or `mvn -Pprod package`)
-* With Gradle, run `./gradlew -Pprod bootJar` (or `gradle -Pprod bootJar`)
+* 使用 Maven，运行 `./mvnw -Pprod package`（或 `mvn -Pprod package`）
+* 使用 Gradle，运行 `./gradlew -Pprod bootJar`（或 `gradle -Pprod bootJar`）
 
-When you run your production application from a WAR file, the default is to use the same profile(s) as used during packaging. If you want to override this, you can explicitly provide an alternative in VM argument:
+当您从 WAR 文件运行生产应用程序时，默认情况下使用与打包时相同的配置文件。如果您想覆盖此设置，您可以在 VM 参数中显式提供一个替代方案：
 
 ```shell
 java -jar jhipster-0.0.1-SNAPSHOT.jar --spring.profiles.active=...
 ```
 
 
-## Spring profiles switches
+## Spring 配置文件开关
 
-JHipster comes with three additional profiles used as switches:
+JHipster 带有三个额外的配置文件用作开关：
 
-* `api-docs` to enable swagger
-* `no-liquibase` to disable liquibase
-* `tls` to enable TLS security and use the HTTP/2 protocol (see [the TLS and HTTP/2 documentation](/tls))
+* `api-docs` 启用 swagger
+* `no-liquibase` 禁用 liquibase
+* `tls` 启用 TLS 安全性并使用 HTTP/2 协议（请参阅 [TLS 和 HTTP/2 文档](/tls)）
 
-These can be used along with both the `dev` and `prod` profiles. Please note that by default, the `api-docs` profile is not enabled in `prod` and enabled in `dev` by setting the `spring.profiles.group.dev` profile group property in `application.yml`.
+这些可以与 `dev` 和 `prod` 配置文件一起使用。请注意，默认情况下，`api-docs` 配置文件在 `prod` 中未启用，在 `dev` 中通过在 `application.yml` 中设置 `spring.profiles.group.dev` 配置文件组属性而启用。
 
-`api-docs`, `no-liquibase`, `tls` are only used at runtime:
+`api-docs`、`no-liquibase`、`tls` 仅在运行时使用：
 
-* In your IDE, run your main application class with `spring.profiles.active=dev,no-liquibase` (please note you need to include the `dev` or `prod` profile explicitly)
-* With a packaged application: `./java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod,no-liquibase`
+* 在您的 IDE 中，使用 `spring.profiles.active=dev,no-liquibase` 运行您的主应用程序类（请注意，您需要显式包含 `dev` 或 `prod` 配置文件）
+* 使用打包的应用程序：`./java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod,no-liquibase`
 
-With Maven, you can also use those profiles directly:
+使用 Maven，您也可以直接使用这些配置文件：
 
 ```shell
 ./mvnw -Pprod,api-docs,no-liquibase
@@ -81,7 +81,7 @@ With Maven, you can also use those profiles directly:
 ./mvnw -Pdev,no-liquibase
 ```
 
-With Gradle, you can also use those profiles directly:
+使用 Gradle，您也可以直接使用这些配置文件：
 
 ```shell
 ./gradlew -Pprod -Papi-docs -Pno-liquibase

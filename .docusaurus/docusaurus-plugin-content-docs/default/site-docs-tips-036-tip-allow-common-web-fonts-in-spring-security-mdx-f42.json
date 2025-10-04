@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_allow_common_web_fonts_in_spring_security",
+  "title": "Allowing Common Web Fonts in Security Configuration",
+  "description": "Tip submitted by @dinu0000",
+  "source": "@site/docs/tips/036_tip_allow_common_web_fonts_in_spring_security.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/036_tip_allow_common_web_fonts_in_spring_security.html",
+  "permalink": "/cn/tips/036_tip_allow_common_web_fonts_in_spring_security.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/036_tip_allow_common_web_fonts_in_spring_security.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1692230400000,
+  "sidebarPosition": 36,
+  "frontMatter": {
+    "title": "Allowing Common Web Fonts in Security Configuration",
+    "slug": "/tips/036_tip_allow_common_web_fonts_in_spring_security.html",
+    "last_update": {
+      "date": "2023-08-17T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Combine generation and custom code",
+    "permalink": "/cn/tips/035_tip_combine_generation_and_custom_code.html"
+  },
+  "next": {
+    "title": "JHipster Developers Association",
+    "permalink": "/cn/association/"
+  }
+}

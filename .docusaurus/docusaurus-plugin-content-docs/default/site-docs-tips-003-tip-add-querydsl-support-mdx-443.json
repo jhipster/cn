@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_add_querydsl_support",
+  "title": "Add Querydsl support",
+  "description": "Tip submitted by @omrzljak, updated by @arnaud-deprez",
+  "source": "@site/docs/tips/003_tip_add_querydsl_support.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/003_tip_add_querydsl_support.html",
+  "permalink": "/cn/tips/003_tip_add_querydsl_support.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/003_tip_add_querydsl_support.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1493282400000,
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Add Querydsl support",
+    "slug": "/tips/003_tip_add_querydsl_support.html",
+    "last_update": {
+      "date": "2017-04-27T08:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Using Docker containers as localhost on Mac/Windows",
+    "permalink": "/cn/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html"
+  },
+  "next": {
+    "title": "Protecting Kibana with Apache (Basic Authentication)",
+    "permalink": "/cn/tips/023_tip_protecting_kibana_with_apache_basic_authent.html"
+  }
+}

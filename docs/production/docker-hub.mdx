@@ -7,50 +7,50 @@ last_update:
 
 [![Docker Hub](/images/logo/docker-hub.png)](https://hub.docker.com/u/jhipster/)
 
-JHipster has its own [organization] at Docker Hub and provides different Docker images.
+JHipster 在 Docker Hub 上有自己的[组织]，并提供不同的 Docker 镜像。
 
-The [jhipster-docker-hub] project provides all docker-compose files to launch these images.
-To use the docker-compose commands, you have to:
+[jhipster-docker-hub] 项目提供了所有 docker-compose 文件来启动这些镜像。
+要使用 docker-compose 命令，您必须：
 
-- clone the project: `git clone https://github.com/jhipster/jhipster-docker-hub`
-- go inside project: `cd jhipster-docker-hub`
+- 克隆项目：`git clone https://github.com/jhipster/jhipster-docker-hub`
+- 进入项目：`cd jhipster-docker-hub`
 
 :::warning
 
-Based on your OS, your `DOCKER_HOST` will differ. On Linux, it will be `localhost`.
-For Mac/Windows, you will have to obtain the IP using following command: `docker-machine ip default`
+根据您的操作系统，您的 `DOCKER_HOST` 将不同。在 Linux 上，它将是 `localhost`。
+对于 Mac/Windows，您将必须使用以下命令获取 IP：`docker-machine ip default`
 
 :::
 
 
-## [jhipster/jhipster](https://hub.docker.com/r/jhipster/jhipster): an alternative installation of JHipster
+## [jhipster/jhipster](https://hub.docker.com/r/jhipster/jhipster)：JHipster 的替代安装
 
-See the [installation](/installation/) page for full instructions.
+查看[安装](/installation/)页面以获取完整说明。
 
-These following commands can be used in specific use cases.
+以下命令可用于特定用例。
 
-### Use the latest release of JHipster
+### 使用 JHipster 的最新版本
 
-Launch `jhipster` in the current folder, with the latest release
+在当前文件夹中使用最新版本启动 `jhipster`
 
 ```shell
 docker container run --rm -it -v "$PWD":/home/jhipster/app jhipster/jhipster jhipster
 ```
 
-### Use JHipster v3.0.0
+### 使用 JHipster v3.0.0
 
-Launch `jhipster` in the current folder, with an older release:
+在当前文件夹中使用旧版本启动 `jhipster`：
 
 ```shell
 docker container run --rm -it -v "$PWD":/home/jhipster/app jhipster/jhipster:v3.0.0 jhipster
 ```
 
-You can see [all available tags](https://hub.docker.com/r/jhipster/jhipster/tags/)
+您可以查看[所有可用标签](https://hub.docker.com/r/jhipster/jhipster/tags/)
 
 
-## [jhipster/jdl-studio](https://hub.docker.com/r/jhipster/jdl-studio) : JDL-Studio offline
+## [jhipster/jdl-studio](https://hub.docker.com/r/jhipster/jdl-studio) : JDL-Studio 离线版
 
-You can use JDL-Studio offline and access to it at [http://localhost:18080](http://localhost:18080)
+您可以离线使用 JDL-Studio 并在 [http://localhost:18080](http://localhost:18080) 访问它
 
 ```shell
 docker container run -d -p 18080:80 jhipster/jdl-studio
@@ -59,62 +59,62 @@ docker container run -d -p 18080:80 jhipster/jdl-studio
 
 ## [jhipster/jhipster-sample-app](https://hub.docker.com/r/jhipster/jhipster-sample-app)
 
-It is a sample application with H2 or MySQL.
+这是一个使用 H2 或 MySQL 的示例应用程序。
 
-### Quick launch
+### 快速启动
 
-Run a jhipster application directly with Docker, in development profile
+直接使用 Docker 在开发配置文件中运行 jhipster 应用程序
 
 ```shell
 docker container run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev jhipster/jhipster-sample-app
 ```
 
-Then, you can access to the application at [http://localhost:8080](http://localhost:8080)
+然后，您可以在 [http://localhost:8080](http://localhost:8080) 访问应用程序
 
-### Development profile
+### 开发配置文件
 
-Run the application in development profile
+在开发配置文件中运行应用程序
 
 ```shell
 docker-compose -f jhipster-sample-app/dev.yml up
 ```
 
-### Production profile
+### 生产配置文件
 
-Run the application in production profile, with MySQL database
+在生产配置文件中运行应用程序，使用 MySQL 数据库
 
 ```shell
 docker-compose -f jhipster-sample-app/prod.yml up
 ```
 
-### Production profile and monitoring with ELK stack
+### 生产配置文件和使用 ELK 栈进行监控
 
-Run the application in production profile, with MySQL database and ELK stack
+在生产配置文件中运行应用程序，使用 MySQL 数据库和 ELK 栈
 
 ```shell
 docker-compose -f jhipster-sample-app/prod-elk.yml up
 ```
 
-Access to the running application at [http://localhost:8080](http://localhost:8080)
+在 [http://localhost:8080](http://localhost:8080) 访问运行中的应用程序
 
-Access to the Kibana dashboard at [http://localhost:5601](http://localhost:5601)
+在 [http://localhost:5601](http://localhost:5601) 访问 Kibana 仪表板
 
 
 ## [jhipster/jhipster-sample-app-elasticsearch](https://hub.docker.com/r/jhipster/jhipster-sample-app-elasticsearch)
 
-It is a sample application with MySQL and Elasticsearch.
+这是一个使用 MySQL 和 Elasticsearch 的示例应用程序。
 
-### Development profile
+### 开发配置文件
 
-Run the application in development profile
+在开发配置文件中运行应用程序
 
 ```shell
 docker-compose -f jhipster-sample-app-elasticsearch/dev.yml up
 ```
 
-### Production profile
+### 生产配置文件
 
-Run the application in production profile, with MySQL database and Elasticsearch
+在生产配置文件中运行应用程序，使用 MySQL 数据库和 Elasticsearch
 
 ```shell
 docker-compose -f jhipster-sample-app-elasticsearch/prod.yml up
@@ -123,11 +123,11 @@ docker-compose -f jhipster-sample-app-elasticsearch/prod.yml up
 
 ## [jhipster/jhipster-sample-app-mongodb](https://hub.docker.com/r/jhipster/jhipster-sample-app-mongodb)
 
-It is a sample application with MongoDB.
+这是一个使用 MongoDB 的示例应用程序。
 
-### Production profile
+### 生产配置文件
 
-Run the application in production profile, with MongoDB database
+在生产配置文件中运行应用程序，使用 MongoDB 数据库
 
 ```shell
 docker-compose -f jhipster-sample-app-mongodb/prod.yml up
@@ -136,17 +136,17 @@ docker-compose -f jhipster-sample-app-mongodb/prod.yml up
 
 ## [jhipster/jhipster-sample-app-cassandra](https://hub.docker.com/r/jhipster/jhipster-sample-app-cassandra)
 
-It is a sample application with a Cassandra cluster.
+这是一个使用 Cassandra 集群的示例应用程序。
 
-### Production profile
+### 生产配置文件
 
-Run the application in production profile, with Cassandra cluster
+在生产配置文件中运行应用程序，使用 Cassandra 集群
 
 ```shell
 docker-compose -f jhipster-sample-app-cassandra/prod.yml up
 ```
 
-Scale a Cassandra node
+扩展 Cassandra 节点
 
 ```shell
 docker-compose -f jhipster-sample-app-cassandra/prod.yml scale sample-cassandra-node=2
@@ -156,48 +156,50 @@ docker-compose -f jhipster-sample-app-cassandra/prod.yml scale sample-cassandra-
 [jhipster-docker-hub]: https://github.com/jhipster/jhipster-docker-hub
 
 
-## Microservices architecture
+## 微服务架构
 
-The images used here are:
+这里使用的镜像是：
 
 - [jhipster/jhipster-registry](https://hub.docker.com/r/jhipster/jhipster-registry)
 - [jhipster/jhipster-sample-app-gateway](https://hub.docker.com/r/jhipster/jhipster-sample-app-gateway)
 - [jhipster/jhipster-sample-app-microservice](https://hub.docker.com/r/jhipster/jhipster-sample-app-microservice)
 
-### Production profile
+### 生产配置文件
 
-Run the full stack in production profile
+在生产配置文件中运行完整栈
 
 ```shell
 docker-compose -f jhipster-sample-microservices/prod/prod.yml up
 ```
 
-It will start:
+它将启动：
 
-- Consul or the JHipster Registry
-- the gateway
-- a MySQL database
-- the microservice
-- a PostgreSQL database
+- Consul 或 JHipster Registry
+- 网关
+- MySQL 数据库
+- 微服务
+- PostgreSQL 数据库
 
 
-Scale the microservice
+扩展微服务
 
 ```shell
 docker-compose -f jhipster-sample-microservices/prod/prod.yml scale jhipstersamplemicroservice-app=2
 ```
 
-### Production profile and monitoring with ELK stack
+### 生产配置文件和使用 ELK 栈进行监控
 
-Run the full stack in production profile, with ELK stack
+在生产配置文件中运行完整栈，使用 ELK 栈
 
 ```shell
 docker-compose -f jhipster-sample-microservices/prod-elk/prod-elk.yml up
 ```
 
-Scale the microservice
+扩展微服务
 
 ```shell
+docker-compose -f jhipster-sample-microservices/prod-elk/prod-elk.yml scale jhipstersamplemicroservice-app=2
+```
 docker-compose -f jhipster-sample-microservices/prod-elk/prod-elk.yml scale jhipstersamplemicroservice-app=2
 ```
 

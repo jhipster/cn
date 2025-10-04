@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_kubernetes_and_google_cloud_sql",
+  "title": "Kubernetes and Google Cloud SQL",
+  "description": "Tip submitted by @bourdux",
+  "source": "@site/docs/tips/018_tip_kubernetes_and_google_cloud_sql.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/018_tip_kubernetes_and_google_cloud_sql.html",
+  "permalink": "/cn/tips/018_tip_kubernetes_and_google_cloud_sql.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/018_tip_kubernetes_and_google_cloud_sql.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1479063600000,
+  "sidebarPosition": 18,
+  "frontMatter": {
+    "title": "Kubernetes and Google Cloud SQL",
+    "slug": "/tips/018_tip_kubernetes_and_google_cloud_sql.html",
+    "last_update": {
+      "date": "2016-11-13T19:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "REPL with the remote shell (deprecated)",
+    "permalink": "/cn/tips/017_tip_repl_with_the_remote_shell.html"
+  },
+  "next": {
+    "title": "Boost performance of pagination with infinite scrolling using Slice",
+    "permalink": "/cn/tips/019_tip_infinite_scroll_with_slice.html"
+  }
+}

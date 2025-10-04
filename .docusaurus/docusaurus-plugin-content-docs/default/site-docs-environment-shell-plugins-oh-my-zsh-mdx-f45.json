@@ -1,0 +1,31 @@
+{
+  "id": "environment/shell-plugins/oh-my-zsh",
+  "title": "Using Oh-My-Zsh",
+  "description": "If you are using Linux or Mac OS X, Oh-My-Zsh is a great tool to manage your ZSH configuration.",
+  "source": "@site/docs/environment/shell-plugins/oh-my-zsh.mdx",
+  "sourceDirName": "environment/shell-plugins",
+  "slug": "/oh-my-zsh/",
+  "permalink": "/cn/oh-my-zsh/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/shell-plugins/oh-my-zsh.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1469472000000,
+  "frontMatter": {
+    "title": "Using Oh-My-Zsh",
+    "slug": "/oh-my-zsh/",
+    "last_update": {
+      "date": "2016-07-25T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster Shell Plugins",
+    "permalink": "/cn/shell-plugins/"
+  },
+  "next": {
+    "title": "Fisher JHipster 插件",
+    "permalink": "/cn/fisher/"
+  }
+}

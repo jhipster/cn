@@ -1,75 +1,75 @@
 ---
-title: Managing relationships
+title: 管理关系
 slug: /managing-relationships/
 last_update:
   date: 2020-11-25T09:07:00-00:00
 ---
 
-When JPA is used, the [entity sub-generator](/creating-an-entity) can create relationships between entities.
+当使用 JPA 时，[实体子生成器](/creating-an-entity)可以在实体之间创建关系。
 
 
-## Presentation
+## 介绍
 
-Relationships only work when JPA is used. If you choose to use [Cassandra](/using-cassandra) they won't be available. In case you use [MongoDB](/using-mongodb/), [Couchbase](/using-couchbase/) or [Neo4j](/using-neo4j) relations have a different semantics, but they are all available to be used. For more information about Couchbase and MongoDB relationships please refer to [Embedded Entities for Couchbase and MongoDB](#embedded-entities-for-couchbase-and-mongodb).
+关系仅在使用 JPA 时才有效。如果您选择使用 [Cassandra](/using-cassandra)，它们将不可用。如果您使用 [MongoDB](/using-mongodb/)、[Couchbase](/using-couchbase/) 或 [Neo4j](/using-neo4j)，关系具有不同的语义，但它们都可以使用。有关 Couchbase 和 MongoDB 关系的更多信息，请参考 [Couchbase 和 MongoDB 的嵌入实体](#embedded-entities-for-couchbase-and-mongodb)。
 
-A relationship works between two entities, and JHipster will generate the code for:
+关系在两个实体之间工作，JHipster 将生成代码用于：
 
-- Managing this relationship with JPA in the generated entities
-- Creating the correct Liquibase changelog, in order for the relationship to exist in the database
-- Generating the Angular/React front-end so you can manage this relationship graphically in the user interface
-
-
-## JHipster UML and JDL Studio
-
-This page describes how to create relationships with JHipster using the standard command-line interface.  If you want to create many entities and relationships, you might prefer to use a graphical tool.
-
-In that case, three options are available:
-
-- [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language.
-- [JHipster IDE](/jhipster-ide/), a plugin that provides textual editing support of JDL files for popular IDEs.
-- Deprecated: _[JHipster UML](/jhipster-uml/), which allows you to use an UML editor._
-
-You can generate entities with relationships from a JDL file using the `jdl` sub-generator, by running `jhipster jdl your-jdl-file.jh`.
+- 在生成的实体中使用 JPA 管理此关系
+- 创建正确的 Liquibase 更改日志，以便在数据库中存在该关系
+- 生成 Angular/React 前端，以便您可以在用户界面中以图形方式管理此关系
 
 
-## Available relationships
+## JHipster UML 和 JDL Studio
 
-As we use JPA, the usual one-to-many, many-to-one, many-to-many and one-to-one relationships are available.
+本页面描述了如何使用标准命令行界面使用 JHipster 创建关系。如果您希望创建许多实体和关系，您可能更喜欢使用图形工具。
+
+在这种情况下，可以使用三个选项：
+
+- [JDL Studio](https://start.jhipster.tech/jdl-studio/)，我们的在线工具，使用我们的领域特定语言创建实体和关系。
+- [JHipster IDE](/jhipster-ide/)，一个插件，为流行的 IDE 提供 JDL 文件的文本编辑支持。
+- 已弃用：_[JHipster UML](/jhipster-uml/)，允许您使用 UML 编辑器。_
+
+您可以通过运行 `jhipster jdl your-jdl-file.jh` 使用 `jdl` 子生成器从 JDL 文件生成具有关系的实体。
+
+
+## 可用关系
+
+由于我们使用 JPA，常规的一对多、多对一、多对多和一对一关系都可用。
 
 :::tip
 
-The `User` entity
+`User` 实体
 
 :::
 
-Information about it is located [here](/user-entity).
+有关它的信息位于[这里](/user-entity)。
 
 :::warning
 
-**A small warning about entity & relationship generation**: in the following examples, you'll notice that compilation
-_may_ fail in some cases because destination entities aren't generated and that's normal (this warning can be ignored).
+**关于实体和关系生成的小警告**：在以下示例中，您会注意到在某些情况下编译
+_可能_会失败，因为目标实体尚未生成，这是正常的（可以忽略此警告）。
 
 :::
 
-There are two ways to avoid that:
-  - Generate the entities first, then the relationships
-  - Use the JDL
+有两种方法可以避免这种情况：
+  - 先生成实体，然后生成关系
+  - 使用 JDL
 
 
-## A bidirectional one-to-many relationship
+## 双向一对多关系
 
-Let's start with two entities, a `Owner` and a `Car`. A owner can have many cars, and a car can have only one owner.
+让我们从两个实体开始，`Owner` 和 `Car`。一个所有者可以有多辆车，一辆车只能有一个所有者。
 
-So this is a one-to-many relationship (one owner has many cars) on one side, and a many-to-one relationship (many cars have one owner) on the other side:
+因此，一侧这是一对多关系（一个所有者有多辆车），另一侧这是多对一关系（多辆车有一个所有者）：
 
 ```
 Owner (1) <-----> (*) Car
 ```
 
-Note that after generating the entity, the generator will inform you that some errors occurred while generating
-the files. That's normal as the destination entity has not yet been generated, so you can safely ignore this warning.
+请注意，生成实体后，生成器将通知您在生成
+文件时发生了一些错误。这是正常的，因为目标实体尚未生成，因此您可以安全地忽略此警告。
 
-We will create the `Owner` first. Here are the relevant JHipster questions for the `Owner`:
+我们将首先创建 `Owner`。以下是 `Owner` 的相关 JHipster 问题：
 
 ```
 jhipster entity Owner
@@ -82,9 +82,9 @@ Generating relationships to other entities
 ? What is the name of this relationship in the other entity? owner
 ```
 
-Please note that we selected the default options concerning the names of the relationships.
+请注意，我们选择了有关关系名称的默认选项。
 
-Now we can generate the `Car`:
+现在我们可以生成 `Car`：
 
 ```
 jhipster entity Car
@@ -97,7 +97,7 @@ Generating relationships to other entities
 ? When you display this relationship with Angular, which field from 'Owner' do you want to use? id
 ```
 
-The same can be achieved using the below JDL as well
+也可以使用下面的 JDL 实现相同的效果
 ```
 entity Owner
 entity Car
@@ -107,12 +107,12 @@ relationship OneToMany {
 }
 ```
 
-That's it, you now have a one-to-many relationship between those two entities! On the generated Angular/React client UI you will have a dropdown in `Car` to select a `Owner`.
+就是这样，您现在在这两个实体之间有了一对多关系！在生成的 Angular/React 客户端 UI 中，您将在 `Car` 中有一个下拉框来选择 `Owner`。
 
 
-## A bidirectional many-to-one relationship
+## 双向多对一关系
 
-This is equivalent to the bidirectional one-to-many relationship after inversing the sides in the JDL file:
+这等同于在 JDL 文件中反转两侧后的双向一对多关系：
 
 
 ```
@@ -125,22 +125,22 @@ relationship ManyToOne {
 ```
 
 
-## A unidirectional many-to-one relationship
+## 单向多对一关系
 
-In the previous example we had a bidirectional relationship: from a `Car` instance you could find its owner, and from a `Owner` instance you could get all of its cars.
+在前面的示例中，我们有一个双向关系：从 `Car` 实例您可以找到其所有者，从 `Owner` 实例您可以获得其所有汽车。
 
-A many-to-one unidirectional relationship means that the cars know their owner, but not the opposite.
+单向多对一关系意味着汽车知道其所有者，但反之则不然。
 
 ```
 Owner (1) <----- (*) Car
 ```
 
-You would do that relationship for two reasons:
+您有两个原因要这样做关系：
 
-- From a business point of view, you only use your entities in this way. So you don't want to have an API that allows developers to do something which doesn't make sense.
-- You have a small performance gain when using the `Owner` entity (as it won't have to manage the collection of cars).
+- 从业务角度来看，您只以这种方式使用您的实体。所以您不希望有一个允许开发人员做没有意义的事情的 API。
+- 使用 `Owner` 实体时您有一个小的性能提升（因为它不必管理汽车集合）。
 
-In that case, you would still create the `Owner` first, this time with no relationship:
+在那种情况下，您仍然首先创建 `Owner`，这次没有关系：
 
 ```
 jhipster entity Owner
@@ -149,7 +149,7 @@ Generating relationships to other entities
 ? Do you want to add a relationship to another entity? No
 ```
 
-And then the `Car` entity, as in the previous example:
+然后是 `Car` 实体，如前面的示例：
 
 ```
 jhipster entity Car
@@ -162,8 +162,8 @@ Generating relationships to other entities
 ? When you display this relationship with Angular, which field from 'Owner' do you want to use? id
 ```
 
-This will work as in the previous example, but you won't be able to add or remove cars from the `Owner` entity. On the generated Angular/React client UI you will have a dropdown in `Car` to select a `Owner`.
-This is the corresponding JDL:
+这将像前面的示例一样工作，但您无法从 `Owner` 实体添加或删除汽车。在生成的 Angular/React 客户端 UI 上，您将在 `Car` 中有一个下拉框来选择 `Owner`。
+这是相应的 JDL：
 
 ```
 entity Owner
@@ -175,38 +175,38 @@ relationship ManyToOne {
 ```
 
 
-## A unidirectional one-to-many relationship
+## 单向一对多关系
 
-A one-to-many unidirectional relationship means that the `Owner` instance can get its collection of cars, but not the opposite. It is the opposite from the previous example.
+单向一对多关系意味着 `Owner` 实例可以获得其汽车集合，但反之则不然。这与前面的示例相反。
 
 ```
 Owner (1) -----> (*) Car
 ```
 
-This type of relationship is not provided by default in JHipster at the moment, see [#1569](https://github.com/jhipster/generator-jhipster/issues/1569) for more information.
+这种类型的关系目前在 JHipster 中默认不提供，请参阅 [#1569](https://github.com/jhipster/generator-jhipster/issues/1569) 以获取更多信息。
 
-You have two solutions for this:
+您有两个解决方案：
 
-- Do a bidirectional mapping, and use it without modification: this is our recommended approach, as it is much simpler
-- Do a bidirectional mapping, and then modify it to transform it into a unidirectional mapping:
-    - Remove the "mappedBy" attribute on your `@OneToMany` annotation
-    - Generate the required join table: you can do a `mvn liquibase:diff` to generate that table, see the [documentation about using Liquibase diff](/development/)
+- 执行双向映射，并使用它而不进行修改：这是我们推荐的方法，因为它更简单
+- 执行双向映射，然后修改它以将其转换为单向映射：
+    - 删除您的 `@OneToMany` 注解上的 "mappedBy" 属性
+    - 生成所需的连接表：您可以执行 `mvn liquibase:diff` 来生成该表，请参阅[关于使用 Liquibase diff 的文档](/development/)
 
-This is not supported with JDL as it isn't in JHipster.
+这在 JDL 中不受支持，因为它不在 JHipster 中。
 
 
-## Two one-to-many relationships on the same two entities
+## 同两个实体上的两个一对多关系
 
-For this example, a `Person` can be the owner of many cars and can also be the driver of many cars:
+在这个示例中，一个 `Person` 可以是多辆汽车的所有者，也可以是多辆汽车的驾驶员：
 
 ```
 Person (1) <---owns-----> (*) Car
 Person (1) <---drives---> (*) Car
 ```
 
-For this we need to use the relationship names, which we have left with their default values in the previous examples.
+为此，我们需要使用关系名称，在之前的示例中我们使用了默认值。
 
-Generate the `Person` entity, which has two one-to-many relationships to the `Car` entity:
+生成 `Person` 实体，它与 `Car` 实体有两个一对多关系：
 
 ```
 jhipster entity Person
@@ -226,7 +226,7 @@ Generating relationships to other entities
 ? What is the name of this relationship in the other entity? driver
 ```
 
-Generate the `Car` entity, which use the same relationship name has was configured in the `Person` entity:
+生成 `Car` 实体，它使用与在 `Person` 实体中配置的相同关系名称：
 
 ```
 jhipster entity Car
@@ -246,7 +246,7 @@ Generating relationships to other entities
 ? When you display this relationship with Angular, which field from 'Person' do you want to use? id
 ```
 
-The same can be achieved using the below JDL as well
+也可以使用下面的 JDL 实现相同的效果
 
 ```
 entity Person
@@ -261,25 +261,24 @@ relationship OneToMany {
 }
 ```
 
-A `Car` can now have a driver and a owner, which are both `Person` entities. On the generated Angular/React client UI you will dropdowns in `Car` to select a `Person` for `owner` field and `driver` field.
+现在 `Car` 可以有一个驾驶员和一个所有者，它们都是 `Person` 实体。在生成的 Angular/React 客户端 UI 上，您将在 `Car` 中有下拉框来为 `owner` 字段和 `driver` 字段选择 `Person`。
 
 
-## A many-to-many relationship
+## 多对多关系
 
-A `Driver` can drive many cars, but a `Car` can also have many drivers.
+一个 `Driver` 可以驾驶多辆汽车，但一辆 `Car` 也可以有多个驾驶员。
 
 ```
 Driver (*) <-----> (*) Car
 ```
 
-At the database level, this means we will have a join table between the `Driver` and the `Car` tables.
+在数据库层面，这意味着我们将在 `Driver` 和 `Car` 表之间有一个连接表。
 
-For JPA, one of those two entities will need to manage the relationship: in our case, that would be the `Car` entity, which will be responsible to add or remove drivers.
+对于 JPA，这两个实体中的一个需要管理关系：在我们的情况下，这将是 `Car` 实体，它将负责添加或删除驾驶员。
 
-Please note that, after generating the entity, the generator will inform you that some errors occurred while generating
-the files. That's normal as the destination entity has not yet been generated, so you can safely ignore this warning.
+请注意，在生成实体后，生成器将通知您在生成文件时发生了一些错误。这是正常的，因为目标实体尚未生成，您可以安全地忽略此警告。
 
-Let us generate the non-owning side of the relationship, the `Driver`, with a many-to-many relationship:
+让我们生成关系的非拥有方，即具有多对多关系的 `Driver`：
 
 ```
 jhipster entity Driver
@@ -293,7 +292,7 @@ Generating relationships to other entities
 ? What is the name of this relationship in the other entity? driver
 ```
 
-Then generate the `Car`, with the owning side of the many-to-many relationship:
+然后生成具有多对多关系拥有方的 `Car`：
 
 ```
 jhipster entity Car
@@ -308,7 +307,7 @@ Generating relationships to other entities
 ? When you display this relationship on client-side, which field from 'Driver' do you want to use? This field will be displayed as a String, so it cannot be a Blob id
 ```
 
-The same can be achieved using the below JDL as well
+也可以使用下面的 JDL 实现相同的效果
 
 ```
 entity Driver
@@ -319,18 +318,18 @@ relationship ManyToMany {
 }
 ```
 
-That's it, you now have a many-to-many relationship between those two entities! On the generated Angular/React client UI you will have a multi-select dropdown in `Car` to select multiple `Driver` since `Car` is the owning side.
+就是这样，您现在在这两个实体之间有了多对多关系！在生成的 Angular/React 客户端 UI 上，您将在 `Car` 中有一个多选下拉框来选择多个 `Driver`，因为 `Car` 是拥有方。
 
 
-## A one-to-one relationship
+## 一对一关系
 
-Following our example, a one-to-one relationship would mean that a `Driver` can drive only one `Car`, and a `Car` can only have one `Driver`.
+按照我们的示例，一对一关系意味着一个 `Driver` 只能驾驶一辆 `Car`，一辆 `Car` 只能有一个 `Driver`。
 
 ```
 Driver (1) <-----> (1) Car
 ```
 
-Let us create the non-owning side of the relationship, in our case the `Driver`:
+让我们创建关系的非拥有方，在我们的情况下是 `Driver`：
 
 ```
 jhipster entity Driver
@@ -344,7 +343,7 @@ Generating relationships to other entities
 ? What is the name of this relationship in the other entity? driver
 ```
 
-Then generate the `Car`, which owns the relationship:
+然后生成拥有关系的 `Car`：
 
 ```
 jhipster entity Car
@@ -360,7 +359,7 @@ Generating relationships to other entities
 ? When you display this relationship on client-side, which field from 'Driver' do you want to use? This field will be displayed as a String, so it cannot be a Blob id
 ```
 
-The same can be achieved using the below JDL as well
+也可以使用下面的 JDL 实现相同的效果
 
 ```
 entity Driver
@@ -371,20 +370,20 @@ relationship OneToOne {
 }
 ```
 
-That's it, you now have a one-to-one relationship between those two entities! On the generated Angular/React client UI you will have a dropdown in `Car` to select a `Driver` since `Car` is the owning side.
+就是这样，您现在在这两个实体之间有了一对一关系！在生成的 Angular/React 客户端 UI 上，您将在 `Car` 中有一个下拉框来选择 `Driver`，因为 `Car` 是拥有方。
 
-[More information on using one-to-one with JPA Derived Identifiers](#using-jpa-derived-identifiersmapsid-for-one-to-one-relationship)
+[有关使用具有 JPA 派生标识符的一对一的更多信息](#using-jpa-derived-identifiersmapsid-for-one-to-one-relationship)
 
 
-## A unidirectional one-to-one relationship
+## 单向一对一关系
 
-A unidirectional one-to-one relationship means that the `citizen` instance can get its passport, but the `passport` instance can't get to its owner.
+单向一对一关系意味着 `citizen` 实例可以获得其护照，但 `passport` 实例无法获得其所有者。
 
 ```
 Citizen (1) -----> (1) Passport
 ```
 
-Generate the `Passport` entity first, without any relationship to its owner:
+首先生成 `Passport` 实体，与其所有者没有任何关系：
 
 ```
 jhipster entity Passport
@@ -393,7 +392,7 @@ Generating relationships to other entities
 ? Do you want to add a relationship to another entity? No
 ```
 
-Then, generate the `Citizen` entity:
+然后，生成 `Citizen` 实体：
 
 ```
 jhipster entity Citizen
@@ -409,8 +408,8 @@ Generating relationships to other entities
 ? When you display this relationship with Angular, which field from 'Passport' do you want to use? id
 ```
 
-After doing this, a `Citizen` possesses a passport, but no `Citizen` instance is defined in `Passport`. On the generated Angular/React client UI you will have a dropdown in `Citizen` to select a `Passport` since `Citizen` is the owning side.
-This is the corresponding JDL:
+做完这些后，`Citizen` 拥有护照，但在 `Passport` 中没有定义 `Citizen` 实例。在生成的 Angular/React 客户端 UI 上，您将在 `Citizen` 中有一个下拉框来选择 `Passport`，因为 `Citizen` 是拥有方。
+这是相应的 JDL：
 
 ```
 entity Citizen
@@ -421,11 +420,11 @@ relationship OneToOne {
 }
 ```
 
-### Using JPA Derived Identifiers(@MapsId) for one-to-one relationship
+### 对于一对一关系使用 JPA 派生标识符(@MapsId)
 
-[JPA Derived Identifiers](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/MapsId.html) can be used to have [the most efficient mapping](https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/).
+[JPA 派生标识符](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/MapsId.html)可以用于获得[最高效的映射](https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/)。
 
-This is the corresponding JDL for previous uni-directional one-to-one example:
+这是先前单向一对一示例的相应 JDL：
 
 ```
 entity Citizen
@@ -436,7 +435,7 @@ relationship OneToOne {
 }
 ```
 
-This is the corresponding JDL for previous bi-directional one-to-one example:
+这是先前双向一对一示例的相应 JDL：
 
 ```
 entity Driver
@@ -447,55 +446,55 @@ relationship OneToOne {
 }
 ```
 
- However, based on business requirements, there might be cases where this should be avoided because it has following constraint:
-**Once the id(primary key) is set at owning side, it is not changeable using JPA/Hibernate. You should not change it anyway.**
+然而，根据业务需求，可能有些情况下应该避免这样做，因为它有以下约束：
+**一旦在拥有方设置了 id(主键)，就不能使用 JPA/Hibernate 改变它。无论如何您都不应该改变它。**
 
-**Here are a few suggestions regarding usage:**
+**以下是有关用法的一些建议：**
 
-Use `@MapsId` when:
-* Dependent - if the owning side (child entity) seems tightly dependent on the non-owning (parent entity).
-* Association value is never meant to be changed - if you are never going to change the id(primary key) of the child entity once it is set.
+在以下情况下使用 `@MapsId`：
+* 依赖 - 如果拥有方（子实体）似乎高度依赖于非拥有方（父实体）。
+* 关联值永远不会改变 - 如果您永远不会改变子实体的 id(主键)，一旦设置。
 
-For example:
+例如：
 
 ```
 class User{}
-class Profile{ @OneToOne @MapsId private User user; } // profile is only meant for that user
-class Preferences{ @OneToOne @MapsId private User user; } // preference is only meant for that user
+class Profile{ @OneToOne @MapsId private User user; } // profile 只是为了那个用户
+class Preferences{ @OneToOne @MapsId private User user; } // preference 只是为了那个用户
 ```
 
-Once a profile or a preference is created for a user, it will never change to refer to another user.
+一旦为用户创建了配置文件或首选项，它就永远不会改变以指向另一个用户。
 
-Do not use  `@MapsId` when:
-* Not dependent - If the owning side (child entity) seems not dependent on the non-owning (parent entity)
-* Association value is meant to be changed - if you think that the child entity is going to refer to another parent entity in future.
+在以下情况下不要使用 `@MapsId`：
+* 非依赖 - 如果拥有方（子实体）似乎不依赖于非拥有方（父实体）
+* 关联值旨在改变 - 如果您认为子实体将来将指向另一个父实体。
 
-For example:
+例如：
 
 ```
-class Car{ @OneToOne @JoinColumn(name="current_driver_id") Driver currentDriver} // car can be drived by another driver in future
-class Driver{@OneToOne(mappedBy = "currentDriver") Car drivingCar} // driver drives another car in future
+class Car{ @OneToOne @JoinColumn(name="current_driver_id") Driver currentDriver} // 汽车将来可以由另一个驾驶员驾驶
+class Driver{@OneToOne(mappedBy = "currentDriver") Car drivingCar} // 驾驶员将来驾驶另一辆汽车
 ```
-Both car and driver association value may change in future.
+汽车和驾驶员关联值在将来都可能改变。
 
 :::note
 
-There is [a known issue regarding using `@OneToOne` with `@MapsId` and how to avoid it](/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html).
+有一个[关于使用 `@OneToOne` 和 `@MapsId` 的已知问题以及如何避免它](/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html)。
 
 :::
 
-## Setting fetching data strategy to eager (FetchType.EAGER)
+## 设置获取数据策略为 eager (FetchType.EAGER)
 
-All the relationships use the default JPA FetchType:
+所有关系都使用默认的 JPA FetchType：
 - OneToMany: LAZY
 - ManyToOne: EAGER
 - ManyToMany: LAZY
 - OneToOne: EAGER
 
-There is [a known issue of NPE during JSON deserialization](https://github.com/jhipster/generator-jhipster/issues/10981) due to eager fetch type. If you would like to set either `OneToMany` or `ManyToMany` relationship to `FetchType.EAGER`, you can use one of the following solutions:
-- Use `@JsonInclude(JsonInclude.Include.NON_EMPTY)` on the relationship
+由于 eager 获取类型，在 JSON 反序列化期间有一个[NPE 的已知问题](https://github.com/jhipster/generator-jhipster/issues/10981)。如果您想将 `OneToMany` 或 `ManyToMany` 关系设置为 `FetchType.EAGER`，您可以使用以下解决方案之一：
+- 在关系上使用 `@JsonInclude(JsonInclude.Include.NON_EMPTY)`
 
-For example:
+例如：
 
 ```
 @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
@@ -503,14 +502,14 @@ For example:
 private Set<Child> child = new HashSet<>();
 ```
 
-- Return null if the collection is empty when fetching the resource in the backend
-- Using DTO and handle the edge case of empty collection
+- 在后端获取资源时，如果集合为空，则返回 null
+- 使用 DTO 并处理空集合的边缘情况
 
-## Embedded Entities for Couchbase and MongoDB
+## Couchbase 和 MongoDB 的嵌入实体
 
-Couchbase and MongoDB supports relationships through embedded documents. For more information regarding embedded documents in MongoDB refer to [https://docs.mongodb.com/manual/applications/data-models-relationships/](https://docs.mongodb.com/manual/applications/data-models-relationships/) and for Couchbase refer to [https://docs.couchbase.com/server/5.1/data-modeling/modeling-relationships.html](https://docs.couchbase.com/server/5.1/data-modeling/modeling-relationships.html).
+Couchbase 和 MongoDB 通过嵌入文档支持关系。有关 MongoDB 中嵌入文档的更多信息，请参阅 [https://docs.mongodb.com/manual/applications/data-models-relationships/](https://docs.mongodb.com/manual/applications/data-models-relationships/)，对于 Couchbase，请参阅 [https://docs.couchbase.com/server/5.1/data-modeling/modeling-relationships.html](https://docs.couchbase.com/server/5.1/data-modeling/modeling-relationships.html)。
 
-You can define embedded documents simply by using `@embedded`. For example to define a one-to-one relationship;
+您可以通过使用 `@embedded` 简单地定义嵌入文档。例如，要定义一对一关系：
 
 ```
 entity Country {
@@ -528,7 +527,7 @@ relationship OneToOne {
 }
 ```
 
-Similarly, for a one-to-many relationship,
+同样，对于一对多关系：
 
 ```
 entity Country {
@@ -546,11 +545,11 @@ relationship OneToMany {
 }
 ```
 
-For a many-to-many relationship you can simply use the `@embedded` keyword in both directions;
+对于多对多关系，您可以在两个方向上简单地使用 `@embedded` 关键字：
 
 ```
 @embedded
-  entity Country {
+entity Country {
   countryName String
 }
 
@@ -563,4 +562,3 @@ entity Region {
 relationship ManyToMany {
   Country to Region
 }
-```

@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_dynamic_env_variables",
+  "title": "Dynamic environment variables in the front end",
+  "description": "Tip submitted by @yelhouti",
+  "source": "@site/docs/tips/033_tip_dynamic_env_variables.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/033_tip_dynamic_env_variables.html",
+  "permalink": "/cn/tips/033_tip_dynamic_env_variables.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/033_tip_dynamic_env_variables.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1593600600000,
+  "sidebarPosition": 33,
+  "frontMatter": {
+    "title": "Dynamic environment variables in the front end",
+    "slug": "/tips/033_tip_dynamic_env_variables.html",
+    "last_update": {
+      "date": "2020-07-01T10:50:00.000Z"
+    }
+  }
+}

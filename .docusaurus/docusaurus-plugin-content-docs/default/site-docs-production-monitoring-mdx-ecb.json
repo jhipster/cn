@@ -1,0 +1,31 @@
+{
+  "id": "production/monitoring",
+  "title": "Monitoring your JHipster Applications",
+  "description": "JHipster provides several options to monitor your applications at runtime.",
+  "source": "@site/docs/production/monitoring.mdx",
+  "sourceDirName": "production",
+  "slug": "/monitoring/",
+  "permalink": "/cn/monitoring/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/production/monitoring.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1689120000000,
+  "frontMatter": {
+    "title": "Monitoring your JHipster Applications",
+    "slug": "/monitoring/",
+    "last_update": {
+      "date": "2023-07-12T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Using in production",
+    "permalink": "/cn/production/"
+  },
+  "next": {
+    "title": "Docker Hub",
+    "permalink": "/cn/docker-hub/"
+  }
+}

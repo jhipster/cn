@@ -1,0 +1,31 @@
+{
+  "id": "modules/creating-a-blueprint",
+  "title": "Creating a Blueprint",
+  "description": "A JHipster blueprint is a Yeoman generator that is composed from a specific JHipster sub-generator to extend the functionality of that sub-generator. The blueprint can override any defined getter of the sub generator and provide its own templates and functionality.",
+  "source": "@site/docs/modules/creating-a-blueprint.mdx",
+  "sourceDirName": "modules",
+  "slug": "/modules/creating-a-blueprint/",
+  "permalink": "/cn/modules/creating-a-blueprint/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/modules/creating-a-blueprint.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1449340800000,
+  "frontMatter": {
+    "title": "Creating a Blueprint",
+    "slug": "/modules/creating-a-blueprint/",
+    "last_update": {
+      "date": "2015-12-05T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Creating a module",
+    "permalink": "/cn/modules/creating-a-module/"
+  },
+  "next": {
+    "title": "Quarkus",
+    "permalink": "/cn/blueprints/quarkus/"
+  }
+}

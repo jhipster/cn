@@ -1,0 +1,31 @@
+{
+  "id": "production/clever-cloud",
+  "title": "Deploying to Clever Cloud",
+  "description": "Clever cloud is an IT Automation platform",
+  "source": "@site/docs/production/clever-cloud.mdx",
+  "sourceDirName": "production",
+  "slug": "/clever-cloud/",
+  "permalink": "/cn/clever-cloud/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/production/clever-cloud.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1602201600000,
+  "frontMatter": {
+    "title": "Deploying to Clever Cloud",
+    "slug": "/clever-cloud/",
+    "last_update": {
+      "date": "2020-10-09T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Deploying with CloudCaptain",
+    "permalink": "/cn/cloudcaptain/"
+  },
+  "next": {
+    "title": "Deploying to Heroku",
+    "permalink": "/cn/heroku/"
+  }
+}

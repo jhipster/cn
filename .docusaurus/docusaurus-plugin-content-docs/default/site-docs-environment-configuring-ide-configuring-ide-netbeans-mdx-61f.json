@@ -1,0 +1,31 @@
+{
+  "id": "environment/configuring-ide/configuring-ide-netbeans",
+  "title": "Configuring Netbeans",
+  "description": "Importing your JHipster application in NetBeans is straightforward.",
+  "source": "@site/docs/environment/configuring-ide/configuring-ide-netbeans.mdx",
+  "sourceDirName": "environment/configuring-ide",
+  "slug": "/configuring-ide-netbeans/",
+  "permalink": "/cn/configuring-ide-netbeans/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/configuring-ide/configuring-ide-netbeans.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1471718400000,
+  "frontMatter": {
+    "title": "Configuring Netbeans",
+    "slug": "/configuring-ide-netbeans/",
+    "last_update": {
+      "date": "2016-08-20T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Visual Studio Code",
+    "permalink": "/cn/configuring-ide-visual-studio-code/"
+  },
+  "next": {
+    "title": "Docker Compose",
+    "permalink": "/cn/docker-compose/"
+  }
+}

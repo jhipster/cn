@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_ie_support",
+  "title": "Provide Internet Explorer support",
+  "description": "Tip submitted by @wmarques & @anthony-o",
+  "source": "@site/docs/tips/028_tip_ie_support.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/028_tip_ie_support.html",
+  "permalink": "/cn/tips/028_tip_ie_support.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/028_tip_ie_support.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1551810000000,
+  "sidebarPosition": 28,
+  "frontMatter": {
+    "title": "Provide Internet Explorer support",
+    "slug": "/tips/028_tip_ie_support.html",
+    "last_update": {
+      "date": "2019-03-05T18:20:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "How to connect PGAdmin (PostgreSQL) to Heroku",
+    "permalink": "/cn/tips/028_tip_pgadmin_heroku.html"
+  },
+  "next": {
+    "title": "Improve developer experience if opening only front end in the IDE",
+    "permalink": "/cn/tips/029_tip_frontend_only.html"
+  }
+}

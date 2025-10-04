@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_speed_up_generator",
+  "title": "Speed up the generator-jhipster",
+  "description": "Tip submitted by @pascalgrimaud",
+  "source": "@site/docs/tips/013_tip_speed_up_generator.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/013_tip_speed_up_generator.html",
+  "permalink": "/cn/tips/013_tip_speed_up_generator.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/013_tip_speed_up_generator.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1463350920000,
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "title": "Speed up the generator-jhipster",
+    "slug": "/tips/013_tip_speed_up_generator.html",
+    "last_update": {
+      "date": "2016-05-15T22:22:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Configuring Email with - Gmail and more",
+    "permalink": "/cn/tips/011_tip_configuring_email_in_jhipster.html"
+  },
+  "next": {
+    "title": "Local SMTP Server",
+    "permalink": "/cn/tips/015_tip_local_smtp_server.html"
+  }
+}

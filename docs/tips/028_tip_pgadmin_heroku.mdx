@@ -1,5 +1,5 @@
 ---
-title: How to connect PGAdmin (PostgreSQL) to Heroku
+title: 如何将 PGAdmin (PostgreSQL) 连接到 Heroku
 slug: /tips/028_tip_pgadmin_heroku.html
 last_update:
   date: 2018-10-15T18:20:00-00:00
@@ -7,17 +7,17 @@ last_update:
 
 __Tip submitted by [@Tonterias](https://github.com/Tonterias)__
 
-May be you need to use PGAdmin to load your Heroku database with test data.
+你可能需要使用 PGAdmin 来用测试数据加载你的 Heroku 数据库。
 
-Follow the steps:
+按照以下步骤操作：
 
-First, use the data from your Database Credentials at your Heroku Account to fill the Create a New Server PGAdmin's form:
+首先，使用 Heroku 账户中数据库凭据的数据来填写 PGAdmin 的创建新服务器表单：
 
 ![Example documentation](/images/028_tip_pgadmin_heroku_01.png)
 
 ![Example documentation](/images/028_tip_pgadmin_heroku_02.png)
 
-Then, you will have to configure that information in your application-prod.yml:
+然后，你需要在 application-prod.yml 中配置该信息：
 
 `/src/main/resources/config/application-prod.yml`
 
@@ -37,7 +37,7 @@ spring:
             auto-commit: false
 ```
 
-You will get the data from the Database Credentials of your Heroku Account (as in this other example):
+你将从 Heroku 账户的数据库凭据中获取数据（如下面的另一个示例所示）：
 
 ```
 Host : ec2-50-17-250-38.compute-1.amazonaws.com
@@ -50,10 +50,10 @@ URI : postgres://seejtnnivrlcdw:e9ed17c73da7ec36bf6eead010968106439debe16ed3df90
 Heroku CLI : heroku pg:psql postgresql-trapezoidal-20780 --app jhipster-press-08
 ```
 
-You just have to connect to your database and test it with a sql command at the PGAdmin query window.
+你只需连接到数据库并在 PGAdmin 查询窗口中使用 SQL 命令进行测试。
 
 :::note
 
-Here is a video that shows this process: https://www.youtube.com/watch?v=GAHsl0AfK-0
+这是一个展示此过程的视频：https://www.youtube.com/watch?v=GAHsl0AfK-0
 
 :::

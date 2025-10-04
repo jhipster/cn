@@ -1,0 +1,31 @@
+{
+  "id": "contributing/contributing-companies",
+  "title": "Contributing Companies",
+  "description": "Companies contributing to JHipster",
+  "source": "@site/docs/contributing/contributing-companies.mdx",
+  "sourceDirName": "contributing",
+  "slug": "/contributing-companies/",
+  "permalink": "/cn/contributing-companies/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/contributing/contributing-companies.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1511913600000,
+  "frontMatter": {
+    "title": "Contributing Companies",
+    "slug": "/contributing-companies/",
+    "last_update": {
+      "date": "2017-11-29T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Contributing individuals",
+    "permalink": "/cn/contributing-individuals/"
+  },
+  "next": {
+    "title": "Tips'n tricks",
+    "permalink": "/cn/tips/"
+  }
+}

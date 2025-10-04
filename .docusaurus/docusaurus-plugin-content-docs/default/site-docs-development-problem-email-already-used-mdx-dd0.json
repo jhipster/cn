@@ -1,0 +1,31 @@
+{
+  "id": "development/problem/email-already-used",
+  "title": "Error - e-mail already used",
+  "description": "Welcome to the JHipster website!",
+  "source": "@site/docs/development/problem/email-already-used.mdx",
+  "sourceDirName": "development/problem",
+  "slug": "/problem/email-already-used/",
+  "permalink": "/cn/problem/email-already-used/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/problem/email-already-used.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1505001600000,
+  "frontMatter": {
+    "title": "Error - e-mail already used",
+    "slug": "/problem/email-already-used/",
+    "last_update": {
+      "date": "2017-09-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "密码无效",
+    "permalink": "/cn/problem/invalid-password/"
+  },
+  "next": {
+    "title": "登录名已被使用",
+    "permalink": "/cn/problem/login-already-used/"
+  }
+}

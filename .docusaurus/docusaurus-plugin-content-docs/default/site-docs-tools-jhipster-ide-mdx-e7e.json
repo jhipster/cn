@@ -1,0 +1,31 @@
+{
+  "id": "tools/jhipster-ide",
+  "title": "JHipster IDE Tools",
+  "description": "JHipster IDE is an Xtext DSL which provides textual editing support of JHipster Domain Language files for popular IDEs and editors such as Eclipse, Visual Studio Code and Atom.",
+  "source": "@site/docs/tools/jhipster-ide.mdx",
+  "sourceDirName": "tools",
+  "slug": "/jhipster-ide/",
+  "permalink": "/cn/jhipster-ide/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tools/jhipster-ide.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1515431280000,
+  "frontMatter": {
+    "title": "JHipster IDE Tools",
+    "slug": "/jhipster-ide/",
+    "last_update": {
+      "date": "2018-01-08T17:08:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Creating an entity",
+    "permalink": "/cn/blueprints/quarkus/003_creating_an_entity.html"
+  },
+  "next": {
+    "title": "JHipster-UML",
+    "permalink": "/cn/jhipster-uml/"
+  }
+}

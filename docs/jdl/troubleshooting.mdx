@@ -1,43 +1,40 @@
 ---
-title: JHipster Domain Language (JDL) - Troubleshooting
+title: JHipster 领域语言 (JDL) - 故障排除
 slug: /jdl/troubleshooting
 last_update:
   date: 2023-07-09T23:00:00-00:00
 ---
 
-## Troubleshooting
+## 故障排除
 
-We tried to keep the syntax as friendly as we can for developers.
-You can do these things with it:
+我们尽力保持语法对开发者尽可能友好。
+您可以用它做这些事情：
 
-- Declare applications with their options and entities,
-- Declare entities with their attributes,
-- Declare the relationships between them,
-- And declare some JHipster specific options.
+- 声明带有选项和实体的应用程序，
+- 声明带有属性的实体，
+- 声明它们之间的关系，
+- 并声明一些 JHipster 特定的选项。
 
-If you wish to view the JDL's grammar, there is an HTML file available
-[here](https://github.com/jhipster/generator-jhipster/blob/master/jdl/parsing/generated/grammar.html).
+如果您希望查看 JDL 的语法，这里有一个 HTML 文件[可用](https://github.com/jhipster/generator-jhipster/blob/master/jdl/parsing/generated/grammar.html)。
 
-### The JDL import only finds one entity when matching MS baseName
+### JDL 导入在匹配 MS baseName 时只找到一个实体
 
-This is a known issue regarding the parsing system and fixing it is tricky.
-A workaround is to use different names for the microservice and the entities inside.
+这是一个关于解析系统的已知问题，修复它是复杂的。
+一个解决方案是为微服务和其内部的实体使用不同的名称。
 
-See [JHipster Core issue #308](https://github.com/jhipster/jhipster-core/issues/308) for more information.
+有关更多信息，请参阅 [JHipster Core 问题 #308](https://github.com/jhipster/jhipster-core/issues/308)。
 
 
-## Issues and bugs
+## 问题和错误
 
-The JDL is [available on GitHub](https://github.com/jhipster/generator-jhipster/tree/main/jdl), and follows the same
-[contributing guidelines as JHipster]( https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md).
+JDL [可在 GitHub 上获取](https://github.com/jhipster/generator-jhipster/tree/main/jdl)，并遵循与 [JHipster 相同的贡献指南](https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md)。
 
-Please use the ["JDL"](https://github.com/jhipster/generator-jhipster/labels/theme%3A%20JDL) label for submitting 
-issues and Pull Requests concerning the library itself.
+请在提交与库本身相关的问题和 Pull Request 时使用 ["JDL"](https://github.com/jhipster/generator-jhipster/labels/theme%3A%20JDL) 标签。
 
-- [JDL issue tracker](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aopen+is%3Aissue+label%3A%22theme%3A+JDL%22)
+- [JDL 问题跟踪器](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aopen+is%3Aissue+label%3A%22theme%3A+JDL%22)
 - [JDL Pull Requests](https://github.com/jhipster/generator-jhipster/pulls?q=is%3Aopen+is%3Apr+label%3A%22theme%3A+JDL%22)
 
-When submitting anything, you must be as precise as possible:
+在提交任何内容时，您必须尽可能精确：
 
-- **One posted issue must only have one problem** (or one demand/question);  
-- Pull requests are welcome, but the commits must be 'atomic' to really be understandable.  
+- **一个发布的问题必须只有一个问题**（或一个需求/问题）；
+- 欢迎 Pull Request，但提交必须是“原子性”的，才能真正被理解。  

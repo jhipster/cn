@@ -1,0 +1,31 @@
+{
+  "id": "environment/configuring-ide/configuring-ide-idea",
+  "title": "Configuring Intellij IDEA",
+  "description": "Open your project",
+  "source": "@site/docs/environment/configuring-ide/configuring-ide-idea.mdx",
+  "sourceDirName": "environment/configuring-ide",
+  "slug": "/configuring-ide-idea/",
+  "permalink": "/cn/configuring-ide-idea/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/configuring-ide/configuring-ide-idea.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1448730780000,
+  "frontMatter": {
+    "title": "Configuring Intellij IDEA",
+    "slug": "/configuring-ide-idea/",
+    "last_update": {
+      "date": "2015-11-28T17:13:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Eclipse 配合 Gradle",
+    "permalink": "/cn/configuring-ide-eclipse-gradle/"
+  },
+  "next": {
+    "title": "Visual Studio Code",
+    "permalink": "/cn/configuring-ide-visual-studio-code/"
+  }
+}

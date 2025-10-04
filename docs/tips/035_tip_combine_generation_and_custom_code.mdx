@@ -1,5 +1,5 @@
 ---
-title: Combining generation and custom code
+title: 结合生成和自定义代码
 slug: /tips/035_tip_combine_generation_and_custom_code.html
 last_update:
   date: 2021-09-09T21:22:00-00:00
@@ -7,62 +7,62 @@ last_update:
 
 __Tip submitted by [@tcharl](https://github.com/tcharl)__
 
-_Goal:_ Jhipster is very good for managing your model entities, thanks to its powerful Domain Specific language.
-But getting the best both custom code and generative world is  always a hard task.
-Here are the different pattern you can adopt in order to make it real. 
+_目标：_ JHipster 非常擅长管理你的模型实体，这要归功于其强大的领域特定语言。
+但是，在自定义代码和生成世界之间找到最佳平衡始终是一项艰巨的任务。
+以下是你可以采用的不同模式，以使其成为现实。
 
 
-## Pattern 1 - Generate once
+## 模式 1 - 生成一次
 
-This approach is the simplest one, and used in most of the use case.
-It consists in modeling your entities once, generate the first model, then override what you want after this first shot.
-If one day you want to resync, you can always regen in another branch, the compare both codes through your IDE.
-However, that later process is always painful and you can spend days for a major upgrade.
+这种方法是最简单的，并且在大多数用例中使用。
+它包括对实体建模一次，生成第一个模型，然后在第一次生成后覆盖你想要的内容。
+如果有一天你想重新同步，你总是可以在另一个分支中重新生成，然后通过 IDE 比较两个代码。
+但是，后面的过程总是很痛苦，你可能会花费数天时间进行重大升级。
 
-### Pro
+### 优点
 
-- Do what you want
+- 做你想做的
 
-### Con
- 
-- You'll tend do not benefit from JHipster new features
+### 缺点
+
+- 你会倾向于不从 JHipster 新功能中受益
 
 
-## Pattern 2 - Split generated code and custom code
+## 模式 2 - 分离生成的代码和自定义代码
 
-With this one, you'll try to avoid modifying generated class and to host your custom code in dedicated ones.
-Here, you can use the --with-generated-flag jhipster cli option in order to easily differentiate the generated classes from your custom ones.
-Finally, you'll only modify the main router on frontend part in order to route to your custom home page instead of the generated one.
+使用这种方法，你将尝试避免修改生成的类，并将自定义代码托管在专用类中。
+在这里，你可以使用 --with-generated-flag jhipster CLI 选项，以便轻松区分生成的类和自定义类。
+最后，你只需修改前端部分的主路由器，以便路由到自定义主页而不是生成的主页。
 
-In order to avoid your router file being overridden at each generation, you can create a `.yo-resolve` file at the root of your project and tell to yeoman the expected behavior.
+为了避免路由器文件在每次生成时被覆盖，你可以在项目根目录创建一个 `.yo-resolve` 文件，并告诉 yeoman 预期的行为。
 
-Example:
+示例：
 
 ```
 src/main/resources/swagger/api.yml skip
 src/main/webapp/app/modules/home/home.tsx skip
 ```
 
-### Pro
+### 优点
 
-- Can combine generation and custom code without so much hassle
+- 可以在没有太多麻烦的情况下结合生成和自定义代码
 
-### Con
+### 缺点
 
-- Dead code
-- Custom classes that have different names or package than your model (can be considered as a DDD best practice but still).
+- 死代码
+- 自定义类的名称或包与你的模型不同（可以被视为 DDD 最佳实践，但仍然如此）。
 
 
-## Pattern 3 - Side by side
+## 模式 3 - 并行
 
-Here, the goal is to use classes extensions and beans precedence in order to inject your custom code instead of the generated one.
+在这里，目标是使用类扩展和 bean 优先级，以便注入自定义代码而不是生成的代码。
 
-Let's take an example with a `Customer` jhipster entity.
+让我们以一个 `Customer` jhipster 实体为例。
 
-### Repository
+### 仓库
 
-At the repository level, you'll annotate jhipster generated repository using `NoRepositoryBean` annotation in order to disable discovery.
-You can then create your custom repository class
+在仓库级别，你将使用 `NoRepositoryBean` 注解标注 jhipster 生成的仓库以禁用发现。
+然后你可以创建自定义仓库类
 
 ```
 @Repository
@@ -70,18 +70,18 @@ You can then create your custom repository class
 MemberRepositoryPrimary extends MemberRepository
 ```
 
-### Service
+### 服务
 
-Here, you'll use the `serviceImpl` option in order to be able to inject your custom Bean in your Controller.
-Then, you can simply extends the generated service and annotate your bean with `@Primary` in order to get precedence.
+在这里，你将使用 `serviceImpl` 选项，以便能够在控制器中注入自定义 Bean。
+然后，你可以简单地扩展生成的服务并用 `@Primary` 注解你的 bean 以获得优先级。
 
-### Controller
+### 控制器
 
-You'll use another API prefix for your custom endpoints (for example `/api/v2`).
+你将为自定义端点使用另一个 API 前缀（例如 `/api/v2`）。
 
 ### Angular
 
-Same extension applies on the frontend side, you can then configure your beans precedence in the `app.module.ts` file:
+前端也适用相同的扩展，然后你可以在 `app.module.ts` 文件中配置你的 beans 优先级：
 ```
 providers: [
 // keep other entries
@@ -89,41 +89,41 @@ providers: [
 ]
 ```
 
-### Pro
+### 优点
 
-- Can override generated code behavior
-- Easy to find custom code
-- Keep the Jhipster best layout even for custom code
+- 可以覆盖生成的代码行为
+- 易于查找自定义代码
+- 即使对于自定义代码也保持 JHipster 最佳布局
 
-### Con
+### 缺点
 
-- File duplication
+- 文件重复
 
-## Alternative Side-by-Side Approach
+## 替代的并行方法
 
-This approach aims to add functionality to an existing JHipster application with minimal changes to the generated code.
+这种方法旨在向现有的 JHipster 应用程序添加功能，并对生成的代码进行最少的更改。
 
-### Repository Tier
+### 仓库层
 
-Create your repository interface with all custom methods in a separate custom package. This approach ensures that the generated repository code remains untouched, while your custom logic is organized and maintainable.
+在单独的自定义包中创建包含所有自定义方法的仓库接口。这种方法确保生成的仓库代码保持不变，同时你的自定义逻辑是有组织的和可维护的。
 
-### Service Tier
+### 服务层
 
-There are three main approaches for adding custom code at this tier:
+在此层添加自定义代码有三种主要方法：
 
-Aspect-Oriented Programming (AOP): 
+面向切面编程（AOP）：
 
-AOP allows you to introduce cross-cutting concerns such as logging, security, or transaction management without altering the core business logic. This separation of concerns helps maintain cleaner and more modular code.
+AOP 允许你引入横切关注点，如日志记录、安全性或事务管理，而无需更改核心业务逻辑。这种关注点分离有助于维护更清晰和更模块化的代码。
 
-Event Listeners: 
+事件监听器：
 
-If the new functionality is triggered by specific events in the application (e.g., after saving a Foo entity), you can use Spring's event listener mechanism. This keeps the core logic clean, though it may make the execution flow harder to trace.
+如果新功能由应用程序中的特定事件触发（例如，在保存 Foo 实体之后），你可以使用 Spring 的事件监听器机制。这使核心逻辑保持干净，尽管它可能使执行流程更难追踪。
 
-Decorator Pattern: 
+装饰器模式：
 
-To add new methods or modify existing behavior in a controlled manner, the decorator pattern is highly recommended. This pattern involves wrapping the original class with a decorator that provides additional functionality. It is clean, testable, and requires minimal changes to the original client classes, ensuring better maintainability.
+为了以受控方式添加新方法或修改现有行为，强烈推荐装饰器模式。这种模式涉及用提供附加功能的装饰器包装原始类。它干净、可测试，并且需要对原始客户端类进行最少的更改，确保更好的可维护性。
 
-Step 1: Create or extend the existing Interface depending on how your service classes are generated
+步骤 1：创建或扩展现有接口，具体取决于服务类的生成方式
 ```
 interface IFooService {
     void newFeature();
@@ -131,7 +131,7 @@ interface IFooService {
    ...
 }
 ```
-Step 2: Extension through Composition
+步骤 2：通过组合进行扩展
 ```
 @Service
 @Qualifier("entended") 
@@ -141,15 +141,15 @@ public class ExtendedFooService implements FooService{
    ...
 }
 ```
-Step 3: Add the @Primary to the existing service class and mark the existing service class as an interface implementation in step 1.
+步骤 3：将 @Primary 添加到现有服务类，并将现有服务类标记为步骤 1 中接口的实现。
 
-Step 4: Change the attribute type of the original service client to the interface created in step 1.
+步骤 4：将原始服务客户端的属性类型更改为步骤 1 中创建的接口。
 
-You can omit step 1 and adjust related changes in the following steps for a simplified implementation of this approach if you are unlikely to have multiple implementations of a service method or don't expect frequent changes in a service method.  
+如果你不太可能有服务方法的多个实现或不期望服务方法频繁更改，你可以省略步骤 1 并在后续步骤中调整相关更改以简化此方法的实现。
 
-### Web Tier
+### Web 层
 
-Create New Endpoint Controllers.
+创建新的端点控制器。
 ```
 @RestController
 @RequestMapping("/api/extended/foo")

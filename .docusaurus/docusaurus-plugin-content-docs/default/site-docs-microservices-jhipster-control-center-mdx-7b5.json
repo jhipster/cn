@@ -1,0 +1,31 @@
+{
+  "id": "microservices/jhipster-control-center",
+  "title": "JHipster Control Center",
+  "description": "Overview",
+  "source": "@site/docs/microservices/jhipster-control-center.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/jhipster-control-center/",
+  "permalink": "/cn/jhipster-control-center/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/jhipster-control-center.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1603152000000,
+  "frontMatter": {
+    "title": "JHipster Control Center",
+    "slug": "/jhipster-control-center/",
+    "last_update": {
+      "date": "2020-10-20T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Microservices in production",
+    "permalink": "/cn/microservices-in-production/"
+  },
+  "next": {
+    "title": "Official blueprints",
+    "permalink": "/cn/modules/official-blueprints/"
+  }
+}

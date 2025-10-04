@@ -1,0 +1,31 @@
+{
+  "id": "environment/configuring-ide/configuring-ide-visual-studio-code",
+  "title": "Configuring Visual Studio Code",
+  "description": "Visual Studio Code is an Open Source text editor made by Microsoft. It has excellent support for TypeScript, so many people want to use it for developing Angular 2 applications.",
+  "source": "@site/docs/environment/configuring-ide/configuring-ide-visual-studio-code.mdx",
+  "sourceDirName": "environment/configuring-ide",
+  "slug": "/configuring-ide-visual-studio-code/",
+  "permalink": "/cn/configuring-ide-visual-studio-code/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/configuring-ide/configuring-ide-visual-studio-code.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1473959580000,
+  "frontMatter": {
+    "title": "Configuring Visual Studio Code",
+    "slug": "/configuring-ide-visual-studio-code/",
+    "last_update": {
+      "date": "2016-09-15T17:13:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Intellij IDEA",
+    "permalink": "/cn/configuring-ide-idea/"
+  },
+  "next": {
+    "title": "Netbeans",
+    "permalink": "/cn/configuring-ide-netbeans/"
+  }
+}

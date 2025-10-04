@@ -1,0 +1,30 @@
+{
+  "id": "releases/2024-03-20-jhipster-release-8.2.1",
+  "title": "Release 8.2.1",
+  "description": "This is our minor release for JHipster v8. Please note that 8.2.1 is a patch release for 8.2.0, as 8.2.0 is deprecated due to a compilation error bug.",
+  "source": "@site/docs/releases/2024-03-20-jhipster-release-8.2.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2024/03/20/jhipster-release-8.2.1.html",
+  "permalink": "/cn/2024/03/20/jhipster-release-8.2.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2024-03-20-jhipster-release-8.2.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 8.2.1",
+    "slug": "/2024/03/20/jhipster-release-8.2.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 8.1.0",
+    "permalink": "/cn/2023/12/11/jhipster-release-8.1.0.html"
+  },
+  "next": {
+    "title": "Release 8.3.0",
+    "permalink": "/cn/2024/04/08/jhipster-release-8.3.0.html"
+  }
+}

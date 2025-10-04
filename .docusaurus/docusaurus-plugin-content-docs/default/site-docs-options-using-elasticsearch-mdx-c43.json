@@ -1,0 +1,31 @@
+{
+  "id": "options/using-elasticsearch",
+  "title": "Using Elasticsearch",
+  "description": "Elasticsearch is an option that adds search capabilities on top of your database.",
+  "source": "@site/docs/options/using-elasticsearch.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-elasticsearch/",
+  "permalink": "/cn/using-elasticsearch/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-elasticsearch.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1689120000000,
+  "frontMatter": {
+    "title": "Using Elasticsearch",
+    "slug": "/using-elasticsearch/",
+    "last_update": {
+      "date": "2023-07-12T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "过滤实体",
+    "permalink": "/cn/entities-filtering/"
+  },
+  "next": {
+    "title": "使用 Websockets",
+    "permalink": "/cn/using-websockets/"
+  }
+}

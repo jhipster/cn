@@ -1,0 +1,31 @@
+{
+  "id": "options/using-websockets",
+  "title": "Using WebSockets",
+  "description": "WebSockets are useful for having a very dynamic application, where data is shared in near real-time between the server and its clients.",
+  "source": "@site/docs/options/using-websockets.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-websockets/",
+  "permalink": "/cn/using-websockets/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-websockets.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1441046400000,
+  "frontMatter": {
+    "title": "Using WebSockets",
+    "slug": "/using-websockets/",
+    "last_update": {
+      "date": "2015-08-31T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Elasticsearch",
+    "permalink": "/cn/using-elasticsearch/"
+  },
+  "next": {
+    "title": "API 优先开发",
+    "permalink": "/cn/doing-api-first-development/"
+  }
+}

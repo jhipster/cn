@@ -1,0 +1,31 @@
+{
+  "id": "development/using-react",
+  "title": "Using React (with Redux)",
+  "description": "This section refers to the JavaScript library React used with Redux.",
+  "source": "@site/docs/development/using-react.mdx",
+  "sourceDirName": "development",
+  "slug": "/using-react/",
+  "permalink": "/cn/using-react/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/using-react.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1522712460000,
+  "frontMatter": {
+    "title": "Using React (with Redux)",
+    "slug": "/using-react/",
+    "last_update": {
+      "date": "2018-04-02T23:41:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Angular",
+    "permalink": "/cn/using-angular/"
+  },
+  "next": {
+    "title": "使用 Vue",
+    "permalink": "/cn/using-vue/"
+  }
+}

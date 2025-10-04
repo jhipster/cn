@@ -1,5 +1,5 @@
 ---
-title: Using Docker containers as localhost on Mac/Windows
+title: 在 Mac/Windows 上将 Docker 容器用作 localhost
 slug: /tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html
 last_update:
   date: 2016-11-15T16:00:00-00:00
@@ -8,54 +8,54 @@ last_update:
 __Tip submitted by [@Akuka](https://github.com/Akuka)__
 
 
-## Difference between Docker on Linux and Docker on Mac/Windows environments
+## Linux 和 Mac/Windows 上的 Docker 之间的差异
 
-Based on your OS, your <code>DOCKER_HOST</code> is different.
-On Linux, it will simply be your localhost.
-For Mac/Windows, you should obtain the appropriate IP using the following command:
+根据你的操作系统，你的 <code>DOCKER_HOST</code> 是不同的。
+在 Linux 上，它就是你的 localhost。
+对于 Mac/Windows，你应该使用以下命令获取适当的 IP：
 
 ```shell
 docker-machine ip default
 ```
 
 
-## Motivation
+## 动机
 
-When you generate a new JHipster application, the host address of all the connections configurations (for example: database connection string) is localhost by default.
-This means that if you are using Docker to run services (such as a database / elastic search / SMTP server / etc...), you will need to edit your application configuration file and replace the database IP address from localhost to your <code>DOCKER_HOST</code>.
-
-
-## Port Forwarding
-
-A Docker Machine is a virtual machine running under VirtualBox in your host machine.
-We can use the Port Forwarding feature of VirtualBox in order to access the Docker VM as localhost.
-
-To achieve this do the following:
+当你生成一个新的 JHipster 应用程序时，所有连接配置（例如：数据库连接字符串）的主机地址默认是 localhost。
+这意味着如果你使用 Docker 运行服务（如数据库/Elasticsearch/SMTP 服务器等），你需要编辑应用程序配置文件并将数据库 IP 地址从 localhost 替换为你的 <code>DOCKER_HOST</code>。
 
 
-First of all, make sure your Docker Machine is stopped by executing the following:
+## 端口转发
+
+Docker Machine 是在你的主机中运行在 VirtualBox 下的虚拟机。
+我们可以使用 VirtualBox 的端口转发功能，以便将 Docker VM 作为 localhost 访问。
+
+要实现这一点，请执行以下操作：
+
+
+首先，确保你的 Docker Machine 已停止，执行以下命令：
 
 ```shell
 docker-machine stop default     # Your Docker machine name may not be default, in this case change the name accordingly
 ```
 
-Then:
+然后：
 
-* Open VirtualBox Manager
-* Select your Docker Machine VirtualBox image (e.g.: default)
-* Open Settings -> Network -> Advanced -> Port Forwarding
-* Add your app name, the desired host port and your guest port
+* 打开 VirtualBox Manager
+* 选择你的 Docker Machine VirtualBox 镜像（例如：default）
+* 打开 Settings -> Network -> Advanced -> Port Forwarding
+* 添加你的应用名称、所需的主机端口和你的来宾端口
 
-The following is a screenshot with a MySQL Port Forwarding example:
+以下是 MySQL 端口转发示例的截图：
 
 ![MySQL Port Forwarding Example](/images/020_tip_using_docker_containers_as_localhost_on_mac_and_windows_01.png)
 
 
-Now you're ready to start your Docker Machine by executing the following:
+现在你已经准备好通过执行以下命令来启动你的 Docker Machine：
 
 ```shell
 docker-machine start default
 eval $(docker-machine env default)
 ```
 
-Then just start your Docker container and you will be able to access it via localhost.
+然后只需启动你的 Docker 容器，你就可以通过 localhost 访问它。

@@ -1,0 +1,31 @@
+{
+  "id": "microservices/consul",
+  "title": "Consul",
+  "description": "Consul overview",
+  "source": "@site/docs/microservices/consul.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/consul/",
+  "permalink": "/cn/consul/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/consul.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1493769600000,
+  "frontMatter": {
+    "title": "Consul",
+    "slug": "/consul/",
+    "last_update": {
+      "date": "2017-05-03T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "API Gateway",
+    "permalink": "/cn/api-gateway/"
+  },
+  "next": {
+    "title": "JHipster Registry",
+    "permalink": "/cn/jhipster-registry/"
+  }
+}

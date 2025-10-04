@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_using_docker_containers_as_localhost_on_mac_and_windows",
+  "title": "Using Docker containers as localhost on Mac/Windows",
+  "description": "Tip submitted by @Akuka",
+  "source": "@site/docs/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html",
+  "permalink": "/cn/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1479225600000,
+  "sidebarPosition": 20,
+  "frontMatter": {
+    "title": "Using Docker containers as localhost on Mac/Windows",
+    "slug": "/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html",
+    "last_update": {
+      "date": "2016-11-15T16:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Boost performance of pagination with infinite scrolling using Slice",
+    "permalink": "/cn/tips/019_tip_infinite_scroll_with_slice.html"
+  },
+  "next": {
+    "title": "Use QueryDSL",
+    "permalink": "/cn/tips/003_tip_add_querydsl_support.html"
+  }
+}

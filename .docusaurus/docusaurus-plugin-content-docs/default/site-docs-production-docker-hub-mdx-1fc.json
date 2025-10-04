@@ -1,0 +1,31 @@
+{
+  "id": "production/docker-hub",
+  "title": "Docker Hub",
+  "description": "Docker Hub",
+  "source": "@site/docs/production/docker-hub.mdx",
+  "sourceDirName": "production",
+  "slug": "/docker-hub/",
+  "permalink": "/cn/docker-hub/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/production/docker-hub.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1474761600000,
+  "frontMatter": {
+    "title": "Docker Hub",
+    "slug": "/docker-hub/",
+    "last_update": {
+      "date": "2016-09-25T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Monitoring",
+    "permalink": "/cn/monitoring/"
+  },
+  "next": {
+    "title": "Deploying to Azure",
+    "permalink": "/cn/azure/"
+  }
+}

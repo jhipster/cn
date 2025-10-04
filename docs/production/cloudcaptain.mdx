@@ -1,49 +1,49 @@
 ---
-title: Deploying to AWS with CloudCaptain
+title: 使用 CloudCaptain 部署到 AWS
 slug: /cloudcaptain/
 last_update:
   date: 2022-01-21T00:00:00-00:00
 ---
 
-This guide show how to deploy your JHipster application to AWS using [CloudCaptain](https://cloudcaptain.sh/).
+本指南展示了如何使用 [CloudCaptain](https://cloudcaptain.sh/) 将您的 JHipster 应用程序部署到 AWS。
 
 [![CloudCaptain](/images/logo/logo-cloudcaptain.png)](https://cloudcaptain.sh/)
 
-CloudCaptain comes with **first-class support for JHipster** and works by creating minimal immutable machine images for your application, which can then be deployed either on VirtualBox or on AWS.
+CloudCaptain **对 JHipster 提供一流的支持**，通过为您的应用程序创建最小的不可变机器映像，然后可以在 VirtualBox 或 AWS 上部署。
 
 
-## Prerequisites
+## 先决条件
 
-To be able to deploy, you must first [create a CloudCaptain account](https://console.cloudcaptain.sh) and install the [CloudCaptain Client](https://cloudcaptain.sh/getstarted/download).
+要能够部署，您必须首先[创建 CloudCaptain 账户](https://console.cloudcaptain.sh)并安装 [CloudCaptain 客户端](https://cloudcaptain.sh/getstarted/download)。
 
-You will also need to connect your AWS account in the [CloudCaptain Console](https://console.cloudcaptain.sh).
+您还需要在 [CloudCaptain 控制台](https://console.cloudcaptain.sh)中连接您的 AWS 账户。
 
 
-## Preparing a deployment
+## 准备部署
 
-When your application is ready, you can prepare it for deployment by typing:
+当您的应用程序准备就绪时，您可以通过输入以下命令为部署做准备：
 
 ```shell
 ./mvnw package -Pprod -DskipTests
 ```
 
-Or when using gradle:
+或者在使用 gradle 时：
 
 ```shell
 ./gradlew -Pprod bootJar -x test
 ```
 
 
-## Deploying to AWS
+## 部署到 AWS
 
-To deploy your application to AWS type:
+要将您的应用程序部署到 AWS，请输入：
 
 ```shell
 boxfuse run -env=prod
 ```
 
-CloudCaptain will then analyse your application, fuse a minimal machine image for it and automatically provision, configure and secure all necessary
-AWS infrastructure (instances, security groups, Elastic IPs, ELBs, MySQL or PostgreSQL RDS databases, ...)
+CloudCaptain 然后会分析您的应用程序，为其融合一个最小的机器映像，并自动配置、设置和保护所有必要的
+AWS 基础设施（实例、安全组、弹性 IP、ELB、MySQL 或 PostgreSQL RDS 数据库...）
 
 ```
 Creating jhipster ...
@@ -75,18 +75,17 @@ Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Deployment completed successfully. myuser/jhipster:1.0 is up and running at http://jhipster-myuser.boxfuse.io:8080/
 ```
 
-Note that you didn't need to explicitly specify things like ports, healthcheck urls or database types. By default CloudCaptain auto-discovers those
-from your JHipster war based on your `application-prod.yml` file and the included jars. 
-You can override those auto-discovered settings if you want to, but in most cases you won't need to.
+请注意，您不需要显式指定端口、健康检查 URL 或数据库类型等内容。默认情况下，CloudCaptain 会基于您的 `application-prod.yml` 文件和包含的 jar 从您的 JHipster war 中自动发现这些内容。
+如果您想覆盖这些自动发现的设置，您可以这样做，但在大多数情况下您不需要。
 
 
-## Deploying updates
+## 部署更新
 
-To deploy an update to an existing application follow the preparation and deploy steps outlined above. All updates
-are performed as zero downtime-blue deployments.
+要将更新部署到现有应用程序，请遵循上述的准备和部署步骤。所有更新
+都作为零停机时间的蓝绿部署执行。
 
 
-## More information
+## 更多信息
 
-* [Get Started with CloudCaptain and JHipster](https://cloudcaptain.sh/getstarted/jhipster)
-* [JHipster CloudCaptain documentation](https://cloudcaptain.sh/docs/payloads/jhipster)
+* [CloudCaptain 和 JHipster 入门](https://cloudcaptain.sh/getstarted/jhipster)
+* [JHipster CloudCaptain 文档](https://cloudcaptain.sh/docs/payloads/jhipster)

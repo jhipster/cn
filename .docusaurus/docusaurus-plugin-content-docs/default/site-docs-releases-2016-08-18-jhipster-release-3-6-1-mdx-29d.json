@@ -1,0 +1,30 @@
+{
+  "id": "releases/2016-08-18-jhipster-release-3.6.1",
+  "title": "Release 3.6.1",
+  "description": "What's new",
+  "source": "@site/docs/releases/2016-08-18-jhipster-release-3.6.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2016/08/18/jhipster-release-3.6.1.html",
+  "permalink": "/cn/2016/08/18/jhipster-release-3.6.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2016-08-18-jhipster-release-3.6.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 3.6.1",
+    "slug": "/2016/08/18/jhipster-release-3.6.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 3.6.0",
+    "permalink": "/cn/2016/08/17/jhipster-release-3.6.0.html"
+  },
+  "next": {
+    "title": "Release 3.7.0",
+    "permalink": "/cn/2016/09/12/jhipster-release-3.7.0.html"
+  }
+}

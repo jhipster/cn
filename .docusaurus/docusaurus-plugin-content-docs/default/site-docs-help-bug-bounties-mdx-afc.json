@@ -1,0 +1,31 @@
+{
+  "id": "help/bug-bounties",
+  "title": "Bug bounties",
+  "description": "Introduction",
+  "source": "@site/docs/help/bug-bounties.mdx",
+  "sourceDirName": "help",
+  "slug": "/bug-bounties/",
+  "permalink": "/cn/bug-bounties/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/help/bug-bounties.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1532044800000,
+  "frontMatter": {
+    "title": "Bug bounties",
+    "slug": "/bug-bounties/",
+    "last_update": {
+      "date": "2018-07-20T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Community help",
+    "permalink": "/cn/help/"
+  },
+  "next": {
+    "title": "Financial sponsors",
+    "permalink": "/cn/sponsors/"
+  }
+}

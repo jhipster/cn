@@ -1,19 +1,19 @@
 ---
-title: Setting up Continuous Integration on Jenkins 2
+title: 在 Jenkins 2 上设置持续集成
 slug: /setting-up-ci-jenkins2/
 last_update:
   date: 2017-01-19T14:15:00-00:00
 ---
 
-## Installing Jenkins 2
+## 安装 Jenkins 2
 
-### Standard
+### 标准安装
 
-Install JDK 8 on your machine.
+在你的机器上安装 JDK 8。
 
-Go to the official site [https://jenkins.io/2.0/](https://jenkins.io/2.0/)
+去官方网站 [https://jenkins.io/2.0/](https://jenkins.io/2.0/)
 
-Download the `jenkins.war`
+下载 `jenkins.war`
 
 ### With Docker
 
@@ -24,14 +24,14 @@ Launch the [Docker image](https://hub.docker.com/r/jenkins/jenkins)
 docker container run -d --name jenkins2 -p 18080:8080 -p 50000:50000 jenkins/jenkins
 ```
 
-You can then access the Jenkins dashboard on 
+然后你可以在以下地址访问 Jenkins 仪表板：
 - http://localhost:18080 (on MacOS & Linux)
 - http://192.168.99.100:18080 (on Windows)
-  - If this doesn't work replace `192.168.99.100` with your docker's default ip address: `docker-machine ip default`
+  - 如果这不起作用，请将 `192.168.99.100` 替换为你的 docker 默认 ip 地址：`docker-machine ip default`
 
-Note: You'll be asked for an `initialAdminPassword` which you'll find in the logs during your container startup.
-You can also access it via `docker logs jenkins2`
-e.g.
+注意：你将被要求输入 `initialAdminPassword`，你可以在容器启动时的日志中找到它。
+你也可以通过 `docker logs jenkins2` 访问它
+例如：
 
 ```
 *************************************************************
@@ -51,19 +51,19 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 
-## Create a new Job
+创建新作业
 
-- Add New Item
-  - Enter an item name
-  - Select pipeline
-  - Click OK
+- 添加新项目
+  - 输入项目名称
+  - 选择流水线
+  - 点击确定
 
 ![Jenkins2 item](/images/jenkins2_add_item.png)
 
-- Definition: Pipeline script from SCM
-- SCM: Git
-- Repositories
-  - Repository URL: select your repository here
+- 定义：来自 SCM 的流水线脚本
+- SCM：Git
+- 仓库
+  - 仓库 URL：在此选择你的仓库
 
 ![Jenkins2 pipeline](/images/jenkins2_pipeline.png)
 

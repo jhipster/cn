@@ -1,56 +1,55 @@
 ---
-title: Code Quality
+title: 代码质量
 slug: /code-quality/
 last_update:
   date: 2018-08-18T12:40:00-00:00
 ---
 
-Code quality can be analyzed using [SonarCloud](https://sonarcloud.io), which is automatically configured by JHipster.
+代码质量可以使用 [SonarCloud](https://sonarcloud.io) 进行分析，该工具由 JHipster 自动配置。
 
 
-## Using Sonar with JHipster
+## 在 JHipster 中使用 Sonar
 
-JHipster provides a specific Docker Compose configuration for Sonar ([here is the JHipster Docker Compose documentation](/docker-compose)) that provides an out-of-the box Sonar instance. At the root of your project, please run:
+JHipster 提供了特定的 Sonar Docker Compose 配置（[这里是 JHipster Docker Compose 文档](/docker-compose)），提供了开箱即用的 Sonar 实例。在你的项目根目录，请运行：
 
 ```shell
 docker-compose -f src/main/docker/sonar.yml up -d
 ```
 
-If you use Maven, it has been automatically configured:
+如果你使用 Maven，它已经被自动配置：
 
 ```shell
 ./mvnw -Pprod clean verify sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
 ```
 
-If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
+如果你需要重新运行 Sonar 阶段，请确保至少指定 `initialize` 阶段，因为 Sonar 属性从 sonar-project.properties 文件加载。
 
 ```shell
 ./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
 ```
 
-If you use Gradle, it has also been automatically configured:
+如果你使用 Gradle，它也已经被自动配置：
 
 ```shell
 ./gradlew -Pprod clean check jacocoTestReport sonarqube -Dsonar.login=admin -Dsonar.password=admin
 ```
 
-You can also run an analysis with [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner), if you have it installed.
+你也可以使用 [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) 运行分析，如果你已经安装了它。
 
 ```shell
 sonar-scanner
 ```
 
-Once the analysis completes, it will be available on the Sonar dashboard, which by default is available on [http://127.0.0.1:9001/](http://127.0.0.1:9001/).
+一旦分析完成，它将在 Sonar 仪表板上可用，默认情况下在 [http://127.0.0.1:9001/](http://127.0.0.1:9001/) 上可用。
 
 
-## Excluding Files from Jacoco Analysis
+## 从 Jacoco 分析中排除文件
 
-In case you would like to exclude certain classes from coverage analysis (e.g. generated classes or the application class) and would like to have the correct
-coverage in the default jacoco html report you have to exclude the classes from analysis and from reporting.
+如果你希望从覆盖率分析中排除某些类（例如生成的类或应用程序类），并且希望在默认的 jacoco html 报告中获得正确的覆盖率，你需要从分析和报告中排除这些类。
 
 ### Maven
 
-You need to add exclusions to the `prepare-agent` and `report` goal of both unit and integration tests:
+你需要在单元测试和集成测试的 `prepare-agent` 和 `report` 目标中添加排除：
 
 ```xml
 <plugin>
@@ -112,7 +111,7 @@ You need to add exclusions to the `prepare-agent` and `report` goal of both unit
 
 ### Gradle
 
-You can add the following to `sonar.gradle` file:
+你可以在 `sonar.gradle` 文件中添加以下内容：
 
 ```gradle
 test {
@@ -133,12 +132,12 @@ jacocoTestReport {
 ```
 
 
-## Automatic analysis of the default generated project
+## 默认生成项目的自动分析
 
-The JHipster generator project publishes a sample project which is analyzed every time a new commit is merged in the "main" branch:
+JHipster 生成器项目发布了一个示例项目，每次在 "main" 分支中合并新提交时都会对其进行分析：
 
-[Analysis of the JHipster Sample Application](https://sonarcloud.io/dashboard?id=jhipster-sample-application) under the [JHipster Organization](https://sonarcloud.io/organizations/jhipster)
+[在 JHipster 组织下的 JHipster 示例应用分析](https://sonarcloud.io/dashboard?id=jhipster-sample-application)
 
-This allows the JHipster team to make sure that you will start developing your project on the cleanest code possible.
+这使 JHipster 团队能够确保你将在尽可能干净的代码上开始开发你的项目。
 
-This analysis is provided for free by [SonarCloud](https://sonarcloud.io).
+这个分析由 [SonarCloud](https://sonarcloud.io) 免费提供。

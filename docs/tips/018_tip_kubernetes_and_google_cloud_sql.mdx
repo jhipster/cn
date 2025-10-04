@@ -1,5 +1,5 @@
 ---
-title: Kubernetes and Google Cloud SQL
+title: Kubernetes 和 Google Cloud SQL
 slug: /tips/018_tip_kubernetes_and_google_cloud_sql.html
 last_update:
   date: 2016-11-13T19:00:00-00:00
@@ -7,82 +7,71 @@ last_update:
 
 __Tip submitted by [@bourdux](https://github.com/bourdux)__
 
-While it is already easy to deploy a JHipster application to [Google Container Engine](https://cloud.google.com/container-engine/)
-using the [Kubernetes sub-generator](/kubernetes), the default behaviour is to create a Google Compute
-Engine VM for the database.
+虽然使用 [Kubernetes 子生成器](/kubernetes) 将 JHipster 应用程序部署到 [Google Container Engine](https://cloud.google.com/container-engine/) 已经很容易了，但默认行为是为数据库创建一个 Google Compute Engine 虚拟机。
 
-If you want to take it one step further and use a fully-managed MySQL instance, you can use [Google Cloud SQL](https://cloud.google.com/sql/).
-It allows automated backups, maintenance, replication for high availability and nice scalability features.
+如果你想更进一步并使用完全托管的 MySQL 实例，可以使用 [Google Cloud SQL](https://cloud.google.com/sql/)。
+它支持自动备份、维护、高可用性的复制和不错的可扩展性功能。
 
-In this tip/tutorial, I will show you how you can deploy a JHipster application on Google Cloud that will use a Google
-Cloud SQL database as a MySQL backend. In order to simplify the process, we will use a monolithic application. We will
-also use a Maven build since it is my favourite one :p
+在这个提示/教程中，我将向你展示如何在 Google Cloud 上部署一个 JHipster 应用程序，该应用程序将使用 Google Cloud SQL 数据库作为 MySQL 后端。为了简化过程，我们将使用单体应用。我们还将使用 Maven 构建，因为这是我最喜欢的：p
 
 
-## Prerequisites
+## 先决条件
 
-For this tutorial, you will need:
+对于本教程，你需要：
 
-* A Google Cloud Platform account. You can use a [60 day free trial](https://cloud.google.com/free-trial/) with $300 worth of free credit
-* [Google Cloud SDK](https://cloud.google.com/sdk/) since we will perform most of the operations from a terminal. I found the [interactive installer](https://cloud.google.com/sdk/downloads#interactive) quite convenient
+* 一个 Google Cloud Platform 账户。你可以使用价值 $300 的免费信用额度进行 [60 天免费试用](https://cloud.google.com/free-trial/)
+* [Google Cloud SDK](https://cloud.google.com/sdk/)，因为我们将从终端执行大部分操作。我发现[交互式安装程序](https://cloud.google.com/sdk/downloads#interactive)非常方便
 * [Docker](https://www.docker.com/products/overview)
-* A JHipster application using MySQL as production database
+* 一个使用 MySQL 作为生产数据库的 JHipster 应用程序
 
 
-## Initialize gcloud and kubectl
+## 初始化 gcloud 和 kubectl
 
-First of all, if you never used `gcloud`, you need to initialize it with the following command:
+首先，如果你从未使用过 `gcloud`，你需要用以下命令初始化它：
 
 ```shell
 gcloud init
 ```
 
-`gcloud` allows you to perform most the operations you could do from the Google Cloud Web console from the comfort of
-your terminal. First of all, let's install `kubectl`
+`gcloud` 允许你在终端的舒适环境中执行大部分可以从 Google Cloud Web 控制台执行的操作。首先，让我们安装 `kubectl`
 
 ```shell
 gcloud components install kubectl
 ```
 
-`kubectl` is a command line interface for running commands against Kubernetes clusters. You can also install it directly
-from the [Kubernetes website](http://kubernetes.io/docs/user-guide/prereqs/) but overall I found the gcloud installation
-more convenient.
+`kubectl` 是一个用于对 Kubernetes 集群运行命令的命令行界面。你也可以直接从 [Kubernetes 网站](http://kubernetes.io/docs/user-guide/prereqs/)安装它，但总的来说，我发现 gcloud 安装更方便。
 
-Now you need to create a google cloud project. For this purpose you will need to go through the web console, as gcloud
-does not allow you to create projects from CLI (not yet as it is an alpha feature). Alternatively you can use the [Resource
-Manager API](https://cloud.google.com/resource-manager/docs/creating-project).
+现在你需要创建一个 Google Cloud 项目。为此，你需要通过 Web 控制台进行操作，因为 gcloud 不允许你从 CLI 创建项目（还没有，因为这是一个 alpha 功能）。或者，你可以使用 [Resource Manager API](https://cloud.google.com/resource-manager/docs/creating-project)。
 
-* Go to [Google Cloud Platform Console](https://console.cloud.google.com)
-* Click **Create Project**
-* Pick a project name, click **Create** and note the project ID, and/or customize as you feel.
+* 转到 [Google Cloud Platform Console](https://console.cloud.google.com)
+* 点击 **Create Project**
+* 选择一个项目名称，点击 **Create** 并记下项目 ID，和/或根据你的感觉进行自定义。
 
-For this tutorial, purpose I picked the name `jhipster-kubernetes-cloud-sql`.
+对于本教程，我选择了名称 `jhipster-kubernetes-cloud-sql`。
 
-Then you need to:
+然后你需要：
 
-* Enable [billing](https://console.cloud.google.com/billing) on the project
-* Enable [Container Engine API](https://console.cloud.google.com/projectselector/kubernetes/list) on the project
-* Enable [API Manager](https://console.cloud.google.com/apis/dashboard) for Compute Engine, Cloud SQL and Container Engine
-* Enable [Google Cloud SQL API](https://console.developers.google.com/apis/api/sqladmin/overview)
+* 在项目上启用[计费](https://console.cloud.google.com/billing)
+* 在项目上启用 [Container Engine API](https://console.cloud.google.com/projectselector/kubernetes/list)
+* 为 Compute Engine、Cloud SQL 和 Container Engine 启用 [API Manager](https://console.cloud.google.com/apis/dashboard)
+* 启用 [Google Cloud SQL API](https://console.developers.google.com/apis/api/sqladmin/overview)
 
-Finally you need to tell `gcloud` on which project you are currently working:
+最后，你需要告诉 `gcloud` 你当前正在处理哪个项目：
 
 ```shell
 gcloud config set project jhipster-kubernetes-cloud-sql
 ```
 
-You can also tell it where you want your instances to be created by default. I chose `europe-west1-b` since I am a cheap
-European :)
+你还可以告诉它你希望默认在哪里创建实例。我选择了 `europe-west1-b`，因为我是一个便宜的欧洲人 :)
 
 ```shell
 gcloud config set compute/zone europe-west1-b
 ```
 
 
-## Create a Cloud SQL instance
+## 创建 Cloud SQL 实例
 
-Then you need to create a Google Cloud SQL instance. You can do this via the web console, which is nice to get a good
-understanding on the available options or once again you can use `gcloud`.
+然后你需要创建一个 Google Cloud SQL 实例。你可以通过 Web 控制台执行此操作，这对于很好地了解可用选项很有用，或者再次可以使用 `gcloud`。
 
 ```shell
 gcloud beta sql instances create jhipster-sqlcloud-db --region=europe-west1 --tier=db-f1-micro\
@@ -90,15 +79,9 @@ gcloud beta sql instances create jhipster-sqlcloud-db --region=europe-west1 --ti
   --activation-policy=ALWAYS --storage-type=HDD --storage-size=10GB
 ```
 
-With this command we create a SQL Cloud instance called `jhipster-sql-cloud-db` in the `europe-west1` region. We choose
-the smallest machine type available. To see the full list of available tiers you can use `gcloud sql tiers list`. Then we
-whitelist our own ip for access with `mysql` CLI, setup a backup time window starting from 1AM UTC, enable binary logging
-so we can go back in time if something goes wrong with the application. Finally we set the machine to be always activated
-(necessary as second generation machines are billed per use), set up a HDD storage (SSD is more performant but more
-expensive) and set the storage size to the minimum size. Note: we need to use the beta gcloud client to create second
-generation SQL instances.
+通过此命令，我们在 `europe-west1` 区域创建一个名为 `jhipster-sql-cloud-db` 的 SQL Cloud 实例。我们选择最小的可用机器类型。要查看可用层级的完整列表，你可以使用 `gcloud sql tiers list`。然后我们将我们自己的 IP 列入白名单以便使用 `mysql` CLI 访问，设置从 UTC 凌晨 1 点开始的备份时间窗口，启用二进制日志记录，这样如果应用程序出现问题，我们可以回到过去。最后，我们将机器设置为始终激活（第二代机器按使用计费，这是必需的），设置 HDD 存储（SSD 性能更好但更昂贵），并将存储大小设置为最小大小。注意：我们需要使用 beta gcloud 客户端来创建第二代 SQL 实例。
 
-You can check that your instance started with the following command
+你可以使用以下命令检查实例是否已启动
 
 ```shell
 gcloud sql instances list
@@ -106,7 +89,7 @@ NAME                   REGION        TIER         ADDRESS         STATUS
 jhipster-sqlcloud-db  europe-west1  db-f1-micro  146.148.21.155  RUNNABLE
 ```
 
-Since we whitelisted our IP address, we should be able to access to the DB instance with `mysql`
+由于我们将 IP 地址列入了白名单，我们应该能够使用 `mysql` 访问数据库实例
 
 ```shell
 mysql --host=146.148.21.155 --user=root --password
@@ -114,11 +97,7 @@ mysql --host=146.148.21.155 --user=root --password
 mysql>
 ```
 
-Since we're connected to the database let us create the application database and user. Since we will be using the
-[Cloud SQL proxy](https://cloud.google.com/sql/docs/sql-proxy) to connect the SQL instance from our application container,
-the user hostname can be set to `cloudsqlproxy~%` if you want to only allow connections through the proxy. The application
-name for this tutorial is `jhipsterGoogleCloudSql` so the database name should have the same name if we want to use the
-configuration generated by JHipster.
+由于我们已连接到数据库，让我们创建应用程序数据库和用户。由于我们将使用 [Cloud SQL proxy](https://cloud.google.com/sql/docs/sql-proxy) 从应用程序容器连接 SQL 实例，如果你只想允许通过代理进行连接，用户主机名可以设置为 `cloudsqlproxy~%`。本教程的应用程序名称是 `jhipsterGoogleCloudSql`，所以如果我们想使用 JHipster 生成的配置，数据库名称应该具有相同的名称。
 
 ```shell
 mysql> CREATE DATABASE jhipstergooglecloudsql;
@@ -134,20 +113,20 @@ mysql> FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0,02 sec)
 ```
 
-Do not forget to change the database user to jhipster in `application-prod.yml`
+不要忘记在 `application-prod.yml` 中将数据库用户更改为 jhipster
 
 
-## Create a container cluster
+## 创建容器集群
 
-Let us create a container cluster using [GKE](https://cloud.google.com/container-engine/docs/)
+让我们使用 [GKE](https://cloud.google.com/container-engine/docs/) 创建一个容器集群
 
 ```shell
 gcloud container clusters create jhipster-sqlcloud-cluster --zone=europe-west1-b --machine-type=g1-small --num-nodes=1
 ```
 
-For this tutorial, we will use only 1 small node. In production, you will want at least 3 nodes :)
+对于本教程，我们将只使用 1 个小节点。在生产环境中，你至少需要 3 个节点 :)
 
-Let us then get kubectl get proper credentials for this cluster
+然后让 kubectl 获取此集群的正确凭据
 
 ```shell
 gcloud container clusters get-credentials jhipster-sqlcloud-cluster
@@ -157,46 +136,40 @@ kubeconfig entry generated for jhipster-sqlcloud-cluster.
 ```
 
 
-## Building and pushing the docker image
+## 构建和推送 Docker 镜像
 
-First of all run the [Kubernetes sub-generator](/kubernetes). Reply to the questions as usual but let us
-use Container engine by pushing our docker image on Google Cloud. To the question "What should we use for the base Docker
-repository name?", reply by `gcr.io/jhipster-kubernetes-cloud-sql`. Replace with your project ID. For the docker image push
-command let us use `gcloud docker -- push` in order to push to the project container repository.
+首先运行 [Kubernetes 子生成器](/kubernetes)。像往常一样回答问题，但让我们通过将 Docker 镜像推送到 Google Cloud 上来使用 Container Engine。对于"我们应该用什么作为基础 Docker 仓库名称？"这个问题，回答 `gcr.io/jhipster-kubernetes-cloud-sql`。替换为你的项目 ID。对于 Docker 镜像推送命令，让我们使用 `gcloud docker -- push` 以便推送到项目容器仓库。
 
-Build your image
+构建你的镜像
 
 ```shell
 mvn package -Pprod jibDockerBuild
 ```
 
-Tag the image (replace with your jhipster application name). We use v1 as a tag to be able to easily deploy new versions
-of the application or rollback if something goes horribly wrong.
+标记镜像（替换为你的 JHipster 应用程序名称）。我们使用 v1 作为标签，以便能够轻松部署应用程序的新版本或在出现严重问题时回滚。
 
 ```shell
 docker image tag jhipstergooglecloudsql gcr.io/jhipster-kubernetes-cloud-sql/jhipstergooglecloudsql:v1
 ```
 
-You can then push the image to Google Container engine as follows:
+然后你可以按以下方式将镜像推送到 Google Container Engine：
 
 ```shell
 gcloud docker -- push gcr.io/jhipster-kubernetes-cloud-sql/jhipstergooglecloudsql:v1
 ```
 
 
-## Get the credentials and register them with Kubernetes
+## 获取凭据并将它们注册到 Kubernetes
 
-In order to use the Cloud SQL proxy, we will have to create credentials for our application and to register them to
-Kubernetes. The full process is available in the [Cloud SQL container engine connection documentation](https://cloud.google.com/sql/docs/container-engine-connect)
-but let me summarize the commands here.
+为了使用 Cloud SQL 代理，我们需要为应用程序创建凭据并将它们注册到 Kubernetes。完整的过程可在 [Cloud SQL 容器引擎连接文档](https://cloud.google.com/sql/docs/container-engine-connect)中找到，但让我在这里总结一下命令。
 
-Create a service account for your JHipster application
+为你的 JHipster 应用程序创建一个服务账号
 
 ```shell
 gcloud iam service-accounts create jhipster-application --display-name="JHipster application"
 ```
 
-Get the full iam account name (email used to generate key)
+获取完整的 iam 账号名称（用于生成密钥的电子邮件）
 
 ```shell
 gcloud iam service-accounts list
@@ -204,7 +177,7 @@ NAME                                    EMAIL
 JHipster application                    jhipster-application@jhipster-kubernetes-cloud-sql.iam.gserviceaccount.com
 ```
 
-Give editor access to the project to the service account
+授予服务账号对项目的编辑者访问权限
 
 ```shell
 gcloud projects add-iam-policy-binding jhipster-kubernetes-cloud-sql \
@@ -212,40 +185,39 @@ gcloud projects add-iam-policy-binding jhipster-kubernetes-cloud-sql \
   --role roles/editor
 ```
 
-Create the key and store it in `jhipster-credentials.json`
+创建密钥并将其存储在 `jhipster-credentials.json` 中
 
 ```shell
 gcloud iam service-accounts keys create \
   --iam-account jhipster-application@jhipster-kubernetes-cloud-sql.iam.gserviceaccount.com jhipster-credentials.json
 ```
 
-We will use this key later when
+稍后我们将使用此密钥
 
-Register the key with `kubectl`
+使用 `kubectl` 注册密钥
 
 ```shell
 kubectl create secret generic cloudsql-oauth-credentials --from-file=credentials.json=jhipster-credentials.json
 ```
 
 
-## Modify the Kubernetes deployment config
+## 修改 Kubernetes 部署配置
 
-First of all you can delete the generated mysql deployment file since we are going with a Cloud SQL instance.
+首先，你可以删除生成的 mysql 部署文件，因为我们使用的是 Cloud SQL 实例。
 
-Then we need to change a few things in `jhipstergooglecloudsql-deployment.yml`. First of all the Spring data source URL
-should be changed to localhost since we will be using a Cloud SQL proxy:
+然后我们需要在 `jhipstergooglecloudsql-deployment.yml` 中更改一些内容。首先，Spring 数据源 URL 应该更改为 localhost，因为我们将使用 Cloud SQL 代理：
 
 ```
 jdbc:mysql://localhost:3306/jhipstergooglecloudsql?useUnicode=true&characterEncoding=utf8&useSSL=false
 ```
 
-Then you can add the version number to the container image:
+然后你可以在容器镜像中添加版本号：
 
 ```yaml
 image: gcr.io/jhipster-kubernetes-cloud-sql/jhipstergooglecloudsql:v1
 ```
 
-Then we need to add an entry to deploy the cloud sql proxy with the sidecar pattern:
+然后我们需要添加一个条目来使用 sidecar 模式部署 Cloud SQL 代理：
 
 ```yaml
 - image: b.gcr.io/cloudsql-docker/gce-proxy:1.05
@@ -261,10 +233,9 @@ Then we need to add an entry to deploy the cloud sql proxy with the sidecar patt
       mountPath: /etc/ssl/certs
 ```
 
-As we may have noted, we also need to provide SSL certificates to communicate with Google API so we can connect to our
-Cloud SQL instance.
+如我们所注意到的，我们还需要提供 SSL 证书来与 Google API 通信，以便我们可以连接到我们的 Cloud SQL 实例。
 
-And finally add the appropriate volumes:
+最后添加适当的卷：
 
 ```yaml
 volumes:
@@ -276,7 +247,7 @@ volumes:
       path: /etc/ssl/certs
 ```
 
-The full deployment file should now look like this:
+完整的部署文件现在应该如下所示：
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -320,7 +291,7 @@ spec:
             path: /etc/ssl/certs
 ```
 
-You can then deploy the cluster with `kubectl apply`
+然后你可以使用 `kubectl apply` 部署集群
 
 ```shell
 kubectl apply -f jhipstergooglecloudsql
@@ -329,7 +300,7 @@ deployment "jhipstergooglecloudsql" created
 service "jhipstergooglecloudsql" created
 ```
 
-Then you can get the external IP through `kubectl get services` and test your application
+然后你可以通过 `kubectl get services` 获取外部 IP 并测试你的应用程序
 
 ```shell
 kubectl get services jhipstergooglecloudsql

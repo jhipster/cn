@@ -1,0 +1,31 @@
+{
+  "id": "development/tls",
+  "title": "Using TLS and HTTP/2 in development",
+  "description": "Introduction",
+  "source": "@site/docs/development/tls.mdx",
+  "sourceDirName": "development",
+  "slug": "/tls/",
+  "permalink": "/cn/tls/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/tls.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1538611200000,
+  "frontMatter": {
+    "title": "Using TLS and HTTP/2 in development",
+    "slug": "/tls/",
+    "last_update": {
+      "date": "2018-10-04T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "自定义 Bootstrap",
+    "permalink": "/cn/customizing-bootstrap/"
+  },
+  "next": {
+    "title": "运行测试",
+    "permalink": "/cn/running-tests/"
+  }
+}

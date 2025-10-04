@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_configuring_html_5_mode",
+  "title": "Configuring HTML 5 mode",
+  "description": "Tip submitted by @brevleq and updated by @wmarques",
+  "source": "@site/docs/tips/010_tip_configuring_html_5_mode.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/010_tip_configuring_html_5_mode.html",
+  "permalink": "/cn/tips/010_tip_configuring_html_5_mode.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/010_tip_configuring_html_5_mode.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1457392980000,
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "Configuring HTML 5 mode",
+    "slug": "/tips/010_tip_configuring_html_5_mode.html",
+    "last_update": {
+      "date": "2016-03-07T23:23:00.000Z"
+    }
+  }
+}

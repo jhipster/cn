@@ -1,0 +1,22 @@
+{
+  "id": "using-uaa",
+  "title": "Using JHipster UAA for Microservice Security",
+  "description": "JHipster UAA is a user accounting and authorizing service for securing JHipster microservices using the OAuth2 authorization protocol.",
+  "source": "@site/docs/using-uaa.mdx",
+  "sourceDirName": ".",
+  "slug": "/using-uaa/",
+  "permalink": "/cn/using-uaa/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/using-uaa.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1472083200000,
+  "frontMatter": {
+    "title": "Using JHipster UAA for Microservice Security",
+    "slug": "/using-uaa/",
+    "last_update": {
+      "date": "2016-08-25T00:00:00.000Z"
+    }
+  }
+}

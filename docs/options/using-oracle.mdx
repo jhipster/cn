@@ -1,32 +1,32 @@
 ---
-title: Using Oracle
+title: 使用 Oracle
 slug: /using-oracle/
 last_update:
   date: 2021-01-08T09:40:00-00:00
 ---
 
-When using JPA, you have the option to use the Oracle database.
+在使用 JPA 时，您可以选择使用 Oracle 数据库。
 
-_This option is only supported with Oracle 12cR1 and upwards (e.g. 19c, 18c and 12cR2)._
+_此选项仅支持 Oracle 12cR1 及以上版本（例如 19c、18c 和 12cR2）。_
 
-When using Oracle with JHipster, the following limitations will be applicable according to the Oracle database version.
+在 JHipster 中使用 Oracle 时，根据 Oracle 数据库版本，将适用以下限制。
 
-For version 19c, 18c and 12cR2:
-- Entity names cannot be more than 124 characters, this is due to Oracle's 128 character limitation for object names, and we reserve 4 characters to generate primary key sequence for the generated tables.
-- Entity field names cannot be more than 128 characters.
-- When doing relationships, foreign key names cannot be more than 128 characters, so they will be truncated if they are too long.
-- When doing many-to-many relationships, the join table name will follow the JPA specification (in the form "firstTable_secondTable"): if it is more than 128 characters long, it will be truncated.
+对于版本 19c、18c 和 12cR2：
+- 实体名称不能超过 124 个字符，这是由于 Oracle 对对象名称的 128 个字符限制，我们保留 4 个字符来为生成的表生成主键序列。
+- 实体字段名称不能超过 128 个字符。
+- 在做关系时，外键名称不能超过 128 个字符，所以如果它们太长，将被截断。
+- 在做多对多关系时，连接表名称将遵循 JPA 规范（形式为 "firstTable_secondTable"）：如果它超过 128 个字符，将被截断。
 
-For version 12cR1:
-- Entity names cannot be more than 26 characters, this is due to Oracle's 30 character limitation for object names, and we reserve 4 characters to generate primary key sequence for the generated tables.
-- Entity field names cannot be more than 30 characters.
-- When doing relationships, foreign key names cannot be more than 30 characters, so they will be truncated if they are too long.
-- When doing many-to-many relationships, the join table name will follow the JPA specification (in the form "firstTable_secondTable"): if it is more than 30 characters long, it will be truncated.
+对于版本 12cR1：
+- 实体名称不能超过 26 个字符，这是由于 Oracle 对对象名称的 30 个字符限制，我们保留 4 个字符来为生成的表生成主键序列。
+- 实体字段名称不能超过 30 个字符。
+- 在做关系时，外键名称不能超过 30 个字符，所以如果它们太长，将被截断。
+- 在做多对多关系时，连接表名称将遵循 JPA 规范（形式为 "firstTable_secondTable"）：如果它超过 30 个字符，将被截断。
 
-- Oracle reserved keywords cannot be used as Entity names or Field names.
+- Oracle 保留关键字不能用作实体名称或字段名称。
 
-- Oracle database 19c (EE, SE2, Single Instance and RAC) Docker images can be found here: https://container-registry.oracle.com
-- Oracle database 19c Docker build files can be found here: https://github.com/oracle/docker-images/tree/master/OracleDatabase
+- Oracle 数据库 19c（EE、SE2、单实例和 RAC）Docker 镜像可以在这里找到：https://container-registry.oracle.com
+- Oracle 数据库 19c Docker 构建文件可以在这里找到：https://github.com/oracle/docker-images/tree/master/OracleDatabase
 
 
-Note that version 19c is highly recommended because it has Long Term Support (ending in 2027).
+请注意，强烈建议使用版本 19c，因为它具有长期支持（于 2027 年结束）。

@@ -1,0 +1,30 @@
+{
+  "id": "releases/2014-09-29-jhipster-release-1.2.1",
+  "title": "Release 1.2.1",
+  "description": "JHipster gives you Yeoman + Maven + Spring + AngularJS all working together in one handy generator.",
+  "source": "@site/docs/releases/2014-09-29-jhipster-release-1.2.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2014/09/29/jhipster-release-1.2.1.html",
+  "permalink": "/cn/2014/09/29/jhipster-release-1.2.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2014-09-29-jhipster-release-1.2.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 1.2.1",
+    "slug": "/2014/09/29/jhipster-release-1.2.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 1.2.0",
+    "permalink": "/cn/2014/09/21/jhipster-release-1.2.0.html"
+  },
+  "next": {
+    "title": "Release 1.2.2",
+    "permalink": "/cn/2014/10/02/jhipster-release-1.2.2.html"
+  }
+}

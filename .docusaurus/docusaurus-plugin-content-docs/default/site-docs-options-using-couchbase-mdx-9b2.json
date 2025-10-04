@@ -1,0 +1,31 @@
+{
+  "id": "options/using-couchbase",
+  "title": "Using Couchbase",
+  "description": "Couchbase is one of the supported databases that can be selected when your application is being generated.",
+  "source": "@site/docs/options/using-couchbase.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-couchbase/",
+  "permalink": "/cn/using-couchbase/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-couchbase.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1424736000000,
+  "frontMatter": {
+    "title": "Using Couchbase",
+    "slug": "/using-couchbase/",
+    "last_update": {
+      "date": "2015-02-24T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 MongoDB",
+    "permalink": "/cn/using-mongodb/"
+  },
+  "next": {
+    "title": "使用 Neo4j",
+    "permalink": "/cn/using-neo4j/"
+  }
+}

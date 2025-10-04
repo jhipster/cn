@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_remove_register_account_service",
+  "title": "How to remove the register account service",
+  "description": "Tip submitted by @apuntandoanulo",
+  "source": "@site/docs/tips/034_tip_remove_register_account_service.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/034_tip_remove_register_account_service.html",
+  "permalink": "/cn/tips/034_tip_remove_register_account_service.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/034_tip_remove_register_account_service.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1616188920000,
+  "sidebarPosition": 34,
+  "frontMatter": {
+    "title": "How to remove the register account service",
+    "slug": "/tips/034_tip_remove_register_account_service.html",
+    "last_update": {
+      "date": "2021-03-19T21:22:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "User entity management",
+    "permalink": "/cn/user-entity/"
+  },
+  "next": {
+    "title": "Combine generation and custom code",
+    "permalink": "/cn/tips/035_tip_combine_generation_and_custom_code.html"
+  }
+}

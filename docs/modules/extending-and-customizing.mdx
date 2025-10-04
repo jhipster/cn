@@ -1,117 +1,117 @@
 ---
-title: Blueprint Basics
+title: 蓝图基础知识
 slug: /modules/extending-and-customizing/
 last_update:
   date: 2015-12-05T18:40:00-00:00
 ---
 
-JHipster has support for `plugins`, and we call them `blueprints` and `modules`.
+JHipster 支持`插件`，我们称之为`蓝图`和`模块`。
 
-Prior to JHipster v7.9.0, `modules` were Yeoman generators executed using `yo`, extended `generators-jhipster`'s `generator-base` class, and registered hooks to integrate into JHipster's workflow.
+在 JHipster v7.9.0 之前，`模块`是使用 `yo` 执行的 Yeoman 生成器，扩展了 `generators-jhipster` 的 `generator-base` 类，并注册钩子来集成到 JHipster 的工作流程中。
 
-As of JHipster v7.9.0, `modules` are `blueprints` with stand-alone generators (not blueprinted) and a custom CLI.
-We will refer to them as standalone blueprints (or just blueprints) from now on.
-
-
-## Basic rules for a JHipster blueprint
-
-JHipster blueprints:
-
-- are NPM packages and Yeoman generators.
-- follow an extension of the Yeoman rules listed at [https://yeoman.io/authoring/index.html](https://yeoman.io/authoring/index.html). Instead of being prefixed by `generator-`, are prefixed with `generator-jhipster-`, and instead of having just the `yeoman-generator` keyword, and must have 2 keywords, `yeoman-generator` and `jhipster-blueprint`.
+从 JHipster v7.9.0 开始，`模块`是带有独立生成器（非蓝图化）和自定义 CLI 的`蓝图`。
+从现在开始，我们将称它们为独立蓝图（或简称为蓝图）。
 
 
-## Usage
+## JHipster 蓝图的基本规则
 
-To use a blueprint, run the below command
+JHipster 蓝图：
+
+- 是 NPM 包和 Yeoman 生成器。
+- 遵循 [https://yeoman.io/authoring/index.html](https://yeoman.io/authoring/index.html) 中列出的 Yeoman 规则的扩展。不是以 `generator-` 为前缀，而是以 `generator-jhipster-` 为前缀，并且不只有 `yeoman-generator` 关键字，必须有 2 个关键字：`yeoman-generator` 和 `jhipster-blueprint`。
+
+
+## 使用方法
+
+要使用蓝图，请运行以下命令
 
 ```shell
 jhipster --blueprints <blueprint name>
 ```
 
-Or use the custom provided CLI:
+或使用提供的自定义 CLI：
 
 ```shell
 jhipster-my-blueprint
 ```
 
 
-## Examples
+## 示例
 
-JHipster has many official blueprints, some examples:
+JHipster 有许多官方蓝图，一些示例：
 
-- Backend
-  - [JHipster Kotlin](https://github.com/jhipster/jhipster-kotlin) blueprint replaces most of the server side Java code with equivalent Kotlin code.
-  - [JHipster.NET](https://github.com/jhipster/jhipster-dotnetcore) blueprint replaces the entire server side with .NET implementation.
-  - [JHipster NodeJS](https://github.com/jhipster/generator-jhipster-nodejs) blueprint replaces the entire server side with NestJS implementation.
-- Backend Customization
-  - [JHipster Native](https://github.com/jhipster/generator-jhipster-native) blueprint customizes JHipster applications with Spring Native compatibility.
-- Frontend
-  - [Svelte Hipster](https://github.com/jhipster/generator-jhipster-svelte) blueprint replaces the entire client side with Svelte implementation.
-- Mobile
-  - [JHipster Ionic](https://github.com/jhipster/generator-jhipster-ionic) blueprint generates an Ionic application.
+- 后端
+  - [JHipster Kotlin](https://github.com/jhipster/jhipster-kotlin) 蓝图将大部分服务器端 Java 代码替换为等效的 Kotlin 代码。
+  - [JHipster.NET](https://github.com/jhipster/jhipster-dotnetcore) 蓝图用 .NET 实现替换整个服务器端。
+  - [JHipster NodeJS](https://github.com/jhipster/generator-jhipster-nodejs) 蓝图用 NestJS 实现替换整个服务器端。
+- 后端定制
+  - [JHipster Native](https://github.com/jhipster/generator-jhipster-native) 蓝图通过 Spring Native 兼容性定制 JHipster 应用程序。
+- 前端
+  - [Svelte Hipster](https://github.com/jhipster/generator-jhipster-svelte) 蓝图用 Svelte 实现替换整个客户端。
+- 移动端
+  - [JHipster Ionic](https://github.com/jhipster/generator-jhipster-ionic) 蓝图生成一个 Ionic 应用程序。
 
 
-## Side-by-Side blueprint
+## 并排蓝图
 
-Each generator can be a side-by-side (SBS) blueprint. A SBS blueprint doesn't change the original generator's behavior but can customize the behavior and the result.
-A SBS blueprint makes easier to support multiple JHipster versions and port to a new JHipster version.
+每个生成器都可以是并排（SBS）蓝图。SBS 蓝图不会改变原始生成器的行为，但可以自定义行为和结果。
+SBS 蓝图使支持多个 JHipster 版本和移植到新的 JHipster 版本变得更容易。
 
-To make the generator side-by-side, add this to the constructor:
+要使生成器并排，请将以下内容添加到构造函数中：
 
 ```js
 this.sbsBlueprint = true;
 ```
 
-Example: [server generator at Native Blueprint](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L17).
-In the example, the generator [customizes package.json](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L26-L35), [removes files](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L37-L40), [customizes the pom.xml](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L42-L186), [customizes Java files](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L211-L307), [customizes Cypress](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L321-L329), and so on.
+示例：[Native Blueprint 的服务器生成器](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L17)。
+在该示例中，生成器[自定义 package.json](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L26-L35)、[删除文件](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L37-L40)、[自定义 pom.xml](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L42-L186)、[自定义 Java 文件](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L211-L307)、[自定义 Cypress](https://github.com/jhipster/generator-jhipster-native/blob/bb9c042f6bc70a26ba8037e951c93dc1d1820983/generators/server/generator.mjs#L321-L329) 等等。
 
-A side-by-side blueprint can be used to create hooks and help migrate an existing module. This is covered in [Creating a module](/modules/creating-a-module).
-
-
-## Custom CLI
-
-Standalone blueprints can be executed using `yo`, but `yo` is aggressive in generators discovery—which can be slow—and lacks some improvements. The JHipster CLI provides help and JHipster integration.
-Therefore, we recommend using the `jhipster` CLI or creating a custom CLI based on `generator-jhipster`.
-
-The `jhipster` command executes the `generator-jhipster` version you have installed globally. A custom CLI will execute the dependent `generator-jhipster` and will make sure to use the supported `generator-jhipster`'s version.
-
-A custom CLI allows you to execute a custom generator and is covered in [Creating a module](/modules/creating-a-module).
+并排蓝图可用于创建钩子并帮助迁移现有模块。这在[创建模块](/modules/creating-a-module)中有详细介绍。
 
 
-## Local Blueprint
+## 自定义 CLI
 
-An application can be kept updated more easily when customizations are generated by jhipster. A local blueprint is implemented with this purpose in mind.
+独立蓝图可以使用 `yo` 执行，但 `yo` 在生成器发现方面很激进——这可能很慢——并且缺少一些改进。JHipster CLI 提供帮助和 JHipster 集成。
+因此，我们建议使用 `jhipster` CLI 或基于 `generator-jhipster` 创建自定义 CLI。
 
-The entire blueprint is implemented inside the application's `.blueprint` directory.
+`jhipster` 命令执行您全局安装的 `generator-jhipster` 版本。自定义 CLI 将执行依赖的 `generator-jhipster` 并确保使用支持的 `generator-jhipster` 版本。
 
-Some benefits:
-- avoids or reduces conflicts when regenerating and upgrading.
-- allows to bulk edit entities files.
-- doesn't need to be published to a npm repository.
-- full control of the jhipster workflow.
-- easily generated with a single command.
+自定义 CLI 允许您执行自定义生成器，这在[创建模块](/modules/creating-a-module)中有详细介绍。
 
 
-## Development and public API
+## 本地蓝图
 
-We still lack published JSDoc API documentation, so you will need to refer to the source code.
+当自定义是由 jhipster 生成时，应用程序可以更容易地保持更新。本地蓝图就是为此目的而实现的。
 
+整个蓝图在应用程序的 `.blueprint` 目录内实现。
 
-## Application configuration:
-
-JHipster's configuration follows [Yeoman configuration](https://yeoman.io/authoring/storage.html) pattern and provides additional support for blueprint config.
-
-The `config` and `jhipsterConfig` properties store the common config and write to the `generator-jhipster` key in the `.yo-rc.json` file.
-The `blueprintStorage` and `blueprintConfig` properties store the blueprint-specific config and write to the `generator-jhipster-(my-blueprint)` key in the `.yo-rc.json` file.
-
-The `config` and `blueprintStorage` are [Storage instances](https://yeoman.github.io/generator/Storage.html), 
-while `jhipsterConfig` and `blueprintConfig` are [proxy objects](https://yeoman.github.io/generator/Storage.html#createProxy) for `config` and `blueprintStorage` storages for convenience.
+一些好处：
+- 在重新生成和升级时避免或减少冲突。
+- 允许批量编辑实体文件。
+- 不需要发布到 npm 仓库。
+- 完全控制 jhipster 工作流程。
+- 使用单个命令轻松生成。
 
 
-## Constants:
+## 开发和公共 API
 
-You can use constants in [`generator-constants.js`](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-constants.js):
+我们仍然缺少已发布的 JSDoc API 文档，因此您需要参考源代码。
+
+
+## 应用程序配置：
+
+JHipster 的配置遵循 [Yeoman 配置](https://yeoman.io/authoring/storage.html)模式，并为蓝图配置提供额外支持。
+
+`config` 和 `jhipsterConfig` 属性存储通用配置并写入 `.yo-rc.json` 文件中的 `generator-jhipster` 键。
+`blueprintStorage` 和 `blueprintConfig` 属性存储蓝图特定的配置并写入 `.yo-rc.json` 文件中的 `generator-jhipster-(my-blueprint)` 键。
+
+`config` 和 `blueprintStorage` 是[存储实例](https://yeoman.github.io/generator/Storage.html)，
+而 `jhipsterConfig` 和 `blueprintConfig` 是 `config` 和 `blueprintStorage` 存储的[代理对象](https://yeoman.github.io/generator/Storage.html#createProxy)，以便于使用。
+
+
+## 常量：
+
+您可以使用 [`generator-constants.js`](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-constants.js) 中的常量：
 
 ```js
 const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`;
@@ -120,25 +120,25 @@ const webappDir = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 ```
 
 
-## Functions:
+## 函数：
 
-You can use all functions in [generator-base.js](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-base.js):
+您可以使用 [generator-base.js](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-base.js) 中的所有函数：
 
 
-## Running a Blueprint locally for development
+## 在本地运行蓝图进行开发
 
-While developing a blueprint, please note the below steps. They are very important.
+在开发蓝图时，请注意以下步骤。它们非常重要。
 
-1. Link your blueprint globally 
+1. 全局链接您的蓝图
 
-Note: If you do not want to link the blueprint (Step 3) to each project being created.
+注意：如果您不想将蓝图（步骤 3）链接到正在创建的每个项目。
 
 ```shell
 cd generator-jhipster-my-blueprint
 npm link
 ```
 
-1. Link a development version of JHipster to your blueprint. Note: required only if you want to use a non-released JHipster version, like the `main` branch or your own custom fork)
+2. 将 JHipster 的开发版本链接到您的蓝图。注意：仅当您想使用未发布的 JHipster 版本（如 `main` 分支或您自己的自定义分支）时才需要
 
 ```shell
 cd generator-jhipster
@@ -148,14 +148,14 @@ cd generator-jhipster-my-blueprint
 npm link generator-jhipster
 ```
 
-Or install `generator-jhipster` from git:
+或从 git 安装 `generator-jhipster`：
 
 ```shell
 cd generator-jhipster-my-blueprint
 npm install jhipster/generator-jhipster
 ```
 
-1. Create a new folder for the app to be generated, and run JHipster ignoring JHipster dependencies (otherwise a released version will be installed each time `npm install/ci` is called)
+3. 为要生成的应用程序创建一个新文件夹，并运行 JHipster 忽略 JHipster 依赖项（否则每次调用 `npm install/ci` 时都会安装发布版本）
 
 ```shell
 mkdir my-app && cd my-app
@@ -163,16 +163,16 @@ mkdir my-app && cd my-app
 jhipster --blueprints my-blueprint --skip-jhipster-dependencies
 ```
 
-1. Once the blueprint/generator-jhipster is released, re-add the JHipster dependencies for reproducibility
+4. 一旦蓝图/generator-jhipster 发布，重新添加 JHipster 依赖项以确保可重现性
 
 ```shell
 jhipster --no-skip-jhipster-dependencies
 ```
 
 
-## Registering a blueprint to the JHipster marketplace
+## 将蓝图注册到 JHipster 市场
 
-To make your blueprint available in [the JHipster marketplace](/modules/marketplace), you need to make sure you have the two keywords `yeoman-generator` and `jhipster-blueprint` in your published npm `package.json`.
-If you find any entry in the marketplace that is not a JHipster module or blueprint, you can help to deny list it by adding it to the `blacklistedModules` section of the [`modules-config.json file`](https://github.com/jhipster/jhipster.github.io/blob/main/modules/marketplace/data/modules-config.json) by doing a Pull Request to the [jhipster/jhipster.github.io project](https://github.com/jhipster/jhipster.github.io).
+要使您的蓝图在 [JHipster 市场](/modules/marketplace)中可用，您需要确保在已发布的 npm `package.json` 中有两个关键字：`yeoman-generator` 和 `jhipster-blueprint`。
+如果您在市场中发现任何不是 JHipster 模块或蓝图的条目，您可以通过将其添加到 [`modules-config.json 文件`](https://github.com/jhipster/jhipster.github.io/blob/main/modules/marketplace/data/modules-config.json) 的 `blacklistedModules` 部分来帮助将其列入拒绝名单，方法是向 [jhipster/jhipster.github.io 项目](https://github.com/jhipster/jhipster.github.io)提交 Pull Request。
 
-Once you publish your blueprint to NPM, your blueprint will become available in our marketplace.
+一旦您将蓝图发布到 NPM，您的蓝图就会在我们的市场中可用。

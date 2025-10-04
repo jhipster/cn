@@ -1,13 +1,13 @@
 ---
-title: Doing API-First development
+title: 进行 API 优先开发
 slug: /doing-api-first-development/
 last_update:
   date: 2024-08-29T00:00:00-00:00
 ---
 
-# <i class="fa fa-search"></i> Doing API-First development
+# <i class="fa fa-search"></i> 进行 API 优先开发
 
-When generating a JHipster application and prompted "Which other technologies would you like to use?" choose the `API first development using OpenAPI-generator` option to leverage the [OpenAPI-generator](https://github.com/OpenAPITools/openapi-generator), as shown below:
+当生成 JHipster 应用并被提示“您想要使用哪些其他技术？”时，选择 `API first development using OpenAPI-generator` 选项来利用 [OpenAPI-generator](https://github.com/OpenAPITools/openapi-generator)，如下所示：
 
 ```shell
 # ... other prompts answered ...
@@ -18,23 +18,23 @@ and <enter> to proceed)
 ❯◉ API first development using OpenAPI-generator
 ```
 
-This option will configure the build tool, [Maven or Gradle](https://openapi-generator.tech/docs/plugins), to generate API code from an OpenAPI (Swagger) Specification (OAS) file. Both Swagger v2 and OpenAPI v3 formats are supported.
+此选项将配置构建工具，[Maven 或 Gradle](https://openapi-generator.tech/docs/plugins)，从 OpenAPI (Swagger) 规范 (OAS) 文件生成 API 代码。支持 Swagger v2 和 OpenAPI v3 格式。
 
-## Rationale for API-First development
+## API 优先开发的理由
 
-In API first development, also called "Contract First Development," the API specification is written first and then code is generated from the API specification. Contrast this with generating the documentation from the code.
+在 API 优先开发中，也称为“合约优先开发”，API 规范是首先编写的，然后从 API 规范生成代码。这与从代码生成文档形成对比。
 
-API first development provides the following advantages:
+API 优先开发提供以下优势：
 
-- The API is designed for the consumers and not as a consequence of the implementation.
-- The specification file can be used to mock new server endpoints in development further decoupling the frontend and backend.
-- Use of the specification file does not require a live server.
+- API 是为消费者设计的，而不是作为实现的结果。
+- 规范文件可以用于在开发中模拟新的服务器端点，进一步解耦前端和后端。
+- 使用规范文件不需要一个活动的服务器。
 
-## Default Configuration
+## 默认配置
 
-This HOWTO will use JHipster's default configuration that leverages Spring's Delegate Pattern. The generated code by the [OpenAPI Generator for Spring](https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md) will produce the models and delegates for implementation.
+此指南将使用 JHipster 的默认配置，该配置利用了 Spring 的委托模式。[OpenAPI Generator for Spring](https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md) 生成的代码将产生用于实现的模型和委托。
 
-The plugin's default configuration is shown below (Maven) and defined in the project level `build` profile of the `pom.xml`. The configuration is adapted for Gradle projects by JHipster.
+插件的默认配置如下所示（Maven），并在 `pom.xml` 的项目级 `build` 配置文件中定义。JHipster 为 Gradle 项目适配了该配置。
 
 ```xml
 <plugin>
@@ -69,49 +69,49 @@ The plugin's default configuration is shown below (Maven) and defined in the pro
 </plugin>
 ```
 
-> ℹ️ JHipster users are always encouraged to adapt the build tooling to the specifics of the environment or the standards adopted within an organization. JHipster puts a project on the right foundation with tools and practices that have been tested at scale. If the JHipster's use of the Spring Delegate pattern is not the standard for an organization the `configOption:delegatePattern` can be removed (the default is `false`).
+> ℹ️ JHipster 用户始终被鼓励根据环境的具体情况或组织内采用的标准来调整构建工具。JHipster 为项目提供了正确的基础，并提供了在大规模环境中经过测试的工具和实践。如果 JHipster 使用 Spring 委托模式不是组织的标准，可以删除 `configOption:delegatePattern`（默认为 `false`）。
 >
-> As always, users are expected to understand the implications of changes to JHipster's default behavior. Just as JHipster cannot teach users how to use Spring, changes to Spring may result in behavior that cannot not be documented by JHipster.
+> 如常，用户需要理解对 JHipster 默认行为进行更改的影响。正如 JHipster 无法教用户如何使用 Spring，对 Spring 的更改可能导致 JHipster 无法记录的行为。
 
-## Using the openapi-generator-maven-plugin
+## 使用 openapi-generator-maven-plugin
 
-The OpenAPI Specification (OAS) file is read by the generator from the defined file in the plugin's `inputSpec` element. JHipster's default location for the OAS is `src/main/resources/swagger/api.yml`. The plugin generates interfaces and Data Transfer Objects (DTOs) from the OAS for implementation. The interfaces have default methods which respond with a `501 Not implemented` HTTP status and an empty body.
+OpenAPI 规范 (OAS) 文件由生成器从插件的 `inputSpec` 元素中定义的文件读取。JHipster 的 OAS 默认位置是 `src/main/resources/swagger/api.yml`。插件从 OAS 生成接口和数据传输对象 (DTO) 供实现使用。接口具有默认方法，这些方法会响应 `501 Not implemented` HTTP 状态和空主体。
 
-### Developing an API with the OpenAPI Specification
+### 使用 OpenAPI 规范开发 API
 
-This guide will use the classic Pet Store specification from OpenAPI for simplicity as writing an OAS is beyond the scope of this guide. API developers can write an OAS and place it in `src/main/resources/swagger/api.yml` using a tool such as [swagger-editor](http://editor.swagger.io). Many IDEs provide OAS tools for editing as well.
+本指南将使用 OpenAPI 的经典宠物店规范以简化操作，因为编写 OAS 超出了本指南的范围。API 开发者可以使用 [swagger-editor](http://editor.swagger.io) 等工具编写 OAS 并将其放在 `src/main/resources/swagger/api.yml` 中。许多 IDE 也提供了 OAS 编辑工具。
 
-#### Pro Tip
+#### 专业提示
 
-JHipster, when choosing `API first development using OpenAPI-generator`, provides a Docker Compose descriptor for the Swagger Editor at `src/main/docker/swagger-editor.yml`. To use this editor locally, run `docker compose -f src/main/docker/swagger-editor.yml up -d`.
+JHipster 在选择 `API first development using OpenAPI-generator` 时，为 Swagger Editor 提供了位于 `src/main/docker/swagger-editor.yml` 的 Docker Compose 描述符。要在本地使用此编辑器，请运行 `docker compose -f src/main/docker/swagger-editor.yml up -d`。
 
-### JHipster's Layered Architecture and Technical Structure Tests by ArchUnit
+### JHipster 的分层架构和 ArchUnit 技术结构测试
 
-Prior to implementing the delegates generated by the OpenAPI Generator plugin, take a moment to review and understand JHipster's layered architecture design. This architecture is tested by [TNG Tech's ArchUnit](https://www.archunit.org/motivation) and defined in `src/test/java/com/mycompany/myapp/TechnicalStructureTest.java`. Proper implementation of the delegate classes must be followed so as not to violate this layered architecture.
+在实现由 OpenAPI Generator 插件生成的委托之前，请花时间审查和理解 JHipster 的分层架构设计。这种架构由 [TNG Tech 的 ArchUnit](https://www.archunit.org/motivation) 进行测试，并在 `src/test/java/com/mycompany/myapp/TechnicalStructureTest.java` 中定义。必须遵循委托类的正确实现，以便不违反这种分层架构。
 
-## Implementation Guide
+## 实现指南
 
-### The Pet Store v3
+### Pet Store v3
 
-Hereafter, this guide will be based on a [JHipster-ready version of Expanded Pet Store v3](/doing-api-first-development/api/api.yml) from the OpenAPI Initiative ([found here](https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore-expanded.yaml)). This JHipster-version sets the `server:url` to the JHipster defaults of `http://localhost:8081/api` (where the port defaults to `8081` and the generated controller has a base path of `/api`, matching the default `SecurityConfiguration#filterChain(HttpSecurity,  MvcRequestMatcher.Builder)` implementation).
+以下，本指南将基于 OpenAPI Initiative 的 [JHipster 版本的 Expanded Pet Store v3](/doing-api-first-development/api/api.yml)（[在此处找到](https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore-expanded.yaml)）。这个 JHipster 版本将 `server:url` 设置为 JHipster 默认的 `http://localhost:8081/api`（其中端口默认为 `8081`，生成的控制器的基路径为 `/api`，与默认的 `SecurityConfiguration#filterChain(HttpSecurity,  MvcRequestMatcher.Builder)` 实现匹配）。
 
-### Generating the Server Sources
+### 生成服务器源代码
 
 ```bash
 ./mvnw generate-sources
 ```
-Or for gradle:
+或对于 gradle：
 ```bash
 ./gradlew openApiGenerate
 ```
 
-### Validate tooling
+### 验证工具
 
-Validate that the generated classes in `target/generated-sources` are on the classpath for implementation. Most IDEs look for and, automatically, configure these directories. Refer to the IDE's documentation to resolve any issues.
+验证 `target/generated-sources` 中的生成类在类路径上可用于实现。大多数 IDE 会查找并自动配置这些目录。请参阅 IDE 的文档来解决任何问题。
 
-### Review the Generated Classes
+### 审查生成的类
 
-Take a moment to review the `generated-sources`.
+花一些时间审查 `generated-sources`。
 
 ```text
 target/generated-sources
@@ -135,27 +135,27 @@ target/generated-sources
                                 └── PetsApiDelegate.java
 ```
 
-> ⚠️The OpenAPI Generator is responsible for the creation of DTOs ("models") and delegates. Implementations MUST not be placed in the `target/generated-sources`. These classes are subject to generation at anytime and SHOULD NOT be committed to source control.
+> ⚠️OpenAPI Generator 负责创建 DTO（“模型”）和委托。实现**不得**放在 `target/generated-sources` 中。这些类随时可能被生成，因此**不应该**提交到源代码控制。
 
-### Implementation
+### 实现
 
-The following steps will be repeated as needed for each delegate implementation:
+以下步骤将根据需要为每个委托实现重复：
 
-1. [Implement the Delegate](#implement-the-delegate)
-2. [Test Drive the Implementation](#test-drive-the-implementation)
-3. [Mocking Endpoints in Development](#mocking-endpoints-in-development)
+1. [实现委托](#implement-the-delegate)
+2. [测试驱动实现](#test-drive-the-implementation)
+3. [在开发中模拟端点](#mocking-endpoints-in-development)
 
-#### Implement the Delegate
+#### 实现委托
 
-The implementation class will use the Spring `@Service` annotation.
+实现类将使用 Spring `@Service` 注解。
 
-##### Create the API package
+##### 创建 API 包
 
-Create the `api` package in the `web` layer, i.e., `mkdir -p src/main/java/demo/jhipster/web/api`. See [Pro Tip](#pro-tip-1).
+在 `web` 层中创建 `api` 包，即 `mkdir -p src/main/java/demo/jhipster/web/api`。请参阅[专业提示](#pro-tip-1)。
 
-##### Override the methods of the PetApi
+##### 重写 PetApi 的方法
 
-The OpenAPI Generator creates `@RequestMapping` methods in the `demo.jhipster.web.api.PetApi` interface for each `paths` element defined in the OAS using the `operationId`. The writing of the OAS is beyond the scope of this guide, but observe in the `demo.jhipster.web.api.PetApi` each `@RequestMapping` annotation and the generated method. A notable example is the `operationId: find by pet id` and the resulting interface method of `findPetById`, overridden in the example that follows:
+OpenAPI Generator 为 OAS 中定义的每个 `paths` 元素在 `demo.jhipster.web.api.PetApi` 接口中使用 `operationId` 创建 `@RequestMapping` 方法。OAS 的编写超出了本指南的范围，但请在 `demo.jhipster.web.api.PetApi` 中观察每个 `@RequestMapping` 注解和生成的方法。一个显著的例子是 `operationId: find by pet id` 和生成的接口方法 `findPetById`，在下面的例子中被重写：
 
 ```java
 package demo.jhipster.web.api;
@@ -193,16 +193,16 @@ public class PetsApiDelegateImpl implements PetsApiDelegate {
 }
 ```
 
-##### Pro Tip
+##### 专业提示
 
-If the OpenAPI Generator is not producing the types or code desired, review the documentation. The JHipster default settings are generically adapted to most APIs. Consider reviewing the `importMappings` and `typeMappings` [options of the provided plugin](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin) for additional flexibility.
+如果 OpenAPI Generator 没有产生所需的类型或代码，请查看文档。JHipster 默认设置通常适应大多数 API。考虑查看[提供的插件](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin)的 `importMappings` 和 `typeMappings` 选项以获得额外的灵活性。
 
-#### Test Drive the Implementation
+#### 测试驱动实现
 
-Perform the following in a terminal (or "command prompt"):
+在终端（或“命令提示符”）中执行以下操作：
 
 ```shell
-./mvnw # start the server, also try 'npm run app:start', see the package.json for more scripts!
+./mvnw # 启动服务器，也可以尝试 'npm run app:start'，查看 package.json 获取更多脚本！
 curl -H "Accept: application/json" http://localhost:8081/api/pets/1
 {
   "name" : "Chessie Cat",
@@ -211,11 +211,11 @@ curl -H "Accept: application/json" http://localhost:8081/api/pets/1
 }
 ```
 
-### Mocking Endpoints in Development
+### 在开发中模拟端点
 
-Providing the `NativeWebRequest` bean to the Delegate interface can return example response bodies for the methods that have not been overridden. The endpoints still respond with a `501 Not Implemented` HTTP status code, but the example response may be useful for mocking endpoints before the actual implementation.
+向 Delegate 接口提供 `NativeWebRequest` bean 可以为尚未被重写的方法返回示例响应体。端点仍然会响应 `501 Not Implemented` HTTP 状态码，但示例响应可能对在实际实现之前模拟端点很有用。
 
-> ℹ️ The OAS sample provides example bodies as documented. The `schemas` for each operation MUST define an `example` for the OpenAPI Generator to produce the response bodies. The following snippet is helpful:
+> ℹ️ OAS 示例提供了文档中的示例响应体。每个操作的 `schemas` **必须**定义一个 `example`，以便 OpenAPI Generator 生成响应体。以下代码片段很有帮助：
 
 ```yaml
 # ...
@@ -232,13 +232,13 @@ components:
         tag: cat
 ```
 
-#### Override the default constructor of the Delegate Implementation
+#### 重写 Delegate 实现的默认构造函数
 
-With the OAS properly defined, add the `NativeWebRequest` to the implementation as shown below. Each step is shown in the example implementation below and follows:
+在正确定义 OAS 后，将 `NativeWebRequest` 添加到实现中，如下所示。以下示例实现中显示了每个步骤，并遵循：
 
-1. Add `NativeWebRequest request` property to the implementation.
-2. Override the default no-args constructor,`public PetsApiDelegateImpl(NativeWebRequest request){...}`
-3. Override the `demo.jhipster.web.api.PetsApiDelegate#getRequest()` returning the `Optional<NativeWebRequest>`.
+1. 向实现添加 `NativeWebRequest request` 属性。
+2. 重写默认的无参数构造函数，`public PetsApiDelegateImpl(NativeWebRequest request){...}`
+3. 重写 `demo.jhipster.web.api.PetsApiDelegate#getRequest()` 返回 `Optional<NativeWebRequest>`。
 
 ```java
 package demo.jhipster.web.api;
@@ -286,7 +286,7 @@ public class PetsApiDelegateImpl implements PetsApiDelegate {
 }
 ```
 
-Restart the server and observe the following in a terminal (or "command prompt") with `curl` or other HTTP tooling, e.g., Insomina, Postman, httpie:
+重启服务器并在终端（或“命令提示符”）中使用 `curl` 或其他 HTTP 工具（例如 Insomnia、Postman、httpie）观察以下内容：
 
 ```shell
 $ curl -H "Accept: application/json" http://localhost:8081/api/pets/1
@@ -313,13 +313,13 @@ $ curl -H "Accept: application/json" http://localhost:8081/api/pets?tags=cat
 [ { "name" : "Chessie Cat", "id" : 1, "tag" : "cat" }, { "name" : "Chessie Cat", "id" : 1, "tag" : "cat" } ]
 ```
 
-The example body is returned though the HTTP Status of the response is `501 Not Implemented`.
+示例响应体被返回，尽管响应的 HTTP 状态是 `501 Not Implemented`。
 
-### Authentication
+### 身份验证
 
-JHipster, by default, secures `/api/**` in `demo.jhipster.config.SecurityConfiguration#filterChain(HttpSecurity,  MvcRequestMatcher.Builder)` requiring authentication, e.g., `.requestMatchers(mvc.pattern("/api/**")).authenticated()`.
+JHipster 默认情况下在 `demo.jhipster.config.SecurityConfiguration#filterChain(HttpSecurity,  MvcRequestMatcher.Builder)` 中保护 `/api/**`，需要身份验证，例如 `.requestMatchers(mvc.pattern("/api/**")).authenticated()`。
 
-Authentication is beyond the scope of this guide. However, review of the `demo.jhipster.security.jwt.TokenAuthenticationIT` integration test can provide some insight into testing authentication in Insomina, Postman, curl, and other HTTP tools. For example, it is possible to generate a JWT Bearer token using Docker as follows:
+身份验证超出了本指南的范围。但是，查看 `demo.jhipster.security.jwt.TokenAuthenticationIT` 集成测试可以为在 Insomnia、Postman、curl 和其他 HTTP 工具中测试身份验证提供一些见解。例如，可以使用 Docker 生成 JWT Bearer 令牌，如下所示：
 
 ```shell
 docker run --rm --name jwt-cli bitnami/jwt-cli encode \
@@ -331,7 +331,7 @@ docker run --rm --name jwt-cli bitnami/jwt-cli encode \
 --no-typ
 ```
 
-This will generate a Bearer token for API calls, as follows:
+这将为 API 调用生成一个 Bearer 令牌，如下所示：
 
 ```shell
 curl -v -H "Accept: application/json" -H "Authorization: Bearer <ENCODED_TOKEN>" http://localhost:8081/api/pets/1

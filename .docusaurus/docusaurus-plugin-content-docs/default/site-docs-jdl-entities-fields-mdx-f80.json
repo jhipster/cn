@@ -1,0 +1,31 @@
+{
+  "id": "jdl/entities-fields",
+  "title": "JHipster Domain Language (JDL) - Entities & fields",
+  "description": "Syntax",
+  "source": "@site/docs/jdl/entities-fields.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/entities-fields",
+  "permalink": "/cn/jdl/entities-fields",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/entities-fields.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1572177600000,
+  "frontMatter": {
+    "title": "JHipster Domain Language (JDL) - Entities & fields",
+    "slug": "/jdl/entities-fields",
+    "last_update": {
+      "date": "2019-10-27T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "应用程序",
+    "permalink": "/cn/jdl/applications"
+  },
+  "next": {
+    "title": "枚举",
+    "permalink": "/cn/jdl/enums"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "environment/shell-plugins/fisher",
+  "title": "Using Fisher",
+  "description": "If you are using Linux or Mac OS X, fisher is a great tool to manage your fish shell configuration.",
+  "source": "@site/docs/environment/shell-plugins/fisher.mdx",
+  "sourceDirName": "environment/shell-plugins",
+  "slug": "/fisher/",
+  "permalink": "/cn/fisher/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/shell-plugins/fisher.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1540060800000,
+  "frontMatter": {
+    "title": "Using Fisher",
+    "slug": "/fisher/",
+    "last_update": {
+      "date": "2018-10-20T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Oh-My-Zsh JHipster 插件",
+    "permalink": "/cn/oh-my-zsh/"
+  },
+  "next": {
+    "title": "创建应用",
+    "permalink": "/cn/creating-an-app/"
+  }
+}

@@ -1,5 +1,5 @@
 ---
-title: How to remove the register account service
+title: 如何移除注册账户服务
 slug: /tips/034_tip_remove_register_account_service.html
 last_update:
   date: 2021-03-19T21:22:00-00:00
@@ -7,31 +7,31 @@ last_update:
 
 __Tip submitted by [@apuntandoanulo](https://github.com/apuntandoanulo)__
 
-_Goal:_ If you want to eliminate the possibility that users can create accounts and let only a previously registered user do it, remove the following fragments and lines of code that are indicated below:
+_目标：_ 如果你想消除用户创建账户的可能性，只让之前注册的用户来做这件事，请移除下面指示的以下片段和代码行：
 
 
-## 1. On the back-end side
+## 1. 在后端侧
 
 * ___1.1___  `src\main\java\ ... \service\UserService.java`
-  - Remove the entire method `public User registerUser(...)`
+  - 移除整个方法 `public User registerUser(...)`
 * ___1.2___ `src\main\java\ ... \rest\AccountResource.java`
-  - Remove the entire method `@PostMapping("/register")   public void registerAccount(...)`
+  - 移除整个方法 `@PostMapping("/register")   public void registerAccount(...)`
 
 
-## 2. On the front-end side
+## 2. 在前端侧
 
 * ___2.1___ `src\main\webapp\app\account`
-  - Remove the entire folder `register` that contains: `register.component.html`, `register.component.ts`, `register.route.ts`, `register.service.ts`
+  - 移除整个文件夹 `register`，其中包含：`register.component.html`、`register.component.ts`、`register.route.ts`、`register.service.ts`
 
-* ___2.2___ Go into `src\main\webapp\app\account\account.module.ts` and remove the following lines:
+* ___2.2___ 进入 `src\main\webapp\app\account\account.module.ts` 并移除以下行：
   - `import { RegisterComponent } from './register/register.component'; `
-  - _declarations_ array -> `RegisterComponent`
+  - _declarations_ 数组 -> `RegisterComponent`
 
-* ___2.3___ Go into `src\main\webapp\app\account\account.route.ts` and remove the following lines:
+* ___2.3___ 进入 `src\main\webapp\app\account\account.route.ts` 并移除以下行：
   - `import { registerRoute } from './register/register.route'; `
-  - _ACCOUNT_ROUTES_ array -> `registerRoute `
+  - _ACCOUNT_ROUTES_ 数组 -> `registerRoute `
 
-* ___2.4___ Go into `src\main\webapp\app\home\home.component.html` and remove the following block:
+* ___2.4___ 进入 `src\main\webapp\app\home\home.component.html` 并移除以下块：
 
 ```html
 <div class="alert alert-warning" *ngSwitchCase="false">
@@ -40,7 +40,7 @@ _Goal:_ If you want to eliminate the possibility that users can create accounts 
 </div>
 ```
 
-* ___2.5___ Go into `src\main\webapp\app\layouts\navbar\navbar.component.html` and remove the following block:
+* ___2.5___ 进入 `src\main\webapp\app\layouts\navbar\navbar.component.html` 并移除以下块：
 
 ```html
 <li *ngSwitchCase="false">
@@ -51,7 +51,7 @@ _Goal:_ If you want to eliminate the possibility that users can create accounts 
 </li>
 ```
 
-* ___2.6___ Go into `src\main\webapp\app\shared\login\login.component.html` and remove the following block:
+* ___2.6___ 进入 `src\main\webapp\app\shared\login\login.component.html` 并移除以下块：
 
 ```html
 <div class="alert alert-warning">
@@ -60,7 +60,7 @@ _Goal:_ If you want to eliminate the possibility that users can create accounts 
 </div>
 ```
 
-* ___2.7___ Go into `src\main\webapp\app\shared\login\login.component.ts` and remove the following block:
+* ___2.7___ 进入 `src\main\webapp\app\shared\login\login.component.ts` 并移除以下块：
 
 ```ts
 register(): void {
@@ -69,7 +69,7 @@ register(): void {
 }
 ```
 
-* ___2.8___ Remove the messages files: `src\main\webapp\i18n\ ... \register.json`
+* ___2.8___ 移除消息文件：`src\main\webapp\i18n\ ... \register.json`
 
 * ___2.9___ `src\test\javascript\spec\app\account`
-  - Remove the entire folder `register` that contains: `register.component.spec.ts`
+  - 移除整个文件夹 `register`，其中包含：`register.component.spec.ts`

@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_configuring_email_in_jhipster",
+  "title": "Configuring Email with - Gmail and more",
+  "description": "Tip submitted by @RawSanj",
+  "source": "@site/docs/tips/011_tip_configuring_email_in_jhipster.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/011_tip_configuring_email_in_jhipster.html",
+  "permalink": "/cn/tips/011_tip_configuring_email_in_jhipster.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/011_tip_configuring_email_in_jhipster.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1616096880000,
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Configuring Email with - Gmail and more",
+    "slug": "/tips/011_tip_configuring_email_in_jhipster.html",
+    "last_update": {
+      "date": "2021-03-18T19:48:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Using Bootswatch themes",
+    "permalink": "/cn/tips/009_tips_using_bootswatch_themes.html"
+  },
+  "next": {
+    "title": "Speed up the generator-jhipster",
+    "permalink": "/cn/tips/013_tip_speed_up_generator.html"
+  }
+}

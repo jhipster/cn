@@ -1,0 +1,31 @@
+{
+  "id": "blueprints/quarkus/installing-jhipster-quarkus",
+  "title": "Installing JHipster Quarkus",
+  "description": "Before using JHipster Quarkus, you have to prepare your environment (Java, Node) and install JHipster.",
+  "source": "@site/docs/blueprints/quarkus/installing-jhipster-quarkus.mdx",
+  "sourceDirName": "blueprints/quarkus",
+  "slug": "/blueprints/quarkus/001_installing_jhipster_quarkus.html",
+  "permalink": "/cn/blueprints/quarkus/001_installing_jhipster_quarkus.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/blueprints/quarkus/installing-jhipster-quarkus.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1610008800000,
+  "frontMatter": {
+    "title": "Installing JHipster Quarkus",
+    "slug": "/blueprints/quarkus/001_installing_jhipster_quarkus.html",
+    "last_update": {
+      "date": "2021-01-07T08:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Quarkus",
+    "permalink": "/cn/blueprints/quarkus/"
+  },
+  "next": {
+    "title": "Creating an application",
+    "permalink": "/cn/blueprints/quarkus/002_creating_an_application.html"
+  }
+}

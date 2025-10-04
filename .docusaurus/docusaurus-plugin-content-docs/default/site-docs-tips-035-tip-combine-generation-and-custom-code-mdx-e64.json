@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_combine_generation_and_custom_code",
+  "title": "Combining generation and custom code",
+  "description": "Tip submitted by @tcharl",
+  "source": "@site/docs/tips/035_tip_combine_generation_and_custom_code.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/035_tip_combine_generation_and_custom_code.html",
+  "permalink": "/cn/tips/035_tip_combine_generation_and_custom_code.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/035_tip_combine_generation_and_custom_code.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1631222520000,
+  "sidebarPosition": 35,
+  "frontMatter": {
+    "title": "Combining generation and custom code",
+    "slug": "/tips/035_tip_combine_generation_and_custom_code.html",
+    "last_update": {
+      "date": "2021-09-09T21:22:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Remove the register account service",
+    "permalink": "/cn/tips/034_tip_remove_register_account_service.html"
+  },
+  "next": {
+    "title": "Allow common web fonts in Spring Security",
+    "permalink": "/cn/tips/036_tip_allow_common_web_fonts_in_spring_security.html"
+  }
+}

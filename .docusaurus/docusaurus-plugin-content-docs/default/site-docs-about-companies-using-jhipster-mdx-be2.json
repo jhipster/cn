@@ -1,0 +1,32 @@
+{
+  "id": "about/companies-using-jhipster",
+  "title": "Companies using JHipster",
+  "description": "JHipster has got a lot of downloads, and as it's Open Source it's impossible to have a complete list of who uses it. We have made this list from what people tell us, and from resources available on the Internet (conferences, GitHub tickets, StackOverflow questions).",
+  "source": "@site/docs/about/companies-using-jhipster.mdx",
+  "sourceDirName": "about",
+  "slug": "/companies-using-jhipster/",
+  "permalink": "/cn/companies-using-jhipster/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/about/companies-using-jhipster.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1449705600000,
+  "frontMatter": {
+    "title": "Companies using JHipster",
+    "slug": "/companies-using-jhipster/",
+    "hide_table_of_contents": true,
+    "last_update": {
+      "date": "2015-12-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Video tutorial (15 minutes)",
+    "permalink": "/cn/video-tutorial/"
+  },
+  "next": {
+    "title": "Showcase of JHipster apps",
+    "permalink": "/cn/showcase/"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_ldap_authentication",
+  "title": "LDAP Authentication",
+  "description": "Tip submitted by @mleneveut updated by @patrickjp93",
+  "source": "@site/docs/tips/016_tip_ldap_authentication.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/016_tip_ldap_authentication.html",
+  "permalink": "/cn/tips/016_tip_ldap_authentication.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/016_tip_ldap_authentication.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1573510920000,
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "title": "LDAP Authentication",
+    "slug": "/tips/016_tip_ldap_authentication.html",
+    "last_update": {
+      "date": "2019-11-11T22:22:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Local SMTP Server",
+    "permalink": "/cn/tips/015_tip_local_smtp_server.html"
+  },
+  "next": {
+    "title": "REPL with the remote shell (deprecated)",
+    "permalink": "/cn/tips/017_tip_repl_with_the_remote_shell.html"
+  }
+}

@@ -1,0 +1,2081 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/cn/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/cn/",
+          "mainDocId": "getting-started",
+          "docs": [
+            {
+              "id": "about/companies-using-jhipster",
+              "path": "/cn/companies-using-jhipster/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "about/screenshots",
+              "path": "/cn/screenshots/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "about/showcase",
+              "path": "/cn/showcase/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "about/tech-stack",
+              "path": "/cn/tech-stack/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "about/video-tutorial",
+              "path": "/cn/video-tutorial/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "artwork",
+              "path": "/cn/artwork/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "association",
+              "path": "/cn/association/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "blueprints/quarkus/creating-an-application",
+              "path": "/cn/blueprints/quarkus/002_creating_an_application.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "blueprints/quarkus/creating-an-entity",
+              "path": "/cn/blueprints/quarkus/003_creating_an_entity.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "blueprints/quarkus/index",
+              "path": "/cn/blueprints/quarkus/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "blueprints/quarkus/installing-jhipster-quarkus",
+              "path": "/cn/blueprints/quarkus/001_installing_jhipster_quarkus.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "contributing/contributing-companies",
+              "path": "/cn/contributing-companies/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "contributing/contributing-individuals",
+              "path": "/cn/contributing-individuals/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "contributing/sponsors",
+              "path": "/cn/sponsors/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/creating-an-app",
+              "path": "/cn/creating-an-app/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/creating-an-entity",
+              "path": "/cn/creating-an-entity/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/installing-new-languages",
+              "path": "/cn/installing-new-languages/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/managing-relationships",
+              "path": "/cn/managing-relationships/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/upgrading-an-application",
+              "path": "/cn/upgrading-an-application/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "core-tasks/using-dtos",
+              "path": "/cn/using-dtos/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/common-application-properties",
+              "path": "/cn/common-application-properties/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/common-ports",
+              "path": "/cn/common-ports/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/customizing-bootstrap",
+              "path": "/cn/customizing-bootstrap/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/development",
+              "path": "/cn/development/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/managing-server-errors",
+              "path": "/cn/managing-server-errors/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/constraint-violation",
+              "path": "/cn/problem/constraint-violation/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/email-already-used",
+              "path": "/cn/problem/email-already-used/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/email-not-found",
+              "path": "/cn/problem/email-not-found/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/entity-not-found",
+              "path": "/cn/problem/entity-not-found/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/invalid-password",
+              "path": "/cn/problem/invalid-password/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/login-already-used",
+              "path": "/cn/problem/login-already-used/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/parameterized",
+              "path": "/cn/problem/parameterized/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/problem/problem-with-message",
+              "path": "/cn/problem/problem-with-message/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/profiles",
+              "path": "/cn/profiles/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/separating-front-end-and-api",
+              "path": "/cn/separating-front-end-and-api/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/tls",
+              "path": "/cn/tls/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/using-angular",
+              "path": "/cn/using-angular/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/using-react",
+              "path": "/cn/using-react/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "development/using-vue",
+              "path": "/cn/using-vue/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-a-corporate-proxy",
+              "path": "/cn/configuring-a-corporate-proxy/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/configuring-ide-eclipse",
+              "path": "/cn/configuring-ide-eclipse/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/configuring-ide-eclipse-gradle",
+              "path": "/cn/configuring-ide-eclipse-gradle/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/configuring-ide-idea",
+              "path": "/cn/configuring-ide-idea/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/configuring-ide-netbeans",
+              "path": "/cn/configuring-ide-netbeans/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/configuring-ide-visual-studio-code",
+              "path": "/cn/configuring-ide-visual-studio-code/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/configuring-ide/index",
+              "path": "/cn/configuring-ide/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/docker-compose",
+              "path": "/cn/docker-compose/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/installation",
+              "path": "/cn/installation/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/shell-plugins/fisher",
+              "path": "/cn/fisher/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/shell-plugins/index",
+              "path": "/cn/shell-plugins/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "environment/shell-plugins/oh-my-zsh",
+              "path": "/cn/oh-my-zsh/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "fisherman",
+              "path": "/cn/fisherman/"
+            },
+            {
+              "id": "gcp",
+              "path": "/cn/gcp/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "getting-started",
+              "path": "/cn/getting-started",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "help/bug-bounties",
+              "path": "/cn/bug-bounties/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "help/help",
+              "path": "/cn/help/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/applications",
+              "path": "/cn/jdl/applications",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/deployments",
+              "path": "/cn/jdl/deployments",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/entities-fields",
+              "path": "/cn/jdl/entities-fields",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/enums",
+              "path": "/cn/jdl/enums",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/getting-started",
+              "path": "/cn/jdl/getting-started",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/intro",
+              "path": "/cn/jdl/intro",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/options",
+              "path": "/cn/jdl/options",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/relationships",
+              "path": "/cn/jdl/relationships",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jdl/troubleshooting",
+              "path": "/cn/jdl/troubleshooting",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jhipster-app",
+              "path": "/cn/jhipster-app/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "jhipster-lite",
+              "path": "/cn/jhipster-lite/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "meetups",
+              "path": "/cn/meetups/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/api-gateway",
+              "path": "/cn/api-gateway/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/consul",
+              "path": "/cn/consul/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/creating-microservices",
+              "path": "/cn/creating-microservices/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/jhipster-control-center",
+              "path": "/cn/jhipster-control-center/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/jhipster-registry",
+              "path": "/cn/jhipster-registry/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/microservices-architecture",
+              "path": "/cn/microservices-architecture/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "microservices/microservices-in-production",
+              "path": "/cn/microservices-in-production/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "modules/creating-a-blueprint",
+              "path": "/cn/modules/creating-a-blueprint/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "modules/creating-a-module",
+              "path": "/cn/modules/creating-a-module/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "modules/extending-and-customizing",
+              "path": "/cn/modules/extending-and-customizing/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "modules/official-blueprints",
+              "path": "/cn/modules/official-blueprints/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/doing-api-first-development",
+              "path": "/cn/doing-api-first-development/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/entities-filtering",
+              "path": "/cn/entities-filtering/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/security",
+              "path": "/cn/security/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-cache",
+              "path": "/cn/using-cache/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-cassandra",
+              "path": "/cn/using-cassandra/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-couchbase",
+              "path": "/cn/using-couchbase/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-elasticsearch",
+              "path": "/cn/using-elasticsearch/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-kafka",
+              "path": "/cn/using-kafka/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-mongodb",
+              "path": "/cn/using-mongodb/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-neo4j",
+              "path": "/cn/using-neo4j/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-oracle",
+              "path": "/cn/using-oracle/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-pulsar",
+              "path": "/cn/using-pulsar/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "options/using-websockets",
+              "path": "/cn/using-websockets/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "policies",
+              "path": "/cn/policies/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/azure",
+              "path": "/cn/azure/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/clever-cloud",
+              "path": "/cn/clever-cloud/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/cloudcaptain",
+              "path": "/cn/cloudcaptain/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/docker-hub",
+              "path": "/cn/docker-hub/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/heroku",
+              "path": "/cn/heroku/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/kubernetes",
+              "path": "/cn/kubernetes/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/monitoring",
+              "path": "/cn/monitoring/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "production/production",
+              "path": "/cn/production/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-11-29-jhipster-release-0.0.28",
+              "path": "/cn/2013/11/29/jhipster-release-0.0.28.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-11-30-jhipster-release-0.1.0",
+              "path": "/cn/2013/11/30/jhipster-release-0.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-03-jhipster-release-0.2.0",
+              "path": "/cn/2013/12/03/jhipster-release-0.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-05-jhipster-release-0.2.1",
+              "path": "/cn/2013/12/05/jhipster-release-0.2.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-06-jhipster-release-0.3.0",
+              "path": "/cn/2013/12/06/jhipster-release-0.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-07-jhipster-release-0.3.1",
+              "path": "/cn/2013/12/07/jhipster-release-0.3.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-15-jhipster-release-0.4.0",
+              "path": "/cn/2013/12/15/jhipster-release-0.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-17-jhipster-release-0.5.0",
+              "path": "/cn/2013/12/17/jhipster-release-0.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-21-jhipster-release-0.5.1",
+              "path": "/cn/2013/12/21/jhipster-release-0.5.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-21-jhipster-release-0.5.2",
+              "path": "/cn/2013/12/21/jhipster-release-0.5.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-23-jhipster-release-0.6.0",
+              "path": "/cn/2013/12/23/jhipster-release-0.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2013-12-28-jhipster-release-0.6.1",
+              "path": "/cn/2013/12/28/jhipster-release-0.6.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-08-jhipster-release-0.6.2",
+              "path": "/cn/2014/01/08/jhipster-release-0.6.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-13-jhipster-release-0.7.0",
+              "path": "/cn/2014/01/13/jhipster-release-0.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-14-jhipster-release-0.7.1",
+              "path": "/cn/2014/01/14/jhipster-release-0.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-23-jhipster-release-0.8.0",
+              "path": "/cn/2014/01/23/jhipster-release-0.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-23-jhipster-release-0.8.1",
+              "path": "/cn/2014/01/23/jhipster-release-0.8.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-23-jhipster-release-0.8.2",
+              "path": "/cn/2014/01/23/jhipster-release-0.8.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-29-jhipster-release-0.8.3",
+              "path": "/cn/2014/01/29/jhipster-release-0.8.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-01-31-jhipster-release-0.8.4",
+              "path": "/cn/2014/01/31/jhipster-release-0.8.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-07-jhipster-release-0.9.0",
+              "path": "/cn/2014/02/07/jhipster-release-0.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-13-jhipster-release-0.9.1",
+              "path": "/cn/2014/02/13/jhipster-release-0.9.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-14-jhipster-release-0.9.2",
+              "path": "/cn/2014/02/14/jhipster-release-0.9.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-16-jhipster-release-0.9.3",
+              "path": "/cn/2014/02/16/jhipster-release-0.9.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-18-jhipster-release-0.10.0",
+              "path": "/cn/2014/02/18/jhipster-release-0.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-19-jhipster-release-0.10.1",
+              "path": "/cn/2014/02/19/jhipster-release-0.10.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-02-19-jhipster-release-0.11.0",
+              "path": "/cn/2014/02/19/jhipster-release-0.11.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-03-27-jhipster-release-0.12.0",
+              "path": "/cn/2014/03/27/jhipster-release-0.12.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-04-01-jhipster-release-2.0.0",
+              "path": "/cn/2014/04/01/jhipster-release-2.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-04-10-jhipster-release-0.13.0",
+              "path": "/cn/2014/04/10/jhipster-release-0.13.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-05-18-jhipster-release-0.14.0",
+              "path": "/cn/2014/05/18/jhipster-release-0.14.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-05-26-jhipster-release-0.15.0",
+              "path": "/cn/2014/05/26/jhipster-release-0.15.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-06-02-jhipster-release-0.16.0",
+              "path": "/cn/2014/06/02/jhipster-release-0.16.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-06-23-jhipster-release-0.17.0",
+              "path": "/cn/2014/06/23/jhipster-release-0.17.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-07-01-jhipster-release-0.17.1",
+              "path": "/cn/2014/07/01/jhipster-release-0.17.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-07-01-jhipster-release-0.17.2",
+              "path": "/cn/2014/07/01/jhipster-release-0.17.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-07-23-jhipster-release-0.18.0",
+              "path": "/cn/2014/07/23/jhipster-release-0.18.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-07-24-jhipster-release-0.18.1",
+              "path": "/cn/2014/07/24/jhipster-release-0.18.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-09-01-jhipster-release-1.0.0",
+              "path": "/cn/2014/09/01/jhipster-release-1.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-09-08-jhipster-release-1.1.0",
+              "path": "/cn/2014/09/08/jhipster-release-1.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-09-10-jhipster-release-1.1.1",
+              "path": "/cn/2014/09/10/jhipster-release-1.1.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-09-21-jhipster-release-1.2.0",
+              "path": "/cn/2014/09/21/jhipster-release-1.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-09-29-jhipster-release-1.2.1",
+              "path": "/cn/2014/09/29/jhipster-release-1.2.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-10-02-jhipster-release-1.2.2",
+              "path": "/cn/2014/10/02/jhipster-release-1.2.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-10-07-jhipster-release-1.3.0",
+              "path": "/cn/2014/10/07/jhipster-release-1.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-10-13-jhipster-release-1.4.0",
+              "path": "/cn/2014/10/13/jhipster-release-1.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-10-29-jhipster-release-1.5.0",
+              "path": "/cn/2014/10/29/jhipster-release-1.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-10-31-jhipster-release-1.6.0",
+              "path": "/cn/2014/10/31/jhipster-release-1.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-05-jhipster-release-1.7.0",
+              "path": "/cn/2014/11/05/jhipster-release-1.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-06-jhipster-release-1.7.1",
+              "path": "/cn/2014/11/06/jhipster-release-1.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-09-jhipster-release-1.8.0",
+              "path": "/cn/2014/11/09/jhipster-release-1.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-10-jhipster-release-1.8.1",
+              "path": "/cn/2014/11/10/jhipster-release-1.8.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-14-jhipster-release-1.9.0",
+              "path": "/cn/2014/11/14/jhipster-release-1.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-26-jhipster-release-1.10.0",
+              "path": "/cn/2014/11/26/jhipster-release-1.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-11-26-jhipster-release-1.10.1",
+              "path": "/cn/2014/11/26/jhipster-release-1.10.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2014-12-11-jhipster-release-1.10.2",
+              "path": "/cn/2014/12/11/jhipster-release-1.10.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-01-09-jhipster-release-2.0.0",
+              "path": "/cn/2015/01/09/jhipster-release-2.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-01-30-jhipster-release-2.1.0",
+              "path": "/cn/2015/01/30/jhipster-release-2.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-01-31-jhipster-release-2.1.1",
+              "path": "/cn/2015/01/31/jhipster-release-2.1.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-01-31-jhipster-release-2.2.0",
+              "path": "/cn/2015/01/31/jhipster-release-2.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-02-18-jhipster-release-2.3.0",
+              "path": "/cn/2015/02/18/jhipster-release-2.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-02-24-jhipster-release-2.4.0",
+              "path": "/cn/2015/02/24/jhipster-release-2.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-03-01-jhipster-release-2.5.0",
+              "path": "/cn/2015/03/01/jhipster-release-2.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-03-03-jhipster-release-2.5.1",
+              "path": "/cn/2015/03/03/jhipster-release-2.5.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-03-06-jhipster-release-2.5.2",
+              "path": "/cn/2015/03/06/jhipster-release-2.5.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-03-08-jhipster-release-2.6.0",
+              "path": "/cn/2015/03/08/jhipster-release-2.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-01-jhipster-enterprise-edition",
+              "path": "/cn/2015/04/01/jhipster-enterprise-edition.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-03-jhipster-release-2.7.0",
+              "path": "/cn/2015/04/03/jhipster-release-2.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-20-jhipster-release-2.8.0",
+              "path": "/cn/2015/04/20/jhipster-release-2.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-24-jhipster-release-2.9.0",
+              "path": "/cn/2015/04/24/jhipster-release-2.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-29-jhipster-release-2.9.1",
+              "path": "/cn/2015/04/29/jhipster-release-2.9.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-04-29-jhipster-release-2.9.2",
+              "path": "/cn/2015/04/29/jhipster-release-2.9.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-07-jhipster-release-2.10.0",
+              "path": "/cn/2015/05/07/jhipster-release-2.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-07-jhipster-release-2.10.1",
+              "path": "/cn/2015/05/07/jhipster-release-2.10.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-15-jhipster-release-2.11.0",
+              "path": "/cn/2015/05/15/jhipster-release-2.11.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-19-jhipster-release-2.11.1",
+              "path": "/cn/2015/05/19/jhipster-release-2.11.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-22-jhipster-release-2.12.0",
+              "path": "/cn/2015/05/22/jhipster-release-2.12.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-28-jhipster-release-2.13.0",
+              "path": "/cn/2015/05/28/jhipster-release-2.13.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-29-jhipster-release-2.13.1",
+              "path": "/cn/2015/05/29/jhipster-release-2.13.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-29-jhipster-release-2.14.1",
+              "path": "/cn/2015/05/29/jhipster-release-2.14.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-05-31-jhipster-release-2.14.2",
+              "path": "/cn/2015/05/31/jhipster-release-2.14.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-05-jhipster-release-2.15.0",
+              "path": "/cn/2015/06/05/jhipster-release-2.15.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-06-jhipster-release-2.15.1",
+              "path": "/cn/2015/06/06/jhipster-release-2.15.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-07-jhipster-release-2.15.2",
+              "path": "/cn/2015/06/07/jhipster-release-2.15.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-09-jhipster-release-2.16.0",
+              "path": "/cn/2015/06/09/jhipster-release-2.16.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-17-jhipster-release-2.16.1",
+              "path": "/cn/2015/06/17/jhipster-release-2.16.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-06-30-jhipster-release-2.17.0",
+              "path": "/cn/2015/06/30/jhipster-release-2.17.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-07-07-jhipster-release-2.18.0",
+              "path": "/cn/2015/07/07/jhipster-release-2.18.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-07-31-jhipster-release-2.19.0",
+              "path": "/cn/2015/07/31/jhipster-release-2.19.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-08-25-jhipster-release-2.20.0",
+              "path": "/cn/2015/08/25/jhipster-release-2.20.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-09-16-jhipster-release-2.21.0",
+              "path": "/cn/2015/09/16/jhipster-release-2.21.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-09-23-jhipster-release-2.21.1",
+              "path": "/cn/2015/09/23/jhipster-release-2.21.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-10-06-jhipster-release-2.22.0",
+              "path": "/cn/2015/10/06/jhipster-release-2.22.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-10-23-jhipster-release-2.23.0",
+              "path": "/cn/2015/10/23/jhipster-release-2.23.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-11-10-jhipster-release-2.23.1",
+              "path": "/cn/2015/11/10/jhipster-release-2.23.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-11-20-jhipster-release-2.24.0",
+              "path": "/cn/2015/11/20/jhipster-release-2.24.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-12-04-jhipster-release-2.25.0",
+              "path": "/cn/2015/12/04/jhipster-release-2.25.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-12-16-jhipster-release-2.26.0",
+              "path": "/cn/2015/12/16/jhipster-release-2.26.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-12-17-jhipster-release-2.26.1",
+              "path": "/cn/2015/12/17/jhipster-release-2.26.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2015-12-30-jhipster-release-2.26.2",
+              "path": "/cn/2015/12/30/jhipster-release-2.26.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-01-18-jhipster-release-2.27.0",
+              "path": "/cn/2016/01/18/jhipster-release-2.27.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-02-23-jhipster-release-2.27.1",
+              "path": "/cn/2016/02/23/jhipster-release-2.27.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-03-07-jhipster-release-2.27.2",
+              "path": "/cn/2016/03/07/jhipster-release-2.27.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-03-23-jhipster-release-3.0.0",
+              "path": "/cn/2016/03/23/jhipster-release-3.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-04-01-jhipster-on-strike",
+              "path": "/cn/2016/04/01/jhipster-on-strike.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-04-20-jhipster-release-3.1.0",
+              "path": "/cn/2016/04/20/jhipster-release-3.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-05-06-jhipster-release-3.2.0",
+              "path": "/cn/2016/05/06/jhipster-release-3.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-05-08-jhipster-release-3.2.1",
+              "path": "/cn/2016/05/08/jhipster-release-3.2.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-05-13-jhipster-release-3.3.0",
+              "path": "/cn/2016/05/13/jhipster-release-3.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-05-27-jhipster-release-3.4.0",
+              "path": "/cn/2016/05/27/jhipster-release-3.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-06-13-jhipster-release-3.4.1",
+              "path": "/cn/2016/06/13/jhipster-release-3.4.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-06-19-jhipster-release-3.4.2",
+              "path": "/cn/2016/06/19/jhipster-release-3.4.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-07-20-jhipster-release-3.5.0",
+              "path": "/cn/2016/07/20/jhipster-release-3.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-07-22-jhipster-release-3.5.1",
+              "path": "/cn/2016/07/22/jhipster-release-3.5.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-08-17-jhipster-release-3.6.0",
+              "path": "/cn/2016/08/17/jhipster-release-3.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-08-18-jhipster-release-3.6.1",
+              "path": "/cn/2016/08/18/jhipster-release-3.6.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-09-12-jhipster-release-3.7.0",
+              "path": "/cn/2016/09/12/jhipster-release-3.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-09-16-jhipster-release-3.7.1",
+              "path": "/cn/2016/09/16/jhipster-release-3.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-09-22-jhipster-release-3.8.0",
+              "path": "/cn/2016/09/22/jhipster-release-3.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-10-07-jhipster-release-3.9.0",
+              "path": "/cn/2016/10/07/jhipster-release-3.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-10-07-jhipster-release-3.9.1",
+              "path": "/cn/2016/10/07/jhipster-release-3.9.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-10-27-jhipster-release-3.10.0",
+              "path": "/cn/2016/10/27/jhipster-release-3.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-11-14-jhipster-release-3.11.0",
+              "path": "/cn/2016/11/14/jhipster-release-3.11.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-11-30-jhipster-release-3.12.0",
+              "path": "/cn/2016/11/30/jhipster-release-3.12.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-12-08-jhipster-release-3.12.1",
+              "path": "/cn/2016/12/08/jhipster-release-3.12.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2016-12-19-jhipster-release-3.12.2",
+              "path": "/cn/2016/12/19/jhipster-release-3.12.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-02-jhipster-release-4.0.0",
+              "path": "/cn/2017/02/02/jhipster-release-4.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-04-jhipster-release-4.0.1",
+              "path": "/cn/2017/02/04/jhipster-release-4.0.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-06-jhipster-release-4.0.2",
+              "path": "/cn/2017/02/06/jhipster-release-4.0.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-13-jhipster-release-4.0.3",
+              "path": "/cn/2017/02/13/jhipster-release-4.0.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-17-jhipster-release-4.0.4",
+              "path": "/cn/2017/02/17/jhipster-release-4.0.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-17-jhipster-release-4.0.5",
+              "path": "/cn/2017/02/17/jhipster-release-4.0.5.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-02-21-jhipster-release-4.0.6",
+              "path": "/cn/2017/02/21/jhipster-release-4.0.6.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-03-01-jhipster-release-4.0.7",
+              "path": "/cn/2017/03/01/jhipster-release-4.0.7.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-03-09-jhipster-release-4.0.8",
+              "path": "/cn/2017/03/09/jhipster-release-4.0.8.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-03-20-jhipster-release-4.1.0",
+              "path": "/cn/2017/03/20/jhipster-release-4.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-03-23-jhipster-release-4.1.1",
+              "path": "/cn/2017/03/23/jhipster-release-4.1.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-04-01-jhipster-introduces-bitcoin-mining",
+              "path": "/cn/2017/04/01/jhipster-introduces-bitcoin-mining.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-04-05-jhipster-release-4.2.0",
+              "path": "/cn/2017/04/05/jhipster-release-4.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-04-13-jhipster-release-4.3.0",
+              "path": "/cn/2017/04/13/jhipster-release-4.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-05-08-jhipster-release-4.4.0",
+              "path": "/cn/2017/05/08/jhipster-release-4.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-05-08-jhipster-release-4.4.1",
+              "path": "/cn/2017/05/08/jhipster-release-4.4.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-05-20-jhipster-release-4.5.0",
+              "path": "/cn/2017/05/20/jhipster-release-4.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-05-20-jhipster-release-4.5.1",
+              "path": "/cn/2017/05/20/jhipster-release-4.5.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-05-29-jhipster-release-4.5.2",
+              "path": "/cn/2017/05/29/jhipster-release-4.5.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-06-09-jhipster-release-4.5.3",
+              "path": "/cn/2017/06/09/jhipster-release-4.5.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-06-16-jhipster-release-4.5.4",
+              "path": "/cn/2017/06/16/jhipster-release-4.5.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-06-19-jhipster-release-4.5.5",
+              "path": "/cn/2017/06/19/jhipster-release-4.5.5.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-06-23-jhipster-release-4.5.6",
+              "path": "/cn/2017/06/23/jhipster-release-4.5.6.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-07-06-jhipster-release-4.6.0",
+              "path": "/cn/2017/07/06/jhipster-release-4.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-07-10-jhipster-release-4.6.1",
+              "path": "/cn/2017/07/10/jhipster-release-4.6.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-07-19-jhipster-release-4.6.2",
+              "path": "/cn/2017/07/19/jhipster-release-4.6.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-08-23-jhipster-release-4.7.0",
+              "path": "/cn/2017/08/23/jhipster-release-4.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-09-12-jhipster-release-4.8.0",
+              "path": "/cn/2017/09/12/jhipster-release-4.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-09-13-jhipster-release-4.8.1",
+              "path": "/cn/2017/09/13/jhipster-release-4.8.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-09-15-jhipster-release-4.8.2",
+              "path": "/cn/2017/09/15/jhipster-release-4.8.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-09-28-jhipster-release-4.9.0",
+              "path": "/cn/2017/09/28/jhipster-release-4.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-10-17-jhipster-release-4.10.0",
+              "path": "/cn/2017/10/17/jhipster-release-4.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-10-25-jhipster-release-4.10.1",
+              "path": "/cn/2017/10/25/jhipster-release-4.10.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-10-27-jhipster-release-4.10.2",
+              "path": "/cn/2017/10/27/jhipster-release-4.10.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-11-24-jhipster-release-4.11.0",
+              "path": "/cn/2017/11/24/jhipster-release-4.11.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-11-26-jhipster-release-4.11.1",
+              "path": "/cn/2017/11/26/jhipster-release-4.11.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-12-08-jhipster-release-4.12.0",
+              "path": "/cn/2017/12/08/jhipster-release-4.12.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-12-14-jhipster-release-4.13.0",
+              "path": "/cn/2017/12/14/jhipster-release-4.13.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2017-12-27-jhipster-release-4.13.1",
+              "path": "/cn/2017/12/27/jhipster-release-4.13.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-01-04-jhipster-release-4.13.2",
+              "path": "/cn/2018/01/04/jhipster-release-4.13.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-01-09-jhipster-release-4.13.3",
+              "path": "/cn/2018/01/09/jhipster-release-4.13.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-01-30-jhipster-release-4.14.0",
+              "path": "/cn/2018/01/30/jhipster-release-4.14.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-02-27-jhipster-release-4.14.1",
+              "path": "/cn/2018/02/27/jhipster-release-4.14.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-04-03-jhipster-release-5.0.0-beta.0",
+              "path": "/cn/2018/04/03/jhipster-release-5.0.0-beta.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-04-05-jhipster-release-4.14.2",
+              "path": "/cn/2018/04/05/jhipster-release-4.14.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-04-10-jhipster-release-4.14.3",
+              "path": "/cn/2018/04/10/jhipster-release-4.14.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-05-03-jhipster-release-5.0.0-beta.1",
+              "path": "/cn/2018/05/03/jhipster-release-5.0.0-beta.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-05-11-jhipster-release-4.14.4",
+              "path": "/cn/2018/05/11/jhipster-release-4.14.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-06-13-jhipster-release-5.0.0-beta.2",
+              "path": "/cn/2018/06/13/jhipster-release-5.0.0-beta.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-06-18-jhipster-release-5.0.0-beta.3",
+              "path": "/cn/2018/06/18/jhipster-release-5.0.0-beta.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-06-19-jhipster-release-4.14.5",
+              "path": "/cn/2018/06/19/jhipster-release-4.14.5.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-06-20-jhipster-release-5.0.0",
+              "path": "/cn/2018/06/20/jhipster-release-5.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-06-23-jhipster-release-5.0.1",
+              "path": "/cn/2018/06/23/jhipster-release-5.0.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-07-05-jhipster-release-5.0.2",
+              "path": "/cn/2018/07/05/jhipster-release-5.0.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-07-12-jhipster-release-5.1.0",
+              "path": "/cn/2018/07/12/jhipster-release-5.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-08-14-jhipster-release-5.2.0",
+              "path": "/cn/2018/08/14/jhipster-release-5.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-08-16-jhipster-release-5.2.1",
+              "path": "/cn/2018/08/16/jhipster-release-5.2.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-09-03-jhipster-release-5.3.0",
+              "path": "/cn/2018/09/03/jhipster-release-5.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-09-05-jhipster-release-5.3.1",
+              "path": "/cn/2018/09/05/jhipster-release-5.3.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-09-17-jhipster-release-5.3.2",
+              "path": "/cn/2018/09/17/jhipster-release-5.3.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-09-17-jhipster-release-5.3.3",
+              "path": "/cn/2018/09/17/jhipster-release-5.3.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-09-17-jhipster-release-5.3.4",
+              "path": "/cn/2018/09/17/jhipster-release-5.3.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-10-03-jhipster-release-5.4.0",
+              "path": "/cn/2018/10/03/jhipster-release-5.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-10-04-jhipster-release-5.4.1",
+              "path": "/cn/2018/10/04/jhipster-release-5.4.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-10-07-jhipster-release-5.4.2",
+              "path": "/cn/2018/10/07/jhipster-release-5.4.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-10-16-jhipster-release-5.5.0",
+              "path": "/cn/2018/10/16/jhipster-release-5.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-11-02-jhipster-release-5.6.0",
+              "path": "/cn/2018/11/02/jhipster-release-5.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-11-05-jhipster-release-5.6.1",
+              "path": "/cn/2018/11/05/jhipster-release-5.6.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-11-12-jhipster-release-5.7.0",
+              "path": "/cn/2018/11/12/jhipster-release-5.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-12-14-jhipster-release-5.7.1",
+              "path": "/cn/2018/12/14/jhipster-release-5.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2018-12-21-jhipster-release-5.7.2",
+              "path": "/cn/2018/12/21/jhipster-release-5.7.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-01-25-jhipster-release-5.8.0",
+              "path": "/cn/2019/01/25/jhipster-release-5.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-01-29-jhipster-release-5.8.1",
+              "path": "/cn/2019/01/29/jhipster-release-5.8.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-02-28-jhipster-release-5.8.2",
+              "path": "/cn/2019/02/28/jhipster-release-5.8.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-04-04-jhipster-release-6.0.0-beta.0",
+              "path": "/cn/2019/04/04/jhipster-release-6.0.0-beta.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-05-02-jhipster-release-6.0.0",
+              "path": "/cn/2019/05/02/jhipster-release-6.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-05-10-jhipster-release-6.0.1",
+              "path": "/cn/2019/05/10/jhipster-release-6.0.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-06-11-jhipster-release-6.1.0",
+              "path": "/cn/2019/06/11/jhipster-release-6.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-06-21-jhipster-release-6.1.1",
+              "path": "/cn/2019/06/21/jhipster-release-6.1.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-06-23-jhipster-release-6.1.2",
+              "path": "/cn/2019/06/23/jhipster-release-6.1.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-08-01-jhipster-release-6.2.0",
+              "path": "/cn/2019/08/01/jhipster-release-6.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-09-13-jhipster-release-6.3.0",
+              "path": "/cn/2019/09/13/jhipster-release-6.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-09-20-jhipster-release-6.3.1",
+              "path": "/cn/2019/09/20/jhipster-release-6.3.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-10-10-jhipster-release-6.4.0",
+              "path": "/cn/2019/10/10/jhipster-release-6.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-10-11-jhipster-release-6.4.1",
+              "path": "/cn/2019/10/11/jhipster-release-6.4.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-11-10-jhipster-release-6.5.0",
+              "path": "/cn/2019/11/10/jhipster-release-6.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-11-19-jhipster-release-6.5.1",
+              "path": "/cn/2019/11/19/jhipster-release-6.5.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2019-12-22-jhipster-release-6.6.0",
+              "path": "/cn/2019/12/22/jhipster-release-6.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-02-06-jhipster-release-6.7.0",
+              "path": "/cn/2020/02/06/jhipster-release-6.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-02-12-jhipster-release-6.7.1",
+              "path": "/cn/2020/02/12/jhipster-release-6.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-03-08-jhipster-release-6.8.0",
+              "path": "/cn/2020/03/08/jhipster-release-6.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-05-17-jhipster-release-6.9.0",
+              "path": "/cn/2020/05/17/jhipster-release-6.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-06-01-jhipster-release-6.9.1",
+              "path": "/cn/2020/06/01/jhipster-release-6.9.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-06-28-jhipster-release-6.10.0",
+              "path": "/cn/2020/06/28/jhipster-release-6.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-07-04-jhipster-release-6.10.1",
+              "path": "/cn/2020/07/04/jhipster-release-6.10.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-09-20-jhipster-release-6.10.2",
+              "path": "/cn/2020/09/20/jhipster-release-6.10.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-09-20-jhipster-release-6.10.3",
+              "path": "/cn/2020/09/20/jhipster-release-6.10.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-10-18-jhipster-release-6.10.4",
+              "path": "/cn/2020/10/18/jhipster-release-6.10.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-11-07-jhipster-release-6.10.5",
+              "path": "/cn/2020/11/07/jhipster-release-6.10.5.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2020-12-21-jhipster-release-7.0.0-beta.0",
+              "path": "/cn/2020/12/21/jhipster-release-7.0.0-beta.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-01-17-jhipster-release-7.0.0-beta.1",
+              "path": "/cn/2021/01/17/jhipster-release-7.0.0-beta.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-03-21-jhipster-release-7.0.0",
+              "path": "/cn/2021/03/21/jhipster-release-7.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-04-02-jhipster-release-7.0.1",
+              "path": "/cn/2021/04/02/jhipster-release-7.0.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-06-18-jhipster-release-7.1.0",
+              "path": "/cn/2021/06/18/jhipster-release-7.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-09-14-jhipster-release-7.2.0",
+              "path": "/cn/2021/09/14/jhipster-release-7.2.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-10-08-jhipster-release-7.3.0",
+              "path": "/cn/2021/10/08/jhipster-release-7.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-10-19-jhipster-release-7.3.1",
+              "path": "/cn/2021/10/19/jhipster-release-7.3.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-11-19-jhipster-release-7.4.0",
+              "path": "/cn/2021/11/19/jhipster-release-7.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2021-12-03-jhipster-release-7.4.1",
+              "path": "/cn/2021/12/03/jhipster-release-7.4.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-01-02-jhipster-release-7.5.0",
+              "path": "/cn/2022/01/02/jhipster-release-7.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-01-23-jhipster-release-7.6.0",
+              "path": "/cn/2022/01/23/jhipster-release-7.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-02-27-jhipster-release-7.7.0",
+              "path": "/cn/2022/02/27/jhipster-release-7.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-04-01-jhipster-release-7.8.0",
+              "path": "/cn/2022/04/01/jhipster-release-7.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-04-07-jhipster-release-7.8.1",
+              "path": "/cn/2022/04/07/jhipster-release-7.8.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-07-31-jhipster-release-7.9.0",
+              "path": "/cn/2022/07/31/jhipster-release-7.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-07-31-jhipster-release-7.9.2",
+              "path": "/cn/2022/07/31/jhipster-release-7.9.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2022-09-02-jhipster-release-7.9.3",
+              "path": "/cn/2022/09/02/jhipster-release-7.9.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-06-11-jhipster-release-8.0.0-beta.1",
+              "path": "/cn/2023/06/11/jhipster-release-8.0.0-beta.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-07-12-jhipster-release-8.0.0-beta.2",
+              "path": "/cn/2023/07/12/jhipster-release-8.0.0-beta.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-09-05-jhipster-release-7.9.4",
+              "path": "/cn/2023/09/05/jhipster-release-7.9.4.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-09-05-jhipster-release-8.0.0-beta.3",
+              "path": "/cn/2023/09/05/jhipster-release-8.0.0-beta.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-10-14-jhipster-release-8.0.0-rc.1",
+              "path": "/cn/2023/10/14/jhipster-release-8.0.0-rc.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-11-02-jhipster-release-8.0.0",
+              "path": "/cn/2023/11/02/jhipster-release-8.0.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2023-12-11-jhipster-release-8.1.0",
+              "path": "/cn/2023/12/11/jhipster-release-8.1.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-03-20-jhipster-release-8.2.1",
+              "path": "/cn/2024/03/20/jhipster-release-8.2.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-04-08-jhipster-release-8.3.0",
+              "path": "/cn/2024/04/08/jhipster-release-8.3.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-04-29-jhipster-release-8.4.0",
+              "path": "/cn/2024/04/29/jhipster-release-8.4.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-05-30-jhipster-release-8.5.0",
+              "path": "/cn/2024/05/30/jhipster-release-8.5.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-06-24-jhipster-release-8.6.0",
+              "path": "/cn/2024/06/24/jhipster-release-8.6.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-08-26-jhipster-release-8.7.0",
+              "path": "/cn/2024/08/26/jhipster-release-8.7.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-09-21-jhipster-release-8.7.1",
+              "path": "/cn/2024/09/21/jhipster-release-8.7.1.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-10-28-jhipster-release-8.7.2",
+              "path": "/cn/2024/10/28/jhipster-release-8.7.2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-11-01-jhipster-release-8.7.3",
+              "path": "/cn/2024/11/01/jhipster-release-8.7.3.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2024-12-23-jhipster-release-8.8.0",
+              "path": "/cn/2024/12/23/jhipster-release-8.8.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2025-02-08-jhipster-release-8.9.0",
+              "path": "/cn/2025/02/08/jhipster-release-8.9.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2025-03-31-jhipster-release-8.10.0",
+              "path": "/cn/2025/03/31/jhipster-release-8.10.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/2025-05-06-jhipster-release-8.11.0",
+              "path": "/cn/2025/05/06/jhipster-release-8.11.0.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "releases/index",
+              "path": "/cn/releases/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tech-board",
+              "path": "/cn/tech-board/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/code-quality",
+              "path": "/cn/code-quality/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/dependency-vulnerabities-check",
+              "path": "/cn/dependency-vulnerabities-check/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/running-tests",
+              "path": "/cn/running-tests/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/setting-up-ci/index",
+              "path": "/cn/setting-up-ci/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/setting-up-ci/setting-up-ci-jenkins1",
+              "path": "/cn/setting-up-ci-jenkins1/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/setting-up-ci/setting-up-ci-jenkins2",
+              "path": "/cn/setting-up-ci-jenkins2/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/setting-up-ci/setting-up-ci-linux",
+              "path": "/cn/setting-up-ci-linux/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tests-and-qa/setting-up-ci/setting-up-ci-windows",
+              "path": "/cn/setting-up-ci-windows/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/index",
+              "path": "/cn/tips/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_add_querydsl_support",
+              "path": "/cn/tips/003_tip_add_querydsl_support.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_allow_common_web_fonts_in_spring_security",
+              "path": "/cn/tips/036_tip_allow_common_web_fonts_in_spring_security.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_combine_generation_and_custom_code",
+              "path": "/cn/tips/035_tip_combine_generation_and_custom_code.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_configuring_email_in_jhipster",
+              "path": "/cn/tips/011_tip_configuring_email_in_jhipster.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_configuring_html_5_mode",
+              "path": "/cn/tips/010_tip_configuring_html_5_mode.html"
+            },
+            {
+              "id": "tips/tip_create_new_authority",
+              "path": "/cn/tips/025_tip_create_new_authority.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_dynamic_env_variables",
+              "path": "/cn/tips/033_tip_dynamic_env_variables.html"
+            },
+            {
+              "id": "tips/tip_e2e_intellij",
+              "path": "/cn/tips/031_tip_e2e_intellij.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_enabling_social_login_with_oauth2",
+              "path": "/cn/tips/024_tip_enabling_social_login_with_oauth2.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_frontend_only",
+              "path": "/cn/tips/029_tip_frontend_only.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_ie_support",
+              "path": "/cn/tips/028_tip_ie_support.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_infinite_scroll_with_slice",
+              "path": "/cn/tips/019_tip_infinite_scroll_with_slice.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_issue_of_onetoone_with_mapsid_how_to_avoid_it",
+              "path": "/cn/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_kubernetes_and_google_cloud_sql",
+              "path": "/cn/tips/018_tip_kubernetes_and_google_cloud_sql.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_lazy_init_test_beans",
+              "path": "/cn/tips/027_tip_lazy_init_test_beans.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_ldap_authentication",
+              "path": "/cn/tips/016_tip_ldap_authentication.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_local_smtp_server",
+              "path": "/cn/tips/015_tip_local_smtp_server.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_pgadmin_heroku",
+              "path": "/cn/tips/028_tip_pgadmin_heroku.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_prevent_error_and_hanging_on_windows_when_using_gradle",
+              "path": "/cn/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.html"
+            },
+            {
+              "id": "tips/tip_protecting_kibana_with_apache_basic_authent",
+              "path": "/cn/tips/023_tip_protecting_kibana_with_apache_basic_authent.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_redis_replication",
+              "path": "/cn/tips/030_tip_redis_replication.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_registering_user_with_additional_information",
+              "path": "/cn/tips/022_tip_registering_user_with_additional_information.html"
+            },
+            {
+              "id": "tips/tip_remove_register_account_service",
+              "path": "/cn/tips/034_tip_remove_register_account_service.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_repl_with_the_remote_shell",
+              "path": "/cn/tips/017_tip_repl_with_the_remote_shell.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_speed_up_generator",
+              "path": "/cn/tips/013_tip_speed_up_generator.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_time_drift_docker",
+              "path": "/cn/tips/032_tip_time_drift_docker.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_using_docker_containers_as_localhost_on_mac_and_windows",
+              "path": "/cn/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tips/tip_using_mariadb",
+              "path": "/cn/tips/014_tip_using_mariadb.html"
+            },
+            {
+              "id": "tips/tip_using_ms_sql_server",
+              "path": "/cn/tips/004_tip_using_ms_sql_server.html"
+            },
+            {
+              "id": "tips/tip_v7_upgrade",
+              "path": "/cn/tips/033_tip_v7_upgrade.html"
+            },
+            {
+              "id": "tips/tips_enable_cross_origin_requests",
+              "path": "/cn/tips/006_tips_enable_cross_origin_requests.html"
+            },
+            {
+              "id": "tips/tips_static_swagger_docs",
+              "path": "/cn/tips/008_tips_static_swagger_docs.html"
+            },
+            {
+              "id": "tips/tips_using_bootswatch_themes",
+              "path": "/cn/tips/009_tips_using_bootswatch_themes.html",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tools/jhipster-ide",
+              "path": "/cn/jhipster-ide/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "tools/jhipster-uml",
+              "path": "/cn/jhipster-uml/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user-entity",
+              "path": "/cn/user-entity/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "using-angularjs",
+              "path": "/cn/using-angularjs/"
+            },
+            {
+              "id": "using-uaa",
+              "path": "/cn/using-uaa/"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docsSidebar": {
+              "link": {
+                "path": "/cn/getting-started",
+                "label": "快速开始"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

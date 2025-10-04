@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_frontend_only",
+  "title": "Improve developer experience if opening only front end in the IDE",
+  "description": "Tip submitted by @kaidohallik",
+  "source": "@site/docs/tips/029_tip_frontend_only.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/029_tip_frontend_only.html",
+  "permalink": "/cn/tips/029_tip_frontend_only.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/029_tip_frontend_only.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1571056500000,
+  "sidebarPosition": 29,
+  "frontMatter": {
+    "title": "Improve developer experience if opening only front end in the IDE",
+    "slug": "/tips/029_tip_frontend_only.html",
+    "last_update": {
+      "date": "2019-10-14T12:35:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Provide Internet Explorer support",
+    "permalink": "/cn/tips/028_tip_ie_support.html"
+  },
+  "next": {
+    "title": "Configure Redis leader follower(master-slave) replication",
+    "permalink": "/cn/tips/030_tip_redis_replication.html"
+  }
+}

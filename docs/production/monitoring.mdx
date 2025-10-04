@@ -1,80 +1,80 @@
 ---
-title: Monitoring your JHipster Applications
+title: 监控您的 JHipster 应用程序
 slug: /monitoring/
 last_update:
   date: 2023-07-12T00:00:00-00:00
 ---
 
-JHipster provides several options to monitor your applications at runtime.
+JHipster 提供了多个选项来在运行时监控您的应用程序。
 
 
-## Generated dashboards
+## 生成的仪表盘
 
-For monoliths and gateways, JHipster generates several dashboards to monitor each application. 
-Those dashboards are available at runtime, and are the easiest way to do some monitoring.
+对于单体应用程序和网关，JHipster 生成多个仪表盘来监控每个应用程序。
+这些仪表盘在运行时可用，是进行监控的最简单方法。
 
 ![JHipster Metrics page](/images/jhipster_metrics_page.png)
 
-### The metrics dashboard
+### 指标仪表盘
 
-The metrics dashboard uses Micrometer to give a detailed view of the application performance.
+指标仪表盘使用 Micrometer 来提供应用程序性能的详细视图。
 
-It gives metrics on:
+它提供以下指标：
 
-- the JVM
-- HTTP requests
-- cache usage
-- database connection pool
+- JVM
+- HTTP 请求
+- 缓存使用情况
+- 数据库连接池
 
-By clicking on the Expand button next to the JVM thread metrics, you will get a thread dump of the running application, which is very useful to find out blocked threads.
+通过点击 JVM 线程指标旁的展开按钮，您将获得正在运行的应用程序的线程转储，这对于找出被阻塞的线程非常有用。
 
-### The health dashboard
+### 健康仪表盘
 
-The health dashboard uses Spring Boot Actuator's health endpoint to give health information on various parts of the application. Many health checks are provided out-of-the-box by Spring Boot Actuator, and you can add application-specific health checks.
+健康仪表盘使用 Spring Boot Actuator 的健康端点来提供应用程序各个部分的健康信息。Spring Boot Actuator 开箱即用地提供了许多健康检查，您可以添加特定于应用程序的健康检查。
 
-### The logs dashboard
+### 日志仪表盘
 
-The logs dashboard allows to manage at runtime the Logback configuration of the running application. 
-You can change the log level of a Java package by clicking on a button, which is very convenient both in development and in production.
+日志仪表盘允许在运行时管理正在运行的应用程序的 Logback 配置。
+您可以通过点击按钮来更改 Java 包的日志级别，这在开发和生产中都非常方便。
 
 
-## Security Metrics
+## 安全指标
 
-JHipster tracks JWT-related security metrics in projects that uses JWT authentication type.
+JHipster 在使用 JWT 认证类型的项目中跟踪 JWT 相关的安全指标。
 
-In particular, JHipster tracks token validation errors count (i.e. invalid tokens count) as a custom meter named `security.authentication.invalid-tokens`, and the causes of such validation errors with the following meter tags:
-- `invalid-signature`: the JWT signature verification has failed;
-- `expired`: the JWT has expired;
-- `unsupported`: the JWT format does not match the format expected by the application;
-- `malformed`: the JWT was not correctly constructed.
+特别地，JHipster 跟踪令牌验证错误数量（即无效令牌数量），使用名为 `security.authentication.invalid-tokens` 的自定义计量器，并使用以下计量器标签记录此类验证错误的原因：
+- `invalid-signature`：JWT 签名验证失败；
+- `expired`：JWT 已过期；
+- `unsupported`：JWT 格式与应用程序期望的格式不匹配；
+- `malformed`：JWT 构造不正确。
 
-These metrics are not available in the generated dashboards, but they are exposed as application metrics and can be [forwarded to a third-party monitoring system](#forwarding-metrics-to-a-supported-third-party-monitoring-system-jmx-prometheus) for visualization.
+这些指标在生成的仪表盘中不可用，但它们作为应用程序指标公开，可以[转发到受支持的第三方监控系统](#forwarding-metrics-to-a-supported-third-party-monitoring-system-jmx-prometheus)进行可视化。
 
 
 ## JHipster Registry
 
-The JHipster Registry has [its own documentation page here](/jhipster-registry).
+JHipster Registry 有[自己的文档页面](/jhipster-registry)。
 
-It mostly provides the same monitoring dashboards as in the previous section, but it works on a separate server. As such, it is a bit more complex to set up, but it is highly recommended to have dashboards running outside of the running application: otherwise, they won't be available when there is an application error.
+它主要提供与前一节相同的监控仪表盘，但它在单独的服务器上运行。因此，设置起来稍微复杂一些，但强烈建议将仪表盘运行在正在运行的应用程序之外：否则，当应用程序出现错误时，仪表盘将不可用。
 
 
-## ELK (Elasticsearch, Logstash, Kibana) Stack
+## ELK (Elasticsearch, Logstash, Kibana) 技术栈
 
-The ELK stack is often used for log aggregation and search, it consists of the following components:
+ELK 技术栈通常用于日志聚合和搜索，它由以下组件组成：
 
-- [Elasticsearch](https://www.elastic.co/products/elasticsearch) for indexing the data (logs and metrics)
-- [Logstash](https://www.elastic.co/products/logstash) to manage and process the logs received from the applications
-- [Kibana](https://www.elastic.co/products/kibana) to visualize the logs with a nice interface
+- [Elasticsearch](https://www.elastic.co/products/elasticsearch) 用于索引数据（日志和指标）
+- [Logstash](https://www.elastic.co/products/logstash) 用于管理和处理从应用程序接收的日志
+- [Kibana](https://www.elastic.co/products/kibana) 用于通过美观的界面可视化日志
 
-:::warning
+:::警告
 
-JHipster supports forwarding logs to Logstash, however as of JHipster version 7, we do not provide any ELK stack docker deployment and ready to use dashboards. This used to be part of the [JHipster Console](https://github.com/jhipster/jhipster-console) subproject that is no longer maintained. We advise existing users to migrate to another ELK solution.
+JHipster 支持将日志转发到 Logstash，但从 JHipster 版本 7 开始，我们不再提供任何 ELK 技术栈 Docker 部署和即用型仪表盘。这曾经是不再维护的 [JHipster Console](https://github.com/jhipster/jhipster-console) 子项目的一部分。我们建议现有用户迁移到其他 ELK 解决方案。
 
 :::
 
-### Forwarding logs to Logstash
+### 将日志转发到 Logstash
 
-To configure a JHipster application to forward their logs to Logstash, enable logstash logging in their `application-dev.yml` or `application-prod.yml`:
+要配置 JHipster 应用程序将其日志转发到 Logstash，请在其 `application-dev.yml` 或 `application-prod.yml` 中启用 logstash 日志记录：
 
 ```yaml
 jhipster:
@@ -86,7 +86,7 @@ jhipster:
             queueSize: 512
 ```
 
-To collect those logs, on the Logstash side, a simple `logstash.conf` file can be provided :
+要收集这些日志，在 Logstash 端，可以提供一个简单的 `logstash.conf` 文件：
 
 ```
 input {
@@ -105,16 +105,16 @@ output {
 }
 ```
 
-For more information on how to setup the ELK stack, please refer to the [official Elastic documentation](https://www.elastic.co/guide/en/elastic-stack/current/index.html).
+有关如何设置 ELK 技术栈的更多信息，请参阅 [Elastic 官方文档](https://www.elastic.co/guide/en/elastic-stack/current/index.html)。
 
 
-## Forwarding metrics to a supported third party monitoring system (JMX, Prometheus)
+## 将指标转发到受支持的第三方监控系统（JMX、Prometheus）
 
-JHipster exposes application metrics in the [Prometheus](https://prometheus.io/) format by default.
-It is exposed under `management/prometheus`.
-Forwarding metrics to alternative systems is also supported via [spring boot actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics).
+JHipster 默认以 [Prometheus](https://prometheus.io/) 格式公开应用程序指标。
+它在 `management/prometheus` 下公开。
+通过 [spring boot actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics) 也支持将指标转发到其他系统。
 
-If you would like to disable exposing the metrics endpoint you can disable it in `src/main/resources/application.yml`.
+如果您希望禁用指标端点的公开，可以在 `src/main/resources/application.yml` 中禁用它。
 
 ```yaml
 management:
@@ -123,10 +123,10 @@ management:
             enabled: false
 ```
 
-The prometheus endpoint is unprotected by default. If you want to protect it via spring security you can do so by adding basic auth to the prometheus endpoint
-as prometheus can work with scraping endpoint protected by basic auth.
+prometheus 端点默认情况下是不受保护的。如果您希望通过 spring security 保护它，可以通过向 prometheus 端点添加基本认证来实现，
+因为 prometheus 可以处理受基本认证保护的抽取端点。
 
-Create a new configuration file (e.g. `BasicAuthConfiguration.java`).
+创建一个新的配置文件（例如 `BasicAuthConfiguration.java`）。
 
 ```java
 @Configuration
@@ -151,7 +151,7 @@ public class BasicAuthConfiguration {
 }
 ```
 
-You can log in with the default `admin/admin`. You must add following configuration to you prometheus configuration such that prometheus can still scrape your application.
+您可以使用默认的 `admin/admin` 登录。您必须在 prometheus 配置中添加以下配置，以便 prometheus 仍然可以抽取您的应用程序。
 
 ```
 basic_auth:
@@ -159,22 +159,22 @@ basic_auth:
     password: "admin"
 ```
 
-You can start a preconfigured Grafana and Prometheus instance on our local machine via `docker-compose -f src/main/docker/monitoring.yml up -d` to have a look at the
-provisioned [jvm/micrometer dashboard](https://grafana.com/grafana/dashboards/4701).
+您可以通过 `docker-compose -f src/main/docker/monitoring.yml up -d` 在本地计算机上启动预配置的 Grafana 和 Prometheus 实例，查看
+预置的 [jvm/micrometer 仪表盘](https://grafana.com/grafana/dashboards/4701)。
 
 ![Grafana Micrometer Dashboard](/images/monitoring_grafana_micrometer.png)
 
-:::note
+:::注意
 
-Unlike in previous JHipster versions, JHipster 5.8 metrics reporting only support JMX and Prometheus out of the box. Please have a look to the Metrics official documentation for instructions on how to setup other reporters like [Graphite](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics-export-graphite).
+与以前的 JHipster 版本不同，JHipster 5.8 指标报告开箱即用地仅支持 JMX 和 Prometheus。请查看 Metrics 官方文档，了解如何设置其他报告器，如 [Graphite](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics-export-graphite)。
 
 :::
 
 
 ## Zipkin
 
-JHipster applications can integrate with [Zipkin](http://zipkin.io/) through [Spring Boot Actuator Tracing](https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-docs/src/docs/asciidoc/actuator/tracing.adoc) to provide distributed tracing for your microservice architecture. To enable Zipkin tracing, package your application with the `zipkin` maven/gradle profile. This will trigger span reporting to the Zipkin server and also add correlation IDs (TraceId, SpanId and ParentId) to request headers and logs.
+JHipster 应用程序可以通过 [Spring Boot Actuator Tracing](https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-docs/src/docs/asciidoc/actuator/tracing.adoc) 与 [Zipkin](http://zipkin.io/) 集成，为您的微服务架构提供分布式跟踪。要启用 Zipkin 跟踪，请使用 `zipkin` maven/gradle 配置文件打包您的应用程序。这将触发向 Zipkin 服务器报告 span，并在请求标头和日志中添加关联 ID（TraceId、SpanId 和 ParentId）。
 
-Zipkin also provide a service dependency graph feature that lets you visualize the dependencies between microservices over time.
+Zipkin 还提供服务依赖关系图功能，让您可以随时间可视化微服务之间的依赖关系。
 
-For more information on how to setup your application to report traces to Zipkin, refer to [Spring Boot Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.micrometer-tracing).
+有关如何设置您的应用程序向 Zipkin 报告跟踪信息的更多信息，请参阅 [Spring Boot Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.micrometer-tracing)。

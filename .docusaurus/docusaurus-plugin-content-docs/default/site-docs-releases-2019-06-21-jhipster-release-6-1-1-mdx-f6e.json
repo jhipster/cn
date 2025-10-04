@@ -1,0 +1,30 @@
+{
+  "id": "releases/2019-06-21-jhipster-release-6.1.1",
+  "title": "Release 6.1.1",
+  "description": "This is an emergency patch release because of a broken transitive dependency, that blocks our command line. see #9952 for more information.",
+  "source": "@site/docs/releases/2019-06-21-jhipster-release-6.1.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2019/06/21/jhipster-release-6.1.1.html",
+  "permalink": "/cn/2019/06/21/jhipster-release-6.1.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2019-06-21-jhipster-release-6.1.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 6.1.1",
+    "slug": "/2019/06/21/jhipster-release-6.1.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 6.1.0",
+    "permalink": "/cn/2019/06/11/jhipster-release-6.1.0.html"
+  },
+  "next": {
+    "title": "Release 6.1.2",
+    "permalink": "/cn/2019/06/23/jhipster-release-6.1.2.html"
+  }
+}

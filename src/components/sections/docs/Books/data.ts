@@ -4,7 +4,7 @@ export const books = [
     authors: ['Matt Raible'],
     image: require('/images/books/JHipster-Mini-book.webp').default,
     description:
-      'The JHipster Mini-Book is a guide to getting started with hip technologies today: Angular, Bootstrap, and Spring Boot. All of these frameworks are wrapped up in an easy-to-use project called JHipster. This edition includes an updated microservices section that features WebFlux and micro frontends with React.',
+      'JHipster Mini-Book 是一本关于如何使用当今最流行技术的入门指南：Angular、Bootstrap 和 Spring Boot。所有这些框架都集成在一个名为 JHipster 的易于使用的项目中。本版包含了更新的微服务章节，涵盖了 WebFlux 和基于 React 的微前端。',
     links: [
       {
         name: 'InfoQ',
@@ -18,7 +18,7 @@ export const books = [
     image: require('/images/books/Full-Stack-Development-with-JHipster.webp')
       .default,
     description:
-      'Written by the core development team of JHipster and fully updated for JHipster 6, Java 11, and Spring Boot 2.1, this book will show you how to build modern web applications with real-world examples and best practices',
+      '本书由 JHipster 核心开发团队编写，针对 JHipster 6、Java 11 和 Spring Boot 2.1 进行了全面更新，将通过真实案例和最佳实践向您展示如何构建现代化的 Web 应用程序',
     links: [
       {
         name: 'Packt',

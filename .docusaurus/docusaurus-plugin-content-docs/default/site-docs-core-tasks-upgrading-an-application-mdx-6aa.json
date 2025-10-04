@@ -1,0 +1,32 @@
+{
+  "id": "core-tasks/upgrading-an-application",
+  "title": "Upgrading an application",
+  "description": "Summary",
+  "source": "@site/docs/core-tasks/upgrading-an-application.mdx",
+  "sourceDirName": "core-tasks",
+  "slug": "/upgrading-an-application/",
+  "permalink": "/cn/upgrading-an-application/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/core-tasks/upgrading-an-application.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1712534400000,
+  "frontMatter": {
+    "title": "Upgrading an application",
+    "slug": "/upgrading-an-application/",
+    "gitgraph": "http://jsfiddle.net/lordlothar99/tqp9gyu3",
+    "last_update": {
+      "date": "2024-04-08T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "国际化",
+    "permalink": "/cn/installing-new-languages/"
+  },
+  "next": {
+    "title": "保护您的应用",
+    "permalink": "/cn/security/"
+  }
+}

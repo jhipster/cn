@@ -1,0 +1,31 @@
+{
+  "id": "production/heroku",
+  "title": "Deploying to Heroku",
+  "description": "This sub-generator allows deployment of your JHipster application to the Heroku cloud.",
+  "source": "@site/docs/production/heroku.mdx",
+  "sourceDirName": "production",
+  "slug": "/heroku/",
+  "permalink": "/cn/heroku/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/production/heroku.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1702944000000,
+  "frontMatter": {
+    "title": "Deploying to Heroku",
+    "slug": "/heroku/",
+    "last_update": {
+      "date": "2023-12-19T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Deploying to Clever Cloud",
+    "permalink": "/cn/clever-cloud/"
+  },
+  "next": {
+    "title": "Deploying to Kubernetes",
+    "permalink": "/cn/kubernetes/"
+  }
+}

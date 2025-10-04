@@ -1,53 +1,53 @@
 ---
-title: Using Oh-My-Zsh
+title: 使用 Oh-My-Zsh
 slug: /oh-my-zsh/
 last_update:
   date: 2016-07-25T18:40:00-00:00
 ---
 
-If you are using Linux or Mac OS X, [Oh-My-Zsh](http://ohmyz.sh/) is a great tool to manage your ZSH configuration.
+如果您使用 Linux 或 Mac OS X，[Oh-My-Zsh](http://ohmyz.sh/) 是管理您的 ZSH 配置的绝佳工具。
 
-Most of the JHipster development team uses Oh-My-Zsh, and if you see people using shortcuts in their terminal, the magic comes from here!
+JHipster 开发团队的大部分成员都使用 Oh-My-Zsh，如果您看到人们在终端中使用快捷方式，魔法就来自这里！
 
 
-## Oh-My-Zsh JHipster plugin
+## Oh-My-Zsh JHipster 插件
 
-The JHipster Oh-My-Zsh plugin is available on GitHub at [https://github.com/jhipster/jhipster-oh-my-zsh-plugin](https://github.com/jhipster/jhipster-oh-my-zsh-plugin).
+JHipster Oh-My-Zsh 插件在 GitHub 上可用，地址为 [https://github.com/jhipster/jhipster-oh-my-zsh-plugin](https://github.com/jhipster/jhipster-oh-my-zsh-plugin)。
 
-Currently it only adds shortcuts (full list [here](https://github.com/jhipster/jhipster-oh-my-zsh-plugin/blob/main/jhipster.plugin.zsh)), but we welcome contributions to have better auto-completion!
+目前它只添加了快捷方式（完整列表请参见[这里](https://github.com/jhipster/jhipster-oh-my-zsh-plugin/blob/main/jhipster.plugin.zsh)），但我们欢迎贡献以获得更好的自动完成！
 
-It is not part (yet) of the official plugin list, so you need to install it manually:
+它（尚）不是官方插件列表的一部分，因此您需要手动安装它：
 
-1. Edit your `~/.zshrc` and add `jhipster` to the list of plugins to enable:
+1. 编辑您的 `~/.zshrc` 并将 `jhipster` 添加到要启用的插件列表：
 
     `plugins=( ... jhipster )`
 
-2. In the command line, change to _oh-my-zsh_'s custom plugin directory and clone the repository:
+2. 在命令行中，切换到 _oh-my-zsh_ 的自定义插件目录并克隆仓库：
 
     `cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git jhipster && cd && . ~/.zshrc`
 
 
-## Recommended plugins
+## 推荐的插件
 
-The `git`, `docker` and `docker-compose` plugins are usually useful with JHipster.
+`git`、`docker` 和 `docker-compose` 插件通常对 JHipster 很有用。
 
-So your plugins section in your `.zshrc` file would be:
+因此您在 `.zshrc` 文件中的插件部分将是：
 
     plugins=(git docker docker-compose jhipster)
 
 
-## Other installation methods
+## 其他安装方法
 
 ### Antigen
 
-If you're using [Antigen](https://github.com/zsh-users/antigen):
+如果您使用 [Antigen](https://github.com/zsh-users/antigen)：
 
-1. Add `antigen bundle jhipster/jhipster-oh-my-zsh-plugin` to your `.zshrc` where you've listed your other plugins.
-2. Close and reopen your Terminal/iTerm window to **refresh context** and use the plugin. Alternatively, you can run `antigen bundle jhipster/jhipster-oh-my-zsh-plugin` in a running shell to have antigen clone and load *jhipster*.
+1. 在您列出其他插件的 `.zshrc` 中添加 `antigen bundle jhipster/jhipster-oh-my-zsh-plugin`。
+2. 关闭并重新打开您的 Terminal/iTerm 窗口以**刷新上下文**并使用插件。或者，您可以在正在运行的 shell 中运行 `antigen bundle jhipster/jhipster-oh-my-zsh-plugin` 来让 antigen 克隆并加载 *jhipster*。
 
 ### zgen
 
-If you're using [zgen](https://github.com/tarjoilija/zgen):
+如果您使用 [zgen](https://github.com/tarjoilija/zgen)：
 
-1. Add `zgen load jhipster/jhipster-oh-my-zsh-plugin` to your `.zshrc` along with your other `zgen load` commands.
+1. 在您的 `.zshrc` 中与其他 `zgen load` 命令一起添加 `zgen load jhipster/jhipster-oh-my-zsh-plugin`。
 2. `rm ${ZGEN_INIT}/init.zsh && zgen save`

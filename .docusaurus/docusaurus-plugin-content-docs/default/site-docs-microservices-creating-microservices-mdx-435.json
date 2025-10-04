@@ -1,0 +1,31 @@
+{
+  "id": "microservices/creating-microservices",
+  "title": "Creating microservices",
+  "description": "Microservices are a type of JHipster application, that have no front-end (the Angular front-end must be generated on a gateway), and which work with the Consul to be configured, discovered, and managed.",
+  "source": "@site/docs/microservices/creating-microservices.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/creating-microservices/",
+  "permalink": "/cn/creating-microservices/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/creating-microservices.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1717372800000,
+  "frontMatter": {
+    "title": "Creating microservices",
+    "slug": "/creating-microservices/",
+    "last_update": {
+      "date": "2024-06-03T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster Registry",
+    "permalink": "/cn/jhipster-registry/"
+  },
+  "next": {
+    "title": "Microservices in production",
+    "permalink": "/cn/microservices-in-production/"
+  }
+}

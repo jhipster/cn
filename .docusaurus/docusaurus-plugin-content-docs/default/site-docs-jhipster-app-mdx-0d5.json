@@ -1,0 +1,24 @@
+{
+  "id": "jhipster-app",
+  "title": "JHipster App",
+  "description": "DEPRECATED Due to lack of success, the JHipster App is now deprecated. You can still find it on the JHipster App GitHub repository.",
+  "source": "@site/docs/jhipster-app.mdx",
+  "sourceDirName": ".",
+  "slug": "/jhipster-app/",
+  "permalink": "/cn/jhipster-app/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jhipster-app.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1472474400000,
+  "frontMatter": {
+    "title": "JHipster App",
+    "displayed_sidebar": "docsSidebar",
+    "slug": "/jhipster-app/",
+    "last_update": {
+      "date": "2016-08-29T12:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar"
+}

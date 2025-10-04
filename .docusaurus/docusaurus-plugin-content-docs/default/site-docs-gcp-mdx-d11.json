@@ -1,0 +1,24 @@
+{
+  "id": "gcp",
+  "title": "Deploying to Google Cloud Platform",
+  "description": "Google Cloud Platform",
+  "source": "@site/docs/gcp.mdx",
+  "sourceDirName": ".",
+  "slug": "/gcp/",
+  "permalink": "/cn/gcp/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/gcp.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1702944000000,
+  "frontMatter": {
+    "title": "Deploying to Google Cloud Platform",
+    "displayed_sidebar": "docsSidebar",
+    "slug": "/gcp/",
+    "last_update": {
+      "date": "2023-12-19T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar"
+}

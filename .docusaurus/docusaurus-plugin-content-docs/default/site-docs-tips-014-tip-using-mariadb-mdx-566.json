@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_using_mariadb",
+  "title": "Using MariaDB",
+  "description": "This tip has been removed, as MariaDB has been added to the generator since this pull request #3600, so you don't need to do any specific configuration anymore!",
+  "source": "@site/docs/tips/014_tip_using_mariadb.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/014_tip_using_mariadb.html",
+  "permalink": "/cn/tips/014_tip_using_mariadb.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/014_tip_using_mariadb.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1459534800000,
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "title": "Using MariaDB",
+    "slug": "/tips/014_tip_using_mariadb.html",
+    "last_update": {
+      "date": "2016-04-01T18:20:00.000Z"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 ---
-title: Boost infinite scroll performance with Slice
+title: 使用 Slice 提升无限滚动性能
 slug: /tips/019_tip_infinite_scroll_with_slice.html
 last_update:
   date: 2016-11-12T22:22:00-00:00
@@ -8,20 +8,20 @@ last_update:
 __Tip submitted by [@nkolosnjaji](https://github.com/nkolosnjaji)__
 
 
-## Boost performance of pagination with infinite scrolling using Slice
+## 使用 Slice 提升无限滚动分页的性能
 
-Pagination with infinite scrolling is using Spring Data Page to retrieve entities from your database.
-This will trigger two queries, one to fetch entities and second for `count all` to determine the total items for paging. Infinite scrolling doesn't need information about the total size but only if there is a next page to load. To avoid `count all` query which can be an expensive operation when working with large datasets, use [Slice](http://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/domain/Slice.html) instead of Page which will boost performance of infinite scrolling.
+使用无限滚动的分页使用 Spring Data Page 从数据库中检索实体。
+这将触发两个查询，一个用于获取实体，第二个用于 `count all` 以确定分页的总项数。无限滚动不需要有关总大小的信息，只需要知道是否有下一页要加载。为了避免 `count all` 查询（在处理大型数据集时可能是一个昂贵的操作），使用 [Slice](http://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/domain/Slice.html) 而不是 Page，这将提升无限滚动的性能。
 
-We will use a custom HTTP header `X-Has-Next-Page` to send information to front-end infinite-scroll plugin.
+我们将使用自定义 HTTP 头 `X-Has-Next-Page` 将信息发送到前端无限滚动插件。
 
-* Define new method in your Entity repository:
+* 在你的实体仓库中定义新方法：
 
 ```java
 Slice<YourEntity> findSliceBy(Pageable pageable);
 ```
 
-* Define new static method in `PaginationUtil.java` located in `web/rest/util` package
+* 在 `web/rest/util` 包中的 `PaginationUtil.java` 中定义新的静态方法
 
 ```java
 public static HttpHeaders generateSliceHttpHeaders(Slice<?> slice) {
@@ -31,7 +31,7 @@ public static HttpHeaders generateSliceHttpHeaders(Slice<?> slice) {
 }
 ```
 
-* Modify REST controller to call Slice instead of Page and generate new HTTP headers.
+* 修改 REST 控制器以调用 Slice 而不是 Page 并生成新的 HTTP 头。
 
 ```java
 @GetMapping("/<YourEntities>")
@@ -44,13 +44,13 @@ public ResponseEntity<List<Repo>> getAllRepos(Pageable pageable)
 }
 ```
 
-* Define new view model in `entity.controller.js`
+* 在 `entity.controller.js` 中定义新的视图模型
 
 ```js
 vm.hasNextPage = false;
 ```
 
-* Extract HTTP header value from response and assign it to view model in
+* 从响应中提取 HTTP 头值并将其分配给视图模型
 
 ```js
 function onSuccess(data, headers) {
@@ -59,7 +59,7 @@ function onSuccess(data, headers) {
 }
 ```
 
-* Use view model with infinite-scroll plugin in `<your-entities>.html`
+* 在 `<your-entities>.html` 中将视图模型与 infinite-scroll 插件一起使用
 
 ```html
 <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="!vm.hasNextPage">

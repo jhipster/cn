@@ -1,0 +1,31 @@
+{
+  "id": "core-tasks/managing-relationships",
+  "title": "Managing relationships",
+  "description": "When JPA is used, the entity sub-generator can create relationships between entities.",
+  "source": "@site/docs/core-tasks/managing-relationships.mdx",
+  "sourceDirName": "core-tasks",
+  "slug": "/managing-relationships/",
+  "permalink": "/cn/managing-relationships/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/core-tasks/managing-relationships.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1606295220000,
+  "frontMatter": {
+    "title": "Managing relationships",
+    "slug": "/managing-relationships/",
+    "last_update": {
+      "date": "2020-11-25T09:07:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "创建 DTOs",
+    "permalink": "/cn/using-dtos/"
+  },
+  "next": {
+    "title": "国际化",
+    "permalink": "/cn/installing-new-languages/"
+  }
+}

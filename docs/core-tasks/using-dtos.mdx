@@ -1,53 +1,53 @@
 ---
-title: Using DTOs
+title: 使用 DTOs
 slug: /using-dtos/
 last_update:
   date: 2015-05-28T23:41:00-00:00
 ---
 
-## Introduction
+## 介绍
 
-By default, JHipster uses its domain objects (typically JPA entities) directly in its REST endpoints. 
-This has a lot of benefits, the main one being that the code is easier to understand as it contains fewer layers.
+默认情况下，JHipster 在其 REST 端点中直接使用其域对象（通常是 JPA 实体）。
+这有很多好处，主要是代码更容易理解，因为它包含的层次更少。
 
-For complex use cases, however, you might want to use Data Transfer Objects (or DTOs) that will be exposed by the REST endpoints. Those objects add an extra layer on top of the domain objects, and are specifically tuned for the REST layer: their main benefit is that they can aggregate several domain objects.
-
-
-## How DTOs work in JHipster
-
-When generating a JHipster entity, you have the option to add a service layer: the DTO option will only be available if you choose to have a service layer, as it needs that layer to handle the mapping (if you are using JPA, this is because the service layer is transactional, so lazy-loading will work).
-
-Once you have selected to have a service layer, you will have the option to generate a DTO for the entity. If you select that option:
-
-- A DTO will be generated, and it will be mapped on the underlying entity.
-- It will aggregate many-to-one relationships, only using the ID and the field used to display it in your client-side framework (Angular, for example). As a result, a many-to-one relationship to the `User` entity will add a `userId` field and a `userLogin` field to the DTO.
-- It will ignore one-to-many relationships and many-to-many relationships on the non-owner side: this matches the way entities work (they have a `@JsonIgnore` annotation on those fields).
-- For a many-to-many relationship on the owner side: it will use DTOs from the other entity and use them in a `Set`. Thus, this can only work if the other entity also uses DTOs.
+然而，对于复杂的用例，您可能希望使用由 REST 端点公开的数据传输对象（或 DTOs）。这些对象在域对象之上添加了额外的层，并专门为 REST 层进行了调整：它们的主要好处是可以聚合多个域对象。
 
 
-## Using MapStruct to map DTOs and entities
+## DTOs 在 JHipster 中的工作原理
 
-As DTOs look a lot like entities, it's a frequent requirement to have a solution to map them automatically with each other.
+生成 JHipster 实体时，您可以选择添加一个服务层：DTO 选项只有在您选择拥有服务层时才可用，因为它需要该层来处理映射（如果您使用 JPA，这是因为服务层是事务性的，因此懒加载将正常工作）。
 
-The selected solution in JHipster is to use [MapStruct](http://mapstruct.org/). It is an annotation processor, plugged into the Java compiler, that will generate the required mapping automatically.
+一旦您选择拥有服务层，您将可以选择为实体生成 DTO。如果您选择该选项：
 
-We have found it very clean and efficient, and liked that it does not use reflection (which is bad for performance when used as heavily as in a mapper).
-
-
-## Configuring your IDE for MapStruct
-
-MapStruct is an annotation processor, and as such it should also be set up to be run automatically when your IDE compiles the project.
-
-If you are using Maven, you need to activate the `IDE` maven profile in your IDE. Gradle users don't need to apply anything IDE-specific.
-
-Instructions for activating the profile are included in [Configuring your IDE](/configuring-ide/).
+- 将生成一个 DTO，并将其映射到底层实体。
+- 它将聚合多对一关系，仅使用 ID 和用于在客户端框架（例如 Angular）中显示的字段。因此，与 `User` 实体的多对一关系将向 DTO 添加 `userId` 字段和 `userLogin` 字段。
+- 它将忽略一对多关系和非所有者一方的多对多关系：这与实体的工作方式一致（它们在这些字段上有 `@JsonIgnore` 注解）。
+- 对于所有者一方的多对多关系：它将使用来自其他实体的 DTOs 并在 `Set` 中使用它们。因此，这只有在其他实体也使用 DTOs 时才能工作。
 
 
-## Advanced MapStruct usage
+## 使用 MapStruct 映射 DTOs 和实体
 
-MapStruct mappers are configured as Spring Beans, and support dependency injection. One nice tip is that you can inject a `Repository` into a mapper, so you can fetch a managed JPA entity from the mapper, using its ID.
+由于 DTOs 看起来很像实体，经常需要一个解决方案来自动地将它们相互映射。
 
-Here is an example code, fetching a `User` entity:
+JHipster 中选择的解决方案是使用 [MapStruct](http://mapstruct.org/)。它是一个注解处理器，插入 Java 编译器，将自动生成所需的映射。
+
+我们发现它非常清洁和高效，并且喜欢它不使用反射（在映射器中大量使用时对性能不利）。
+
+
+## 为 MapStruct 配置您的 IDE
+
+MapStruct 是一个注解处理器，因此它也应该被设置为在您的 IDE 编译项目时自动运行。
+
+如果您使用 Maven，您需要在 IDE 中激活 `IDE` maven 配置文件。Gradle 用户不需要应用任何 IDE 特定的设置。
+
+激活配置文件的说明包含在[配置您的 IDE](/configuring-ide/) 中。
+
+
+## 高级 MapStruct 用法
+
+MapStruct 映射器被配置为 Spring Beans，并支持依赖注入。一个好的技巧是您可以向映射器注入 `Repository`，因此您可以使用其 ID 从映射器中获取受管理的 JPA 实体。
+
+以下是一个示例代码，获取 `User` 实体：
 ```java
 @Mapper
 public abstract class CarMapper {

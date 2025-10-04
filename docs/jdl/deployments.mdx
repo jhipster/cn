@@ -1,13 +1,13 @@
 ---
-title: JHipster Domain Language (JDL) - Deployments
+title: JHipster 领域语言 (JDL) - 部署
 slug: /jdl/deployments
 last_update:
   date: 2021-07-08T12:00:00-00:00
 ---
 
-## Syntax
+## 语法
 
-The deployment declaration is done as follows:
+部署声明如下：
 
 ```jdl
 deployment {
@@ -15,12 +15,12 @@ deployment {
 }
 ```
 
-- Similar to applications, deployment declaration works by specifying option keys & values
+- 类似于应用程序，部署声明通过指定选项键和值来工作
 
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
 ```jdl
 deployment {
@@ -30,19 +30,19 @@ deployment {
 }
 ```
 
-### More than one deployment
+### 多个部署
 
-If you want more than one deployment, here's how you do it:
+如果您想要多个部署，可以这样做：
 
 ```jdl
-// will be created under the 'docker-compose' folder
+// 将在 'docker-compose' 文件夹下创建
 deployment {
   deploymentType docker-compose
   appsFolders [foo, bar]
   dockerRepositoryName "yourDockerLoginName"
 }
 
-// will be created under the 'kubernetes' folder
+// 将在 'kubernetes' 文件夹下创建
 deployment {
   deploymentType kubernetes
   appsFolders [foo, bar]
@@ -50,43 +50,42 @@ deployment {
 }
 ```
 
-You can have one deployment per `deploymentType`. The applications defined in `appsFolders` should be in the same 
-folder where you are creating deployments or in the folder defined in `directoryPath`.
+您可以为每个 `deploymentType` 设置一个部署。在 `appsFolders` 中定义的应用程序应该在您创建部署的同一文件夹中，或者在 `directoryPath` 中定义的文件夹中。
 
-For example, above you need to have a folder structure like this:
+例如，上面的情况您需要有这样的文件夹结构：
 
 ```
 .
 ├── yourJdlFile.jdl
 ├── foo
 ├── bar
-├── kubernetes // will be created by the JDL
-└── docker-compose // will be created by the JDL
+├── kubernetes // 将由 JDL 创建
+└── docker-compose // 将由 JDL 创建
 ```
 
 
-## Available deployment options
+## 可用的部署选项
 
-Here are the deployment options supported in the JDL:
+以下是 JDL 中支持的部署选项：
 
-|JDL option name             |Default value      |Possible values                       |Comment                                                                                                                                    |
-|----------------------------|-------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|deploymentType              |docker-compose     |docker-compose, kubernetes, openshift |-                                                                                                                                          |
-|directoryPath               |`../`              |-                                     |Relative path. Must be in double quotes                                                                                                    |
-|appsFolders                 |[]                 |-                                     |Directory names for the applications separated by comma. Must be a list, example [foo, bar]                                                |
-|clusteredDbApps             |[]                 |-                                     |Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]                              |
-|gatewayType                 |SpringCloudGateway |-                                     |Value is ignored when serviceDiscoveryType is `no`                                                                                         |
-|monitoring                  |no                 |no, prometheus                        |-                                                                                                                                          |
-|serviceDiscoveryType        |consul             |consul, eureka, no                    |-                                                                                                                                          |
-|dockerRepositoryName        |-                  |-                                     |The name or URL of the docker repository. Must be in double quotes                                                                         |
-|dockerPushCommand           |`docker push`      |-                                     |The docker push command to use. Must be in double quotes                                                                                   |
-|kubernetesNamespace         |default            |-                                     |Applicable only when deploymentType is kubernetes                                                                                          |
-|kubernetesUseDynamicStorage |false              |true, false                           |Applicable only when deploymentType is kubernetes, enables the kubernetesStorageClassName option                                           |
-|kubernetesStorageClassName  |-                  |-                                     |Applicable only when deploymentType is kubernetes, can be left empty (two double-quotes)                                                   |
-|kubernetesServiceType       |LoadBalancer       |LoadBalancer, NodePort, Ingress       |Applicable only when deploymentType is kubernetes                                                                                          |
-|ingressDomain               |-                  |-                                     |The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes|
-|ingressType                 |nginx              |nginx, gke                            |The kubernetes ingress type, only set when `kubernetesServiceType` is set to Ingress                                                       |
-|istio                       |false              |true, false                           |Applicable only when deploymentType is kubernetes                                                                                          |
-|openshiftNamespace          |default            |-                                     |Applicable only when deploymentType is openshift                                                                                           |
-|storageType                 |ephemeral          |ephemeral, persistent                 |Applicable only when deploymentType is openshift                                                                                           |
-|registryReplicas            |2                  |-                                     |The number of replicas, when using the openshift deployment type                                                                           |
+|JDL 选项名称                |默认值          |可能的值                       |备注                                                                                                                                      |
+|----------------------------|-------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+|deploymentType              |docker-compose     |docker-compose, kubernetes, openshift |-                                                                                                                                            |
+|directoryPath               |`../`              |-                                     |相对路径。必须用双引号包裹                                                                                                                     |
+|appsFolders                 |[]                 |-                                     |应用程序的目录名称，用逗号分隔。必须是列表，例如 [foo, bar]                                                                                    |
+|clusteredDbApps             |[]                 |-                                     |具有集群数据库的应用程序的目录名称，用逗号分隔。必须是列表，例如 [foo, bar]                                                                    |
+|gatewayType                 |SpringCloudGateway |-                                     |当 serviceDiscoveryType 为 `no` 时，此值被忽略                                                                                              |
+|monitoring                  |no                 |no, prometheus                        |-                                                                                                                                            |
+|serviceDiscoveryType        |consul             |consul, eureka, no                    |-                                                                                                                                            |
+|dockerRepositoryName        |-                  |-                                     |docker 仓库的名称或 URL。必须用双引号包裹                                                                                                   |
+|dockerPushCommand           |`docker push`      |-                                     |要使用的 docker push 命令。必须用双引号包裹                                                                                                  |
+|kubernetesNamespace         |default            |-                                     |仅当 deploymentType 为 kubernetes 时适用                                                                                                   |
+|kubernetesUseDynamicStorage |false              |true, false                           |仅当 deploymentType 为 kubernetes 时适用，启用 kubernetesStorageClassName 选项                                                             |
+|kubernetesStorageClassName  |-                  |-                                     |仅当 deploymentType 为 kubernetes 时适用，可以留空（两个双引号）                                                                             |
+|kubernetesServiceType       |LoadBalancer       |LoadBalancer, NodePort, Ingress       |仅当 deploymentType 为 kubernetes 时适用                                                                                                   |
+|ingressDomain               |-                  |-                                     |当 kubernetesServiceType 为 `Ingress` 时的 Ingress 域名。必须用双引号包裹。仅当 deploymentType 为 kubernetes 时适用                        |
+|ingressType                 |nginx              |nginx, gke                            |kubernetes ingress 类型，仅当 `kubernetesServiceType` 设置为 Ingress 时设置                                                               |
+|istio                       |false              |true, false                           |仅当 deploymentType 为 kubernetes 时适用                                                                                                   |
+|openshiftNamespace          |default            |-                                     |仅当 deploymentType 为 openshift 时适用                                                                                                    |
+|storageType                 |ephemeral          |ephemeral, persistent                 |仅当 deploymentType 为 openshift 时适用                                                                                                    |
+|registryReplicas            |2                  |-                                     |使用 openshift 部署类型时的副本数量                                                                                                        |

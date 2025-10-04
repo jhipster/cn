@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_registering_user_with_additional_information",
+  "title": "Registering a user with additional information",
+  "description": "Tip submitted by @Paul-Etienne",
+  "source": "@site/docs/tips/022_tip_registering_user_with_additional_information.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/022_tip_registering_user_with_additional_information.html",
+  "permalink": "/cn/tips/022_tip_registering_user_with_additional_information.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/022_tip_registering_user_with_additional_information.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1487197800000,
+  "sidebarPosition": 22,
+  "frontMatter": {
+    "title": "Registering a user with additional information",
+    "slug": "/tips/022_tip_registering_user_with_additional_information.html",
+    "last_update": {
+      "date": "2017-02-15T22:30:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "using-angularjs",
+  "title": "Using AngularJS",
+  "description": "As of JHipster 5, AngularJS is not supported anymore with JHipster.",
+  "source": "@site/docs/using-angularjs.mdx",
+  "sourceDirName": ".",
+  "slug": "/using-angularjs/",
+  "permalink": "/cn/using-angularjs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/using-angularjs.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1422574860000,
+  "frontMatter": {
+    "title": "Using AngularJS",
+    "slug": "/using-angularjs/",
+    "last_update": {
+      "date": "2015-01-29T23:41:00.000Z"
+    }
+  }
+}

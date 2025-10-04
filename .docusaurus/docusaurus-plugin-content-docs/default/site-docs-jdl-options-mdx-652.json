@@ -1,0 +1,31 @@
+{
+  "id": "jdl/options",
+  "title": "JHipster Domain Language (JDL) - Options",
+  "description": "In JHipster, you can specify options for your entities such as pagination or DTO.",
+  "source": "@site/docs/jdl/options.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/options",
+  "permalink": "/cn/jdl/options",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/options.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1572696000000,
+  "frontMatter": {
+    "title": "JHipster Domain Language (JDL) - Options",
+    "slug": "/jdl/options",
+    "last_update": {
+      "date": "2019-11-02T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "关系",
+    "permalink": "/cn/jdl/relationships"
+  },
+  "next": {
+    "title": "部署",
+    "permalink": "/cn/jdl/deployments"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "releases/2013-11-29-jhipster-release-0.0.28",
+  "title": "Release 0.0.28",
+  "description": "The Maven profiles named \"development\" and \"production\" have been renamed \"dev\" and \"prod\" so they are quicker to type.",
+  "source": "@site/docs/releases/2013-11-29-jhipster-release-0.0.28.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2013/11/29/jhipster-release-0.0.28.html",
+  "permalink": "/cn/2013/11/29/jhipster-release-0.0.28.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2013-11-29-jhipster-release-0.0.28.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 0.0.28",
+    "slug": "/2013/11/29/jhipster-release-0.0.28.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release notes",
+    "permalink": "/cn/releases/"
+  },
+  "next": {
+    "title": "Release 0.1.0",
+    "permalink": "/cn/2013/11/30/jhipster-release-0.1.0.html"
+  }
+}

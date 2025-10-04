@@ -1,0 +1,31 @@
+{
+  "id": "environment/docker-compose",
+  "title": "Docker and Docker Compose",
+  "description": "Using Docker and Docker Compose is highly recommended in development, and is also a good solution in production.",
+  "source": "@site/docs/environment/docker-compose.mdx",
+  "sourceDirName": "environment",
+  "slug": "/docker-compose/",
+  "permalink": "/cn/docker-compose/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/docker-compose.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1480550400000,
+  "frontMatter": {
+    "title": "Docker and Docker Compose",
+    "slug": "/docker-compose/",
+    "last_update": {
+      "date": "2016-12-01T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Netbeans",
+    "permalink": "/cn/configuring-ide-netbeans/"
+  },
+  "next": {
+    "title": "JHipster Shell Plugins",
+    "permalink": "/cn/shell-plugins/"
+  }
+}

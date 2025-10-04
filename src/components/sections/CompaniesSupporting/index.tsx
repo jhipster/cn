@@ -11,12 +11,11 @@ import styles from './styles.module.scss';
 export default function CompaniesSupporting() {
   return (
     <SectionWrapper className={styles.section}>
-      <SectionTitle>Companies Supporting JHipster</SectionTitle>
+      <SectionTitle>支持JHipster的企业</SectionTitle>
 
       <SectionDescription>
         <p>
-          If you wish your company to be added here, don&apos;t hesitate to
-          reach out to us and explain why.
+            如贵公司也希望加入本列表，请随时联系我们并说明相关理由。
         </p>
       </SectionDescription>
 
@@ -44,7 +43,7 @@ export default function CompaniesSupporting() {
         <li>
           <div className={clsx('card', styles.cardMock)}>
             <div className={clsx('card__body', styles.cardMockBody)}>
-              <h3>Your company</h3>
+              <h3>您的公司</h3>
             </div>
           </div>
         </li>

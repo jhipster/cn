@@ -1,59 +1,59 @@
 ---
-title: Creating microservices
+title: 创建微服务
 slug: /creating-microservices/
 last_update:
   date: 2024-06-03T00:00:00-00:00
 ---
 
-Microservices are a type of JHipster application, that have no front-end (the Angular front-end must be generated on a [gateway](/api-gateway/)), and which work with the [Consul](/consul/) to be configured, discovered, and managed.
+微服务是一种 JHipster 应用程序类型，它没有前端（Angular 前端必须在[网关](/api-gateway/)上生成），并且使用 [Consul](/consul/) 进行配置、发现和管理。
 
-## Entities in a microservices architecture
+## 微服务架构中的实体
 
-The User entity is not generated in a microservice when using JWT or DTO. When OAuth 2.0 is used, there is a mechanism in the microservice to extract user data from the token and save it to the microservice's database. So for JWT and DTO you can not use and/or define a relationship with the User entity because it exists only in the gateway's database.
+在使用 JWT 或 DTO 时，微服务中不会生成 User 实体。当使用 OAuth 2.0 时，微服务中有一种机制可以从令牌中提取用户数据并将其保存到微服务的数据库中。因此，对于 JWT 和 DTO，您不能使用和/或定义与 User 实体的关系，因为它只存在于网关的数据库中。
 
-Relationships between entities from different microservices are not supported.
+不同微服务之间的实体关系不受支持。
 
-## Generating entities
+## 生成实体
 
-For entities in a microfrontend see [Microfrontends](#microfrontends).
+有关微前端中的实体，请参见[微前端](#microfrontends)。
 
-Using the [entity sub-generator](/creating-an-entity/) works a little bit differently in a microservices architecture, as the front-end and the back-end codes are not located in the same application.
+使用[实体子生成器](/creating-an-entity/)在微服务架构中的工作方式略有不同，因为前端和后端代码不在同一个应用程序中。
 
-First, generate the entities in the microservice applications: this works as usual, and you can also use [JHipster UML](/jhipster-uml/) or [JDL Studio](https://start.jhipster.tech/jdl-studio/) to help you generate complex entities and relationships. As microservices don't have a front-end, no UI code will be generated.
+首先，在微服务应用程序中生成实体：这与通常情况一样，您还可以使用 [JHipster UML](/jhipster-uml/) 或 [JDL Studio](https://start.jhipster.tech/jdl-studio/) 来帮助您生成复杂的实体和关系。由于微服务没有前端，因此不会生成 UI 代码。
 
-Then, on the gateway(s), run the entity sub-generator again. A new question will appear at the beginning, which is specific to gateways:
+然后，在网关上再次运行实体子生成器。在开始时会出现一个新问题，这是网关特有的：
 
-- You will have the choice either to generate a new entity normally (a gateway is also a standard JHipster application, so this would work like for a monolith application), or use an existing JHipster configuration from a microservice.
-- If you choose to generate the entity from a microservice, you will need to enter the path to this microservice on your local computer, and then JHipster will generate the front-end code on the gateway.
+- 您可以选择像往常一样生成新实体（网关也是一个标准的 JHipster 应用程序，所以这就像单体应用程序一样工作），或者使用来自微服务的现有 JHipster 配置。
+- 如果您选择从微服务生成实体，您需要输入此微服务在您本地计算机上的路径，然后 JHipster 将在网关上生成前端代码。
 
-## Microfrontends
+## 微前端
 
-JHipster's microfrontends implementation uses [Module Federation](https://module-federation.io/) and allows the frontend entities implementation to be located in the microservice instead of in the gateway.
+JHipster 的微前端实现使用 [Module Federation](https://module-federation.io/)，允许前端实体实位置在微服务中而不是网关中。
 
-A gateway is still required to be running in development due to the authentication process.
+由于身份验证过程，开发时仍需要运行网关。
 
-You can find more information about starting microfrontends using gateway or alone in the generated README. See [jhipster-micro-frontends](https://github.com/mraible/jhipster-micro-frontends) for an example.
+您可以在生成的 README 中找到有关使用网关或独立启动微前端的更多信息。有关示例，请参见 [jhipster-micro-frontends](https://github.com/mraible/jhipster-micro-frontends)。
 
-## Distributed caching with Hazelcast
+## 使用 Hazelcast 进行分布式缓存
 
-If your application uses an SQL database, JHipster proposes a different 2nd-level caching solution with microservices:
+如果您的应用程序使用 SQL 数据库，JHipster 会为微服务提供不同的二级缓存解决方案：
 
-- JHipster's default caching solution with microservices is Hazelcast
-- You can still choose Ehcache (the default solution with monolith applications) or Caffeine or choose not to use a cache at all
+- JHipster 与微服务的默认缓存解决方案是 Hazelcast
+- 您仍然可以选择 Ehcache（单体应用程序的默认解决方案）或 Caffeine 或选择根本不使用缓存
 
-This solution is the default with microservices, as in this architecture the idea is that you will scale your services:
+这是微服务的默认解决方案，因为在这种架构中，想法是您将扩展您的服务：
 
-- with a local cache, your service instances won't have a synchronized cache, resulting in incorrect data
-- without any cache, the burden of scaling will be pushed to the database, which won't be very good at it (unless you use our Cassandra option)
+- 使用本地缓存，您的服务实例将不会同步缓存，导致数据不正确
+- 不使用任何缓存，扩展的负担将推给数据库，而这不会很好（除非您使用我们的 Cassandra 选项）
 
-Using Hazelcast with microservices will result in a specific configuration:
+在微服务中使用 Hazelcast 将导致特定配置：
 
-- At start-up, your application will connect to the Service Registry to find if other instances of the same service are running
-- With the `dev` profile, JHipster will create a cluster of those instances on localhost (`127.0.0.1`),  using a different port per instance. By default, the Hazelcast port is `your application's port + 5701` (so if your application's port is `8081`, Hazelcast will use port `13782`)
-- With the `prod` profile, JHipster will create a cluster with all the other nodes it finds, using the default Hazelcast port (`5701`)
+- 在启动时，您的应用程序将连接到服务注册中心以查找是否有其他相同服务的实例正在运行
+- 使用 `dev` 配置文件，JHipster 将在 localhost (`127.0.0.1`) 上创建这些实例的集群，每个实例使用不同的端口。默认情况下，Hazelcast 端口是 `您的应用程序端口 + 5701`（所以如果您的应用程序端口是 `8081`，Hazelcast 将使用端口 `13782`）
+- 使用 `prod` 配置文件，JHipster 将使用默认 Hazelcast 端口 (`5701`) 创建与它找到的所有其他节点的集群
 
-## Microservices with no database
+## 没有数据库的微服务
 
-Microservices applications can be created without a database. This is because microservices are small and do not have user-management code.
+微服务应用程序可以在没有数据库的情况下创建。这是因为微服务很小，不包含用户管理代码。
 
-A microservice without a database is very small, and could be used to connect to a specific back-end like a legacy system or serve as a proxy to other services outside your realm.
+没有数据库的微服务非常小，可以用于连接到特定的后端，如遗留系统或作为代理连接到您领域之外的其他服务。

@@ -1,5 +1,5 @@
 ---
-title: Issue of @OneToOne with @MapsId and how to avoid it
+title: \@OneToOne 与 @MapsId 的问题以及如何避免它
 slug: /tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html
 last_update:
   date: 2019-03-05T18:20:00-00:00
@@ -7,11 +7,11 @@ last_update:
 
 __Tip submitted by [@pmverma](https://github.com/pmverma)__
 
-Following is a known issue regarding using `@OneToOne` with `@MapsId` and some tips to avoid it.
+以下是关于使用 `@OneToOne` 与 `@MapsId` 的已知问题以及避免它的一些提示。
 
-### The issue
+### 问题
 
-Let's say you have a `Preference` class which you have associated to `User` with `@OneToOne @MapsId`.
+假设你有一个 `Preference` 类，你已经用 `@OneToOne @MapsId` 将其关联到 `User`。
 
 ```java
 class Preference {
@@ -21,21 +21,21 @@ class Preference {
 }
 ```
 
-Normally with JHipster:
+通常在 JHipster 中：
 
-1. When you add a `preference`  for a user, you will fill the data and select a user `user01` login from dropdown and save.
-2. If you want to edit the same `preference`, you will still have the option to select user and if you select `user02` this time then backend side will have the `user02` in `preference` object for the whole request lifetime.
-3.  Again if you reload the same `preference` then you will see that `user01` is there, not `user02`.
+1. 当你为用户添加 `preference` 时，你将填写数据并从下拉列表中选择用户 `user01` 登录名并保存。
+2. 如果你想编辑相同的 `preference`，你仍然可以选择用户，如果你这次选择 `user02`，那么在整个请求生命周期中，后端的 `preference` 对象中将有 `user02`。
+3. 再次如果你重新加载相同的 `preference`，那么你会看到 `user01` 在那里，而不是 `user02`。
 
-The incorrect part here is:
+这里不正确的部分是：
 
-**`user02` in `preference` object in no.2 step.** The user object in `preference` should always refer to `user01`.
+**第 2 步中 `preference` 对象中的 `user02`。** `preference` 中的 user 对象应该始终引用 `user01`。
 
-For more information, take a look at [https://github.com/jhipster/generator-jhipster/issues/9100](https://github.com/jhipster/generator-jhipster/issues/9100)
+有关更多信息，请查看 [https://github.com/jhipster/generator-jhipster/issues/9100](https://github.com/jhipster/generator-jhipster/issues/9100)
 
-### Tips to avoid it
+### 避免它的提示
 
-* Hide the dropdown and set the current user in `preference` **at client side** programmatically. (Again this kind of solution is only valid for entities such as Preference, Settings, User Profile and so on, where having a dropdown to choose user does not makes sense. )
-* Hide the dropdown and set the current user in `preference` **at server side** programmatically. (Again this kind of solution is only valid for entities such as Preference, Settings, User Profile and so on, where having a dropdown to choose user does not makes sense. JHipster have already provided a method to get current user.)
-* Validate and load the correct association value before doing any business logic on that user. (Again this is needed only if your logic depends on `preference.getUser()`
-* If you are using Hibernate 5.4.2 and later then you will get correct association value but only after entity merge operation has finished. So if your business logic is executed before entity merge operation, you have to take care of it otherwise you might get incorrect results.
+* 隐藏下拉列表并在**客户端**以编程方式在 `preference` 中设置当前用户。（同样，这种解决方案仅适用于 Preference、Settings、User Profile 等实体，在这些实体中选择用户的下拉列表没有意义。）
+* 隐藏下拉列表并在**服务器端**以编程方式在 `preference` 中设置当前用户。（同样，这种解决方案仅适用于 Preference、Settings、User Profile 等实体，在这些实体中选择用户的下拉列表没有意义。JHipster 已经提供了获取当前用户的方法。）
+* 在对该用户执行任何业务逻辑之前验证并加载正确的关联值。（同样，仅当你的逻辑依赖于 `preference.getUser()` 时才需要这样做）
+* 如果你使用的是 Hibernate 5.4.2 及更高版本，那么你将获得正确的关联值，但仅在实体合并操作完成后。因此，如果你的业务逻辑在实体合并操作之前执行，你必须处理它，否则你可能会得到不正确的结果。

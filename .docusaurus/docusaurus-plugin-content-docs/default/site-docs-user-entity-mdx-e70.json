@@ -1,0 +1,31 @@
+{
+  "id": "user-entity",
+  "title": "The User entity",
+  "description": "This is not created for microservices using some kinds of security, as detailed here.",
+  "source": "@site/docs/user-entity.mdx",
+  "sourceDirName": ".",
+  "slug": "/user-entity/",
+  "permalink": "/cn/user-entity/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/user-entity.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1600041642000,
+  "frontMatter": {
+    "title": "The User entity",
+    "slug": "/user-entity/",
+    "last_update": {
+      "date": "2020-09-14T00:00:42.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Time Drift in Docker",
+    "permalink": "/cn/tips/032_tip_time_drift_docker.html"
+  },
+  "next": {
+    "title": "Remove the register account service",
+    "permalink": "/cn/tips/034_tip_remove_register_account_service.html"
+  }
+}

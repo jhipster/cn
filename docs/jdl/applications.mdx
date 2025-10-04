@@ -1,13 +1,13 @@
 ---
-title: JHipster Domain Language (JDL) - Applications
+title: JHipster 领域语言 (JDL) - 应用程序
 slug: /jdl/applications
 last_update:
   date: 2019-10-27T12:00:00-00:00
 ---
 
-## Syntax
+## 语法
 
-The application declaration is done as follows:
+应用程序声明如下所示：
 
 ```jdl
 application {
@@ -19,23 +19,21 @@ application {
 }
 ```
 
-- Application configuration keys/values are specified under `config` (which must be inside `application`)
-- There can be 0, 1 or any application option as you want (provided they are valid)
-- Entities that will be generated inside the application are listed via `entities`, this is the recommended way to
-  generate entities in applications.
-  - This can be omitted but generating entities inside the app would require doing it:
-    - from another JDL file inside the app
-    - or with the CLI
-- The `entities` keyword is optional: you can omit it, but every entity in the JDL file will be generated inside the
-  application
-- Applications can have regular options (like `dto` or `service`), more information in the [next](#options-in-applications) section.
+- 应用程序配置的键/值在 `config` 下指定（必须在 `application` 内）
+- 可以有 0、1 或任意数量的应用程序选项（只要它们是有效的）
+- 将在应用程序内生成的实体通过 `entities` 列出，这是在应用程序中生成实体的推荐方式。
+  - 这可以省略，但在应用程序内生成实体需要：
+    - 从应用程序内的另一个 JDL 文件
+    - 或使用 CLI
+- `entities` 关键字是可选的：您可以省略它，但 JDL 文件中的每个实体都将在应用程序内生成
+- 应用程序可以有常规选项（如 `dto` 或 `service`），更多信息请参阅[下一节](#应用程序中的选项)。
 
 
-## Options in applications
+## 应用程序中的选项
 
-Option declarations (`dto`, `service`, `skipServer`, etc.) are supported in JDL applications, but with some rules.
+JDL 应用程序支持选项声明（`dto`、`service`、`skipServer` 等），但有一些规则。
 
-Say we have this JDL file:
+假设我们有这个 JDL 文件：
 
 ```jdl
 application {
@@ -72,53 +70,50 @@ entity F
 paginate * with infinite-scroll
 ```
 
-In this sample, we can see a few things:
+在此示例中，我们可以看到一些内容：
 
-- There are 6 declared entities in the JDL file: `A, B, C, D, E and F`.
-- We have 3 applications: `app1, app2 and app3`
-  - `app1` uses `A, B and C`
-  - `app2` uses `C and D`
-  - `app3` uses `E` (`* except A, B, C, D, F`)
-- Each of these applications declare options and a **global** option in also declared.
-  - `app1` uses `dto` for `A, B and C`
-  - `app2` uses `paginate` for `C` (because there's an exception)
-  - `app3` uses `service` for `E`
-  - The global one also uses `pagination` (for every entity)
+- JDL 文件中声明了 6 个实体：`A、B、C、D、E 和 F`。
+- 我们有 3 个应用程序：`app1、app2 和 app3`
+  - `app1` 使用 `A、B 和 C`
+  - `app2` 使用 `C 和 D`
+  - `app3` 使用 `E`（`* except A, B, C, D, F`）
+- 这些应用程序中的每一个都声明了选项，还声明了一个**全局**选项。
+  - `app1` 为 `A、B 和 C` 使用 `dto`
+  - `app2` 为 `C` 使用 `paginate`（因为有异常）
+  - `app3` 为 `E` 使用 `service`
+  - 全局选项也使用 `pagination`（对于每个实体）
 
-Here's how files are generated:
+以下是文件生成的方式：
 
 - `app1`
-  - `A`: will use `paginate with infinite-scroll` (the global option isn't overridden by a local one) and
-    `dto with mapstruct`
-  - `B`: will use the same options
-  - `C`: will also use the same options
+  - `A`: 将使用 `paginate with infinite-scroll`（全局选项不会被本地选项覆盖）和 `dto with mapstruct`
+  - `B`: 将使用相同的选项
+  - `C`: 也将使用相同的选项
 - `app2`:
-  - `C`: will use `paginate with pagination` (and not `infinite-scroll`, because the local one takes precedence)
-  - `D`: will use `paginate with infinite-scroll` as the previous option doesn't include `D`
+  - `C`: 将使用 `paginate with pagination`（而不是 `infinite-scroll`，因为本地选项优先）
+  - `D`: 将使用 `paginate with infinite-scroll`，因为前面的选项不包括 `D`
 - `app3`:
-  - `E`: will `paginate with infinite-scroll` and `service E with serviceClass`
+  - `E`: 将使用 `paginate with infinite-scroll` 和 `service E with serviceClass`
 
-This example illustrates the **shadowing** principle. Global options are supported and will be used by every declared
-application **unless** options are also declared in applications.
+此示例说明了**遮蔽**原则。支持全局选项，每个声明的应用程序都将使用全局选项，**除非**在应用程序中也声明了选项。
 
-Also note this snippet taken from the previous sample in `app3`:
+另请注意从 `app3` 中的前一个示例中提取的代码片段：
 
 ```jdl
 entities * except A, B, C, D, F
 service * with serviceClass
 ```
 
-This basically means that `app3` will only use `E` and that the application's entities will use the `service` option,
-that means `E` and not `A to F`.
+这基本上意味着 `app3` 将只使用 `E`，应用程序的实体将使用 `service` 选项，这意味着 `E` 而不是 `A 到 F`。
 
-Finally, there the `F` entity which isn't in any application and this entity will not be generated because of that.
+最后，有一个 `F` 实体不在任何应用程序中，因此不会生成此实体。
 
-_Note: all regular options are supported at the moment._
+_注意：目前支持所有常规选项。_
 
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
 ```jdl
 application {
@@ -129,7 +124,7 @@ application {
 }
 ```
 
-### More than one application
+### 多个应用程序
 
 ```jdl
 application {
@@ -157,7 +152,7 @@ application {
 }
 ```
 
-### With entities
+### 包含实体
 
 ```jdl
 application {
@@ -183,7 +178,7 @@ entity B
 entity C
 ```
 
-### With options
+### 包含选项
 
 ```jdl
 application {
@@ -212,9 +207,9 @@ entity C
 ```
 
 
-## Complete example breakdowns
+## 完整示例分解
 
-Example 1:
+示例 1：
 
 ```jdl
 application {
@@ -256,39 +251,39 @@ service * with serviceClass
 paginate D with pagination
 ```
 
-Now, several things will happen when generating these applications and folders:
+现在，在生成这些应用程序和文件夹时将会发生以下情况：
 
-- Four applications will be created:
-  - myMonolith in `./myMonolith`, with the server port `8080`
-  - myGateway in `./myGateway`, with the server port `9042`
-  - microserviceA in `./microserviceA`, with the server port `8081`
-    - Even though we didn't specify a server port, JHipster sets one by default.
-    - For microservices, the default one is `8081`
-    - For gateways and monoliths, it's `8080`
-  - microserviceB in `./microserviceB` with the server port `8082`
-- Four entities will be generated
-  - `A` and `B` in the monolith
-  - `C` and `D` both in the gateway
-    - `C` in the first microservice
-    - `D` in the second microservice
-- The `microservice` option is implicit for `C` and `D`
-  - Because they get generated on the two microservices, this option will be set by default.
-- Options work the same way as before
+- 将创建四个应用程序：
+  - myMonolith 在 `./myMonolith` 中，服务器端口为 `8080`
+  - myGateway 在 `./myGateway` 中，服务器端口为 `9042`
+  - microserviceA 在 `./microserviceA` 中，服务器端口为 `8081`
+    - 尽管我们没有指定服务器端口，但 JHipster 默认设置了一个。
+    - 对于微服务，默认端口是 `8081`
+    - 对于网关和单体应用，默认端口是 `8080`
+  - microserviceB 在 `./microserviceB` 中，服务器端口为 `8082`
+- 将生成四个实体
+  - `A` 和 `B` 在单体应用中
+  - `C` 和 `D` 都在网关中
+    - `C` 在第一个微服务中
+    - `D` 在第二个微服务中
+- `microservice` 选项对于 `C` 和 `D` 是隐式的
+  - 因为它们在两个微服务上生成，所以这个选项将默认设置。
+- 选项的工作方式与以前相同
 
-Note that the generator sets default values if they aren't present (like the `databaseType`).
-JHipster Core does the exact same things for you.
+请注意，生成器会设置默认值（如 `databaseType`），如果它们不存在的话。
+JHipster Core 为您做的完全相同的事情。
 
-Example 2: with options
+示例 2：包含选项
 
-See the [option section](#options-in-applications).
+请参阅[应用程序中的选项部分](#应用程序中的选项)。
 
 
-## Microservice workflow
+## 微服务工作流
 
-Dealing with microservices is a almost tricky, but the JDL gives you some options to handle your entities as you see fit.
-With the `microservice <ENTITIES> with <MICROSERVICE_APP_NAME>` you can specify which entity gets generated in which microservice.
+处理微服务几乎是复杂的，但 JDL 为您提供了一些选项来按您的意愿处理您的实体。
+使用 `microservice <ENTITIES> with <MICROSERVICE_APP_NAME>`，您可以指定哪个实体在哪个微服务中生成。
 
-Take this setup for instance:
+以此设置为例：
 
 ```
 entity A
@@ -298,22 +293,18 @@ microservice A with firstMS
 microservice B with secondMS
 ```
 
-Given two JHipster applications ('firstMS' and 'secondMS'), here's what you're going to get if you import the JDL file
-in the two applications:
+给定两个 JHipster 应用程序（'firstMS' 和 'secondMS'），如果您在这两个应用程序中导入 JDL 文件，您将得到以下结果：
 
-- In 'firstMS', entities `A` and `C` will be generated.
-- In 'secondMS', entities `B` and `C` will be generated.
+- 在 'firstMS' 中，将生成实体 `A` 和 `C`。
+- 在 'secondMS' 中，将生成实体 `B` 和 `C`。
 
-`C` gets generated in both because if there's no microservice option specifying where this entity gets generated, it
-will be generated everywhere.
+`C` 在两个应用中都会生成，因为如果没有微服务选项指定此实体在哪里生成，它将在所有地方生成。
 
-If you decide to import this JDL in a monolith app, every entity will be generated (monoliths don't have restriction
-options in the JDL).
+如果您决定在单体应用中导入此 JDL，将生成每个实体（单体应用在 JDL 中没有限制选项）。
 
-_Note: if you want to make the same entity be generated in two different microservices, you can write two JDL files
-instead of updating the JDL file. Everytime._
+_注意：如果您希望在两个不同的微服务中生成相同的实体，您可以编写两个 JDL 文件，而不是更新 JDL 文件。每次都是如此。_
 
-The previous example couldn't have been written like this:
+前面的示例不能这样写：
 
 ```
 entity A
@@ -323,58 +314,58 @@ microservice * except B with firstMS
 microservice * except A with secondMS
 ```
 
-Here's the result:
+结果如下：
 
-- In 'firstMS', only the entity `C` will be generated
-- In 'secondMS', entities `B` and `C` will be generated.
+- 在 'firstMS' 中，只会生成实体 `C`
+- 在 'secondMS' 中，将生成实体 `B` 和 `C`。
 
-It's because, at parsing-time, if an option overlaps with another, the latter takes precedence.
-You can also create an entire microservice stack using JDL, [see this blog post](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77) for example
+这是因为，在解析时，如果一个选项与另一个选项重叠，后者优先。
+您也可以使用 JDL 创建整个微服务堆栈，[请参阅此博客文章](https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77)以获取示例
 
 
-## Available application configuration options
+## 可用的应用程序配置选项
 
-Here are the application options supported in the JDL:
+以下是 JDL 中支持的应用程序选项：
 
-_Not what you're looking for? Check the [regular options](/jdl/options#available-options)._
+_不是您要找的？请查看[常规选项](/jdl/options#available-options)。_
 
 |JDL option name     |Default value       |Possible values                                                                                                         |Comment                                                                                                     |
 |--------------------|--------------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 |applicationType     |monolith            |monolith, microservice, gateway                                                                                         |-                                                                                                           |
 |authenticationType  |jwt                 |jwt, session, oauth2                                                                                                    |jwt                                                                                                         |
 |baseName            |jhipster            |-                                                                                                                       |-                                                                                                           |
-|~blueprint~         |DEPRECATED          |~Name of an additional blueprint~                                                                                       |See [blueprints](/jdl/applications#blueprints)                                                              |
-|blueprints          |[]                  |Names of additional blueprints. See [Marketplace](/modules/marketplace) including custom blueprints internally published|Array of blueprints to use, e.g., `[blueprint1, blueprint2]`                                                |
+|~blueprint~         |已弃用          |~额外蓝图的名称~                                                                                              |参阅 [蓝图](/jdl/applications#blueprints)                                                                 |
+|blueprints          |[]                  |额外蓝图的名称。参阅 [市场](/modules/marketplace)，包括内部发布的自定义蓝图             |要使用的蓝图数组，例如：`[blueprint1, blueprint2]`                                             |
 |buildTool           |maven               |maven, gradle                                                                                                           |-                                                                                                           |
-|cacheProvider       |ehcache or hazelcast|caffeine, ehcache, hazelcast, infinispan, memcached, redis, no                                                          |ehcache for monoliths and gateways, hazelcast otherwise                                                     |
+|cacheProvider       |ehcache 或 hazelcast|caffeine, ehcache, hazelcast, infinispan, memcached, redis, no                                                          |单体应用和网关使用 ehcache，其他情况使用 hazelcast                                             |
 |clientFramework     |angularX            |angularX, angular, react, vue, svelte, no                                                                               |-                                                                                                           |
 |clientPackageManager|npm                 |npm                                                                                                                     |-                                                                                                           |
-|clientTheme         |none                |Something or none                                                                                                       |You can put whatever value you want, provided you know it will work (like yeti)                             |
-|clientThemeVariant  |-                   |Something or primary                                                                                                    |You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty|
+|clientTheme         |none                |任意值或 none                                                                                                     |您可以输入任何您知道会工作的值（如 yeti）                                                    |
+|clientThemeVariant  |-                   |任意值或 primary                                                                                                  |您可以输入任何您知道会工作的值（如 dark 或 light），也可以为空               |
 |databaseType        |sql                 |sql, mongodb, cassandra, couchbase, no                                                                                  |-                                                                                                           |
-|devDatabaseType     |h2Disk              |h2Disk, h2Memory                                                                                                        |* + the prod database type                                                                                  |
-|dtoSuffix           |DTO                 |-                                                                                                                       |Suffix for DTOs. false for empty string                                                                     |
+|devDatabaseType     |h2Disk              |h2Disk, h2Memory                                                                                                        |* + 生产数据库类型                                                                                   |
+|dtoSuffix           |DTO                 |-                                                                                                                       |DTO 的后缀。false 表示空字符串                                                                      |
 |enableHibernateCache|true                |-                                                                                                                       |-                                                                                                           |
 |enableSwaggerCodegen|false               |-                                                                                                                       |-                                                                                                           |
 |enableTranslation   |true                |-                                                                                                                       |-                                                                                                           |
-|entitySuffix        |-                   |-                                                                                                                       |Suffix for entities. false for empty string                                                                 |
+|entitySuffix        |-                   |-                                                                                                                       |实体的后缀。false 表示空字符串                                                                        |
 |jhiPrefix           |jhi                 |-                                                                                                                       |-                                                                                                           |
-|languages           |[en, fr]            |Languages available in JHipster                                                                                         |Braces are mandatory                                                                                        |
+|languages           |[en, fr]            |JHipster 中可用的语言                                                                                              |必须使用方括号                                                                                       |
 |messageBroker       |no                  |kafka, pulsar, no                                                                                                       |-                                                                                                           |
-|nativeLanguage      |en                  |Any language supported by JHipster                                                                                      |-                                                                                                           |
-|packageName         |com.mycompany.myapp |-                                                                                                                       |Sets the packageFolder option                                                                               |
+|nativeLanguage      |en                  |JHipster 支持的任何语言                                                                                        |-                                                                                                           |
+|packageName         |com.mycompany.myapp |-                                                                                                                       |设置 packageFolder 选项                                                                                    |
 |prodDatabaseType    |mysql               |mysql, mariadb, mssql, postgresql, oracle, no                                                                           |-                                                                                                           |
 |reactive            |false               |-                                                                                                                       |-                                                                                                           |
 |searchEngine        |no                  |elasticsearch, couchbase, no                                                                                            |-                                                                                                           |
-|serverPort          |8080, 8081 or 9999  |-                                                                                                                       |Depends on the app type                                                                                     |
+|serverPort          |8080, 8081 或 9999  |-                                                                                                                       |取决于应用程序类型                                                                                     |
 |serviceDiscoveryType|no                  |consul, eureka, no                                                                                                      |-                                                                                                           |
 |skipClient          |false               |-                                                                                                                       |-                                                                                                           |
 |skipServer          |false               |-                                                                                                                       |-                                                                                                           |
 |skipUserManagement  |false               |-                                                                                                                       |-                                                                                                           |
-|testFrameworks      |[]                  |cypress, protractor, cucumber, gatling                                                                                  |Braces mandatory                                                                                            |
+|testFrameworks      |[]                  |cypress, protractor, cucumber, gatling                                                                                  |必须使用方括号                                                                                       |
 |websocket           |no                  |spring-websocket, no                                                                                                    |-                                                                                                           |
 
 
-## See also
+## 参阅
 
-The regular options are available [here](/jdl/options)
+常规选项可在[此处](/jdl/options)查看

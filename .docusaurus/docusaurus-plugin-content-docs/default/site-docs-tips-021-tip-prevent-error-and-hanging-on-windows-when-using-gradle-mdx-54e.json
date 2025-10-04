@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_prevent_error_and_hanging_on_windows_when_using_gradle",
+  "title": "Prevent error/hanging on Windows when using Gradle",
+  "description": "/!\\ This tip is deprecated since JHipster v4.1.1 as we upgraded to Gradle 3.4",
+  "source": "@site/docs/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.html",
+  "permalink": "/cn/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1483482600000,
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "title": "Prevent error/hanging on Windows when using Gradle",
+    "slug": "/tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.html",
+    "last_update": {
+      "date": "2017-01-03T22:30:00.000Z"
+    }
+  }
+}

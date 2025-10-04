@@ -1,0 +1,31 @@
+{
+  "id": "blueprints/quarkus/creating-an-entity",
+  "title": "Creating an entity",
+  "description": "Introduction",
+  "source": "@site/docs/blueprints/quarkus/creating-an-entity.mdx",
+  "sourceDirName": "blueprints/quarkus",
+  "slug": "/blueprints/quarkus/003_creating_an_entity.html",
+  "permalink": "/cn/blueprints/quarkus/003_creating_an_entity.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/blueprints/quarkus/creating-an-entity.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1610008800000,
+  "frontMatter": {
+    "title": "Creating an entity",
+    "slug": "/blueprints/quarkus/003_creating_an_entity.html",
+    "last_update": {
+      "date": "2021-01-07T08:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Creating an application",
+    "permalink": "/cn/blueprints/quarkus/002_creating_an_application.html"
+  },
+  "next": {
+    "title": "JHipster IDE",
+    "permalink": "/cn/jhipster-ide/"
+  }
+}

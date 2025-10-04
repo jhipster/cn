@@ -1,14 +1,14 @@
 ---
-title: Using MongoDB
+title: 使用 MongoDB
 slug: /using-mongodb/
 last_update:
   date: 2015-02-24T00:00:00-00:00
 ---
 
-MongoDB is one of the supported databases that can be selected when your application is being generated.
+MongoDB 是在生成应用程序时可以选择的支持数据库之一。
 
-When MongoDB is selected:
+当选择 MongoDB 时：
 
-* Spring Data MongoDB will be used to access the database. This is very close to Spring Data JPA, and this is why MongoDB support is very close to the (default) JPA support
-* [Mongock](https://www.mongock.io) is used instead of [Liquibase](http://www.liquibase.org/) to manage database changes
-* [de.flapdoodle.embed.mongo](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo) is used to run an in-memory version of the database for running unit tests.
+* 将使用 Spring Data MongoDB 来访问数据库。这非常接近 Spring Data JPA，这就是为什么 MongoDB 支持非常接近（默认）JPA 支持的原因
+* 使用 [Mongock](https://www.mongock.io) 而不是 [Liquibase](http://www.liquibase.org/) 来管理数据库更改
+* 使用 [de.flapdoodle.embed.mongo](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo) 来运行内存版本的数据库以运行单元测试。

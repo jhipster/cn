@@ -1,0 +1,31 @@
+{
+  "id": "tests-and-qa/dependency-vulnerabities-check",
+  "title": "Dependency Vulnerabilities Check",
+  "description": "Why project dependencies should be checked",
+  "source": "@site/docs/tests-and-qa/dependency-vulnerabities-check.mdx",
+  "sourceDirName": "tests-and-qa",
+  "slug": "/dependency-vulnerabities-check/",
+  "permalink": "/cn/dependency-vulnerabities-check/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tests-and-qa/dependency-vulnerabities-check.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1537038000000,
+  "frontMatter": {
+    "title": "Dependency Vulnerabilities Check",
+    "slug": "/dependency-vulnerabities-check/",
+    "last_update": {
+      "date": "2018-09-15T19:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "代码质量",
+    "permalink": "/cn/code-quality/"
+  },
+  "next": {
+    "title": "Setting up Continuous Integration",
+    "permalink": "/cn/setting-up-ci/"
+  }
+}

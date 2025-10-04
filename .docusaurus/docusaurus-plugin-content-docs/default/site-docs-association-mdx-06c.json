@@ -1,0 +1,31 @@
+{
+  "id": "association",
+  "title": "JHipster Developers Association",
+  "description": "The \"JHipster Developers Association\" is a French non-profit association (\"Association loi 1901\"), and serves as a legal entity for JHipster events and services.",
+  "source": "@site/docs/association.mdx",
+  "sourceDirName": ".",
+  "slug": "/association/",
+  "permalink": "/cn/association/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/association.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1535068800000,
+  "frontMatter": {
+    "title": "JHipster Developers Association",
+    "slug": "/association/",
+    "last_update": {
+      "date": "2018-08-24T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Allow common web fonts in Spring Security",
+    "permalink": "/cn/tips/036_tip_allow_common_web_fonts_in_spring_security.html"
+  },
+  "next": {
+    "title": "JHipster Tech Board",
+    "permalink": "/cn/tech-board/"
+  }
+}

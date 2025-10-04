@@ -1,0 +1,31 @@
+{
+  "id": "development/customizing-bootstrap",
+  "title": "Customizing Bootstrap",
+  "description": "Basic customization",
+  "source": "@site/docs/development/customizing-bootstrap.mdx",
+  "sourceDirName": "development",
+  "slug": "/customizing-bootstrap/",
+  "permalink": "/cn/customizing-bootstrap/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/customizing-bootstrap.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1725967800000,
+  "frontMatter": {
+    "title": "Customizing Bootstrap",
+    "slug": "/customizing-bootstrap/",
+    "last_update": {
+      "date": "2024-09-10T11:30:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Vue",
+    "permalink": "/cn/using-vue/"
+  },
+  "next": {
+    "title": "使用 TLS 和 HTTP/2",
+    "permalink": "/cn/tls/"
+  }
+}

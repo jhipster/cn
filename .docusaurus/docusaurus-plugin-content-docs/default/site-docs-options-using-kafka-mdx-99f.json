@@ -1,0 +1,31 @@
+{
+  "id": "options/using-kafka",
+  "title": "Using Kafka",
+  "description": "Features",
+  "source": "@site/docs/options/using-kafka.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-kafka/",
+  "permalink": "/cn/using-kafka/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-kafka.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1572393600000,
+  "frontMatter": {
+    "title": "Using Kafka",
+    "slug": "/using-kafka/",
+    "last_update": {
+      "date": "2019-10-30T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Cassandra",
+    "permalink": "/cn/using-cassandra/"
+  },
+  "next": {
+    "title": "使用 Pulsar",
+    "permalink": "/cn/using-pulsar/"
+  }
+}

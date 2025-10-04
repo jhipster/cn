@@ -1,69 +1,69 @@
 ---
-title: Using Elasticsearch
+title: 使用 Elasticsearch
 slug: /using-elasticsearch/
 last_update:
   date: 2023-07-12T00:00:00-00:00
 ---
 
-Elasticsearch is an option that adds search capabilities on top of your database.
+Elasticsearch 是一个选项，在您的数据库之上添加搜索功能。
 
-This option has some limitations:
+这个选项有一些限制：
 
-* It only works with SQL databases and MongoDB. Cassandra and Couchbase support will be added in the future (help is welcome!).
-* There is no automatic replication mechanism between your database and Elasticsearch, so you might have out-of-sync data. As a result, you will probably need to write some specific code to synchronize your data, for example using the Spring `@Scheduled` annotation, to run every evening.
-  * This also means if your database is changed outside of your application, your search indexes will be out-of-sync. The [Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer) JHipster module can help in these situations.
+* 它只适用于 SQL 数据库和 MongoDB。Cassandra 和 Couchbase 支持将在未来添加（欢迎帮助！）。
+* 在您的数据库和 Elasticsearch 之间没有自动复制机制，所以您可能会有不同步的数据。因此，您可能需要编写一些特定代码来同步您的数据，例如使用 Spring `@Scheduled` 注解，每天晚上运行。
+  * 这也意味着如果您的数据库在您的应用程序之外被更改，您的搜索索引将不同步。[Elasticsearch Reindexer](https://www.jhipster.tech/modules/marketplace/#/details/generator-jhipster-elasticsearch-reindexer) JHipster 模块可以在这些情况下提供帮助。
 
-When the Elasticsearch option is selected:
+当选择 Elasticsearch 选项时：
 
-* Spring Data Elasticsearch is used with Spring Boot's autoconfiguration. It can be configured using `spring.elasticsearch.*` configuration properties.
-* The "repository" package has a new subpackage, called "search", that holds all Elasticsearch repositories.
-* The "User" entity gets indexed in Elasticsearch, and you can query it using the `/api/_search/users/:query` REST endpoint.
-* When the [entity sub-generator](/creating-an-entity) is used, the generated entity gets automatically indexed by Elasticsearch, and is used in the REST endpoint. Search capabilities are also added to the UI, so you can search your entity in the main CRUD screen.
+* Spring Data Elasticsearch 与 Spring Boot 的自动配置一起使用。它可以使用 `spring.elasticsearch.*` 配置属性进行配置。
+* "repository" 包有一个新的子包，叫做 "search"，它保存所有 Elasticsearch 仓库。
+* "User" 实体在 Elasticsearch 中被索引，您可以使用 `/api/_search/users/:query` REST 端点查询它。
+* 当使用[实体子生成器](/creating-an-entity)时，生成的实体会自动被 Elasticsearch 索引，并在 REST 端点中使用。搜索功能也被添加到 UI 中，所以您可以在主 CRUD 屏幕中搜索您的实体。
 
 
-## Using in Development
+## 在开发中使用
 
-In development, JHipster runs with an embedded Elasticsearch instance. You can also use an external Elasticsearch instance if you set a `SPRING_DATA_URIS` environment variable (or add a `spring.elasticsearch.uris` property to your `application-dev.yml`).
+在开发中，JHipster 使用嵌入式 Elasticsearch 实例运行。如果您设置了 `SPRING_DATA_URIS` 环境变量（或在您的 `application-dev.yml` 中添加了 `spring.elasticsearch.uris` 属性），您也可以使用外部 Elasticsearch 实例。
 
-The easiest way to run an external Elasticsearch instance is to use the provided Docker Compose configuration:
+运行外部 Elasticsearch 实例的最简单方法是使用提供的 Docker Compose 配置：
 
 ```shell
 docker-compose -f src/main/docker/elasticsearch.yml up -d
 ```
 
-Then set an environment variable to point to it:
+然后设置一个环境变量指向它：
 
 ```shell
 export SPRING_DATA_URIS=http://localhost:9200
 ```
 
-## Using in Production
+## 在生产中使用
 
-In production, JHipster expects an external Elasticsearch instance. By default, the application looks for an Elasticsearch instance running on localhost. This can be configured by using the standard Spring Boot properties, in the `application-prod.yml` file.
-
-
-## Using on Heroku
-
-On Heroku, the [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) is configured as an add-on. JHipster is automatically configured to talk to it. 
-
-Unfortunately, as of JHipster 7.9.3, Elasticsearch [doesn't work out of the box with Heroku](https://github.com/jhipster/generator-jhipster/issues/20315). To solve this, you can create a Docker image with Elasticsearch and deploy it to somewhere that can run it, or you can use Elastic Cloud. We don't automatically configure the [Elasticsearch Add-on](https://elements.heroku.com/addons/foundelasticsearch) because its cheapest plan is 67 USD/month and that seems a little expensive.
+在生产中，JHipster 期望一个外部 Elasticsearch 实例。默认情况下，应用程序寻找在 localhost 上运行的 Elasticsearch 实例。这可以通过在 `application-prod.yml` 文件中使用标准的 Spring Boot 属性进行配置。
 
 
-## Using Elastic Cloud
+## 在 Heroku 上使用
 
-You can [start a free trial](https://cloud.elastic.co/registration) on Elastic Cloud. After logging in, create a deployment. Use the default settings, select **7.17.7** as the version, and press **Create deployment**.
+在 Heroku 上，[Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) 被配置为一个附加组件。JHipster 被自动配置为与其通信。
 
-**WARNING**: Using the latest version will result in an "Unable to parse response body" error.
+不幸的是，截至 JHipster 7.9.3，Elasticsearch [在 Heroku 上无法开箱即用](https://github.com/jhipster/generator-jhipster/issues/20315)。要解决这个问题，您可以使用 Elasticsearch 创建 Docker 镜像并将其部署到可以运行它的地方，或者您可以使用 Elastic Cloud。我们不会自动配置 [Elasticsearch 附加组件](https://elements.heroku.com/addons/foundelasticsearch)，因为其最便宜的计划是 67 美元/月，这似乎有点贵。
 
-Download your credentials from the next screen and click **Continue**. Then, select **Manage this deployment** from the menu and copy the Elasticsearch endpoint. 
 
-Set the credentials and endpoint URL as a new `ELASTIC_URL` environment variable on Heroku.
+## 使用 Elastic Cloud
+
+您可以在 Elastic Cloud 上[开始免费试用](https://cloud.elastic.co/registration)。登录后，创建一个部署。使用默认设置，选择 **7.17.7** 作为版本，并按 **创建部署**。
+
+**警告**：使用最新版本将导致“无法解析响应主体”错误。
+
+从下一个屏幕下载您的凭据并点击 **继续**。然后，从菜单中选择 **管理此部署** 并复制 Elasticsearch 端点。
+
+在 Heroku 上将凭据和端点 URL 设置为新的 `ELASTIC_URL` 环境变量。
 
 ```shell
 heroku config:set ELASTIC_URL=https://elastic:<password>@<endpoint-url>
 ```
 
-Then, modify `heroku.gradle` to remove the workaround for Bonsai (that no longer works) and update `application-heroku.yml` to use `ELASTIC_URL`:
+然后，修改 `heroku.gradle` 来移除 Bonsai 的解决方案（不再工作）并更新 `application-heroku.yml` 以使用 `ELASTIC_URL`：
 
 ```yaml
 spring:
@@ -72,4 +72,4 @@ spring:
     uris: ${ELASTIC_URL}
 ```
 
-Redeploy your application to Heroku and everything should work as expected.
+将您的应用程序重新部署到 Heroku，一切都应该按预期工作。

@@ -1,0 +1,30 @@
+{
+  "id": "releases/index",
+  "title": "Release notes",
+  "description": "JHipster releases notes - latest updates, bug fixes",
+  "source": "@site/docs/releases/index.mdx",
+  "sourceDirName": "releases",
+  "slug": "/releases/",
+  "permalink": "/cn/releases/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/index.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release notes",
+    "description": "JHipster releases notes - latest updates, bug fixes",
+    "sidebar_class_name": "hidden",
+    "hide_table_of_contents": true
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Showcase of JHipster apps",
+    "permalink": "/cn/showcase/"
+  },
+  "next": {
+    "title": "Release 0.0.28",
+    "permalink": "/cn/2013/11/29/jhipster-release-0.0.28.html"
+  }
+}

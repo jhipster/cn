@@ -1,81 +1,81 @@
 ---
-title: Configuring Intellij IDEA
+title: 配置 Intellij IDEA
 slug: /configuring-ide-idea/
 last_update:
   date: 2015-11-28T17:13:00-00:00
 ---
 
-## Open your project
+## 打开您的项目
 
-- Open your project normally
-- Maven should be detected, and your project will build automatically
+- 正常打开您的项目
+- Maven 应该被检测到，您的项目将自动构建
 
-If you want more control on your setup, you can also choose "Import project".
+如果您想对设置有更多控制，您也可以选择“导入项目”。
 
 
-## Exclude directories
+## 排除目录
 
-If you use Git, initialize your project (`git init && git add . && git commit -m 'Initial commit'`), Intellij IDEA will automatically exclude directories which are ignored by Git (so you don't have anything to do).
+如果您使用 Git，初始化您的项目（`git init && git add . && git commit -m 'Initial commit'`），IntelliJ IDEA 将自动排除被 Git 忽略的目录（因此您不需要做任何事情）。
 
-To exclude directories manually:
+手动排除目录：
 
-- Right-click on the `node_modules/` folder
-- Select "Mark Directory As" and select "Excluded"
+- 右键单击 `node_modules/` 文件夹
+- 选择 "Mark Directory As" 并选择 "Excluded"
 
 ![Exclude](/images/configuring_ide_idea_1.png)
 
-**Note:** If you are using Intellij IDEA Ultimate and would like to use IDEA to code the frontend you should **not** exclude `node_modules` folder. Otherwise
-you will not have any code assistance for the frontend code!
+**注意：** 如果您使用的是 IntelliJ IDEA Ultimate 并且希望使用 IDEA 来编写前端代码，您应该**不要**排除 `node_modules` 文件夹。否则
+您将无法对前端代码获得任何代码辅助！
 
 
-## Spring Support (not available in Community Edition)
+## Spring 支持（社区版不可用）
 
-To add Spring support to many of the JHipster modules from a new project first go to `File → Project Structure`.
+要从新项目向许多 JHipster 模块添加 Spring 支持，首先转到 `File → Project Structure`。
 
 ![Project Structure](/images/configuring_ide_idea_2.png)
 
-Then go to the Modules tab, click on the `+` button, and then click on "Spring" to add Spring code assistance to your project.
+然后转到 Modules 选项卡，点击 `+` 按钮，然后点击 "Spring" 来向您的项目添加 Spring 代码辅助。
 
 ![Spring](/images/configuring_ide_idea_3.png)
 
-It will tell you there are unmapped Spring configuration files, click on the `+` sign on the  bottom right (not the original one) and select all the Spring files that belong to your project, clicking the folder is enough to select everything.
+它将告诉您有未映射的 Spring 配置文件，点击右下角的 `+` 号（不是原来的那个）并选择所有属于您项目的 Spring 文件，点击文件夹就足以选择所有内容。
 
 ![Spring Application Context](/images/configuring_ide_idea_4.png)
 
-After that click `OK`, and Spring should be configured with proper code assistance.
+之后点击 `OK`，Spring 应该会配置为提供适当的代码辅助。
 
-Now click on the original `+` button which you used to add Spring in the first place, and add Hibernate. 
-You do not need to add any files on this one, adding it there will give you Hibernate based code assistance. Remember to click `OK` on the Project structure dialog.
+现在点击您最初用来添加 Spring 的原 `+` 按钮，并添加 Hibernate。
+您不需要在此步骤上添加任何文件，在那里添加它将给您基于 Hibernate 的代码辅助。记得在项目结构对话框上点击 `OK`。
 
-You should now have Spring support for most of the codebase. You have to repeat this step every time you start a new project, as these settings are project-specific.
-
-
-## Application "hot restart" with Spring Boot devtools
-
-[Spring Boot devtools](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html) is configured by JHipster, and will "hot restart" your application when classes from your project are compiled. This is a must-have feature, as it makes your application updated on the fly.
-
-By default IntelliJ IDEA does not automatically compile files when the application is running. To enable the "Compile on save" feature:
-
-* Go to `File -> Settings -> Build, Execution, Deployment -> Compiler` and enable "Make project automatically"
-* Open the Action window :
-  * Linux : `CTRL+SHIFT+A`
-  * Mac OSX : `SHIFT+COMMAND+A`
-  * Windows : `CTRL+ALT+SHIFT+/`
-* Enter `Registry...` and enable `compiler.automake.allow.when.app.running`
-
-Note: For IntelliJ IDEA version 2021.2
-* Go to `File -> Settings -> Build, Execution, Deployment -> Compiler` and enable "Build project automatically"
-* Go to `File -> Advanced Settings -> Compiler` and enable "Allow auto-make to start even if developed application is currently running"
+您现在应该对大部分代码库都有 Spring 支持。每次开始新项目时，您都必须重复此步骤，因为这些设置是项目特定的。
 
 
-## Maven IDE profile
+## 使用 Spring Boot devtools 实现应用程序“热重启”
 
-If you are using Maven, you need to activate the `IDE` profile in IntelliJ. This is used for applying IDE-specific tweaks
-which currently only includes applying the MapStruct annotation processor.
+[Spring Boot devtools](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html) 由 JHipster 配置，并将在编译项目中的类时“热重启”您的应用程序。这是一个必备功能，因为它使您的应用程序实时更新。
 
-Open the "Maven Projects" tool window (View -> Tool Windows), check the `IDE` maven profile to activate it.
+默认情况下，IntelliJ IDEA 在应用程序运行时不会自动编译文件。要启用“保存时编译”功能：
+
+* 转到 `File -> Settings -> Build, Execution, Deployment -> Compiler` 并启用 "Make project automatically"
+* 打开操作窗口：
+  * Linux：`CTRL+SHIFT+A`
+  * Mac OSX：`SHIFT+COMMAND+A`
+  * Windows：`CTRL+ALT+SHIFT+/`
+* 输入 `Registry...` 并启用 `compiler.automake.allow.when.app.running`
+
+注意：对于 IntelliJ IDEA 版本 2021.2
+* 转到 `File -> Settings -> Build, Execution, Deployment -> Compiler` 并启用 "Build project automatically"
+* 转到 `File -> Advanced Settings -> Compiler` 并启用 "Allow auto-make to start even if developed application is currently running"
+
+
+## Maven IDE 配置文件
+
+如果您使用 Maven，则需要在 IntelliJ 中激活 `IDE` 配置文件。这用于应用 IDE 特定的调整，
+目前仅包括应用 MapStruct 注解处理器。
+
+打开 "Maven Projects" 工具窗口（View -> Tool Windows），勾选 `IDE` maven 配置文件以激活它。
 
 
 ## Gradle
 
-In order to get the best out-of-the-box experience with Gradle you should delegate all [IDE build/run actions to Gradle](https://www.jetbrains.com/idea/whatsnew/#v2017-3-gradle) directly. With this setting annotation processing is automatically configured and you won't have duplicated classes when mixing IDE and cli builds. If you are using an older version ( < 2016.3) you have to enable annotation processing manually.
+为了获得 Gradle 的最佳开箱即用体验，您应该将所有 [IDE 构建/运行操作委托给 Gradle](https://www.jetbrains.com/idea/whatsnew/#v2017-3-gradle) 直接处理。使用此设置，注解处理会自动配置，在混合 IDE 和 cli 构建时不会有重复的类。如果您使用的是较旧版本（< 2016.3），您必须手动启用注解处理。

@@ -1,0 +1,31 @@
+{
+  "id": "tech-board",
+  "title": "Technology Advisory Board",
+  "description": "JHipster is supported by a technical board that ensures the platform continues to reflect and serve its diverse and growing user community. The Board discusses and makes recommendations regarding the roadmap and technical directions.",
+  "source": "@site/docs/tech-board.mdx",
+  "sourceDirName": ".",
+  "slug": "/tech-board/",
+  "permalink": "/cn/tech-board/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tech-board.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1617148800000,
+  "frontMatter": {
+    "title": "Technology Advisory Board",
+    "slug": "/tech-board/",
+    "last_update": {
+      "date": "2021-03-31T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster Developers Association",
+    "permalink": "/cn/association/"
+  },
+  "next": {
+    "title": "JHipster meetups",
+    "permalink": "/cn/meetups/"
+  }
+}

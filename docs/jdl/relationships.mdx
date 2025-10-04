@@ -1,40 +1,39 @@
 ---
-title: JHipster Domain Language (JDL) - Relationships
+title: JHipster 领域语言 (JDL) - 关系
 slug: /jdl/relationships
 last_update:
   date: 2019-11-03T12:00:00-00:00
 ---
 
-## Relationship types
+## 关系类型
 
-Mentioned after the `relationship` keyword.
+在 `relationship` 关键字后提及。
 
-There are four relationship types:
+有四种关系类型：
   - `OneToOne`
   - `OneToMany`
   - `ManyToOne`
   - `ManyToMany`
 
-To know more about relationships and what's possible to achieve, you can head
-to [the dedicated page](/managing-relationships).
+要了解更多关于关系和可实现的功能，您可以访问[专门页面](/managing-relationships)。
 
-A note on plural names: JHipster handles them so that you don't have to in your relationships.
-
-
-## Relationship methods
-
-Mentioned after the source and destination entity, used with the `with` keyword.
-
-Supported methods:
-
-- `builtInEntity`: required when the destination entity is a built in entity like `User` and `Authority`
+关于复数名称的说明：JHipster 会处理它们，因此您不需要在关系中处理。
 
 
-## Multiple relationship bodies
+## 关系方法
 
-If you're tired of having _n_ relationships of the same type in your JDL file, don't worry! There's a solution.
+在源实体和目标实体之后提及，使用 `with` 关键字。
 
-Take this JDL sample for instance:
+支持的方法：
+
+- `builtInEntity`：当目标实体是内置实体（如 `User` 和 `Authority`）时必需
+
+
+## 多个关系主体
+
+如果您厦倦在 JDL 文件中有 _n_ 个相同类型的关系，别担心！有一个解决方案。
+
+以此 JDL 示例为例：
 
 ```jdl
 relationship OneToOne {
@@ -51,7 +50,7 @@ relationship OneToOne {
 }
 ```
 
-The solution consists in having every relationship body inside on relationship declaration, like this:
+解决方案是将每个关系主体放在一个关系声明内，如下所示：
 
 ```jdl
 relationship OneToOne {
@@ -62,16 +61,16 @@ relationship OneToOne {
 }
 ```
 
-This syntax is really useful when:
+这种语法在以下情况下非常有用：
 
-- You have lots of relationships of the same type,
-- You want to know what the relationships are,
-- You don't want to waste time looking for them in your JDL file(s)
+- 您有很多相同类型的关系，
+- 您想知道关系是什么，
+- 您不想浪费时间在 JDL 文件中查找它们
 
 
-## Syntax
+## 语法
 
-Relationship declaration is done as follows:
+关系声明如下：
 
 ```jdl
 relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
@@ -79,22 +78,22 @@ relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
 }
 ```
 
-- `(OneToMany | ManyToOne| OneToOne | ManyToMany)` is the type of your relationship,
-- `<option>` is one of the supported values: `Id | OnDelete | OnUpdate`. Make sure to put this on the correct side of the relationship. First character case is not sensitive (jdl export will generate upper).
-- `<option value>` is one of the fitting optional values for the given option: `NO ACTION | RESTRICT | CASCADE | SET NULL | SET DEFAULT`
-- `<from entity>` is the name of the entity owner of the relationship: the source,
-- `<to entity>` is the name of the entity where the relationship goes to: the destination,
-- `<relationship name>` is the name of the field having the other end as type,
-- `<display field>` is the name of the field that should show up in select boxes (default: `id`),
-- `required` whether the injected field is required.
-- `with builtInEntity` whether the relationship destination is an built in entity
-- And you can have more than one relationship body
-  - See the [Multiple relationship bodies](#multiple-relationship-bodies) section for more info!
+- `(OneToMany | ManyToOne| OneToOne | ManyToMany)` 是您关系的类型，
+- `<option>` 是支持的值之一：`Id | OnDelete | OnUpdate`。请确保将此放在关系的正确一侧。首字母大小写不敏感（jdl 导出将生成大写）。
+- `<option value>` 是给定选项的适合的可选值之一：`NO ACTION | RESTRICT | CASCADE | SET NULL | SET DEFAULT`
+- `<from entity>` 是拥有关系的实体的名称：源，
+- `<to entity>` 是关系指向的实体的名称：目标，
+- `<relationship name>` 是以另一端为类型的字段的名称，
+- `<display field>` 是应该在选择框中显示的字段的名称（默认：`id`），
+- `required` 注入的字段是否必需。
+- `with builtInEntity` 关系目标是否为内置实体
+- 您可以有多个关系主体
+  - 有关更多信息，请参阅[多个关系主体](#多个关系主体)部分！
 
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
 ```jdl
 relationship OneToOne {
@@ -102,23 +101,23 @@ relationship OneToOne {
 }
 ```
 
-Note that this example is the same as:
+请注意，此示例与以下相同：
 ```jdl
 relationship OneToOne {
   A{b} to B{a}
 }
 ```
-Not specifying an injected field is the short form of having a bidirectional relationship.
+不指定注入字段是拥有双向关系的简写形式。
 
-Another example:
+另一个示例：
 ```jdl
 relationship OneToOne {
   A{b} to B
 }
 ```
-This will generate a unidirectional relationship. You can only find entity B through entity A, but you cannot find entity A through entity B.
+这将生成一个单向关系。您只能通过实体 A 找到实体 B，但不能通过实体 B 找到实体 A。
 
-### With injected fields
+### 包含注入字段
 
 ```jdl
 relationship ManyToMany {
@@ -126,10 +125,9 @@ relationship ManyToMany {
 }
 ```
 
-This is a bidirectional relationship, meaning that both entities will be generated with an "instance" of the other
-entity.
+这是一个双向关系，意味着两个实体都将生成并拥有另一个实体的"实例"。
 
-### With methods
+### 包含方法
 
 ```jdl
 relationship OneToOne {
@@ -137,54 +135,54 @@ relationship OneToOne {
 }
 ```
 
-### With options
+### 包含选项
 
 ```jdl
 relationship ManyToOne {
    A to @OnDelete("SET NULL") @OnUpdate("CASCADE") B
 }
 ```
-Note: 
+注意： 
 
-In Hibernate/JPA, deleting a parent entity in a many-to-one relationship with child entities depends on the relationship configuration and cascading behavior.
+在 Hibernate/JPA 中，删除在与子实体具有多对一关系的父实体取决于关系配置和级联行为。
 
-Cascading Delete: When enabled, deleting the parent automatically deletes its associated children. This is achieved using CascadeType.REMOVE in the @OneToMany annotation on the parent entity class.
+级联删除：启用时，删除父实体会自动删除其关联的子实体。这通过在父实体类的 @OneToMany 注解中使用 CascadeType.REMOVE 来实现。
 
 ```java
 @OneToMany(mappedBy = "parent", cascade = CascadeType.REMOVE)
 private List<ChildEntity> children;
 ```
 
-No Cascading Delete: If not enabled, deleting a parent with children will result in a foreign key constraint violation. You must manually remove or disassociate the children before deleting the parent.
-Use cascading delete with caution as it can lead to unintended data loss.
+不级联删除：如果未启用，删除具有子实体的父实体将导致外键约束冲突。您必须在删除父实体之前手动删除或解除子实体。
+请谨慎使用级联删除，因为它可能导致意外的数据丢失。
 
-Alternative for Preventing Delete Error: Use the @OnDelete annotation in JDL which will configure the database schema for cascading delete or add cascade = CascadeType.REMOVE to the generated Java code (if applicable).
+防止删除错误的替代方案：在 JDL 中使用 @OnDelete 注解，该注解将为级联删除配置数据库模式，或在生成的 Java 代码中添加 cascade = CascadeType.REMOVE（如果适用）。
 
-### With required sides
+### 包含必需侧
 
-Used to make at least one relationship side required.
+用于使至少一个关系侧必需。
 
 ```jdl
 relationship ManyToMany {
   A{b required} to B{a}
 }
 
-// or
+// 或
 
 relationship ManyToMany {
   A{b} to B{a required}
 }
 
-or
+或
 
 relationship ManyToMany {
   A{b(name) required} to B{a required}
 }
 ```
 
-### Reflexive relationships
+### 反身关系
 
-A reflexive relationship is a relationship whose source & destination entities are the same.
+反身关系是源实体和目标实体相同的关系。
 
 ```jdl
 relationship ManyToMany {
@@ -192,30 +190,29 @@ relationship ManyToMany {
 }
 ```
 
-#### A note on required reflexive relationships
+#### 关于必需反身关系的说明
 
-As noted [here](https://github.com/jhipster/generator-jhipster/issues/11495), required relationships to the same entity
-are not supported. The issue is that a child must **always** have a parent, which in turn must have one too, etc.
-A possible workaround is to have explicit root and children entities.
+如[此处](https://github.com/jhipster/generator-jhipster/issues/11495)所注，不支持对同一实体的必需关系。问题在于子实体**始终**必须有一个父实体，而父实体又必须有一个父实体，以此类推。
+一个可能的解决方案是拥有显式的根和子实体。
 
-### Commenting
+### 注释
 
-Adding comments for relationships is possible:
+可以对关系添加注释：
 
 ```jdl
 relationship OneToOne {
-  /** This comment will be put before b in entity A*/
+  /** 此注释将放在实体 A 中的 b 之前 */
   A{b}
   to
-  /** This comment will be put before a in entity B*/
+  /** 此注释将放在实体 B 中的 a 之前 */
   B{a}
 }
 ```
 
-The same commenting rules are applied here.
-These comments will later be added as Javadoc comments by JHipster. The JDL possesses its own kind of comment:
-  - // an ignored comment
-  - /** not an ignored comment */
+这里适用相同的注释规则。
+这些注释将由 JHipster 后续添加为 Javadoc 注释。JDL 拥有自己的注释类型：
+  - // 一个被忽略的注释
+  - /** 不被忽略的注释 */
 
-Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
-Please note that the JDL Studio directives that start with `#` will be ignored during parsing.
+因此，任何以 `//` 开头的内容都被认为是 JDL 的内部注释，不会被计为 Javadoc。
+请注意，以 `#` 开头的 JDL Studio 指令在解析期间将被忽略。

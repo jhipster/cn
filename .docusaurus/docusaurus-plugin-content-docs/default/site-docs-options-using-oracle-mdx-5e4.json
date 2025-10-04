@@ -1,0 +1,31 @@
+{
+  "id": "options/using-oracle",
+  "title": "Using Oracle",
+  "description": "When using JPA, you have the option to use the Oracle database.",
+  "source": "@site/docs/options/using-oracle.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-oracle/",
+  "permalink": "/cn/using-oracle/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-oracle.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1610098800000,
+  "frontMatter": {
+    "title": "Using Oracle",
+    "slug": "/using-oracle/",
+    "last_update": {
+      "date": "2021-01-08T09:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用缓存",
+    "permalink": "/cn/using-cache/"
+  },
+  "next": {
+    "title": "使用 MongoDB",
+    "permalink": "/cn/using-mongodb/"
+  }
+}

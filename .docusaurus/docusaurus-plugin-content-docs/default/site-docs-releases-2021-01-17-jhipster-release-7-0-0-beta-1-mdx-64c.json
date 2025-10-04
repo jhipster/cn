@@ -1,0 +1,30 @@
+{
+  "id": "releases/2021-01-17-jhipster-release-7.0.0-beta.1",
+  "title": "Release 7.0.0-beta.1",
+  "description": "This is our second beta release for JHipster v7, and the first of this new year.",
+  "source": "@site/docs/releases/2021-01-17-jhipster-release-7.0.0-beta.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2021/01/17/jhipster-release-7.0.0-beta.1.html",
+  "permalink": "/cn/2021/01/17/jhipster-release-7.0.0-beta.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2021-01-17-jhipster-release-7.0.0-beta.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 7.0.0-beta.1",
+    "slug": "/2021/01/17/jhipster-release-7.0.0-beta.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 7.0.0-beta.0",
+    "permalink": "/cn/2020/12/21/jhipster-release-7.0.0-beta.0.html"
+  },
+  "next": {
+    "title": "Release 7.0.0",
+    "permalink": "/cn/2021/03/21/jhipster-release-7.0.0.html"
+  }
+}

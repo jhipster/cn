@@ -1,29 +1,29 @@
 ---
-title: Creating a Blueprint
+title: 创建蓝图
 slug: /modules/creating-a-blueprint/
 last_update:
   date: 2015-12-05T18:40:00-00:00
 ---
 
-A JHipster blueprint is a Yeoman generator that is [composed](http://yeoman.io/authoring/composability.html) from a specific JHipster sub-generator to extend the functionality of that sub-generator. The blueprint can override any defined getter of the sub generator and provide its own templates and functionality.
+JHipster 蓝图是一个 Yeoman 生成器，从特定的 JHipster 子生成器[组合](http://yeoman.io/authoring/composability.html)而来，以扩展该子生成器的功能。蓝图可以覆盖子生成器的任何定义的 getter 并提供自己的模板和功能。
 
-JHipster blueprints are listed on the [JHipster marketplace](/modules/marketplace/) with the `jhipster-blueprint` label.
+JHipster 蓝图在 [JHipster 市场](/modules/marketplace/)中以 `jhipster-blueprint` 标签列出。
 
-This allows to create third-party blueprints that can override a specific part of JHipster, say for example only the client side templates.
+这允许创建第三方蓝图，可以覆盖 JHipster 的特定部分，例如仅覆盖客户端模板。
 
 
-## Using a blueprint
+## 使用蓝图
 
-To use a blueprint, run the below command
+要使用蓝图，请运行以下命令
 
 ```shell
 jhipster --blueprints <blueprint name>
 ```
 
 
-## Generating the blueprint
+## 生成蓝图
 
-We recommend to use the builtin `generate-blueprint` generator to kickstart your blueprint
+我们建议使用内置的 `generate-blueprint` 生成器来快速启动您的蓝图
 
 ```shell
 mkdir my-blueprint && cd my-blueprint
@@ -31,7 +31,7 @@ mkdir my-blueprint && cd my-blueprint
 jhipster generate-blueprint
 ```
 
-A JHipster blueprint must have `generator-jhipster` as a dependency and should import the appropriate sub-generator to override it.
+JHipster 蓝图必须将 `generator-jhipster` 作为依赖项，并且应该导入适当的子生成器来覆盖它。
 
 ```js
 import chalk from 'chalk';
@@ -61,26 +61,26 @@ export default class extends ClientGenerator {
 ```
 
 
-## Local Blueprints
+## 本地蓝图
 
-A local blueprint is implemented inside your project's `.blueprint` directory. It's detected and used by default.
+本地蓝图在您项目的 `.blueprint` 目录内实现。它会被默认检测和使用。
 
-Kickstart using [Generating the blueprint](#generating-the-blueprint) or run:
+使用[生成蓝图](#generating-the-blueprint)快速启动或运行：
 
 ```shell
 jhipster generate-blueprint --local-blueprint --sub-generators app --all-priorities
 ```
 
-Multiples sub-generators are useful for organizing multiples features. Local blueprints have a limited scope (the application), so a single sub-generator, the main one, is probably enough to customize your application (client and server). 
+多个子生成器对于组织多个功能很有用。本地蓝图的范围有限（应用程序），因此单个子生成器，即主生成器，可能足以自定义您的应用程序（客户端和服务器端）。 
 
 
-## Developing
+## 开发
 
-### Priorities
+### 优先级
 
-There are multiple ways to customize a priority from JHipster.
+有多种方法可以从 JHipster 自定义优先级。
 
-1. Let JHipster handle the priority, blueprint doesn't override anything.
+1. 让 JHipster 处理优先级，蓝图不覆盖任何内容。
 
 ```js
 get [Generator.INITIALIZING]() {
@@ -88,7 +88,7 @@ get [Generator.INITIALIZING]() {
 }
 ```
 
-2. Override the entire priority, this is when the blueprint takes control of a priority.
+2. 覆盖整个优先级，这是蓝图控制优先级的时候。
 
 ```js
 get [Generator.INITIALIZING]() {
@@ -103,7 +103,7 @@ get [Generator.INITIALIZING]() {
 }
 ```
 
-3. Partially override a priority, this is when the blueprint gets the priority from JHipster and customizes it.
+3. 部分覆盖优先级，这是蓝图从 JHipster 获取优先级并自定义它的时候。
 
 ```js
 get [Generator.INITIALIZING]() {
@@ -119,9 +119,9 @@ get [Generator.INITIALIZING]() {
 }
 ```
 
-4. Decorate a priority, this is when the blueprint runs custom steps before or after the priority coming from JHipster.
+4. 装饰优先级，这是蓝图在来自 JHipster 的优先级之前或之后运行自定义步骤的时候。
 
-This is useful to customize properties that will be used during the priority to generate derived properties.
+这对于自定义在优先级期间使用的属性以生成派生属性很有用。
 
 ```js
 // Run the blueprint steps before and/or after any parent steps

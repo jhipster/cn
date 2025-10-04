@@ -1,13 +1,13 @@
 ---
-title: JHipster Domain Language (JDL) - Enums
+title: JHipster 领域语言 (JDL) - 枚举
 slug: /jdl/enums
 last_update:
   date: 2019-10-27T12:00:00-00:00
 ---
 
-## Syntax
+## 语法
 
-Enumeration declaration is done as follows:
+枚举声明如下：
 
 ```jdl
 enum <enum name> {
@@ -15,15 +15,15 @@ enum <enum name> {
 }
 ```
 
-  - Enumeration entry values are mandatory
-    - And uppercase keys must be used
-  - Enumeration entry values are optional, and must be wrapped inside parenthesises
+  - 枚举条目值是必需的
+    - 并且必须使用大写键
+  - 枚举条目值是可选的，并且必须用圆括号包裹
 
 ---
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
 ```jdl
 enum Country {
@@ -33,7 +33,7 @@ enum Country {
 }
 ```
 
-And its use:
+其使用方式：
 
 ```jdl
 enum Country {}
@@ -43,9 +43,9 @@ entity A {
 }
 ```
 
-### With values
+### 包含值
 
-Starting from JHipster Core v6, enum values can have explicit values:
+从 JHipster Core v6 开始，枚举值可以有显式值：
 
 ```jdl
 enum Country {
@@ -56,21 +56,21 @@ enum Country {
 }
 ```
 
-### Commenting
+### 注释
 
-Just like relationships, entities and fields, commenting is possible for enums, with the same rules.
+就像关系、实体和字段一样，可以对枚举进行注释，遵循相同的规则。
 
-Comments will later be added as Javadoc comments by JHipster. The JDL possesses its own kind of comment:
-  - // an ignored comment
-  - /** not an ignored comment */
+注释将由 JHipster 后续添加为 Javadoc 注释。JDL 拥有自己的注释类型：
+  - // 一个被忽略的注释
+  - /** 不被忽略的注释 */
 
-Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
-Please note that the JDL Studio directives that start with `#` will be ignored during parsing.
+因此，任何以 `//` 开头的内容都被认为是 JDL 的内部注释，不会被计为 Javadoc。
+请注意，以 `#` 开头的 JDL Studio 指令在解析期间将被忽略。
 
 ```jdl
-/** This comment will be taken into account */
+/** 此注释将被考虑 */
 enum Country {
-  // But not this one!
+  // 但这个不会！
   FRANCE
 }
 ```

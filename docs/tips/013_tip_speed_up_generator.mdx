@@ -1,5 +1,5 @@
 ---
-title: Speed up the generator-jhipster
+title: 加速 generator-jhipster
 slug: /tips/013_tip_speed_up_generator.html
 last_update:
   date: 2016-05-15T22:22:00-00:00
@@ -9,35 +9,35 @@ __Tip submitted by [@pascalgrimaud](https://github.com/pascalgrimaud)__
 
 :::warning
 
-Those tips don't work for npm 3+ because it uses symlink.
+这些提示不适用于 npm 3+ 版本，因为它使用符号链接。
 
 :::
 
-When using the generator-jhipster, the command `npm install` may take several minutes, depending on your connection speed.
+使用 generator-jhipster 时，`npm install` 命令可能需要几分钟，具体取决于你的连接速度。
 
-This tip can be used in many cases:
+这个提示可以在许多情况下使用：
 
-- for demo of JHipster, to improve your experience
-- for dev team, to regenerate faster a project with `.yo-rc.json`
-- for continuous integration
+- 用于 JHipster 的演示，以改善你的体验
+- 用于开发团队，使用 `.yo-rc.json` 更快地重新生成项目
+- 用于持续集成
 
 
-## Create a new project for node_modules
+## 为 node_modules 创建一个新项目
 
-Create a directory which will contain all `node_modules` libraries, and go into it:
+创建一个包含所有 `node_modules` 库的目录，并进入该目录：
 
 ```shell
 mkdir jhipster-speedup
 cd jhipster-speedup
 ```
 
-Create the directory `node_modules`:
+创建 `node_modules` 目录：
 
 ```shell
 mkdir -p node_modules
 ```
 
-The project structure is :
+项目结构如下：
 
 ```
 jhipster-speedup
@@ -46,7 +46,7 @@ jhipster-speedup
 
 :::warning
 
-Use this next command only if your are a developer on JHipster. It will link to your fork project of generator-jhipster:
+仅当你是 JHipster 开发者时才使用此命令。它将链接到你的 generator-jhipster fork 项目：
 
 :::
 
@@ -55,34 +55,33 @@ npm link generator-jhipster
 ```
 
 
-## Generating projects
+## 生成项目
 
-Create a directory which will contain your new JHipster project, and go into it:
+创建一个包含你的新 JHipster 项目的目录，并进入该目录：
 
 ```shell
 mkdir jhipster
 cd jhipster
 ```
 
-Create a link to the directory `node_modules`:
+创建到 `node_modules` 目录的链接：
 
 ```shell
 ln -s <your path>/jhipster-speedup/node_modules
 ```
 
-Generate a new project, and answer to all questions:
+生成一个新项目，并回答所有问题：
 
 ```shell
 jhipster
 ```
 
-The first time, it will take several minutes.
+第一次会花费几分钟。
 
-The next times, it will use the existing `node_modules` directory, so npm won't download all libraries.
+接下来的几次，它会使用现有的 `node_modules` 目录，所以 npm 不会下载所有库。
 
 :::warning
 
-If you use specific libraries and modify your package.json, you should copy the `node_modules`
-from jhipster-speedup to your folder project, instead of using a link.
+如果你使用特定的库并修改了 package.json，你应该将 `node_modules` 从 jhipster-speedup 复制到你的项目文件夹，而不是使用链接。
 
 :::

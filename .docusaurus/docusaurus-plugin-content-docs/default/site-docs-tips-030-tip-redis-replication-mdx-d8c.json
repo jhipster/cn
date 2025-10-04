@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_redis_replication",
+  "title": "Configure Redis leader follower(master-slave) replication",
+  "description": "Tip submitted by @zhx828",
+  "source": "@site/docs/tips/030_tip_redis_replication.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/030_tip_redis_replication.html",
+  "permalink": "/cn/tips/030_tip_redis_replication.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/030_tip_redis_replication.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1584966600000,
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "title": "Configure Redis leader follower(master-slave) replication",
+    "slug": "/tips/030_tip_redis_replication.html",
+    "last_update": {
+      "date": "2020-03-23T12:30:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Improve developer experience if opening only front end in the IDE",
+    "permalink": "/cn/tips/029_tip_frontend_only.html"
+  },
+  "next": {
+    "title": "Running Protractor e2e tests within Intellij IDEA",
+    "permalink": "/cn/tips/031_tip_e2e_intellij.html"
+  }
+}

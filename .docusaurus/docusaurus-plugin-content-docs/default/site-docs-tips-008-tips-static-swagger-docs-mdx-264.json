@@ -1,0 +1,23 @@
+{
+  "id": "tips/tips_static_swagger_docs",
+  "title": "Static API documentation",
+  "description": "Tip submitted by @atomfrede",
+  "source": "@site/docs/tips/008_tips_static_swagger_docs.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/008_tips_static_swagger_docs.html",
+  "permalink": "/cn/tips/008_tips_static_swagger_docs.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/008_tips_static_swagger_docs.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1438368000000,
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Static API documentation",
+    "slug": "/tips/008_tips_static_swagger_docs.html",
+    "last_update": {
+      "date": "2015-07-31T18:40:00.000Z"
+    }
+  }
+}

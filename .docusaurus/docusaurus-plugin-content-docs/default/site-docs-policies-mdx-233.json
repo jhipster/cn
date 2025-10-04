@@ -1,0 +1,24 @@
+{
+  "id": "policies",
+  "title": "Policies",
+  "description": "The JHipster development team follows some coding policies. You can see them as \"best practices\" or \"guidelines\". They are enforced on the project itself, not on the generated code: if you use JHipster to generate your project, you absolutely do not have to follow them!",
+  "source": "@site/docs/policies.mdx",
+  "sourceDirName": ".",
+  "slug": "/policies/",
+  "permalink": "/cn/policies/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/policies.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1438368000000,
+  "frontMatter": {
+    "title": "Policies",
+    "displayed_sidebar": "docsSidebar",
+    "slug": "/policies/",
+    "last_update": {
+      "date": "2015-07-31T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar"
+}

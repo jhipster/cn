@@ -1,0 +1,31 @@
+{
+  "id": "microservices/microservices-architecture",
+  "title": "Doing microservices with JHipster",
+  "description": "Microservices vs Monolithic architecture",
+  "source": "@site/docs/microservices/microservices-architecture.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/microservices-architecture/",
+  "permalink": "/cn/microservices-architecture/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/microservices-architecture.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1717372800000,
+  "frontMatter": {
+    "title": "Doing microservices with JHipster",
+    "slug": "/microservices-architecture/",
+    "last_update": {
+      "date": "2024-06-03T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Deploying to Kubernetes",
+    "permalink": "/cn/kubernetes/"
+  },
+  "next": {
+    "title": "API Gateway",
+    "permalink": "/cn/api-gateway/"
+  }
+}

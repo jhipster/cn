@@ -1,60 +1,60 @@
 ---
-title: Setting up a Jenkins 1 server
+title: 设置 Jenkins 1 服务器
 slug: /setting-up-ci-jenkins1/
 last_update:
   date: 2016-11-03T12:40:00-00:00
 ---
 
-To configure a Jenkins server for JHipster, refer to the following guides:
+要为 JHipster 配置 Jenkins 服务器，请参考以下指南：
 
-- [Setting up Jenkins 1 on Linux](/setting-up-ci-linux/)
-- [Setting up Jenkins 1 on Windows](/setting-up-ci-windows/)
+- [在 Linux 上设置 Jenkins 1](/setting-up-ci-linux/)
+- [在 Windows 上设置 Jenkins 1](/setting-up-ci-windows/)
 
-## Jenkins Configuration
+## Jenkins 配置
 
-To setup a JHipster project in Jenkins, use the following configuration:
+要在 Jenkins 中设置 JHipster 项目，请使用以下配置：
 
-### For Maven:
+### 对于 Maven：
 
 ```
-* Project name: `yourApplicationName`
-* Source Code Management
-    * Git Repository: `git@github.com:xxxx/yourApplicationName.git`
-    * Branches to build: `*/main`
-    * Additional Behaviours: `Wipe out repository & force clone`
-* Build Triggers
-    * Poll SCM / Schedule: `H/5 * * * *`
-* Build<% if (buildTool == 'maven') { %>
-    * Invoke Maven / Tasks: `-Pprod clean package`
-    * Execute Shell / Command:
+* 项目名称： `yourApplicationName`
+* 源代码管理
+    * Git 仓库： `git@github.com:xxxx/yourApplicationName.git`
+    * 要构建的分支： `*/main`
+    * 附加行为： `清空仓库并强制克隆`
+* 构建触发器
+    * 轮询 SCM / 计划： `H/5 * * * *`
+* 构建<% if (buildTool == 'maven') { %>
+    * 调用 Maven / 任务： `-Pprod clean package`
+    * 执行 Shell / 命令：
         mvn spring-boot:run &
         bootPid=$!
         sleep 30s
         gulp itest
         kill $bootPid
-* Post-build Actions
-    * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
+* 构建后操作
+    * 发布 JUnit 测试结果报告 / 测试报告 XML： `build/test-results/*.xml`
 ```
 
-### For Gradle:
+### 对于 Gradle：
 
 ```
-* Project name: `yourApplicationName`
-* Source Code Management
-    * Git Repository: `git@github.com:xxxx/yourApplicationName.git`
-    * Branches to build: `*/main`
-    * Additional Behaviours: `Wipe out repository & force clone`
-* Build Triggers
-    * Poll SCM / Schedule: `H/5 * * * *`
-* Build
-    * Invoke Gradle script / Use Gradle Wrapper / Tasks: `-Pprod clean test bootWar`
-    * Execute Shell / Command:
+* 项目名称： `yourApplicationName`
+* 源代码管理
+    * Git 仓库： `git@github.com:xxxx/yourApplicationName.git`
+    * 要构建的分支： `*/main`
+    * 附加行为： `清空仓库并强制克隆`
+* 构建触发器
+    * 轮询 SCM / 计划： `H/5 * * * *`
+* 构建
+    * 调用 Gradle 脚本 / 使用 Gradle Wrapper / 任务： `-Pprod clean test bootWar`
+    * 执行 Shell / 命令：
         ./gradlew bootRun &
         bootPid=$!
         sleep 30s
         gulp itest
         kill $bootPid
-* Post-build Actions
-    * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
+* 构建后操作
+    * 发布 JUnit 测试结果报告 / 测试报告 XML： `build/test-results/*.xml`
 ```
 

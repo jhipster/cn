@@ -1,0 +1,31 @@
+{
+  "id": "core-tasks/creating-an-entity",
+  "title": "创建实体",
+  "description": "**请查看我们关于创建新 JHipster 应用程序的视频教程！**",
+  "source": "@site/docs/core-tasks/creating-an-entity.mdx",
+  "sourceDirName": "core-tasks",
+  "slug": "/creating-an-entity/",
+  "permalink": "/cn/creating-an-entity/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/core-tasks/creating-an-entity.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1536019200000,
+  "frontMatter": {
+    "title": "创建实体",
+    "slug": "/creating-an-entity/",
+    "last_update": {
+      "date": "2018-09-04T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "创建应用",
+    "permalink": "/cn/creating-an-app/"
+  },
+  "next": {
+    "title": "创建 DTOs",
+    "permalink": "/cn/using-dtos/"
+  }
+}

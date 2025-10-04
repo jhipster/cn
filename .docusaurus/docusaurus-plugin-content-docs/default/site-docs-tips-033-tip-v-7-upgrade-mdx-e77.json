@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_v7_upgrade",
+  "title": "JHipster v7 upgrade tips",
+  "description": "Tip submitted by @kaidohallik",
+  "source": "@site/docs/tips/033_tip_v7_upgrade.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/033_tip_v7_upgrade.html",
+  "permalink": "/cn/tips/033_tip_v7_upgrade.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/033_tip_v7_upgrade.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1608366600000,
+  "sidebarPosition": 33,
+  "frontMatter": {
+    "title": "JHipster v7 upgrade tips",
+    "slug": "/tips/033_tip_v7_upgrade.html",
+    "last_update": {
+      "date": "2020-12-19T08:30:00.000Z"
+    }
+  }
+}

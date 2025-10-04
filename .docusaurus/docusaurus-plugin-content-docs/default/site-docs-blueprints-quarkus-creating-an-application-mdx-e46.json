@@ -1,0 +1,31 @@
+{
+  "id": "blueprints/quarkus/creating-an-application",
+  "title": "Creating an application",
+  "description": "Quick start",
+  "source": "@site/docs/blueprints/quarkus/creating-an-application.mdx",
+  "sourceDirName": "blueprints/quarkus",
+  "slug": "/blueprints/quarkus/002_creating_an_application.html",
+  "permalink": "/cn/blueprints/quarkus/002_creating_an_application.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/blueprints/quarkus/creating-an-application.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1610008800000,
+  "frontMatter": {
+    "title": "Creating an application",
+    "slug": "/blueprints/quarkus/002_creating_an_application.html",
+    "last_update": {
+      "date": "2021-01-07T08:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Installing JHipster Quarkus Blueprint",
+    "permalink": "/cn/blueprints/quarkus/001_installing_jhipster_quarkus.html"
+  },
+  "next": {
+    "title": "Creating an entity",
+    "permalink": "/cn/blueprints/quarkus/003_creating_an_entity.html"
+  }
+}

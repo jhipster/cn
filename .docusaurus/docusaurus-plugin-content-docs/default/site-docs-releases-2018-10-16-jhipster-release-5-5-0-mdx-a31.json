@@ -1,0 +1,30 @@
+{
+  "id": "releases/2018-10-16-jhipster-release-5.5.0",
+  "title": "Release 5.5.0",
+  "description": "This minor release comes with 84 fixed issues and closed pull requests.",
+  "source": "@site/docs/releases/2018-10-16-jhipster-release-5.5.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2018/10/16/jhipster-release-5.5.0.html",
+  "permalink": "/cn/2018/10/16/jhipster-release-5.5.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2018-10-16-jhipster-release-5.5.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 5.5.0",
+    "slug": "/2018/10/16/jhipster-release-5.5.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 5.4.2",
+    "permalink": "/cn/2018/10/07/jhipster-release-5.4.2.html"
+  },
+  "next": {
+    "title": "Release 5.6.0",
+    "permalink": "/cn/2018/11/02/jhipster-release-5.6.0.html"
+  }
+}

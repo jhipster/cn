@@ -1,0 +1,30 @@
+{
+  "id": "releases/2018-05-11-jhipster-release-4.14.4",
+  "title": "Release 4.14.4",
+  "description": "What's new",
+  "source": "@site/docs/releases/2018-05-11-jhipster-release-4.14.4.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2018/05/11/jhipster-release-4.14.4.html",
+  "permalink": "/cn/2018/05/11/jhipster-release-4.14.4.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2018-05-11-jhipster-release-4.14.4.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 4.14.4",
+    "slug": "/2018/05/11/jhipster-release-4.14.4.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 5.0.0-beta.1",
+    "permalink": "/cn/2018/05/03/jhipster-release-5.0.0-beta.1.html"
+  },
+  "next": {
+    "title": "Release 5.0.0-beta.2",
+    "permalink": "/cn/2018/06/13/jhipster-release-5.0.0-beta.2.html"
+  }
+}

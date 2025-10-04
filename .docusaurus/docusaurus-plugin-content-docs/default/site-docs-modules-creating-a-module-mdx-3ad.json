@@ -1,0 +1,31 @@
+{
+  "id": "modules/creating-a-module",
+  "title": "Creating a module",
+  "description": "Creating a stand alone Blueprint (aka module)",
+  "source": "@site/docs/modules/creating-a-module.mdx",
+  "sourceDirName": "modules",
+  "slug": "/modules/creating-a-module/",
+  "permalink": "/cn/modules/creating-a-module/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/modules/creating-a-module.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1449340800000,
+  "frontMatter": {
+    "title": "Creating a module",
+    "slug": "/modules/creating-a-module/",
+    "last_update": {
+      "date": "2015-12-05T18:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Blueprint Basics",
+    "permalink": "/cn/modules/extending-and-customizing/"
+  },
+  "next": {
+    "title": "Creating a Blueprint",
+    "permalink": "/cn/modules/creating-a-blueprint/"
+  }
+}

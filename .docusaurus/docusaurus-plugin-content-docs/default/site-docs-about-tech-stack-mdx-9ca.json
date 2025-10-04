@@ -1,0 +1,31 @@
+{
+  "id": "about/tech-stack",
+  "title": "Technology stack",
+  "description": "Technology stack on the client side",
+  "source": "@site/docs/about/tech-stack.mdx",
+  "sourceDirName": "about",
+  "slug": "/tech-stack/",
+  "permalink": "/cn/tech-stack/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/about/tech-stack.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1615204800000,
+  "frontMatter": {
+    "title": "Technology stack",
+    "slug": "/tech-stack/",
+    "last_update": {
+      "date": "2021-03-08T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster Lite",
+    "permalink": "/cn/jhipster-lite/"
+  },
+  "next": {
+    "title": "JHipster in 5 screenshots",
+    "permalink": "/cn/screenshots/"
+  }
+}

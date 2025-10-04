@@ -1,262 +1,268 @@
 ---
-title: Creating an application
+title: 创建应用程序
 slug: /creating-an-app/
 last_update:
   date: 2018-03-18T18:20:00-00:00
 ---
 
-_**Please check our [video tutorial](/video-tutorial/) on creating a new JHipster application!**_
+_**请查看我们关于创建新 JHipster 应用程序的[视频教程](/video-tutorial/)！**_
 
 
-## Quick start
+## 快速开始
 
-First of all, create an empty directory in which you will create your application:
+首先，创建一个空目录，您将在其中创建您的应用程序：
 
-`mkdir myapplication`
+```shell
+mkdir myapplication
+```
 
-Go to that directory:
+进入该目录：
 
-`cd myapplication/`
+```shell
+cd myapplication/
+```
 
-To generate your application, type:
+要生成您的应用程序，请输入：
 
-`jhipster`
+```shell
+jhipster
+```
 
-Answer the questions asked by the generator to create an application tailored to your needs. Those options are described in [the next section](#questions-asked-when-generating-an-application).
+回答生成器提出的问题，以创建适合您需求的应用程序。这些选项在[下一节](#生成应用程序时提出的问题)中有详细描述。
 
-Once the application is generated, you can launch it using Maven (`./mvnw` on Linux/MacOS/Windows PowerShell, `mvnw` on Windows Cmd) or Gradle (`./gradlew` on Linux/MacOS/Windows PowerShell, `gradlew` on Windows Cmd).
+应用程序生成后，您可以使用 Maven（Linux/MacOS/Windows PowerShell 中使用 `./mvnw`，Windows Cmd 中使用 `mvnw`）或 Gradle（Linux/MacOS/Windows PowerShell 中使用 `./gradlew`，Windows Cmd 中使用 `gradlew`）启动它。
 
 :::note
 
-If you are using Maven and changed front end files after first run of the `./mvnw` command then you must run `./mvnw -Pwebapp` to see the latest front end version (Gradle detects front end changes automatically and recompiles front end if needed).
+如果您使用 Maven 并在首次运行 `./mvnw` 命令后修改了前端文件，那么您必须运行 `./mvnw -Pwebapp` 才能看到最新的前端版本（Gradle 会自动检测前端更改并在需要时重新编译前端）。
 
 :::
 
-The application will be available on [http://localhost:8080](http://localhost:8080)
+应用程序将在 [http://localhost:8080](http://localhost:8080) 可用
 
 :::warning
 
-If you want to have "live reload" of your JavaScript/TypeScript code, you will need run `npm start`. You can go to the [Using JHipster in development](/development/) page for more information.
+如果您希望对 JavaScript/TypeScript 代码进行热更新(live reload)，您需要运行 `npm start`。您可以转到[在开发中使用 JHipster](/development/) 页面获取更多信息。
 
 :::
 
-If you are using "live reload" then you can speed up server start up by excluding client side tasks by `./mvnw -P-webapp` or `./gradlew -x webapp`. It speeds up especially Gradle.
+如果您使用热更新(live reload)，那么您可以通过 `./mvnw -P-webapp` 或 `./gradlew -x webapp` 排除客户端任务来加快服务器启动。这特别能加快 Gradle 的速度。
 
 
-## Questions asked when generating an application
+## 生成应用程序时需要回答的问题
 
-_Some questions change depending on the previous choices you have made. For example, you won't need to configure an Hibernate cache if you didn't select an SQL database._
+_有些问题会根据您前面做出的选择有所不同。例如，如果您没有选择 SQL 数据库，您就不需要配置 Hibernate 缓存。_
 
-### Which _type_ of application would you like to create?
+### 选择应用程序类型(Which type of application would you like to create?)
 
-Your type of application depends on whether you wish to use a microservices architecture or not. A full explanation on microservices is [available here](/microservices-architecture/), if unsure use the default "Monolithic application".
+您的应用程序类型取决于您是否希望使用微服务架构。关于微服务的完整说明可以在[这里](/microservices-architecture/)找到，如果不确定，请使用默认的单体应用程序(Monolithic application)。
 
-You can either use:
+您可以使用：
 
-*   Monolithic application: this a classical, one-size-fits-all application. It's easier to use and develop, and is our recommended default.
-*   Microservice application: in a microservices architecture, this is one of the services.
-*   Microservice gateway: in a microservices architecture, this is an edge server that routes and secures requests.
+*   单体应用程序(Monolithic application)：这是一个经典的、一站式应用程序。它更容易使用和开发，是我们推荐的默认选择。
+*   微服务应用程序(Microservice application)：在微服务架构中，这是服务中的一个。
+*   微服务网关(Microservice gateway)：在微服务架构中，这是一个路由和保护请求的边缘服务器。
 
-### What is the base name of your application?
+### 应用程序名称(What is the base name of your application?)
 
-This is the name of your application.
+这是您应用程序的名称。
 
-### What is your default Java package name?
+### 默认Java包名(What is your default Java package name?)
 
-Your Java application will use this as its root package. This value is stored by Yeoman so that the next time you run the generator the last value will become default. 
-You can override it by providing a new value.
+您的 Java 应用程序将使用这个作为其根包。这个值由 Yeoman 存储，以便下次运行生成器时最后一个值将成为默认值。
+您可以通过提供新值来覆盖它。
 
-### Which _type_ of authentication would you like to use?
+### 选择身份验证类型(Which _type_ of authentication would you like to use?)
 
-Here are all the possible options:
+以下是所有可能的选项：
 
-*   JWT authentication: use a [JSON Web Token (JWT)](https://jwt.io/), which is the default choice and what most people use.
-*   OAuth 2.0 / OIDC Authentication: this uses an OpenID Connect server, like [Keycloak](https://www.keycloak.org/), [Auth0](https://developer.auth0.com), or [Okta](https://developer.okta.com), which handles authentication outside the application. This is more secured than JWT, but it requires to set up an OpenID Connect server, so it's a bit more complex. Please note that by default JHipster will synchronize the user data from the OpenID Connect server, and for this it will need a database.
-*   HTTP Session Authentication: the classical session-based authentication mechanism, which is what people usually do with [Spring Security](http://docs.spring.io/spring-security/site/index.html).
+*   JWT 身份验证：使用 [JSON Web Token (JWT)](https://jwt.io/)，这是默认选择，也是大多数人使用的。
+*   OAuth 2.0 / OIDC 身份验证：这使用 OpenID Connect 服务器，如 [Keycloak](https://www.keycloak.org/)、[Auth0](https://developer.auth0.com) 或 [Okta](https://developer.okta.com)，在应用程序外部处理身份验证。这比 JWT 更安全，但需要设置 OpenID Connect 服务器，因此略显复杂。请注意，默认情况下 JHipster 将从 OpenID Connect 服务器同步用户数据，为此需要一个数据库。
+*   HTTP 会话身份验证：经典的基于会话的身份验证机制，这是人们通常使用 [Spring Security](http://docs.spring.io/spring-security/site/index.html) 做的。
 
-You can find more information on our [securing your application](/security/) page.
+您可以在我们的[保护您的应用程序](/security/)页面上找到更多信息。
 
-### Which _type_ of database would you like to use?
+### 选择数据库类型(Which _type_ of database would you like to use?)
 
-You can choose between:
+您可以在以下选项中选择：
 
-- An SQL database (H2, MySQL, MariaDB, PostgreSQL, MSSQL, Oracle), which you will access with Spring Data JPA
+- SQL 数据库（H2、MySQL、MariaDB、PostgreSQL、MSSQL、Oracle），您将使用 Spring Data JPA 访问
 - [MongoDB](/using-mongodb/)
 - [Cassandra](/using-cassandra/)
 - [Couchbase](/using-couchbase/)
 - [Neo4j](/using-neo4j/)
-- No database (only available when using a [microservice application](/microservices-architecture/) with JWT authentication)
+- 无数据库（仅在使用带有 JWT 身份验证的[微服务应用程序](/microservices-architecture/)时可用）
 
-### Which _production_ database would you like to use?
+### 选择生产数据库类型(Which _production_ database would you like to use?)
 
-This is the database you will use with your "production" profile. To configure it, please modify your `src/main/resources/config/application-prod.yml` file.
+这是您将在"production"配置文件中使用的数据库。要配置它，请修改您的 `src/main/resources/config/application-prod.yml` 文件。
 
-If you want to use Oracle, you might need to be aware of current limitations when [using Oracle database](/using-oracle/).
+如果您想使用 Oracle，在[使用 Oracle 数据库](/using-oracle/)时，您可能需要了解当前的限制。
 
-### Which _development_ database would you like to use?
+### 选择开发数据库类型(Which _development_ database would you like to use?)
 
-This is the database you will use with your "development" profile. You can either use:
+这是您将在"development"配置文件中使用的数据库。您可以使用：
 
-*   H2, running in-memory. This is the easiest way to use JHipster, but your data will be lost when you restart your server.
-*   H2, with its data stored on disk. This is a better option than running in-memory, as you won't lose your data upon application restart.
-*   The same database as the one you chose for production: it's a bit more complex to set up, but it should be better in the end to work on the same database as the one you will use in production. This is also the best way to use liquibase-hibernate as described in [the development guide](/development/).
+*   H2，在内存中运行。这是使用 JHipster 的最简单方式，但当您重启服务器时，您的数据将丢失。
+*   H2，将数据存储在磁盘上。这是比在内存中运行更好的选项，因为您不会在应用程序重启时丢失数据。
+*   与您为生产环境选择的相同数据库：设置起来稍显复杂，但最终在与生产环境中使用的相同数据库上工作应该更好。这也是使用 liquibase-hibernate 的最佳方式，如[开发指南](/development/)中所述。
 
-To configure it, please modify your `src/main/resources/config/application-dev.yml` file.
+要配置它，请修改您的 `src/main/resources/config/application-dev.yml` 文件。
 
-### Do you want to use the Spring cache abstraction?
+### 是否使用 Spring Cache(Do you want to use the Spring cache abstraction?)
 
-The Spring cache abstraction allows to use different cache implementations: you can use [ehcache](http://ehcache.org/) (local cache), [Caffeine](https://github.com/ben-manes/caffeine) (local cache), [Hazelcast](http://www.hazelcast.com/) (distributed cache), [Infinispan](http://infinispan.org/) (distributed cache), [Memcached](https://memcached.org/) (another distributed cache) or [Redis](https://redis.io/) (configured as a single server cache). This can have a very positive impact on your application's performance, and hence it is a recommended option.
+Spring 缓存抽象允许使用不同的缓存实现：您可以使用 [ehcache](http://ehcache.org/)（本地缓存）、[Caffeine](https://github.com/ben-manes/caffeine)（本地缓存）、[Hazelcast](http://www.hazelcast.com/)（分布式缓存）、[Infinispan](http://infinispan.org/)（分布式缓存）、[Memcached](https://memcached.org/)（另一个分布式缓存）或 [Redis](https://redis.io/)（配置为单服务器缓存）。这可以对您应用程序的性能产生非常积极的影响，因此这是一个推荐的选项。
 
-### Do you want to use Hibernate 2nd level cache?
+### 是否使用 Hibernate 二级缓存(Do you want to use Hibernate 2nd level cache?)
 
-This option will only be available if you selected to use an SQL database (as JHipster will use Spring Data JPA to access it) and selected a cache provider in the previous question.
+只有在您选择使用 SQL 数据库（因为 JHipster 将使用 Spring Data JPA 访问它）并在上一个问题中选择了缓存提供程序时，此选项才可用。
 
-[Hibernate](http://hibernate.org/) is the JPA provider used by JHipster, and it can use a cache provider to greatly improve its performance. As a result, we highly recommend you to use this option, and to tune your cache implementation according to your application's needs.
+[Hibernate](http://hibernate.org/) 是 JHipster 使用的 JPA 提供程序，它可以使用缓存提供程序来大大提高其性能。因此，我们强烈建议您使用此选项，并根据您应用程序的需要调整您的缓存实现。
 
-### Would you like to use Maven or Gradle?
+### 选择使用Maven还是Gradle(Would you like to use Maven or Gradle?)
 
-You can build your generated Java application either with [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/). Maven is more stable and more mature. Gradle is more flexible, easier to extend, and more hype.
+您可以使用 [Maven](http://maven.apache.org/) 或 [Gradle](http://www.gradle.org/) 构建您生成的 Java 应用程序。Maven 更稳定、更成熟。Gradle 更灵活、更容易扩展、更时尚。
 
-### Which other technologies would you like to use?
+### 选择使用的其他技术(Which other technologies would you like to use?)
 
-This is a multi-select answer, to add one or several other technologies to the application. Available technologies are:
+可以选择多个，可以向应用程序添加一个或多个其他技术。可用的技术有：
 
-#### API first development using swagger-codegen
+#### 使用 swagger-codegen 的 API 优先开发
 
-This option lets you do [API-first development](/doing-api-first-development) for your application by integrating the [Swagger-Codegen](https://github.com/swagger-api/swagger-codegen) into the build.
+此选项通过将 [Swagger-Codegen](https://github.com/swagger-api/swagger-codegen) 集成到构建中，让您可以为您的应用程序进行 [API 优先开发](/doing-api-first-development)。
 
-#### Search engine using ElasticSearch
+#### 使用 ElasticSearch 的搜索引擎
 
-[Elasticsearch](https://github.com/elastic/elasticsearch) will be configured using Spring Data Elasticsearch. You can find more information on our [Elasticsearch guide](/using-elasticsearch/).
+[Elasticsearch](https://github.com/elastic/elasticsearch) 将使用 Spring Data Elasticsearch 进行配置。您可以在我们的 [Elasticsearch 指南](/using-elasticsearch/)中找到更多信息。
 
-#### Clustered HTTP sessions using Hazelcast
+#### 使用 Hazelcast 的集群 HTTP 会话
 
-By default, JHipster uses a HTTP session only for storing [Spring Security](http://docs.spring.io/spring-security/site/index.html)'s authentication and authorisation information. You can choose to put more data in your HTTP sessions.
-Using HTTP sessions will cause issues if you are running in a cluster, especially if you don't use a load balancer with "sticky sessions".
-If you want to replicate your sessions inside your cluster, choose this option to have [Hazelcast](http://www.hazelcast.com/) configured.
+默认情况下，JHipster 仅使用 HTTP 会话来存储 [Spring Security](http://docs.spring.io/spring-security/site/index.html) 的身份验证和授权信息。您可以选择在 HTTP 会话中放入更多数据。
+使用 HTTP 会话在集群中运行时会导致问题，特别是如果您不使用带有"粘性会话"的负载均衡器。
+如果您想在集群内复制您的会话，请选择此选项来配置 [Hazelcast](http://www.hazelcast.com/)。
 
-#### WebSockets using Spring Websocket
+#### 使用 Spring Websocket 的 WebSocket
 
-Websockets can be enabled using Spring Websocket. We also provide a complete sample to show you how to use the framework efficiently.
+可以使用 Spring Websocket 启用 Websocket。我们还提供了一个完整的示例，展示如何高效地使用该框架。
 
-#### Asynchronous messages using Apache Kafka
+#### 使用 Apache Kafka 的异步消息
 
-Use [Apache Kafka](/using-kafka/) as a publish/subscribe message broker.
+使用 [Apache Kafka](/using-kafka/) 作为发布/订阅消息代理。
 
-#### Asynchronous messages using Apache Pulsar
+#### 使用 Apache Pulsar 的异步消息
 
-Use [Apache Pulsar](/using-pulsar/) as a publish/subscribe message broker.
+使用 [Apache Pulsar](/using-pulsar/) 作为发布/订阅消息代理。
 
-### Which _Framework_ would you like to use for the client?
+### 选择客户端框架类型(Which Framework would you like to use for the client?)
 
-The client-side framework to use.
+要使用的客户端框架。
 
-You can either use:
+您可以使用：
 
 *   Angular
 *   React
 *   Vue
 
-### Would you like to use a Bootswatch theme?
+### 选择Bootswatch 主题(Would you like to use a Bootswatch theme?)
 
-The client theme to use.
+要使用的客户端主题。
 
-You can use any themes from [Bootswatch](https://bootswatch.com/) or keep the default one.
+您可以使用 [Bootswatch](https://bootswatch.com/) 中的任何主题，或者保持默认主题。
 
-### Would you like to use the Sass stylesheet preprocessor for your CSS?
+### 您想为 CSS 使用 Sass 样式表预处理器吗？
 
-[Sass](https://sass-lang.com/) a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Webpack](https://webpack.js.org) dev server, which will be configured automatically.
+[Sass](https://sass-lang.com/) 是简化 CSS 设计的绝佳解决方案。要高效使用，您需要运行 [Webpack](https://webpack.js.org) 开发服务器，它将自动配置。
 
-### Would you like to enable internationalization support?
+### 是否启用国际化支持(Would you like to enable internationalization support?)
 
-By default JHipster provides excellent internationalization support, both on the client side and on the server side. However, internationalization adds a little overhead, and is a little bit more complex to manage, so you can choose not to install this feature.
+默认情况下，JHipster 在客户端和服务器端都提供出色的国际化支持。但是，国际化会增加一些开销，管理起来也稍显复杂，因此您可以选择不安装此功能。
 
-Please note that JHipster covers only UI internationalization. For data internationalization, you will need to code it yourself in JPA/Hibernate layer.
+请注意，JHipster 仅涵盖 UI 国际化。对于数据国际化，您需要在 JPA/Hibernate 层中自行编码。
 
-### Which testing frameworks would you like to use?
+### 您想使用哪些测试框架？
 
-By default JHipster provide Java unit/integration testing (using Spring's JUnit support) and JavaScript unit testing (using Jest). As an option, you can also add support for:
+默认情况下，JHipster 提供 Java 单元/集成测试（使用 Spring 的 JUnit 支持）和 JavaScript 单元测试（使用 Jest）。作为选项，您还可以添加对以下内容的支持：
 
-*   Performance tests using Gatling
-*   Behaviour tests using Cucumber
-*   Angular integration tests with Protractor
+*   使用 Gatling 的性能测试
+*   使用 Cucumber 的行为测试
+*   使用 Protractor 的 Angular 集成测试
 
-You can find more information on our ["Running tests" guide](/running-tests/).
+您可以在我们的["运行测试"指南](/running-tests/)中找到更多信息。
 
-### Would you like to use incremental Liquibase changelogs?
+### 您想使用增量 Liquibase 更改日志吗？
 
-JHipster optionally creates incremental changelogs for you, so you don't need to recreate the database or to manually generate Liquibase diff.
+JHipster 可选地为您创建增量更改日志，这样您就不需要重新创建数据库或手动生成 Liquibase 差异。
 
-Run JHipster using `--incremental-changelog` option anytime to enable it.
+随时使用 `--incremental-changelog` 选项运行 JHipster 来启用它。
 
-When executing JHipster, entities contain two states:
+执行 JHipster 时，实体包含两种状态：
 
-*   The old state which is already saved to disk
-*   The new state, which is in the memory (generated from jdl or prompts)
+*   已保存到磁盘的旧状态
+*   在内存中的新状态（从 jdl 或提示生成）
 
-A diff is generated between them and changelogs are created.
+在它们之间生成差异并创建更改日志。
 
-Supported features:
+支持的功能：
 
-*   Create/remove fields
-*   Create/remove relationships
-*   JDL and prompts
+*   创建/删除字段
+*   创建/删除关系
+*   JDL 和提示
 
-Doesn't support attribute changes like type and constraints.
+不支持属性更改，如类型和约束。
 
-Conflicts with:
+冲突情况：
 
-*   `--fork` option, since it saves to disk overriding the old state.
+*   `--fork` 选项，因为它保存到磁盘会覆盖旧状态。
 
-### Would you like to install other generators from the JHipster Marketplace?
+### 您是否想从 JHipster 市场安装其他生成器？
 
-The [JHipster Marketplace](/modules/marketplace/) is where you can install additional modules, written by third-party developers, to add non-official features to your project.
+[JHipster 市场](/modules/marketplace/) 是您可以安装由第三方开发人员编写的附加模块的地方，为您的项目添加非官方功能。
 
 
-## Using a blueprint
+## 使用蓝图
 
-JHipster 5 introduces the concept of a blueprint. Blueprints are JHipster modules that can provide custom client/server side templates that will override the ones from JHipster. For example, the [Kotlin blueprint](https://github.com/jhipster/jhipster-kotlin) replaces most of the Java server side code with Kotlin.
+JHipster 5 引入了蓝图的概念。蓝图是 JHipster 模块，可以提供自定义客户端/服务器端模板，用于覆盖 JHipster 的模板。例如，[Kotlin 蓝图](https://github.com/jhipster/jhipster-kotlin) 将大部分 Java 服务器端代码替换为 Kotlin。
 
-For example, to use the Kotlin blueprint pass the name of the blueprint like below while generating an app.
+例如，要使用 Kotlin 蓝图，在生成应用程序时传递蓝图名称，如下所示。
 
 ```bash
 jhipster --blueprint kotlin
 ```
 
-The name of the blueprint is saved in the `.yo-rc.json` and will be automatically used while executing sub-generators like `entity`, `spring-controller` and `spring-service`.
+蓝图的名称保存在 `.yo-rc.json` 中，在执行子生成器（如 `entity`、`spring-controller` 和 `spring-service`）时将自动使用。
 
-If a blueprint doesn't implement a specific sub-generator, it will be skipped and the JHipster templates for the same sub-generator will be used.
+如果蓝图没有实现特定的子生成器，它将被跳过，并使用相同子生成器的 JHipster 模板。
 
-**Note:** An application can use only one blueprint, multiple blueprints are not supported yet.
-
-
-## Command-line options
-
-You can also run JHipster with some optional command-line options. Reference for those options can be found by typing `jhipster app --help`.
-
-Here are the options you can pass:
-
-* `--help` - Print the generator's options and usage
-* `--blueprint` - Specify a blueprint to use. For example `jhipster --blueprint kotlin`
-* `--skip-cache` - Do not remember prompt answers (Default: false)
-* `--skip-git` - Do not add the generated project to Git automatically (Default: false)
-* `--skip-install` - Do not automatically install dependencies (Default: false)
-* `--skip-client` - Skip the client-side application generation, so you only have the Spring Boot back-end code generated (Default: false).
-* `--skip-server` - Skip the server-side application generation, so you only have the front-end code generated (Default: false).
-* `--skip-user-management` - Skip the user management generation, both on the back-end and on the front-end (Default: false)
-* `--i18n` - Disable or enable i18n when skipping client side generation, has no effect otherwise (Default: true)
-* `--auth` - Specify the authentication type when skipping server side generation, has no effect otherwise but mandatory when using `skip-server`
-* `--db` - Specify the database when skipping server side generation, has no effect otherwise but mandatory when using `skip-server`
-* `--skip-checks` - Skip the check of the required tools (Default: false)
-* `--jhi-prefix` - Add prefix before services, components and state/route names (Default: jhi)
-* `--entity-suffix` - Add suffix after entities class names (Default: empty string)
-* `--dto-suffix` - Add suffix after DTOs class names (Default: DTO)
-* `--prettier-java` - Use [prettier-java](https://github.com/jhipster/prettier-java) for formatting all Java classes (Default: false)
-* `--experimental` - Enable experimental features. Please note that these features may be unstable and may undergo breaking changes at any time
-* `--skip-fake-data` - Skip generation of fake data for development
-* `--creation-timestamp` - Set a timestamp for reproducible build. Timestamp should be a parsable js date ex: 2019-01-01. Must be used with --with-entities or import-jdl (generator-jhipster > 6.5.1)
+**注意：** 一个应用程序只能使用一个蓝图，尚不支持多个蓝图。
 
 
-## Tips
+## 命令行选项
 
-You can also use the Yeoman command-line options, like `--force` to automatically overwrite existing files. So if you want to regenerate your whole application, including its entities, you can run `jhipster --force`.
+您也可以使用一些可选的命令行选项运行 JHipster。输入 `jhipster app --help` 可以找到这些选项的参考。
+
+以下是您可以传递的选项：
+
+* `--help` - 打印生成器的选项和用法
+* `--blueprint` - 指定要使用的蓝图。例如 `jhipster --blueprint kotlin`
+* `--skip-cache` - 不记住提示答案（默认：false）
+* `--skip-git` - 不自动将生成的项目添加到 Git（默认：false）
+* `--skip-install` - 不自动安装依赖（默认：false）
+* `--skip-client` - 跳过客户端应用程序生成，所以您只有 Spring Boot 后端代码生成（默认：false）。
+* `--skip-server` - 跳过服务器端应用程序生成，所以您只有前端代码生成（默认：false）。
+* `--skip-user-management` - 跳过用户管理生成，包括后端和前端（默认：false）
+* `--i18n` - 在跳过客户端生成时禁用或启用 i18n，否则无效（默认：true）
+* `--auth` - 在跳过服务器端生成时指定身份验证类型，否则无效，但使用 `skip-server` 时为必需
+* `--db` - 在跳过服务器端生成时指定数据库，否则无效，但使用 `skip-server` 时为必需
+* `--skip-checks` - 跳过必需工具的检查（默认：false）
+* `--jhi-prefix` - 在服务、组件和状态/路由名称前添加前缀（默认：jhi）
+* `--entity-suffix` - 在实体类名后添加后缀（默认：空字符串）
+* `--dto-suffix` - 在 DTO 类名后添加后缀（默认：DTO）
+* `--prettier-java` - 使用 [prettier-java](https://github.com/jhipster/prettier-java) 格式化所有 Java 类（默认：false）
+* `--experimental` - 启用实验性功能。请注意，这些功能可能不稳定，可能随时发生破坏性更改
+* `--skip-fake-data` - 跳过为开发生成虚假数据
+* `--creation-timestamp` - 为可重现构建设置时间戳。时间戳应该是可解析的 js 日期，例：2019-01-01。必须与 --with-entities 或 import-jdl 一起使用（generator-jhipster > 6.5.1）
+
+
+## 提示
+
+您也可以使用 Yeoman 命令行选项，如 `--force` 可以自动覆盖现有文件。因此，如果您想重新生成整个应用程序（包括其实体），您可以运行 `jhipster --force`。

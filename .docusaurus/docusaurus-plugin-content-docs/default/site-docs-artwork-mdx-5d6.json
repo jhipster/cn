@@ -1,0 +1,27 @@
+{
+  "id": "artwork",
+  "title": "Artwork",
+  "description": "All our artwork can be found in our artwork repository.",
+  "source": "@site/docs/artwork.mdx",
+  "sourceDirName": ".",
+  "slug": "/artwork/",
+  "permalink": "/cn/artwork/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/artwork.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1436486400000,
+  "frontMatter": {
+    "title": "Artwork",
+    "slug": "/artwork/",
+    "last_update": {
+      "date": "2015-07-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster meetups",
+    "permalink": "/cn/meetups/"
+  }
+}

@@ -1,61 +1,61 @@
 ---
-title: Configuring Eclipse with Maven
+title: 配置 Eclipse 与 Maven
 slug: /configuring-ide-eclipse/
 last_update:
   date: 2015-05-22T18:40:00-00:00
 ---
 
-Importing your JHipster application in Eclipse will require a few manual steps. You will need to do some configuration:
+在 Eclipse 中导入您的 JHipster 应用程序需要一些手动步骤。您需要进行一些配置：
 
-- on the Maven side (for Maven users)
-- on the JavaScript side (so Eclipse can ignore a couple of folders for static files)
+- Maven 方面（适用于 Maven 用户）
+- JavaScript 方面（让 Eclipse 忽略一些静态文件文件夹）
 
 
-## 1. Import your project as a Maven project
+## 1. 将您的项目作为 Maven 项目导入
 
-- Select File -> Import
-- Choose "Existing Maven Projects"
-- Select your project
-- Click on "Finish"
+- 选择 File -> Import
+- 选择 "Existing Maven Projects"
+- 选择您的项目
+- 点击 "Finish"
 
 ![Import](/images/configuring_ide_eclipse_1.png)
 
 ![Select](/images/configuring_ide_eclipse_2.png)
 
-At the end of the import phase, you can expect to see the below dialog.  "Maven plugin connectors" are an extension for m2eclipse. That one should be installed and Eclipse will need to restart after completion.
+在导入阶段结束时，您可能会看到下面的对话框。"Maven plugin connectors" 是 m2eclipse 的扩展。应该安装该扩展，完成后 Eclipse 需要重启。
 
-If you have installed it already, you will be good to go and do not need to do anything.
+如果您已经安装了它，您就可以继续了，不需要做任何事情。
 
 ![Select](/images/configuring_ide_eclipse_maven_processor.png)
 
-__Note__: if you already have an existing JHipster project and have not installed the corresponding connector, you should see the below error:
+__注意__：如果您已经有一个现有的 JHipster 项目并且没有安装相应的连接器，您应该会看到下面的错误：
 
 `Plugin execution not covered by lifecycle configuration: org.bsc.maven:maven-processor-plugin:2.2.4:process (execution: process, phase: generate-sources)`
 
-Select Quick Fix/Ctrl+1 (Cmd+1 on Mac) on the error marker and select "Discover new m2e connectors"
+在错误标记上选择 Quick Fix/Ctrl+1（Mac 上为 Cmd+1），然后选择 "Discover new m2e connectors"
 
 
-## 2. Excluding generated static folders
+## 2. 排除生成的静态文件夹
 
-At this stage you should not have any Java error but should still see some JavaScript errors. This is because you have some JavaScript files that Eclipse cannot parse properly. Those files are used at execution time only and do not need to be visible in your workspace. They should be excluded.
+在这个阶段，您应该不会有任何 Java 错误，但仍可能看到一些 JavaScript 错误。这是因为您有一些 Eclipse 无法正确解析的 JavaScript 文件。这些文件仅在执行时使用，不需要在您的工作区中可见。应该将它们排除。
 
-### Exclude the ‘node_modules’ folder
+### 排除 'node_modules' 文件夹
 
-- Right-click on Project -> Properties -> Resource -> Resource Filters
-- Select: Exclude all, Applies to folders, Name matches node_modules
-- Press "Ok"
+- 右键单击项目 -> Properties -> Resource -> Resource Filters
+- 选择：Exclude all，Applies to folders，Name matches node_modules
+- 按 "Ok"
 
 ![Right-click](/images/configuring_ide_eclipse_3.png)
 
 ![Exclude](/images/configuring_ide_eclipse_4.png)
 
-### Exclude 'app' from src/main/webapp
+### 从 src/main/webapp 排除 'app'
 
-- Right click on Project -> Properties -> Javascript -> Include path
-- Click on the “source” tab and select your_project/src/main/webapp
-- Select “Excluded: (None) -> Edit -> Add multiple
-- Select  `app` and click “Ok”
-- The following folders should have been automatically excluded (if not, exclude them manually):
+- 右键单击项目 -> Properties -> Javascript -> Include path
+- 点击 "source" 选项卡并选择 your_project/src/main/webapp
+- 选择 "Excluded: (None) -> Edit -> Add multiple
+- 选择 `app` 并点击 "Ok"
+- 以下文件夹应该已经自动排除（如果没有，请手动排除）：
     - `bower_components`
     - `node_modules/`
 
@@ -65,19 +65,19 @@ At this stage you should not have any Java error but should still see some JavaS
 
 ![Multiple select](/images/configuring_ide_eclipse_7.png)
 
-### Maven IDE profile
+### Maven IDE 配置文件
 
-If you are using Maven, you need to activate the `IDE` profile in Eclipse. This is used for applying IDE-specific tweaks, which currently only includes applying the MapStruct annotation processor.
+如果您使用 Maven，则需要在 Eclipse 中激活 `IDE` 配置文件。这用于应用 IDE 特定的调整，目前仅包括应用 MapStruct 注解处理器。
 
-- Right click on Project -> Properties -> Maven
-- In "Active Maven Profiles", type `dev,IDE`
+- 右键单击项目 -> Properties -> Maven
+- 在 "Active Maven Profiles" 中，输入 `dev,IDE`
 
-With this configuration, you will be using both the JHipster `dev` and `IDE` profiles.
+使用此配置，您将同时使用 JHipster `dev` 和 `IDE` 配置文件。
 
-### Configuring MapStruct plugins
+### 配置 MapStruct 插件
 
-In case for the IDE correctly recognize the mapstruct code generator some more things needs to be done.
+为了让 IDE 正确识别 mapstruct 代码生成器，还需要做一些额外的事情。
 
-You should use the plugin m2e-apt (https://marketplace.eclipse.org/content/m2e-apt). Installing the m2e-apt plugin, enable Eclipse to work along with mapstruct.
+您应该使用 m2e-apt 插件 (https://marketplace.eclipse.org/content/m2e-apt)。安装 m2e-apt 插件，使 Eclipse 能够与 mapstruct 一起工作。
 
-Also you can install the plugin MapStruct Eclipse Plugin (https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin) for help and tips from the IDE. 
+您还可以安装 MapStruct Eclipse Plugin 插件 (https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin) 来获得 IDE 的帮助和提示。 

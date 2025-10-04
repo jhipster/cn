@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_time_drift_docker",
+  "title": "Time Drift in Docker",
+  "description": "Tip submitted by @SudharakaP",
+  "source": "@site/docs/tips/032_tip_time_drift_docker.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/032_tip_time_drift_docker.html",
+  "permalink": "/cn/tips/032_tip_time_drift_docker.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/032_tip_time_drift_docker.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1588400040000,
+  "sidebarPosition": 32,
+  "frontMatter": {
+    "title": "Time Drift in Docker",
+    "slug": "/tips/032_tip_time_drift_docker.html",
+    "last_update": {
+      "date": "2020-05-02T06:14:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Running Protractor e2e tests within Intellij IDEA",
+    "permalink": "/cn/tips/031_tip_e2e_intellij.html"
+  },
+  "next": {
+    "title": "User entity management",
+    "permalink": "/cn/user-entity/"
+  }
+}

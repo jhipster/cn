@@ -1,0 +1,31 @@
+{
+  "id": "development/common-ports",
+  "title": "Common ports",
+  "description": "JHipster configures many tools and services, and each of them will likely use one or several ports. Here is a documentation to help understand what each port does, and help in case of a port conflict.",
+  "source": "@site/docs/development/common-ports.mdx",
+  "sourceDirName": "development",
+  "slug": "/common-ports/",
+  "permalink": "/cn/common-ports/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/common-ports.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1615204800000,
+  "frontMatter": {
+    "title": "Common ports",
+    "slug": "/common-ports/",
+    "last_update": {
+      "date": "2021-03-08T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "常用应用属性",
+    "permalink": "/cn/common-application-properties/"
+  },
+  "next": {
+    "title": "分离前端和 API",
+    "permalink": "/cn/separating-front-end-and-api/"
+  }
+}

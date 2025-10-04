@@ -1,0 +1,30 @@
+{
+  "id": "releases/2019-06-11-jhipster-release-6.1.0",
+  "title": "Release 6.1.0",
+  "description": "This is the first minor release of JHipster v6 with 182 closed tickets and merged pull requests.",
+  "source": "@site/docs/releases/2019-06-11-jhipster-release-6.1.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2019/06/11/jhipster-release-6.1.0.html",
+  "permalink": "/cn/2019/06/11/jhipster-release-6.1.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2019-06-11-jhipster-release-6.1.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 6.1.0",
+    "slug": "/2019/06/11/jhipster-release-6.1.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 6.0.1",
+    "permalink": "/cn/2019/05/10/jhipster-release-6.0.1.html"
+  },
+  "next": {
+    "title": "Release 6.1.1",
+    "permalink": "/cn/2019/06/21/jhipster-release-6.1.1.html"
+  }
+}

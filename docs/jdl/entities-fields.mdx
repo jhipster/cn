@@ -1,13 +1,13 @@
 ---
-title: JHipster Domain Language (JDL) - Entities & fields
+title: JHipster 领域语言 (JDL) - 实体和字段
 slug: /jdl/entities-fields
 last_update:
   date: 2019-10-27T12:00:00-00:00
 ---
 
-## Syntax
+## 语法
 
-The entity declaration is done as follows:
+实体声明如下：
 
 ```jdl
 [<entity javadoc>]
@@ -19,43 +19,43 @@ entity <entity name> [(<table name>)] {
 }
 ```
 
-- `<entity name>` the name of the entity,
-- `<field name>` the name of one field of the entity,
-- `<field type>` the JHipster supported type of the field,
-- and as an option:
-  - `<entity javadoc>` the documentation of the entity,
-  - `<entity annotation>` the options for the entity (see [OptionsEntity][] for a complete list of available options),
-  - `<table name>` the database table name (if you want to specify something different that the name automatically computed from the entity name),
-  - `<field javadoc>` the documentation of the field,
-  - `<field annotation>` the options for the field (see [OptionsField][] for a complete list of available options),
-  - `<validation>` the validations for the field.
+- `<entity name>` 实体的名称，
+- `<field name>` 实体的某个字段的名称，
+- `<field type>` 字段的 JHipster 支持的类型，
+- 可选项：
+  - `<entity javadoc>` 实体的文档，
+  - `<entity annotation>` 实体的选项（请参阅 [OptionsEntity][] 以获取可用选项的完整列表），
+  - `<table name>` 数据库表名（如果您想指定与从实体名称自动计算的名称不同的名称），
+  - `<field javadoc>` 字段的文档，
+  - `<field annotation>` 字段的选项（请参阅 [OptionsField][] 以获取可用选项的完整列表），
+  - `<validation>` 字段的验证。
 
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
 ```jdl
 entity A
 ```
 
-This is equivalent to:
+这等同于：
 
 ```jdl
 entity A(a) {}
 ```
 
-The former the simpler form, without specifying a "body" (braces for fields) and a table name.
+前者是更简单的形式，没有指定"主体"（字段的大括号）和表名。
 
-### With a custom table name
+### 使用自定义表名
 
-Specifying a custom table name is possible too:
+也可以指定自定义表名：
 
 ```jdl
  entity A(my_super_entity)
 ```
 
-### With fields
+### 包含字段
 
 ```jdl
 entity A {
@@ -64,7 +64,7 @@ entity A {
 }
 ```
 
-### With field validations
+### 包含字段验证
 
 ```jdl
 entity A {
@@ -73,19 +73,19 @@ entity A {
 }
 ```
 
-### Blob declaration
+### Blob 声明
 
-JHipster gives a great choice as one can choose between an image type or any binary type. JDL lets you do the same.
-Create a custom type (see DataType) with the editor, name it according to these conventions:
-  - `AnyBlob` or `Blob` to create a field of the "any" binary type;
-  - `ImageBlob` to create a field meant to be an image.
-  - `TextBlob` to create a field for a CLOB (long text).
+JHipster 提供了绝佳的选择，因为可以在图像类型或任何二进制类型之间进行选择。JDL 让您做同样的事情。
+使用编辑器创建一个自定义类型（请参阅 DataType），根据这些约定命名：
+  - `AnyBlob` 或 `Blob` 创建一个"任意"二进制类型的字段；
+  - `ImageBlob` 创建一个用作图像的字段。
+  - `TextBlob` 创建一个用于 CLOB（长文本）的字段。
 
-And you can create as many DataTypes as you like.
+您可以创建任意数量的 DataTypes。
 
-### Regular expressions
+### 正则表达式
 
-This is a certain validation (only available to String types), and its syntax is:
+这是一种特定的验证（仅可用于 String 类型），其语法是：
 
 ```jdl
 entity A {
@@ -93,16 +93,15 @@ entity A {
 }
 ```
 
-Let's break it down:
+让我们分解一下：
 
-- `pattern` is the keyword to declare a regex validation (with the normal parentheses)
-- `/.../` the pattern is declared inside two slashes
-- `\` anti-slashes needn't be escaped
+- `pattern` 是声明正则表达式验证的关键字（使用正常的圆括号）
+- `/.../` 模式在两个斜线内声明
+- `\` 反斜线不需要转义
 
-### Commenting
+### 注释
 
-Commenting is possible in the JDL for entities and fields, and will generate documentation (Javadoc or JSDoc, depending
-on the backend).
+在 JDL 中可以对实体和字段进行注释，并将生成文档（Javadoc 或 JSDoc，取决于后端）。
 
 ```jdl
 /**
@@ -120,14 +119,14 @@ entity A {
 }
 ```
 
-These comments will later be added as Javadoc comments by JHipster. The JDL possesses its own kind of comment:
-  - // an ignored comment
-  - /** not an ignored comment */
+这些注释将由 JHipster 后续添加为 Javadoc 注释。JDL 拥有自己的注释类型：
+  - // 一个被忽略的注释
+  - /** 不被忽略的注释 */
 
-Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
-Please note that the JDL Studio directives that start with `#` will be ignored during parsing.
+因此，任何以 `//` 开头的内容都被认为是 JDL 的内部注释，不会被计为 Javadoc。
+请注意，以 `#` 开头的 JDL Studio 指令在解析期间将被忽略。
 
-Another form of comments are the following comments:
+另一种注释形式是以下注释：
 
 ```jdl
 entity A {
@@ -136,10 +135,10 @@ entity A {
 }
 ```
 
-Here A's name will be commented with `My super field`, B with `My other super field`.
+这里 A 的 name 将被注释为 `My super field`，count 被注释为 `My other super field`。
 
-Yes, commas are not mandatory but it's wiser to have them so as not to make mistakes in the code.
-**If you want to mix commas and following comments, beware!**
+是的，逗号不是必需的，但明智的做法是使用它们，以免在代码中犯错。
+**如果您想混合使用逗号和后续注释，请小心！**
 
 ```jdl
 entity A {
@@ -147,33 +146,33 @@ entity A {
   count Integer
 }
 ```
-A's name won't have the comment, because the count will.
+A 的 name 不会有注释，因为 count 会有。
 
 
-## Field types and validations
+## 字段类型和验证
 
-Each field type has its own validation list. Here are the types supported in the JDL:
+每种字段类型都有自己的验证列表。以下是 JDL 中支持的类型：
 
-|JDL type      |Validations                                    |
-|--------------|-----------------------------------------------|
+|JDL 类型     |验证                                        |
+|--------------|-------------------------------------------------|
 |String        |required, minlength, maxlength, pattern, unique|
-|Integer       |required, min, max, unique                     |
-|Long          |required, min, max, unique                     |
-|BigDecimal    |required, min, max, unique                     |
-|Float         |required, min, max, unique                     |
-|Double        |required, min, max, unique                     |
-|Enum          |required, unique                               |
-|Boolean       |required, unique                               |
-|LocalDate     |required, unique                               |
-|ZonedDateTime |required, unique                               |
-|Instant       |required, unique                               |
-|Duration      |required, unique                               |
-|LocalTime     |required, unique                               |
-|UUID          |required, unique                               |
-|Blob          |required, minbytes, maxbytes, unique           |
-|AnyBlob       |required, minbytes, maxbytes, unique           |
-|ImageBlob     |required, minbytes, maxbytes, unique           |
-|TextBlob      |required, unique                               |
+|Integer       |required, min, max, unique                      |
+|Long          |required, min, max, unique                      |
+|BigDecimal    |required, min, max, unique                      |
+|Float         |required, min, max, unique                      |
+|Double        |required, min, max, unique                      |
+|Enum          |required, unique                                |
+|Boolean       |required, unique                                |
+|LocalDate     |required, unique                                |
+|ZonedDateTime |required, unique                                |
+|Instant       |required, unique                                |
+|Duration      |required, unique                                |
+|LocalTime     |required, unique                                |
+|UUID          |required, unique                                |
+|Blob          |required, minbytes, maxbytes, unique            |
+|AnyBlob       |required, minbytes, maxbytes, unique            |
+|ImageBlob     |required, minbytes, maxbytes, unique            |
+|TextBlob      |required, unique                                |
 
 
 [OptionsEntity]: /jdl/options/#entity-options "Options"

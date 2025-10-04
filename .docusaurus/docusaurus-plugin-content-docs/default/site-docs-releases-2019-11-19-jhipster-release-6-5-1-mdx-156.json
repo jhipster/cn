@@ -1,0 +1,30 @@
+{
+  "id": "releases/2019-11-19-jhipster-release-6.5.1",
+  "title": "Release 6.5.1",
+  "description": "This is a patch release, which corrects some issues with JDL, as we upgraded to JHipster Core v6:",
+  "source": "@site/docs/releases/2019-11-19-jhipster-release-6.5.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2019/11/19/jhipster-release-6.5.1.html",
+  "permalink": "/cn/2019/11/19/jhipster-release-6.5.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2019-11-19-jhipster-release-6.5.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 6.5.1",
+    "slug": "/2019/11/19/jhipster-release-6.5.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 6.5.0",
+    "permalink": "/cn/2019/11/10/jhipster-release-6.5.0.html"
+  },
+  "next": {
+    "title": "Release 6.6.0",
+    "permalink": "/cn/2019/12/22/jhipster-release-6.6.0.html"
+  }
+}

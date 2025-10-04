@@ -1,0 +1,33 @@
+{
+  "defaultLocale": "zh-Hans",
+  "locales": [
+    "zh-Hans",
+    "en",
+    "jp"
+  ],
+  "path": "i18n",
+  "currentLocale": "zh-Hans",
+  "localeConfigs": {
+    "zh-Hans": {
+      "label": "中文",
+      "direction": "ltr",
+      "htmlLang": "zh-CN",
+      "calendar": "gregory",
+      "path": "https://www.jhipster.tech/cn"
+    },
+    "en": {
+      "label": "English",
+      "direction": "ltr",
+      "htmlLang": "en-US",
+      "calendar": "gregory",
+      "path": "https://www.jhipster.tech"
+    },
+    "jp": {
+      "label": "日本語",
+      "direction": "ltr",
+      "htmlLang": "jp",
+      "calendar": "gregory",
+      "path": "https://www.jhipster.tech/jp"
+    }
+  }
+}

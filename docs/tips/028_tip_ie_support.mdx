@@ -1,5 +1,5 @@
 ---
-title: Provide Internet Explorer support
+title: 提供 Internet Explorer 支持
 slug: /tips/028_tip_ie_support.html
 last_update:
   date: 2019-03-05T18:20:00-00:00
@@ -7,26 +7,26 @@ last_update:
 
 **Tip submitted by [@wmarques](https://github.com/wmarques)** & [@anthony-o](https://github.com/anthony-o)
 
-JHipster supports only evergreen browsers.
-However you can still easily support some older browsers like Internet Explorer.
+JHipster 仅支持常青浏览器。
+但是，你仍然可以轻松支持一些较旧的浏览器，如 Internet Explorer。
 
-In order to do that you have to:
+为此，你需要：
 
-1. Set target to `es5` in your `tsconfig`
-2. Then you have two options:
-   - Add the correct polyfills from 'core-js', if you don't know which one you should use, check the Angular CLI project and their polyfills.
-   - Or use babel + [Babel preset-env](https://babeljs.io/docs/en/babel-preset-env#usebuiltins) to automatically import the correct core-js polyfills based on a browserslist file.
+1. 在你的 `tsconfig` 中将目标设置为 `es5`
+2. 然后你有两个选项：
+   - 从 'core-js' 添加正确的 polyfills，如果你不知道应该使用哪一个，请查看 Angular CLI 项目及其 polyfills。
+   - 或使用 babel + [Babel preset-env](https://babeljs.io/docs/en/babel-preset-env#usebuiltins) 根据 browserslist 文件自动导入正确的 core-js polyfills。
 
 
-## Full tip using Babel
+## 使用 Babel 的完整提示
 
-First, add those `package.json` dependencies: `@babel/core`, `@babel/preset-env` and `babel-loader`. Example with `npm`:
+首先，添加这些 `package.json` 依赖项：`@babel/core`、`@babel/preset-env` 和 `babel-loader`。使用 `npm` 的示例：
 
 ```shell
 npm install @babel/core @babel/preset-env babel-loader --save-dev
 ```
 
-(tested with the following versions for a working IE11 version on a JHipster v6.3.1 generated application:
+（在 JHipster v6.3.1 生成的应用程序上测试了以下版本以实现可运行的 IE11 版本：
 
 ```json
 "@babel/core": "7.6.4",
@@ -35,14 +35,14 @@ npm install @babel/core @babel/preset-env babel-loader --save-dev
 ```
 )
 
-Now add the following lines at the top of `src/main/webapp/app/polyfills.ts`:
+现在在 `src/main/webapp/app/polyfills.ts` 的顶部添加以下行：
 
 ```ts
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 ```
 
-In `webpack/webpack.common.js`, after
+在 `webpack/webpack.common.js` 中，在
 
 ```js
 {
@@ -54,7 +54,7 @@ In `webpack/webpack.common.js`, after
 },
 ```
 
-add the following lines:
+之后添加以下行：
 
 ```js
 {
@@ -81,6 +81,6 @@ add the following lines:
 },
 ```
 
-And finally, change `target` to `es5` in `tsconfig.json` & `tsconfig-aot.json`.
+最后，在 `tsconfig.json` 和 `tsconfig-aot.json` 中将 `target` 更改为 `es5`。
 
-See this [GitHub issue](https://github.com/jhipster/generator-jhipster/issues/10184#issuecomment-541650501) & [this SO answer](https://stackoverflow.com/a/58377002/535203) for more details.
+更多详细信息，请参见此 [GitHub issue](https://github.com/jhipster/generator-jhipster/issues/10184#issuecomment-541650501) 和 [这个 SO 回答](https://stackoverflow.com/a/58377002/535203)。

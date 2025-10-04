@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_repl_with_the_remote_shell",
+  "title": "REPL with the remote shell",
+  "description": "Tip submitted by @cbornet",
+  "source": "@site/docs/tips/017_tip_repl_with_the_remote_shell.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/017_tip_repl_with_the_remote_shell.html",
+  "permalink": "/cn/tips/017_tip_repl_with_the_remote_shell.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/017_tip_repl_with_the_remote_shell.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1474582920000,
+  "sidebarPosition": 17,
+  "frontMatter": {
+    "title": "REPL with the remote shell",
+    "slug": "/tips/017_tip_repl_with_the_remote_shell.html",
+    "last_update": {
+      "date": "2016-09-22T22:22:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "LDAP Authentication",
+    "permalink": "/cn/tips/016_tip_ldap_authentication.html"
+  },
+  "next": {
+    "title": "Kubernetes and Google Cloud SQL",
+    "permalink": "/cn/tips/018_tip_kubernetes_and_google_cloud_sql.html"
+  }
+}

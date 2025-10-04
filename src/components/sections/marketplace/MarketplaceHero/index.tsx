@@ -22,17 +22,17 @@ export default function MarketplaceHero({
     <header className={styles.section}>
       <div className="container">
         <Heading className={styles.sectionTitle} as="h1">
-          Marketplace
+          模块中心
         </Heading>
 
         <Heading as="h2">
-          Available modules and blueprints (
+            可用模块和蓝图 (
           {`${numberFilteredModules}/${numberModules}`})
         </Heading>
 
         <SearchInput
           value={value}
-          placeholder="Filter by name or keyword"
+          placeholder="按名称或关键词筛选"
           onInput={handleSearch}
         />
 
@@ -41,13 +41,13 @@ export default function MarketplaceHero({
             className="button button--primary"
             to="/modules/creating-a-module"
           >
-            Create your own module
+              创建您自己的模块
           </Link>
           <Link
             className="button button--secondary"
             to="/modules/creating-a-blueprint"
           >
-            Create your own blueprint
+              制定你自己的蓝图
           </Link>
         </div>
       </div>

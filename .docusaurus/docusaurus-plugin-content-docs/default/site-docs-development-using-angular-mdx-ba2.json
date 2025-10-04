@@ -1,0 +1,31 @@
+{
+  "id": "development/using-angular",
+  "title": "Using Angular",
+  "description": "Tooling",
+  "source": "@site/docs/development/using-angular.mdx",
+  "sourceDirName": "development",
+  "slug": "/using-angular/",
+  "permalink": "/cn/using-angular/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/using-angular.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1422574860000,
+  "frontMatter": {
+    "title": "Using Angular",
+    "slug": "/using-angular/",
+    "last_update": {
+      "date": "2015-01-29T23:41:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "邮箱未找到",
+    "permalink": "/cn/problem/email-not-found/"
+  },
+  "next": {
+    "title": "使用 React",
+    "permalink": "/cn/using-react/"
+  }
+}

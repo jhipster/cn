@@ -1,66 +1,66 @@
 ---
-title: Technology stack
+title: 技术栈
 slug: /tech-stack/
 last_update:
   date: 2021-03-08T12:00:00-00:00
 ---
 
-## Technology stack on the client side
+## 客户端技术栈
 
-Single Web page application:
+单页 Web 应用程序：
 
-* [Angular](https://angular.io/) or [React](https://reactjs.org/) or [Vue](https://vuejs.org/)
-* Responsive Web Design with [Twitter Bootstrap](http://getbootstrap.com/)
+* [Angular](https://angular.io/) 或 [React](https://reactjs.org/) 或 [Vue](https://vuejs.org/)
+* 使用 [Twitter Bootstrap](http://getbootstrap.com/) 的响应式 Web 设计
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
-* Compatible with modern browsers (Chrome, FireFox, Microsoft Edge...)
-* Full internationalization support
-* Optional [Sass](https://www.npmjs.com/package/node-sass) support for CSS design
-* Optional WebSocket support with Spring Websocket
+* 兼容现代浏览器（Chrome、FireFox、Microsoft Edge...）
+* 完整的国际化支持
+* 可选的 [Sass](https://www.npmjs.com/package/node-sass) CSS 设计支持
+* 可选的 Spring Websocket WebSocket 支持
 
-With the great development workflow:
+具有强大的开发工作流程：
 
-* Installation of new JavaScript libraries with [NPM](https://www.npmjs.com/get-npm)
-* Build, optimization and live reload with [Webpack](https://webpack.js.org/)
-* Testing with [Jest](https://facebook.github.io/jest/) and [Protractor](http://www.protractortest.org)
+* 使用 [NPM](https://www.npmjs.com/get-npm) 安装新的 JavaScript 库
+* 使用 [Webpack](https://webpack.js.org/) 构建、优化和实时重载
+* 使用 [Jest](https://facebook.github.io/jest/) 和 [Protractor](http://www.protractortest.org) 进行测试
 
-And what if a single Web page application isn't enough for your needs?
+如果单页 Web 应用程序不能满足您的需求怎么办？
 
-* Support for the [Thymeleaf](http://www.thymeleaf.org/) template engine, to generate Web pages on the server side
+* 支持 [Thymeleaf](http://www.thymeleaf.org/) 模板引擎，在服务器端生成 Web 页面
 
 
-## Technology stack on the server side
+## 服务器端技术栈
 
-A complete [Spring application](http://spring.io/):
+一个完整的 [Spring 应用程序](http://spring.io/)：
 
-* [Spring Boot](http://projects.spring.io/spring-boot/) for application configuration
-* [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/) configuration for building, testing and running the application
-* ["development" and "production" profiles](/profiles) (both for Maven and Gradle)
+* [Spring Boot](http://projects.spring.io/spring-boot/) 用于应用程序配置
+* [Maven](http://maven.apache.org/) 或 [Gradle](http://www.gradle.org/) 配置用于构建、测试和运行应用程序
+* [“开发”和“生产”配置文件](/profiles)（Maven 和 Gradle 都支持）
 * [Spring Security](http://docs.spring.io/spring-security/site/index.html)
 * [Spring MVC REST](http://spring.io/guides/gs/rest-service/) + [Jackson](https://github.com/FasterXML/jackson)
-* Optional WebSocket support with Spring Websocket
-* [Spring Data JPA](http://projects.spring.io/spring-data-jpa/) + Bean Validation
-* Database updates with [Liquibase](http://www.liquibase.org/)
-* [Elasticsearch](https://github.com/elastic/elasticsearch) support if you want to have search capabilities on top of your database
-* [MongoDB](http://www.mongodb.org) and [Couchbase](https://www.couchbase.com) support if you'd rather use a document-oriented NoSQL database instead of JPA
-* [Cassandra](http://cassandra.apache.org/) support if you'd rather use a column-oriented NoSQL database instead of JPA
-* [Kafka](http://kafka.apache.org/) and [Pulsar](http://pulsar.apache.org/) support if you want to use a publish-subscribe messaging system
+* 可选的 Spring Websocket WebSocket 支持
+* [Spring Data JPA](http://projects.spring.io/spring-data-jpa/) + Bean 验证
+* 使用 [Liquibase](http://www.liquibase.org/) 进行数据库更新
+* [Elasticsearch](https://github.com/elastic/elasticsearch) 支持，如果您想在数据库之上拥有搜索功能
+* [MongoDB](http://www.mongodb.org) 和 [Couchbase](https://www.couchbase.com) 支持，如果您宁願使用面向文档的 NoSQL 数据库而不是 JPA
+* [Cassandra](http://cassandra.apache.org/) 支持，如果您宁願使用面向列的 NoSQL 数据库而不是 JPA
+* [Kafka](http://kafka.apache.org/) 和 [Pulsar](http://pulsar.apache.org/) 支持，如果您想使用发布-订阅消息系统
 
 
-## Technology stack for microservices
+## 微服务技术栈
 
-Microservices are optional, and fully supported:
+微服务是可选的，并且完全支持：
 
-* HTTP routing using [Spring Cloud Gateway](https://github.com/spring-cloud/spring-cloud-gateway)
-* Service discovery using [HashiCorp Consul](https://www.consul.io/) or [Netflix Eureka](https://github.com/Netflix/eureka)
+* 使用 [Spring Cloud Gateway](https://github.com/spring-cloud/spring-cloud-gateway) 的 HTTP 路由
+* 使用 [HashiCorp Consul](https://www.consul.io/) 或 [Netflix Eureka](https://github.com/Netflix/eureka) 的服务发现
 
 
-## Ready to go into production:
+## 准备好投入生产：
 
-* Monitoring with [Metrics](http://metrics.dropwizard.io/) and [the ELK Stack](https://www.elastic.co/products)
-* Caching with [ehcache](http://ehcache.org/) (local cache), [Caffeine](https://github.com/ben-manes/caffeine) (local cache), [Hazelcast](http://www.hazelcast.com/), [Infinispan](http://infinispan.org/), [Memcached](https://memcached.org/) or [Redis](https://redis.io/)
-* Optimized static resources (gzip filter, HTTP cache headers)
-* Log management with [Logback](http://logback.qos.ch/), configurable at runtime
-* Connection pooling with [HikariCP](https://github.com/brettwooldridge/HikariCP) for optimum performance
-* Builds a standard WAR file or an executable JAR file
-* Full Docker and Docker Compose support
-* Support for all major cloud providers: AWS, GCP, Heroku, Kubernetes, OpenShift, Azure, Docker...
+* 使用 [Metrics](http://metrics.dropwizard.io/) 和 [ELK Stack](https://www.elastic.co/products) 的监控
+* 使用 [ehcache](http://ehcache.org/)（本地缓存）、[Caffeine](https://github.com/ben-manes/caffeine)（本地缓存）、[Hazelcast](http://www.hazelcast.com/)、[Infinispan](http://infinispan.org/)、[Memcached](https://memcached.org/) 或 [Redis](https://redis.io/) 的缓存
+* 优化的静态资源（gzip 过滤器、HTTP 缓存头）
+* 使用 [Logback](http://logback.qos.ch/) 的日志管理，可在运行时配置
+* 使用 [HikariCP](https://github.com/brettwooldridge/HikariCP) 的连接池以获得最优性能
+* 构建标准 WAR 文件或可执行 JAR 文件
+* 完整的 Docker 和 Docker Compose 支持
+* 支持所有主要的云提供商：AWS、GCP、Heroku、Kubernetes、OpenShift、Azure、Docker...

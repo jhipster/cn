@@ -10,15 +10,13 @@ export default function TeamRetiredMembers() {
   return (
     <SectionWrapper className={styles.section}>
       <SectionTitle align="start" size="sm">
-        Retired members of the board of developers
+          开发者委员会荣誉委员
       </SectionTitle>
 
       <SectionDescription align="start">
         <p>
-          JHipster is an Open Source project, we don’t ask anything from our
-          members: they can leave the project or stop contributing at any time.
-          But as members of the board have more rights than other people
-          (including write access to the project), we need them to be active.
+            JHipster 是一个开源项目，我们从不强求成员履行任何义务：他们可以随时离开项目或停止贡献。
+            但鉴于管理委员会成员享有比其他成员更高的权限（包括对项目的写权限），我们需要他们持续保持活跃贡献。
         </p>
       </SectionDescription>
 

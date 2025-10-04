@@ -1,0 +1,31 @@
+{
+  "id": "tests-and-qa/code-quality",
+  "title": "Code Quality",
+  "description": "Code quality can be analyzed using SonarCloud, which is automatically configured by JHipster.",
+  "source": "@site/docs/tests-and-qa/code-quality.mdx",
+  "sourceDirName": "tests-and-qa",
+  "slug": "/code-quality/",
+  "permalink": "/cn/code-quality/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tests-and-qa/code-quality.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1534596000000,
+  "frontMatter": {
+    "title": "Code Quality",
+    "slug": "/code-quality/",
+    "last_update": {
+      "date": "2018-08-18T12:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "运行测试",
+    "permalink": "/cn/running-tests/"
+  },
+  "next": {
+    "title": "依赖漏洞检查",
+    "permalink": "/cn/dependency-vulnerabities-check/"
+  }
+}

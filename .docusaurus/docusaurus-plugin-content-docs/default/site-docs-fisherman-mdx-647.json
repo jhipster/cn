@@ -1,0 +1,22 @@
+{
+  "id": "fisherman",
+  "title": "Using Fisherman",
+  "description": "Fisherman has been renamed to fisher. See the the Fisher JHipster plugin documentation for details.",
+  "source": "@site/docs/fisherman.mdx",
+  "sourceDirName": ".",
+  "slug": "/fisherman/",
+  "permalink": "/cn/fisherman/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/fisherman.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1471200000000,
+  "frontMatter": {
+    "title": "Using Fisherman",
+    "slug": "/fisherman/",
+    "last_update": {
+      "date": "2016-08-14T18:40:00.000Z"
+    }
+  }
+}

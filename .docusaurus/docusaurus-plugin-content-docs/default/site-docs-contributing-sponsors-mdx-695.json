@@ -1,0 +1,31 @@
+{
+  "id": "contributing/sponsors",
+  "title": "Sponsors",
+  "description": "JHipster uses Open Collective to gather money. This money is used to cover project expenses (like running this website) in a transparent way (See the Open Collective documentation), and your donation will help the project live and grow successfully.",
+  "source": "@site/docs/contributing/sponsors.mdx",
+  "sourceDirName": "contributing",
+  "slug": "/sponsors/",
+  "permalink": "/cn/sponsors/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/contributing/sponsors.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1738368000000,
+  "frontMatter": {
+    "title": "Sponsors",
+    "slug": "/sponsors/",
+    "last_update": {
+      "date": "2025-02-01T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Bug bounties",
+    "permalink": "/cn/bug-bounties/"
+  },
+  "next": {
+    "title": "Contributing individuals",
+    "permalink": "/cn/contributing-individuals/"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "jdl/relationships",
+  "title": "JHipster Domain Language (JDL) - Relationships",
+  "description": "Relationship types",
+  "source": "@site/docs/jdl/relationships.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/relationships",
+  "permalink": "/cn/jdl/relationships",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/relationships.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1572782400000,
+  "frontMatter": {
+    "title": "JHipster Domain Language (JDL) - Relationships",
+    "slug": "/jdl/relationships",
+    "last_update": {
+      "date": "2019-11-03T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "枚举",
+    "permalink": "/cn/jdl/enums"
+  },
+  "next": {
+    "title": "选项",
+    "permalink": "/cn/jdl/options"
+  }
+}

@@ -1,5 +1,5 @@
 ---
-title: Configure Redis leader follower(master-slave) replication
+title: 配置 Redis 主从（leader-follower/master-slave）复制
 slug: /tips/030_tip_redis_replication.html
 last_update:
   date: 2020-03-23T12:30:00-00:00
@@ -7,14 +7,14 @@ last_update:
 
 **Tip submitted by [@zhx828](https://github.com/zhx828)**
 
-In the latest JHipster generator, it provides a redis cluster setting for production deployment. But oftentimes, that might be overkill for small projects. This document provides a solution to configure Redis leader follower (master-slave) replication. For more information about Redis Replication, please see [**here**](https://redis.io/topics/replication).
+在最新的 JHipster 生成器中，它为生产部署提供了 Redis 集群设置。但通常，对于小型项目来说，这可能有点过度。本文档提供了一种配置 Redis 主从（master-slave）复制的解决方案。有关 Redis 复制的更多信息，请参见[**这里**](https://redis.io/topics/replication)。
 
-The following changes are based on my own project set up. I assume you have modified your application properties to setup Redis password, so you can adjust your own accordingly.
+以下更改基于我自己的项目设置。我假设你已经修改了应用程序属性以设置 Redis 密码，因此你可以相应地调整你自己的设置。
 
 
-## Step 1
+## 步骤 1
 
-Add file `RedisProperties.java`:
+添加文件 `RedisProperties.java`：
 
 ```java
 public class RedisProperties {
@@ -58,9 +58,9 @@ public class RedisProperties {
 ```
 
 
-## Step 2
+## 步骤 2
 
-Add RedisProperties to `ApplicationProperties.java`
+将 RedisProperties 添加到 `ApplicationProperties.java`
 
 ```java
 public class ApplicationProperties {
@@ -79,9 +79,9 @@ public class ApplicationProperties {
 }
 ```
 
-## Step 3
+## 步骤 3
 
-Update the file `CacheConfiguration.java`, method `jcacheConfiguration`. These changes have to be combined with the current cluster setup.
+更新文件 `CacheConfiguration.java` 中的 `jcacheConfiguration` 方法。这些更改必须与当前的集群设置结合使用。
 
 ```java
 if (applicationProperties.getRedis().getType().equals(RedisType.SINGLE.getType())) {
@@ -99,9 +99,9 @@ if (applicationProperties.getRedis().getType().equals(RedisType.SINGLE.getType()
 ```
 
 
-## Step 4
+## 步骤 4
 
-Update `application-dev.yml` to use single server
+更新 `application-dev.yml` 以使用单服务器
 
 ```yaml
 application:
@@ -115,9 +115,9 @@ application:
 ```
 
 
-## Step 5
+## 步骤 5
 
-Update `application-prod.yml` to use master-slave servers
+更新 `application-prod.yml` 以使用主从服务器
 
 ```yaml
 application:

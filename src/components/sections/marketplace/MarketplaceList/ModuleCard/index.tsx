@@ -53,13 +53,13 @@ export default function ModuleCard({ module }: Props) {
             className="button button--secondary button--sm"
             href={`/modules/marketplace/details/${module.name}`}
           >
-            Details
+            详情
           </Link>
           <Link
             className="button button--secondary button--sm"
             href={module.links.homepage ?? module.links.npm}
           >
-            Home page
+            首页
           </Link>
         </div>
       </div>

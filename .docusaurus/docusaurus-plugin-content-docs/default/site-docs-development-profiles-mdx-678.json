@@ -1,0 +1,31 @@
+{
+  "id": "development/profiles",
+  "title": "Profiles",
+  "description": "JHipster comes with two Spring profiles:",
+  "source": "@site/docs/development/profiles.mdx",
+  "sourceDirName": "development",
+  "slug": "/profiles/",
+  "permalink": "/cn/profiles/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/profiles.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1416960000000,
+  "frontMatter": {
+    "title": "Profiles",
+    "slug": "/profiles/",
+    "last_update": {
+      "date": "2014-11-26T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "在开发中使用",
+    "permalink": "/cn/development/"
+  },
+  "next": {
+    "title": "常用应用属性",
+    "permalink": "/cn/common-application-properties/"
+  }
+}

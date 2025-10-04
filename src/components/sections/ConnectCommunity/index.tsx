@@ -12,7 +12,7 @@ export default function ConnectCommunity() {
       <div className={styles.sectionContent}>
         <div>
           <SectionTitle className={styles.sectionTitle} align="start">
-            Connect with the community
+              加入社区交流
           </SectionTitle>
 
           <SectionDescription
@@ -20,13 +20,12 @@ export default function ConnectCommunity() {
             align="start"
           >
             <p>
-              Feel free to ask questions, report issues, contribute, and meet
-              new people
+                欢迎在此畅所欲言：提问解惑、报告问题、贡献代码、结识同道。
             </p>
           </SectionDescription>
         </div>
 
-        <GithubButton>Join us on GitHub</GithubButton>
+        <GithubButton>加入我们</GithubButton>
       </div>
     </SectionWrapper>
   );

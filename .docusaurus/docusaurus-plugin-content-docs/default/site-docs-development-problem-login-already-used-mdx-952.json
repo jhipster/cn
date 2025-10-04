@@ -1,0 +1,31 @@
+{
+  "id": "development/problem/login-already-used",
+  "title": "Error - login already used",
+  "description": "Welcome to the JHipster website!",
+  "source": "@site/docs/development/problem/login-already-used.mdx",
+  "sourceDirName": "development/problem",
+  "slug": "/problem/login-already-used/",
+  "permalink": "/cn/problem/login-already-used/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/problem/login-already-used.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1505001600000,
+  "frontMatter": {
+    "title": "Error - login already used",
+    "slug": "/problem/login-already-used/",
+    "last_update": {
+      "date": "2017-09-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "邮箱已被使用",
+    "permalink": "/cn/problem/email-already-used/"
+  },
+  "next": {
+    "title": "邮箱未找到",
+    "permalink": "/cn/problem/email-not-found/"
+  }
+}

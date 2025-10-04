@@ -1,0 +1,31 @@
+{
+  "id": "microservices/microservices-in-production",
+  "title": "Microservices in production",
+  "description": "Microservices are a specific kind of JHipster applications. Please refer to our main Using JHipster in production documentation for more information on doing a production build, optimizing it and securing it.",
+  "source": "@site/docs/microservices/microservices-in-production.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/microservices-in-production/",
+  "permalink": "/cn/microservices-in-production/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/microservices-in-production.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1599782400000,
+  "frontMatter": {
+    "title": "Microservices in production",
+    "slug": "/microservices-in-production/",
+    "last_update": {
+      "date": "2020-09-11T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Creating microservices",
+    "permalink": "/cn/creating-microservices/"
+  },
+  "next": {
+    "title": "JHipster Control Center",
+    "permalink": "/cn/jhipster-control-center/"
+  }
+}

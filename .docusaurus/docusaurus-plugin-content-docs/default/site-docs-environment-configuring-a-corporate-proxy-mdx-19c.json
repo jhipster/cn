@@ -1,0 +1,31 @@
+{
+  "id": "environment/configuring-a-corporate-proxy",
+  "title": "Configuring a corporate proxy",
+  "description": "When JHipster is used in a company, you probably will need to configure all tools to bypass the corporate proxy.",
+  "source": "@site/docs/environment/configuring-a-corporate-proxy.mdx",
+  "sourceDirName": "environment",
+  "slug": "/configuring-a-corporate-proxy/",
+  "permalink": "/cn/configuring-a-corporate-proxy/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/environment/configuring-a-corporate-proxy.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1471507200000,
+  "frontMatter": {
+    "title": "Configuring a corporate proxy",
+    "slug": "/configuring-a-corporate-proxy/",
+    "last_update": {
+      "date": "2016-08-18T08:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "安装 JHipster",
+    "permalink": "/cn/installation/"
+  },
+  "next": {
+    "title": "Configuring your IDE",
+    "permalink": "/cn/configuring-ide/"
+  }
+}

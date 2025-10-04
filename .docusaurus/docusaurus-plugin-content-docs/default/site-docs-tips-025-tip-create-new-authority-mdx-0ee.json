@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_create_new_authority",
+  "title": "How to create a new Authority",
+  "description": "Tip submitted by @Tonterias",
+  "source": "@site/docs/tips/025_tip_create_new_authority.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/025_tip_create_new_authority.html",
+  "permalink": "/cn/tips/025_tip_create_new_authority.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/025_tip_create_new_authority.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1538763600000,
+  "sidebarPosition": 25,
+  "frontMatter": {
+    "title": "How to create a new Authority",
+    "slug": "/tips/025_tip_create_new_authority.html",
+    "last_update": {
+      "date": "2018-10-05T18:20:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Enabling Social Login with OAuth2",
+    "permalink": "/cn/tips/024_tip_enabling_social_login_with_oauth2.html"
+  },
+  "next": {
+    "title": "Issue of @OneToOne with @MapsId and how to avoid it",
+    "permalink": "/cn/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html"
+  }
+}

@@ -1,30 +1,29 @@
 ---
-title: Customizing Bootstrap
+title: 自定义 Bootstrap
 slug: /customizing-bootstrap/
 last_update:
   date: 2024-09-10T11:30:00-00:00
 ---
 
-## Basic customization
+## 基本自定义
 :::tip
-Don't forget to run `npm start` to get immediate feedback of your changes!
+不要忘记运行 `npm start` 来即时获得您更改的反馈！
 :::
 
-The simplest way to customize how your JHipster application looks like is by
-overriding CSS styles in `src/main/webapp/content/css/global.css`, or if you selected the Sass option, the `src/main/webapp/content/scss/global.scss` file.
+自定义 JHipster 应用程序外观的最简单方法是在 `src/main/webapp/content/css/global.css` 中重写 CSS 样式，或者如果您选择了 Sass 选项，则在 `src/main/webapp/content/scss/global.scss` 文件中重写。
 
-Using Sass is both easier, more concise and more powerful than plain CSS because Bootstrap is also written in Sass, please refer to Bootstrap's [official documentation about theming](https://getbootstrap.com/docs/5.3/customize/sass/).
+使用 Sass 比纯 CSS 更简单、更简洁且更强大，因为 Bootstrap 也是用 Sass 编写的，请参考 Bootstrap 关于主题的[官方文档](https://getbootstrap.com/docs/5.3/customize/sass/)。
 
-If you want to use Bootstrap [partials](https://sass-lang.com/guide/#partials) in your own `scss` files then import it like below at the beginning of your `scss` file.
-For example to use the border-radius mixin:
+如果您想在自己的 `scss` 文件中使用 Bootstrap [partials](https://sass-lang.com/guide/#partials)，那么请在 `scss` 文件的开头按以下方式导入。
+例如，使用 border-radius mixin：
 
 ```css
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/border-radius";
 ```
 
-Make sure you import only partials and not main Sass files, otherwise you will end up generating duplicate CSS which might cause issues.
+确保您只导入 partials 而不是主 Sass 文件，否则您将会生成重复的 CSS，这可能会导致问题。
 
-To change the default Bootstrap settings like colors, border-radius, etc., add or change the value of the property in the partial file `src/main/webapp/content/scss/_bootstrap-variables.scss`
+要更改默认的 Bootstrap 设置（如颜色、边框圆角等），请在 partial 文件 `src/main/webapp/content/scss/_bootstrap-variables.scss` 中添加或更改属性的值
 
-All values defined in Bootstrap [_variables.scss](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss) can be overwritten here.
+在 Bootstrap [_variables.scss](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss) 中定义的所有值都可以在这里被重写。

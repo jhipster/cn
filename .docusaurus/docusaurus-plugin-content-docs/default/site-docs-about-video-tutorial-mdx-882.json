@@ -1,0 +1,32 @@
+{
+  "id": "about/video-tutorial",
+  "title": "Video tutorial",
+  "description": "",
+  "source": "@site/docs/about/video-tutorial.mdx",
+  "sourceDirName": "about",
+  "slug": "/video-tutorial/",
+  "permalink": "/cn/video-tutorial/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/about/video-tutorial.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1413590400000,
+  "frontMatter": {
+    "title": "Video tutorial",
+    "hide_table_of_contents": true,
+    "slug": "/video-tutorial/",
+    "last_update": {
+      "date": "2014-10-18T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster in 5 screenshots",
+    "permalink": "/cn/screenshots/"
+  },
+  "next": {
+    "title": "Companies using JHipster",
+    "permalink": "/cn/companies-using-jhipster/"
+  }
+}

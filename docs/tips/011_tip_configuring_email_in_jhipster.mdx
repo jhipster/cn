@@ -1,20 +1,20 @@
 ---
-title: Configuring Email with - Gmail and more
+title: 配置电子邮件 - Gmail 及更多
 slug: /tips/011_tip_configuring_email_in_jhipster.html
 last_update:
   date: 2021-03-18T19:48:00-00:00
 ---
 
-__Tip submitted by [@RawSanj](https://github.com/RawSanj)__
+__由 [@RawSanj](https://github.com/RawSanj) 提交__
 
-_Goal:_ By the using below mail settings you will have the default JHipster application configured to send emails from Gmail, Outlook or Yahoo.
+_目标：_ 通过使用以下邮件设置，您将配置默认的 JHipster 应用程序以从 Gmail、Outlook 或 Yahoo 发送电子邮件。
 
-Start by running JHipster with `jhipster` to create a new application or use an existing JHipster generated application.
+首先通过运行 `jhipster` 创建一个新应用程序或使用现有的 JHipster 生成的应用程序。
 
 
-## Configure 'from' address
+## 配置 'from' 地址
 
-Open `src\main\resources\config\application.yml`, edit `jhipster.mail.from` property:
+打开 `src\main\resources\config\application.yml`，编辑 `jhipster.mail.from` 属性：
 
 _application.yml_
 
@@ -22,18 +22,18 @@ _application.yml_
 jhipster:
   [...]
   mail:
-    from: username@service_provider #Replace this field with the value that will be used for spring.mail.username
+    from: username@service_provider #将此字段替换为将用于 spring.mail.username 的值
   [...]
 ```
 
-Skipping this step will likely to result in your email is marked as spam.
+跳过此步骤可能会导致您的电子邮件被标记为垃圾邮件。
 
 
-## Choose any of below Email Service for your Application
+## 为您的应用程序选择以下任一电子邮件服务
 
-### 1. Email Config - Gmail
+### 1. 电子邮件配置 - Gmail
 
-Go into `src\main\resources\config\application-dev.yml` and change your application to use the below Gmail configuration:
+进入 `src\main\resources\config\application-dev.yml` 并将您的应用程序更改为使用以下 Gmail 配置：
 
 _application-dev.yml_
 
@@ -44,8 +44,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: gmailuserid@gmail.com  #Replace this field with your Gmail username.
-    password: ************           #Replace this field with your Gmail password/App password.
+    username: gmailuserid@gmail.com  #将此字段替换为您的 Gmail 用户名。
+    password: ************           #将此字段替换为您的 Gmail 密码/应用专用密码。
     protocol: smtp
     tls: true
     properties.mail.smtp:
@@ -55,17 +55,14 @@ spring:
     [...]
 ```
 
-If you use the above configuration with your Gmail password, you might need to [allow less secure apps](https://support.google.com/accounts/answer/6010255?hl=en). 
-The configuration is simpler but less secure. Also by allowing less secure apps you won't have the ability to use two factor
-authentication with Gmail. 
+如果您使用 Gmail 密码配置上述内容，您可能需要[允许不够安全的应用](https://support.google.com/accounts/answer/6010255?hl=en)。
+该配置更简单但不够安全。此外，通过允许不够安全的应用，您将无法在 Gmail 中使用双因素身份验证。
 
-Therefore we highly recommend you use an app password instead of the Gmail password. Please refer to the following Gmail
-configuration document for more information on how to set this up. 
+因此，我们强烈建议您使用应用专用密码而不是 Gmail 密码。有关如何设置的更多信息，请参考以下 Gmail 配置文档。
 
 [https://support.google.com/accounts/answer/185833](https://support.google.com/accounts/answer/185833)
 
-This way you will be able to use two factor authentication as well as keep the "allow less secure apps" option off. You can also 
-use OAuth2 with Gmail and the configuration method is highlighted in the following document.
+这样，您将能够使用双因素身份验证，同时保持"允许不够安全的应用"选项关闭。您还可以在 Gmail 中使用 OAuth2，配置方法在以下文档中有说明。
 
 [https://javaee.github.io/javamail/OAuth2](https://javaee.github.io/javamail/OAuth2)     
 

@@ -12,7 +12,7 @@ import ConnectCommunity from '@site/src/components/sections/ConnectCommunity';
 
 export default function TeamPage() {
   return (
-    <Layout title="Team" description="JHipster members of the core team">
+    <Layout title="团队" description="JHipster核心团队成员">
       <TeamHero />
 
       <main>

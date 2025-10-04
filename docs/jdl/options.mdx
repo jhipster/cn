@@ -1,12 +1,12 @@
 ---
-title: JHipster Domain Language (JDL) - Options
+title: JHipster 领域语言 (JDL) - 选项
 slug: /jdl/options
 last_update:
   date: 2019-11-02T12:00:00-00:00
 ---
 
-In JHipster, you can specify options for your entities such as pagination or DTO.
-You can do the same with the JDL, either with annotations on the entity, or with the following syntax:
+在 JHipster 中，您可以为实体指定选项，如分页或 DTO。
+您可以使用 JDL 做同样的事情，可以在实体上使用注解，或使用以下语法：
 
 ```jdl
 entity A {
@@ -19,78 +19,78 @@ dto A, B with mapstruct
 
 paginate A with infinite-scroll
 paginate B with pagination
-paginate C with pager  // pager is only available in AngularJS
+paginate C with pager  // pager 仅在 AngularJS 中可用
 
 service A with serviceClass
 service C with serviceImpl
 ```
 
-The complete list of available options is [here](#available-options).
+可用选项的完整列表[在此处](#available-options)。
 
 
-## How to
+## 如何使用
 
-There are two kinds of options:
+有两种选项：
 
-- unary (without option value)
-- binary (with value)
+- 一元（无选项值）
+- 二元（有值）
 
-There are three ways to apply options to entities:
+有三种方式将选项应用于实体：
 
-- using the option name (`dto`, `readOnly`, etc.), see examples
-- using annotations
-- use the `use XYZ` form
+- 使用选项名称（`dto`、`readOnly` 等），请参阅示例
+- 使用注解
+- 使用 `use XYZ` 形式
 
-Mixing them is not recommended as it reduces readability.
+不建议混合使用，因为这会降低可读性。
 
 
-## Syntax
+## 语法
 
-For the regular form:
+对于常规形式：
 ```
 <option name> <option entity list>
 
-or
+或
 
 <option name> <option entity list> with <option value>
 
-or
+或
 
 <option name> <option entity list> with <option value> except <option excluded entity list>
 
-or 
+或 
 
 <option name> <option entity list> except <option excluded entity list>
 ```
 
-- For unary options:
-  - the option name and the list is needed
-  - the excluded entities are optional with the `except` keyword (see below for more details)
-- For binary options:
-  - the entity list precedes the `with` keyword and the option value
-  - again, the excluded entities are in the end with the `except` keyword
+- 对于一元选项：
+  - 需要选项名称和列表
+  - 排除的实体是可选的，使用 `except` 关键字（有关更多详细信息，请参阅下文）
+- 对于二元选项：
+  - 实体列表在 `with` 关键字和选项值之前
+  - 同样，排除的实体在末尾使用 `except` 关键字
 
-For annotations:
+对于注解：
 ```
 @<option name>
 entity <entity name>
 
-or
+或
 
 @<option name>(<option value>)
 ```
 
-- Similar to Java, annotations may take values in parentheses
-  - depending on the option, values may or may not be optional
+- 类似于 Java，注解可以在括号中取值
+  - 根据选项，值可能是可选的，也可能是不可选的
 
 
-## The use XYZ options
+## use XYZ 选项
 
-With the use-option form, you can specify some options on your entities.
-It was created during JHipster Code 2020, and the reasons behind its creation are to:
+使用 use-option 形式，您可以在实体上指定一些选项。
+它是在 JHipster Code 2020 期间创建的，其创建的原因是：
 
-- Solve the option-disabling issue (there are more than one way to say 'no' in JHipster: `no, false, none`)
-- Propose a way to group options by entities
+- 解决选项禁用问题（在 JHipster 中有多种方式说“不”：`no, false, none`）
+- 提供一种按实体分组选项的方法
 
 ```jdl
 entity A
@@ -102,67 +102,67 @@ use mapstruct, serviceImpl, infinite-scroll for A, B
 use pagination for C
 ```
 
-|Use option value |Comment                                                                                                          |
+|Use 选项值    |备注                                                                                                              |
 |-----------------|-----------------------------------------------------------------------------------------------------------------|
-|mapstruct        |Whether to create DTOs for your entities, if an entity has a DTO but no service, then 'serviceClass will be used'|
+|mapstruct        |是否为您的实体创建 DTO，如果实体有 DTO 但没有服务，则将使用 'serviceClass'               |
 |serviceClass     |                                                                                                                 |
 |serviceImpl      |                                                                                                                 |
-|pagination       |Pagination as an option is forbidden when the application uses Cassandra                                         |
-|infinite-scroll  |Pagination as an option is forbidden when the application uses Cassandra                                         |
-|elasticsearch    |Requires the application to have the searchEngine option enabled                                                 |
-|couchbase        |Requires the application to have the searchEngine option enabled                                                 |
+|pagination       |当应用程序使用 Cassandra 时，禁止将分页作为选项                                               |
+|infinite-scroll  |当应用程序使用 Cassandra 时，禁止将分页作为选项                                               |
+|elasticsearch    |需要应用程序启用 searchEngine 选项                                                                   |
+|couchbase        |需要应用程序启用 searchEngine 选项                                                                   |
 
 
-## Examples
+## 示例
 
-Each example will have three forms:
+每个示例将有三种形式：
 
-- the regular one
-- the annotation-based one
-- the use form (when applicable)
+- 常规形式
+- 基于注解的形式
+- use 形式（如果适用）
 
-### Basic unary example
+### 基本一元示例
 
-Regular:
+常规：
 ```jdl
 entity A
 
 readOnly A
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 @readOnly
 entity A
 ```
 
-### Basic binary example
+### 基本二元示例
 
-Regular:
+常规：
 ```jdl
 entity A
 
 dto A with mapstruct
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 @dto(mapstruct)
 entity A
 ```
 
-With the `use` keyword:
+使用 `use` 关键字：
 ```jdl
 entity A
 
 use mapstruct, serviceImpl, pagination for A
 ```
 
-### all, * example
+### all、* 示例
 
-`all` and `*` are aliases.
+`all` 和 `*` 是别名。
 
-Regular:
+常规：
 ```jdl
 entity A
 entity B
@@ -170,8 +170,8 @@ entity B
 dto all with mapstruct
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 @dto(mapstruct)
 entity A
 
@@ -179,7 +179,7 @@ entity A
 entity B
 ```
 
-With the `use` keyword:
+使用 `use` 关键字：
 ```jdl
 entity A
 entity B
@@ -187,9 +187,9 @@ entity B
 use mapstruct, serviceImpl, pagination for *
 ```
 
-### all, * example with exclusions (unary)
+### 包含排除的 all、* 示例（一元）
 
-Regular:
+常规：
 ```jdl
 entity A
 entity B
@@ -197,25 +197,25 @@ entity B
 skipClient * except A
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 entity A
 
 @skipClient
 entity B
 ```
 
-With the `use` keyword:
-```jdl
+使用 `use` 关键字：
+```
 entity A
 entity B
 
 use mapstruct, serviceImpl, pagination for * except A
 ```
 
-### all, * example with exclusions (binary)
+### 包含排除的 all、* 示例（二元）
 
-Regular:
+常规：
 ```jdl
 entity A
 entity B
@@ -223,35 +223,35 @@ entity B
 dto all with mapstruct except A
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 entity A
 
 @dto(mapstruct)
 entity B
 ```
 
-With the `use` keyword:
-```jdl
+使用 `use` 关键字：
+```
 entity A
 entity B
 
 use mapstruct, serviceImpl, pagination for all except A
 ```
 
-### Option with custom values
+### 包含自定义值的选项
 
-```jdl
+```
 entity A
 entity B
 
 microservice all with mySuperMS
 ```
 
-### Mixed example
+### 混合示例
 
-Regular:
-```jdl
+常规：
+```
 entity A
 entity B
 entity C
@@ -262,8 +262,8 @@ service * with serviceClass except C
 search A with elasticsearch
 ```
 
-Annotation-based:
-```jdl
+基于注解：
+```
 @dto(mapstruct)
 @search(elastisearch)
 @service(serviceClass)
@@ -279,37 +279,34 @@ entity C
 ```
 
 
-## About services
+## 关于服务
 
-No services specified will create a resource class which will call the repository interface directly. This is the
-default and simplest option, see A.
+不指定服务将创建一个资源类，该类将直接调用仓库接口。这是默认且最简单的选项，请参阅 A。
 
-`service with serviceClass` (see B) will make the resource call the service class which will call the repository interface.
-`service with serviceImpl` (see C) will make a service interface which will be used by the resource class.
+`service with serviceClass`（请参阅 B）将使资源调用服务类，该类将调用仓库接口。
+`service with serviceImpl`（请参阅 C）将创建一个服务接口，该接口将被资源类使用。
 
-The interface is implemented by a concrete class which will call the repository interface.
+该接口由一个具体类实现，该类将调用仓库接口。
 
-Using no service unless sure is the simplest option and good for CRUD. Use service with a Class if you will have a lot
-of business logic which will use multiple repositories making it ideal for a service class. JHipsters are not fan of
-unnecessary Interfaces but if you like them go for service with impl.
+除非确定，否则使用无服务是最简单的选项，适用于 CRUD。如果您将有很多业务逻辑使用多个仓库，请使用带有类的服务，这使它成为服务类的理想选择。JHipsters 不喜欢不必要的接口，但如果您喜欢它们，请使用带有 impl 的服务。
 
 ```
 entity A
 entity B
 entity C
 
-// no service for A
+// A 没有服务
 service B with serviceClass
 service C with serviceImpl
 ```
 
 
-## Microservice-related options
+## 微服务相关选项
 
-As of JHipster v3, microservices can be created. You can specify some options to generate your entities in the JDL:
-the microservice's name and the search engine.
+从 JHipster v3 开始，可以创建微服务。您可以在 JDL 中指定一些选项来生成您的实体：
+微服务的名称和搜索引擎。
 
-Here is how you can specify your microservice's name (the JHipster app's name):
+您可以这样指定微服务的名称（JHipster 应用程序的名称）：
 
 ```
 entity A
@@ -320,58 +317,57 @@ microservice C with myotherjhipsterapp
 search * with elasticsearch except C
 ```
 
-The first option is used to tell JHipster that you want your microservice to deal with your entities, whereas the second
-specifies how and if you want your entities searched.
+第一个选项用于告诉 JHipster 您希望您的微服务处理您的实体，而第二个选项指定您希望如何以及是否搜索您的实体。
 
 
-## Custom annotations
+## 自定义注解
 
-Custom annotations are possible in the JDL, for instance:
+在 JDL 中可以使用自定义注解，例如：
 
-```jdl
+```
 @customAnnotation(customValue)
 entity A
 ```
 
-The main use case for this is for blueprints: sometimes, you need have custom options for entities, or even fields.
-For regular options (`dto`, `pagination`, etc.), these options will be generated in the JSON like in the CLI.
-However, for custom options, they will be generated under and `options` key in the dumped JSON.
+其主要用例是用于蓝图：有时，您需要为实体甚至字段提供自定义选项。
+对于常规选项（`dto`、`pagination` 等），这些选项将像在 CLI 中一样在 JSON 中生成。
+然而，对于自定义选项，它们将在转储的 JSON 中在 `options` 键下生成。
 
 
-## Available options
+## 可用选项
 
-_Not what you're looking for? Check the [application options](/jdl/applications#available-application-configuration-options)._
+_不是您要找的？请查看[应用程序选项](/jdl/applications#available-application-configuration-options)。_
 
-### Entity options
+### 实体选项
 
-Here are the entity options supported in the JDL:
+以下是 JDL 中支持的实体选项：
 
-|JDL option name (entity)|Option type|Default value|Possible values                 |Comment                                                                                                                                                 |
-|------------------------|-----------|-------------|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-|skipClient              |unary      |false        |-                               |This will make the client code generation to be skipped                                                                                                 |
-|skipServer              |unary      |false        |-                               |This will make the server code generation to be skipped                                                                                                 |
-|noFluentMethod          |unary      |false        |-                               |See [this note](/2016/08/17/jhipster-release-3.6.0.html#important-change-fluent-setters) for more information                                           |
-|filter                  |unary      |false        |-                               |See [filtering](/entities-filtering) for more details; if an entity is filtered but doesn't have a service then 'serviceClass' will be used             |
-|readOnly                |unary      |false        |-                               |Adding this option will make an entity readOnly, see [this release note](/2019/10/10/jhipster-release-6.4.0.html) for more details|
-|dto                     |binary     |no           |mapstruct, no                   |Whether to create DTOs for your entities, if an entity has a DTO but no service, then 'serviceClass will be used'                                       |
-|service                 |binary     |no           |serviceClass, serviceImpl, no   |-                                                                                                                                                       |
-|paginate                |binary     |no           |pagination, infinite-scroll, no |Pagination is forbidden when the application uses Cassandra                                                                                             |
-|search                  |binary     |no           |elasticsearch, no               |Requires the application to have the searchEngine option enabled                                                                                        |
-|microservice            |binary     |-            |custom value                    |Will be automatically added for every entity declared inside a microservice application                                                                 |
-|angularSuffix           |binary     |-            |custom value                    |-                                                                                                                                                       |
-|clientRootFolder        |binary     |-            |custom value                    |-                                                                                                                                                       |
-
-
-### Field options
-
-Here are the field options supported in the JDL:
-
-|JDL option name (field)|Default value|Possible values                                                                     |Comment                                                                                                                                                                        |
-|-----------------------|-------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|defaultValue           |undefined    |any value fitting to the datatype of the field, e.g. "myDefaultValue" or 42 or true |Will define a fixed default value on database schema side on the column, as well as adjust the clients passing in the option as default from input forms (only Angular for now)|
-|defaultValueComputed   |undefined    |database functions to generate default values for a column, e.g. "NOW(6)"           |This will generate a default value on database level using the given function                                                                                                  |
+|JDL 选项名称（实体）    |选项类型    |默认值    |可能的值                        |备注                                                                                                                                                    |
+|------------------------|-----------|----------|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+|skipClient              |一元       |false     |-                               |这将使客户端代码生成被跳过                                                                                                                               |
+|skipServer              |一元       |false     |-                               |这将使服务器代码生成被跳过                                                                                                                               |
+|noFluentMethod          |一元       |false     |-                               |有关更多信息，请参阅[此说明](/2016/08/17/jhipster-release-3.6.0.html#important-change-fluent-setters)                                                   |
+|filter                  |一元       |false     |-                               |有关更多详细信息，请参阅[过滤](/entities-filtering)；如果实体被过滤但没有服务，则将使用 'serviceClass'                                                     |
+|readOnly                |一元       |false     |-                               |添加此选项将使实体变为只读，有关更多详细信息，请参阅[此发布说明](/2019/10/10/jhipster-release-6.4.0.html)                                               |
+|dto                     |二元       |no        |mapstruct, no                   |是否为您的实体创建 DTO，如果实体有 DTO 但没有服务，则将使用 'serviceClass'                                                                               |
+|service                 |二元       |no        |serviceClass, serviceImpl, no   |-                                                                                                                                                       |
+|paginate                |二元       |no        |pagination, infinite-scroll, no |当应用程序使用 Cassandra 时，禁止分页                                                                                                                    |
+|search                  |二元       |no        |elasticsearch, no               |需要应用程序启用 searchEngine 选项                                                                                                                       |
+|microservice            |二元       |-         |自定义值                        |将自动为在微服务应用程序内声明的每个实体添加                                                                                                             |
+|angularSuffix           |二元       |-         |自定义值                        |-                                                                                                                                                       |
+|clientRootFolder        |二元       |-         |自定义值                        |-                                                                                                                                                       |
 
 
-## See also
+### 字段选项
 
-The application options are available [here](/jdl/applications)
+以下是 JDL 中支持的字段选项：
+
+|JDL 选项名称（字段）   |默认值      |可能的值                                                                     |备注                                                                                                                                                                        |
+|-----------------------|------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|defaultValue           |undefined   |适合字段数据类型的任何值，例如 "myDefaultValue" 或 42 或 true                |将在数据库模式侧的列上定义固定的默认值，并调整客户端将选项作为输入表单的默认值传递（目前仅限 Angular）                                                                        |
+|defaultValueComputed   |undefined   |生成列默认值的数据库函数，例如 "NOW(6)"                                      |这将使用给定的函数在数据库级别生成默认值                                                                                                                                      |
+
+
+## 参阅
+
+应用程序选项可在[此处](/jdl/applications)查看

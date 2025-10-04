@@ -1,0 +1,31 @@
+{
+  "id": "options/using-neo4j",
+  "title": "Using Neo4j",
+  "description": "BETA",
+  "source": "@site/docs/options/using-neo4j.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-neo4j/",
+  "permalink": "/cn/using-neo4j/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-neo4j.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1579305600000,
+  "frontMatter": {
+    "title": "Using Neo4j",
+    "slug": "/using-neo4j/",
+    "last_update": {
+      "date": "2020-01-18T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Couchbase",
+    "permalink": "/cn/using-couchbase/"
+  },
+  "next": {
+    "title": "使用 Cassandra",
+    "permalink": "/cn/using-cassandra/"
+  }
+}

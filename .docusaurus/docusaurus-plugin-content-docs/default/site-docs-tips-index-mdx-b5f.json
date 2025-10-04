@@ -1,0 +1,31 @@
+{
+  "id": "tips/index",
+  "title": "Tips'n tricks",
+  "description": "This section contains user-submitted tips'n tricks on using JHipster.",
+  "source": "@site/docs/tips/index.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/",
+  "permalink": "/cn/tips/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/index.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1548751200000,
+  "frontMatter": {
+    "title": "Tips'n tricks",
+    "slug": "/tips/",
+    "last_update": {
+      "date": "2019-01-29T08:40:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Contributing companies",
+    "permalink": "/cn/contributing-companies/"
+  },
+  "next": {
+    "title": "Using Bootswatch themes",
+    "permalink": "/cn/tips/009_tips_using_bootswatch_themes.html"
+  }
+}

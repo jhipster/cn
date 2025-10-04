@@ -9,7 +9,7 @@ export default function TeamDevelopers() {
   return (
     <SectionWrapper className={styles.section}>
       <SectionTitle align="start" size="sm">
-        Board of developers
+          开发者委员会
       </SectionTitle>
 
       <TeamList dataKey="developersBoard" />

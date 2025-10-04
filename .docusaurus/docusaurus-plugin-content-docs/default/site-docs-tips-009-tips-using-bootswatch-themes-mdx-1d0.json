@@ -1,0 +1,32 @@
+{
+  "id": "tips/tips_using_bootswatch_themes",
+  "title": "Using Bootswatch themes",
+  "description": "Tip submitted by @deepu105",
+  "source": "@site/docs/tips/009_tips_using_bootswatch_themes.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/009_tips_using_bootswatch_themes.html",
+  "permalink": "/cn/tips/009_tips_using_bootswatch_themes.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/009_tips_using_bootswatch_themes.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1438468080000,
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Using Bootswatch themes",
+    "slug": "/tips/009_tips_using_bootswatch_themes.html",
+    "last_update": {
+      "date": "2015-08-01T22:28:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Tips'n tricks",
+    "permalink": "/cn/tips/"
+  },
+  "next": {
+    "title": "Configuring Email with - Gmail and more",
+    "permalink": "/cn/tips/011_tip_configuring_email_in_jhipster.html"
+  }
+}

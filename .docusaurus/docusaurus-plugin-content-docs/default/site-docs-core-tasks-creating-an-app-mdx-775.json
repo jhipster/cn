@@ -1,0 +1,31 @@
+{
+  "id": "core-tasks/creating-an-app",
+  "title": "创建应用程序",
+  "description": "**请查看我们关于创建新 JHipster 应用程序的视频教程！**",
+  "source": "@site/docs/core-tasks/creating-an-app.mdx",
+  "sourceDirName": "core-tasks",
+  "slug": "/creating-an-app/",
+  "permalink": "/cn/creating-an-app/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/core-tasks/creating-an-app.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1521397200000,
+  "frontMatter": {
+    "title": "创建应用程序",
+    "slug": "/creating-an-app/",
+    "last_update": {
+      "date": "2018-03-18T18:20:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Fisher JHipster 插件",
+    "permalink": "/cn/fisher/"
+  },
+  "next": {
+    "title": "创建实体",
+    "permalink": "/cn/creating-an-entity/"
+  }
+}

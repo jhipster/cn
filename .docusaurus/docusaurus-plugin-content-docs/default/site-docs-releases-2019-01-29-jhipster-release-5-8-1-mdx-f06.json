@@ -1,0 +1,30 @@
+{
+  "id": "releases/2019-01-29-jhipster-release-5.8.1",
+  "title": "Release 5.8.1",
+  "description": "This patch release has 33 closed tickets and merged pull requests.",
+  "source": "@site/docs/releases/2019-01-29-jhipster-release-5.8.1.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2019/01/29/jhipster-release-5.8.1.html",
+  "permalink": "/cn/2019/01/29/jhipster-release-5.8.1.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2019-01-29-jhipster-release-5.8.1.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 5.8.1",
+    "slug": "/2019/01/29/jhipster-release-5.8.1.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 5.8.0",
+    "permalink": "/cn/2019/01/25/jhipster-release-5.8.0.html"
+  },
+  "next": {
+    "title": "Release 5.8.2",
+    "permalink": "/cn/2019/02/28/jhipster-release-5.8.2.html"
+  }
+}

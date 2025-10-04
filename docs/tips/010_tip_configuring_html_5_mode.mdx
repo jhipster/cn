@@ -1,21 +1,21 @@
 ---
-title: Configuring HTML 5 mode
+title: 配置 HTML 5 模式
 slug: /tips/010_tip_configuring_html_5_mode.html
 last_update:
   date: 2016-03-07T23:23:00-00:00
 ---
 
-# Configuring HTML 5 mode
+# 配置 HTML 5 模式
 
-__Tip submitted by [@brevleq](https://github.com/brevleq) and updated by [@wmarques](https://github.com/wmarques)__
+__由 [@brevleq](https://github.com/brevleq) 提交并由 [@wmarques](https://github.com/wmarques) 更新__
 
-#### HTML 5 Mode has been added to the generator since this [pull request #9098](https://github.com/jhipster/generator-jhipster/pull/9098), so you don't need to do any specific configuration anymore!
+#### 自从这个 [pull request #9098](https://github.com/jhipster/generator-jhipster/pull/9098) 以来，HTML 5 模式已经被添加到生成器中，所以您不再需要进行任何特定的配置！
 
-As you may noticed, AngularJS uses a "#" in it's urls. HTML5Mode of AngularJS removes these "#" from URL.
+您可能已经注意到，AngularJS 在其 URL 中使用 "#"。AngularJS 的 HTML5 模式可以从 URL 中移除这些 "#"。
 
-## Activate HTML 5 Mode
+## 激活 HTML 5 模式
 
-Create `html5.mode.config.js` file in `webapp/app/blocks/config/` directory:
+在 `webapp/app/blocks/config/` 目录中创建 `html5.mode.config.js` 文件：
 
 ```
     (function() {
@@ -33,15 +33,15 @@ Create `html5.mode.config.js` file in `webapp/app/blocks/config/` directory:
     })();
 ```
 
-Then open `index.html` and add this line in `head` tag:
+然后打开 `index.html` 并在 `head` 标签中添加这一行：
 
 ```
     <base href="/">
 ```
 
-## Redirection filter     
+## 重定向过滤器
 
-Now, to have relative paths links working correctly (ex. activation link sent to user e-mail) we will create a controller to forward the URI to index.html:
+现在，为了使相对路径链接正常工作（例如发送到用户电子邮件的激活链接），我们将创建一个控制器将 URI 转发到 index.html：
 
 ```
     @Controller
@@ -53,23 +53,23 @@ Now, to have relative paths links working correctly (ex. activation link sent to
     }
 ```
 
-Please note that this can cause conflicts with [Spring actuators URLs](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html).
+请注意，这可能会与 [Spring actuators URLs](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) 产生冲突。
 
-That's why you have to edit urls of the `metric.js` and `health.js`. First, open `webapp\app\admin\health\health.js` and change:
+这就是为什么您必须编辑 `metric.js` 和 `health.js` 的 URL。首先，打开 `webapp\app\admin\health\health.js` 并更改：
 
     url: '/health' -> url: '/apphealth'
 
-Then do the same with `webapp\app\admin\metrics\metrics.js`:
+然后对 `webapp\app\admin\metrics\metrics.js` 执行相同的操作：
 
     url: '/metrics' -> url: '/appmetrics'
 
-Then if you use gulp , you must to edit the file `gulp\serve.js` and replace `proxyRoutes` variable by:
+如果您使用 gulp，则必须编辑文件 `gulp\serve.js` 并将 `proxyRoutes` 变量替换为：
 
     var proxyRoutes = [
         '/'
     ];
 
-Finally, to make the home link in the navigation bar work, open `webapp\app\layouts\navbar\navbar.html` and change:
+最后，为了使导航栏中的主页链接正常工作，打开 `webapp\app\layouts\navbar\navbar.html` 并更改：
 
 ```
     <a class="navbar-brand" href="#/"> -> <a class="navbar-brand" href="/">

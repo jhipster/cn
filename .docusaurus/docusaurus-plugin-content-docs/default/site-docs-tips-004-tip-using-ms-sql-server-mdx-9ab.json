@@ -1,0 +1,23 @@
+{
+  "id": "tips/tip_using_ms_sql_server",
+  "title": "How to use JHipster with MS SQL Server",
+  "description": "Tip submitted by @Zyst",
+  "source": "@site/docs/tips/004_tip_using_ms_sql_server.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/004_tip_using_ms_sql_server.html",
+  "permalink": "/cn/tips/004_tip_using_ms_sql_server.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/004_tip_using_ms_sql_server.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1480550400000,
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "How to use JHipster with MS SQL Server",
+    "slug": "/tips/004_tip_using_ms_sql_server.html",
+    "last_update": {
+      "date": "2016-12-01T00:00:00.000Z"
+    }
+  }
+}

@@ -1,94 +1,94 @@
 ---
-title: Internationalization
+title: 国际化
 slug: /installing-new-languages/
 last_update:
   date: 2014-12-10T00:00:00-00:00
 ---
 
-## Introduction
+## 介绍
 
-During the generation of a new project you will be asked whether or not you want to enable internationalization support.
+在生成新项目期间，您将被问及是否要启用国际化支持。
 
-If enabling it you will need to select the native language of your application. After that you can choose the additional languages you would like to install. If you don't want to support any additional languages from start you can always add languages later when needed by running the language sub-generator.
+如果启用它，您需要选择应用程序的本地语言。之后，您可以选择要安装的其他语言。如果您一开始不想支持任何其他语言，您可以在需要时通过运行语言子生成器来添加语言。
 
-If you are sure you will never translate this application into another language you should not enable the internationalization.
-
-
-## Supported languages
-
-These are the currently supported languages
-
-* Albanian
-* Arabic (Libya)
-* Armenian
-* Belarusian
-* Bengali
-* Bulgarian
-* Catalan
-* Chinese (Simplified)
-* Chinese (Traditional)
-* Czech 
-* Danish 
-* Dutch 
-* English 
-* Estonian 
-* Farsi
-* Finnish 
-* French 
-* Galician 
-* German 
-* Greek 
-* Hindi 
-* Hungarian 
-* Indonesian
-* Italian 
-* Japanese 
-* Korean 
-* Marathi 
-* Myanmar 
-* Polish 
-* Portuguese (Brazilian)
-* Portuguese 
-* Punjabi
-* Romanian 
-* Russian 
-* Slovak 
-* Serbian
-* Sinhala 
-* Spanish 
-* Swedish 
-* Turkish 
-* Tamil 
-* Telugu 
-* Thai 
-* Ukrainian
-* Uzbek (Cyrillic)
-* Uzbek (Latin)
-* Vietnamese
-
-_Your language is missing in JHipster? Help us improve the project with a PR!_
+如果您确定永远不会将此应用程序翻译成另一种语言，您应该不启用国际化。
 
 
-## How to add languages after project generation?
+## 支持的语言
 
-To do this you can run the languages sub-generator with:
+这些是目前支持的语言
+
+* 阿尔巴尼亚语
+* 阿拉伯语（利比亚）
+* 亚美尼亚语
+* 白俄罗斯语
+* 孟加拉语
+* 保加利亚语
+* 加泰罗尼亚语
+* 中文（简体）
+* 中文（繁体）
+* 捷克语
+* 丹麦语
+* 荷兰语
+* 英语
+* 爱沙尼亚语
+* 波斯语
+* 芬兰语
+* 法语
+* 加利西亚语
+* 德语
+* 希腊语
+* 印地语
+* 匈牙利语
+* 印尼语
+* 意大利语
+* 日语
+* 韩语
+* 马拉地语
+* 缅甸语
+* 波兰语
+* 葡萄牙语（巴西）
+* 葡萄牙语
+* 旁遮普语
+* 罗马尼亚语
+* 俄语
+* 斯洛伐克语
+* 塞尔维亚语
+* 僧伽罗语
+* 西班牙语
+* 瑞典语
+* 土耳其语
+* 泰米尔语
+* 泰卢固语
+* 泰语
+* 乌克兰语
+* 乌兹别克语（西里尔文）
+* 乌兹别克语（拉丁文）
+* 越南语
+
+_您的语言在 JHipster 中缺失？通过 PR 帮助我们改进项目！_
+
+
+## 如何在项目生成后添加语言？
+
+要做到这一点，您可以使用以下命令运行语言子生成器：
 
 `jhipster languages`
 
 ![](/images/install_new_languages.png)
 
-Note that you will need to regenerate your entities if you would like to have them translated in the language you added right now.
+请注意，如果您希望将实体翻译为您刚刚添加的语言，您需要重新生成您的实体。
 
 
-## How to add a new language that is not supported?
+## 如何添加不支持的新语言？
 
-All languages are saved in the folder `src/main/webapp/i18n` (client side) and `src/main/resources/i18n` (server side)
+所有语言都保存在文件夹 `src/main/webapp/i18n`（客户端）和 `src/main/resources/i18n`（服务器端）中
 
-Here are the steps to install a new language called `new_lang`:
+以下是安装名为 `new_lang` 的新语言的步骤：
 
-1.  Duplicate the `src/main/webapp/i18/en` folder to `src/main/webapp/i18/new_lang` (this is where all the front-end translations are stored)
-2.  Translate all files under the folder `src/main/webapp/i18/new_lang`
-3.  Add the language code `new_lang` to the `languages` variable defined in `src/main/webapp/app/shared/language/find-language-from-key-pipe.ts`
+1.  将 `src/main/webapp/i18/en` 文件夹复制到 `src/main/webapp/i18/new_lang`（这是存储所有前端翻译的地方）
+2.  翻译 `src/main/webapp/i18/new_lang` 文件夹下的所有文件
+3.  将语言代码 `new_lang` 添加到 `src/main/webapp/app/shared/language/find-language-from-key-pipe.ts` 中定义的 `languages` 变量
 
 ```ts
 private languages: { [key: string]: { name: string; rtl?: boolean } } = {
@@ -98,9 +98,9 @@ private languages: { [key: string]: { name: string; rtl?: boolean } } = {
 };
 ```
 
-4.  In the `src/main/resources/i18n` folder, copy the `messages_en.properties` file to `messages_new_lang.properties` (this is where the server-side translations are stored)
-5.  Translate all keys in the `messages_new_lang.properties` file
-6.  Add the new language bundling to `webpack/webpack.common.js`
+4.  在 `src/main/resources/i18n` 文件夹中，将 `messages_en.properties` 文件复制到 `messages_new_lang.properties`（这是存储服务器端翻译的地方）
+5.  翻译 `messages_new_lang.properties` 文件中的所有键
+6.  在 `webpack/webpack.common.js` 中添加新语言打包
 
 ```js
 new MergeJsonWebpackPlugin({
@@ -114,39 +114,39 @@ new MergeJsonWebpackPlugin({
 })
 ```
 
-The new language `new_lang` is now available in the language menu, and it is available both in the front-end Angular application and in the back-end Spring application.
+新语言 `new_lang` 现在在语言菜单中可用，并且在前端 Angular 应用程序和后端 Spring 应用程序中都可用。
 
-### Contributing the language to generator-jhipster
+### 向 generator-jhipster 贡献语言
 
-If you would like to contribute a new language to the generator follow steps below;
+如果您希望向生成器贡献新语言，请按照以下步骤；
 
-- Add the language to the `LANGUAGES` constant in [`generators/generator-constants.js`](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-constants.js)
+- 在 [`generators/generator-constants.js`](https://github.com/jhipster/generator-jhipster/blob/main/generators/generator-constants.js) 中将该语言添加到 `LANGUAGES` 常量
 
 ```js
 { name: 'New Language', dispName: 'New Language', value: 'nl' }
 ```
 
-- Duplicate the file [`generators/languages/templates/src/main/resources/i18n/messages_en.properties.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/languages/templates/src/main/resources/i18n/messages_en.properties.ejs) to `generators/languages/templates/src/main/resources/i18n/messages_nl.properties.ejs` and translate all the values to the new language.   
+- 将文件 [`generators/languages/templates/src/main/resources/i18n/messages_en.properties.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/languages/templates/src/main/resources/i18n/messages_en.properties.ejs) 复制到 `generators/languages/templates/src/main/resources/i18n/messages_nl.properties.ejs` 并将所有值翻译为新语言。
 
-- Duplicate the folder [`generators/languages/templates/src/main/webapp/i18n/en`](https://github.com/jhipster/generator-jhipster/tree/main/generators/languages/templates/src/main/webapp/i18n/en) to `generators/languages/templates/src/main/webapp/i18n/nl` and translate all the files inside it. 
+- 将文件夹 [`generators/languages/templates/src/main/webapp/i18n/en`](https://github.com/jhipster/generator-jhipster/tree/main/generators/languages/templates/src/main/webapp/i18n/en) 复制到 `generators/languages/templates/src/main/webapp/i18n/nl` 并翻译其中的所有文件。
 
-- Duplicate the file [`generators/entity-i18n/templates/i18n/entity_en.json.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/entity-i18n/templates/i18n/entity_en.json.ejs) to `generators/entity-i18n/templates/i18n/entity_nl.json.ejs` and translate all the values within it.
+- 将文件 [`generators/entity-i18n/templates/i18n/entity_en.json.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/entity-i18n/templates/i18n/entity_en.json.ejs) 复制到 `generators/entity-i18n/templates/i18n/entity_nl.json.ejs` 并翻译其中的所有值。
 
-- Duplicate the file [`generators/languages/templates/src/test/resources/i18n/messages_en.properties.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/server/templates/src/test/resources/i18n/messages_en.properties.ejs) to `generators/languages/templates/src/test/resources/i18n/messages_nl.properties.ejs` and translate all the values within it.
+- 将文件 [`generators/languages/templates/src/test/resources/i18n/messages_en.properties.ejs`](https://github.com/jhipster/generator-jhipster/blob/main/generators/server/templates/src/test/resources/i18n/messages_en.properties.ejs) 复制到 `generators/languages/templates/src/test/resources/i18n/messages_nl.properties.ejs` 并翻译其中的所有值。
 
-- Add the language value `nl` to the `language` array in [`test/templates/all-languages/.yo-rc.json`](https://github.com/jhipster/generator-jhipster/blob/main/test/templates/all-languages/.yo-rc.json).
+- 在 [`test/templates/all-languages/.yo-rc.json`](https://github.com/jhipster/generator-jhipster/blob/main/test/templates/all-languages/.yo-rc.json) 中将语言值 `nl` 添加到 `language` 数组。
 
-Submit a PR with all these changes.
+提交包含所有这些更改的 PR。
 
 
-## How to remove an existing language?
+## 如何删除现有语言？
 
-Here are the steps to remove a language called `old_lang`:
+以下是删除名为 `old_lang` 语言的步骤：
 
-1.  Delete the entire language folder from `src/main/webapp/i18/old_lang`
-2.  Remove the constant entry for `LANGUAGES` in `src/main/webapp/app/core/language/language.constants.ts`
-3.  Remove the constant entry for `languages` in `src/main/webapp/app/shared/language/find-language-from-key.pipe.ts`
-4.  Remove the constant entry for `localesToKeep` in `webpack/webpack.prod.js` 
-5.  Remove the pattern for `MergeJsonWebpackPlugin` in `webpack/webpack.common.js` 
-6.  Delete the `src/main/resources/i18n/messages_old_lang.properties` file
-7.  Delete the `src/test/resources/i18n/messages_old_lang.properties` file
+1.  从 `src/main/webapp/i18/old_lang` 删除整个语言文件夹
+2.  在 `src/main/webapp/app/core/language/language.constants.ts` 中删除 `LANGUAGES` 的常量条目
+3.  在 `src/main/webapp/app/shared/language/find-language-from-key.pipe.ts` 中删除 `languages` 的常量条目
+4.  在 `webpack/webpack.prod.js` 中删除 `localesToKeep` 的常量条目
+5.  在 `webpack/webpack.common.js` 中删除 `MergeJsonWebpackPlugin` 的模式
+6.  删除 `src/main/resources/i18n/messages_old_lang.properties` 文件
+7.  删除 `src/test/resources/i18n/messages_old_lang.properties` 文件

@@ -1,16 +1,16 @@
 ---
-title: Setting up Jenkins 1 on Linux
+title: 在 Linux 上设置 Jenkins 1
 slug: /setting-up-ci-linux/
 last_update:
   date: 2015-01-09T12:40:00-00:00
 ---
 
-The instructions below are for a Red Hat/CentOS server but can be adapted for other Linux distributions.
+以下说明适用于 Red Hat/CentOS 服务器，但可以适配其他 Linux 发行版。
 
 
-## Installing Jenkins
+## 安装 Jenkins
 
-Follow the instructions from [https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions)
+按照以下说明进行安装：[https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions)
 
 ```shell
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
@@ -20,59 +20,59 @@ sudo yum install jenkins
 sudo service jenkins start
 ```
 
-A `jenkins` user has been created, its home directory is `/var/lib/jenkins`
+已创建 `jenkins` 用户，其主目录为 `/var/lib/jenkins`
 
 
-## Configuring Jenkins
+## 配置 Jenkins
 
-### Installing JDK 8
+### 安装 JDK 8
 
-Through Jenkins administration, add a JDK 8 automatic installer.
+通过 Jenkins 管理界面，添加 JDK 8 自动安装器。
 
-### Installing Maven
+### 安装 Maven
 
-Through Jenkins administration, add a Maven automatic installer from Apache's site.
+通过 Jenkins 管理界面，从 Apache 网站添加 Maven 自动安装器。
 
-### Installing NodeJS
+### 安装 NodeJS
 
-You could install NodeJS globally but it's very likely that you may want to have different versions of NodeJS for different projects.
+你可以全局安装 NodeJS，但很可能你希望为不同的项目使用不同版本的 NodeJS。
 
-We suggest 2 alternatives below, choose the one you prefer.
+我们建议以下2种替代方案，请选择你喜欢的一种。
 
-#### Jenkins NodeJS plugin
+#### Jenkins NodeJS 插件
 
-Install Jenkins NodeJS plugin.
+安装 Jenkins NodeJS 插件。
 
-Through Jenkins administration, add a NodeJS installation:
+通过 Jenkins 管理界面，添加 NodeJS 安装：
 
-- Automatic installer from nodejs.org, use the latest LTS (Long Term Support) 64-bit version
-- Global npm packages to install: bower gulp
+- 从 nodejs.org 的自动安装器，使用最新的 LTS（长期支持）64位版本
+- 要安装的全局 npm 包：bower gulp
 
-#### Local NodeJS installation
+#### 本地 NodeJS 安装
 
-Install NodeJS locally using the script below and then update the Jenkins PATH to use it.
+使用下面的脚本本地安装 NodeJS，然后更新 Jenkins PATH 以使用它。
 
 ```shell
-# specify which version we want
+# 指定我们需要的版本
 export NODE_VERSION=4.3.1
 
-# download
+# 下载
 cd /tmp
 wget http://nodejs.org/dist/v$NODE_VERSION/node-v4.3.1.tar.gz
 tar xvfz node-v$NODE_VERSION.tar.gz
 
-# build it and install it only locally
+# 构建并仅本地安装
 cd node-v$NODE_VERSION
 ./configure --prefix=/var/lib/jenkins/node-v$NODE_VERSION && make && make install
 
-# Check versions of node and  npm
+# 检查 node 和 npm 版本
 export PATH=/var/lib/jenkins/node-v$NODE_VERSION/bin:$PATH
 node --version
 # v4.3.1
 npm --version
 # 3.7.5
 
-# install tools
+# 安装工具
 npm install -g bower gulp
 bower --version
 # 1.7.7
@@ -80,4 +80,4 @@ gulp --version
 # 3.9.1
 ```
 
-Make sure you update the Jenkins PATH.
+确保更新 Jenkins PATH。

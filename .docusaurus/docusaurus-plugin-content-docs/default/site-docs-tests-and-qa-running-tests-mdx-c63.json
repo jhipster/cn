@@ -1,0 +1,31 @@
+{
+  "id": "tests-and-qa/running-tests",
+  "title": "Running tests",
+  "description": "Introduction",
+  "source": "@site/docs/tests-and-qa/running-tests.mdx",
+  "sourceDirName": "tests-and-qa",
+  "slug": "/running-tests/",
+  "permalink": "/cn/running-tests/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tests-and-qa/running-tests.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1555632000000,
+  "frontMatter": {
+    "title": "Running tests",
+    "slug": "/running-tests/",
+    "last_update": {
+      "date": "2019-04-19T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 TLS 和 HTTP/2",
+    "permalink": "/cn/tls/"
+  },
+  "next": {
+    "title": "代码质量",
+    "permalink": "/cn/code-quality/"
+  }
+}

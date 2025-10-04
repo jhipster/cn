@@ -1,82 +1,82 @@
 ---
-title: Filtering your entities
+title: 实体过滤
 slug: /entities-filtering/
 last_update:
   date: 2017-08-22T00:00:00-00:00
 ---
 
-## Introduction
+## 介绍
 
-After the basic CRUD functionalities are implemented for an entity, there is a very common request to create various filters for the attributes of the entity,
-so the server could be used more effectively. These filters should be sent as the request parameters, so any client - and any browser - could use it.
-Additionally, these filters should follow a reasonable, and concise pattern, and they must be allowed combining them freely.
-
-
-## How to activate
-
-_Note_: `filter` is not compatible with `reactive`.
-When generating an entity with `jhipster entity` command, select services or service implementation to enable filtering on this entity. 
-
-If you want to enable filtering for existing entities, you can modify the entity configuration in your projects `.jhipster` directory, by setting `service` to `serviceClass` or `serviceImpl` from `no`, and `jpaMetamodelFiltering` to `true` and then re-generate with `jhipster entity <entity name>`.
-
-When using JDL, add a line `filter <entity name>` to your JDL file and re-import the definitions with `jhipster jdl` command.
+在为实体实现了基本的 CRUD 功能后，一个非常常见的需求是为实体的属性创建各种过滤器，
+这样服务器可以被更有效地使用。这些过滤器应该作为请求参数发送，这样任何客户端 - 和任何浏览器 - 都可以使用它。
+此外，这些过滤器应该遵循合理、简洁的模式，并且必须允许自由组合。
 
 
-## Public interface
+## 如何激活
 
-For each entity, you can enable filtering in the entity generator, and after, you can call your `/api/my-entity` GET endpoint with the following parameters :
+_注意_：`filter` 与 `reactive` 不兼容。
+当使用 `jhipster entity` 命令生成实体时，选择服务或服务实现以在此实体上启用过滤。
 
-* For each *xyz* field
+如果您想为现有实体启用过滤，您可以通过将 `service` 从 `no` 设置为 `serviceClass` 或 `serviceImpl`，并将 `jpaMetamodelFiltering` 设置为 `true`，然后使用 `jhipster entity <entity name>` 重新生成，来修改项目 `.jhipster` 目录中的实体配置。
+
+当使用 JDL 时，在您的 JDL 文件中添加一行 `filter <entity name>`，然后使用 `jhipster jdl` 命令重新导入定义。
+
+
+## 公共接口
+
+对于每个实体，您可以在实体生成器中启用过滤，之后，您可以使用以下参数调用您的 `/api/my-entity` GET 端点：
+
+* 对于每个 *xyz* 字段
     * *xyz.equals=someValue*
-        - To list all the entities, where xyz equals to 'someValue'
+        - 列出所有 xyz 等于 'someValue' 的实体
     * *xyz.in=someValue,otherValue*
-        - To list all the entities, where xyz equals to 'someValue' or 'otherValue'
+        - 列出所有 xyz 等于 'someValue' 或 'otherValue' 的实体
     * *xyz.specified=true*
-        - To list all the entities, where xyz is not null, specified.
+        - 列出所有 xyz 不为 null、已指定的实体。
     * *xyz.specified=false*
-        - To list all the entities, where xyz is null, unspecified.
-* If *xyz*'s type is string:
+        - 列出所有 xyz 为 null、未指定的实体。
+* 如果 *xyz* 的类型是字符串：
     * *xyz.contains=something*
-        - To list all the entities, where xyz contains 'something'.
-* If *xyz*'s is either any of the number types, or the date types.
+        - 列出所有 xyz 包含 'something' 的实体。
+* 如果 *xyz* 是数字类型中的任何一种，或者是日期类型。
     * *xyz.greaterThan=someValue*
-        - To list all the entities, where xyz is greater than 'someValue'.
+        - 列出所有 xyz 大于 'someValue' 的实体。
     * *xyz.lessThan=someValue*
-        - To list all the entities, where xyz is less than 'someValue'.
+        - 列出所有 xyz 小于 'someValue' 的实体。
     * *xyz.greaterThanOrEqual=someValue*
-        - To list all the entities, where xyz is greater than or equal to 'someValue'.
+        - 列出所有 xyz 大于或等于 'someValue' 的实体。
     * *xyz.lessThanOrEqual=someValue*
-        - To list all the entities, where xyz is less than or equal to 'someValue'.
+        - 列出所有 xyz 小于或等于 'someValue' 的实体。
 
-They can be combined freely.
+它们可以自由组合。
 
-A good way to experience the expressiveness of this filter API is to use it from swagger-ui in the API docs page of your JHipster application.
+体验这个过滤 API 表达能力的一个好方法是在您的 JHipster 应用的 API 文档页面中从 swagger-ui 使用它。
 
 ![](/images/entities_filtering_swagger.png)
 
 
-## Implementation
+## 实现
 
-When this feature is enabled, a new service named as `EntityQueryService` and an `EntityCriteria` is generated. Spring will convert the request parameters into the fields of the `EntityCriteria` class.
+当此功能被启用时，会生成一个名为 `EntityQueryService` 的新服务和一个 `EntityCriteria`。Spring 将请求参数转换为 `EntityCriteria` 类的字段。
 
-In the `EntityQueryService`, we convert the criteria object into a static, and type safe, JPA query object. For this, it is **required** that the **static metamodel generation is enabled** in the build. See the [JPA Static Metamodel Generator documentation](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#tooling-modelgen) for details.
+在 `EntityQueryService` 中，我们将条件对象转换为静态、类型安全的 JPA 查询对象。为此，**需要**在构建中**启用静态元模型生成**。有关详细信息，请参阅 [JPA 静态元模型生成器文档](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#tooling-modelgen)。
 
-To prove that the generated criteria is working, and Spring is well configured, the `EntityResourceIntTest` is extended with lots of test cases, one for each individual filter.
+为了证明生成的条件正在工作，且 Spring 配置正确，`EntityResourceIntTest` 被扩展了大量测试用例，每个单独的过滤器都有一个测试用例。
 
 ### Angular
 
-When using Angular, the proper way to take advantage of this useful feature would look like this:
+当使用 Angular 时，利用这个有用功能的正确方法如下所示：
 
-* Equals (same applies for `contains` and `notEquals`)
+* Equals（同样适用于 `contains` 和 `notEquals`）
 ```js
 this.bookService.query({'title.equals':someValue}).subscribe(...);
 ```
-* greaterThan (same applies for `lessThan`, `greaterThanOrEqual` and `lessThanOrEqual` when using `date` and `number` data types)
+* greaterThan（在使用 `date` 和 `number` 数据类型时，同样适用于 `lessThan`、`greaterThanOrEqual` 和 `lessThanOrEqual`）
 ```js
 this.bookService.query({'id.greaterThan':value}).subscribe(...);
 this.bookService.query({'birthday.lessThanOrEqual':value}).subscribe(...);
 ```
-* In (same applies for `notIn`)
+* In（同样适用于 `notIn`）
 ```js
 this.bookService.query({'id.in':[value1, value2]}).subscribe(...);
 ```
@@ -85,6 +85,6 @@ this.bookService.query({'id.in':[value1, value2]}).subscribe(...);
 this.bookService.query({'author.specified':true}).subscribe(...);
 ```
 
-## Limitations
+## 限制
 
-Currently only SQL databases (with JPA) is supported, with the separate service or separate service implementation/interface combination.
+目前仅支持 SQL 数据库（使用 JPA），并且需要使用单独的服务或单独的服务实现/接口组合。

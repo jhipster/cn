@@ -1,0 +1,31 @@
+{
+  "id": "microservices/jhipster-registry",
+  "title": "JHipster Registry",
+  "description": "deprecated - Use Consul instead",
+  "source": "@site/docs/microservices/jhipster-registry.mdx",
+  "sourceDirName": "microservices",
+  "slug": "/jhipster-registry/",
+  "permalink": "/cn/jhipster-registry/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/microservices/jhipster-registry.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1548979200000,
+  "frontMatter": {
+    "title": "JHipster Registry",
+    "slug": "/jhipster-registry/",
+    "last_update": {
+      "date": "2019-02-01T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Consul",
+    "permalink": "/cn/consul/"
+  },
+  "next": {
+    "title": "Creating microservices",
+    "permalink": "/cn/creating-microservices/"
+  }
+}

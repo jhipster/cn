@@ -1,0 +1,30 @@
+{
+  "id": "releases/2022-07-31-jhipster-release-7.9.2",
+  "title": "Release 7.9.2",
+  "description": "This is the new patch release of JHipster v7 with 20 closed tickets and merged pull requests. This release addresses the issue with file permissions for mvnw, gradlew and npmw",
+  "source": "@site/docs/releases/2022-07-31-jhipster-release-7.9.2.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2022/07/31/jhipster-release-7.9.2.html",
+  "permalink": "/cn/2022/07/31/jhipster-release-7.9.2.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2022-07-31-jhipster-release-7.9.2.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 7.9.2",
+    "slug": "/2022/07/31/jhipster-release-7.9.2.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 7.9.0",
+    "permalink": "/cn/2022/07/31/jhipster-release-7.9.0.html"
+  },
+  "next": {
+    "title": "Release 7.9.3",
+    "permalink": "/cn/2022/09/02/jhipster-release-7.9.3.html"
+  }
+}

@@ -1,5 +1,5 @@
 ---
-title: Allowing Common Web Fonts in Security Configuration
+title: 在安全配置中允许常见的 Web 字体
 slug: /tips/036_tip_allow_common_web_fonts_in_spring_security.html
 last_update:
   date: 2023-08-17T00:00:00-00:00
@@ -7,9 +7,9 @@ last_update:
 
 __Tip submitted by [@dinu0000](https://github.com/dinu0000)__
 
-When developing a JHipster web application, you might encounter issues with web fonts not loading properly due to security configurations. To allow common web fonts to load seamlessly, follow these steps:
+在开发 JHipster Web 应用程序时，你可能会遇到由于安全配置而导致 Web 字体无法正常加载的问题。要允许常见的 Web 字体无缝加载，请按照以下步骤操作：
 
-In your `SecurityConfiguration.java` file, update the `filterChain` method to permit requests for web fonts:
+在你的 `SecurityConfiguration.java` 文件中，更新 `filterChain` 方法以允许对 Web 字体的请求：
 
 ```java
 @Bean
@@ -27,4 +27,4 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 }
 ```
 
-With these adjustments, your JHipster app's security configuration will allow the loading of common web fonts without encountering security restrictions.
+通过这些调整，你的 JHipster 应用程序的安全配置将允许加载常见的 Web 字体，而不会遇到安全限制。

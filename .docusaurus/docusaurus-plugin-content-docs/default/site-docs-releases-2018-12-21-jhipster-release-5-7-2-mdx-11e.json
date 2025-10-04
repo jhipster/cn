@@ -1,0 +1,30 @@
+{
+  "id": "releases/2018-12-21-jhipster-release-5.7.2",
+  "title": "Release 5.7.2",
+  "description": "This is a small patch release, which corrects a few minor issues, so we have a good stable build for Christmas! Please note we are starting today our \"bug bounty booster\" program, until December, 31st. So all Bug bounties closed during this period will be paid double, that's $200 instead of $100 per pull request!",
+  "source": "@site/docs/releases/2018-12-21-jhipster-release-5.7.2.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2018/12/21/jhipster-release-5.7.2.html",
+  "permalink": "/cn/2018/12/21/jhipster-release-5.7.2.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2018-12-21-jhipster-release-5.7.2.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 5.7.2",
+    "slug": "/2018/12/21/jhipster-release-5.7.2.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 5.7.1",
+    "permalink": "/cn/2018/12/14/jhipster-release-5.7.1.html"
+  },
+  "next": {
+    "title": "Release 5.8.0",
+    "permalink": "/cn/2019/01/25/jhipster-release-5.8.0.html"
+  }
+}

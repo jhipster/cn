@@ -1,44 +1,44 @@
 ---
-title: Microservices in production
+title: 生产环境中的微服务
 slug: /microservices-in-production/
 last_update:
   date: 2020-09-11T00:00:00-00:00
 ---
 
-Microservices are a specific kind of JHipster applications. Please refer to our main [Using JHipster in production documentation](/production) for more information on doing a production build, optimizing it and securing it.
+微服务是一种特定类型的 JHipster 应用程序。请参考我们的主要[在生产环境中使用 JHipster 文档](/production)了解有关生产构建、优化和安全的更多信息。
 
 
-## Microservices monitoring
+## 微服务监控
 
-If using JHipster Registry, please refer to our [JHipster Registry documentation](/jhipster-registry) for learning which runtime dashboards are available, and how to use them.
+如果使用 JHipster Registry，请参考我们的 [JHipster Registry 文档](/jhipster-registry)了解可用的运行时仪表板以及如何使用它们。
 
-Our [monitoring documentation](/monitoring) is also very important, to learn specific information on using:
+我们的[监控文档](/monitoring)也非常重要，了解有关使用以下内容的特定信息：
 
-- ELK to collect the logs of your microservices
-- Prometheus to collect the metrics of your microservices
-- Zipkin to trace HTTP requests throughout your services
-
-
-## Using Docker Compose to develop and deploy
-
-Working on a microservices architecture means you will need several different services and databases working together, and in that context Docker Compose is a great tool to manage your development, testing and production environments.
-
-A specific section on microservices is included in our [Docker Compose documentation](/docker-compose#microservices), and we highly recommend that you get familiar with it when working on a microservices architecture.
-
-As Docker Swarm uses the same API as Docker Machine, deploying your microservices architecture in the cloud is exactly the same as deploying it on your local machine. Follow our [Docker Compose documentation](/docker-compose) to learn more about using Docker Compose with JHipster.
+- ELK 收集微服务的日志
+- Prometheus 收集微服务的指标
+- Zipkin 跟踪服务间的 HTTP 请求
 
 
-## Going to production with Heroku
+## 使用 Docker Compose 进行开发和部署
 
-The [Heroku sub-generator](/heroku) works nearly the same with a microservices architecture, the main difference is that you have more applications to deploy:
+使用微服务架构意味着您需要多个不同的服务和数据库协同工作，在这种情况下，Docker Compose 是管理开发、测试和生产环境的强大工具。
 
-Deploy a JHipster Registry directly with one click:
+我们的 [Docker Compose 文档](/docker-compose#microservices)中包含了一个关于微服务的特定部分，我们强烈建议您在使用微服务架构时熟悉它。
 
-[![Deploy to Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry)
+由于 Docker Swarm 使用与 Docker Machine 相同的 API，在云中部署微服务架构与在本地机器上部署完全相同。请遵循我们的 [Docker Compose 文档](/docker-compose)了解有关将 Docker Compose 与 JHipster 一起使用的更多信息。
 
-Please follow the [Heroku sub-generator documentation](/heroku) in order to understand how to secure your JHipster Registry.
 
-Note the URL on which your JHipster Registry is deployed. Your applications must all point to that URL in their `application-prod.yml` file. Change that configuration to be:
+## 使用 Heroku 进行生产
+
+[Heroku 子生成器](/heroku)在微服务架构中几乎相同工作，主要区别是您有更多应用程序需要部署：
+
+一键直接部署 JHipster Registry：
+
+[![部署到 Heroku](https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67)](https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry)
+
+请遵循 [Heroku 子生成器文档](/heroku)了解如何保护您的 JHipster Registry。
+
+请注意您的 JHipster Registry 部署的 URL。您的所有应用程序都必须在它们的 `application-prod.yml` 文件中指向该 URL。更改该配置为：
 
 ```yaml
 eureka:
@@ -47,4 +47,4 @@ eureka:
         prefer-ip-address: false
 ```
 
-You can now deploy and scale the gateway(s) and microservices. The Heroku sub-generator will ask you a new question, to know the URL of your JHipster Registry: this will allow your applications to fetch their configuration on the Spring Cloud Config server.
+您现在可以部署和扩展网关和微服务。Heroku 子生成器会问您一个新问题，了解您的 JHipster Registry 的 URL：这将允许您的应用程序在 Spring Cloud Config 服务器上获取其配置。

@@ -1,21 +1,21 @@
 ---
-title: Deploying to Clever Cloud
+title: 部署到 Clever Cloud
 slug: /clever-cloud/
 last_update:
   date: 2020-10-09T00:00:00-00:00
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Clever cloud](https://www.clever-cloud.com/) is an IT Automation platform
+[Clever cloud](https://www.clever-cloud.com/) 是一个 IT 自动化平台
 
 [<img src={useBaseUrl('/images/logo/logo_clever_cloud.png')} alt="Clever cloud logo" width="300px" />](https://www.clever-cloud.com/)
 
 
-## Before you start
+## 开始之前
 
-You must install the [Clever cloud CLI](https://www.clever-cloud.com/doc/clever-tools/getting_started/).
+您必须安装 [Clever cloud CLI](https://www.clever-cloud.com/doc/clever-tools/getting_started/)。
 
-You must also [create a Clever Cloud account](https://api.clever-cloud.com/v2/sessions/signup) and log in with the CLI by running the following command `clever login`
+您还必须[创建 Clever Cloud 账户](https://api.clever-cloud.com/v2/sessions/signup)并通过运行以下命令 `clever login` 使用 CLI 登录
 
 ```shell
 Opening https://console.clever-cloud.com/cli-oauth?cli_version=2.7.1&cli_token=XXX in your browser to log you in…
@@ -23,13 +23,13 @@ Login successful as ...
 ```
 
 
-## Create your Clever Cloud application
+## 创建您的 Clever Cloud 应用程序
 
-1. If you are using maven `clever create --type maven [your application name]` or using gradle `clever create --type gradle [your application name]`
+1. 如果您使用 maven `clever create --type maven [您的应用程序名称]` 或使用 gradle `clever create --type gradle [您的应用程序名称]`
 
-2. Add a database addon to your application `clever addon create [addon provider] [your addon name] --link [your application name]`
+2. 向您的应用程序添加数据库附加组件 `clever addon create [附加组件提供商] [您的附加组件名称] --link [您的应用程序名称]`
 
-    List supported addon providers `clever addon providers`
+    列出支持的附加组件提供商 `clever addon providers`
     ```
     cellar-addon      Cellar S3 storage       S3-like online file storage web service
     config-provider   Configuration provider  Expose configuration to your applications  (via environment variables)
@@ -41,22 +41,22 @@ Login successful as ...
     redis-addon       Redis                   Redis by Clever Cloud is an in-memory key-value data store, powered by Clever Cloud
     ```
 
-    [see supported addons](https://www.clever-cloud.com/doc/addons/clever-cloud-addons/#available-add-ons)
+    [查看支持的附加组件](https://www.clever-cloud.com/doc/addons/clever-cloud-addons/#available-add-ons)
 
-3. Setup env var `clever env set CC_PRE_RUN_HOOK "cp ./clevercloud/application-clevercloud.yml ./application-prod.yml"`
+3. 设置环境变量 `clever env set CC_PRE_RUN_HOOK "cp ./clevercloud/application-clevercloud.yml ./application-prod.yml"`
 
-4. Enable dedicated build `clever scale --build-flavor M`
+4. 启用专用构建 `clever scale --build-flavor M`
 
-    [see dedicated build](https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build)
+    [查看专用构建](https://www.clever-cloud.com/doc/admin-console/apps-management/#dedicated-build)
 
 
-## Configure your JHipster application
+## 配置您的 JHipster 应用程序
 
-1. Add a `clevercloud/` folder in your project.
+1. 在您的项目中添加一个 `clevercloud/` 文件夹。
 
-2. create `clevercloud/application-clevercloud.yml` for using predefined clever cloud addon env var
+2. 创建 `clevercloud/application-clevercloud.yml` 以使用预定义的 clever cloud 附加组件环境变量
 
-    For PostgreSQL
+    对于 PostgreSQL
 
     ```yaml
     spring:
@@ -69,7 +69,7 @@ Login successful as ...
           maximumPoolSize: 2
     ```
 
-    For MySQL
+    对于 MySQL
 
     ```yaml
     spring:
@@ -82,7 +82,7 @@ Login successful as ...
           maximumPoolSize: 2
     ```
 
-    For MongoDB
+    对于 MongoDB
 
     ```yaml
     spring:
@@ -94,10 +94,10 @@ Login successful as ...
 
 
 
-3. add a json file that contain the goal field to indicate how to start your application
+3. 添加一个包含 goal 字段的 json 文件，以指示如何启动您的应用程序
 
-  For maven
-  create `clevercloud/maven.json` file and using your pom.xml **artifactId**
+  对于 maven
+  创建 `clevercloud/maven.json` 文件并使用您的 pom.xml **artifactId**
   
   ```json
   {
@@ -106,13 +106,13 @@ Login successful as ...
       "goal": "-Pprod package -DskipTests"
     },
     "deploy": {
-    "jarName": "./target/[REPLACE BY ARTIFACTID]-0.0.1-SNAPSHOT.jar"
+    "jarName": "./target/[替换为 ARTIFACTID]-0.0.1-SNAPSHOT.jar"
     }
   }
   ```
 
-  For gradle
-  create `clevercloud/gradle.json` file  and using gradle.properties **rootProject.name**
+  对于 gradle
+  创建 `clevercloud/gradle.json` 文件并使用 gradle.properties **rootProject.name**
 
   ```json
   {
@@ -121,40 +121,40 @@ Login successful as ...
       "goal": "-Pprod bootJar -x test"
     },
     "deploy": {
-      "jarName": "./build/libs/[REPLACE BY rootProject.name]-0.0.1-SNAPSHOT.jar"
+      "jarName": "./build/libs/[替换为 rootProject.name]-0.0.1-SNAPSHOT.jar"
     }
   }
   ```
 
 
-## Deploy your application
+## 部署您的应用程序
 
-### Using CLI
+### 使用 CLI
 
-You must commit before deploy
+您必须在部署前提交
 
 ```shell
 git commit -m "Clever deploy"
 ```
 
-then run:
+然后运行：
 
 ```shell
 clever deploy
 ```
 
-### Using gitlab CI
+### 使用 gitlab CI
 
-define `$CLEVER_TOKEN` and `CLEVER_SECRET` to gitlab CI/CD environment variables
+在 gitlab CI/CD 环境变量中定义 `$CLEVER_TOKEN` 和 `CLEVER_SECRET`
 
-add this stage to your `.gitlab-ci.yml`
+将此阶段添加到您的 `.gitlab-ci.yml`
 
 ```yaml
 deploy-to-clever-env:
   stage: deploy
   variables:
-    APP_NAME: [clever cloud app name]
-    APP_ID: [clever cloud app id]
+    APP_NAME: [clever cloud 应用程序名称]
+    APP_ID: [clever cloud 应用程序 ID]
   script:
     - wget https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
     - tar xvzf clever-tools-latest_linux.tar.gz
@@ -162,23 +162,23 @@ deploy-to-clever-env:
     - ./clever-tools-latest_linux/clever link ${APP_ID}
     - ./clever-tools-latest_linux/clever deploy -a ${APP_NAME}
   environment:
-    name: [env name]
+    name: [环境名称]
     url: https://${APP_NAME}.cleverapps.io
 ```
 
 
-## Using Github Action
+## 使用 Github Action
 
-define `CLEVER_TOKEN` and `CLEVER_SECRET` to Github secret (Settings > Secret)
+在 Github secret 中定义 `CLEVER_TOKEN` 和 `CLEVER_SECRET` (Settings > Secret)
 
-add this step to your `.github-action.yml`
+将此步骤添加到您的 `.github-action.yml`
 
 ```yaml
 - uses: actions/checkout@v2
-- name: Deploy on cc
+- name: 部署到 cc
   env:
-    APP_NAME:[clever cloud app name]
-    APP_ID: [clever cloud app id]
+    APP_NAME:[clever cloud 应用程序名称]
+    APP_ID: [clever cloud 应用程序 ID]
   run: |
     git fetch --prune --unshallow
     wget https://clever-tools.cellar.services.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
@@ -189,17 +189,17 @@ add this step to your `.github-action.yml`
 ```
 
 
-## Changing the Java version
+## 更改 Java 版本
 
-You can select the Java version (Java 11 by default)
+您可以选择 Java 版本（默认为 Java 11）
 
 ```shell
 clever env set CC_JAVA_VERSION 12
 ```
 
 
-## More information
+## 更多信息
 
-* [Clever Cloud documentation](https://www.clever-cloud.com/doc/)
-* [Clever Cloud Java maven deployment](https://www.clever-cloud.com/doc/java/java-maven/)
-* [Clever Cloud Java gradle deployment](https://www.clever-cloud.com/doc/java/java-gradle/)
+* [Clever Cloud 文档](https://www.clever-cloud.com/doc/)
+* [Clever Cloud Java maven 部署](https://www.clever-cloud.com/doc/java/java-maven/)
+* [Clever Cloud Java gradle 部署](https://www.clever-cloud.com/doc/java/java-gradle/)

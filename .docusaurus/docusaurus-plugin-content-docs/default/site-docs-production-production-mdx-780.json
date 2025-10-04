@@ -1,0 +1,31 @@
+{
+  "id": "production/production",
+  "title": "Using JHipster in production",
+  "description": "JHipster generates a fully production-ready, optimized and secured application. This section describes the more important options - if you are in hurry, run a normal production build, but don't forget to read the security section!",
+  "source": "@site/docs/production/production.mdx",
+  "sourceDirName": "production",
+  "slug": "/production/",
+  "permalink": "/cn/production/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/production/production.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1615204800000,
+  "frontMatter": {
+    "title": "Using JHipster in production",
+    "slug": "/production/",
+    "last_update": {
+      "date": "2021-03-08T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Setting up Jenkins 2",
+    "permalink": "/cn/setting-up-ci-jenkins2/"
+  },
+  "next": {
+    "title": "Monitoring",
+    "permalink": "/cn/monitoring/"
+  }
+}

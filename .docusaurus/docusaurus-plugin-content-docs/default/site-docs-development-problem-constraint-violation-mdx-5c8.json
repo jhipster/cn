@@ -1,0 +1,31 @@
+{
+  "id": "development/problem/constraint-violation",
+  "title": "Error - constraint violation",
+  "description": "Welcome to the JHipster website!",
+  "source": "@site/docs/development/problem/constraint-violation.mdx",
+  "sourceDirName": "development/problem",
+  "slug": "/problem/constraint-violation/",
+  "permalink": "/cn/problem/constraint-violation/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/problem/constraint-violation.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1505001600000,
+  "frontMatter": {
+    "title": "Error - constraint violation",
+    "slug": "/problem/constraint-violation/",
+    "last_update": {
+      "date": "2017-09-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "带消息的问题",
+    "permalink": "/cn/problem/problem-with-message/"
+  },
+  "next": {
+    "title": "带参数化消息的问题",
+    "permalink": "/cn/problem/parameterized/"
+  }
+}

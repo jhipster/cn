@@ -1,0 +1,31 @@
+{
+  "id": "contributing/contributing-individuals",
+  "title": "Individual contributions",
+  "description": "JHipster has a lot of contributors, and we make our best to help people contribute! We'd love to have you on board!",
+  "source": "@site/docs/contributing/contributing-individuals.mdx",
+  "sourceDirName": "contributing",
+  "slug": "/contributing-individuals/",
+  "permalink": "/cn/contributing-individuals/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/contributing/contributing-individuals.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1511913600000,
+  "frontMatter": {
+    "title": "Individual contributions",
+    "slug": "/contributing-individuals/",
+    "last_update": {
+      "date": "2017-11-29T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Financial sponsors",
+    "permalink": "/cn/sponsors/"
+  },
+  "next": {
+    "title": "Contributing companies",
+    "permalink": "/cn/contributing-companies/"
+  }
+}

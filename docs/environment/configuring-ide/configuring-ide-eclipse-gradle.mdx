@@ -1,39 +1,39 @@
 ---
-title: Configuring Eclipse with Gradle
+title: 配置 Eclipse 与 Gradle
 slug: /configuring-ide-eclipse-gradle/
 last_update:
   date: 2015-05-22T18:40:00-00:00
 ---
 
-To get full Gradle support in eclipse you should install the [buildship plugin](https://gradle.org/eclipse/).
-For configuring the [JavaScript](/configuring-ide-eclipse) side you can follow the instructions for Maven.
+要在 Eclipse 中获得完整的 Gradle 支持，您应该安装 [buildship 插件](https://gradle.org/eclipse/)。
+对于配置 [JavaScript](/configuring-ide-eclipse) 方面，您可以按照 Maven 的说明进行操作。
 
 
-## 1. Import your project as a Gradle project
+## 1. 将您的项目作为 Gradle 项目导入
 
-- Select ``File -> Import``
-- Choose ``Gradle Project``
-- Select your projects root directory
-- Click on ``Next`` and finish the wizard
+- 选择 ``File -> Import``
+- 选择 ``Gradle Project``
+- 选择您的项目根目录
+- 点击 ``Next`` 并完成向导
 
 ![Import](/images/configuring_ide_eclipse_gradle_1.png)
 
 ![Select](/images/configuring_ide_eclipse_gradle_2.png)
 
 
-## 2. Add apt generated source folder to build path
+## 2. 将 apt 生成的源文件夹添加到构建路径
 
-When using buildship gradles default outputfolder is filtered and not visible in your workspace.
-Therefore you need to remove it from eclipse's resource filter setting.
+当使用 buildship 时，gradle 的默认输出文件夹被过滤且在您的工作区中不可见。
+因此，您需要从 Eclipse 的资源过滤器设置中删除它。
 
-- Right click on your project and select ``Properties``
-- Select ``Resources``
-- Remove the entry ``build``
-- Select ``Java Build Path``
-- Click ``Add Folder...``
-- Check the path ``build/generated/source/apt/main``
+- 右键单击您的项目并选择 ``Properties``
+- 选择 ``Resources``
+- 删除条目 ``build``
+- 选择 ``Java Build Path``
+- 点击 ``Add Folder...``
+- 勾选路径 ``build/generated/source/apt/main``
 
-Make sure the new source folder contains the correctly generated mapper implementations when running JHipster via eclipse.
+确保在通过 Eclipse 运行 JHipster 时，新的源文件夹包含正确生成的 mapper 实现。
 
 ![Exclude](/images/configuring_ide_eclipse_gradle_3.png)
 

@@ -1,0 +1,32 @@
+{
+  "id": "about/showcase",
+  "title": "Showcase",
+  "description": "A showcase of awesome applications built with JHipster.",
+  "source": "@site/docs/about/showcase.mdx",
+  "sourceDirName": "about",
+  "slug": "/showcase/",
+  "permalink": "/cn/showcase/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/about/showcase.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1591920000000,
+  "frontMatter": {
+    "title": "Showcase",
+    "hide_table_of_contents": true,
+    "slug": "/showcase/",
+    "last_update": {
+      "date": "2020-06-12T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Companies using JHipster",
+    "permalink": "/cn/companies-using-jhipster/"
+  },
+  "next": {
+    "title": "Release notes",
+    "permalink": "/cn/releases/"
+  }
+}

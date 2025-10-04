@@ -17,20 +17,20 @@ export default function SponsorsAndBackers() {
 
   return (
     <SectionWrapper className={styles.section}>
-      <SectionTitle>Sponsors & Backers</SectionTitle>
+      <SectionTitle>赞助者与支持者</SectionTitle>
 
       <SectionDescription>
         <p>
-          If you find JHipster useful for work, please consider asking your
-          company to support this Open Source project by becoming{' '}
+            如您在工作中因 JHipster 而受益，诚请考虑建议您的公司成为{' '}
           <Link href="https://opencollective.com/generator-jhipster#sponsor">
-            a sponsor
+              赞助者
           </Link>
-          . You can also individually sponsor the project by becoming{' '}
+            ，以支持这一开源项目。
+            您个人亦可通过成为{' '}
           <Link href="https://opencollective.com/generator-jhipster#backer">
-            a backer
+              支持者
           </Link>
-          .
+            的方式，为项目提供资助。
         </p>
       </SectionDescription>
 
@@ -38,13 +38,13 @@ export default function SponsorsAndBackers() {
 
       {/* Silver sponsors */}
       <OpenCollectiveSponsors
-        title="Thank you to our silver sponsors!"
+        title="感谢我们的白银级赞助商！"
         sponsors={silverSponsors}
       />
 
       {/* Bronze sponsors */}
       <OpenCollectiveSponsors
-        title="Thank you to our bronze sponsors!"
+        title="感谢我们的青铜级赞助商！"
         sponsors={bronzeSponsors}
       />
 

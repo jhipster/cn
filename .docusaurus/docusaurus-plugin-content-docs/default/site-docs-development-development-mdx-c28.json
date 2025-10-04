@@ -1,0 +1,31 @@
+{
+  "id": "development/development",
+  "title": "Using JHipster in development",
+  "description": "**Please check our video tutorial on creating a new JHipster application!**",
+  "source": "@site/docs/development/development.mdx",
+  "sourceDirName": "development",
+  "slug": "/development/",
+  "permalink": "/cn/development/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/development.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1672876800000,
+  "frontMatter": {
+    "title": "Using JHipster in development",
+    "slug": "/development/",
+    "last_update": {
+      "date": "2023-01-05T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "问题排查",
+    "permalink": "/cn/jdl/troubleshooting"
+  },
+  "next": {
+    "title": "管理配置文件",
+    "permalink": "/cn/profiles/"
+  }
+}

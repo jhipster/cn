@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_issue_of_onetoone_with_mapsid_how_to_avoid_it",
+  "title": "Issue of @OneToOne with @MapsId and how to avoid it",
+  "description": "Tip submitted by @pmverma",
+  "source": "@site/docs/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html",
+  "permalink": "/cn/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1551810000000,
+  "sidebarPosition": 26,
+  "frontMatter": {
+    "title": "Issue of @OneToOne with @MapsId and how to avoid it",
+    "slug": "/tips/026_tip_issue_of_onetoone_with_mapsid_how_to_avoid_it.html",
+    "last_update": {
+      "date": "2019-03-05T18:20:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "How to create a new Authority",
+    "permalink": "/cn/tips/025_tip_create_new_authority.html"
+  },
+  "next": {
+    "title": "Increase integration test performance by lazy bean initialization",
+    "permalink": "/cn/tips/027_tip_lazy_init_test_beans.html"
+  }
+}

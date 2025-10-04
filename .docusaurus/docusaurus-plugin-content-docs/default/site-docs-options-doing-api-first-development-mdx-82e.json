@@ -1,0 +1,31 @@
+{
+  "id": "options/doing-api-first-development",
+  "title": "Doing API-First development",
+  "description": "When generating a JHipster application and prompted \"Which other technologies would you like to use?\" choose the API first development using OpenAPI-generator option to leverage the OpenAPI-generator, as shown below:",
+  "source": "@site/docs/options/doing-api-first-development.mdx",
+  "sourceDirName": "options",
+  "slug": "/doing-api-first-development/",
+  "permalink": "/cn/doing-api-first-development/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/doing-api-first-development.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1724889600000,
+  "frontMatter": {
+    "title": "Doing API-First development",
+    "slug": "/doing-api-first-development/",
+    "last_update": {
+      "date": "2024-08-29T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Websockets",
+    "permalink": "/cn/using-websockets/"
+  },
+  "next": {
+    "title": "使用缓存",
+    "permalink": "/cn/using-cache/"
+  }
+}

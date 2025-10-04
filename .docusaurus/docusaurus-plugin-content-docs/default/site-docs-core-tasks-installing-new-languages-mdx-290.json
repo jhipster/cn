@@ -1,0 +1,31 @@
+{
+  "id": "core-tasks/installing-new-languages",
+  "title": "Internationalization",
+  "description": "Introduction",
+  "source": "@site/docs/core-tasks/installing-new-languages.mdx",
+  "sourceDirName": "core-tasks",
+  "slug": "/installing-new-languages/",
+  "permalink": "/cn/installing-new-languages/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/core-tasks/installing-new-languages.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1418169600000,
+  "frontMatter": {
+    "title": "Internationalization",
+    "slug": "/installing-new-languages/",
+    "last_update": {
+      "date": "2014-12-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "管理关系",
+    "permalink": "/cn/managing-relationships/"
+  },
+  "next": {
+    "title": "升级应用",
+    "permalink": "/cn/upgrading-an-application/"
+  }
+}

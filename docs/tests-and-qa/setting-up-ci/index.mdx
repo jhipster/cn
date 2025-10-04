@@ -1,155 +1,155 @@
 ---
-title: Setting up Continuous Integration
+title: 设置持续集成
 slug: /setting-up-ci/
 last_update:
   date: 2018-08-03T14:40:00-00:00
 ---
 
-Setting up Continuous Integration (CI) for a JHipster application is more complex than for a classic typical Spring MVC application because of the complexity associated with maintaining a build composed of 2 software stacks:
+为 JHipster 应用程序设置持续集成 (CI) 比经典的传统 Spring MVC 应用程序更加复杂，因为需要维护由 2 个软件堆栈组成的构建的复杂性：
 
-- the Java back-end code with Maven or Gradle
-- the JavaScript front-end with NodeJS, NPM
+- 使用 Maven 或 Gradle 的 Java 后端代码
+- 使用 NodeJS、NPM 的 JavaScript 前端
 
-Each stack comes with its own dependency management (Maven artifacts, NPM packages) with potential conflicts to solve.
+每个堆栈都带有自己的依赖管理（Maven 工件、NPM 包），可能需要解决潜在的冲突。
 
-JHipster should support the following CI systems out of the box:
+JHipster 应该开箱即用地支持以下 CI 系统：
 
-- Jenkins:
-  - [Setting up Jenkins 1](/setting-up-ci-jenkins1/)
-  - [Setting up Jenkins 2](/setting-up-ci-jenkins2/) (recommended)
-- Travis: refer to the [Travis Documentation](https://docs.travis-ci.com/user/getting-started/)
-- GitLab CI: refer to the [GitLab CI Documentation](https://about.gitlab.com/gitlab-ci/)
-- Azure Pipelines: refer to the [Azure Pipelines Documentation](https://docs.microsoft.com/fr-fr/azure/devops/pipelines/?view=vsts)
-- GitHub Actions: refer to [GitHub Actions Documentation](https://github.com/features/actions)
-- CircleCI: refer to [CircleCI Documentation](https://circleci.com/docs/)
+- Jenkins：
+  - [设置 Jenkins 1](/setting-up-ci-jenkins1/)
+  - [设置 Jenkins 2](/setting-up-ci-jenkins2/) （推荐）
+- Travis：参考 [Travis 文档](https://docs.travis-ci.com/user/getting-started/)
+- GitLab CI：参考 [GitLab CI 文档](https://about.gitlab.com/gitlab-ci/)
+- Azure Pipelines：参考 [Azure Pipelines 文档](https://docs.microsoft.com/fr-fr/azure/devops/pipelines/?view=vsts)
+- GitHub Actions：参考 [GitHub Actions 文档](https://github.com/features/actions)
+- CircleCI：参考 [CircleCI 文档](https://circleci.com/docs/)
 
 
-## Running the sub-generator
+## 运行子生成器
 
-To generate these config files, run this command in your project folder:
+要在您的项目文件夹中生成这些配置文件，请运行此命令：
 
 ```shell
 jhipster ci-cd
 ```
 
-Then answer all the questions.
+然后回答所有问题。
 
-### What CI/CD pipeline do you want to generate ?
+### 您想要生成什么 CI/CD 流水线？
 
-The CI/CD pipeline you want to generate:
+您想要生成的 CI/CD 流水线：
 
-- Jenkins pipeline
+- Jenkins 流水线
 - Azure Pipelines
 - GitLab CI
 - GitHub Actions
 - Travis CI
 - CircleCI
 
-**Note**: when you select Jenkins pipeline, a new `src/main/docker/jenkins.yml` file will be generated.
-So you can test Jenkins locally by running:
+**注意**：当您选择 Jenkins 流水线时，将生成一个新的 `src/main/docker/jenkins.yml` 文件。
+因此，您可以通过运行以下命令在本地测试 Jenkins：
 
 ```shell
 docker-compose -f src/main/docker/jenkins.yml up -d
 ```
 
-### Would you like to perform the build in a Docker container ? (Jenkins / GitLab)
+### 您是否希望在 Docker 容器中执行构建？（Jenkins / GitLab）
 
-If Docker is installed, you can perform the build inside a Docker container.
+如果安装了 Docker，您可以在 Docker 容器中执行构建。
 
-### In GitLab CI, perform the build in a docker container (hint: GitLab.com uses Docker container) ? (GitLab)
+### 在 GitLab CI 中，在 Docker 容器中执行构建（提示：GitLab.com 使用 Docker 容器）？（GitLab）
 
-If you use a private GitLab CI, you can use directly the runners.
+如果您使用私有的 GitLab CI，您可以直接使用运行器。
 
-If you use official GitLab.com pipeline, you need to use Docker container.
+如果您使用官方的 GitLab.com 流水线，您需要使用 Docker 容器。
 
-### Would you like to send build status to GitLab ? (Jenkins)
+### 您是否希望将构建状态发送到 GitLab？（Jenkins）
 
-If your Jenkins relies to a GitLab repository, you can send build status to GitLab. Your Jenkins must be correctly configured.
+如果您的 Jenkins 依赖于 GitLab 仓库，您可以将构建状态发送到 GitLab。您的 Jenkins 必须正确配置。
 
-### What tasks/integrations do you want to include ?
+### 您希望包含哪些任务/集成？
 
-- Deploy your application to an *Artifactory*
-- Analyze your code with *Sonar*
-- Build and publish a *Docker* image
-- *Snyk*: dependency scanning for security vulnerabilities (requires SNYK_TOKEN)
-- Deploy to *Heroku* (requires HEROKU_API_KEY set on CI service)
-- Would you like to enable the Cypress Dashboard (requires both CYPRESS_PROJECT_ID and CYPRESS_RECORD_KEY set on CI service)
+- 将您的应用程序部署到 *Artifactory*
+- 使用 *Sonar* 分析您的代码
+- 构建和发布 *Docker* 镜像
+- *Snyk*：安全漏洞的依赖扫描（需要 SNYK_TOKEN）
+- 部署到 *Heroku*（需要在 CI 服务上设置 HEROKU_API_KEY）
+- 您是否希望启用 Cypress Dashboard（需要在 CI 服务上设置 CYPRESS_PROJECT_ID 和 CYPRESS_RECORD_KEY）
 
-### Deploy your application to an *Artifactory* (Jenkins / GitLab)
+### 将您的应用程序部署到 *Artifactory*（Jenkins / GitLab）
 
-- *Artifactory*: what is the ID of distributionManagement for snapshots ?
-- *Artifactory*: what is the URL of distributionManagement for snapshots ?
-- *Artifactory*: what is the ID of distributionManagement for releases ?
-- *Artifactory*: what is the URL of distributionManagement for releases ?
+- *Artifactory*：快照的 distributionManagement 的 ID 是什么？
+- *Artifactory*：快照的 distributionManagement 的 URL 是什么？
+- *Artifactory*：发布的 distributionManagement 的 ID 是什么？
+- *Artifactory*：发布的 distributionManagement 的 URL 是什么？
 
-### Analyze your code with *Sonar*
+### 使用 *Sonar* 分析您的代码
 
-- *Sonar*: what is the name of the Sonar server ?
+- *Sonar*：Sonar 服务器的名称是什么？
 
-Choose the name of the Sonar server, defined in your Jenkins Configuration.
+选择在 Jenkins 配置中定义的 Sonar 服务器名称。
 
-- *Sonar*: what is the URL of the Sonar server ?
-- *Sonar*: what is the Organization of the Sonar server ? 
+- *Sonar*：Sonar 服务器的 URL 是什么？
+- *Sonar*：Sonar 服务器的组织是什么？
 
-Here, you can choose to push your Sonar Analyze to [SonarCloud.io](https://sonarcloud.io).
-In this case, you have to add the `SONAR_TOKEN` environment variable.
+在这里，您可以选择将 Sonar 分析推送到 [SonarCloud.io](https://sonarcloud.io)。
+在这种情况下，您必须添加 `SONAR_TOKEN` 环境变量。
 
-### Build and publish a *Docker* image
+### 构建和发布 *Docker* 镜像
 
-- *Docker*: what is the URL of the Docker registry ?
+- *Docker*：Docker 注册表的 URL 是什么？
 
-By default, you can use Docker Hub: [https://registry.hub.docker.com](https://registry.hub.docker.com)
+默认情况下，您可以使用 Docker Hub：[https://registry.hub.docker.com](https://registry.hub.docker.com)
 
-- *Docker*: what is the Jenkins Credentials ID for the Docker registry ?
+- *Docker*：Docker 注册表的 Jenkins 凭据 ID 是什么？
 
-By default, you can use: `docker login`
+默认情况下，您可以使用：`docker login`
 
-- *Docker*: what is the Organization Name for the Docker registry ?
+- *Docker*：Docker 注册表的组织名称是什么？
 
-### Snyk: dependency scanning for security vulnerabilities
+### Snyk：安全漏洞的依赖扫描
 
-You have to add the `SNYK_TOKEN` environment variable (check your [Snyk account](https://app.snyk.io/account))
+您必须添加 `SNYK_TOKEN` 环境变量（检查您的 [Snyk 账户](https://app.snyk.io/account)）
 
-See full documentation at [https://snyk.io/](https://snyk.io/)
+查看完整文档：[https://snyk.io/](https://snyk.io/)
 
-### Cypress Dashboard: record your tests in a web application provided by Cypress
+### Cypress Dashboard：在 Cypress 提供的 Web 应用程序中记录您的测试
 
-You have to add the `CYPRESS_PROJECT_ID` and the `CYPRESS_RECORD_KEY` environment variables (check your [Dashboard project](https://dashboard.cypress.io/))
+您必须添加 `CYPRESS_PROJECT_ID` 和 `CYPRESS_RECORD_KEY` 环境变量（检查您的 [Dashboard 项目](https://dashboard.cypress.io/)）
 
-You can disable the record by changing `CYPRESS_ENABLE_RECORD` environment variable value to false.
+您可以通过将 `CYPRESS_ENABLE_RECORD` 环境变量值更改为 false 来禁用记录。
 
-See full the documentation at [cypress.io/dashboard](https://www.cypress.io/dashboard/)
+查看完整文档：[cypress.io/dashboard](https://www.cypress.io/dashboard/)
 
-### Deploy to *Heroku*
+### 部署到 *Heroku*
 
-- *Heroku: name of your Heroku Application ?
+- *Heroku：您的 Heroku 应用程序的名称是什么？
 
-You have to add the `HEROKU_API_KEY` environment variable.
+您必须添加 `HEROKU_API_KEY` 环境变量。
 
-Note: before using the deployment to Heroku, you need to use the [Heroku sub-generator](/heroku) locally.
-It will create all files needed by your Continuous Integration Tool.
+注意：在使用 Heroku 部署之前，您需要在本地使用 [Heroku 子生成器](/heroku)。
+它将创建 CI 工具所需的所有文件。
 
 
-## Additional information
+## 附加信息
 
-Depending on your OS and where you pushed your project, you will probably need to make the wrapper executable before using a CI/CD.
+根据您的操作系统和推送项目的位置，在使用 CI/CD 之前，您可能需要使包装器可执行。
 
-If you use Maven:
+如果您使用 Maven：
 
 - `chmod +x mvnw`
 - `git update-index --chmod=+x mvnw`
 
-If you use Gradle:
+如果您使用 Gradle：
 
 - `chmod +x gradlew`
 - `git update-index --chmod=+x gradlew`
 
 
-## Documentation about environment variables:
+## 关于环境变量的文档：
 
-- Jenkins pipeline: you should use the [Credentials plugin](https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Plugin)
-- GitLab CI: read the [documentation about secret-variables](https://docs.gitlab.com/ce/ci/variables/#secret-variables)
-- Travis CI: read the [environment variables](https://docs.travis-ci.com/user/environment-variables/)
-- GitHub Actions: read the [documentation about environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables)
-- Azure Pipelines: read the [documentation about predefined variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
-- CircleCI: read the [documentation about environment variables](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables)
+- Jenkins 流水线：您应该使用 [Credentials 插件](https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Plugin)
+- GitLab CI：阅读[关于 secret-variables 的文档](https://docs.gitlab.com/ce/ci/variables/#secret-variables)
+- Travis CI：阅读[环境变量](https://docs.travis-ci.com/user/environment-variables/)
+- GitHub Actions：阅读[关于环境变量的文档](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables)
+- Azure Pipelines：阅读[关于预定义变量的文档](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
+- CircleCI：阅读[关于环境变量的文档](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables)

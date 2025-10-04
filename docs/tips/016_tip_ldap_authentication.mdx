@@ -1,5 +1,5 @@
 ---
-title: LDAP Authentication
+title: LDAP 认证
 slug: /tips/016_tip_ldap_authentication.html
 last_update:
   date: 2019-11-11T22:22:00-00:00
@@ -7,16 +7,16 @@ last_update:
 
 __Tip submitted by [@mleneveut](https://github.com/mleneveut)__ updated by [@patrickjp93](https://github.com/patrickjp93)__
 
-To add an LDAP authentication to your JHipster application, follow these steps :
+要在你的 JHipster 应用程序中添加 LDAP 认证，请按照以下步骤操作：
 
-* Add the dependencies spring-ldap-core and spring-security-ldap. Example for gradle in build.gradle :
+* 添加依赖 spring-ldap-core 和 spring-security-ldap。在 build.gradle 中的示例：
 
 ```
 compile group: 'org.springframework.security', name: 'spring-security-ldap', version: spring_security_version
 ```
 
-* Modify the SecurityConfiguration.java, add method configureGlobal(AuthenticationManagerBuilder auth) and getContextSource()
-* The following query strings should ideally be [encapsulated in environment variables](https://github.com/eugenp/tutorials/blob/master/spring-ldap/src/main/java/com/baeldung/ldap/javaconfig/AppConfig.java), or at the very least properties/yml files 
+* 修改 SecurityConfiguration.java，添加方法 configureGlobal(AuthenticationManagerBuilder auth) 和 getContextSource()
+* 以下查询字符串最好[封装在环境变量中](https://github.com/eugenp/tutorials/blob/master/spring-ldap/src/main/java/com/baeldung/ldap/javaconfig/AppConfig.java)，或者至少在 properties/yml 文件中 
 
 ```java
 @Inject
@@ -41,7 +41,7 @@ public LdapContextSource getContextSource() {
 }
 ```
 
-* Modify the SecurityUtils.java, method getCurrentUserLogin()
+* 修改 SecurityUtils.java 中的 getCurrentUserLogin() 方法
 
 ```java
     } else if (authentication.getPrincipal() instanceof LdapUserDetails) {
@@ -50,7 +50,7 @@ public LdapContextSource getContextSource() {
     }
 ```
 
-* Add a new CustomAuthenticationManager class which implements the AuthenticationManager interface and override the authentication method in order to force the authentication process to authenticate the user through LDAP.
+* 添加一个新的 CustomAuthenticationManager 类，它实现 AuthenticationManager 接口并重写 authentication 方法，以强制认证过程通过 LDAP 对用户进行认证。
 
 ```java
 @Component
@@ -112,8 +112,8 @@ public class CustomAuthenticationManager implements AuthenticationManager {
 }
 ```
 
-* For some LDAP servers, the below authenticate implementation has been more successful, but requires more effort to map user authenticated users into the Users table and set authorities based on AD Groups
-* Credit to [@eugenp](https://github.com/eugenp/tutorials/tree/master/spring-ldap) and [Michael Kostewicz](http://code-addict.pl/active-directory-spring-security/) for their stable reference implementations
+* 对于某些 LDAP 服务器，以下 authenticate 实现更成功，但需要更多努力将经过认证的用户映射到 Users 表中，并基于 AD 组设置权限
+* 感谢 [@eugenp](https://github.com/eugenp/tutorials/tree/master/spring-ldap) 和 [Michael Kostewicz](http://code-addict.pl/active-directory-spring-security/) 提供了他们稳定的参考实现
 
 ```java
 public Authentication authenticate(Authentication authentication) {

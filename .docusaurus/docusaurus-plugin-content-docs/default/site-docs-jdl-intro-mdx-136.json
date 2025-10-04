@@ -1,0 +1,31 @@
+{
+  "id": "jdl/intro",
+  "title": "JHipster 领域语言 (JDL)",
+  "description": "JDL 是 JHipster 特有的领域语言，您可以在其中使用用户友好的语法在单个文件（或多个文件）中描述您的所有应用程序、部署、实体和它们的关系。",
+  "source": "@site/docs/jdl/intro.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/intro",
+  "permalink": "/cn/jdl/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/intro.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1688943600000,
+  "frontMatter": {
+    "title": "JHipster 领域语言 (JDL)",
+    "slug": "/jdl/intro",
+    "last_update": {
+      "date": "2023-07-09T23:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Pulsar",
+    "permalink": "/cn/using-pulsar/"
+  },
+  "next": {
+    "title": "快速开始",
+    "permalink": "/cn/jdl/getting-started"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "development/problem/parameterized",
+  "title": "Error - parameterized",
+  "description": "Welcome to the JHipster website!",
+  "source": "@site/docs/development/problem/parameterized.mdx",
+  "sourceDirName": "development/problem",
+  "slug": "/problem/parameterized/",
+  "permalink": "/cn/problem/parameterized/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/problem/parameterized.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1505001600000,
+  "frontMatter": {
+    "title": "Error - parameterized",
+    "slug": "/problem/parameterized/",
+    "last_update": {
+      "date": "2017-09-10T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "约束违反",
+    "permalink": "/cn/problem/constraint-violation/"
+  },
+  "next": {
+    "title": "实体未找到",
+    "permalink": "/cn/problem/entity-not-found/"
+  }
+}

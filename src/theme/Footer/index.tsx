@@ -10,7 +10,7 @@ export default function Footer() {
       <div className={clsx('', styles.footerContent)}>
         <div className={styles.footerCopyright}>
           <span>&copy; 2013-{new Date().getFullYear()} JHipster</span>
-          <Link to="/policies">Policies</Link>
+          <Link to="/policies">开发者规范</Link>
         </div>
         <SocialLinks />
       </div>

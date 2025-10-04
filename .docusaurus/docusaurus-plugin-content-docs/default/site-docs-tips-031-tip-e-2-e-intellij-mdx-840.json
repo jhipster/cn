@@ -1,0 +1,32 @@
+{
+  "id": "tips/tip_e2e_intellij",
+  "title": "Running Protractor e2e tests within IntelliJ IDEA",
+  "description": "Tip submitted by @SudharakaP and @yelhouti",
+  "source": "@site/docs/tips/031_tip_e2e_intellij.mdx",
+  "sourceDirName": "tips",
+  "slug": "/tips/031_tip_e2e_intellij.html",
+  "permalink": "/cn/tips/031_tip_e2e_intellij.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/tips/031_tip_e2e_intellij.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1523678220000,
+  "sidebarPosition": 31,
+  "frontMatter": {
+    "title": "Running Protractor e2e tests within IntelliJ IDEA",
+    "slug": "/tips/031_tip_e2e_intellij.html",
+    "last_update": {
+      "date": "2018-04-14T03:57:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Configure Redis leader follower(master-slave) replication",
+    "permalink": "/cn/tips/030_tip_redis_replication.html"
+  },
+  "next": {
+    "title": "Time Drift in Docker",
+    "permalink": "/cn/tips/032_tip_time_drift_docker.html"
+  }
+}

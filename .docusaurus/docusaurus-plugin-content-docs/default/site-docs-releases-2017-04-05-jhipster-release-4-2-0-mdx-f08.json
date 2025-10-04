@@ -1,0 +1,30 @@
+{
+  "id": "releases/2017-04-05-jhipster-release-4.2.0",
+  "title": "Release 4.2.0",
+  "description": "What's new",
+  "source": "@site/docs/releases/2017-04-05-jhipster-release-4.2.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2017/04/05/jhipster-release-4.2.0.html",
+  "permalink": "/cn/2017/04/05/jhipster-release-4.2.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2017-04-05-jhipster-release-4.2.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 4.2.0",
+    "slug": "/2017/04/05/jhipster-release-4.2.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster introduces Bitcoin mining (April Fools 2017)",
+    "permalink": "/cn/2017/04/01/jhipster-introduces-bitcoin-mining.html"
+  },
+  "next": {
+    "title": "Release 4.3.0",
+    "permalink": "/cn/2017/04/13/jhipster-release-4.3.0.html"
+  }
+}

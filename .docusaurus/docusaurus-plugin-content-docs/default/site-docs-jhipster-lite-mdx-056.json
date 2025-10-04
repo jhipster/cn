@@ -1,0 +1,31 @@
+{
+  "id": "jhipster-lite",
+  "title": "JHipster Lite",
+  "description": "What is JHipster Lite?",
+  "source": "@site/docs/jhipster-lite.mdx",
+  "sourceDirName": ".",
+  "slug": "/jhipster-lite/",
+  "permalink": "/cn/jhipster-lite/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jhipster-lite.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1663113600000,
+  "frontMatter": {
+    "title": "JHipster Lite",
+    "slug": "/jhipster-lite/",
+    "last_update": {
+      "date": "2022-09-14T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "JHipster-UML",
+    "permalink": "/cn/jhipster-uml/"
+  },
+  "next": {
+    "title": "Technology stack",
+    "permalink": "/cn/tech-stack/"
+  }
+}

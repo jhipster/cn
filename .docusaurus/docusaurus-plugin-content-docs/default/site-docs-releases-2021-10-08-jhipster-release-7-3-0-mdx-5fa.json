@@ -1,0 +1,30 @@
+{
+  "id": "releases/2021-10-08-jhipster-release-7.3.0",
+  "title": "Release 7.3.0",
+  "description": "This is the new minor release of JHipster v7 with 290 closed tickets and merged pull requests.",
+  "source": "@site/docs/releases/2021-10-08-jhipster-release-7.3.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2021/10/08/jhipster-release-7.3.0.html",
+  "permalink": "/cn/2021/10/08/jhipster-release-7.3.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2021-10-08-jhipster-release-7.3.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 7.3.0",
+    "slug": "/2021/10/08/jhipster-release-7.3.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 7.2.0",
+    "permalink": "/cn/2021/09/14/jhipster-release-7.2.0.html"
+  },
+  "next": {
+    "title": "Release 7.3.1",
+    "permalink": "/cn/2021/10/19/jhipster-release-7.3.1.html"
+  }
+}

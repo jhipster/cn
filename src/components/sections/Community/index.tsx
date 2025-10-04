@@ -31,31 +31,30 @@ export default function Community({ color }: Props) {
 
   return (
     <SectionWrapper className={clsx(sectionVariants({ color }))}>
-      <SectionTitle>Community</SectionTitle>
+      <SectionTitle>社区</SectionTitle>
 
       <SectionDescription>
         <p>
-          JHipster is Open Source, and all development is done on GitHub. If you
-          use JHipster, consider becoming a sponsor or a backer. If you want to
-          code with us, feel free to join! If you like the project, please give
-          us a ⭐️ on GitHub.
+            JHipster 是一个开源项目，所有开发工作均在 GitHub 上进行。
+            如果您正在使用 JHipster，欢迎成为我们的赞助者或支持者；如果您希望与我们共同编码，我们诚挚邀请您的加入！
+            若您喜爱这个项目，请在 GitHub 为我们点亮 ⭐️
         </p>
       </SectionDescription>
 
       <div className={styles.sectionList}>
         <CommunityCard
           value={`${npmDownloads.downloads}`}
-          text="Downloads in last 30 days"
+          text="月下载量"
         />
         <CommunityCard
           value={`${githubConfig.stargazers_count}`}
-          text="GitHub Stars"
+          text="GitHub点赞"
         />
-        <CommunityCard value="600" text="Contributors" postfix="+" />
+        <CommunityCard value="600" text="贡献者" postfix="+" />
       </div>
 
       <div className={styles.sectionButtons}>
-        <GithubButton>Join us on GitHub</GithubButton>
+        <GithubButton>加入我们</GithubButton>
       </div>
     </SectionWrapper>
   );

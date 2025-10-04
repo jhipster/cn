@@ -1,0 +1,31 @@
+{
+  "id": "jdl/troubleshooting",
+  "title": "JHipster Domain Language (JDL) - Troubleshooting",
+  "description": "Troubleshooting",
+  "source": "@site/docs/jdl/troubleshooting.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/troubleshooting",
+  "permalink": "/cn/jdl/troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/troubleshooting.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1688943600000,
+  "frontMatter": {
+    "title": "JHipster Domain Language (JDL) - Troubleshooting",
+    "slug": "/jdl/troubleshooting",
+    "last_update": {
+      "date": "2023-07-09T23:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "部署",
+    "permalink": "/cn/jdl/deployments"
+  },
+  "next": {
+    "title": "在开发中使用",
+    "permalink": "/cn/development/"
+  }
+}

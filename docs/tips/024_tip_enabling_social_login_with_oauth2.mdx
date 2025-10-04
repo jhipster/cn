@@ -1,22 +1,22 @@
 ---
-title: Enabling Social Login with OAuth2
+title: 使用 OAuth2 启用社交登录
 slug: /tips/024_tip_enabling_social_login_with_oauth2.html
 last_update:
   date: 2018-03-18T18:20:00-00:00
 ---
 
-When using the OAuth2 authentication type, your app connects to an OpenID Connect server such as Okta or Keycloak.  It's possible to enable social login by adding external identity providers within the administration console.
+使用 OAuth2 认证类型时，你的应用程序连接到 OpenID Connect 服务器，如 Okta 或 Keycloak。可以通过在管理控制台中添加外部身份提供商来启用社交登录。
 
 
-## Adding an Identity Provider with Okta
+## 使用 Okta 添加身份提供商
 
-Okta supports Facebook, Microsoft, Google, LinkedIn, and Custom SAML providers.
+Okta 支持 Facebook、Microsoft、Google、LinkedIn 和自定义 SAML 提供商。
 
-Log into the Okta console and navigate via the menu to "Users" -> "Social & Identity Providers".  Choose "Add Identity Provider" and add the provider of your choice.  Make sure to completely follow the [Okta Social Login documentation](https://developer.okta.com/authentication-guide/social-login/) which guides you in obtaining the client ID and secret for each provider.
+登录到 Okta 控制台，通过菜单导航到"Users"->"Social & Identity Providers"。选择"Add Identity Provider"并添加你选择的提供商。确保完全遵循 [Okta 社交登录文档](https://developer.okta.com/authentication-guide/social-login/)，该文档将指导你获取每个提供商的客户端 ID 和密钥。
 
 
-## Adding an Identity Provider with Keycloak
+## 使用 Keycloak 添加身份提供商
 
-Keycloak supports GitHub, Twitter, Facebook, Openshift, Google, Gitlab, LinkedIn, Microsoft, BitBucket, StackOverflow, and Custom SAML providers.
+Keycloak 支持 GitHub、Twitter、Facebook、Openshift、Google、Gitlab、LinkedIn、Microsoft、BitBucket、StackOverflow 和自定义 SAML 提供商。
 
-Log into the Keycloak administration console and choose "Identity Providers" from the left menu.  Follow the instructions found in the [Keycloak Social Login documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#social-identity-providers) to configure the provider and obtain the client ID and secret.
+登录到 Keycloak 管理控制台，从左侧菜单中选择"Identity Providers"。按照 [Keycloak 社交登录文档](https://www.keycloak.org/docs/latest/server_admin/index.html#social-identity-providers)中的说明配置提供商并获取客户端 ID 和密钥。

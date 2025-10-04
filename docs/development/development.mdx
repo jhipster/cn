@@ -1,134 +1,134 @@
 ---
-title: Using JHipster in development
+title: 在开发中使用 JHipster
 slug: /development/
 last_update:
   date: 2023-01-05T00:00:00-00:00
 ---
 
-_**Please check our [video tutorial](/video-tutorial) on creating a new JHipster application!**_
+_**请查看我们关于创建新 JHipster 应用程序的[视频教程](/video-tutorial)！**_
 
 
-## General configuration
+## 通用配置
 
-### IDE configuration
+### IDE 配置
 
-If you haven't configured your IDE yet, please go to the [Configuring your IDE](/configuring-ide) page.
+如果您还没有配置您的 IDE，请转到[配置您的 IDE](/configuring-ide) 页面。
 
-### Application configuration
+### 应用程序配置
 
-By default, JHipster uses the "development" profile, so you don't have to configure anything.
+默认情况下，JHipster 使用 "development" 配置文件，所以您不需要配置任何东西。
 
-If you want more information on the available profiles, please go the section titled "[Profiles](/profiles)".
+如果您想了解更多关于可用配置文件的信息，请转到标题为"[配置文件](/profiles)"的部分。
 
-If you want to configure some specific JHipster properties, have a look at the [common application properties](/common-application-properties) page.
+如果您想配置一些特定的 JHipster 属性，请查看[通用应用程序属性](/common-application-properties)页面。
 
 
-## Running the Java server
+## 运行 Java 服务器
 
-### As a "main" Java class
+### 作为 "main" Java 类
 
-From your IDE, right-click on the "Application" class at the root of your Java package hierarchy, and run it directly. You should also be able to debug it from your IDE.
+在您的 IDE 中，右键单击 Java 包层次结构根目录中的 "Application" 类，并直接运行它。您也应该能够从 IDE 中调试它。
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+应用程序将在 [http://localhost:8080](http://localhost:8080) 上可用。
 
-This application will have "hot reload" enabled by default, so if you compile a class, the Spring application context should refresh itself automatically, without the need to restart the server.
+此应用程序默认情况下将启用"热重载"，因此如果您编译一个类，Spring 应用程序上下文应该会自动刷新，而无需重启服务器。
 
-### As a Maven project
+### 作为 Maven 项目
 
-You can launch the Java server with Maven. JHipster provides a Maven wrapper, so you don't need to install Maven, and you have the guarantee that all project users have the same Maven version:
+您可以使用 Maven 启动 Java 服务器。JHipster 提供了 Maven 包装器，因此您不需要安装 Maven，并且您有保证所有项目用户都有相同的 Maven 版本：
 
-on Mac OS X/Linux:
+在 Mac OS X/Linux 上：
 
 ```shell
 ./mvnw
 ```
 
-on Windows:
+在 Windows 上：
 
 ```shell
 mvnw
 ```
 
-(this will run our default Maven task, `spring-boot:run`)
+（这将运行我们的默认 Maven 任务，`spring-boot:run`）
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+应用程序将在 [http://localhost:8080](http://localhost:8080) 上可用。
 
-If you will use live reload with `npm start` then you can speed up server start up by excluding webpack tasks by:
+如果您将使用 `npm start` 进行实时重载，那么您可以通过排除 webpack 任务来加速服务器启动：
 
 ```shell
 ./mvnw -P-webapp
 ```
 
-Alternatively, if you have installed Maven, you can launch the Java server with Maven:
+或者，如果您已安装了 Maven，您可以使用 Maven 启动 Java 服务器：
 
 ```shell
 mvn
 ```
 
-If you want more information on using Maven, please go to [http://maven.apache.org](http://maven.apache.org)
+如果您想了解更多关于使用 Maven 的信息，请转到 [http://maven.apache.org](http://maven.apache.org)
 
-### (Optional) As a Gradle project
+### （可选）作为 Gradle 项目
 
-If you selected the Gradle option, JHipster provides a Gradle wrapper, so you don't need to install Gradle, and you have the guarantee that all project users have the same Gradle version:
+如果您选择了 Gradle 选项，JHipster 提供了 Gradle 包装器，因此您不需要安装 Gradle，并且您有保证所有项目用户都有相同的 Gradle 版本：
 
-on Mac OS X/Linux:
+在 Mac OS X/Linux 上：
 
 ```shell
 ./gradlew
 ```
 
-on Windows:
+在 Windows 上：
 
 ```shell
 gradlew
 ```
 
-(this will run our default Gradle task, `bootRun`)
+（这将运行我们的默认 Gradle 任务，`bootRun`）
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
+应用程序将在 [http://localhost:8080](http://localhost:8080) 上可用。
 
-If you will use live reload with `npm start` then you can speed up server start up by excluding webpack tasks by:
+如果您将使用 `npm start` 进行实时重载，那么您可以通过排除 webpack 任务来加速服务器启动：
 
 ```shell
 ./gradlew -x webapp
 ```
 
-Alternatively, if you have installed Gradle, you can launch the Java server with Gradle:
+或者，如果您已安装了 Gradle，您可以使用 Gradle 启动 Java 服务器：
 
 ```shell
 gradle
 ```
 
-If you want more information on using Gradle, please go to [https://gradle.org](https://gradle.org)
+如果您想了解更多关于使用 Gradle 的信息，请转到 [https://gradle.org](https://gradle.org)
 
 
-## Working with Angular/React
+## 使用 Angular/React
 
-### Running Webpack
+### 运行 Webpack
 
-_This step is required to see changes in your TypeScript code and have live reloading of your client-side code._
+_这一步骤是查看 TypeScript 代码中的更改并实现客户端代码实时重载所必需的。_
 
-Running Webpack is the default task in the `package.json` file, so it is enough to run:
+运行 Webpack 是 `package.json` 文件中的默认任务，因此运行以下命令即可：
 
 ```shell
 npm start
 ```
 
-This provides very impressive features:
+这提供了非常令人印象的功能：
 
-* As soon as you modify one of your HTML/CSS/TypeScript file, your browser will refresh itself automatically
-* When you test your application on several different browsers or devices, all your clicks/scrolls/inputs should be automatically synchronized on all screens
+* 只要您修改了任何 HTML/CSS/TypeScript 文件，您的浏览器就会自动刷新
+* 当您在多个不同的浏览器或设备上测试您的应用程序时，所有的点击/滚动/输入都应该在所有屏幕上自动同步
 
-This will launch:
+这将启动：
 
-- A Webpack task that will automatically compile TypeScript code into JavaScript
-- A Webpack "hot module reload" server that will run on [http://localhost:9060/](http://localhost:9060/) (and has a proxy to [http://127.0.0.1:8080/api](http://127.0.0.1:8080/api) to access the Java back-end)
-- A BrowserSync task that will run on [http://localhost:9000/](http://localhost:9000/), which has a proxy to [http://localhost:9060/](http://localhost:9060/) (the Webpack "hot module reload" server), and which will synchronize the user's clicks/scrolls/inputs
-- The BrowserSync UI, which will be available on [http://localhost:3001/](http://localhost:3001/)
+- 一个 Webpack 任务，它将自动将 TypeScript 代码编译为 JavaScript
+- 一个 Webpack "热模块重载" 服务器，它将在 [http://localhost:9060/](http://localhost:9060/) 上运行（并有一个代理到 [http://127.0.0.1:8080/api](http://127.0.0.1:8080/api) 以访问 Java 后端）
+- 一个 BrowserSync 任务，它将在 [http://localhost:9000/](http://localhost:9000/) 上运行，它有一个代理到 [http://localhost:9060/](http://localhost:9060/) （Webpack "热模块重载" 服务器），并且将同步用户的点击/滚动/输入
+- BrowserSync UI，它将在 [http://localhost:3001/](http://localhost:3001/) 上可用
 
-**NOTE:** BrowserSync by default enables [ghostMode](https://browsersync.io/docs/options#option-ghostMode) which can create some confusion
-especially [when using multiple browser tabs](https://github.com/jhipster/generator-jhipster/issues/11116#issuecomment-589362814). To avoid
-this you can always turn off ghostMode. Some commented code is provided in `webpack.dev.js` for easy disabling of ghostMode. 
+**注意：** BrowserSync 默认情况下启用 [ghostMode](https://browsersync.io/docs/options#option-ghostMode)，这可能会造成一些混乱，
+特别是[在使用多个浏览器选项卡时](https://github.com/jhipster/generator-jhipster/issues/11116#issuecomment-589362814)。为了避免
+这种情况，您可以始终关闭 ghostMode。`webpack.dev.js` 中提供了一些注释代码，以便轻松禁用 ghostMode。 
 
 ### Running NPM
 

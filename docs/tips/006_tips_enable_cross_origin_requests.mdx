@@ -1,38 +1,38 @@
 ---
-title: Enable cross origin HTTP requests
+title: 启用跨域 HTTP 请求
 slug: /tips/006_tips_enable_cross_origin_requests.html
 last_update:
   date: 2015-07-30T18:40:00-00:00
 ---
 
-## /!\ This tip is deprecated since JHipster v3.0
+## /!\ 此提示自 JHipster v3.0 起已弃用
 
-__Tip submitted by [@tomcgn](https://github.com/tomcgn)__
+__提示由 [@tomcgn](https://github.com/tomcgn) 提交__
 
-You might want to use the nice out-of-the-box API to integrate your application into existing websites.
-One approach could be to use [Knockout](https://github.com/knockout/knockout) to bind your entities with ease and render the entity on e.g. your blog, being served from your JHipster application.
+您可能希望使用现成的 API 将您的应用程序集成到现有网站中。
+一种方法可能是使用 [Knockout](https://github.com/knockout/knockout) 轻松绑定您的实体并在您的博客等地方渲染实体，这些内容从您的 JHipster 应用程序提供。
 
-Two aspects need to be changed in the standard JHipster code in order to use the API from simple HTML/AJAX clients:
+为了从简单的 HTML/AJAX 客户端使用 API，需要在标准 JHipster 代码中更改两个方面：
 
-1. Configure the `SecurityConfiguration`
-2. Tell the browsers of the users that visit the 3rd party site that uses the API that your app permits the origin of that request.
+1. 配置 `SecurityConfiguration`
+2. 告诉访问使用 API 的第三方网站的用户的浏览器，您的应用程序允许该请求的来源。
 
 
-## Modify the SecurityConfiguration
+## 修改 SecurityConfiguration
 
-In method `SecurityConfiguration.configure(HttpSecurity http)` , add new directives as needed in the `.and().authorizeRequests()` part, e.g. :
+在方法 `SecurityConfiguration.configure(HttpSecurity http)` 中，根据需要在 `.and().authorizeRequests()` 部分添加新指令，例如：
 
     .antMatchers("/api/_search/meetings/**").permitAll()
     .antMatchers("/api/_search/meetings").permitAll()`
 
-Of course you can make use of `.hasAuthority()` and `.authenticated()` to make your thinst-client a bit more dynamic.
+当然，您可以使用 `.hasAuthority()` 和 `.authenticated()` 使您的瘦客户端更具动态性。
 
 
-## Adapt the HTTP response headers
+## 调整 HTTP 响应标头
 
-You need to add the following directives to the `CsrfCookieGeneratorFilter` :
+您需要将以下指令添加到 `CsrfCookieGeneratorFilter`：
 
-In method `doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException`
+在方法 `doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException` 中
 
     response.addHeader("Access-Control-Allow-Origin", "*");
     response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");

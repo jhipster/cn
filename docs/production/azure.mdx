@@ -1,36 +1,36 @@
 ---
-title: Deploying to Microsoft Azure
+title: 部署到 Microsoft Azure
 slug: /azure/
 last_update:
   date: 2023-12-19T00:00:00-00:00
 ---
 import EmbeddedVideo from '@site/src/components/EmbeddedVideo'
 
-[Microsoft Azure](https://azure.microsoft.com/overview/?WT.mc_id=java-0000-judubois) is a great solution to run JHipster applications in the cloud.
+[Microsoft Azure](https://azure.microsoft.com/overview/?WT.mc_id=java-0000-judubois) 是在云中运行 JHipster 应用程序的绝佳解决方案。
 
-- The easiest way is to use [JHipster Azure Container Apps](https://github.com/Azure/generator-jhipster-azure-container-apps) to create and deploy your project from end to end. JHipster Azure Container Apps is designed to streamline your full-stack Spring application development, leveraging the robust infrastructure of [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/java-overview) to bring your projects to life with unprecedented ease and efficiency.
-- If you are using Spring Boot, [Azure Container Apps](https://azure.microsoft.com/products/container-apps) offers full support for JHipster applications with built-in Java capabilities. You can read more on the [Quickstart](https://learn.microsoft.com/azure/container-apps/java-get-started).
-- You can also try [Azure App Service](https://azure.microsoft.com/services/app-service/?WT.mc_id=online-jhipster-judubois) to deploy your monoliths.
-- As with any Docker and Kubernetes cloud provider, you can use the JHipster Docker and Kubernetes support to deploy your Docker images to Microsoft Azure. Follow our [Docker Compose documentation](/docker-compose) and our [Kubernetes documentation](/kubernetes) for more information on these options.
+- 最简单的方法是使用 [JHipster Azure Container Apps](https://github.com/Azure/generator-jhipster-azure-container-apps) 从头到尾创建和部署您的项目。JHipster Azure Container Apps 旨在简化您的全栈 Spring 应用程序开发，利用 [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/java-overview) 的强大基础设施，以前所未有的简易性和效率将您的项目变为现实。
+- 如果您使用 Spring Boot，[Azure Container Apps](https://azure.microsoft.com/products/container-apps) 通过内置的 Java 功能对 JHipster 应用程序提供全面支持。您可以在[快速入门](https://learn.microsoft.com/azure/container-apps/java-get-started)中阅读更多内容。
+- 您也可以尝试 [Azure App Service](https://azure.microsoft.com/services/app-service/?WT.mc_id=online-jhipster-judubois) 来部署您的单体应用。
+- 与任何 Docker 和 Kubernetes 云提供商一样，您可以使用 JHipster Docker 和 Kubernetes 支持将您的 Docker 镜像部署到 Microsoft Azure。有关这些选项的更多信息，请遵循我们的 [Docker Compose 文档](/docker-compose) 和我们的 [Kubernetes 文档](/kubernetes)。
 
 [![Microsoft Azure](/images/logo/logo-azure.png)](https://azure.microsoft.com/overview/?WT.mc_id=java-0000-judubois)
 
 
-## Deploying using NubesGen
+## 使用 NubesGen 部署
 
-[NubesGen](https://www.nubesgen.com) is a deployment platform that fully supports JHipster applications and is the best solution to deploy your applications to Azure.
+[NubesGen](https://www.nubesgen.com) 是一个完全支持 JHipster 应用程序的部署平台，是将您的应用程序部署到 Azure 的最佳解决方案。
 
-To deploy your JHipster application with NubesGen, select in the dropdown menu:
+要使用 NubesGen 部署您的 JHipster 应用程序，请在下拉菜单中选择：
 
-- "Spring Boot (Java) with Maven" to run your JHipster application with Maven.
-- "Spring Boot (Java) with Gradle" to run your JHipster application with Gradle.
-- "Docker with Spring Boot" to package your JHipster application with Docker and run it with Docker. Performance might be better than with Maven or Gradle, but you will have fewer monitoring options and no Java support from Microsoft.
+- “Spring Boot (Java) with Maven” 使用 Maven 运行您的 JHipster 应用程序。
+- “Spring Boot (Java) with Gradle” 使用 Gradle 运行您的 JHipster 应用程序。
+- “Docker with Spring Boot” 使用 Docker 打包您的 JHipster 应用程序并使用 Docker 运行它。性能可能比 Maven 或 Gradle 更好，但您将拥有更少的监控选项和没有 Microsoft 的 Java 支持。
 
-Go to [the NubesGen website](https://www.nubesgen.com) for full documentation.
+访问 [NubesGen 网站](https://www.nubesgen.com)获取完整文档。
 
 
-## Deploying using azd generated at start.jhipster.tech
+## 使用在 start.jhipster.tech 生成的 azd 部署
 
-You can also create a new JHipster application with built-in azd deployment to Azure Containers Apps via [start.jhipster.tech/generate-azure-application](https://start.jhipster.tech/generate-azure-application). This will leverage the [Azure Development CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/?WT.mc_id=java-0000-sakriema), an open-source toolkit that benefits from deployment templates and lets you deploy with one simple command: 'azd up'.
+您也可以通过 [start.jhipster.tech/generate-azure-application](https://start.jhipster.tech/generate-azure-application) 创建一个内置 azd 部署到 Azure Container Apps 的新 JHipster 应用程序。这将利用 [Azure Development CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/?WT.mc_id=java-0000-sakriema)，这是一个开源工具包，受益于部署模板，让您可以用一个简单的命令进行部署：'azd up'。
 
-Published on 21 Nov. 2024
+发布于 2024 年 11 月 21 日

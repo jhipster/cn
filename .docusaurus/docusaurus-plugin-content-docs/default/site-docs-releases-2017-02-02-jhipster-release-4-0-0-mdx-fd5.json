@@ -1,0 +1,30 @@
+{
+  "id": "releases/2017-02-02-jhipster-release-4.0.0",
+  "title": "Release 4.0.0",
+  "description": "This new major release is a huge step forward, after nearly one year of very hard work.",
+  "source": "@site/docs/releases/2017-02-02-jhipster-release-4.0.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2017/02/02/jhipster-release-4.0.0.html",
+  "permalink": "/cn/2017/02/02/jhipster-release-4.0.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2017-02-02-jhipster-release-4.0.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 4.0.0",
+    "slug": "/2017/02/02/jhipster-release-4.0.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 3.12.2",
+    "permalink": "/cn/2016/12/19/jhipster-release-3.12.2.html"
+  },
+  "next": {
+    "title": "Release 4.0.1",
+    "permalink": "/cn/2017/02/04/jhipster-release-4.0.1.html"
+  }
+}

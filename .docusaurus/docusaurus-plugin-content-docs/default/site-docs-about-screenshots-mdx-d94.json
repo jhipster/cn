@@ -1,0 +1,31 @@
+{
+  "id": "about/screenshots",
+  "title": "Screenshots of the generated application",
+  "description": "The welcome screen",
+  "source": "@site/docs/about/screenshots.mdx",
+  "sourceDirName": "about",
+  "slug": "/screenshots/",
+  "permalink": "/cn/screenshots/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/about/screenshots.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1392595200000,
+  "frontMatter": {
+    "title": "Screenshots of the generated application",
+    "slug": "/screenshots/",
+    "last_update": {
+      "date": "2014-02-17T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Technology stack",
+    "permalink": "/cn/tech-stack/"
+  },
+  "next": {
+    "title": "Video tutorial (15 minutes)",
+    "permalink": "/cn/video-tutorial/"
+  }
+}

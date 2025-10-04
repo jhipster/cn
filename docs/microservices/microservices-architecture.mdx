@@ -1,31 +1,31 @@
 ---
-title: Doing microservices with JHipster
+title: 使用 JHipster 开发微服务
 slug: /microservices-architecture/
 last_update:
   date: 2024-06-03T00:00:00-00:00
 ---
 
-# Doing microservices with JHipster
+# 使用 JHipster 开发微服务
 
-## Microservices vs Monolithic architecture
+## 微服务 vs 单体架构
 
-The first question JHipster will ask you is the kind of application you want to generate. You have the choice between two architecture styles:
+JHipster 会问您的第一个问题是您想要生成的应用程序类型。您可以在两种架构风格之间进行选择：
 
-- A "monolithic" architecture uses a single, one-size-fits-all application, which contains both the front-end code, and the back-end Spring Boot code.
-- A "microservices" architecture splits the front-end and the back-end, so that it's easier for your application to scale and survive infrastructure issues.
+- "单体"架构使用单一的、一刀切的应用程序，它同时包含前端代码和后端 Spring Boot 代码。
+- "微服务"架构将前端和后端分离，这样您的应用程序更容易扩展并在基础设施问题中幸存。
 
-A "monolithic" application is much easier to work on, so if you don't have any specific requirements, this is the option we recommend, and our default option.
+"单体"应用程序更容易开发，所以如果您没有任何特定要求，这是我们推荐的选项，也是我们的默认选项。
 
 
-## Microservices architecture overview
+## 微服务架构概述
 
-The JHipster microservices architecture works in the following way:
+JHipster 微服务架构的工作方式如下：
 
-* A [gateway](/api-gateway/) is a JHipster-generated application (using the microservice gateway type) designed to handle web traffic and serve an Angular, React, or Vue application. While you can have multiple gateways following the [Backends for Frontends pattern](https://www.thoughtworks.com/insights/blog/bff-soundcloud), it's not required. The gateway is built on the Spring Cloud Gateway library and supports both MVC and WebFlux frameworks.
-* [Consul](/consul/) is a service discovery service, as well as a key/value store.
-* The [JHipster Registry](/jhipster-registry/) is a runtime application on which all applications registers and get their configuration from. It also provides runtime monitoring dashboards. It can be used as an alternative to Consul. *(deprecated)*
-* [Microservices](/creating-microservices/) are JHipster-generated applications (using application type `microservice application` when you generate them), that handle REST requests. They are stateless, and several instances of them can be launched in parallel to handle heavy loads.
+* [网关](/api-gateway/) 是一个 JHipster 生成的应用程序（使用微服务网关类型），旨在处理 Web 流量并提供 Angular、React 或 Vue 应用程序。虽然您可以遵循 [Backends for Frontends 模式](https://www.thoughtworks.com/insights/blog/bff-soundcloud) 拥有多个网关，但这不是必需的。网关构建在 Spring Cloud Gateway 库上，支持 MVC 和 WebFlux 框架。
+* [Consul](/consul/) 是一个服务发现服务，同时也是一个键/值存储。
+* [JHipster Registry](/jhipster-registry/) 是一个运行时应用程序，所有应用程序都在其中注册并从中获取配置。它还提供运行时监控仪表板。它可以用作 Consul 的替代方案。*（已弃用）*
+* [微服务](/creating-microservices/) 是 JHipster 生成的应用程序（在生成它们时使用应用程序类型 `microservice application`），处理 REST 请求。它们是无状态的，可以并行启动多个实例来处理重负载。
 
-This diagram illustrates a microservices architecture utilizing JHipster, incorporating key technologies such as Netflix OSS, Spring Cloud, and Docker. It features a gateway for handling web traffic and user authentication, microservices for backend operations, and comprehensive monitoring and logging with tools like OpenTelemetry, Elasticsearch, Logstash, and Kibana.
+此图展示了利用 JHipster 的微服务架构，包含了 Netflix OSS、Spring Cloud 和 Docker 等关键技术。它具有处理 Web 流量和用户身份验证的网关、用于后端操作的微服务，以及使用 OpenTelemetry、Elasticsearch、Logstash 和 Kibana 等工具的全面监控和日志记录。
 
-![Diagram](/images/microservices_architecture_updated.png)
+![图表](/images/microservices_architecture_updated.png)

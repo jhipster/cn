@@ -1,5 +1,5 @@
 ---
-title: How to create a new Authority
+title: 如何创建新的权限
 slug: /tips/025_tip_create_new_authority.html
 last_update:
   date: 2018-10-05T18:20:00-00:00
@@ -7,9 +7,9 @@ last_update:
 
 __Tip submitted by [@Tonterias](https://github.com/Tonterias)__
 
-Let's say that you need a new authority besides the given ones of ADMIN and USER. Let the new authority be called `ROLE_EXAMPLE_AUTHORITY`.
+假设你需要除了给定的 ADMIN 和 USER 之外的新权限。让新权限被称为 `ROLE_EXAMPLE_AUTHORITY`。
 
-Modify AuthoritiesConstants.java file to include your new authority/authorities:
+修改 AuthoritiesConstants.java 文件以包含你的新权限：
 
 ```java
 /**
@@ -30,7 +30,7 @@ public final class AuthoritiesConstants {
 }
 ```
 
-Do not forget to include your new role in your `authority.csv`:
+不要忘记在你的 `authority.csv` 中包含你的新角色：
 
 ```csv
 name
@@ -40,7 +40,7 @@ ROLE_ANONYMOUS
 ROLE_EXAMPLE_AUTHORITY
 ```
 
-With that, you will be able to use it in your SecurityConfiguration.java:
+这样，你就可以在 SecurityConfiguration.java 中使用它：
 
 ```java
 @Override
@@ -59,7 +59,7 @@ public void configure(HttpSecurity http) throws Exception {
 }
 ```
 
-And in your Controller layer (e.g. `FrontPageConfigResource.java`):
+在你的控制器层（例如 `FrontPageConfigResource.java`）中：
 
 ```java
 @DeleteMapping("/order-items/{id}")
@@ -70,9 +70,9 @@ public ResponseEntity<Void> deleteOrderItem(@PathVariable Long id) {
 }
 ```
 
-And in your Angular html files: `jhiHasAnyAuthority=[‘ROLE_ADMIN’, ‘ROLE_EXAMPLE_AUTHORITY’ ...]` 
+在你的 Angular html 文件中：`jhiHasAnyAuthority=['ROLE_ADMIN', 'ROLE_EXAMPLE_AUTHORITY' ...]`
 
-And in your Angular routes:
+在你的 Angular 路由中：
 
 ```ts
 export const messageRoute: Routes = [
@@ -88,4 +88,4 @@ export const messageRoute: Routes = [
 ];
 ```
 
-The open-source example is at JhipsterPress: https://github.com/Tonterias/JhipsterPress
+开源示例在 JhipsterPress：https://github.com/Tonterias/JhipsterPress

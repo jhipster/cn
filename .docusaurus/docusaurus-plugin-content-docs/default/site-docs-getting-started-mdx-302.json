@@ -1,0 +1,24 @@
+{
+  "id": "getting-started",
+  "title": "快速开始",
+  "description": "如何开始使用 JHipster - 安装、创建新项目、书籍、教程和培训",
+  "source": "@site/docs/getting-started.mdx",
+  "sourceDirName": ".",
+  "slug": "/getting-started",
+  "permalink": "/cn/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/getting-started.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "快速开始",
+    "description": "如何开始使用 JHipster - 安装、创建新项目、书籍、教程和培训"
+  },
+  "sidebar": "docsSidebar",
+  "next": {
+    "title": "安装 JHipster",
+    "permalink": "/cn/installation/"
+  }
+}

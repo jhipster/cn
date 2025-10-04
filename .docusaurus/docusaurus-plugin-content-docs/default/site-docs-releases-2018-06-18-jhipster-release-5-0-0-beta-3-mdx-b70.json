@@ -1,0 +1,30 @@
+{
+  "id": "releases/2018-06-18-jhipster-release-5.0.0-beta.3",
+  "title": "Release 5.0.0-beta.3",
+  "description": "This is a specific security release on top of our v5.0.0-beta.2 release from last week, as 2 important security issues have been fixed on Spring Boot 2.0.3.",
+  "source": "@site/docs/releases/2018-06-18-jhipster-release-5.0.0-beta.3.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2018/06/18/jhipster-release-5.0.0-beta.3.html",
+  "permalink": "/cn/2018/06/18/jhipster-release-5.0.0-beta.3.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2018-06-18-jhipster-release-5.0.0-beta.3.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 5.0.0-beta.3",
+    "slug": "/2018/06/18/jhipster-release-5.0.0-beta.3.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 5.0.0-beta.2",
+    "permalink": "/cn/2018/06/13/jhipster-release-5.0.0-beta.2.html"
+  },
+  "next": {
+    "title": "Release 4.14.5",
+    "permalink": "/cn/2018/06/19/jhipster-release-4.14.5.html"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "options/using-mongodb",
+  "title": "Using MongoDB",
+  "description": "MongoDB is one of the supported databases that can be selected when your application is being generated.",
+  "source": "@site/docs/options/using-mongodb.mdx",
+  "sourceDirName": "options",
+  "slug": "/using-mongodb/",
+  "permalink": "/cn/using-mongodb/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/options/using-mongodb.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1424736000000,
+  "frontMatter": {
+    "title": "Using MongoDB",
+    "slug": "/using-mongodb/",
+    "last_update": {
+      "date": "2015-02-24T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "使用 Oracle",
+    "permalink": "/cn/using-oracle/"
+  },
+  "next": {
+    "title": "使用 Couchbase",
+    "permalink": "/cn/using-couchbase/"
+  }
+}

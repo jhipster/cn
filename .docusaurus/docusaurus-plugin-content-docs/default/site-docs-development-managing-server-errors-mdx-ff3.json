@@ -1,0 +1,31 @@
+{
+  "id": "development/managing-server-errors",
+  "title": "Managing server errors",
+  "description": "JHipster has first-class support for error handling: it provides error pages and custom mechanisms to handle both business and technical errors on the server-side.",
+  "source": "@site/docs/development/managing-server-errors.mdx",
+  "sourceDirName": "development",
+  "slug": "/managing-server-errors/",
+  "permalink": "/cn/managing-server-errors/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/managing-server-errors.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1520380800000,
+  "frontMatter": {
+    "title": "Managing server errors",
+    "slug": "/managing-server-errors/",
+    "last_update": {
+      "date": "2018-03-07T00:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "分离前端和 API",
+    "permalink": "/cn/separating-front-end-and-api/"
+  },
+  "next": {
+    "title": "带消息的问题",
+    "permalink": "/cn/problem/problem-with-message/"
+  }
+}

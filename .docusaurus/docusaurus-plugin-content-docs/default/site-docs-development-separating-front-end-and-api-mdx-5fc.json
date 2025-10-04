@@ -1,0 +1,31 @@
+{
+  "id": "development/separating-front-end-and-api",
+  "title": "Separating the front-end and the API server",
+  "description": "Introduction",
+  "source": "@site/docs/development/separating-front-end-and-api.mdx",
+  "sourceDirName": "development",
+  "slug": "/separating-front-end-and-api/",
+  "permalink": "/cn/separating-front-end-and-api/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/development/separating-front-end-and-api.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1615204800000,
+  "frontMatter": {
+    "title": "Separating the front-end and the API server",
+    "slug": "/separating-front-end-and-api/",
+    "last_update": {
+      "date": "2021-03-08T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "常用端口",
+    "permalink": "/cn/common-ports/"
+  },
+  "next": {
+    "title": "Managing server errors",
+    "permalink": "/cn/managing-server-errors/"
+  }
+}

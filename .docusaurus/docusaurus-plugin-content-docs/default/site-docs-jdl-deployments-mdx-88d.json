@@ -1,0 +1,31 @@
+{
+  "id": "jdl/deployments",
+  "title": "JHipster Domain Language (JDL) - Deployments",
+  "description": "Syntax",
+  "source": "@site/docs/jdl/deployments.mdx",
+  "sourceDirName": "jdl",
+  "slug": "/jdl/deployments",
+  "permalink": "/cn/jdl/deployments",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/jdl/deployments.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1625745600000,
+  "frontMatter": {
+    "title": "JHipster Domain Language (JDL) - Deployments",
+    "slug": "/jdl/deployments",
+    "last_update": {
+      "date": "2021-07-08T12:00:00.000Z"
+    }
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "选项",
+    "permalink": "/cn/jdl/options"
+  },
+  "next": {
+    "title": "问题排查",
+    "permalink": "/cn/jdl/troubleshooting"
+  }
+}

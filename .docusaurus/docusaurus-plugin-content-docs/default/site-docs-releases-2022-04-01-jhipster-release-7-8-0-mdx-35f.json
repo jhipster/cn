@@ -1,0 +1,30 @@
+{
+  "id": "releases/2022-04-01-jhipster-release-7.8.0",
+  "title": "Release 7.8.0",
+  "description": "This is the new minor release of JHipster v7 with 263 closed tickets and merged pull requests.",
+  "source": "@site/docs/releases/2022-04-01-jhipster-release-7.8.0.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2022/04/01/jhipster-release-7.8.0.html",
+  "permalink": "/cn/2022/04/01/jhipster-release-7.8.0.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2022-04-01-jhipster-release-7.8.0.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 7.8.0",
+    "slug": "/2022/04/01/jhipster-release-7.8.0.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 7.7.0",
+    "permalink": "/cn/2022/02/27/jhipster-release-7.7.0.html"
+  },
+  "next": {
+    "title": "Release 7.8.1",
+    "permalink": "/cn/2022/04/07/jhipster-release-7.8.1.html"
+  }
+}

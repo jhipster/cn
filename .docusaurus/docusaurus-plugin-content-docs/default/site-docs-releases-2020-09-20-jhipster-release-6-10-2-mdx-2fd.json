@@ -1,0 +1,30 @@
+{
+  "id": "releases/2020-09-20-jhipster-release-6.10.2",
+  "title": "Release 6.10.2",
+  "description": "Do not use this release, as it's broken because of prettier-java dependency.",
+  "source": "@site/docs/releases/2020-09-20-jhipster-release-6.10.2.mdx",
+  "sourceDirName": "releases",
+  "slug": "/2020/09/20/jhipster-release-6.10.2.html",
+  "permalink": "/cn/2020/09/20/jhipster-release-6.10.2.html",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/jhipster/jhipster.github.io/tree/main/docs/releases/2020-09-20-jhipster-release-6.10.2.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release 6.10.2",
+    "slug": "/2020/09/20/jhipster-release-6.10.2.html",
+    "displayed_sidebar": "docsSidebar",
+    "sidebar_class_name": "hidden"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Release 6.10.1",
+    "permalink": "/cn/2020/07/04/jhipster-release-6.10.1.html"
+  },
+  "next": {
+    "title": "Release 6.10.3",
+    "permalink": "/cn/2020/09/20/jhipster-release-6.10.3.html"
+  }
+}

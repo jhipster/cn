@@ -1,22 +1,22 @@
 ---
-title: Prevent error/hanging on Windows when using Gradle
+title: 防止在 Windows 上使用 Gradle 时出现错误/挂起
 slug: /tips/021_tip_prevent_error_and_hanging_on_windows_when_using_gradle.html
 last_update:
   date: 2017-01-03T22:30:00-00:00
 ---
 
-# Prevent error/hanging on Windows when using Gradle
+# 防止在 Windows 上使用 Gradle 时出现错误/挂起
 
-## /!\ This tip is deprecated since JHipster v4.1.1 as we upgraded to Gradle 3.4
+## /!\ 此提示自 JHipster v4.1.1 起已弃用，因为我们已升级到 Gradle 3.4
 
 __Tip submitted by [@kaidohallik](https://github.com/kaidohallik)__
 
-## Problem description
+## 问题描述
 
-If using cmd.exe on Windows for executing Gradle tasks then error or hanging may occur:
+如果在 Windows 上使用 cmd.exe 执行 Gradle 任务，则可能会发生错误或挂起：
 
-1. sometimes process just hangs
-2. sometimes error occurs
+1. 有时进程只是挂起
+2. 有时会发生错误
 
 ```
 FAILURE: Build failed with an exception.
@@ -25,33 +25,33 @@ FAILURE: Build failed with an exception.
 Unable to process incoming event 'ProgressComplete ' (ProgressCompleteEvent)
 ```
 
-## When problem occurs
+## 何时出现问题
 
-Problem occurs after some command has outputted some critical symbols and/or amount of symbols to this cmd.exe window.
-The emergence of the problem depends on the Screen Buffer Size Height. The higher it is the greater is the chance that no error/hanging occurs.
-But the problem is reproduced also with the maximum Screen Buffer Size Height (9999).
+在某个命令向此 cmd.exe 窗口输出了一些关键符号和/或大量符号后，就会出现问题。
+问题的出现取决于屏幕缓冲区大小高度。它越高，不出现错误/挂起的机会就越大。
+但是即使使用最大的屏幕缓冲区大小高度（9999），问题也会重现。
 
-## Workarounds
+## 解决方法
 
-The problem never occurs when using Gradle with the following switches:
+使用以下开关使用 Gradle 时，问题永远不会发生：
 
 * `gradlew --info`
 * `gradlew --debug`
 * `gradlew --console plain`
 
-The problem can sometimes be prevented with the following actions:
+有时可以通过以下操作防止问题：
 
-* increase the cmd.exe window Screen Buffer Size Height, for example to the maximum possible value 9999
-* open new cmd.exe window and use this for executing Gradle tasks
+* 增加 cmd.exe 窗口的屏幕缓冲区大小高度，例如增加到最大可能值 9999
+* 打开新的 cmd.exe 窗口并使用它来执行 Gradle 任务
 
-In the JHipster applications this problem has reproduced with the following Gradle tasks:
+在 JHipster 应用程序中，此问题已在以下 Gradle 任务中重现：
 
 * gulpConstantDev
 * gulpBuildWithOpts
 * npmInstall
 * webpack
 
-Exists hack which prevents this error/hanging in the JHipster applications. Just put the following code to your `build.gradle`:
+存在一个 hack，可以防止 JHipster 应用程序中出现此错误/挂起。只需将以下代码放入你的 `build.gradle`：
 
 ```
 tasks.withType(NodeTask) {
@@ -66,7 +66,7 @@ tasks.withType(com.moowork.gradle.node.npm.NpmTask) {
 }
 ```
 
-## Additional information
+## 附加信息
 
-Currently there is open [Gradle issue](https://github.com/gradle/gradle/issues/882) about the described error/hanging problem.
-It's possible that in the future versions of Gradle the described error/hanging problem doesn't exist any more.
+目前有一个关于所述错误/挂起问题的开放 [Gradle 问题](https://github.com/gradle/gradle/issues/882)。
+在未来版本的 Gradle 中，所述错误/挂起问题可能不再存在。

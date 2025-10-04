@@ -1,20 +1,20 @@
 ---
-title: Deploying to Heroku
+title: 部署到 Heroku
 slug: /heroku/
 last_update:
   date: 2023-12-19T00:00:00-00:00
 ---
 
-This sub-generator allows deployment of your JHipster application to the [Heroku cloud](https://www.heroku.com/).
+此子生成器允许将您的 JHipster 应用程序部署到 [Heroku 云](https://www.heroku.com/)。
 
 [![Heroku](/images/logo/logo-heroku.png)](https://www.heroku.com/)
 
 
-## Running the sub-generator
+## 运行子生成器
 
-Before running the sub-generator, you must install the [Heroku CLI](https://cli.heroku.com/).
+在运行子生成器之前，您必须安装 [Heroku CLI](https://cli.heroku.com/)。
 
-You must also [create a Heroku account](http://signup.heroku.com/) and log in with the CLI by running the following command:
+您还必须[创建 Heroku 账户](http://signup.heroku.com/)并通过运行以下命令使用 CLI 登录：
 
 ```
 **$ heroku login**
@@ -24,72 +24,72 @@ Password (typing will be hidden): YOUR_PASSWORD
 Authentication successful.
 ```
 
-> As of [November 2022 Heroku does not offer a completely free tier](https://blog.heroku.com/next-chapter) anymore.
-> This means you will need a properly [verified Heroku account](https://devcenter.heroku.com/articles/account-verification)
-> and deploying an application using the smallest dyno options and the smallest Postgres size will cost you around **$12 per month**.
+> 截至 [2022 年 11 月，Heroku 不再提供完全免费的套餐](https://blog.heroku.com/next-chapter)。
+> 这意味着您需要一个正式[验证的 Heroku 账户](https://devcenter.heroku.com/articles/account-verification)，
+> 使用最小的 dyno 选项和最小的 Postgres 大小部署应用程序每月大约需要花费 **12 美元**。
 
-The Heroku sub-generator creates an application using [free dynos](https://devcenter.heroku.com/articles/dyno-types) with add-ons matching your selected configuration.
+Heroku 子生成器使用[免费 dynos](https://devcenter.heroku.com/articles/dyno-types)创建一个应用程序，并使用与您所选配置匹配的附加组件。
 
-We support the following addons:
+我们支持以下附加组件：
 
-* [Heroku Postgres](https://www.heroku.com/postgres) when using PostgreSQL
-* [JawsDB](https://elements.heroku.com/addons/jawsdb) when using MySQL or MariaDB
-* [Heroku Redis](https://elements.heroku.com/addons/heroku-redis) when [using Redis](/using-cache/#caching-with-redis)
-* [MemCachier](https://elements.heroku.com/addons/memcachier) when [using Memcached](/using-cache/#caching-with-memcached)
-* [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) when [using Elasticsearch](/using-elasticsearch/)
-* [Okta](https://elements.heroku.com/addons/okta) when [using OAuth2/OIDC (optional)](/security/#oauth-20-and-openid-connect)
+* [Heroku Postgres](https://www.heroku.com/postgres) 当使用 PostgreSQL 时
+* [JawsDB](https://elements.heroku.com/addons/jawsdb) 当使用 MySQL 或 MariaDB 时
+* [Heroku Redis](https://elements.heroku.com/addons/heroku-redis) 当[使用 Redis](/using-cache/#caching-with-redis) 时
+* [MemCachier](https://elements.heroku.com/addons/memcachier) 当[使用 Memcached](/using-cache/#caching-with-memcached) 时
+* [Bonsai Elasticsearch](https://elements.heroku.com/addons/bonsai) 当[使用 Elasticsearch](/using-elasticsearch/) 时
+* [Okta](https://elements.heroku.com/addons/okta) 当[使用 OAuth2/OIDC（可选）](/security/#oauth-20-and-openid-connect) 时
 
 
-To deploy your application to Heroku, run this command:
+要将您的应用程序部署到 Heroku，请运行此命令：
 
 ```shell
 jhipster heroku
 ```
 
-This should package your application in "production" mode, create an Heroku application with a database, upload your code, and start the application.
+这应该将您的应用程序以“生产”模式打包，创建一个带有数据库的 Heroku 应用程序，上传您的代码，并启动应用程序。
 
 :::note
 
-That if your application is a microservice, you will be prompted to provide a registry URL. Scroll down to learn how to do this.
+如果您的应用程序是微服务，您将被提示提供注册表 URL。向下滚动以了解如何执行此操作。
 
 :::
 
 :::warning
 
-Please be aware that your application must start under 90 seconds, or it will be shutdown.
-Depending on the platform load, starting under 90 seconds is not guaranteed!
+请注意，您的应用程序必须在 90 秒内启动，否则将被关闭。
+根据平台负载，不能保证90 秒内启动！
 
 :::
 
 
-## Changing the Java version
+## 更改 Java 版本
 
-You can select the Java version when executing the Heroku sub-generator.
-By default this will be Java 11.
-You can find all on Heroku [supported Java version in the official documentation](https://devcenter.heroku.com/articles/java-support#supported-java-versions).
+您可以在执行 Heroku 子生成器时选择 Java 版本。
+默认情况下，这将是 Java 11。
+您可以在[官方文档](https://devcenter.heroku.com/articles/java-support#supported-java-versions)中找到所有 Heroku 支持的 Java 版本。
 
-If you want to change the Java version e.g. from `11` to `14` later you need to change it in `system.properties` in your projects root folder:
+如果您想稍后更改 Java 版本，例如从 `11` 更改为 `14`，您需要在项目根文件夹中的 `system.properties` 中更改它：
 
 ```properties
 java.runtime.version=14
 ```
 
-When you redeploy your application it will use Java 14.
+当您重新部署您的应用程序时，它将使用 Java 14。
 
 
-## Deploying your application
+## 部署您的应用程序
 
-By default the application will be [deployed via git](https://devcenter.heroku.com/articles/git).
-This means you push your code and Heroku will build and deploy it on their servers.
-If you can't or don't want to push code to someone else's server you can use the jar option and [deploy an executable jar](https://devcenter.heroku.com/articles/deploying-executable-jar-files).
-Heroku also supports [deploying a docker image](https://devcenter.heroku.com/articles/container-registry-and-runtime), but the sub-generator does not support this option yet.
+默认情况下，应用程序将[通过 git 部署](https://devcenter.heroku.com/articles/git)。
+这意味着您推送您的代码，Heroku 将在其服务器上构建和部署它。
+如果您不能或不想将代码推送到其他人的服务器，您可以使用 jar 选项并[部署可执行 jar](https://devcenter.heroku.com/articles/deploying-executable-jar-files)。
+Heroku 也支持[部署 docker 镜像](https://devcenter.heroku.com/articles/container-registry-and-runtime)，但子生成器尚不支持此选项。
 
-### Updating your deployed application
+### 更新您已部署的应用程序
 
-#### Using git option
+#### 使用 git 选项
 
-When deploying via git a new remote has been created called heroku.
-To deploy new code you need to push the changes to the heroku remote:
+通过 git 部署时，已创建了一个名为 heroku 的新远程仓库。
+要部署新代码，您需要将更改推送到 heroku 远程仓库：
 
 ```shell
 git push heroku master
@@ -97,18 +97,18 @@ git push heroku master
 
 :::info
 
-This assumes you have run the generator on the machine you are executing this command from.
-If you have not, you will need to follow the [instructions for creating a Heroku remote](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app).
+这假设您已在正在执行此命令的机器上运行了生成器。
+如果您没有，您将需要遵循[创建 Heroku 远程仓库的说明](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app)。
 
 :::
 
-#### Using jar option
+#### 使用 jar 选项
 
-When you selected to deploy an executable jar you need to create the updated jar and deploy the new file to Heroku.
+当您选择部署可执行 jar 时，您需要创建更新的 jar 并将新文件部署到 Heroku。
 
-##### Preparing a new jar
+##### 准备新的 jar
 
-When your application is already deployed, you can prepare a new deployment with:
+当您的应用程序已经部署时，您可以准备新的部署：
 
 ```shell
 ./mvnw package -Pprod -DskipTests
@@ -120,16 +120,16 @@ Or when using gradle:
 ./gradlew -Pprod bootJar -x test
 ```
 
-##### Pushing to production
+##### 推送到生产环境
 
 :::info
 
-This assumes you have run the generator on the machine you are executing this command from.
-If you have not, you will need to follow the instructions for installing the [Heroku Java CLI](https://devcenter.heroku.com/articles/deploying-executable-jar-files).
+这假设您已在正在执行此命令的机器上运行了生成器。
+如果您没有，您将需要遵循安装 [Heroku Java CLI](https://devcenter.heroku.com/articles/deploying-executable-jar-files) 的说明。
 
 :::
 
-To push to production, type:
+要推送到生产环境，请输入：
 
 ```shell
 heroku deploy:jar target/*.jar
